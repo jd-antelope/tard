@@ -11,7 +11,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 // import './index.less'
 var SlLoading = function () {
-    return (React__default['default'].createElement(components.View, { className: "aaa" }, "1111111111"));
+    return (React__default['default'].createElement(components.View, { className: "aaa" }, "1112221111"));
 };
 var index = React.memo(SlLoading);
 

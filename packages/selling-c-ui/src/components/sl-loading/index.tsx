@@ -4,7 +4,7 @@ import { FC } from '@tarojs/taro'
 // import './index.less'
 
 const SlLoading:FC = () => {
-  return (<View className="aaa">1111111111</View>)
+  return (<View className="aaa">1112221111</View>)
 }
 
 export default memo(SlLoading)
