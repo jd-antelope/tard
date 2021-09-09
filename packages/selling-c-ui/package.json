@@ -1,0 +1,37 @@
+{
+  "name": "selling-c-ui",
+  "version": "1.0.0",
+  "description": "",
+  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "dev": "yarn run dev:lib",
+    "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
+    "build": "yarn run build:rollup && yarn run build:lib",
+    "build:lib": "tsc --project ./config/tsconfig.build.json",
+    "build:rollup": "rollup --config ./config/rollup.config.js",
+    "prepublishOnly": "yarn run clean && yarn run build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@tarojs/components": "~3.0.2",
+    "@tarojs/react": "~3.0.2",
+    "@tarojs/taro": "~3.0.2",
+    "@types/classnames": "^2.2.9",
+    "@types/node": "^13.11.1",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "rollup": "^2.3.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "rollup-plugin-visualizer": "^4.0.2",
+    "typescript": "^3.8.3"
+  },
+  "author": "",
+  "license": "ISC"
+}
