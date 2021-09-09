@@ -9,19 +9,25 @@ function createEntries () {
   }, {})
 }
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: createEntries(),
   output: {
     path: path.resolve(__dirname, './packages'),
     filename: '[name]/lib/index.js',
     library: '[name]',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs-module'
+    // libraryTarget: 'umd'
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: ['babel-loader', 'ts-loader'],
+        test: /\.(tsx?|js)$/,
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }, 'ts-loader'],
         exclude: /node_modules/
       },
       {
@@ -34,22 +40,24 @@ module.exports = {
       {
         test: /\.less$/,
         exclude: /node_modules/,
+        // use: [
+        //   {
+        //     loader: 'style-loader'
+        //   },
+
+        //   {
+        //     loader: 'css-loader'
+
+        //   },
+        //   {
+        //     loader: 'less-loader'
+        //   }
+
+        // ]
         use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2
-            }
-          },
-          {
-            loader: 'less-loader'
-          },
-          {
-            loader: 'postcss-loader'
-          }
+          'style-loader',
+          'css-loader',
+          'less-loader'
         ]
       },
       {
@@ -80,8 +88,8 @@ module.exports = {
   },
   externals: {
     react: 'React',
-    '@tarojs/components': 'components',
-    '@tarojs/taro': 'Taro'
+    '@tarojs/taro': '@tarojs/taro',
+    '@tarojs/components': '@tarojs/components'
   }
 
 }

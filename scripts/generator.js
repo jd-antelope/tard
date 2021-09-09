@@ -18,6 +18,8 @@ const createComponent = (name) => {
       console.log(`组件${name}创建失败`)
       console.log(`失败原因:\n ${error}`)
     }
+  } else {
+
   }
 }
 

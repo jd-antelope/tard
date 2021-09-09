@@ -4,10 +4,9 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'standard',
     'plugin:react/recommended',
-    'plugin:react/jsx-runtime'
-
+    'plugin:react/jsx-runtime',
+    'standard'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,7 +23,6 @@ module.exports = {
 
   ],
   rules: {
-    'react/react-in-jsx-scope': 0,
     'no-console': 1
   }
 
