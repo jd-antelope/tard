@@ -1,4 +1,5 @@
 import NodePath from 'path'
+import RollPostcss from 'rollup-plugin-postcss';
 import RollupJson from '@rollup/plugin-json'
 import RollupNodeResolve from '@rollup/plugin-node-resolve'
 import RollupCommonjs from '@rollup/plugin-commonjs'
@@ -33,6 +34,11 @@ export default {
   ],
   external: externalPackages,
   plugins: [
+    RollPostcss({        
+      plugins: [require('autoprefixer', 'cssnano')],  //cssnano      
+      extensions: ['.less', '.css'],        
+      use: ['less'],        
+  }),
     RollupNodeResolve({
       customResolveOptions: {
         moduleDirectory: 'node_modules'

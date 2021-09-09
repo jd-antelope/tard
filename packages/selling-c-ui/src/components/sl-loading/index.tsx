@@ -1,10 +1,9 @@
 import React, { memo } from 'react'
 import { View } from '@tarojs/components'
 import { FC } from '@tarojs/taro'
-// import './index.less'
-
+ import '../../style/components/sl-loading.less'
 const SlLoading:FC = () => {
-  return (<View className="aaa">1111111111</View>)
+  return (<View className="aaa">10000</View>)
 }
 
 export default memo(SlLoading)

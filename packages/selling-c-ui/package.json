@@ -1,6 +1,6 @@
 {
-  "name": "selling-c-ui",
-  "version": "1.0.0",
+  "name": "@jd/selling-c-ui",
+  "version": "1.1.6",
   "description": "",
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
@@ -11,8 +11,17 @@
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./config/tsconfig.build.json",
     "build:rollup": "rollup --config ./config/rollup.config.js",
-    "prepublishOnly": "yarn run clean && yarn run build"
+    "clean": "rimraf dist"
   },
+  "publishConfig": {
+    "registry": "http://registry.m.jd.com",
+    "access": "public",
+    "tag": "next"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-json": "^4.0.2",
@@ -24,14 +33,18 @@
     "@types/node": "^13.11.1",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "postcss": "^8.3.6",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "rollup": "^2.3.1",
     "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-less": "^1.1.3",
+    "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-typescript2": "^0.27.0",
     "rollup-plugin-visualizer": "^4.0.2",
     "typescript": "^3.8.3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "gitHead": "27b75c851ba074e0c121b635f0800a304c64544b"
 }

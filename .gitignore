@@ -1,2 +1,14 @@
 node_modules
 ./.vscode
+
+
+
+
+
+
+# Build outputs
+
+packages/taro-ui/lib/
+packages/**/dist/
+dist/
+

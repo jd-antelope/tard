@@ -8,15 +8,20 @@
 
 
 
+## lerna相关
+
+* lerna bootstrap  为每个子包安装node_modules依赖
+* lerna create     创建新的子包
+* lerna version    这个命令 识别出修改的包 --> 创建新的版本号 --> 修改package.json --> 提交修改 打上版本的tag --> 推送到git上。
+* lerna publish    发布包 
 
 
 
 
+## package.json
+
+* files 指定上传npm时需要发布的文件夹目录 也可以在发包的根路径下新建 .npmignore文件进行指定
 
 
 
 # 遇到的问题？
-
-**1 tsconfig.json w文件初始化后，提示如下错误:
- 在配置文件“/Users/chenyonghao9/Desktop/project/selling-component/tsconfig.json”中找不到任何输入。指定的 "include" 路径为“["src/**/*.ts"]”，"exclude" 路径为“[]”
- 解决方案：https://www.icode9.com/content-4-890441.html
