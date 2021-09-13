@@ -9,8 +9,9 @@
     "build:component": "lerna run --scope selling-c-ui build",
     "clean": "lerna run clean",
     "clean:component": "lerna run --scope selling-c-ui clean",
-    "publish": "lerna publish from-git --yes"
+    "publish": "lerna publish from-package --yes"
   },
+  "private": true,
   "author": "",
   "license": "ISC",
   "repository": {
