@@ -33,5 +33,6 @@
     "typescript": "^3.8.3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "b768cc83aebe8771b76251669583f2b868e50965"
 }
