@@ -11,7 +11,8 @@
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./config/tsconfig.build.json",
     "build:rollup": "rollup --config ./config/rollup.config.js",
-    "prepublishOnly": "yarn run clean && yarn run build"
+    "prepublishOnly": "yarn run clean && yarn run build",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
