@@ -6,6 +6,7 @@
   "main": "dist/index.js",
   "source": "src/index.ts",
   "scripts": {
+    "create": "node scripts/generator.js",
     "dev": "yarn run dev:lib",
     "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
     "build": "yarn run build:rollup && yarn run build:lib",
