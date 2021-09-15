@@ -8,7 +8,8 @@ node_modules
 
 # Build outputs
 
-packages/taro-ui/lib/
-packages/**/dist/
-dist/
+packages/selling-c-ui/lib
+packages/selling-c-ui/dist/
+
+
 
