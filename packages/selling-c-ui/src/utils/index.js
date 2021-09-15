@@ -18,7 +18,7 @@ const hasSameComponent = (name) => {
  * @param name 组件名称
  */
 const transformCom = (name) => {
-  console.log(44)
+  console.log(45454545)
   return name.split('-').reduce((pre, v) => (pre += v.slice(0, 1).toLocaleUpperCase() + v.slice(1)), '')
 }
 
