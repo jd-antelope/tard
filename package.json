@@ -1,6 +1,6 @@
 {
   "name": "selling-c-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "private": true,
   "main": "index.js",
@@ -11,7 +11,7 @@
     "clean": "lerna run clean",
     "clean:component": "lerna run --scope selling-c-ui clean",
     "version": "lerna version",
-    "publish": "lerna publish from-packages --yes"
+    "publish": "lerna publish from-package --yes"
   },
   "author": "",
   "license": "ISC",
