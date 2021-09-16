@@ -10,7 +10,7 @@
     "build:component": "lerna run --scope selling-c-ui build",
     "clean": "lerna run clean",
     "clean:component": "lerna run --scope selling-c-ui clean",
-    "version": "lerna version --force-publish ",
+    "version": "lerna version",
     "publish": "lerna publish from-package --yes"
   },
   "author": "",
