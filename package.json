@@ -11,7 +11,7 @@
     "clean": "lerna run clean",
     "clean:component": "lerna run --scope selling-c-ui clean",
     "version": "lerna version",
-    "publish": "lerna publish from-package --yes"
+    "publish": "lerna publish from-packages --yes"
   },
   "author": "",
   "license": "ISC",
