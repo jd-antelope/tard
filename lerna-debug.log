@@ -1,47 +1,77 @@
 0 silly argv {
 0 silly argv   _: [ 'version' ],
+0 silly argv   'conventional-commits': true,
+0 silly argv   conventionalCommits: true,
 0 silly argv   lernaVersion: '4.0.0',
-0 silly argv   '$0': '/Users/chenyonghao9/Desktop/project/selling-component/node_modules/.bin/lerna'
+0 silly argv   '$0': 'node_modules/.bin/lerna'
 0 silly argv }
 1 notice cli v4.0.0
 2 verbose rootPath /Users/chenyonghao9/Desktop/project/selling-component
-3 info current version 1.1.7
+3 info current version 1.1.9
 4 silly isAnythingCommitted
 5 verbose isAnythingCommitted 1
 6 silly getCurrentBranch
 7 verbose currentBranch test
 8 silly remoteBranchExists
 9 silly isBehindUpstream
-10 silly isBehindUpstream test is behind origin/test by 0 commit(s) and ahead by 10
+10 silly isBehindUpstream test is behind origin/test by 0 commit(s) and ahead by 14
 11 silly hasTags
 12 verbose hasTags true
-13 silly git-describe.sync "v1.1.7-2-gf3f473c" => {"lastTagName":"v1.1.7","lastVersion":"v1.1.7","refCount":"2","sha":"f3f473c","isDirty":false}
-14 info Looking for changed packages since v1.1.7
+13 silly git-describe.sync "v1.1.9-1-g42f0493" => {"lastTagName":"v1.1.9","lastVersion":"v1.1.9","refCount":"1","sha":"42f0493","isDirty":false}
+14 info Looking for changed packages since v1.1.9
 15 silly checking diff packages/selling-c-ui
-16 silly found diff in packages/selling-c-ui/src/components/sl-loading/index.tsx
-17 verbose filtered diff [ 'packages/selling-c-ui/src/components/sl-loading/index.tsx' ]
+16 silly found diff in packages/selling-c-ui/package.json
+17 verbose filtered diff [ 'packages/selling-c-ui/package.json' ]
 18 verbose updated @jd/selling-c-ui
 19 info version rooted leaf detected, skipping synthetic root lifecycles
-20 verbose git-describe undefined => "v1.1.7-2-gf3f473c"
-21 silly git-describe parsed => {"lastTagName":"v1.1.7","lastVersion":"v1.1.7","refCount":"2","sha":"f3f473c","isDirty":false}
-22 info execute Skipping releases
-23 silly lifecycle No script for "preversion" in "@jd/selling-c-ui", continuing
-24 silly lifecycle No script for "version" in "@jd/selling-c-ui", continuing
-25 silly gitAdd [
-25 silly gitAdd   'packages/selling-c-ui/package.json',
-25 silly gitAdd   'packages/selling-c-ui/package-lock.json',
-25 silly gitAdd   'lerna.json'
-25 silly gitAdd ]
-26 silly gitCommit v1.1.8
-27 verbose git [ 'commit', '-m', 'v1.1.8' ]
-28 silly gitTag v1.1.8
-29 verbose git [ 'tag', 'v1.1.8', '-m', 'v1.1.8' ]
-30 silly lifecycle No script for "postversion" in "@jd/selling-c-ui", continuing
-31 info git Pushing tags...
-32 silly gitPush origin test
-33 error Error: Command failed with exit code 1: git push --follow-tags --no-verify --atomic origin test
-33 error fatal: 接收端不支持原子推送
-33 error fatal: 远端意外挂断了
-33 error error: 推送一些引用到 'https://coding.jd.com/selling-front/shop-c-components.git' 失败
-33 error     at makeError (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/execa/lib/error.js:60:11)
-33 error     at handlePromise (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/execa/index.js:118:26)
+20 verbose git-describe undefined => "v1.1.9-1-g42f0493"
+21 silly git-describe parsed => {"lastTagName":"v1.1.9","lastVersion":"v1.1.9","refCount":"1","sha":"42f0493","isDirty":false}
+22 silly fixed for @jd/selling-c-ui at /Users/chenyonghao9/Desktop/project/selling-component/packages/selling-c-ui
+23 verbose getChangelogConfig using preset "conventional-changelog-angular"
+24 silly npa Result {
+24 silly npa   type: 'tag',
+24 silly npa   registry: true,
+24 silly npa   where: undefined,
+24 silly npa   raw: 'conventional-changelog-angular',
+24 silly npa   name: 'conventional-changelog-angular',
+24 silly npa   escapedName: 'conventional-changelog-angular',
+24 silly npa   scope: undefined,
+24 silly npa   rawSpec: '',
+24 silly npa   saveSpec: null,
+24 silly npa   fetchSpec: 'latest',
+24 silly npa   gitRange: undefined,
+24 silly npa   gitCommittish: undefined,
+24 silly npa   hosted: undefined
+24 silly npa }
+25 verbose getChangelogConfig Attempting to resolve preset "conventional-changelog-angular"
+26 info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
+27 verbose fixed increment 1.1.10 by patch
+28 info execute Skipping releases
+29 silly lifecycle No script for "preversion" in "@jd/selling-c-ui", continuing
+30 silly lifecycle No script for "version" in "@jd/selling-c-ui", continuing
+31 silly fixed for @jd/selling-c-ui at /Users/chenyonghao9/Desktop/project/selling-component/packages/selling-c-ui
+32 silly fixed writing new entry: "## [1.1.11](https://coding.jd.com/selling-front/shop-c-components/compare/v1.1.9...v1.1.11) (2021-09-16)\n\n\n### Bug Fixes\n\n* test ([42f0493](https://coding.jd.com/selling-front/shop-c-components/commits/42f04933cc4117d154cd5aba3c33d5e66efd8744))\n\n\n\n"
+33 verbose fixed wrote /Users/chenyonghao9/Desktop/project/selling-component/packages/selling-c-ui/CHANGELOG.md
+34 silly root for @jd/selling-c-ui at /Users/chenyonghao9/Desktop/project/selling-component
+35 silly root writing new entry: "## [1.1.11](https://coding.jd.com/selling-front/shop-c-components/compare/v1.1.9...v1.1.11) (2021-09-16)\n\n\n### Bug Fixes\n\n* test ([42f0493](https://coding.jd.com/selling-front/shop-c-components/commits/42f04933cc4117d154cd5aba3c33d5e66efd8744))\n\n\n\n"
+36 verbose root wrote /Users/chenyonghao9/Desktop/project/selling-component/CHANGELOG.md
+37 silly gitAdd [
+37 silly gitAdd   'packages/selling-c-ui/package.json',
+37 silly gitAdd   'packages/selling-c-ui/package-lock.json',
+37 silly gitAdd   'packages/selling-c-ui/CHANGELOG.md',
+37 silly gitAdd   'CHANGELOG.md',
+37 silly gitAdd   'lerna.json'
+37 silly gitAdd ]
+38 silly gitCommit v1.1.11
+39 verbose git [ 'commit', '-m', 'v1.1.11' ]
+40 silly gitTag v1.1.11
+41 verbose git [ 'tag', 'v1.1.11', '-m', 'v1.1.11' ]
+42 silly lifecycle No script for "postversion" in "@jd/selling-c-ui", continuing
+43 info git Pushing tags...
+44 silly gitPush origin test
+45 error Error: Command failed with exit code 1: git push --follow-tags --no-verify --atomic origin test
+45 error fatal: 接收端不支持原子推送
+45 error fatal: 远端意外挂断了
+45 error error: 推送一些引用到 'https://coding.jd.com/selling-front/shop-c-components.git' 失败
+45 error     at makeError (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/execa/lib/error.js:60:11)
+45 error     at handlePromise (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/execa/index.js:118:26)
