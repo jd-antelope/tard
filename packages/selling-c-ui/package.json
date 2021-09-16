@@ -11,7 +11,7 @@
     "dev:lib": "tsc --project ./config/tsconfig.build.json --watch --incremental",
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./config/tsconfig.build.json",
-    "build:rollup": "rollup --config ./config/rollup.config.js -w",
+    "build:rollup": "rollup --config ./config/rollup.config.js",
     "clean": "rimraf dist",
     "async": "npm run build && yalc push",
     "watch": "nodemon --ignore dist/ --ignore node_modules/ --watch src/ -C -e ts,tsx,scss --debug -x 'npm run async'"

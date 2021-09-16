@@ -36,11 +36,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  height: 200px;\n}\n";
+var css_248z = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  height: 200px;\n  line-height: 200;\n}\n";
 styleInject(css_248z);
 
 var SlLoading = function () {
-    return (React__default['default'].createElement(components.View, { className: "aaa" }, "100000"));
+    return (React__default['default'].createElement(components.View, { className: "aaa" }, "99999999999"));
 };
 var index = React.memo(SlLoading);
 
