@@ -1,6 +1,6 @@
 {
   "name": "@jd/selling-c-ui",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "",
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
@@ -50,6 +50,6 @@
     "typescript": "^3.8.3"
   },
   "author": "",
-  "license": "MIT",
-  "gitHead": "27b75c851ba074e0c121b635f0800a304c64544b"
+  "license": "MIT"
+
 }
