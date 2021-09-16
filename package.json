@@ -1,5 +1,5 @@
 {
-  "name": "selling-c-ui1",
+  "name": "selling-c-ui",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -11,7 +11,7 @@
     "clean": "lerna run clean",
     "clean:component": "lerna run --scope selling-c-ui clean",
     "version": "lerna version --force-publish ",
-    "publish": "lerna publish from-packages --yes"
+    "publish": "lerna publish from-package --yes"
   },
   "author": "",
   "license": "ISC",
