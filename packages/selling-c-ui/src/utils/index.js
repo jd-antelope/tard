@@ -18,7 +18,6 @@ const hasSameComponent = (name) => {
  * @param name 组件名称
  */
 const transformCom = (name) => {
-  console.log(45454545)
   return name.split('-').reduce((pre, v) => (pre += v.slice(0, 1).toLocaleUpperCase() + v.slice(1)), '')
 }
 
@@ -27,8 +26,10 @@ const transformCom = (name) => {
  * @param name 组件名称
  */
 const appendComponent = (name) => {
-  fs.appendFileSync(path.resolve(__dirname, '../index.js'), `\nexport { default as ${transformCom(name)} } from './components/${name}'`, 'utf-8', { flag: 'a' })
-  fs.appendFileSync(path.resolve(__dirname, '../style/components/index.less'), `\n@import './${name}.less';`, 'utf-8', { flag: 'a' })
+  fs.appendFileSync(path.resolve(__dirname, '../index.js'),
+   `\nexport { default as ${transformCom(name)} } from './components/${name}'`, 'utf-8', { flag: 'a' })
+  fs.appendFileSync(path.resolve(__dirname, '../style/components/index.less'),
+   `\n@import './${name}.less';`, 'utf-8', { flag: 'a' })
 }
 
 /**
