@@ -2,8 +2,9 @@
 import React, { memo } from 'react'
 import { View } from '@tarojs/components'
 import { FC } from '@tarojs/taro'
+import { SlLoadingProps } from '../../../types/loading'
 import '../../style/components/sl-loading.less'
-const SlLoading: FC = () => {
+const SlLoading: FC<SlLoadingProps> = () => {
   return (<View className="aaa">99999999999</View>)
 }
 

@@ -5064,6 +5064,11 @@ loader-utils@^1.1.0:
     emojis-list "^3.0.0"
     json5 "^1.0.1"
 
+loadsh@^0.0.4:
+  version "0.0.4"
+  resolved "http://registry.m.jd.com/loadsh/download/loadsh-0.0.4.tgz#5314babd12bb13315dde024a4ca70758c5489d2d"
+  integrity sha1-UxS6vRK7EzFd3gJKTKcHWMVInS0=
+
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.nlark.com/locate-path/download/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -7849,17 +7854,6 @@ stylelint-config-standard@^20.0.0:
   integrity sha1-BhNQkMngZL7+49WUKJ9Q4pW14g0=
   dependencies:
     stylelint-config-recommended "^3.0.0"
-
-stylelint-scss@^3.16.0:
-  version "3.20.1"
-  resolved "http://registry.m.jd.com/stylelint-scss/download/stylelint-scss-3.20.1.tgz#88f175d9cfe1c81a72858bd0d3550cf61530e212"
-  integrity sha1-iPF12c/hyBpyhYvQ01UM9hUw4hI=
-  dependencies:
-    lodash "^4.17.15"
-    postcss-media-query-parser "^0.2.3"
-    postcss-resolve-nested-selector "^0.1.1"
-    postcss-selector-parser "^6.0.2"
-    postcss-value-parser "^4.1.0"
 
 stylelint@^13.3.0:
   version "13.13.1"

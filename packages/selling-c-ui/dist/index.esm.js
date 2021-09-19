@@ -28,13 +28,21 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  height: 200px;\n  line-height: 100;\n}\n";
-styleInject(css_248z);
+var css_248z$1 = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  height: 200px;\n  line-height: 150;\n}\n";
+styleInject(css_248z$1);
 
 var SlLoading = function () {
     return (React.createElement(View, { className: "aaa" }, "99999999999"));
 };
-var index = memo(SlLoading);
+var index$1 = memo(SlLoading);
 
-export { index as SlLoading };
+var css_248z = "";
+styleInject(css_248z);
+
+var SlUpload = function () {
+    return React.createElement(View, { className: "sl-upload-wrapper" }, "this is SlUpload");
+};
+var index = memo(SlUpload);
+
+export { index$1 as SlLoading, index as SlUpload };
 //# sourceMappingURL=index.esm.js.map

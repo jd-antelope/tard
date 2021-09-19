@@ -36,13 +36,22 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  height: 200px;\n  line-height: 100;\n}\n";
-styleInject(css_248z);
+var css_248z$1 = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  height: 200px;\n  line-height: 150;\n}\n";
+styleInject(css_248z$1);
 
 var SlLoading = function () {
     return (React__default['default'].createElement(components.View, { className: "aaa" }, "99999999999"));
 };
-var index = React.memo(SlLoading);
+var index$1 = React.memo(SlLoading);
 
-exports.SlLoading = index;
+var css_248z = "";
+styleInject(css_248z);
+
+var SlUpload = function () {
+    return React__default['default'].createElement(components.View, { className: "sl-upload-wrapper" }, "this is SlUpload");
+};
+var index = React.memo(SlUpload);
+
+exports.SlLoading = index$1;
+exports.SlUpload = index;
 //# sourceMappingURL=index.js.map

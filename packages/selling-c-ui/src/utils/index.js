@@ -26,7 +26,7 @@ const transformCom = (name) => {
  * @param name 组件名称
  */
 const appendComponent = (name) => {
-  fs.appendFileSync(path.resolve(__dirname, '../index.js'),
+  fs.appendFileSync(path.resolve(__dirname, '../index.ts'),
    `\nexport { default as ${transformCom(name)} } from './components/${name}'`, 'utf-8', { flag: 'a' })
   fs.appendFileSync(path.resolve(__dirname, '../style/components/index.less'),
    `\n@import './${name}.less';`, 'utf-8', { flag: 'a' })

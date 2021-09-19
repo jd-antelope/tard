@@ -26,6 +26,11 @@
     "dist",
     "types"
   ],
+  "typeRoots": [
+    "node_modules/@types",
+    "types"
+  ],
+  "types": "./types/index.d.ts",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-json": "^4.0.2",
@@ -49,6 +54,14 @@
     "rollup-plugin-visualizer": "^4.0.2",
     "typescript": "^3.8.3"
   },
+  "peerDependencies": {
+    "@tarojs/components": ">=3",
+    "@tarojs/react": ">=3",
+    "loadsh": "^0.0.4",
+    "react": ">=16.13.0",
+    "react-dom": ">=16.13.0"
+  },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
