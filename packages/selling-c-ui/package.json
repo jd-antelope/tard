@@ -1,6 +1,6 @@
 {
   "name": "@jd/selling-c-ui1",
-  "version": "1.2.7",
+  "version": "1.2.10",
   "description": "",
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
@@ -62,6 +62,5 @@
     "react-dom": ">=16.13.0"
   },
   "author": "",
-  "license": "MIT",
-  "dependencies": {}
+  "license": "MIT"
 }
