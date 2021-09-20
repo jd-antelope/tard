@@ -11,9 +11,42 @@
     ``` javascript
   yarn add @tarojs/components @tarojs/react @tarojs/taro --peer
     ```
-* less
-* rollup
-* lerna
+* rollup 打包工具我们采用的是rollup所以需要我们安装对应的依赖
+   ``` javascript
+  yarn add  rollup  rollup-plugin-copy  rollup-plugin-less  rollup-plugin-postcss  rollup-plugin-typescript2  rollup-plugin-visualizer --dev
+  ```
+* lerna lerna是一款包管理工具用来对我们项目下得npm包做统一管理，也需要我们进行安装，这个是整体项目下的依赖所以需要我们在根目录进行安装
+
+   ``` javascript
+  yarn add lerna --dev
+  ```
+
+## 初始化项目 
+
+1. 初始化npm和lerna  执行npm init -y 以及lerna init 执行完成之后虎仔我们的目录下生成lerna.json配置文件，和packeage.json 的两个配置文件内容一般是这样  
+  ``` javascript
+ {
+      "packages": [
+        "packages/*"      //指定lerna要管理的npm包的文件路径
+      ],
+      "version": "1.2.14",  // 当前版本号
+      "npmClient": "yarn",  //指定安装用的npm client
+      "useWorkspaces": true //是否开启workspace
+}
+  ```
+2. 配置命令
+```javascript
+  "scripts": {
+    "bootstrap": "lerna bootstrap",                            //为所有的子包自动安装package.json依赖
+    "build": "lerna run build",                                //编译命令为我们编译每npm包下的的buil的命令   
+    "build:component": "lerna run --scope selling-c-ui build", //作用跟上一个命令类似 --scope 允许我们只执行指定包下命令
+    "clean": "lerna run clean",的                              //执行删除命令 删除各个包下的node_modules
+    "clean:component": "lerna run --scope selling-c-ui clean", //区别同上
+    "version": "lerna version",                                //检查需要发布的包，并且提示用户指定版本号
+    "publish": "lerna publish from-package "                   //发布npm包
+  },
+```
+
 
 ## lerna相关
 

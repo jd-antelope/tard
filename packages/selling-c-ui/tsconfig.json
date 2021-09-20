@@ -3,6 +3,8 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
+    "declaration": true,
+    "declarationDir": "./types/",
     "baseUrl": "./",
     "typeRoots": [
       "node_modules/@types",

@@ -5064,11 +5064,6 @@ loader-utils@^1.1.0:
     emojis-list "^3.0.0"
     json5 "^1.0.1"
 
-loadsh@^0.0.4:
-  version "0.0.4"
-  resolved "http://registry.m.jd.com/loadsh/download/loadsh-0.0.4.tgz#5314babd12bb13315dde024a4ca70758c5489d2d"
-  integrity sha1-UxS6vRK7EzFd3gJKTKcHWMVInS0=
-
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.nlark.com/locate-path/download/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
