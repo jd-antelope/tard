@@ -4,8 +4,6 @@
     "target": "es2017",
     "module": "es6",
     "outDir": "../lib",
-    "declaration": true,
-    "declarationDir": "../types/",
   },
   "include": [
     "../src/**/*"
