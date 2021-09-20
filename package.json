@@ -12,6 +12,7 @@
     "clean:component": "lerna run --scope selling-c-ui clean",
     "version": "lerna version",
     "updated": "lerna updated",
+    "changed": "lerna changed",
     "publish": "lerna publish from-package "
   },
   "author": "",
