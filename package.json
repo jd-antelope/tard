@@ -7,7 +7,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "build:component": "lerna run --scope lerna run --scope @jd/selling-c-ui1 build",
+    "build:component": "lerna run --scope @jd/selling-c-ui1 build",
     "clean": "lerna run clean",
     "clean:component": "lerna run --scope selling-c-ui clean",
     "version": "lerna version",
