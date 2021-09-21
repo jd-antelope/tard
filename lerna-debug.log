@@ -1,0 +1,81 @@
+0 silly argv {
+0 silly argv   _: [ 'version' ],
+0 silly argv   'conventional-commits': true,
+0 silly argv   conventionalCommits: true,
+0 silly argv   lernaVersion: '4.0.0',
+0 silly argv   '$0': '/Users/chenyonghao9/Desktop/project/selling-component/node_modules/.bin/lerna'
+0 silly argv }
+1 notice cli v4.0.0
+2 verbose rootPath /Users/chenyonghao9/Desktop/project/selling-component
+3 info current version 1.4.0
+4 silly isAnythingCommitted
+5 verbose isAnythingCommitted 1
+6 silly getCurrentBranch
+7 verbose currentBranch test
+8 silly remoteBranchExists
+9 silly isBehindUpstream
+10 silly isBehindUpstream test is behind origin/test by 0 commit(s) and ahead by 19
+11 silly hasTags
+12 verbose hasTags true
+13 silly git-describe.sync "v1.4.0-1-g752c1c7" => {"lastTagName":"v1.4.0","lastVersion":"v1.4.0","refCount":"1","sha":"752c1c7","isDirty":false}
+14 info Looking for changed packages since v1.4.0
+15 silly checking diff packages/selling-c-ui
+16 silly found diff in packages/selling-c-ui/src/components/sl-upload/index.tsx
+17 verbose filtered diff [ 'packages/selling-c-ui/src/components/sl-upload/index.tsx' ]
+18 silly checking diff packages/selling-c-ui1
+19 silly no diff found in @jd/selling-c-ui1
+20 verbose updated @jd/selling-c-ui
+21 verbose git-describe undefined => "v1.4.0-1-g752c1c7"
+22 silly git-describe parsed => {"lastTagName":"v1.4.0","lastVersion":"v1.4.0","refCount":"1","sha":"752c1c7","isDirty":false}
+23 silly fixed for @jd/selling-c-ui at /Users/chenyonghao9/Desktop/project/selling-component/packages/selling-c-ui
+24 verbose getChangelogConfig using preset "conventional-changelog-angular"
+25 silly npa Result {
+25 silly npa   type: 'tag',
+25 silly npa   registry: true,
+25 silly npa   where: undefined,
+25 silly npa   raw: 'conventional-changelog-angular',
+25 silly npa   name: 'conventional-changelog-angular',
+25 silly npa   escapedName: 'conventional-changelog-angular',
+25 silly npa   scope: undefined,
+25 silly npa   rawSpec: '',
+25 silly npa   saveSpec: null,
+25 silly npa   fetchSpec: 'latest',
+25 silly npa   gitRange: undefined,
+25 silly npa   gitCommittish: undefined,
+25 silly npa   hosted: undefined
+25 silly npa }
+26 verbose getChangelogConfig Attempting to resolve preset "conventional-changelog-angular"
+27 info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
+28 verbose fixed increment 1.4.0 by patch
+29 info execute Skipping releases
+30 warn lifecycle Skipping root "preversion" because it has already been called
+31 silly lifecycle No script for "preversion" in "@jd/selling-c-ui", continuing
+32 silly lifecycle No script for "version" in "@jd/selling-c-ui", continuing
+33 silly fixed for @jd/selling-c-ui at /Users/chenyonghao9/Desktop/project/selling-component/packages/selling-c-ui
+34 silly fixed writing new entry: "## [1.4.1](https://coding.jd.com/selling-front/shop-c-components/compare/v1.4.0...v1.4.1) (2021-09-21)\n\n\n### Bug Fixes\n\n* ui ([752c1c7](https://coding.jd.com/selling-front/shop-c-components/commits/752c1c73c03cfe7b5a063da3e4c51e382aa4c157))\n\n\n\n"
+35 verbose fixed wrote /Users/chenyonghao9/Desktop/project/selling-component/packages/selling-c-ui/CHANGELOG.md
+36 silly root for selling-c-ui at /Users/chenyonghao9/Desktop/project/selling-component
+37 silly root writing new entry: "## [1.4.1](https://coding.jd.com/selling-front/shop-c-components/compare/v1.4.0...v1.4.1) (2021-09-21)\n\n\n### Bug Fixes\n\n* ui ([752c1c7](https://coding.jd.com/selling-front/shop-c-components/commits/752c1c73c03cfe7b5a063da3e4c51e382aa4c157))\n\n\n\n"
+38 verbose root wrote /Users/chenyonghao9/Desktop/project/selling-component/CHANGELOG.md
+39 warn lifecycle Skipping root "version" because it has already been called
+40 silly gitAdd [
+40 silly gitAdd   'packages/selling-c-ui/package.json',
+40 silly gitAdd   'packages/selling-c-ui/package-lock.json',
+40 silly gitAdd   'packages/selling-c-ui/CHANGELOG.md',
+40 silly gitAdd   'CHANGELOG.md',
+40 silly gitAdd   'lerna.json'
+40 silly gitAdd ]
+41 silly gitCommit v1.4.1
+42 verbose git [ 'commit', '-m', 'v1.4.1' ]
+43 silly gitTag v1.4.1
+44 verbose git [ 'tag', 'v1.4.1', '-m', 'v1.4.1' ]
+45 silly lifecycle No script for "postversion" in "@jd/selling-c-ui", continuing
+46 warn lifecycle Skipping root "postversion" because it has already been called
+47 info git Pushing tags...
+48 silly gitPush origin test
+49 error Error: Command failed with exit code 1: git push --follow-tags --no-verify --atomic origin test
+49 error fatal: 接收端不支持原子推送
+49 error fatal: 远端意外挂断了
+49 error error: 推送一些引用到 'https://coding.jd.com/selling-front/shop-c-components.git' 失败
+49 error     at makeError (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/execa/lib/error.js:60:11)
+49 error     at handlePromise (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/execa/index.js:118:26)
