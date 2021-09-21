@@ -3,7 +3,7 @@ import RollPostcss from 'rollup-plugin-postcss'
 import RollupJson from '@rollup/plugin-json'
 import RollupNodeResolve from '@rollup/plugin-node-resolve'
 import RollupCommonjs from '@rollup/plugin-commonjs'
-import RollupTypescript from 'rollup-plugin-typescript2'
+import RollupTypescript from './node_modules/rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
 import Package from '../package.json.js'
 
