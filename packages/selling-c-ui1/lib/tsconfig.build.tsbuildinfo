@@ -1,0 +1,2548 @@
+{
+  "program": {
+    "fileInfos": {
+      "../node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "70ae6416528e68c2ee7b62892200d2ca631759943d4429f8b779b947ff1e124d",
+        "signature": "70ae6416528e68c2ee7b62892200d2ca631759943d4429f8b779b947ff1e124d",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.d.ts": {
+        "version": "dc47c4fa66b9b9890cf076304de2a9c5201e94b740cffdf09f87296d877d71f6",
+        "signature": "dc47c4fa66b9b9890cf076304de2a9c5201e94b740cffdf09f87296d877d71f6",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/typescript/lib/lib.es2016.d.ts": {
+        "version": "7a387c58583dfca701b6c85e0adaf43fb17d590fb16d5b2dc0a2fbd89f35c467",
+        "signature": "7a387c58583dfca701b6c85e0adaf43fb17d590fb16d5b2dc0a2fbd89f35c467",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/typescript/lib/lib.es2017.d.ts": {
+        "version": "8a12173c586e95f4433e0c6dc446bc88346be73ffe9ca6eec7aa63c8f3dca7f9",
+        "signature": "8a12173c586e95f4433e0c6dc446bc88346be73ffe9ca6eec7aa63c8f3dca7f9",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/typescript/lib/lib.es2018.d.ts": {
+        "version": "5f4e733ced4e129482ae2186aae29fde948ab7182844c3a5a51dd346182c7b06",
+        "signature": "5f4e733ced4e129482ae2186aae29fde948ab7182844c3a5a51dd346182c7b06",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "9affb0a2ddc57df5b8174c0af96c288d697a262e5bc9ca1f544c999dc64a91e6",
+        "signature": "9affb0a2ddc57df5b8174c0af96c288d697a262e5bc9ca1f544c999dc64a91e6",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.dom.iterable.d.ts": {
+        "version": "fb0c09b697dc42afa84d1587e3c994a2f554d2a45635e4f0618768d16a86b69a",
+        "signature": "fb0c09b697dc42afa84d1587e3c994a2f554d2a45635e4f0618768d16a86b69a",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
+        "version": "7fac8cb5fc820bc2a59ae11ef1c5b38d3832c6d0dfaec5acdb5569137d09a481",
+        "signature": "7fac8cb5fc820bc2a59ae11ef1c5b38d3832c6d0dfaec5acdb5569137d09a481",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.scripthost.d.ts": {
+        "version": "097a57355ded99c68e6df1b738990448e0bf170e606707df5a7c0481ff2427cd",
+        "signature": "097a57355ded99c68e6df1b738990448e0bf170e606707df5a7c0481ff2427cd",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts": {
+        "version": "63e0cc12d0f77394094bd19e84464f9840af0071e5b9358ced30511efef1d8d2",
+        "signature": "63e0cc12d0f77394094bd19e84464f9840af0071e5b9358ced30511efef1d8d2",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts": {
+        "version": "43fb1d932e4966a39a41b464a12a81899d9ae5f2c829063f5571b6b87e6d2f9c",
+        "signature": "43fb1d932e4966a39a41b464a12a81899d9ae5f2c829063f5571b6b87e6d2f9c",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts": {
+        "version": "cdccba9a388c2ee3fd6ad4018c640a471a6c060e96f1232062223063b0a5ac6a",
+        "signature": "cdccba9a388c2ee3fd6ad4018c640a471a6c060e96f1232062223063b0a5ac6a",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
+        "version": "42f5e41e5893da663dbf0394268f54f1da4b43dc0ddd2ea4bf471fe5361d6faf",
+        "signature": "42f5e41e5893da663dbf0394268f54f1da4b43dc0ddd2ea4bf471fe5361d6faf",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts": {
+        "version": "0b7a905675e6cb4211c128f0a3aa47d414b275180a299a9aad5d3ec298abbfc4",
+        "signature": "0b7a905675e6cb4211c128f0a3aa47d414b275180a299a9aad5d3ec298abbfc4",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
+        "version": "dfff68b3c34338f6b307a25d4566de15eed7973b0dc5d69f9fde2bcac1c25315",
+        "signature": "dfff68b3c34338f6b307a25d4566de15eed7973b0dc5d69f9fde2bcac1c25315",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
+        "version": "cb609802a8698aa28b9c56331d4b53f590ca3c1c3a255350304ae3d06017779d",
+        "signature": "cb609802a8698aa28b9c56331d4b53f590ca3c1c3a255350304ae3d06017779d",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
+        "version": "3013574108c36fd3aaca79764002b3717da09725a36a6fc02eac386593110f93",
+        "signature": "3013574108c36fd3aaca79764002b3717da09725a36a6fc02eac386593110f93",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
+        "version": "4670208dd7da9d6c774ab1b75c1527a810388c7989c4905de6aaea8561cb9dce",
+        "signature": "4670208dd7da9d6c774ab1b75c1527a810388c7989c4905de6aaea8561cb9dce",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts": {
+        "version": "3be5a1453daa63e031d266bf342f3943603873d890ab8b9ada95e22389389006",
+        "signature": "3be5a1453daa63e031d266bf342f3943603873d890ab8b9ada95e22389389006",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts": {
+        "version": "17bb1fc99591b00515502d264fa55dc8370c45c5298f4a5c2083557dccba5a2a",
+        "signature": "17bb1fc99591b00515502d264fa55dc8370c45c5298f4a5c2083557dccba5a2a",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": {
+        "version": "d0db416bccdb33975548baf09a42ee8c47eace1aac7907351a000f1e568e7232",
+        "signature": "d0db416bccdb33975548baf09a42ee8c47eace1aac7907351a000f1e568e7232",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts": {
+        "version": "6a6b173e739a6a99629a8594bfb294cc7329bfb7b227f12e1f7c11bc163b8577",
+        "signature": "6a6b173e739a6a99629a8594bfb294cc7329bfb7b227f12e1f7c11bc163b8577",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts": {
+        "version": "12a310447c5d23c7d0d5ca2af606e3bd08afda69100166730ab92c62999ebb9d",
+        "signature": "12a310447c5d23c7d0d5ca2af606e3bd08afda69100166730ab92c62999ebb9d",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": {
+        "version": "b0124885ef82641903d232172577f2ceb5d3e60aed4da1153bab4221e1f6dd4e",
+        "signature": "b0124885ef82641903d232172577f2ceb5d3e60aed4da1153bab4221e1f6dd4e",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": {
+        "version": "0eb85d6c590b0d577919a79e0084fa1744c1beba6fd0d4e951432fa1ede5510a",
+        "signature": "0eb85d6c590b0d577919a79e0084fa1744c1beba6fd0d4e951432fa1ede5510a",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": {
+        "version": "a40c4d82bf13fcded295ac29f354eb7d40249613c15e07b53f2fc75e45e16359",
+        "signature": "a40c4d82bf13fcded295ac29f354eb7d40249613c15e07b53f2fc75e45e16359",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2018.intl.d.ts": {
+        "version": "df9c8a72ca8b0ed62f5470b41208a0587f0f73f0a7db28e5a1272cf92537518e",
+        "signature": "df9c8a72ca8b0ed62f5470b41208a0587f0f73f0a7db28e5a1272cf92537518e",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2018.promise.d.ts": {
+        "version": "bb2d3fb05a1d2ffbca947cc7cbc95d23e1d053d6595391bd325deb265a18d36c",
+        "signature": "bb2d3fb05a1d2ffbca947cc7cbc95d23e1d053d6595391bd325deb265a18d36c",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2018.regexp.d.ts": {
+        "version": "c80df75850fea5caa2afe43b9949338ce4e2de086f91713e9af1a06f973872b8",
+        "signature": "c80df75850fea5caa2afe43b9949338ce4e2de086f91713e9af1a06f973872b8",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2020.bigint.d.ts": {
+        "version": "4f435f794b7853c55e2ae7cff6206025802aa79232d2867544178f2ca8ff5eaa",
+        "signature": "4f435f794b7853c55e2ae7cff6206025802aa79232d2867544178f2ca8ff5eaa",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.esnext.intl.d.ts": {
+        "version": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
+        "signature": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/typescript/lib/lib.es2017.full.d.ts": {
+        "version": "d2f31f19e1ba6ed59be9259d660a239d9a3fcbbc8e038c6b2009bde34b175fed",
+        "signature": "d2f31f19e1ba6ed59be9259d660a239d9a3fcbbc8e038c6b2009bde34b175fed",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/react/global.d.ts": {
+        "version": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
+        "signature": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/csstype/index.d.ts": {
+        "version": "5b1d4ebd62d975c7d3826202f8fac290bac0bae6e04d9e84d1707d7047e108df",
+        "signature": "5b1d4ebd62d975c7d3826202f8fac290bac0bae6e04d9e84d1707d7047e108df",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/prop-types/index.d.ts": {
+        "version": "f7b46d22a307739c145e5fddf537818038fdfffd580d79ed717f4d4d37249380",
+        "signature": "f7b46d22a307739c145e5fddf537818038fdfffd580d79ed717f4d4d37249380",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/scheduler/tracing.d.ts": {
+        "version": "f5a8b384f182b3851cec3596ccc96cb7464f8d3469f48c74bf2befb782a19de5",
+        "signature": "f5a8b384f182b3851cec3596ccc96cb7464f8d3469f48c74bf2befb782a19de5",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/react/index.d.ts": {
+        "version": "ef92cfb8590d2d68d539312d111098fffa651ca129e2fbf917d62ffa35b88f34",
+        "signature": "ef92cfb8590d2d68d539312d111098fffa651ca129e2fbf917d62ffa35b88f34",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/components/types/common.d.ts": {
+        "version": "b54881d399f9af01e9bffbdc88619f5bc2a322bd282ef116fe9ae85400d70dd3",
+        "signature": "b54881d399f9af01e9bffbdc88619f5bc2a322bd282ef116fe9ae85400d70dd3",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/scrollview.d.ts": {
+        "version": "b97d30aed8df27fb59f4b341bf7e94686064bd052bdb1f036bdf96282616c7d2",
+        "signature": "b97d30aed8df27fb59f4b341bf7e94686064bd052bdb1f036bdf96282616c7d2",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/view.d.ts": {
+        "version": "481fac2a4f3dea4d50e2a1078f7c644d7d2b036bba7f99439f728897c06ddfe7",
+        "signature": "481fac2a4f3dea4d50e2a1078f7c644d7d2b036bba7f99439f728897c06ddfe7",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/block.d.ts": {
+        "version": "e1d50e1b6f8cb66f3458b54a5fdf1ecc66450279ff3c88af6157a228919db09c",
+        "signature": "e1d50e1b6f8cb66f3458b54a5fdf1ecc66450279ff3c88af6157a228919db09c",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/swiper.d.ts": {
+        "version": "cda4492bfa209bbeea4a4d3a528a7a645d0a57326afe47e1e8abb7a475e74e27",
+        "signature": "cda4492bfa209bbeea4a4d3a528a7a645d0a57326afe47e1e8abb7a475e74e27",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/swiperitem.d.ts": {
+        "version": "101c24a3f50a12cd5c245b856207cc54dc670c822190c1569149aa80802c0045",
+        "signature": "101c24a3f50a12cd5c245b856207cc54dc670c822190c1569149aa80802c0045",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/matchmedia.d.ts": {
+        "version": "f608907b062ac5289dad27fb8b25719defeac0b3f09d7d9634b0265bfadf1e56",
+        "signature": "f608907b062ac5289dad27fb8b25719defeac0b3f09d7d9634b0265bfadf1e56",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/movableview.d.ts": {
+        "version": "ffe226cede70f5d97489a4d132e456cd947748d97944172ccbffc5986ca6f3aa",
+        "signature": "ffe226cede70f5d97489a4d132e456cd947748d97944172ccbffc5986ca6f3aa",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/movablearea.d.ts": {
+        "version": "cb23355fb9819370613d76826e47b359585b0806db150213c685760f4a5d14c3",
+        "signature": "cb23355fb9819370613d76826e47b359585b0806db150213c685760f4a5d14c3",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/coverview.d.ts": {
+        "version": "79d05cd2aec06311ccd1eaaeddc7b32de3f9c921f451c44d76ff4dff6869e47e",
+        "signature": "79d05cd2aec06311ccd1eaaeddc7b32de3f9c921f451c44d76ff4dff6869e47e",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/coverimage.d.ts": {
+        "version": "b811a83e38191af3669239ab472554bcddfb344362b0324b206e02e90c3b01aa",
+        "signature": "b811a83e38191af3669239ab472554bcddfb344362b0324b206e02e90c3b01aa",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/icon.d.ts": {
+        "version": "3c0f44bb57c06c0d3fbcde60645bc123da5407bda40e43dfa4e77fee1d4f4a04",
+        "signature": "3c0f44bb57c06c0d3fbcde60645bc123da5407bda40e43dfa4e77fee1d4f4a04",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/text.d.ts": {
+        "version": "edf9ad5ba8ec55ecc888e40e7dcf9829b6094cd3904284d5822ff11c3143ef17",
+        "signature": "edf9ad5ba8ec55ecc888e40e7dcf9829b6094cd3904284d5822ff11c3143ef17",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/richtext.d.ts": {
+        "version": "1f296226da13ba673214bbbb8c054458bd5714f51beb490947a12467e32dbe17",
+        "signature": "1f296226da13ba673214bbbb8c054458bd5714f51beb490947a12467e32dbe17",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/progress.d.ts": {
+        "version": "c8acbc3d8a2cd18209aeee2e8f937a7ee25a709bf627a8d31eb7a231c89b4c03",
+        "signature": "c8acbc3d8a2cd18209aeee2e8f937a7ee25a709bf627a8d31eb7a231c89b4c03",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/button.d.ts": {
+        "version": "7a8084f0edeafa85d5baa6d65711f311d2b49cfc277a4159ea623478641603d8",
+        "signature": "7a8084f0edeafa85d5baa6d65711f311d2b49cfc277a4159ea623478641603d8",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/checkbox.d.ts": {
+        "version": "200f94c14c0373e04f3f99a482dec7d5fb083c8ccc05dcac932a1447f5efa4a1",
+        "signature": "200f94c14c0373e04f3f99a482dec7d5fb083c8ccc05dcac932a1447f5efa4a1",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/checkboxgroup.d.ts": {
+        "version": "43d2d20b57335f8d2208c0f48c942c8f728ed824e2a1ca183c6e79cdd6807954",
+        "signature": "43d2d20b57335f8d2208c0f48c942c8f728ed824e2a1ca183c6e79cdd6807954",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/editor.d.ts": {
+        "version": "4cfb9736337b9d7f61ae93796bee7aa397022ff80860bb4b30079b3700f5c901",
+        "signature": "4cfb9736337b9d7f61ae93796bee7aa397022ff80860bb4b30079b3700f5c901",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/form.d.ts": {
+        "version": "5be2c246b25830734e0e96669685db290c50ffa249323168584d994b4e97fe0c",
+        "signature": "5be2c246b25830734e0e96669685db290c50ffa249323168584d994b4e97fe0c",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/input.d.ts": {
+        "version": "e07a2497c9e6f8dd59baa442795311f0a7a691a9e30a90809d428c6df524a223",
+        "signature": "e07a2497c9e6f8dd59baa442795311f0a7a691a9e30a90809d428c6df524a223",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/label.d.ts": {
+        "version": "46d82903b960c0f244b78d707bc5b043f2e0ed48e2d4b8e21655aa9f90baab54",
+        "signature": "46d82903b960c0f244b78d707bc5b043f2e0ed48e2d4b8e21655aa9f90baab54",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/picker.d.ts": {
+        "version": "eaac256bde93e1816bd5c00c6586e39b93bd5c893895563991c108e29008fab7",
+        "signature": "eaac256bde93e1816bd5c00c6586e39b93bd5c893895563991c108e29008fab7",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/pickerview.d.ts": {
+        "version": "f74862a68d7e8da7bc433856c8fabd650dfa12dd8ab048c7f9c921d90f279f2b",
+        "signature": "f74862a68d7e8da7bc433856c8fabd650dfa12dd8ab048c7f9c921d90f279f2b",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/pickerviewcolumn.d.ts": {
+        "version": "6ee967272eefc721c6f8b461d0be86db0264380c6d8e63b5840d815616d59bb8",
+        "signature": "6ee967272eefc721c6f8b461d0be86db0264380c6d8e63b5840d815616d59bb8",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/radio.d.ts": {
+        "version": "bf60b9b5b33bcb3c5ee05ed4e3c78f3656a8d09fb830e7973eb63a242f739c51",
+        "signature": "bf60b9b5b33bcb3c5ee05ed4e3c78f3656a8d09fb830e7973eb63a242f739c51",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/radiogroup.d.ts": {
+        "version": "079845dcfd3ed5085791bd18185627835f5db809683a21120a4a811f2fd2795e",
+        "signature": "079845dcfd3ed5085791bd18185627835f5db809683a21120a4a811f2fd2795e",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/slider.d.ts": {
+        "version": "24a6a6d7d74fe1608a02a640607a5f459835170ac526b38413be1b96cb888d38",
+        "signature": "24a6a6d7d74fe1608a02a640607a5f459835170ac526b38413be1b96cb888d38",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/switch.d.ts": {
+        "version": "242c0bad79a54ba769d767f214f28d7234310abcca4e95e756dc90d4c44d9c2b",
+        "signature": "242c0bad79a54ba769d767f214f28d7234310abcca4e95e756dc90d4c44d9c2b",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/textarea.d.ts": {
+        "version": "30c68e3addb27c38b53db0481a02909624d0ca0da1f6a859278e1ea2693fff7e",
+        "signature": "30c68e3addb27c38b53db0481a02909624d0ca0da1f6a859278e1ea2693fff7e",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/image.d.ts": {
+        "version": "fb442d08c9f41bed0c32400cf324c1b28c6c7c1b0dbec623fb351394382ffaea",
+        "signature": "fb442d08c9f41bed0c32400cf324c1b28c6c7c1b0dbec623fb351394382ffaea",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/navigator.d.ts": {
+        "version": "560bf8548365567031cfd9ab72ff0fa8a15c1d128c7f17c1dab5f9369f41560b",
+        "signature": "560bf8548365567031cfd9ab72ff0fa8a15c1d128c7f17c1dab5f9369f41560b",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/camera.d.ts": {
+        "version": "f32740b381672bb4e8cce506d42ef6d82dade585fcb92544a305403111aef932",
+        "signature": "f32740b381672bb4e8cce506d42ef6d82dade585fcb92544a305403111aef932",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/canvas.d.ts": {
+        "version": "26aef00a1d0cd07ed9a1395fda98a1611917426fabb8bf29d5f4f035d563027f",
+        "signature": "26aef00a1d0cd07ed9a1395fda98a1611917426fabb8bf29d5f4f035d563027f",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/opendata.d.ts": {
+        "version": "6ba69fb06c4d4a2c6b5293815c1ed07cf2fd4bf8d96b7be542ecfd3b461ca8f4",
+        "signature": "6ba69fb06c4d4a2c6b5293815c1ed07cf2fd4bf8d96b7be542ecfd3b461ca8f4",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/video.d.ts": {
+        "version": "d61d9d655e7b56dfef4e5b526ac6470209a05e46654079e8dcee7a1793228dc0",
+        "signature": "d61d9d655e7b56dfef4e5b526ac6470209a05e46654079e8dcee7a1793228dc0",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/ad.d.ts": {
+        "version": "2598c4affc6084296514f8cd6af907c03ac1b0767f6120acd68b9d0292ee6864",
+        "signature": "2598c4affc6084296514f8cd6af907c03ac1b0767f6120acd68b9d0292ee6864",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/audio.d.ts": {
+        "version": "11fc9342a1230e0d096341f1fd0e42dbbe9bdc54e91c103abd4a895154c67ef3",
+        "signature": "11fc9342a1230e0d096341f1fd0e42dbbe9bdc54e91c103abd4a895154c67ef3",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/functionalpagenavigator.d.ts": {
+        "version": "e7fda3a695ca775b3632741d78b873664de7e11dcb0022a08ae960857d48ea08",
+        "signature": "e7fda3a695ca775b3632741d78b873664de7e11dcb0022a08ae960857d48ea08",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/liveplayer.d.ts": {
+        "version": "9c862005bd70a62100542d110b98b8cd2d5347012a841e96f76a2a61c3f428a6",
+        "signature": "9c862005bd70a62100542d110b98b8cd2d5347012a841e96f76a2a61c3f428a6",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/livepusher.d.ts": {
+        "version": "c82a0bf7d61657f0a66256119b8eb746d97a3923cb8cf06ad36e9ed90df5f7c4",
+        "signature": "c82a0bf7d61657f0a66256119b8eb746d97a3923cb8cf06ad36e9ed90df5f7c4",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/map.d.ts": {
+        "version": "b012333ee16d1b563082220bff1440b330a8c0a37e01ebd39f1eb805948b0655",
+        "signature": "b012333ee16d1b563082220bff1440b330a8c0a37e01ebd39f1eb805948b0655",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/webview.d.ts": {
+        "version": "fb8b610263abae20ec9914c6334c8c1b3729e543d80a1fdde38f2db421da0630",
+        "signature": "fb8b610263abae20ec9914c6334c8c1b3729e543d80a1fdde38f2db421da0630",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/officialaccount.d.ts": {
+        "version": "4b2fdf9ad965230cce604b5ad48042e4d07cd088a73d97cd818e5b01355733eb",
+        "signature": "4b2fdf9ad965230cce604b5ad48042e4d07cd088a73d97cd818e5b01355733eb",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/navigationbar.d.ts": {
+        "version": "284e3766dbe14034cf368e7f5a8cc8578d3a4b61b3598c48f2df8b8018ce88f4",
+        "signature": "284e3766dbe14034cf368e7f5a8cc8578d3a4b61b3598c48f2df8b8018ce88f4",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/pagemeta.d.ts": {
+        "version": "65113fb14f1192ac1e89946074d01f999040ee256ed41801d9d8d64c719caacf",
+        "signature": "65113fb14f1192ac1e89946074d01f999040ee256ed41801d9d8d64c719caacf",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/slot.d.ts": {
+        "version": "1ab8112c0754813b0c86c17ee1b236f477a7c506c0b03b25cedc274b93cae5cc",
+        "signature": "1ab8112c0754813b0c86c17ee1b236f477a7c506c0b03b25cedc274b93cae5cc",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/customwrapper.d.ts": {
+        "version": "501763922c55ed3be3d47a4ae84378dcf6a8bfb2c9fa0bfb41dc59504cca9b78",
+        "signature": "501763922c55ed3be3d47a4ae84378dcf6a8bfb2c9fa0bfb41dc59504cca9b78",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/event.d.ts": {
+        "version": "7a95a873d8b845746278d98f1beb68fa9d9168df9f1fc17b8303359e0a7ddfe2",
+        "signature": "7a95a873d8b845746278d98f1beb68fa9d9168df9f1fc17b8303359e0a7ddfe2",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/components/types/index.d.ts": {
+        "version": "b7093f7c54971f661a20924b5edb4fe2c71ebb2c90c11421ef1e5375a38a1117",
+        "signature": "b7093f7c54971f661a20924b5edb4fe2c71ebb2c90c11421ef1e5375a38a1117",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@tarojs/taro/types/taro.lifecycle.d.ts": {
+        "version": "c418bcadb4297b1f60582e639ce5cfaf53be9d094873f1406e96bcf11565311c",
+        "signature": "c418bcadb4297b1f60582e639ce5cfaf53be9d094873f1406e96bcf11565311c",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/taro.config.d.ts": {
+        "version": "b9f8eabf3a414489a13b05932f52e52d2e68b812895c42a8706311f8d0ed862c",
+        "signature": "b9f8eabf3a414489a13b05932f52e52d2e68b812895c42a8706311f8d0ed862c",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/taro.component.d.ts": {
+        "version": "f9fd9f9e7d8fc891ac93080bc92e55dafd0080a1a463e107c1ea8238f5a3b029",
+        "signature": "f9fd9f9e7d8fc891ac93080bc92e55dafd0080a1a463e107c1ea8238f5a3b029",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/taro.hooks.d.ts": {
+        "version": "9e3986ced92d5b1a6bf2fbdccb45a5c5d9cf5c78b784133bf90aff73cc209743",
+        "signature": "9e3986ced92d5b1a6bf2fbdccb45a5c5d9cf5c78b784133bf90aff73cc209743",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/network/request.d.ts": {
+        "version": "eb9859dbd20d63d6431e07e4c63d7e87ded8eb397060c86835b6066b77ff1281",
+        "signature": "eb9859dbd20d63d6431e07e4c63d7e87ded8eb397060c86835b6066b77ff1281",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/taro.extend.d.ts": {
+        "version": "95db39e326a5254ad639bb53cef7fc92236bbac110db82bf8236ff7c89fd5436",
+        "signature": "95db39e326a5254ad639bb53cef7fc92236bbac110db82bf8236ff7c89fd5436",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/index.d.ts": {
+        "version": "3db0530f9c154db86d5441b5a767dcc0363caf083cacd8a1251f8979ef228c3e",
+        "signature": "3db0530f9c154db86d5441b5a767dcc0363caf083cacd8a1251f8979ef228c3e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ad/index.d.ts": {
+        "version": "da2c609a0f9047822ba67b7a6de3684fed969aa40379be883c771cca3d91542e",
+        "signature": "da2c609a0f9047822ba67b7a6de3684fed969aa40379be883c771cca3d91542e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/base/index.d.ts": {
+        "version": "430e8318a0398fe731ed446d028f831571e300c1ff626c1c8fc947e69c2497a3",
+        "signature": "430e8318a0398fe731ed446d028f831571e300c1ff626c1c8fc947e69c2497a3",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/base/debug.d.ts": {
+        "version": "1b1f964423ac20269917f6a87ac5c10c3c8f2a94c43ce96d41026ae230d57c95",
+        "signature": "1b1f964423ac20269917f6a87ac5c10c3c8f2a94c43ce96d41026ae230d57c95",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/base/system.d.ts": {
+        "version": "c6ccc2a30b66fe4a7bd657647a772dfc26c1a0baa1c6871284b66f800553c626",
+        "signature": "c6ccc2a30b66fe4a7bd657647a772dfc26c1a0baa1c6871284b66f800553c626",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/base/update.d.ts": {
+        "version": "f0bc1d2de8543be516c7804e3bac2643e01e073ab9c494bebe65285dd547fe04",
+        "signature": "f0bc1d2de8543be516c7804e3bac2643e01e073ab9c494bebe65285dd547fe04",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/base/weapp/life-cycle.d.ts": {
+        "version": "4e5cd3e0141481215f2cff67200a624bbb0bdae155d79f019bcb44a3079e5ed8",
+        "signature": "4e5cd3e0141481215f2cff67200a624bbb0bdae155d79f019bcb44a3079e5ed8",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/base/weapp/app-event.d.ts": {
+        "version": "d46ae3039064978da1eaa9b34ff9e8d67e3823307fc0949cebd7eff6ae32cba6",
+        "signature": "d46ae3039064978da1eaa9b34ff9e8d67e3823307fc0949cebd7eff6ae32cba6",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/base/env.d.ts": {
+        "version": "97a8fdec7c9191020b22ff9d571d9798cca195e6b08733f173d36ae76c4443da",
+        "signature": "97a8fdec7c9191020b22ff9d571d9798cca195e6b08733f173d36ae76c4443da",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/canvas/index.d.ts": {
+        "version": "424d4ec7d055530f8ba9437feb7be679cdf544af9f1c99a52b55d76e83636a42",
+        "signature": "424d4ec7d055530f8ba9437feb7be679cdf544af9f1c99a52b55d76e83636a42",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/cloud/index.d.ts": {
+        "version": "7776a7c4e94c8f9dec8df1d01747aa58defdaeab3505157ab19f8f272abd42fa",
+        "signature": "7776a7c4e94c8f9dec8df1d01747aa58defdaeab3505157ab19f8f272abd42fa",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/accelerometer.d.ts": {
+        "version": "f52024a398c7e87c0d9ceda607574004c42d4f63101f936229e985c7daee9127",
+        "signature": "f52024a398c7e87c0d9ceda607574004c42d4f63101f936229e985c7daee9127",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/battery.d.ts": {
+        "version": "7b4fb02168845af95926a6e0168f73e4cce2e70f6c2cb076a5ab054a14fff02e",
+        "signature": "7b4fb02168845af95926a6e0168f73e4cce2e70f6c2cb076a5ab054a14fff02e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/ble.d.ts": {
+        "version": "8be9686d9440fe1d196065b66743a4007ed56f656f4cd1049d65ad342e57b950",
+        "signature": "8be9686d9440fe1d196065b66743a4007ed56f656f4cd1049d65ad342e57b950",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/bluetooth.d.ts": {
+        "version": "ba53d0b8ceadfee6d3ac875b4cf2794f83ee7a9926b8a77670618b5e39b69d98",
+        "signature": "ba53d0b8ceadfee6d3ac875b4cf2794f83ee7a9926b8a77670618b5e39b69d98",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/clipboard.d.ts": {
+        "version": "d95a7c2c2fec0ac51a059164298502d27a36129ecd1d0ceaf6ca5cc0e06eee39",
+        "signature": "d95a7c2c2fec0ac51a059164298502d27a36129ecd1d0ceaf6ca5cc0e06eee39",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/compass.d.ts": {
+        "version": "ea373a1abceadfa19583b2cc8ec5b2bdea92d13963803c1e2264df4aff1d234e",
+        "signature": "ea373a1abceadfa19583b2cc8ec5b2bdea92d13963803c1e2264df4aff1d234e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/contact.d.ts": {
+        "version": "56f2d9d3f6dcf50d24b23d60d8e3fadd3652fa56ef76d2ae15f1fabe224e652a",
+        "signature": "56f2d9d3f6dcf50d24b23d60d8e3fadd3652fa56ef76d2ae15f1fabe224e652a",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/gyroscope.d.ts": {
+        "version": "1a3dd19b6fc41ec4484dfc5b3de5f6d257053d4ac27a5555278c692393cf519e",
+        "signature": "1a3dd19b6fc41ec4484dfc5b3de5f6d257053d4ac27a5555278c692393cf519e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/ibeacon.d.ts": {
+        "version": "5a922e075aa5ddce3f0466e1f06f45952cf308a60fa0fbd4b180c696a63a1c9c",
+        "signature": "5a922e075aa5ddce3f0466e1f06f45952cf308a60fa0fbd4b180c696a63a1c9c",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/motion.d.ts": {
+        "version": "f11f27cc6dadb451ef6f3782d1a2c6239643306f57924457f03a01a93ec38ef7",
+        "signature": "f11f27cc6dadb451ef6f3782d1a2c6239643306f57924457f03a01a93ec38ef7",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/network.d.ts": {
+        "version": "ad2cf1d0c2c043739d395047d53401d48283ed6df663673af5e74fa710b60de4",
+        "signature": "ad2cf1d0c2c043739d395047d53401d48283ed6df663673af5e74fa710b60de4",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/nfc.d.ts": {
+        "version": "339bad2441872ce0ac58c56d42bc5e30f7f05c4968958aa2a6d74a366d85a418",
+        "signature": "339bad2441872ce0ac58c56d42bc5e30f7f05c4968958aa2a6d74a366d85a418",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/performance.d.ts": {
+        "version": "ad6bba675a8d67c865b7bbe74c0f99eb7049de14ad4ffc5f70471b206bad439b",
+        "signature": "ad6bba675a8d67c865b7bbe74c0f99eb7049de14ad4ffc5f70471b206bad439b",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/phone.d.ts": {
+        "version": "912d887d99304697ebb3ded0fabf3b394de6bad50598ea7a3a7a63e51f7390af",
+        "signature": "912d887d99304697ebb3ded0fabf3b394de6bad50598ea7a3a7a63e51f7390af",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/scan.d.ts": {
+        "version": "9424f993a07fb4b7c036189d852957c084b4dab8f5bf1097c0e3c580a1910186",
+        "signature": "9424f993a07fb4b7c036189d852957c084b4dab8f5bf1097c0e3c580a1910186",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/screen.d.ts": {
+        "version": "d8dbaa8f34bc61629a92160e76882371e80771bc097faeeea0fd66c063b791ed",
+        "signature": "d8dbaa8f34bc61629a92160e76882371e80771bc097faeeea0fd66c063b791ed",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/vibrate.d.ts": {
+        "version": "866ebc36594f8e49f90942833922f1b95cf62c10d277c3812037904e0f98d289",
+        "signature": "866ebc36594f8e49f90942833922f1b95cf62c10d277c3812037904e0f98d289",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/device/wifi.d.ts": {
+        "version": "2ce6dba5eac6211cf528a8c3480b2aa46a512032538b506b20bd0ce61b8456d4",
+        "signature": "2ce6dba5eac6211cf528a8c3480b2aa46a512032538b506b20bd0ce61b8456d4",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ext/index.d.ts": {
+        "version": "3cf796adf2725f08f2babc290ed562f15d3f379ad5b5f53dcf613fc9d76fa8f3",
+        "signature": "3cf796adf2725f08f2babc290ed562f15d3f379ad5b5f53dcf613fc9d76fa8f3",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/files/index.d.ts": {
+        "version": "a6da23066abbeaa484da5013d4bf5c23876ca242393254d44d3c7ec4f4a9efa0",
+        "signature": "a6da23066abbeaa484da5013d4bf5c23876ca242393254d44d3c7ec4f4a9efa0",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/framework/index.d.ts": {
+        "version": "45e9b95f593dae904f5a49ff62e47c496b46d5487c6ff1bb6145cefc319ead08",
+        "signature": "45e9b95f593dae904f5a49ff62e47c496b46d5487c6ff1bb6145cefc319ead08",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/location/index.d.ts": {
+        "version": "f1c9dff6c756cccc68883d566e68a92cf5091e6ef9250f1b9e87328b81d10056",
+        "signature": "f1c9dff6c756cccc68883d566e68a92cf5091e6ef9250f1b9e87328b81d10056",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/audio.d.ts": {
+        "version": "1c4aea40c7c50115b0306da6fa2d832770e35b464d0c46421a3f5f83c2ac1eb3",
+        "signature": "1c4aea40c7c50115b0306da6fa2d832770e35b464d0c46421a3f5f83c2ac1eb3",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/background-audio.d.ts": {
+        "version": "ac9c59ec38cba7782a5f6dfad9134e8c9cfc4cb77309c1051a1acf0ea5a948a3",
+        "signature": "ac9c59ec38cba7782a5f6dfad9134e8c9cfc4cb77309c1051a1acf0ea5a948a3",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/camera.d.ts": {
+        "version": "7e56b532c0c67156444558b27bc56399b78471b141c79247df636862772dc5e9",
+        "signature": "7e56b532c0c67156444558b27bc56399b78471b141c79247df636862772dc5e9",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/editor.d.ts": {
+        "version": "35bbb7659387daa80edbfa7e9b9882adb081b9fb45e23831f860c863319b5a9f",
+        "signature": "35bbb7659387daa80edbfa7e9b9882adb081b9fb45e23831f860c863319b5a9f",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/image.d.ts": {
+        "version": "a51203958dfea15642ea7c52ad122f6f34fbf8db0b9abe9103a56969a3fc946d",
+        "signature": "a51203958dfea15642ea7c52ad122f6f34fbf8db0b9abe9103a56969a3fc946d",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/live.d.ts": {
+        "version": "c0ac1aeef18cc91e67ec9411517c15fdfb87c2b7a258997772f70c26d008ad27",
+        "signature": "c0ac1aeef18cc91e67ec9411517c15fdfb87c2b7a258997772f70c26d008ad27",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/map.d.ts": {
+        "version": "7513e7f4d9add638468a4a8ac883616115b1ea2e53367557268b4a10056c94e1",
+        "signature": "7513e7f4d9add638468a4a8ac883616115b1ea2e53367557268b4a10056c94e1",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/recorder.d.ts": {
+        "version": "f27fef814706fa89fe34c698ecd5c9028543009fb1485702c8f2cd3754b7db21",
+        "signature": "f27fef814706fa89fe34c698ecd5c9028543009fb1485702c8f2cd3754b7db21",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/video.d.ts": {
+        "version": "616ea688124e0a070e6a3e575387472cffd68618119b7097513864160ea09c50",
+        "signature": "616ea688124e0a070e6a3e575387472cffd68618119b7097513864160ea09c50",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/media/video-processing.d.ts": {
+        "version": "a3b1dae02d73538a0e7e1d26eb760bc8e29cca371cd2c3010623b7dd6fe90a62",
+        "signature": "a3b1dae02d73538a0e7e1d26eb760bc8e29cca371cd2c3010623b7dd6fe90a62",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/network/download.d.ts": {
+        "version": "6c60ff1aa091f9d3d2bd922827922951cd8a82c2d5ea692926114e39a98dc28e",
+        "signature": "6c60ff1aa091f9d3d2bd922827922951cd8a82c2d5ea692926114e39a98dc28e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/network/mdns.d.ts": {
+        "version": "5fe4a9af14cf383141ba91889a495748dfdc233112e79b0719764d499819a89d",
+        "signature": "5fe4a9af14cf383141ba91889a495748dfdc233112e79b0719764d499819a89d",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/network/udp.d.ts": {
+        "version": "3621ee9504bb36c812aa723a37c7cc56b4d84536ab1316855d99e8854166c202",
+        "signature": "3621ee9504bb36c812aa723a37c7cc56b4d84536ab1316855d99e8854166c202",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/network/upload.d.ts": {
+        "version": "7cc337672fe3362558225ce0de37be2ff1426e142d7c46f35bcb2c16fe6cc9f2",
+        "signature": "7cc337672fe3362558225ce0de37be2ff1426e142d7c46f35bcb2c16fe6cc9f2",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/network/websocket.d.ts": {
+        "version": "86b7bf21f55dd35a30d2bbce444b4e3ea7d383a84e0ac4e1e32cc6bbff289d76",
+        "signature": "86b7bf21f55dd35a30d2bbce444b4e3ea7d383a84e0ac4e1e32cc6bbff289d76",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/account.d.ts": {
+        "version": "e1319d4035542b47ca4f59c552ab39f84294d23fd7df9d9608113a460596e3d1",
+        "signature": "e1319d4035542b47ca4f59c552ab39f84294d23fd7df9d9608113a460596e3d1",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/address.d.ts": {
+        "version": "162ced1d47299063e10e3316038c72be2fbae8528f9ee2e21a25d046680fe7b8",
+        "signature": "162ced1d47299063e10e3316038c72be2fbae8528f9ee2e21a25d046680fe7b8",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/authorize.d.ts": {
+        "version": "5dc79db8a4eec8bc2adebb4b4b5c897b649e2b5dc12d96ea7cac647e7b2792c3",
+        "signature": "5dc79db8a4eec8bc2adebb4b4b5c897b649e2b5dc12d96ea7cac647e7b2792c3",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/card.d.ts": {
+        "version": "c523d17289b127147f17b753cbd082efdf78c2eb56313ec6062e68f008c15a89",
+        "signature": "c523d17289b127147f17b753cbd082efdf78c2eb56313ec6062e68f008c15a89",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/data-analysis.d.ts": {
+        "version": "48e56bb2bea590657bc97f02e21c48e98778e2fdcf017f0df0f88b11cd5d2525",
+        "signature": "48e56bb2bea590657bc97f02e21c48e98778e2fdcf017f0df0f88b11cd5d2525",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/facial.d.ts": {
+        "version": "49a22c2e4f4d7b8c7290bb421bc8c51557bc4750381ba809d0d0fc537a75f7ba",
+        "signature": "49a22c2e4f4d7b8c7290bb421bc8c51557bc4750381ba809d0d0fc537a75f7ba",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/invoice.d.ts": {
+        "version": "e8a9b631dd4f49974ea9491660ceaa102482f3878130e40f5ae7b409325fb34e",
+        "signature": "e8a9b631dd4f49974ea9491660ceaa102482f3878130e40f5ae7b409325fb34e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/login.d.ts": {
+        "version": "fd06b5e98951fde925be2a205cf241cdfd58266cdef93a784de46514f2fe1eab",
+        "signature": "fd06b5e98951fde925be2a205cf241cdfd58266cdef93a784de46514f2fe1eab",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/navigate.d.ts": {
+        "version": "ac7b76c8cbe352c21de2b84af759312d707c0a5c64afef33ed49962ae5f71078",
+        "signature": "ac7b76c8cbe352c21de2b84af759312d707c0a5c64afef33ed49962ae5f71078",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/payment.d.ts": {
+        "version": "b9b7d42f75f1c435360e9e1e4b144e2800461ef06e6e3a11d2c207253cf7e9d8",
+        "signature": "b9b7d42f75f1c435360e9e1e4b144e2800461ef06e6e3a11d2c207253cf7e9d8",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/report.d.ts": {
+        "version": "c5403dc169f16cfa9b68d6b42f839cc8d8c2aa0eac74c91c73348974f8840c14",
+        "signature": "c5403dc169f16cfa9b68d6b42f839cc8d8c2aa0eac74c91c73348974f8840c14",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/settings.d.ts": {
+        "version": "3ded31dfa8e05d3e6c5fd3ffb9ec0b5823d0da510d5e6047436b93ac182bf81d",
+        "signature": "3ded31dfa8e05d3e6c5fd3ffb9ec0b5823d0da510d5e6047436b93ac182bf81d",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/soter.d.ts": {
+        "version": "bfc835e92d0e16080313a1f92ff4504508930260f854c7767e1c99fc16af6a4d",
+        "signature": "bfc835e92d0e16080313a1f92ff4504508930260f854c7767e1c99fc16af6a4d",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/subscribe-message.d.ts": {
+        "version": "488b2a42980536adf0e5f22eb92e45075f9a2811b48b1c69475577e404bfe6e5",
+        "signature": "488b2a42980536adf0e5f22eb92e45075f9a2811b48b1c69475577e404bfe6e5",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/user-info.d.ts": {
+        "version": "52c2a28a7bfed500c557225a22c20d0c0f19f923a1dde8fbc597f60a40d33d97",
+        "signature": "52c2a28a7bfed500c557225a22c20d0c0f19f923a1dde8fbc597f60a40d33d97",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/open-api/werun.d.ts": {
+        "version": "d63750151f539370be28833ab30e90a941ae32e1aa7f68a71fac76c06b8a9a60",
+        "signature": "d63750151f539370be28833ab30e90a941ae32e1aa7f68a71fac76c06b8a9a60",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/route/index.d.ts": {
+        "version": "123badc710d864f1239c09ba498c5a2bbda483262edeea4c3d70a7c4c3ae231e",
+        "signature": "123badc710d864f1239c09ba498c5a2bbda483262edeea4c3d70a7c4c3ae231e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/share/index.d.ts": {
+        "version": "70183b75e5bfb2781437e7cbda6203ead01829dd578b8aea4fb10f9c181ac8df",
+        "signature": "70183b75e5bfb2781437e7cbda6203ead01829dd578b8aea4fb10f9c181ac8df",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/storage/background-fetch.d.ts": {
+        "version": "e5b64c4de14b0c5b0ef184f7f5bee82a2ba39eba4dfb197958a797f1c11b6ef7",
+        "signature": "e5b64c4de14b0c5b0ef184f7f5bee82a2ba39eba4dfb197958a797f1c11b6ef7",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/storage/index.d.ts": {
+        "version": "dd0ea54a29647b2b659cc357ae15b6217119110e098b3ac39f9340c097d4f834",
+        "signature": "dd0ea54a29647b2b659cc357ae15b6217119110e098b3ac39f9340c097d4f834",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/animation.d.ts": {
+        "version": "f9a4786e27760bb1969ccea52901a37e7a72391ce49f5a38c27c921aa3f187a2",
+        "signature": "f9a4786e27760bb1969ccea52901a37e7a72391ce49f5a38c27c921aa3f187a2",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/background.d.ts": {
+        "version": "6c006251568a711e62f8138b4e315ce4516285fa8417a5f6e51a7625ca060b90",
+        "signature": "6c006251568a711e62f8138b4e315ce4516285fa8417a5f6e51a7625ca060b90",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/custom-component.d.ts": {
+        "version": "dddf76726e23c2259eeb3cda9cbc1f16195935f1b3594c9e8f9658c6dcb010ad",
+        "signature": "dddf76726e23c2259eeb3cda9cbc1f16195935f1b3594c9e8f9658c6dcb010ad",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/fonts.d.ts": {
+        "version": "38c22343d5b17473cc8fda037954cb4cc4524b7ded6f204e03b67e035645c08e",
+        "signature": "38c22343d5b17473cc8fda037954cb4cc4524b7ded6f204e03b67e035645c08e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/keyboard.d.ts": {
+        "version": "a2fc511690a62b74139f8e742a11185987ced912dcf15a5374b21e7d31593c44",
+        "signature": "a2fc511690a62b74139f8e742a11185987ced912dcf15a5374b21e7d31593c44",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/menu.d.ts": {
+        "version": "56a6cf1d76aee0571fb9a532f3cb14087a0c9ce35c9c49bbb0a8c69c11c22cd9",
+        "signature": "56a6cf1d76aee0571fb9a532f3cb14087a0c9ce35c9c49bbb0a8c69c11c22cd9",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/navigation-bar.d.ts": {
+        "version": "e2ac4bd3d315397fa6500485b29bd7dbc380ac275516fc76b66352985ebb381e",
+        "signature": "e2ac4bd3d315397fa6500485b29bd7dbc380ac275516fc76b66352985ebb381e",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/pull-down-refresh.d.ts": {
+        "version": "e10558be53a0803129aa2dc7ea4eecda3e00ca5fd17e7fe1e768f4db4581c700",
+        "signature": "e10558be53a0803129aa2dc7ea4eecda3e00ca5fd17e7fe1e768f4db4581c700",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/scroll.d.ts": {
+        "version": "a98555403484aa6b2622b673f10adcb61a08c729f9616d1e67fa2930d59657c7",
+        "signature": "a98555403484aa6b2622b673f10adcb61a08c729f9616d1e67fa2930d59657c7",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/sticky.d.ts": {
+        "version": "8cff60dcd515b0ddbffebd736514c5c8d06a0464d5beea02722472f01fa57583",
+        "signature": "8cff60dcd515b0ddbffebd736514c5c8d06a0464d5beea02722472f01fa57583",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/tab-bar.d.ts": {
+        "version": "272329941f2f574075f420d31bda8d12c6590818cf1795f095308c11bc7d9f25",
+        "signature": "272329941f2f574075f420d31bda8d12c6590818cf1795f095308c11bc7d9f25",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/window.d.ts": {
+        "version": "26ed84b754f2f2c3daf4785c7cfbc9e6b8bb4be1bb440a0928f0086ea333247f",
+        "signature": "26ed84b754f2f2c3daf4785c7cfbc9e6b8bb4be1bb440a0928f0086ea333247f",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/ui/interaction.d.ts": {
+        "version": "94c5f3f77274f218a3af91808c6cdb653fa9c3b3beb64576605520cadace8d2d",
+        "signature": "94c5f3f77274f218a3af91808c6cdb653fa9c3b3beb64576605520cadace8d2d",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/worker/index.d.ts": {
+        "version": "74a6cd38490762b5dd3a98466d9ac29cad6c313390c5c9c91d623e2f10465c39",
+        "signature": "74a6cd38490762b5dd3a98466d9ac29cad6c313390c5c9c91d623e2f10465c39",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/wxml/index.d.ts": {
+        "version": "f7fa264e6ff64c782eb3e418ee6a20b958aaf6bcb7287056fe8d43eeb33cce8a",
+        "signature": "f7fa264e6ff64c782eb3e418ee6a20b958aaf6bcb7287056fe8d43eeb33cce8a",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/alipay/index.d.ts": {
+        "version": "e2b8afba8815b9c5f692f6021fda1eec15a8797f17fe7bf9879862f1823e4035",
+        "signature": "e2b8afba8815b9c5f692f6021fda1eec15a8797f17fe7bf9879862f1823e4035",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/api/swan/index.d.ts": {
+        "version": "10137f43429fe2aa7399405f7129edb88778daae71df76845f42be09d4dd7e70",
+        "signature": "10137f43429fe2aa7399405f7129edb88778daae71df76845f42be09d4dd7e70",
+        "affectsGlobalScope": true
+      },
+      "../../../node_modules/@tarojs/taro/types/index.d.ts": {
+        "version": "10eb3d513617f4106964e50683ae5c4e88c115f13e39d653051c455cca680734",
+        "signature": "10eb3d513617f4106964e50683ae5c4e88c115f13e39d653051c455cca680734",
+        "affectsGlobalScope": false
+      },
+      "../src/components/sl-loading/index.tsx": {
+        "version": "3592ea5480f49c9c2dbe7cc65108ce392cd43a5b2af5163e32f8214ee38e8571",
+        "signature": "866a4cda3e0330f6323383d90e4ec75905d7dd5ecc6c3427d8c9eff940f0f594",
+        "affectsGlobalScope": false
+      },
+      "../src/index.ts": {
+        "version": "ed22bdf717ce9757d14a74d82ad5fed974e2ec90deba3e0de79984109cf80b07",
+        "signature": "0e25085541b5aad245cbb3ff89a2e997b4ca708fa991008954408e8ad92788d4",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/globals.d.ts": {
+        "version": "c98a21476edf4bb50ee872b492e70f3a9c407778e276555ea0ee006983f350a8",
+        "signature": "c98a21476edf4bb50ee872b492e70f3a9c407778e276555ea0ee006983f350a8",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/@types/node/async_hooks.d.ts": {
+        "version": "726b22a7926e82a6013c11f8de5dfd6ddfb4b830693fa43ac391d2d69a3ad814",
+        "signature": "726b22a7926e82a6013c11f8de5dfd6ddfb4b830693fa43ac391d2d69a3ad814",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/buffer.d.ts": {
+        "version": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878",
+        "signature": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/child_process.d.ts": {
+        "version": "4812adce4c4e9b4a29f1458737a7e8110cbed3864b94ae8ac975f6d6fbaf7f46",
+        "signature": "4812adce4c4e9b4a29f1458737a7e8110cbed3864b94ae8ac975f6d6fbaf7f46",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/cluster.d.ts": {
+        "version": "123ec69e4b3a686eb49afd94ebe3292a5c84a867ecbcb6bb84bdd720a12af803",
+        "signature": "123ec69e4b3a686eb49afd94ebe3292a5c84a867ecbcb6bb84bdd720a12af803",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/console.d.ts": {
+        "version": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d",
+        "signature": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/constants.d.ts": {
+        "version": "90c85ddbb8de82cd19198bda062065fc51b7407c0f206f2e399e65a52e979720",
+        "signature": "90c85ddbb8de82cd19198bda062065fc51b7407c0f206f2e399e65a52e979720",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/crypto.d.ts": {
+        "version": "33b9bbb39aef6bb880f6abd5e378b0a30f197f1dc1ad37297d62297ea0fead10",
+        "signature": "33b9bbb39aef6bb880f6abd5e378b0a30f197f1dc1ad37297d62297ea0fead10",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/dgram.d.ts": {
+        "version": "7e050b767ed10c7ffbc01f314defbf420bf0b5d54ce666e1c87507c035dfc191",
+        "signature": "7e050b767ed10c7ffbc01f314defbf420bf0b5d54ce666e1c87507c035dfc191",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/dns.d.ts": {
+        "version": "aad3237c3f99480041cad7ca04d64307c98933996f822342b7c0ee4a78553346",
+        "signature": "aad3237c3f99480041cad7ca04d64307c98933996f822342b7c0ee4a78553346",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/domain.d.ts": {
+        "version": "baeda1fadac9fd31920480b85340ab9c4266a25ad08403dee8e15fd0751101fb",
+        "signature": "baeda1fadac9fd31920480b85340ab9c4266a25ad08403dee8e15fd0751101fb",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/events.d.ts": {
+        "version": "191c77646c22d3bd17c14c1d9dcc933b8bb133fdbdd42ec122dfeadf2ace8fb8",
+        "signature": "191c77646c22d3bd17c14c1d9dcc933b8bb133fdbdd42ec122dfeadf2ace8fb8",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/fs.d.ts": {
+        "version": "a6d8bae9447b5b4eedd25570e05c522928dd25dcafaf5458f4d1973ed44fa6e4",
+        "signature": "a6d8bae9447b5b4eedd25570e05c522928dd25dcafaf5458f4d1973ed44fa6e4",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/http.d.ts": {
+        "version": "67bacfb62a1a36d2000a407ff53f21fe621224315db0c65c709b24da4337513f",
+        "signature": "67bacfb62a1a36d2000a407ff53f21fe621224315db0c65c709b24da4337513f",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/http2.d.ts": {
+        "version": "48b3008f88017e25fb1c24897c5bb84be9e3526fbe4d688efc83eb98c3a532a3",
+        "signature": "48b3008f88017e25fb1c24897c5bb84be9e3526fbe4d688efc83eb98c3a532a3",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/https.d.ts": {
+        "version": "c969bf4c7cdfe4d5dd28aa09432f99d09ad1d8d8b839959646579521d0467d1a",
+        "signature": "c969bf4c7cdfe4d5dd28aa09432f99d09ad1d8d8b839959646579521d0467d1a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/inspector.d.ts": {
+        "version": "4218ced3933a31eed1278d350dd63c5900df0f0904f57d61c054d7a4b83dbe4c",
+        "signature": "4218ced3933a31eed1278d350dd63c5900df0f0904f57d61c054d7a4b83dbe4c",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/module.d.ts": {
+        "version": "a376e245f494b58365a4391a2568e6dd9da372c3453f4732eb6e15ebb9038451",
+        "signature": "a376e245f494b58365a4391a2568e6dd9da372c3453f4732eb6e15ebb9038451",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/net.d.ts": {
+        "version": "ffe8912b7c45288810c870b768190c6c097459930a587dd6ef0d900a5529a811",
+        "signature": "ffe8912b7c45288810c870b768190c6c097459930a587dd6ef0d900a5529a811",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/os.d.ts": {
+        "version": "f53678bdb9f25445c8cdf021f2b003b74fd638e69bb1959dde8e370e8cc1e4fa",
+        "signature": "f53678bdb9f25445c8cdf021f2b003b74fd638e69bb1959dde8e370e8cc1e4fa",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/path.d.ts": {
+        "version": "84044697c8b3e08ef24e4b32cfe6440143d07e469a5e34bda0635276d32d9f35",
+        "signature": "84044697c8b3e08ef24e4b32cfe6440143d07e469a5e34bda0635276d32d9f35",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/perf_hooks.d.ts": {
+        "version": "d6f0afa6352c2b3cb585402ef0acf5daf9adf7090a60d7d2912f52b1ce1d86fd",
+        "signature": "d6f0afa6352c2b3cb585402ef0acf5daf9adf7090a60d7d2912f52b1ce1d86fd",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/process.d.ts": {
+        "version": "0e0d58f5e90c0a270dac052b9c5ad8ccdfc8271118c2105b361063218d528d6e",
+        "signature": "0e0d58f5e90c0a270dac052b9c5ad8ccdfc8271118c2105b361063218d528d6e",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/@types/node/punycode.d.ts": {
+        "version": "3f6a1fd73c9dc3bd7f4b79bc075297ca6527904df69b0f2c2c94e4c4c7d9a32c",
+        "signature": "3f6a1fd73c9dc3bd7f4b79bc075297ca6527904df69b0f2c2c94e4c4c7d9a32c",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/querystring.d.ts": {
+        "version": "9f633ecf3e065ff82c19eccab35c8aa1d6d5d1a49af282dc29ef5a64cca34164",
+        "signature": "9f633ecf3e065ff82c19eccab35c8aa1d6d5d1a49af282dc29ef5a64cca34164",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/readline.d.ts": {
+        "version": "6b2bb67b0942bcfce93e1d6fad5f70afd54940a2b13df7f311201fba54b2cbe9",
+        "signature": "6b2bb67b0942bcfce93e1d6fad5f70afd54940a2b13df7f311201fba54b2cbe9",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/repl.d.ts": {
+        "version": "a7b1725842348a2dece056c2183c668da763e1ce693bd32351ee3e21c99903b9",
+        "signature": "a7b1725842348a2dece056c2183c668da763e1ce693bd32351ee3e21c99903b9",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/stream.d.ts": {
+        "version": "c4ce43b3b7c32abcd80c9cb29940f32811c78a8c40a210a7165ed99ad9008f29",
+        "signature": "c4ce43b3b7c32abcd80c9cb29940f32811c78a8c40a210a7165ed99ad9008f29",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/string_decoder.d.ts": {
+        "version": "7e62aac2cc9c0710d772047ad89e8d7117f52592c791eb995ce1f865fedab432",
+        "signature": "7e62aac2cc9c0710d772047ad89e8d7117f52592c791eb995ce1f865fedab432",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/timers.d.ts": {
+        "version": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9",
+        "signature": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/tls.d.ts": {
+        "version": "ff17638b6a2b877521f22ff0d96c9f30c8955c935f8c9adf7b67117b6f94833a",
+        "signature": "ff17638b6a2b877521f22ff0d96c9f30c8955c935f8c9adf7b67117b6f94833a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/trace_events.d.ts": {
+        "version": "a77fdb357c78b70142b2fdbbfb72958d69e8f765fd2a3c69946c1018e89d4638",
+        "signature": "a77fdb357c78b70142b2fdbbfb72958d69e8f765fd2a3c69946c1018e89d4638",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/tty.d.ts": {
+        "version": "3c2ac350c3baa61fd2b1925844109e098f4376d0768a4643abc82754fd752748",
+        "signature": "3c2ac350c3baa61fd2b1925844109e098f4376d0768a4643abc82754fd752748",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/url.d.ts": {
+        "version": "4001971b90f18161f7bd46d68150d32a5da47e3f177956a267a2b29a2771896a",
+        "signature": "4001971b90f18161f7bd46d68150d32a5da47e3f177956a267a2b29a2771896a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/util.d.ts": {
+        "version": "a0da0fcec2992a88e61efe6f41decf221dd8cefbb93a9bcd3a220f31375d0e61",
+        "signature": "a0da0fcec2992a88e61efe6f41decf221dd8cefbb93a9bcd3a220f31375d0e61",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/v8.d.ts": {
+        "version": "289be113bad7ee27ee7fa5b1e373c964c9789a5e9ed7db5ddcb631371120b953",
+        "signature": "289be113bad7ee27ee7fa5b1e373c964c9789a5e9ed7db5ddcb631371120b953",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/vm.d.ts": {
+        "version": "cb18c8bcbfdc551de1258885770cca8c87741fc7a9cfacb53f728b2ceee0a5d5",
+        "signature": "cb18c8bcbfdc551de1258885770cca8c87741fc7a9cfacb53f728b2ceee0a5d5",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/worker_threads.d.ts": {
+        "version": "da33f527710ad7710f3ead36cf024e89f2ee82c861858cb60ee84817281917c1",
+        "signature": "da33f527710ad7710f3ead36cf024e89f2ee82c861858cb60ee84817281917c1",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/zlib.d.ts": {
+        "version": "2c98df0705574220bba64468a18762be95635c1da215b1bf6454c421c1dac987",
+        "signature": "2c98df0705574220bba64468a18762be95635c1da215b1bf6454c421c1dac987",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/globals.global.d.ts": {
+        "version": "2708349d5a11a5c2e5f3a0765259ebe7ee00cdcc8161cb9990cb4910328442a1",
+        "signature": "2708349d5a11a5c2e5f3a0765259ebe7ee00cdcc8161cb9990cb4910328442a1",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/@types/node/wasi.d.ts": {
+        "version": "14a6a3cee450438254c004a6b4f1191ec9977186bdeda07764f2a8d90ef71117",
+        "signature": "14a6a3cee450438254c004a6b4f1191ec9977186bdeda07764f2a8d90ef71117",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/ts3.6/base.d.ts": {
+        "version": "e9e43485d935d3550efb41b5be0aaabb7cbe6b0f337c3d6d9df2eb6564c498a7",
+        "signature": "e9e43485d935d3550efb41b5be0aaabb7cbe6b0f337c3d6d9df2eb6564c498a7",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/assert.d.ts": {
+        "version": "d86cdb140a3a4fab04c776d3894cef9b2d0e9e42ea38c11ec7c79d2a4245c9ce",
+        "signature": "d86cdb140a3a4fab04c776d3894cef9b2d0e9e42ea38c11ec7c79d2a4245c9ce",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/base.d.ts": {
+        "version": "e61a21e9418f279bc480394a94d1581b2dee73747adcbdef999b6737e34d721b",
+        "signature": "e61a21e9418f279bc480394a94d1581b2dee73747adcbdef999b6737e34d721b",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/index.d.ts": {
+        "version": "ef631a14611e5f3697f79d9222634131112a998aa0ad0e85b77aaf45b9ca04ab",
+        "signature": "ef631a14611e5f3697f79d9222634131112a998aa0ad0e85b77aaf45b9ca04ab",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/estree/index.d.ts": {
+        "version": "7d7c8ef7d48a035142c07dae60545ecc0e4af4c337742760cb09726f2f8e31db",
+        "signature": "7d7c8ef7d48a035142c07dae60545ecc0e4af4c337742760cb09726f2f8e31db",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/fs-extra/index.d.ts": {
+        "version": "6de408de17cb0e3fa3a5e3d0f79bd104848d98dbfa72e92fddfa1a4aa3d8393c",
+        "signature": "6de408de17cb0e3fa3a5e3d0f79bd104848d98dbfa72e92fddfa1a4aa3d8393c",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/minimatch/index.d.ts": {
+        "version": "8841e2aa774b89bd23302dede20663306dc1b9902431ac64b24be8b8d0e3f649",
+        "signature": "8841e2aa774b89bd23302dede20663306dc1b9902431ac64b24be8b8d0e3f649",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/glob/index.d.ts": {
+        "version": "725b884357ba84171341a8e4cc08edf11417854fd069842ca6d22afb2e340e45",
+        "signature": "725b884357ba84171341a8e4cc08edf11417854fd069842ca6d22afb2e340e45",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/json-schema/index.d.ts": {
+        "version": "0359682c54e487c4cab2b53b2b4d35cc8dea4d9914bc6abcdb5701f8b8e745a4",
+        "signature": "0359682c54e487c4cab2b53b2b4d35cc8dea4d9914bc6abcdb5701f8b8e745a4",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/json5/index.d.ts": {
+        "version": "96d14f21b7652903852eef49379d04dbda28c16ed36468f8c9fa08f7c14c9538",
+        "signature": "96d14f21b7652903852eef49379d04dbda28c16ed36468f8c9fa08f7c14c9538",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/unist/index.d.ts": {
+        "version": "cddf5c26907c0b8378bc05543161c11637b830da9fadf59e02a11e675d11e180",
+        "signature": "cddf5c26907c0b8378bc05543161c11637b830da9fadf59e02a11e675d11e180",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/mdast/index.d.ts": {
+        "version": "2a2e2c6463bcf3c59f31bc9ab4b6ef963bbf7dffb049cd017e2c1834e3adca63",
+        "signature": "2a2e2c6463bcf3c59f31bc9ab4b6ef963bbf7dffb049cd017e2c1834e3adca63",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/minimist/index.d.ts": {
+        "version": "209e814e8e71aec74f69686a9506dd7610b97ab59dcee9446266446f72a76d05",
+        "signature": "209e814e8e71aec74f69686a9506dd7610b97ab59dcee9446266446f72a76d05",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/normalize-package-data/index.d.ts": {
+        "version": "6fa0008bf91a4cc9c8963bace4bba0bd6865cbfa29c3e3ccc461155660fb113a",
+        "signature": "6fa0008bf91a4cc9c8963bace4bba0bd6865cbfa29c3e3ccc461155660fb113a",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/parse-json/index.d.ts": {
+        "version": "2b8264b2fefd7367e0f20e2c04eed5d3038831fe00f5efbc110ff0131aab899b",
+        "signature": "2b8264b2fefd7367e0f20e2c04eed5d3038831fe00f5efbc110ff0131aab899b",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/react-dom/index.d.ts": {
+        "version": "c45d6f4d3a20be54e46237608f537a8d85397f87b9c3318d68ed925c2f1d0b51",
+        "signature": "c45d6f4d3a20be54e46237608f537a8d85397f87b9c3318d68ed925c2f1d0b51",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/resolve/index.d.ts": {
+        "version": "2880728492d6a6baa55411d14cc42fa55714a24b1d1d27ff9a8a610abd47c761",
+        "signature": "2880728492d6a6baa55411d14cc42fa55714a24b1d1d27ff9a8a610abd47c761",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@types/scheduler/index.d.ts": {
+        "version": "74b0245c42990ed8a849df955db3f4362c81b13f799ebc981b7bec2d5b414a57",
+        "signature": "74b0245c42990ed8a849df955db3f4362c81b13f799ebc981b7bec2d5b414a57",
+        "affectsGlobalScope": false
+      }
+    },
+    "options": {
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "jsx": 2,
+      "jsxFactory": "React.createElement",
+      "moduleResolution": 2,
+      "noImplicitAny": false,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "preserveConstEnums": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "strictNullChecks": true,
+      "resolveJsonModule": true,
+      "target": 4,
+      "module": 5,
+      "outDir": "./",
+      "project": "../config/tsconfig.build.json",
+      "watch": true,
+      "incremental": true,
+      "configFilePath": "../config/tsconfig.build.json"
+    },
+    "referencedMap": {
+      "../../../node_modules/@tarojs/components/types/ad.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/audio.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/block.d.ts": [
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/button.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/camera.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/canvas.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/checkbox.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/checkboxgroup.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/common.d.ts": [
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/coverimage.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/coverview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/view.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/customwrapper.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/editor.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/form.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/functionalpagenavigator.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/icon.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/image.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/index.d.ts": [
+        "../../../node_modules/@tarojs/components/types/ad.d.ts",
+        "../../../node_modules/@tarojs/components/types/audio.d.ts",
+        "../../../node_modules/@tarojs/components/types/block.d.ts",
+        "../../../node_modules/@tarojs/components/types/button.d.ts",
+        "../../../node_modules/@tarojs/components/types/camera.d.ts",
+        "../../../node_modules/@tarojs/components/types/canvas.d.ts",
+        "../../../node_modules/@tarojs/components/types/checkbox.d.ts",
+        "../../../node_modules/@tarojs/components/types/checkboxgroup.d.ts",
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@tarojs/components/types/coverimage.d.ts",
+        "../../../node_modules/@tarojs/components/types/coverview.d.ts",
+        "../../../node_modules/@tarojs/components/types/customwrapper.d.ts",
+        "../../../node_modules/@tarojs/components/types/editor.d.ts",
+        "../../../node_modules/@tarojs/components/types/event.d.ts",
+        "../../../node_modules/@tarojs/components/types/form.d.ts",
+        "../../../node_modules/@tarojs/components/types/functionalpagenavigator.d.ts",
+        "../../../node_modules/@tarojs/components/types/icon.d.ts",
+        "../../../node_modules/@tarojs/components/types/image.d.ts",
+        "../../../node_modules/@tarojs/components/types/input.d.ts",
+        "../../../node_modules/@tarojs/components/types/label.d.ts",
+        "../../../node_modules/@tarojs/components/types/liveplayer.d.ts",
+        "../../../node_modules/@tarojs/components/types/livepusher.d.ts",
+        "../../../node_modules/@tarojs/components/types/map.d.ts",
+        "../../../node_modules/@tarojs/components/types/matchmedia.d.ts",
+        "../../../node_modules/@tarojs/components/types/movablearea.d.ts",
+        "../../../node_modules/@tarojs/components/types/movableview.d.ts",
+        "../../../node_modules/@tarojs/components/types/navigationbar.d.ts",
+        "../../../node_modules/@tarojs/components/types/navigator.d.ts",
+        "../../../node_modules/@tarojs/components/types/officialaccount.d.ts",
+        "../../../node_modules/@tarojs/components/types/opendata.d.ts",
+        "../../../node_modules/@tarojs/components/types/pagemeta.d.ts",
+        "../../../node_modules/@tarojs/components/types/picker.d.ts",
+        "../../../node_modules/@tarojs/components/types/pickerview.d.ts",
+        "../../../node_modules/@tarojs/components/types/pickerviewcolumn.d.ts",
+        "../../../node_modules/@tarojs/components/types/progress.d.ts",
+        "../../../node_modules/@tarojs/components/types/radio.d.ts",
+        "../../../node_modules/@tarojs/components/types/radiogroup.d.ts",
+        "../../../node_modules/@tarojs/components/types/richtext.d.ts",
+        "../../../node_modules/@tarojs/components/types/scrollview.d.ts",
+        "../../../node_modules/@tarojs/components/types/slider.d.ts",
+        "../../../node_modules/@tarojs/components/types/slot.d.ts",
+        "../../../node_modules/@tarojs/components/types/swiper.d.ts",
+        "../../../node_modules/@tarojs/components/types/swiperitem.d.ts",
+        "../../../node_modules/@tarojs/components/types/switch.d.ts",
+        "../../../node_modules/@tarojs/components/types/text.d.ts",
+        "../../../node_modules/@tarojs/components/types/textarea.d.ts",
+        "../../../node_modules/@tarojs/components/types/video.d.ts",
+        "../../../node_modules/@tarojs/components/types/view.d.ts",
+        "../../../node_modules/@tarojs/components/types/webview.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/input.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/label.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/liveplayer.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/livepusher.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/map.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/matchmedia.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/movablearea.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/movableview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/navigationbar.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/navigator.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/officialaccount.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/opendata.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/pagemeta.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/picker.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/pickerview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/pickerviewcolumn.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/progress.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/radio.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/radiogroup.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/richtext.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/scrollview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/slider.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/slot.d.ts": [
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/swiper.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/swiperitem.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/switch.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/text.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/textarea.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/video.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/view.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/webview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/taro/types/index.d.ts": [
+        "../../../node_modules/@tarojs/taro/types/api/ad/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/alipay/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/debug.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/env.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/system.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/update.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/weapp/app-event.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/weapp/life-cycle.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/canvas/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/cloud/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/accelerometer.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/battery.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/ble.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/bluetooth.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/clipboard.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/compass.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/contact.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/gyroscope.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/ibeacon.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/motion.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/network.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/nfc.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/performance.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/phone.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/scan.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/screen.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/vibrate.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/wifi.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ext/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/files/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/framework/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/location/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/audio.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/background-audio.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/camera.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/editor.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/image.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/live.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/map.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/recorder.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/video-processing.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/video.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/download.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/mdns.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/request.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/udp.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/upload.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/websocket.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/account.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/address.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/authorize.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/card.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/data-analysis.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/facial.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/invoice.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/login.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/navigate.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/payment.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/report.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/settings.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/soter.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/subscribe-message.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/user-info.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/werun.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/route/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/share/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/storage/background-fetch.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/storage/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/swan/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/animation.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/background.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/custom-component.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/fonts.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/interaction.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/keyboard.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/menu.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/navigation-bar.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/pull-down-refresh.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/scroll.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/sticky.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/tab-bar.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/window.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/worker/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/wxml/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.component.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.config.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.extend.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.hooks.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.lifecycle.d.ts"
+      ],
+      "../../../node_modules/@tarojs/taro/types/taro.component.d.ts": [
+        "../../../node_modules/@tarojs/taro/types/taro.config.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.lifecycle.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/taro/types/taro.extend.d.ts": [
+        "../../../node_modules/@tarojs/taro/types/api/network/request.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.component.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/taro/types/taro.hooks.d.ts": [
+        "../../../node_modules/@tarojs/taro/types/taro.component.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.lifecycle.d.ts"
+      ],
+      "../../../node_modules/@types/fs-extra/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../../../node_modules/@types/glob/index.d.ts": [
+        "../../../node_modules/@types/minimatch/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../../../node_modules/@types/mdast/index.d.ts": [
+        "../../../node_modules/@types/unist/index.d.ts"
+      ],
+      "../../../node_modules/@types/react-dom/index.d.ts": [
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@types/react/index.d.ts": [
+        "../../../node_modules/@types/prop-types/index.d.ts",
+        "../../../node_modules/@types/react/global.d.ts",
+        "../../../node_modules/@types/scheduler/tracing.d.ts",
+        "../../../node_modules/csstype/index.d.ts"
+      ],
+      "../../../node_modules/@types/resolve/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@types/node/base.d.ts": [
+        "../node_modules/@types/node/assert.d.ts",
+        "../node_modules/@types/node/ts3.6/base.d.ts"
+      ],
+      "../node_modules/@types/node/child_process.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/cluster.d.ts": [
+        "../node_modules/@types/node/child_process.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts"
+      ],
+      "../node_modules/@types/node/constants.d.ts": [
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/os.d.ts"
+      ],
+      "../node_modules/@types/node/crypto.d.ts": [
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/dgram.d.ts": [
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts"
+      ],
+      "../node_modules/@types/node/domain.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/events.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/fs.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/http.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/http2.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/https.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/index.d.ts": [
+        "../node_modules/@types/node/base.d.ts"
+      ],
+      "../node_modules/@types/node/inspector.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/module.d.ts": [
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/net.d.ts": [
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/perf_hooks.d.ts": [
+        "../node_modules/@types/node/async_hooks.d.ts"
+      ],
+      "../node_modules/@types/node/process.d.ts": [
+        "../node_modules/@types/node/tty.d.ts"
+      ],
+      "../node_modules/@types/node/readline.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/repl.d.ts": [
+        "../node_modules/@types/node/readline.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/vm.d.ts"
+      ],
+      "../node_modules/@types/node/stream.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/tls.d.ts": [
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/ts3.6/base.d.ts": [
+        "../node_modules/@types/node/async_hooks.d.ts",
+        "../node_modules/@types/node/buffer.d.ts",
+        "../node_modules/@types/node/child_process.d.ts",
+        "../node_modules/@types/node/cluster.d.ts",
+        "../node_modules/@types/node/console.d.ts",
+        "../node_modules/@types/node/constants.d.ts",
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/dgram.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/domain.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/globals.d.ts",
+        "../node_modules/@types/node/globals.global.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/http2.d.ts",
+        "../node_modules/@types/node/https.d.ts",
+        "../node_modules/@types/node/inspector.d.ts",
+        "../node_modules/@types/node/module.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/os.d.ts",
+        "../node_modules/@types/node/path.d.ts",
+        "../node_modules/@types/node/perf_hooks.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/punycode.d.ts",
+        "../node_modules/@types/node/querystring.d.ts",
+        "../node_modules/@types/node/readline.d.ts",
+        "../node_modules/@types/node/repl.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/string_decoder.d.ts",
+        "../node_modules/@types/node/timers.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/trace_events.d.ts",
+        "../node_modules/@types/node/tty.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/v8.d.ts",
+        "../node_modules/@types/node/vm.d.ts",
+        "../node_modules/@types/node/wasi.d.ts",
+        "../node_modules/@types/node/worker_threads.d.ts",
+        "../node_modules/@types/node/zlib.d.ts"
+      ],
+      "../node_modules/@types/node/tty.d.ts": [
+        "../node_modules/@types/node/net.d.ts"
+      ],
+      "../node_modules/@types/node/url.d.ts": [
+        "../node_modules/@types/node/querystring.d.ts"
+      ],
+      "../node_modules/@types/node/v8.d.ts": [
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/worker_threads.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/vm.d.ts"
+      ],
+      "../node_modules/@types/node/zlib.d.ts": [
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../src/components/sl-loading/index.tsx": [
+        "../../../node_modules/@tarojs/components/types/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/index.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../src/index.ts": [
+        "../src/components/sl-loading/index.tsx"
+      ]
+    },
+    "exportedModulesMap": {
+      "../../../node_modules/@tarojs/components/types/ad.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/audio.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/block.d.ts": [
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/button.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/camera.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/canvas.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/checkbox.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/checkboxgroup.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/common.d.ts": [
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/coverimage.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/coverview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/view.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/customwrapper.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/editor.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/form.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/functionalpagenavigator.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/icon.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/image.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/index.d.ts": [
+        "../../../node_modules/@tarojs/components/types/ad.d.ts",
+        "../../../node_modules/@tarojs/components/types/audio.d.ts",
+        "../../../node_modules/@tarojs/components/types/block.d.ts",
+        "../../../node_modules/@tarojs/components/types/button.d.ts",
+        "../../../node_modules/@tarojs/components/types/camera.d.ts",
+        "../../../node_modules/@tarojs/components/types/canvas.d.ts",
+        "../../../node_modules/@tarojs/components/types/checkbox.d.ts",
+        "../../../node_modules/@tarojs/components/types/checkboxgroup.d.ts",
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@tarojs/components/types/coverimage.d.ts",
+        "../../../node_modules/@tarojs/components/types/coverview.d.ts",
+        "../../../node_modules/@tarojs/components/types/customwrapper.d.ts",
+        "../../../node_modules/@tarojs/components/types/editor.d.ts",
+        "../../../node_modules/@tarojs/components/types/event.d.ts",
+        "../../../node_modules/@tarojs/components/types/form.d.ts",
+        "../../../node_modules/@tarojs/components/types/functionalpagenavigator.d.ts",
+        "../../../node_modules/@tarojs/components/types/icon.d.ts",
+        "../../../node_modules/@tarojs/components/types/image.d.ts",
+        "../../../node_modules/@tarojs/components/types/input.d.ts",
+        "../../../node_modules/@tarojs/components/types/label.d.ts",
+        "../../../node_modules/@tarojs/components/types/liveplayer.d.ts",
+        "../../../node_modules/@tarojs/components/types/livepusher.d.ts",
+        "../../../node_modules/@tarojs/components/types/map.d.ts",
+        "../../../node_modules/@tarojs/components/types/matchmedia.d.ts",
+        "../../../node_modules/@tarojs/components/types/movablearea.d.ts",
+        "../../../node_modules/@tarojs/components/types/movableview.d.ts",
+        "../../../node_modules/@tarojs/components/types/navigationbar.d.ts",
+        "../../../node_modules/@tarojs/components/types/navigator.d.ts",
+        "../../../node_modules/@tarojs/components/types/officialaccount.d.ts",
+        "../../../node_modules/@tarojs/components/types/opendata.d.ts",
+        "../../../node_modules/@tarojs/components/types/pagemeta.d.ts",
+        "../../../node_modules/@tarojs/components/types/picker.d.ts",
+        "../../../node_modules/@tarojs/components/types/pickerview.d.ts",
+        "../../../node_modules/@tarojs/components/types/pickerviewcolumn.d.ts",
+        "../../../node_modules/@tarojs/components/types/progress.d.ts",
+        "../../../node_modules/@tarojs/components/types/radio.d.ts",
+        "../../../node_modules/@tarojs/components/types/radiogroup.d.ts",
+        "../../../node_modules/@tarojs/components/types/richtext.d.ts",
+        "../../../node_modules/@tarojs/components/types/scrollview.d.ts",
+        "../../../node_modules/@tarojs/components/types/slider.d.ts",
+        "../../../node_modules/@tarojs/components/types/slot.d.ts",
+        "../../../node_modules/@tarojs/components/types/swiper.d.ts",
+        "../../../node_modules/@tarojs/components/types/swiperitem.d.ts",
+        "../../../node_modules/@tarojs/components/types/switch.d.ts",
+        "../../../node_modules/@tarojs/components/types/text.d.ts",
+        "../../../node_modules/@tarojs/components/types/textarea.d.ts",
+        "../../../node_modules/@tarojs/components/types/video.d.ts",
+        "../../../node_modules/@tarojs/components/types/view.d.ts",
+        "../../../node_modules/@tarojs/components/types/webview.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/input.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/label.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/liveplayer.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/livepusher.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/map.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/matchmedia.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/movablearea.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/movableview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/navigationbar.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/navigator.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/officialaccount.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/opendata.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/pagemeta.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/picker.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/pickerview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/pickerviewcolumn.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/progress.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/radio.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/radiogroup.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/richtext.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/scrollview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/slider.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/slot.d.ts": [
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/swiper.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/swiperitem.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/switch.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/text.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/textarea.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/video.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/view.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/components/types/webview.d.ts": [
+        "../../../node_modules/@tarojs/components/types/common.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/taro/types/index.d.ts": [
+        "../../../node_modules/@tarojs/taro/types/api/ad/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/alipay/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/debug.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/env.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/system.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/update.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/weapp/app-event.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/base/weapp/life-cycle.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/canvas/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/cloud/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/accelerometer.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/battery.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/ble.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/bluetooth.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/clipboard.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/compass.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/contact.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/gyroscope.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/ibeacon.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/motion.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/network.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/nfc.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/performance.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/phone.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/scan.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/screen.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/vibrate.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/device/wifi.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ext/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/files/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/framework/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/location/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/audio.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/background-audio.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/camera.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/editor.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/image.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/live.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/map.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/recorder.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/video-processing.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/media/video.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/download.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/mdns.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/request.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/udp.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/upload.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/network/websocket.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/account.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/address.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/authorize.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/card.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/data-analysis.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/facial.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/invoice.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/login.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/navigate.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/payment.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/report.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/settings.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/soter.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/subscribe-message.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/user-info.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/open-api/werun.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/route/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/share/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/storage/background-fetch.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/storage/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/swan/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/animation.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/background.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/custom-component.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/fonts.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/interaction.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/keyboard.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/menu.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/navigation-bar.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/pull-down-refresh.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/scroll.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/sticky.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/tab-bar.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/ui/window.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/worker/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/api/wxml/index.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.component.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.config.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.extend.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.hooks.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.lifecycle.d.ts"
+      ],
+      "../../../node_modules/@tarojs/taro/types/taro.component.d.ts": [
+        "../../../node_modules/@tarojs/taro/types/taro.config.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.lifecycle.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/taro/types/taro.extend.d.ts": [
+        "../../../node_modules/@tarojs/taro/types/api/network/request.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.component.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@tarojs/taro/types/taro.hooks.d.ts": [
+        "../../../node_modules/@tarojs/taro/types/taro.component.d.ts",
+        "../../../node_modules/@tarojs/taro/types/taro.lifecycle.d.ts"
+      ],
+      "../../../node_modules/@types/fs-extra/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../../../node_modules/@types/glob/index.d.ts": [
+        "../../../node_modules/@types/minimatch/index.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../../../node_modules/@types/mdast/index.d.ts": [
+        "../../../node_modules/@types/unist/index.d.ts"
+      ],
+      "../../../node_modules/@types/react-dom/index.d.ts": [
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../../node_modules/@types/react/index.d.ts": [
+        "../../../node_modules/@types/prop-types/index.d.ts",
+        "../../../node_modules/@types/react/global.d.ts",
+        "../../../node_modules/@types/scheduler/tracing.d.ts",
+        "../../../node_modules/csstype/index.d.ts"
+      ],
+      "../../../node_modules/@types/resolve/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@types/node/base.d.ts": [
+        "../node_modules/@types/node/assert.d.ts",
+        "../node_modules/@types/node/ts3.6/base.d.ts"
+      ],
+      "../node_modules/@types/node/child_process.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/cluster.d.ts": [
+        "../node_modules/@types/node/child_process.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts"
+      ],
+      "../node_modules/@types/node/constants.d.ts": [
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/os.d.ts"
+      ],
+      "../node_modules/@types/node/crypto.d.ts": [
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/dgram.d.ts": [
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts"
+      ],
+      "../node_modules/@types/node/domain.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/events.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/fs.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/http.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/http2.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/https.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/index.d.ts": [
+        "../node_modules/@types/node/base.d.ts"
+      ],
+      "../node_modules/@types/node/inspector.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/module.d.ts": [
+        "../node_modules/@types/node/url.d.ts"
+      ],
+      "../node_modules/@types/node/net.d.ts": [
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/perf_hooks.d.ts": [
+        "../node_modules/@types/node/async_hooks.d.ts"
+      ],
+      "../node_modules/@types/node/process.d.ts": [
+        "../node_modules/@types/node/tty.d.ts"
+      ],
+      "../node_modules/@types/node/readline.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/repl.d.ts": [
+        "../node_modules/@types/node/readline.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/vm.d.ts"
+      ],
+      "../node_modules/@types/node/stream.d.ts": [
+        "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/tls.d.ts": [
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/ts3.6/base.d.ts": [
+        "../node_modules/@types/node/async_hooks.d.ts",
+        "../node_modules/@types/node/buffer.d.ts",
+        "../node_modules/@types/node/child_process.d.ts",
+        "../node_modules/@types/node/cluster.d.ts",
+        "../node_modules/@types/node/console.d.ts",
+        "../node_modules/@types/node/constants.d.ts",
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/dgram.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/domain.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/globals.d.ts",
+        "../node_modules/@types/node/globals.global.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/http2.d.ts",
+        "../node_modules/@types/node/https.d.ts",
+        "../node_modules/@types/node/inspector.d.ts",
+        "../node_modules/@types/node/module.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/os.d.ts",
+        "../node_modules/@types/node/path.d.ts",
+        "../node_modules/@types/node/perf_hooks.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/punycode.d.ts",
+        "../node_modules/@types/node/querystring.d.ts",
+        "../node_modules/@types/node/readline.d.ts",
+        "../node_modules/@types/node/repl.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/string_decoder.d.ts",
+        "../node_modules/@types/node/timers.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/trace_events.d.ts",
+        "../node_modules/@types/node/tty.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/v8.d.ts",
+        "../node_modules/@types/node/vm.d.ts",
+        "../node_modules/@types/node/wasi.d.ts",
+        "../node_modules/@types/node/worker_threads.d.ts",
+        "../node_modules/@types/node/zlib.d.ts"
+      ],
+      "../node_modules/@types/node/tty.d.ts": [
+        "../node_modules/@types/node/net.d.ts"
+      ],
+      "../node_modules/@types/node/url.d.ts": [
+        "../node_modules/@types/node/querystring.d.ts"
+      ],
+      "../node_modules/@types/node/v8.d.ts": [
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/node/worker_threads.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/vm.d.ts"
+      ],
+      "../node_modules/@types/node/zlib.d.ts": [
+        "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../src/components/sl-loading/index.tsx": [
+        "../../../node_modules/@tarojs/taro/types/index.d.ts",
+        "../../../node_modules/@types/react/index.d.ts"
+      ],
+      "../src/index.ts": [
+        "../src/components/sl-loading/index.tsx"
+      ]
+    },
+    "semanticDiagnosticsPerFile": [
+      "../../../node_modules/@tarojs/components/types/ad.d.ts",
+      "../../../node_modules/@tarojs/components/types/audio.d.ts",
+      "../../../node_modules/@tarojs/components/types/block.d.ts",
+      "../../../node_modules/@tarojs/components/types/button.d.ts",
+      "../../../node_modules/@tarojs/components/types/camera.d.ts",
+      "../../../node_modules/@tarojs/components/types/canvas.d.ts",
+      "../../../node_modules/@tarojs/components/types/checkbox.d.ts",
+      "../../../node_modules/@tarojs/components/types/checkboxgroup.d.ts",
+      "../../../node_modules/@tarojs/components/types/common.d.ts",
+      "../../../node_modules/@tarojs/components/types/coverimage.d.ts",
+      "../../../node_modules/@tarojs/components/types/coverview.d.ts",
+      "../../../node_modules/@tarojs/components/types/customwrapper.d.ts",
+      "../../../node_modules/@tarojs/components/types/editor.d.ts",
+      "../../../node_modules/@tarojs/components/types/event.d.ts",
+      "../../../node_modules/@tarojs/components/types/form.d.ts",
+      "../../../node_modules/@tarojs/components/types/functionalpagenavigator.d.ts",
+      "../../../node_modules/@tarojs/components/types/icon.d.ts",
+      "../../../node_modules/@tarojs/components/types/image.d.ts",
+      "../../../node_modules/@tarojs/components/types/index.d.ts",
+      "../../../node_modules/@tarojs/components/types/input.d.ts",
+      "../../../node_modules/@tarojs/components/types/label.d.ts",
+      "../../../node_modules/@tarojs/components/types/liveplayer.d.ts",
+      "../../../node_modules/@tarojs/components/types/livepusher.d.ts",
+      "../../../node_modules/@tarojs/components/types/map.d.ts",
+      "../../../node_modules/@tarojs/components/types/matchmedia.d.ts",
+      "../../../node_modules/@tarojs/components/types/movablearea.d.ts",
+      "../../../node_modules/@tarojs/components/types/movableview.d.ts",
+      "../../../node_modules/@tarojs/components/types/navigationbar.d.ts",
+      "../../../node_modules/@tarojs/components/types/navigator.d.ts",
+      "../../../node_modules/@tarojs/components/types/officialaccount.d.ts",
+      "../../../node_modules/@tarojs/components/types/opendata.d.ts",
+      "../../../node_modules/@tarojs/components/types/pagemeta.d.ts",
+      "../../../node_modules/@tarojs/components/types/picker.d.ts",
+      "../../../node_modules/@tarojs/components/types/pickerview.d.ts",
+      "../../../node_modules/@tarojs/components/types/pickerviewcolumn.d.ts",
+      "../../../node_modules/@tarojs/components/types/progress.d.ts",
+      "../../../node_modules/@tarojs/components/types/radio.d.ts",
+      "../../../node_modules/@tarojs/components/types/radiogroup.d.ts",
+      "../../../node_modules/@tarojs/components/types/richtext.d.ts",
+      "../../../node_modules/@tarojs/components/types/scrollview.d.ts",
+      "../../../node_modules/@tarojs/components/types/slider.d.ts",
+      "../../../node_modules/@tarojs/components/types/slot.d.ts",
+      "../../../node_modules/@tarojs/components/types/swiper.d.ts",
+      "../../../node_modules/@tarojs/components/types/swiperitem.d.ts",
+      "../../../node_modules/@tarojs/components/types/switch.d.ts",
+      "../../../node_modules/@tarojs/components/types/text.d.ts",
+      "../../../node_modules/@tarojs/components/types/textarea.d.ts",
+      "../../../node_modules/@tarojs/components/types/video.d.ts",
+      "../../../node_modules/@tarojs/components/types/view.d.ts",
+      "../../../node_modules/@tarojs/components/types/webview.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ad/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/alipay/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/base/debug.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/base/env.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/base/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/base/system.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/base/update.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/base/weapp/app-event.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/base/weapp/life-cycle.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/canvas/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/cloud/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/accelerometer.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/battery.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/ble.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/bluetooth.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/clipboard.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/compass.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/contact.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/gyroscope.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/ibeacon.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/motion.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/network.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/nfc.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/performance.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/phone.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/scan.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/screen.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/vibrate.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/device/wifi.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ext/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/files/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/framework/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/location/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/audio.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/background-audio.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/camera.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/editor.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/image.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/live.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/map.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/recorder.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/video-processing.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/media/video.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/network/download.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/network/mdns.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/network/request.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/network/udp.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/network/upload.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/network/websocket.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/account.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/address.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/authorize.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/card.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/data-analysis.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/facial.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/invoice.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/login.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/navigate.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/payment.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/report.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/settings.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/soter.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/subscribe-message.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/user-info.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/open-api/werun.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/route/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/share/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/storage/background-fetch.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/storage/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/swan/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/animation.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/background.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/custom-component.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/fonts.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/interaction.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/keyboard.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/menu.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/navigation-bar.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/pull-down-refresh.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/scroll.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/sticky.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/tab-bar.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/ui/window.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/worker/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/api/wxml/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/index.d.ts",
+      "../../../node_modules/@tarojs/taro/types/taro.component.d.ts",
+      "../../../node_modules/@tarojs/taro/types/taro.config.d.ts",
+      "../../../node_modules/@tarojs/taro/types/taro.extend.d.ts",
+      "../../../node_modules/@tarojs/taro/types/taro.hooks.d.ts",
+      "../../../node_modules/@tarojs/taro/types/taro.lifecycle.d.ts",
+      "../../../node_modules/@types/estree/index.d.ts",
+      "../../../node_modules/@types/fs-extra/index.d.ts",
+      "../../../node_modules/@types/glob/index.d.ts",
+      "../../../node_modules/@types/json-schema/index.d.ts",
+      "../../../node_modules/@types/json5/index.d.ts",
+      "../../../node_modules/@types/mdast/index.d.ts",
+      "../../../node_modules/@types/minimatch/index.d.ts",
+      "../../../node_modules/@types/minimist/index.d.ts",
+      "../../../node_modules/@types/normalize-package-data/index.d.ts",
+      "../../../node_modules/@types/parse-json/index.d.ts",
+      "../../../node_modules/@types/prop-types/index.d.ts",
+      "../../../node_modules/@types/react-dom/index.d.ts",
+      "../../../node_modules/@types/react/global.d.ts",
+      "../../../node_modules/@types/react/index.d.ts",
+      "../../../node_modules/@types/resolve/index.d.ts",
+      "../../../node_modules/@types/scheduler/index.d.ts",
+      "../../../node_modules/@types/scheduler/tracing.d.ts",
+      "../../../node_modules/@types/unist/index.d.ts",
+      "../../../node_modules/csstype/index.d.ts",
+      "../node_modules/@types/node/assert.d.ts",
+      "../node_modules/@types/node/async_hooks.d.ts",
+      "../node_modules/@types/node/base.d.ts",
+      "../node_modules/@types/node/buffer.d.ts",
+      "../node_modules/@types/node/child_process.d.ts",
+      "../node_modules/@types/node/cluster.d.ts",
+      "../node_modules/@types/node/console.d.ts",
+      "../node_modules/@types/node/constants.d.ts",
+      "../node_modules/@types/node/crypto.d.ts",
+      "../node_modules/@types/node/dgram.d.ts",
+      "../node_modules/@types/node/dns.d.ts",
+      "../node_modules/@types/node/domain.d.ts",
+      "../node_modules/@types/node/events.d.ts",
+      "../node_modules/@types/node/fs.d.ts",
+      "../node_modules/@types/node/globals.d.ts",
+      "../node_modules/@types/node/globals.global.d.ts",
+      "../node_modules/@types/node/http.d.ts",
+      "../node_modules/@types/node/http2.d.ts",
+      "../node_modules/@types/node/https.d.ts",
+      "../node_modules/@types/node/index.d.ts",
+      "../node_modules/@types/node/inspector.d.ts",
+      "../node_modules/@types/node/module.d.ts",
+      "../node_modules/@types/node/net.d.ts",
+      "../node_modules/@types/node/os.d.ts",
+      "../node_modules/@types/node/path.d.ts",
+      "../node_modules/@types/node/perf_hooks.d.ts",
+      "../node_modules/@types/node/process.d.ts",
+      "../node_modules/@types/node/punycode.d.ts",
+      "../node_modules/@types/node/querystring.d.ts",
+      "../node_modules/@types/node/readline.d.ts",
+      "../node_modules/@types/node/repl.d.ts",
+      "../node_modules/@types/node/stream.d.ts",
+      "../node_modules/@types/node/string_decoder.d.ts",
+      "../node_modules/@types/node/timers.d.ts",
+      "../node_modules/@types/node/tls.d.ts",
+      "../node_modules/@types/node/trace_events.d.ts",
+      "../node_modules/@types/node/ts3.6/base.d.ts",
+      "../node_modules/@types/node/tty.d.ts",
+      "../node_modules/@types/node/url.d.ts",
+      "../node_modules/@types/node/util.d.ts",
+      "../node_modules/@types/node/v8.d.ts",
+      "../node_modules/@types/node/vm.d.ts",
+      "../node_modules/@types/node/wasi.d.ts",
+      "../node_modules/@types/node/worker_threads.d.ts",
+      "../node_modules/@types/node/zlib.d.ts",
+      "../node_modules/typescript/lib/lib.dom.d.ts",
+      "../node_modules/typescript/lib/lib.dom.iterable.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "../node_modules/typescript/lib/lib.es2016.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.full.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.intl.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.promise.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+      "../node_modules/typescript/lib/lib.es2020.bigint.d.ts",
+      "../node_modules/typescript/lib/lib.es5.d.ts",
+      "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
+      "../node_modules/typescript/lib/lib.scripthost.d.ts",
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "../src/components/sl-loading/index.tsx",
+      "../src/index.ts"
+    ]
+  },
+  "version": "3.9.10"
+}

@@ -1,5 +1,5 @@
 {
-  "name": "@jd/selling-c-ui",
+  "name": "@jd/selling-c-ui1",
   "version": "1.3.0",
   "description": "",
   "module": "dist/index.esm.js",
@@ -63,4 +63,5 @@
   },
   "author": "",
   "license": "MIT"
+
 }
