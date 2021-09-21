@@ -40,7 +40,7 @@ var css_248z$1 = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24p
 styleInject(css_248z$1);
 
 var SlLoading = function () {
-    return (React__default['default'].createElement(components.View, { className: "aaa" }, "1321321323"));
+    return (React__default['default'].createElement(components.View, { className: "aaa" }, "xxxx"));
 };
 var index$1 = React.memo(SlLoading);
 

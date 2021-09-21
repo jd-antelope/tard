@@ -9,8 +9,8 @@
     "build": "lerna run build",
     "build:component": "lerna run --scope @jd/selling-c-ui1 build",
     "clean": "lerna run clean",
-    "clean:component": "lerna run --scope selling-c-ui clean",
-    "version": "lerna version",
+    "clean:component": "lerna run --scope @jd/selling-c-ui1 clean",
+    "version": "lerna version --conventional-commits",
     "updated": "lerna updated",
     "changed": "lerna changed",
     "publish": "lerna publish from-package "
@@ -57,7 +57,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --quiet --cache --fix",
+    "*.{js,jsx,ts,tsx}": "eslint --quiet  --fix",
     "src/**/*.scss": "stylelint --syntax less --fix"
   }
 
