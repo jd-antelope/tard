@@ -1,23 +1,21 @@
 0 silly argv {
-0 silly argv   _: [ 'publish' ],
-0 silly argv   composed: 'publish',
+0 silly argv   _: [ 'create' ],
 0 silly argv   lernaVersion: '4.0.0',
-0 silly argv   '$0': '/Users/chenyonghao9/Desktop/project/selling-component/node_modules/.bin/lerna',
-0 silly argv   bump: 'from-package'
+0 silly argv   '$0': 'node_modules/.bin/lerna',
+0 silly argv   name: 'package-demo'
 0 silly argv }
 1 notice cli v4.0.0
 2 verbose rootPath /Users/chenyonghao9/Desktop/project/selling-component
-3 info versioning independent
-4 error JSONError: Unexpected token  in JSON at position 53 while parsing '{  "name": "@jd/selling-c-ui1",  "vers' in packages/selling-c-ui1/package.json
-4 error
-4 error [0m [90m 1 |[39m {[0m
-4 error [0m [90m 2 |[39m   [32m"name"[39m[33m:[39m [32m"@jd/selling-c-ui1"[39m[33m,[39m[0m
-4 error [0m[31m[1m>[22m[39m[90m 3 |[39m   [32m"version"[39m[33m:[39m [32m"1.4.5,[39m[0m
-4 error [0m [90m   |[39m                     [31m[1m^[22m[39m[0m
-4 error [0m [90m 4 |[39m   [32m"description"[39m[33m:[39m [32m""[39m[33m,[39m[0m
-4 error [0m [90m 5 |[39m   [32m"module"[39m[33m:[39m [32m"dist/index.esm.js"[39m[33m,[39m[0m
-4 error [0m [90m 6 |[39m   [32m"main"[39m[33m:[39m [32m"dist/index.js"[39m[33m,[39m[0m
-4 error
-4 error     at parseJson (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/parse-json/index.js:29:21)
-4 error     at parse (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/load-json-file/index.js:15:9)
-4 error     at module.exports (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/load-json-file/index.js:18:47)
+3 error Error: canceled
+3 error     at Interface.<anonymous> (/Users/chenyonghao9/Desktop/project/selling-component/node_modules/read/lib/read.js:66:13)
+3 error     at Interface.emit (events.js:376:20)
+3 error     at Interface._ttyWrite (readline.js:880:16)
+3 error     at ReadStream.onkeypress (readline.js:213:10)
+3 error     at ReadStream.emit (events.js:376:20)
+3 error     at emitKeys (internal/readline/utils.js:345:14)
+3 error     at emitKeys.next (<anonymous>)
+3 error     at ReadStream.onData (readline.js:1149:36)
+3 error     at ReadStream.emit (events.js:376:20)
+3 error     at addChunk (internal/streams/readable.js:309:12)
+3 error     at readableAddChunk (internal/streams/readable.js:284:9)
+3 error     at ReadStream.Readable.push (internal/streams/readable.js:223:10)
