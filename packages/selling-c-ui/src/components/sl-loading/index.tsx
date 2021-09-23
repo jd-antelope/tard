@@ -5,7 +5,7 @@ import { FC } from '@tarojs/taro'
 import { SlLoadingProps } from '../../../types/loading'
 import '../../style/components/sl-loading.less'
 const SlLoading: FC<SlLoadingProps> = () => {
-  return (<View className="aaa">YYYYYY</View>)
+  return (<View className="aaa">zzzz</View>)
 }
 
 export default memo(SlLoading)
