@@ -23,7 +23,7 @@
 
 ## 初始化项目 
 
-1. 初始化npm和lerna  执行npm init -y 以及lerna init 执行完成之后虎仔我们的目录下生成lerna.json配置文件，和packeage.json 的两个配置文件内容一般是这样  
+1. 初始化npm和lerna  执行lerna init 执行完成之后虎仔我们的目录下生成lerna.json配置文件，和packeage.json 的两个配置文件内容一般是这样  
   ``` javascript
  {
       "packages": [
@@ -59,11 +59,46 @@
 
 
 ## package.json
+  * 子包中的packages.json:
 
-* files 指定上传npm时需要发布的文件夹目录 也可以在发包的根路径下新建 .npmignore文件进行指定
-
-
-
+  ```javascript
+  {
+  "name": "@jd/package-A", // 包名， 上传至npm后的包名
+  "version": "1.4.6", 
+  "module": "dist/index.esm.js",//定义一个针对 es6 模块及语法的入口文件 构建工具在构建项目的时候，如果发现了这个字段，会首先使用这个字段指向的文件，如果未定义，则回退到 main 字段指向的文件。
+  "main": "dist/index.js", //项目的入口文件
+  "source": "src/index.ts", //用来指定项目的源文件入口
+  "scripts": {
+  },
+  "publishConfig": {
+    "registry": "http://registry.m.jd.com", //npm仓库地址
+    "access": "public", // 如果是私有包即（scope开头的包）这项必须为public
+    "tag": "next"
+  },
+  "files": [ //指定发布npm包时需要上传的文件目录， 也可在.npmignore文件中指定
+    "lib",
+    "dist",
+    "types"
+  ],
+  "typeRoots": [ //
+    "node_modules/@types",
+    "types"
+  ],
+  "devDependencies": {
+  },
+  "peerDependencies": {
+  },
+  "author": "",
+  "license": "MIT"
+} 
+// module main browser。
+如果 npm 包导出的是 ESM 规范的包，使用 module
+如果 npm 包只在 web 端使用，并且严禁在 server 端使用，使用 browser。
+如果 npm 包只在 server 端使用，使用 main
+如果 npm 包在 web 端和 server 端都允许使用，使用 browser 和 main
+其他更加复杂的情况，如npm 包需要提供 commonJS 与 ESM 等多个规范的多个代码文件，请参考上述使用场景或流程图
+参考：https://www.cnblogs.com/qianxiaox/p/14041717.html
+  ```
 # 遇到的问题？
 1. 什么是peerDependencies？以及它的作用是什么？
 dependencies与peerDependencies区别-假设我们当前的项目是MyProject，假设我们的包名叫做packageA，而且我们在A的dependencies安装了packageB的话我们在使用自己的项目中执行yarn add packageA 的时候你会发现你的安装目录下得目录结构是这样的
@@ -85,3 +120,7 @@ MyProject
 ps:npm2 与npm3对peerDependencies字段的处理差异：
 *  npm2中，即使当前项目MyProject中没有直接依赖PackageB，该PackageB包依然会安装到当前项目的node_modules文件夹中。
 *  npm3中不会再要求peerDependencies所指定的依赖包被强制安装，相反npm3会在安装结束后检查本次安装是否正确，如果不正确会给用户打印警告提示。你需要手动的在MyProject项目的package.json文件指定PackageB的依赖。
+
+2. 在项目里面我们为什么要使用rollup + ts 来构建我们的项目
+
+3. 

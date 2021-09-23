@@ -33,6 +33,7 @@ export default {
     }
   ],
   external: externalPackages,
+  extensions: ['json', 'js', 'ts'],
   plugins: [
     RollPostcss({
       plugins: [require('autoprefixer', 'cssnano')], // cssnano
