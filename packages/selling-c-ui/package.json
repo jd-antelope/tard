@@ -1,6 +1,6 @@
 {
   "name": "@jd/selling-c-ui",
-  "version": "1.4.4",
+  "version": "2.0.1",
   "description": "",
   "scripts": {
     "create": "node scripts/generator.js",
@@ -13,7 +13,6 @@
     "async": "npm run build && yalc push",
     "watch": "nodemon --ignore dist/ --ignore node_modules/ --watch src/ -C -e ts,tsx,scss --debug -x 'npm run async'"
   },
-
   "files": [
     "lib",
     "dist",
