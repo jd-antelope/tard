@@ -16,7 +16,7 @@
     "publish": "lerna publish --dist-tag"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "workspaces": [
     "packages/*"
   ],

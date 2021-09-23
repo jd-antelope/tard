@@ -18,8 +18,7 @@
   },
   "publishConfig": {
     "registry": "http://registry.m.jd.com",
-    "access": "public",
-    "tag": "next"
+    "access": "public"
   },
   "files": [
     "lib",
