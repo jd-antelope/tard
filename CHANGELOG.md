@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://coding.jd.com/selling-front/shop-c-components/compare/v2.0.2...v2.0.3) (2021-09-23)
+
+
+### Bug Fixes
+
+* 删除错误日志 ([9bf2a6e](https://coding.jd.com/selling-front/shop-c-components/commits/9bf2a6e2ed2028be04c3a3e31ed174aef95a0757))
+* test ([f9710ba](https://coding.jd.com/selling-front/shop-c-components/commits/f9710bad123d74103f3c6e2b9c84c571bcaf348f))
+* test ([e6e5524](https://coding.jd.com/selling-front/shop-c-components/commits/e6e5524d18008fab385f470d4c1c2ba213c4aaa8))
+* test ([bce91d4](https://coding.jd.com/selling-front/shop-c-components/commits/bce91d4a123436d75840956f6f9d0876bdc05b57))
+* test ([067862a](https://coding.jd.com/selling-front/shop-c-components/commits/067862a824d2fcac7493cf0739c2448bca66a3f2))
+
+
+### Features
+
+* 1234 ([28e39df](https://coding.jd.com/selling-front/shop-c-components/commits/28e39df3b5325e3cdac8d79bbbfd9c6bdd19c27d))
+
+
+
+
+
 ## [2.0.2](https://coding.jd.com/selling-front/shop-c-components/compare/v2.0.1...v2.0.2) (2021-09-23)
 
 
