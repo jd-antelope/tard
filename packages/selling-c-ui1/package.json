@@ -21,7 +21,11 @@
     "registry": "http://registry.m.jd.com",
     "access": "public"
   },
-
+  "files": [
+    "lib",
+    "dist",
+    "types"
+  ],
   "typeRoots": [
     "node_modules/@types",
     "types"
