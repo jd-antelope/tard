@@ -1,6 +1,6 @@
 {
   "name": "@jd/selling-c-ui",
-  "version": "2.0.5",
+  "version": "2.0.9",
   "description": "",
   "scripts": {
     "create": "node scripts/generator.js",
