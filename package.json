@@ -10,7 +10,7 @@
     "build:component": "lerna run --scope @jd/selling-c-ui1 build",
     "clean": "lerna run clean",
     "clean:component": "lerna run --scope @jd/selling-c-ui1 clean",
-    "version": "lerna version --conventional-commits",
+    "version": "lerna version ",
     "updated": "lerna updated",
     "changed": "lerna changed",
     "publish": "lerna publish from-package --yes"
