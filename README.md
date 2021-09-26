@@ -73,7 +73,6 @@
   "publishConfig": {
     "registry": "http://registry.m.jd.com", //npm仓库地址
     "access": "public", // 如果是私有包即（scope开头的包）这项必须为public
-    "tag": "next"
   },
   "files": [ //指定发布npm包时需要上传的文件目录， 也可在.npmignore文件中指定
     "lib",
