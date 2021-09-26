@@ -1,7 +1,10 @@
 {
   "name": "@jd/selling-c-ui",
-  "version": "2.0.9",
+  "version": "2.0.4",
   "description": "",
+  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "source": "src/index.ts",
   "scripts": {
     "create": "node scripts/generator.js",
     "dev": "yarn run dev:lib",
@@ -13,9 +16,17 @@
     "async": "npm run build && yalc push",
     "watch": "nodemon --ignore dist/ --ignore node_modules/ --watch src/ -C -e ts,tsx,scss --debug -x 'npm run async'"
   },
+  "publishConfig": {
+    "registry": "http://registry.m.jd.com",
+    "access": "public"
+  },
   "files": [
     "lib",
     "dist",
+    "types"
+  ],
+  "typeRoots": [
+    "node_modules/@types",
     "types"
   ],
   "types": "./types/index.d.ts",

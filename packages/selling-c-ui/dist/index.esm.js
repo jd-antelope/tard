@@ -28,11 +28,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$1 = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  height: 200px;\n  line-height: 150;\n}\n";
+var css_248z$1 = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  line-height: 150;\n  height: 200px;\n}\n";
 styleInject(css_248z$1);
 
 var SlLoading = function () {
-    return (React.createElement(View, { className: "aaa" }, "xxxx"));
+    return (React.createElement(View, { className: "aaa" }, "fff"));
 };
 var index$1 = memo(SlLoading);
 
@@ -40,7 +40,7 @@ var css_248z = "";
 styleInject(css_248z);
 
 var SlUpload = function () {
-    return React.createElement(View, { className: "sl-upload-wrapper" }, "this ccc");
+    return React.createElement(View, { className: "sl-upload-wrapper" }, "aaaa ll");
 };
 var index = memo(SlUpload);
 

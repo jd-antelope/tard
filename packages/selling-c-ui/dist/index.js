@@ -36,11 +36,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$1 = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  height: 200px;\n  line-height: 150;\n}\n";
+var css_248z$1 = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  line-height: 150;\n  height: 200px;\n}\n";
 styleInject(css_248z$1);
 
 var SlLoading = function () {
-    return (React__default['default'].createElement(components.View, { className: "aaa" }, "xxxx"));
+    return (React__default['default'].createElement(components.View, { className: "aaa" }, "fff"));
 };
 var index$1 = React.memo(SlLoading);
 
@@ -48,7 +48,7 @@ var css_248z = "";
 styleInject(css_248z);
 
 var SlUpload = function () {
-    return React__default['default'].createElement(components.View, { className: "sl-upload-wrapper" }, "this ccc");
+    return React__default['default'].createElement(components.View, { className: "sl-upload-wrapper" }, "aaaa ll");
 };
 var index = React.memo(SlUpload);
 
