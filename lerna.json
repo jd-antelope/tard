@@ -6,16 +6,12 @@
     "version": {
       "allowBranch": [
         "test"
-      ],
-      "amend": true
+      ]
     },
     "create": {
       "homepage": "https://selling/taro-ui",
       "license": "MIT"
-    },
-    "publish": {
-      "ignoreChanges": ["*.package.json"]
-}
+    }
 
   },
   "version": "2.2.30",
