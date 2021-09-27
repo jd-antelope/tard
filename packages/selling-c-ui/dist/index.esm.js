@@ -40,7 +40,7 @@ var css_248z = "";
 styleInject(css_248z);
 
 var SlUpload = function () {
-    return React.createElement(View, { className: "sl-upload-wrapper" }, "aaaa llcc");
+    return React.createElement(View, { className: "sl-upload-wrapper" }, "axcvcxvxcv");
 };
 var index = memo(SlUpload);
 
