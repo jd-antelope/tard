@@ -9,7 +9,8 @@
       ]
     },
     "publish": {
-    
+      "amend": true,
+      "no-edit": true
     }
   },
   "version": "2.2.20",
