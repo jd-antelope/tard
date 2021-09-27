@@ -9,11 +9,10 @@
       ]
     },
     "publish": {
-      "amend": true,
-      "no-edit": true
+      "amend": true
     }
   },
-  "version": "2.2.19",
+  "version": "2.2.20",
   "npmClient": "yarn",
   "useWorkspaces": true
 }
