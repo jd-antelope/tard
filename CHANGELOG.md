@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.22](https://coding.jd.com/selling-front/shop-c-components/compare/v2.2.20...v2.2.22) (2021-09-27)
+
+
+### Bug Fixes
+
+* ui ([dc2b469](https://coding.jd.com/selling-front/shop-c-components/commits/dc2b469f3f62a36e0b3d90aaa053d4b0879e51be))
+* ui ([92882f9](https://coding.jd.com/selling-front/shop-c-components/commits/92882f9258be3785b18984480a065f9becab26a0))
+* ui ([1ba39b8](https://coding.jd.com/selling-front/shop-c-components/commits/1ba39b81f0bd3fa32c6c400d774e26c42dc8a670))
+* ui ([494fcce](https://coding.jd.com/selling-front/shop-c-components/commits/494fcce86b4a8250d6116d7f6664f2e9c80b1df4))
+
+
+
+
+
 ## [2.2.16](https://coding.jd.com/selling-front/shop-c-components/compare/v2.2.12...v2.2.16) (2021-09-27)
 
 
