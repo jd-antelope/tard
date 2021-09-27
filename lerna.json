@@ -3,14 +3,11 @@
     "packages/selling-c-ui"
   ],
   "command": {
-
     "publish": {
-        "no-git-reset": false
-
+      "no-git-reset": true
     }
-
-},
-  "version": "2.2.6",
+  },
+  "version": "2.2.7",
   "npmClient": "yarn",
   "useWorkspaces": true
 }
