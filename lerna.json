@@ -6,12 +6,14 @@
     "version": {
       "allowBranch": [
         "test"
-      ],
+      ]
+    },
+    "publish": {
       "amend": true,
       "no-edit": true
     }
   },
-  "version": "2.2.18",
+  "version": "2.2.19",
   "npmClient": "yarn",
   "useWorkspaces": true
 }
