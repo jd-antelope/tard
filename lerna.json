@@ -2,7 +2,7 @@
   "packages": [
     "packages/selling-c-ui"
   ],
-  "version": "2.2.0",
+  "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true
 }
