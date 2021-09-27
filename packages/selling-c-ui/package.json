@@ -1,6 +1,6 @@
 {
   "name": "@jd/selling-c-ui",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "",
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
