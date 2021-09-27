@@ -10,7 +10,7 @@
       "amend": true
     }
   },
-  "version": "2.2.11",
+  "version": "2.2.13",
   "npmClient": "yarn",
   "useWorkspaces": true
 }
