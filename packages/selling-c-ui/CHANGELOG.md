@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.11](https://coding.jd.com/selling-front/shop-c-components/compare/v2.2.0...v2.2.11) (2021-09-27)
+
+
+### Bug Fixes
+
+* test ([3f4b938](https://coding.jd.com/selling-front/shop-c-components/commits/3f4b938b742734535fbc05529a7458fbba597592))
+* test ([8f3ad9e](https://coding.jd.com/selling-front/shop-c-components/commits/8f3ad9eb0a6938d23baf1a9b045a36acd7b7c8b3))
+* test ([e9a4e0b](https://coding.jd.com/selling-front/shop-c-components/commits/e9a4e0bb9ddb21eca61c8bae29714744d84b9762))
+* test ([71f2e3b](https://coding.jd.com/selling-front/shop-c-components/commits/71f2e3b7a0e75ec13e62d0bcd5df2391e0868fa8))
+* test ([55aaf8e](https://coding.jd.com/selling-front/shop-c-components/commits/55aaf8e660c572c15897c8e13c730768da5e741e))
+* test ([53f6932](https://coding.jd.com/selling-front/shop-c-components/commits/53f6932e93b73f47fc70abae7f53d20268f81433))
+* test ui ([20efcb1](https://coding.jd.com/selling-front/shop-c-components/commits/20efcb12a17515394f95dc5014ae9ac04f1d26d3))
+* ui ([b317724](https://coding.jd.com/selling-front/shop-c-components/commits/b317724dff81ddd103de1f307462b6b7fa13a335))
+* ui ([38e85b2](https://coding.jd.com/selling-front/shop-c-components/commits/38e85b2234c758c349a981754b63d876d456c120))
+* ui ([9a7b935](https://coding.jd.com/selling-front/shop-c-components/commits/9a7b9351c20c0481c16237af80a40833acc8645e))
+* ui ([fdbd97c](https://coding.jd.com/selling-front/shop-c-components/commits/fdbd97ca381fc3df1a21f02ec20c68ef0d7e3088))
+* ui ([9b640b7](https://coding.jd.com/selling-front/shop-c-components/commits/9b640b7a2d268843964cf02565dad901442ace50))
+* ui ([9b6a192](https://coding.jd.com/selling-front/shop-c-components/commits/9b6a1927280d80bb7eb55548f23edc2b7cb553f8))
+
+
+
+
+
 # 2.2.0 (2021-09-27)
 
 

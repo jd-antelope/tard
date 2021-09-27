@@ -3,11 +3,14 @@
     "packages/selling-c-ui"
   ],
   "command": {
-    "publish": {
-    
+    "version": {
+      "allowBranch": [
+        "test"
+      ],
+      "amend": true
     }
   },
-  "version": "2.2.8",
+  "version": "2.2.11",
   "npmClient": "yarn",
   "useWorkspaces": true
 }
