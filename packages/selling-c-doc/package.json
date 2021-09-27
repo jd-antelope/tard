@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "selling-c-doc",
-  "version": "2.1.8",
+  "version": "2.2.0",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
