@@ -6,13 +6,17 @@
     "version": {
       "allowBranch": [
         "test"
-      ]
+      ],
+      "amend": true
+    },
+    "create": {
+      "homepage": "https://selling/taro-ui",
+      "license": "MIT"
     },
     "publish": {
-      "amend": true,
-      "no-edit": true,
-      "include-merged-tags": true
-    }
+      "ignoreChanges": ["*.package.json"]
+}
+
   },
   "version": "2.2.30",
   "npmClient": "yarn",
