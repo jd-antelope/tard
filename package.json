@@ -13,7 +13,7 @@
     "version": "lerna version --conventional-commits",
     "updated": "lerna updated",
     "changed": "lerna changed",
-    "publish": "lerna publish from-package"
+    "publish": "lerna publish --yes"
   },
   "author": "",
   "license": "MIT",
