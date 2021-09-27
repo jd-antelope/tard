@@ -55,9 +55,6 @@
 * lerna version    这个命令 识别出修改的包 --> 创建新的版本号 --> 修改package.json --> 提交修改 打上版本的tag --> 推送到git上。
 * lerna publish    发布包 
 
-
-
-
 ## package.json
   * 子包中的packages.json:
 
