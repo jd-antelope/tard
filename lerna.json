@@ -4,10 +4,10 @@
   ],
   "command": {
     "publish": {
-      "no-git-reset": true
+    
     }
   },
-  "version": "2.2.7",
+  "version": "2.2.8",
   "npmClient": "yarn",
   "useWorkspaces": true
 }
