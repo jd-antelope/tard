@@ -3,7 +3,7 @@ node_modules
 lerna-debug.log
 
 # Build outputs
-
+dist
 packages/selling-c-ui/lib
 packages/selling-c-ui/dist
 
