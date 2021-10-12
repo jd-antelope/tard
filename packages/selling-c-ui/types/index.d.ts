@@ -1,2 +1,3 @@
-export { default as SlLoading } from './components/sl-loading'
-export { default as SlUpload } from './components/sl-upload'
+export { default as SlLoading } from './loading'
+export { default as SlUpload } from './upload'
+export { default as SlImage } from './image'

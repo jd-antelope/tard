@@ -2,15 +2,8 @@ node_modules
 ./.vscode
 lerna-debug.log
 
-
-
-
-
-
 # Build outputs
 
 packages/selling-c-ui/lib
 packages/selling-c-ui/dist/
-
-
 
