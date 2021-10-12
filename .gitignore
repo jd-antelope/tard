@@ -5,5 +5,5 @@ lerna-debug.log
 # Build outputs
 
 packages/selling-c-ui/lib
-packages/selling-c-ui/dist/
+packages/selling-c-ui/dist
 
