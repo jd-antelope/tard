@@ -14,21 +14,21 @@ const createComponent = (name, style) => {
   if (!hasSameComponent(name)) {
     const componentPath = path.resolve(__dirname, '../src/components/' + name)
     const stylePath = path.resolve(__dirname, '../src/style/components/')
-    const typePath = path.resolve(__dirname, '../src/types/')
-    try {
+    const typePath = path.resolve(__dirname, '../types/')
+    // try {
       fs.mkdirSync(componentPath)
       fs.writeFileSync(componentPath + '/index.tsx', crateIndexTemplate(name))
-      fs.writeFileSync(typePath + `${name}.d.ts`, crateTypeTemplate(name))
+      fs.writeFileSync(typePath + `/${name}.d.ts`, crateTypeTemplate(name))
       if (style) {
         fs.writeFileSync(stylePath + `/${name}.less`, crateStyleTemplate(name))
       } 
       appendComponent(name)
       log(`组件${name}创建成功`)
-    } catch (error) {
-      fs.removeSync(componentPath)
-      log(`组件${name}创建失败`)
-      log(`失败原因:\n ${error}`)
-    }
+    // } catch (error) {
+    //   fs.removeSync(componentPath)
+    //   log(`组件${name}创建失败`)
+    //   log(`失败原因:\n ${error}`)
+    // }
   }
 }
 /**

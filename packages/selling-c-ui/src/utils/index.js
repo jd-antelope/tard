@@ -30,7 +30,7 @@ const appendComponent = (name) => {
    `\nexport { default as ${transformCom(name)} } from './components/${name}'`, 'utf-8', { flag: 'a' })
   fs.appendFileSync(path.resolve(__dirname, '../style/components/index.less'),
    `\n@import './${name}.less';`, 'utf-8', { flag: 'a' })
-  fs.appendFileSync(path.resolve(__dirname, './index.ts'),
+  fs.appendFileSync(path.resolve(__dirname, '../../types/index.d.ts'),
    `\nexport { default as ${transformCom(name)} } from './${name}'`, 'utf-8', { flag: 'a' })
 }
 
@@ -58,7 +58,7 @@ export default memo(${transformCom(name)})
  */
 const crateStyleTemplate = (name) => {
   return `
-.${name}-wrapper{
+.${name}-component{
 }
 `
 }
