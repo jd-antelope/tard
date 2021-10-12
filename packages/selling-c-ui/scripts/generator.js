@@ -4,7 +4,9 @@ const path = require('path')
 const chalk = require('chalk')
 const figlet = require('figlet')
 const inquirer = require('inquirer')
-const { hasSameComponent, crateIndexTemplate, crateStyleTemplate, appendComponent } = require('../src/utils/index.js')
+const { 
+  hasSameComponent, crateIndexTemplate, crateStyleTemplate, appendComponent, crateTypeTemplate
+} = require('../src/utils/index.js')
 // eslint-disable-next-line no-console
 const log = console.log
 
@@ -12,12 +14,14 @@ const createComponent = (name, style) => {
   if (!hasSameComponent(name)) {
     const componentPath = path.resolve(__dirname, '../src/components/' + name)
     const stylePath = path.resolve(__dirname, '../src/style/components/')
+    const typePath = path.resolve(__dirname, '../src/types/')
     try {
       fs.mkdirSync(componentPath)
       fs.writeFileSync(componentPath + '/index.tsx', crateIndexTemplate(name))
+      fs.writeFileSync(typePath + `${name}.d.ts`, crateTypeTemplate(name))
       if (style) {
         fs.writeFileSync(stylePath + `/${name}.less`, crateStyleTemplate(name))
-      }
+      } 
       appendComponent(name)
       log(`组件${name}创建成功`)
     } catch (error) {

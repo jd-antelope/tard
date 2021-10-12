@@ -30,6 +30,8 @@ const appendComponent = (name) => {
    `\nexport { default as ${transformCom(name)} } from './components/${name}'`, 'utf-8', { flag: 'a' })
   fs.appendFileSync(path.resolve(__dirname, '../style/components/index.less'),
    `\n@import './${name}.less';`, 'utf-8', { flag: 'a' })
+  fs.appendFileSync(path.resolve(__dirname, './index.ts'),
+   `\nexport { default as ${transformCom(name)} } from './${name}'`, 'utf-8', { flag: 'a' })
 }
 
 /**
@@ -61,10 +63,22 @@ const crateStyleTemplate = (name) => {
 `
 }
 
+/**
+ * 创建类型文件模版
+ * @param name 组件名称
+ */
+const crateTypeTemplate = (name) => {
+  return `
+export interface ${transformCom(name)}Props{
+}
+`
+}
+
 module.exports = {
   transformCom,
   appendComponent,
   hasSameComponent,
   crateIndexTemplate,
-  crateStyleTemplate
+  crateStyleTemplate,
+  crateTypeTemplate
 }

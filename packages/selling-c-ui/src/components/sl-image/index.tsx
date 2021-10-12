@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { Image } from '@tarojs/components';
 import { BUYIMG } from '../../common/constants';
 import { SlImageProps } from '../../../types/image'
-import './index.less';
+import '../../style/components/sl-image.less';
 
 const SlImage: FC<SlImageProps> = ({
   className, src, lazyLoad = false, isShowMove = false, 
