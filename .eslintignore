@@ -1,2 +1,11 @@
-packages/
+# Node modules
 node_modules/
+
+# Editor and IDE files
+.vscode
+.idea
+
+# Build outputs
+packages/**/lib/
+packages/**/dist/
+

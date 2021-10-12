@@ -9,11 +9,49 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-// import './index.less'
-var SlLoading = function () {
-    return (React__default['default'].createElement(components.View, { className: "aaa" }, "fsdffsdfsd"));
-};
-var index = React.memo(SlLoading);
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
 
-exports.SlLoading = index;
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z$1 = ".aaa {\n  background: red;\n  display: flex;\n  font-size: 24px;\n  line-height: 150;\n  height: 200px;\n}\n";
+styleInject(css_248z$1);
+
+var SlLoading = function () {
+    return (React__default['default'].createElement(components.View, { className: "aaa" }, "fff"));
+};
+var index$1 = React.memo(SlLoading);
+
+var css_248z = "";
+styleInject(css_248z);
+
+var SlUpload = function () {
+    return React__default['default'].createElement(components.View, { className: "sl-upload-wrapper" }, "axcvcxvxcv");
+};
+var index = React.memo(SlUpload);
+
+exports.SlLoading = index$1;
+exports.SlUpload = index;
 //# sourceMappingURL=index.js.map

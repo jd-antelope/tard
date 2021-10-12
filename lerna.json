@@ -2,5 +2,19 @@
   "packages": [
     "packages/selling-c-ui"
   ],
-  "version": "independent"
+  "command": {
+    "version": {
+      "allowBranch": [
+        "master"
+      ]
+    },
+    "create": {
+      "homepage": "https://selling/taro-ui",
+      "license": "MIT"
+    }
+
+  },
+  "version": "2.2.31",
+  "npmClient": "yarn",
+  "useWorkspaces": true
 }

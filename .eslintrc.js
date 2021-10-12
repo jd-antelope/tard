@@ -1,12 +1,12 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es6: true
   },
   extends: [
-    'plugin:react/recommended',
+    'standard',
     'plugin:react/jsx-runtime',
-    'standard'
+    'plugin:react/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -17,13 +17,12 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    '@typescript-eslint',
     'react',
-    'react-hooks'
-
+    'react-hooks',
+    '@typescript-eslint'
   ],
   rules: {
-    'no-console': 1
+    'no-console': 2
   }
 
 }

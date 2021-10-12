@@ -1,55 +1,58 @@
 {
-  "name": "selling-c",
-  "version": "1.0.3",
+  "name": "selling-c-ui",
+  "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "build:component": "lerna run --scope selling-c-ui build",
+    "build:component": "lerna run --scope @jd/selling-c-ui build",
     "clean": "lerna run clean",
-    "clean:component": "lerna run --scope selling-c-ui clean",
-    "publish": "lerna publish from-package --yes"
+    "clean:component": "lerna run --scope @jd/selling-c-ui clean",
+    "version": "lerna version --conventional-commits",
+    "updated": "lerna updated",
+    "changed": "lerna changed",
+    "publish": "lerna publish --yes"
   },
   "author": "",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://coding.jd.com/selling-front/shop-c-components.git"
-  },
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^2.26.0",
-    "@typescript-eslint/parser": "^2.26.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "autoprefixer": "^10.3.4",
+    "chalk": "^4.1.2",
     "conventional-changelog-cli": "^2.0.31",
     "cross-env": "^7.0.2",
-    "eslint": "^6.8.0",
-    "eslint-config-o2team": "^0.1.7",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^6.10.1",
+    "eslint-config-standard": "^16.0.3",
     "eslint-import-resolver-custom-alias": "^1.2.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "^3.0.0",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.0.0",
     "husky": "^4.2.3",
-    "lerna": "^3.22.1",
+    "lerna": "^3.20.2",
     "lint-staged": "^10.1.2",
     "prettier": "^2.0.3",
     "rimraf": "^3.0.2",
     "stylelint": "^13.3.0",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.16.0",
     "typescript": "~3.7.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --quiet --cache --fix",
-    "src/**/*.scss": "stylelint --syntax scss --fix"
-  },
-  "peerDependencies": {
-    "@tarojs/components": ">=3",
-    "@tarojs/react": ">=3",
-    "react": ">=16.13.0",
-    "react-dom": ">=16.13.0"
+    "*.{js,jsx,ts,tsx}": "eslint --quiet  --fix",
+    "src/**/*.scss": "stylelint --syntax less --fix"
   }
+
 }
