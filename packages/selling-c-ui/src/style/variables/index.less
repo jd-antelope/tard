@@ -1,5 +1,104 @@
 /**
  * Default variables
+ 组件库-自定义主题
+    0、使用less开发、采用BEM风格
+    1、制定变量范围及规范
+        （1）包括主色、圆角、边框、字体、阴影等【需要UI支持】
+        （2）可自定义变量统一前缀，如vant->van；antd-moblie->atm；taro-ui->at 【taro-ui暂不支持】
+        （3）颜色算法，定义主题色，相关辅色系能根据算法生成，可只定义主色【taro-ui暂不支持】
+    2、支持自定义方式：原理是覆盖less变量
+        （1）样式文件覆盖，根据组件暴露的样式变量自定义样式文件，引入使用进行覆盖
+        （2）webpack配置，利用less-loader进行变量覆盖配置 vant-less
+    3、自定义主题生成器（优先级低），taro有https://nervjs.github.io/taro-ui-theme-preview/，vant、antd-moblie没有
+    4、提供几套通用主题，通用样式文件引入（优先级低）
+    5、vscode组件代码补全插件（优先级低）
  */
 
-@color-brand: #6190E8;
+// 定义前缀
+@--css-prefix: slc;
+
+/* base Variable
+------------------------- */
+@--color-white: #fff;
+@--color-black: #000;
+@--color-transparent: transparent;
+@--fill-base: #fff;
+@--font-color: #000;
+
+/* Primary Color
+-------------------------- */
+@--color-primary: #2c68ff;
+// 表格、表单划过色(alert背景色，日期选择多选背景色、选中、下拉背景色)
+@--color-primary-1: color(~`colorPlate("@{--color-primary}", 1)`);
+// input类点击反馈色，开关禁用填充色
+@--color-primary-2: color(~`colorPlate("@{--color-primary}", 2)`);
+// button disabled
+@--color-primary-3: color(~`colorPlate("@{--color-primary}", 3)`);
+// 边框描边色(alert)
+@--color-primary-4: color(~`colorPlate("@{--color-primary}", 4)`);
+// button hover
+@--color-primary-5: color(~`colorPlate("@{--color-primary}", 5)`);
+// button active
+@--color-primary-7: color(~`colorPlate("@{--color-primary}", 7)`);
+
+/* Success Color
+-------------------------- */
+@--color-success: #0ed57d;
+// alert 背景色
+@--color-success-1: color(~`colorPlate("@{--color-success}", 1)`);
+// tag 边框色
+@--color-success-2: color(~`colorPlate("@{--color-success}", 2)`);
+// 主要按钮 disabled
+@--color-success-3: color(~`colorPlate("@{--color-success}", 3)`);
+// 边框描边色(alert/message)
+@--color-success-4: color(~`colorPlate("@{--color-success}", 4)`);
+// 主要按钮 hover
+@--color-success-5: color(~`colorPlate("@{--color-success}", 5)`);
+// 主要按钮 active
+@--color-success-7: color(~`colorPlate("@{--color-success}", 7)`);
+
+/* Warning Color
+-------------------------- */
+@--color-warning: #ff9c00;
+// alert 背景色
+@--color-warning-1: color(~`colorPlate("@{--color-warning}", 1)`);
+// tag边框色
+@--color-warning-2: color(~`colorPlate("@{--color-warning}", 2)`);
+// 主要按钮 disabled
+@--color-warning-3: color(~`colorPlate("@{--color-warning}", 3)`);
+// 边框描边色(alert/message)
+@--color-warning-4: color(~`colorPlate("@{--color-warning}", 4)`);
+// 主要按钮 hover
+@--color-warning-5: color(~`colorPlate("@{--color-warning}", 5)`);
+// 主要按钮 active
+@--color-warning-7: color(~`colorPlate("@{--color-warning}", 7)`);
+
+/* Danger Color
+-------------------------- */
+@--color-danger: #f52f3e;
+// alert 背景色
+@--color-danger-1: color(~`colorPlate("@{--color-danger}", 1)`);
+// tag 边框色
+@--color-danger-2: color(~`colorPlate("@{--color-danger}", 2)`);
+// 主要按钮 disabled
+@--color-danger-3: color(~`colorPlate("@{--color-danger}", 3)`);
+// 边框描边色(alert/message)
+@--color-danger-4: color(~`colorPlate("@{--color-danger}", 4)`);
+// 主要按钮 hover
+@--color-danger-5: color(~`colorPlate("@{--color-danger}", 5)`);
+// 主要按钮 active
+@--color-danger-7: color(~`colorPlate("@{--color-danger}", 7)`);
+
+/* Info Color
+-------------------------- */
+@--color-info: #a1a5af;
+@--color-info-1: color(~`colorPlate("@{--color-info}", 1)`);
+// button disabled 
+@--color-info-3: color(~`colorPlate("@{--color-info}", 3)`);
+// 边框描边色(alert/message)
+@--color-info-4: color(~`colorPlate("@{--color-info}", 4)`);
+// button hover
+@--color-info-5: color(~`colorPlate("@{--color-info}", 5)`);
+// button active
+@--color-info-7: color(~`colorPlate("@{--color-info}", 7)`);
+
