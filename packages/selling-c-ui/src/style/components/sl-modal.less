@@ -1,4 +1,4 @@
-@import '../variables/default.less';
+@import '../variables/index.less';
 @import '../mixins/index.less';
 
 @modal-duration: 200ms;
@@ -10,35 +10,29 @@
   top: 0;
   left: 0;
   visibility: hidden;
-  transition: visibility @--modal-duration ease-in;
+  transition: visibility @modal-duration ease-in;
   z-index: @zindex-modal;
 
   /* elements */
   &__overlay,
   &__container {
     opacity: 0;
-    transition: opacity @--modal-duration ease-in;
+    transition: opacity @modal-duration ease-in;
   }
 
   &__overlay {
-    @include overlay;
   }
 
   &__container {
-    @include absolute-center();
-
-    width: @--modal-width;
+    width: @modal-width;
     border-radius: @border-radius-lg;
-    background-color: @--modal-bg-color;
+    background-color: @modal-bg-color;
     overflow: hidden;
   }
 
   &__header {
-    @include hairline-bottom-relative(@color: @color-grey-4);
-    @include line(1);
-
     padding: @spacing-v-md @spacing-h-lg;
-    color: @--modal-header-text-color;
+    color: @modal-header-text-color;
     font-size: @font-size-lg;
     text-align: center;
   }
@@ -47,27 +41,20 @@
     padding: @spacing-h-xl @spacing-h-lg;
     min-height: 180px;
     max-height: 840px;
-    color: @--modal-content-text-color;
+    color: @modal-content-text-color;
     font-size: @font-size-base;
     box-sizing: content-box;
     width: auto;
   }
 
   &__footer {
-    @include hairline-top-relative(@color: @color-grey-4);
-
     .@{--css-prefix}-modal__action {
-      @include display-flex;
 
       & > button {
-        @include flex(auto);
-        @include line(1);
-        @include active;
-
         margin-top: 0;
         min-width: 160px;
         height: 88px;
-        color: @--modal-btn-default-color;
+        color: @modal-btn-default-color;
         font-size: @font-size-base;
         line-height: 86px;
         outline: 0;
@@ -83,17 +70,16 @@
         }
 
         &:not(:first-child) {
-          @include hairline-left-relative(@color: @color-grey-4);
         }
 
         &:last-child {
-          color: @--modal-btn-confirm-color;
+          color: @modal-btn-confirm-color;
         }
       }
     }
 
     &--simple .@{--css-prefix}-modal__action > button:last-child:nth-child(2) {
-      color: @--modal-btn-confirm-color;
+      color: @modal-btn-confirm-color;
     }
   }
 
