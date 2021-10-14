@@ -1,4 +1,6 @@
 import NodePath from 'path'
+import react from 'react'
+import reactDom from 'react-dom'
 import RollPostcss from 'rollup-plugin-postcss'
 import RollupJson from '@rollup/plugin-json'
 import RollupNodeResolve from '@rollup/plugin-node-resolve'
@@ -11,7 +13,6 @@ const resolveFile = path => NodePath.resolve(__dirname, '..', path)
 
 const externalPackages = [
   'classnames',
-  'react',
   'react-dom',
   '@tarojs/components',
   '@tarojs/runtime',
@@ -46,7 +47,11 @@ export default {
       }
     }),
     RollupCommonjs({
-      include: /\/node_modules\//
+      include: /\/node_modules\//,
+      namedExports: {
+        react: Object.keys(react),
+        'react-dom': Object.keys(reactDom)
+      }
     }),
     RollupJson(),
     RollupTypescript({

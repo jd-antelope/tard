@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react';
-import cn from 'classnames';
-import { Image } from '@tarojs/components';
-import { BUYIMG } from '../../common/constants';
+import React, { Fragment } from 'react'
+import cn from 'classnames'
+import { Image } from '@tarojs/components'
+import { BUYIMG } from '../../common/constants'
 import { SlImageProps, SlImageState } from '../../../types/image'
 
 export default class SlImage extends React.Component<SlImageProps, SlImageState> {
   public static defaultProps: SlImageProps
-  public constructor(props: SlImageProps) {
+  public constructor (props: SlImageProps) {
     super(props)
     const { src } = props
 
@@ -15,7 +15,9 @@ export default class SlImage extends React.Component<SlImageProps, SlImageState>
       noImg: `${BUYIMG}/common/no-img.png?1`
     }
   }
-  public render(): JSX.Element | null {
+
+  // eslint-disable-next-line no-undef
+  public render (): JSX.Element | null {
     const { res, className } = this.props
     const { url, noImg } = this.state
     return (
