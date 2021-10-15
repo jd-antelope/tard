@@ -96,7 +96,7 @@
 @zindex-modal: 1000;
 
 /* 水平间距 */
-@spacing-h-sm: 5px * @hd;
+@spacing-h-sm: 3px * @hd;
 @spacing-h-md: 8px * @hd;
 @spacing-h-lg: 12px * @hd;
 @spacing-h-xl: 16px * @hd;
@@ -119,8 +119,16 @@
 @line-height-en: 1.3; // 英文多行
 @line-height-zh: 1.5; // 中文多行
 
+/**
+ * 组件变量
+ */
+
+/* Price */
+@price-height: 50px;
+@price-commission-height: 30px;
+
 /* Modal */
-@modal-width: 540px;
+@modal-width: 540px * @hd;
 @modal-header-text-color: @color-text-base;
 @modal-content-text-color: @color-text-base;
 @modal-btn-default-color: @color-text-base;

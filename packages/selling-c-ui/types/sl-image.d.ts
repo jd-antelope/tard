@@ -1,8 +1,8 @@
+import SlComponent from './base'
 import { ImageProps } from '@tarojs/components/types/Image'
 
-export interface SlImageProps extends ImageProps {
+export interface SlImageProps extends ImageProps, SlComponent {
   src: string,
-  className?: string,
   res?: any
 }
 
