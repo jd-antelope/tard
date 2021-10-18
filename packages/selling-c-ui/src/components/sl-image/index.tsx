@@ -26,8 +26,8 @@ export default class SlImage extends React.Component<SlImageProps, SlImageState>
           { ... res }
           src={ url }
           className={ cn(className, {
-            'hs-image-default': !url.includes(noImg),
-            'hs-image-none': url.includes(noImg)
+            'slc-image-default': !url.includes(noImg),
+            'slc-image-none': url.includes(noImg)
           }) }
 
         />

@@ -1,6 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import { View, Text } from '@tarojs/components'
+import Common from '../../common/common'
 import { SlPriceProps, SlPriceState } from '../../../types/sl-price'
 
 export default class SlPrice extends React.Component<SlPriceProps, SlPriceState> {
@@ -19,10 +20,10 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
   public render (): JSX.Element | null {
     const { price, className, color, commissionPrice, trigger } = this.props
     return (
-      <View className={ cn('slc-price', className) }>
+      <Common className={ cn('slc-price', className) }>
         <View 
           className="slc-price__text"
-          style={ `color: ${color}` }
+          style={ color !== '' ? `color: ${color}` : '' }
         >
           ¥
           <Text 
@@ -42,7 +43,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
             </View>
           </View>
         }
-      </View>
+      </Common>
     )
   }
 }
@@ -50,7 +51,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
 SlPrice.defaultProps = {
   className: '',
   price: '',
-  color: '#000',
+  color: '',
   trigger: '',
   commissionPrice: ''
 }

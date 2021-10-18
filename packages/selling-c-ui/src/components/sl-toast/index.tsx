@@ -104,7 +104,7 @@ export default class SlToast extends React.Component<
     const bodyClass = classNames('toast-body', {
       'slc-toast__body--custom-image': image,
       'toast-body--text': !realImg && !icon,
-      [`sl-toast__body--${status}`]: !!status
+      [`slc-toast__body--${status}`]: !!status
     })
 
     const iconClass = classNames('slc-icon', {
