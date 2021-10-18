@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from '@tarojs/components'
-import Taro from '@tarojs/taro'
+import Taro, { eventCenter, getCurrentInstance } from '@tarojs/taro'
 
 type CommonProps = {
   className: string
@@ -11,6 +11,7 @@ type CommonState = {
 }
 
 export default class Common extends React.Component<CommonProps, CommonState> {
+  $instance = getCurrentInstance()
   public static defaultProps: CommonProps
 
   private setThemeStyle () {
@@ -34,9 +35,18 @@ export default class Common extends React.Component<CommonProps, CommonState> {
 
   public componentDidMount(): void {
     this.setThemeStyle()
+    const onShowEventId = (this.$instance as any).router.onShow
+    // 监听
+    eventCenter.on(onShowEventId, this.onShow)
   }
 
-  public componentDidShow(): void {
+  public componentWillUnmount (): void {
+    const onShowEventId = (this.$instance as any).router.onShow
+    // 卸载
+    eventCenter.off(onShowEventId, this.onShow)
+  }
+
+  onShow = () => {
     this.setThemeStyle()
   }
 
