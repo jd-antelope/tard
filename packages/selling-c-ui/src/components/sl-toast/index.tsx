@@ -102,18 +102,18 @@ export default class SlToast extends React.Component<
     /* eslint-enable @typescript-eslint/no-non-null-assertion */
 
     const bodyClass = classNames('toast-body', {
-      'sl-toast__body--custom-image': image,
+      'slc-toast__body--custom-image': image,
       'toast-body--text': !realImg && !icon,
-      [`sl-toast__body--${status}`]: !!status
+      [`slc-toast__body--${status}`]: !!status
     })
 
-    const iconClass = classNames('sl-icon', {
-      [`sl-icon-${icon}`]: icon
+    const iconClass = classNames('slc-icon', {
+      [`slc-icon-${icon}`]: icon
     })
 
     return _isOpened ? (
-      <View className={classNames('sl-c-toast', this.props.className)}>
-        {hasMask && <View className='sl-toast__overlay' />}
+      <View className={classNames('slc-toast', this.props.className)}>
+        {hasMask && <View className='slc-toast__overlay' />}
         <View
           className={bodyClass}
           style={customStyle}

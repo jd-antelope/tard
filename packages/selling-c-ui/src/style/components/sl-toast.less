@@ -22,6 +22,7 @@
 .@{--css-prefix}-toast {
   /* elements */
   &__overlay {
+    .mixin-overlay();
     position: fixed;
     opacity: 0;
     z-index: @zindex-toast;
@@ -36,7 +37,7 @@
   }
 
   .toast-body {
-    // @include absolute-center(fixed);
+    .mixin-absolute-center(fixed);
 
     padding: @spacing-v-lg @spacing-h-xl;
     min-width: @sl-toast-min-width;

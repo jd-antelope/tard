@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import cn from 'classnames'
 import { Image } from '@tarojs/components'
 import { BUYIMG } from '../../common/constants'
-import { SlImageProps, SlImageState } from '../../../types/image'
+import { SlImageProps, SlImageState } from '../../../types/sl-image'
 
 export default class SlImage extends React.Component<SlImageProps, SlImageState> {
   public static defaultProps: SlImageProps
@@ -26,8 +26,8 @@ export default class SlImage extends React.Component<SlImageProps, SlImageState>
           { ... res }
           src={ url }
           className={ cn(className, {
-            'hs-image-default': !url.includes(noImg),
-            'hs-image-none': url.includes(noImg)
+            'slc-image-default': !url.includes(noImg),
+            'slc-image-none': url.includes(noImg)
           }) }
 
         />

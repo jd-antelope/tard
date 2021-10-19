@@ -1,3 +1,37 @@
+@import '../variables/index.less';
+@import '../mixins/index.less';
 
-.sl-price-component{
+@commission-mb: 5px;
+
+.@{--css-prefix}-price {
+  .flex-direction(row);
+  overflow: hidden;
+  height: @price-height;
+
+  &__text {
+    font-size: @font-size-sm;
+    line-height: @line-height-zh;
+    color: var(--promotionColor);
+  }
+
+  &__text-content {
+    font-size: @font-size-xl;
+  }
+
+  &__commission {
+    .flex-items(flex-end);
+    height: @price-height;
+    margin-left: @spacing-h-sm;
+    &--box {
+      box-sizing: border-box;
+      font-size: @font-size-xs;
+      height: @price-commission-height;
+      padding: 0 @spacing-h-md;
+      background: @color-text-secondary;
+      color: @color-white;
+      border-radius: @border-radius-md;
+      margin-bottom: @commission-mb;
+      .flex-center();
+    }
+  }
 }
