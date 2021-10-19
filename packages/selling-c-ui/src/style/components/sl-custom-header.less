@@ -1,44 +1,53 @@
+.slc-custom-header {
+    box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    z-index: 9999;
 
-.sl-custom-header-component{
-    .hs-custom-header {
+    &-content {
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
         width: 100%;
-        background: #fff;
-        .custom-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-sizing: border-box;
+        padding: 0 16px;
+        &-back {
             width: 100%;
-        }
-        .status-height {
-            width: 100%;
-            background: #fff;
-        }
-        .custom-header-content {
-            box-sizing: border-box;
+            max-width: 100%;
             display: flex;
             align-items: center;
-            width: 100%;
-            height: 88px;
-            padding: 0 24px;
-            background: #fff;
-            .custom-header-content-back {
-                width: 100%;
-                max-width: 100%;
+            &-btn {
+                font-size: 20px;
+                border: 1rpx solid #ccc;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                background: #ddd;
             }
         }
-        .seat-height {
+    }
+
+    &-fixed {
+        background: inherit;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    &-height{
+        &-status {
             width: 100%;
-            height: 95px;
         }
-        .header-return {
-            position: fixed;
-            left: 24px;
+    
+        &-seat {
+            width: 100%;
         }
-        .custom-header-app {
-            top: 112px;
-        }
-    }      
+    }
+   
 }
+
+
