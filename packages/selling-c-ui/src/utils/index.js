@@ -70,7 +70,10 @@ ${transformCom(name)}.defaultProps = {
  */
 const crateStyleTemplate = (name) => {
   return `
-.slc-${transformFront(name)} {
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+.@{--css-prefix}-${transformFront(name)} {
   overflow: hidden
 }
 `
@@ -82,10 +85,12 @@ const crateStyleTemplate = (name) => {
  */
 const crateTypeTemplate = (name) => {
   return `
-export interface ${transformCom(name)}Props{
+import SlComponent from './base'
+
+export interface ${transformCom(name)}Props extends SlComponent {
 }
 
-export interface ${transformCom(name)}State{
+export interface ${transformCom(name)}State {
 }
 `
 }

@@ -1,9 +1,10 @@
 node_modules
 ./.vscode
 lerna-debug.log
+yarn.lock
+package-lock.json
 
 # Build outputs
 dist
 packages/selling-c-ui/lib
 packages/selling-c-ui/dist
-
