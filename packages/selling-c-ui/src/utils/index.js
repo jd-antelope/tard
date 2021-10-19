@@ -21,6 +21,10 @@ const transformCom = (name) => {
   return name.split('-').reduce((pre, v) => (pre += v.slice(0, 1).toLocaleUpperCase() + v.slice(1)), '')
 }
 
+const transformFront = (name) => {
+  return name.split('-')[1]
+}
+
 /**
  * 追加组件输出至根目录
  * @param name 组件名称
@@ -40,16 +44,24 @@ const appendComponent = (name) => {
  */
 const crateIndexTemplate = (name) => {
   return `
-import React, { memo } from 'react'
+import React from 'react'
 import { View } from '@tarojs/components'
-import { FC } from '@tarojs/taro'
-import '../../style/components/${name}.less'
-const  ${transformCom(name)}:FC = () => {
-return <View className="${name}-wrapper">this is ${transformCom(name)}</View>
+import { ${transformCom(name)}Props, ${transformCom(name)}State } from '../../../types/${name}'
+
+export default class ${transformCom(name)} extends React.Component<${transformCom(name)}Props, ${transformCom(name)}State> {
+  public static defaultProps: ${transformCom(name)}Props
+
+  // eslint-disable-next-line no-undef
+  public render (): JSX.Element | null {
+    return (
+      <View></View>
+    )
+  }
 }
 
-export default memo(${transformCom(name)})
-        `
+${transformCom(name)}.defaultProps = {
+}
+`
 }
 
 /**
@@ -58,7 +70,8 @@ export default memo(${transformCom(name)})
  */
 const crateStyleTemplate = (name) => {
   return `
-.${name}-component{
+.slc-${transformFront(name)} {
+  overflow: hidden
 }
 `
 }
@@ -70,6 +83,9 @@ const crateStyleTemplate = (name) => {
 const crateTypeTemplate = (name) => {
   return `
 export interface ${transformCom(name)}Props{
+}
+
+export interface ${transformCom(name)}State{
 }
 `
 }
