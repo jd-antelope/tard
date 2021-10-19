@@ -12,7 +12,7 @@
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./config/tsconfig.build.json",
     "build:rollup": "rollup --config ./config/rollup.config.js",
-    "build:watch ": "rollup --config ./config/rollup.config.js --watch",
+    "build:watch": "rollup --config ./config/rollup.config.js --watch",
     "clean": "rimraf dist"
   },
   "publishConfig": {
