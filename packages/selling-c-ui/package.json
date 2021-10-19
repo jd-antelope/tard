@@ -11,10 +11,9 @@
     "dev:lib": "tsc --project ./config/tsconfig.build.json --watch --incremental",
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./config/tsconfig.build.json",
-    "build:rollup": "rollup --config ./config/rollup.config.js --watch",
-    "clean": "rimraf dist",
-    "async": "npm run build && yalc push",
-    "watch": "nodemon --ignore dist/ --ignore node_modules/ --watch src/ -C -e ts,tsx,scss --debug -x 'npm run async'"
+    "build:rollup": "rollup --config ./config/rollup.config.js",
+    "build:watch ": "rollup --config ./config/rollup.config.js --watch",
+    "clean": "rimraf dist"
   },
   "publishConfig": {
     "registry": "http://registry.m.jd.com",
@@ -47,7 +46,6 @@
     "@types/node": "^13.11.1",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
-    "nodemon": "^2.0.12",
     "postcss": "^8.3.6",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
