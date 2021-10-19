@@ -3,7 +3,9 @@ import { View } from '@tarojs/components'
 import Taro, { eventCenter, getCurrentInstance } from '@tarojs/taro'
 
 type CommonProps = {
-  className: string
+  className: string,
+  style?: string,
+  [propName: string]: any
 }
 
 type CommonState = {
@@ -52,10 +54,10 @@ export default class Common extends React.Component<CommonProps, CommonState> {
 
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
-    const { className, children } = this.props
+    const { className, children, style, ...rest } = this.props
     const { themeStyle } = this.state
     return (
-      <View className={ className } style={ themeStyle }>
+      <View className={ className } style={ themeStyle + style } { ...rest }>
         { children }
       </View>
     )
@@ -63,5 +65,6 @@ export default class Common extends React.Component<CommonProps, CommonState> {
 }
 
 Common.defaultProps = {
-  className: ''
+  className: '',
+  style: ''
 }
