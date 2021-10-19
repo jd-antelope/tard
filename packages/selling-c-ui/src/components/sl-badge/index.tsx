@@ -2,13 +2,14 @@ import classNames from 'classnames'
 import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { View } from '@tarojs/components'
-import { AtBadgeProps } from '../../../types/sl-badge'
+// import Common from '../../common/common'
+import { SlBadgeProps } from '../../../types/sl-badge'
 
-export default class AtBadge extends React.Component<AtBadgeProps> {
-  public static defaultProps: AtBadgeProps
-  public static propTypes: InferProps<AtBadgeProps>
+export default class SlBadge extends React.Component<SlBadgeProps> {
+  public static defaultProps: SlBadgeProps
+  public static propTypes: InferProps<SlBadgeProps>
 
-  public constructor(props: AtBadgeProps) {
+  public constructor(props: SlBadgeProps) {
     super(props)
     this.state = {}
   }
@@ -28,7 +29,7 @@ export default class AtBadge extends React.Component<AtBadgeProps> {
 
   public render(): JSX.Element {
     const { dot, value, maxValue = 99, customStyle } = this.props
-    const rootClassName = ['at-badge']
+    const rootClassName = ['slc-badge']
 
     const val = this.formatValue(value, maxValue)
 
@@ -39,16 +40,16 @@ export default class AtBadge extends React.Component<AtBadgeProps> {
       >
         {this.props.children}
         {dot ? (
-          <View className='at-badge__dot'></View>
+          <View className='slc-badge__dot'></View>
         ) : (
-          val !== '' && <View className='at-badge__num'>{val}</View>
+          val !== '' && <View className='slc-badge__num'>{val}</View>
         )}
       </View>
     )
   }
 }
 
-AtBadge.defaultProps = {
+SlBadge.defaultProps = {
   dot: false,
   value: '',
   maxValue: 99,
@@ -56,7 +57,7 @@ AtBadge.defaultProps = {
   className: ''
 }
 
-AtBadge.propTypes = {
+SlBadge.propTypes = {
   dot: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   maxValue: PropTypes.number,

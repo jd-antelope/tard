@@ -1,9 +1,9 @@
 import { MouseEvent, ComponentClass } from 'react'
 import { CommonEventFunction } from '@tarojs/components/types/common'
 
-import AtComponent, { AtIconBaseProps } from './base'
+import SlComponent, { SlIconBaseProps } from './base'
 
-export interface SlIconProps extends AtComponent, AtIconBaseProps {
+export interface SlIconProps extends SlComponent, SlIconBaseProps {
   onClick?: CommonEventFunction
 }
 

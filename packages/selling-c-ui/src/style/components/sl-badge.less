@@ -1,10 +1,10 @@
-@import '../variables/default.scss';
-@import '../mixins/index.scss';
+@import '../variables/index.less';
+@import '../mixins/index.less';
 
-@at-badge-border-radius: @at-badge-font-size * 0.7;
-@at-badge-box-shadow: 0 4px 8px 0 rgba(@color: @at-badge-bg-color, @alpha: 0.2);
+@slc-badge-border-radius: @slc-badge-font-size * 0.7;
+@slc-badge-box-shadow: 0 4px 8px 0 rgba(@slc-badge-bg-color,0.2);
 
-.at-badge {
+.slc-badge{
   position: relative;
   display: inline-block;
   font-size: 0;
@@ -15,25 +15,25 @@
     position: absolute;
     right: -6px;
     top: -6px;
-    width: @at-badge-dot-size;
-    height: @at-badge-dot-size;
+    width: @slc-badge-dot-size;
+    height: @slc-badge-dot-size;
     border-radius: 50%;
     overflow: hidden;
-    background: @at-badge-bg;
-    box-shadow: @at-badge-box-shadow;
+    background: @slc-badge-bg;
+    box-shadow: @slc-badge-box-shadow;
   }
 
   &__num {
     position: absolute;
     padding: 0 @spacing-h-sm;
-    top: -@at-badge-border-radius;
+    top: -@slc-badge-border-radius;
     right: -6PX;
-    color: @at-badge-color;
-    font-size: @at-badge-font-size;
+    color: @slc-badge-color;
+    font-size: @slc-badge-font-size;
     line-height: 1.4;
-    border-radius: @at-badge-border-radius @at-badge-border-radius @at-badge-border-radius 0;
-    background: @at-badge-bg;
-    box-shadow: @at-badge-box-shadow;
+    border-radius: @slc-badge-border-radius @slc-badge-border-radius @slc-badge-border-radius 0;
+    background: @slc-badge-bg;
+    box-shadow: @slc-badge-box-shadow;
     transform: translate(50%, 0);
     overflow: hidden;
     z-index: 1;

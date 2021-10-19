@@ -3,8 +3,6 @@ import React, { memo } from 'react'
 import { View, Text } from '@tarojs/components'
 import { FC, getSystemInfoSync, getCurrentPages, navigateBack, reLaunch } from '@tarojs/taro';
 import cn from 'classnames';
-import '../../style/components/sl-custom-header.less'
-
 interface CustomerProps {
     // 是否需要返回按钮
     backUp?: boolean

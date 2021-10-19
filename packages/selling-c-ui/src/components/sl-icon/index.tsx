@@ -42,7 +42,7 @@ export default class SlIcon extends React.Component<SlIconProps> {
 SlIcon.defaultProps = {
   customStyle: '',
   className: '',
-  prefixClass: 'at-icon',
+  prefixClass: 'slc-icon',
   value: '',
   color: '',
   size: 24

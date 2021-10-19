@@ -1,8 +1,8 @@
 import { MouseEvent, ComponentClass } from 'react'
 
-import AtComponent from './base'
+import SlComponent from './base'
 
-export interface AtBadgeProps extends AtComponent {
+export interface SlBadgeProps extends SlComponent {
   /**
    * 角标红点
    * @default false
@@ -19,6 +19,6 @@ export interface AtBadgeProps extends AtComponent {
   maxValue?: number
 }
 
-declare const AtBadge: ComponentClass<AtBadgeProps>
+declare const SlBadge: ComponentClass<SlBadgeProps>
 
-export default AtBadge
+export default SlBadge
