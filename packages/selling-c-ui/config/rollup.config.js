@@ -3,6 +3,7 @@ import RollupJson from '@rollup/plugin-json'
 import RollupNodeResolve from '@rollup/plugin-node-resolve'
 import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
+// import RollupCopyWatch from 'rollup-plugin-copy-watch'
 import RollupCopy from 'rollup-plugin-copy'
 import watch from "rollup-plugin-watch";
 import Package from '../package.json'
@@ -64,5 +65,13 @@ export default {
     watch({
       dir:resolveFile('src/style')
     })
+    // RollupCopyWatch({
+    //   verbose: true,
+    //   copyOnce:false,
+    //   targets: [
+     
+    //     { src: resolveFile('src/style'), dest:  resolveFile('dist') }
+    //   ]
+    // })
   ]
 }
