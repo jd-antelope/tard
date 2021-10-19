@@ -1,0 +1,30 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+@float-layout-timer: 1000ms;
+
+.@{--css-prefix}-popup {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   z-index: @zindex-popup__layout;
+   background: green;
+   transition: visibility @float-layout-timer cubic-bezier(0.36, 0.66, 0.04, 1);
+
+   &__mask {
+      .mixin-overlay();
+      opacity: 1;
+      transition: opacity 150ms ease-in;
+   } 
+
+   &__contiainer {
+      .flex-direction('column');
+
+      height: @height-100;
+      border-radius: 12px;
+      background: @color-bg ;
+      
+   }
+}

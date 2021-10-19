@@ -11,7 +11,7 @@
     "dev:lib": "tsc --project ./config/tsconfig.build.json --watch --incremental",
     "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./config/tsconfig.build.json",
-    "build:rollup": "rollup --config ./config/rollup.config.js",
+    "build:rollup": "rollup --config ./config/rollup.config.js --watch",
     "clean": "rimraf dist",
     "async": "npm run build && yalc push",
     "watch": "nodemon --ignore dist/ --ignore node_modules/ --watch src/ -C -e ts,tsx,scss --debug -x 'npm run async'"
@@ -30,6 +30,12 @@
     "types"
   ],
   "types": "./types/index.d.ts",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "dayjs": "^1.7.7",
+    "lodash": "^4.17.10",
+    "prop-types": "^15.7.2"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-json": "^4.0.2",
@@ -51,6 +57,7 @@
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-typescript2": "^0.27.0",
     "rollup-plugin-visualizer": "^4.0.2",
+    "rollup-plugin-watch": "^1.0.1",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {

@@ -1,10 +1,11 @@
 import NodePath from 'path'
-import RollPostcss from 'rollup-plugin-postcss'
 import RollupJson from '@rollup/plugin-json'
 import RollupNodeResolve from '@rollup/plugin-node-resolve'
 import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
+// import RollupCopyWatch from 'rollup-plugin-copy-watch'
 import RollupCopy from 'rollup-plugin-copy'
+import watch from "rollup-plugin-watch";
 import Package from '../package.json'
 
 const resolveFile = path => NodePath.resolve(__dirname, '..', path)
@@ -32,14 +33,10 @@ export default {
       sourcemap: true
     }
   ],
+  watch: resolveFile('src'),
   external: externalPackages,
   extensions: ['json', 'js', 'ts'],
   plugins: [
-    RollPostcss({
-      plugins: [require('autoprefixer', 'cssnano')], // cssnano
-      extensions: ['.less', '.css'],
-      use: ['less']
-    }),
     RollupNodeResolve({
       customResolveOptions: {
         moduleDirectory: 'node_modules'
@@ -57,12 +54,24 @@ export default {
       tsconfig: resolveFile('tsconfig.rollup.json')
     }),
     RollupCopy({
+      verbose: true,
       targets: [
         {
           src: resolveFile('src/style'),
           dest: resolveFile('dist')
         }
       ]
+    }),
+    watch({
+      dir:resolveFile('src/style')
     })
+    // RollupCopyWatch({
+    //   verbose: true,
+    //   copyOnce:false,
+    //   targets: [
+     
+    //     { src: resolveFile('src/style'), dest:  resolveFile('dist') }
+    //   ]
+    // })
   ]
 }
