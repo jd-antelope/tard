@@ -1,0 +1,41 @@
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@slc-badge-border-radius: @slc-badge-font-size * 0.7;
+@slc-badge-box-shadow: 0 4px 8px 0 rgba(@slc-badge-bg-color,0.2);
+
+.slc-badge{
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle;
+
+  /* elements */
+  &__dot {
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    width: @slc-badge-dot-size;
+    height: @slc-badge-dot-size;
+    border-radius: 50%;
+    overflow: hidden;
+    background: @slc-badge-bg;
+    box-shadow: @slc-badge-box-shadow;
+  }
+
+  &__num {
+    position: absolute;
+    padding: 0 @spacing-h-sm;
+    top: -@slc-badge-border-radius;
+    right: -6PX;
+    color: @slc-badge-color;
+    font-size: @slc-badge-font-size;
+    line-height: 1.4;
+    border-radius: @slc-badge-border-radius @slc-badge-border-radius @slc-badge-border-radius 0;
+    background: @slc-badge-bg;
+    box-shadow: @slc-badge-box-shadow;
+    transform: translate(50%, 0);
+    overflow: hidden;
+    z-index: 1;
+  }
+}
