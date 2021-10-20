@@ -9,5 +9,5 @@ export { default as SlOverlay } from './components/sl-overlay'
 export { default as SlCustomHeader } from './components/sl-custom-header'
 export { default as SlIcon } from './components/sl-icon'
 export { default as SlPopup } from './components/sl-popup'
-
 export { default as SlSkeleton } from './components/sl-skeleton'
+export { default as SlButton } from './components/sl-button'
