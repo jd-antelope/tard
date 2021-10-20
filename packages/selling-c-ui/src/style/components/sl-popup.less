@@ -1,7 +1,7 @@
 
 @import '../variables/index.less';
 @import '../mixins/index.less';
-@float-layout-timer: 1000ms;
+@popup-layout-timer: 1000ms;
 
 .@{--css-prefix}-popup {
    position: fixed;
@@ -9,9 +9,8 @@
    height: 100%;
    top: 0;
    left: 0;
+   visibility: hidden;
    z-index: @zindex-popup__layout;
-   background: green;
-   transition: visibility @float-layout-timer cubic-bezier(0.36, 0.66, 0.04, 1);
 
    &__mask {
       .mixin-overlay();
@@ -19,12 +18,86 @@
       transition: opacity 150ms ease-in;
    } 
 
-   &__contiainer {
-      .flex-direction('column');
+   &__container {
+      .flex-direction(column);
+      position: fixed;
+      width: 100%;
+      bottom:-100%;
+      height: 900px;
+      min-height: @popup-height-min;
+      max-height: @popup-height-max;
+      background-color: @color-bg;
+      border-radius: 12px 12px 0 0;
+      transition: all  0 ease-in;
 
-      height: @height-100;
-      border-radius: 12px;
-      background: @color-bg ;
-      
+      .popup-header{
+         position: relative;
+         width: 100%;
+         padding: 0 12px;
+         height: 72px;
+        
+
+         &__title{
+            height: 100%;
+            line-height: 72px;
+            text-align: center;
+         }
+         &-btn__close{
+            position: absolute;
+            top: 50%;
+            right: 48px;
+            width: 40px;
+            height: 40px;
+            line-height: 1;
+            transform: translate(0, -50%);
+    
+            &::before,
+            &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              display: inline-block;
+              width: 36px;
+              height: 2PX;
+              border-radius: 1PX;
+              background: @popup-close-btn-color;
+            }
+    
+            &::before {
+              transform: translate3d(-50%, -50%, 0) rotate(45deg);
+            }
+    
+            &::after {
+              transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+            }
+         }
+         
+        
+      }
+      .popup-main{
+         width: 100%;
+         height: 100%;
+         overflow-y: scroll;
+         padding: 0 12px ;
+         flex: 1;
+
+         &__title{
+            height: 100%;
+            line-height: 72px;
+            text-align: center;
+         }
+        
+      }   
    }
+}
+
+.@{--css-prefix}-popup__active {
+   visibility: visible;
+
+   .slc-popup__container__active {
+      bottom: 0;
+      transition: all 200ms ease-in;
+   }
+
 }
