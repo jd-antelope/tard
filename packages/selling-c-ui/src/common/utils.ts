@@ -71,5 +71,6 @@ function objectToString(style: object | string): string {
 export {
   handleTouchScroll,
   mergeStyle,
-  pxTransform
+  pxTransform,
+  objectToString
 }
