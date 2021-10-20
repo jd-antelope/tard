@@ -11,3 +11,4 @@ export { default as SlIcon } from './components/sl-icon'
 export { default as SlPopup } from './components/sl-popup'
 
 export { default as SlSkeleton } from './components/sl-skeleton'
+export { default as SlCanvas } from './components/sl-canvas'
