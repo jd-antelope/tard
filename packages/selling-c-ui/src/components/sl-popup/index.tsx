@@ -72,7 +72,6 @@ export default class SlPopup extends React.Component<SlPopupProps, SlPopupState>
     const titleStyle: string = objectToString({
       'text-align': align
     })
-    console.log(titleStyle)
 
     return (
       <View className={rootClass} onTouchMove={this.handleTouchMove}>
