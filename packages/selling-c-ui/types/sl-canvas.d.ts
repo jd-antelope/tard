@@ -11,6 +11,10 @@ export interface SlCanvasProps extends SlComponent {
    */
   height?: number
   /**
+   * 是否有遮照
+   */
+  isMask?: boolean
+  /**
    * 是否打开
    */
   isOpen: boolean
@@ -20,8 +24,10 @@ export interface SlCanvasProps extends SlComponent {
   onClose: Function
   /**
    * 内容方法
+   * @param ctx canvas实例
+   * @param dpr 数字计算
    */
-  contentCallback?: Function
+  contentCallback?: (ctx, dpr) => void
 }
 
 export interface SlCanvasState {
