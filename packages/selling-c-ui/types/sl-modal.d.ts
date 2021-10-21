@@ -1,9 +1,9 @@
-import { ComponentClass } from 'react'
-import { CommonEventFunction } from '@tarojs/components/types/common'
+import { ComponentClass } from 'react';
+import { CommonEventFunction } from '@tarojs/components/types/common';
 
-import SlcComponent from './base'
+import SlComponent from './base';
 
-export interface SlcModalProps extends SlcComponent {
+export interface SlModalProps extends SlComponent {
   /**
    * 元素的标题
    */
@@ -44,19 +44,19 @@ export interface SlcModalProps extends SlcComponent {
   onConfirm?: CommonEventFunction
 }
 
-export interface SlcModalState {
+export interface SlModalState {
   _isOpened: boolean
   isWEB: boolean
 }
 
-export interface SlcModalActionProps extends SlcComponent {
+export interface SlModalActionProps extends SlComponent {
   isSimple: boolean
 }
 
-export interface SlcModalContentProps extends SlcComponent {}
+export type SlModalContentProps = SlComponent
 
-export interface SlcModalHeaderProps extends SlcComponent {}
+export type SlModalHeaderProps = SlComponent
 
-declare const SlcModal: ComponentClass<SlcModalProps>
+declare const SlModal: ComponentClass<SlModalProps>;
 
-export default SlcModal
+export default SlModal;

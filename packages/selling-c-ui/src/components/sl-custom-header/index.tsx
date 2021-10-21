@@ -70,4 +70,5 @@ SlCustomHeader.propTypes = {
     bgStyle: PropTypes.string,
     back: PropTypes.bool,
     onBack: PropTypes.func,
+    // title: PropTypes.string
 }

@@ -2,33 +2,33 @@ import classNames from 'classnames'
 import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { View } from '@tarojs/components'
-import { SlcModalActionProps } from '../../../../types/sl-modal'
+import { SlModalActionProps } from '../../../../types/sl-modal'
 
-export default class AtModalAction extends React.Component<SlcModalActionProps> {
-  public static defaultProps: SlcModalActionProps
-  public static propTypes: InferProps<SlcModalActionProps>
+export default class SlModalAction extends React.Component<SlModalActionProps> {
+  public static defaultProps: SlModalActionProps
+  public static propTypes: InferProps<SlModalActionProps>
 
   public render (): JSX.Element {
     const rootClass = classNames(
-      'at-modal__footer',
+      'slc-modal__footer',
       {
-        'at-modal__footer--simple': this.props.isSimple
+        'slc-modal__footer--simple': this.props.isSimple
       },
       this.props.className
     )
 
     return (
       <View className={rootClass}>
-        <View className='at-modal__action'>{this.props.children}</View>
+        <View className='slc-modal__action'>{this.props.children}</View>
       </View>
     )
   }
 }
 
-AtModalAction.defaultProps = {
+SlModalAction.defaultProps = {
   isSimple: false
 }
 
-AtModalAction.propTypes = {
+SlModalAction.propTypes = {
   isSimple: PropTypes.bool
 }
