@@ -13,12 +13,15 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
       const arr = price.map(v => Number(v)).sort((a, b) => a - b)
       return `${arr[0]}-${arr[arr.length - 1]}`
     }
-    return price
+    return Number(price).toFixed(2)
   }
 
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
-    const { price, className, color, commissionPrice, trigger } = this.props
+    const { 
+      price, className, color, commissionPrice, trigger,
+      originalColor, originalPrice
+    } = this.props
     return (
       <Common className={ cn('slc-price', className) }>
         <View 
@@ -31,6 +34,15 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
           >
             { this.filterPrice(price) }
           </Text>
+          {
+            originalPrice !== '' && 
+            <Text 
+              className="slc-price__origin-price" 
+              style={ `color: ${ originalColor }` }
+            >
+              ¥{ Number(originalPrice).toFixed(2) }
+            </Text>
+          }
         </View>
         {
           trigger !== '' && trigger
@@ -53,5 +65,7 @@ SlPrice.defaultProps = {
   price: '',
   color: '',
   trigger: '',
-  commissionPrice: ''
+  commissionPrice: '',
+  originalColor: '',
+  originalPrice: ''
 }

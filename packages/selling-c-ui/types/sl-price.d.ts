@@ -6,6 +6,14 @@ export interface SlPriceProps extends SlComponent {
    */
   price?: string | string[]
   /**
+   * 原价
+   */
+  originalPrice?: string
+  /**
+   * 原价颜色
+   */
+  originalColor?: string
+  /**
    * 颜色
    */
   color?: string

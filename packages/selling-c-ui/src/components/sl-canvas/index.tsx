@@ -142,38 +142,47 @@ export default class SlCanvas extends React.Component<SlCanvasProps, SlCanvasSta
 
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
-    const { className, width = 600, height = 800 } = this.props
+    const { className, width = 600, height = 800, isMask } = this.props
     const { open } = this.state
     return (
       <Fragment>
-        <View className={ cn('slc-canvas', {
-          'slc-canvas-show': open
-        }) }>
-          <View className="slc-canvas-mask"></View>
-          <View 
-            className="slc-canvas-box"
-            style={ `width: ${pxTransform(width)};` }
-          >
-            <View className="slc-canvas-icon" onClick={ () => this.close() }>
-              <SlIcon
-                value="close"
-                size="20"
-                color="#fff"
-              />
-            </View>
+        {
+          isMask ? 
+            <View className={ cn('slc-canvas', {
+              'slc-canvas-show': open
+            }) }>
+              <View className="slc-canvas-mask"></View>
+              <View 
+                className="slc-canvas-box"
+                style={ `width: ${pxTransform(width)};` }
+              >
+                <View className="slc-canvas-icon" onClick={ () => this.close() }>
+                  <SlIcon
+                    value="close"
+                    size="20"
+                    color="#fff"
+                  />
+                </View>
+                <Canvas 
+                  className={ cn('slc-canvas-content', className) } 
+                  canvas-id="canvas"
+                  style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)}` }
+                />
+                <Button 
+                  className="slc-canvas-save" 
+                  onClick={ () => this.saveFile() }
+                >
+                  保存
+                </Button>
+              </View>
+            </View> :
             <Canvas 
               className={ cn('slc-canvas-content', className) } 
               canvas-id="canvas"
               style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)}` }
             />
-            <Button 
-              className="slc-canvas-save" 
-              onClick={ () => this.saveFile() }
-            >
-              保存
-            </Button>
-          </View>
-        </View>
+        }
+        
       </Fragment>
     )
   }
@@ -184,6 +193,7 @@ SlCanvas.defaultProps = {
   width: 600,
   height: 800,
   isOpen: false,
+  isMask: true,
   onClose: () => {},
   contentCallback: () => {}
 }

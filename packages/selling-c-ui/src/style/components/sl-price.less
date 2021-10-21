@@ -12,6 +12,7 @@
     font-size: @font-size-sm;
     line-height: @line-height-zh;
     color: var(--promotionColor);
+    font-family: @family-regular;
   }
 
   &__text-content {
@@ -33,5 +34,14 @@
       margin-bottom: @commission-mb;
       .flex-center();
     }
+  }
+  &__origin-price {
+    font-size: @font-size-sm;
+    line-height: @font-size-sm;
+    margin-left: @spacing-h-md;
+    color: @color-grey-2;
+    opacity: 0.8;
+    text-decoration: line-through;
+    font-family: @family-regular;
   }
 }
