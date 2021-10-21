@@ -175,7 +175,7 @@ SlButton.defaultProps = {
   radius: 0,
   loading: false,
   disabled: false,
-  full: true,
+  full: false,
   customStyle: {},
   // Button props
   sessionFrom: '',

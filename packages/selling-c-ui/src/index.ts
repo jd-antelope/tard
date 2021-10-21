@@ -12,3 +12,5 @@ export { default as SlPopup } from './components/sl-popup'
 export { default as SlSkeleton } from './components/sl-skeleton'
 export { default as SlCanvas } from './components/sl-canvas'
 export { default as SlButton } from './components/sl-button'
+
+export { default as SlResult } from './components/sl-result'
