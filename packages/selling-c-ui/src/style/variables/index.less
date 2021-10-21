@@ -13,7 +13,7 @@
     4、提供几套通用主题，通用样式文件引入（优先级低）
     5、vscode组件代码补全插件（优先级低）
  */
-
+ 
 // 定义前缀
 @--css-prefix: slc;
 
@@ -77,15 +77,15 @@
 @color-bg: #FFF;
 @color-bg-base: #FAFBFC;
 @color-bg-light: #ECF5FD;
-@color-bg-lighter: tint(@color-bg-light, 50%);
+@color-bg-lighter: mix(#FFF, @color-bg-light, 50%);
 @color-bg-grey: #F7F7F7;
 
 /* 边框颜色 */
 @color-border-base: #C5D9E8;
-@color-border-split: tint(@color-border-base, 20%); // 分割线
-@color-border-light: tint(@color-border-base, 30%);
-@color-border-lighter: tint(@color-border-base, 50%);
-@color-border-lightest: tint(@color-border-base, 80%);
+@color-border-split: mix(#FFF, @color-border-base, 20%);
+@color-border-light: mix(#FFF, @color-border-base, 30%);
+@color-border-lighter: mix(#FFF, @color-border-base, 50%);
+@color-border-lightest: mix(#FFF, @color-border-base, 80%);
 @color-border-grey: #CCC;
 
 /* 图标颜色 */
@@ -180,5 +180,14 @@
 @slc-result-image-size:200px;
 @slc-result-image-size:200px;
 @slc-result-image-radius:24px;
-@slc-result-text-size:32px
+@slc-result-text-size:32px;
 
+/* InputNumber */
+@slc-input-number-text-color: @color-text-base;
+@slc-input-number-font-size: @font-size-base;
+@slc-input-number-font-size-lg: @font-size-xl;
+@slc-input-number-btn-color: @color-brand;
+@slc-input-number-btn-size: 30px;
+@slc-input-number-btn-size-lg: 36px;
+@slc-input-number-width-min: 80px;
+@slc-input-number-width-min-lg: 120px;

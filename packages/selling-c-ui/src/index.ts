@@ -14,3 +14,4 @@ export { default as SlCanvas } from './components/sl-canvas'
 export { default as SlButton } from './components/sl-button'
 
 export { default as SlResult } from './components/sl-result'
+export { default as SlInputNumber } from './components/sl-input-number'
