@@ -55,7 +55,6 @@ export default class SlPopup extends React.Component<SlPopupProps, SlPopupState>
     const {
       title, children, align
     } = this.props
-    console.log(align)
     const rootClass = classNames(
       'slc-popup',
       {
