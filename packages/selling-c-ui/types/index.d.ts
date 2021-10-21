@@ -10,3 +10,5 @@ export { default as SlCustomHeader } from './sl-custom-header'
 export { default as SlIcon } from './sl-icon'
 export { default as SlPopup } from './sl-popup'
 export { default as SlSkeleton } from './sl-skeleton'
+
+export { default as SlFooterButton } from './sl-footer-button'

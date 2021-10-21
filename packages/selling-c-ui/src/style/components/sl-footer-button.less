@@ -1,0 +1,25 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+.@{--css-prefix}-footer {
+  overflow: hidden
+}
+.slc-custom-footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  background: #fff;
+  width: 100vw;
+  box-sizing: border-box;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  .slc-custom-footer{
+    border-radius: 10px;
+    text-align: center;
+    line-height: 80px;
+    color: #fff;
+    background: #13CE66;
+  }
+}
