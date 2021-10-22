@@ -14,3 +14,7 @@ export { default as SlCanvas } from './sl-canvas'
 export { default as SlButton } from './sl-button'
 export { default as SlResult } from './sl-result'
 export { default as SlInputNumber } from './sl-input-number'
+
+export declare const SlModalHeader: ComponentClass
+export declare const SlModalAction: ComponentClass
+export declare const SlModalContent: ComponentClass

@@ -1,12 +1,12 @@
-@import '../variables/index.less';
-@import '../mixins/index.less';
+@import "../variables/index.less";
+@import "../mixins/index.less";
 
 @commission-mb: 5px;
 
 .@{--css-prefix}-price {
   .flex-direction(row);
-  overflow: hidden;
   height: @price-height;
+  overflow: hidden;
 
   &__text {
     font-size: @font-size-sm;
@@ -23,15 +23,16 @@
     .flex-items(flex-end);
     height: @price-height;
     margin-left: @spacing-h-sm;
+
     &--box {
       box-sizing: border-box;
-      font-size: @font-size-xs;
       height: @price-commission-height;
-      padding: 0 @spacing-h-md;
-      background: @color-text-secondary;
-      color: @color-white;
-      border-radius: @border-radius-md;
       margin-bottom: @commission-mb;
+      padding: 0 @spacing-h-md;
+      border-radius: @border-radius-md;
+      font-size: @font-size-xs;
+      color: @color-white;
+      background: @color-text-secondary;
       .flex-center();
     }
   }
