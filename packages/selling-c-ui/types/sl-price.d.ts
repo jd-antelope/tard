@@ -25,6 +25,10 @@ export interface SlPriceProps extends SlComponent {
    * 是否展示佣金
    */
   commissionPrice?: string
+  /**
+   * 保留几位小数点
+   */
+  fixedNum?: number
 }
 
 export interface SlPriceState {

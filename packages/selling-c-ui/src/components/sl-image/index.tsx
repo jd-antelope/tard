@@ -18,7 +18,7 @@ export default class SlImage extends React.Component<SlImageProps, SlImageState>
 
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
-    const { res, className } = this.props
+    const { res, className, isTransition } = this.props
     const { url, noImg } = this.state
     return (
       <Fragment>
@@ -26,10 +26,12 @@ export default class SlImage extends React.Component<SlImageProps, SlImageState>
           { ... res }
           src={ url }
           className={ cn(className, {
-            'slc-image-default': !url.includes(noImg),
-            'slc-image-none': url.includes(noImg)
+            'slc-image-default': !url.includes(noImg) && isTransition,
+            'slc-image-none': url.includes(noImg) && isTransition
           }) }
-
+          onError={ () => {
+            this.setState({ url: `${BUYIMG}${noImg}` });
+          } }
         />
       </Fragment>
     )
@@ -37,5 +39,8 @@ export default class SlImage extends React.Component<SlImageProps, SlImageState>
 }
 
 SlImage.defaultProps = {
-  className: '', src: '', res: {}
+  className: '', 
+  src: '', 
+  isTransition: true,
+  res: {}
 }
