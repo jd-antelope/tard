@@ -9,3 +9,9 @@ package-lock.json
 dist
 packages/selling-c-ui/lib
 packages/selling-c-ui/dist
+
+# umi
+.umi
+.umi-production
+.umi-test
+.env.local
