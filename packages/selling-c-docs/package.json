@@ -1,0 +1,57 @@
+{
+  "private": true,
+  "name": "taro-ui-docs",
+  "version": "1.0.0",
+  "description": "",
+  "author": "hawley",
+  "scripts": {
+    "start": "umi dev",
+    "build": "node scripts/created-md.js && umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "copy-to-clipboard": "^3.3.1",
+    "gulp-watch": "^5.0.1",
+    "highlight.js": "^9.18.1",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "react-markdown": "^7.0.1",
+    "remark-gfm": "^3.0.0",
+    "umi": "^3.5.20"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/preset-react": "^1.8.24",
+    "@umijs/test": "^3.5.20",
+    "babel-loader": "^8.1.0",
+    "front-matter": "^4.0.2",
+    "fs-extra": "^10.0.0",
+    "globby": "^11.0.4",
+    "gulp": "^4.0.2",
+    "handlebars": "^4.7.7",
+    "lint-staged": "^10.0.7",
+    "loader-utils": "^2.0.0",
+    "markdown-it": "^12.2.0",
+    "markdown-it-container": "^3.0.0",
+    "prettier": "^2.2.0",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  }
+}

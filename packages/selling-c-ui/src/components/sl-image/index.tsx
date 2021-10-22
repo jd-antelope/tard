@@ -12,7 +12,7 @@ export default class SlImage extends React.Component<SlImageProps, SlImageState>
 
     this.state = {
       url: src,
-      noImg: `${BUYIMG}/common/no-img.png?1`
+      noImg: `${BUYIMG}/common/no-img.png`
     }
   }
 
