@@ -1,7 +1,7 @@
-import { ComponentClass } from 'react';
-import { CommonEventFunction } from '@tarojs/components/types/common';
+import { ComponentClass } from 'react'
+import { CommonEventFunction } from '@tarojs/components/types/common'
 
-import SlComponent from './base';
+import SlComponent from './base'
 
 export interface SlModalProps extends SlComponent {
   /**
@@ -53,10 +53,10 @@ export interface SlModalActionProps extends SlComponent {
   isSimple: boolean
 }
 
-export type SlModalContentProps = SlComponent
+export interface SlModalContentProps extends SlComponent {}
 
-export type SlModalHeaderProps = SlComponent
+export interface SlModalHeaderProps extends SlComponent {}
 
-declare const SlModal: ComponentClass<SlModalProps>;
+declare const SlModal: ComponentClass<SlModalProps>
 
-export default SlModal;
+export default SlModal

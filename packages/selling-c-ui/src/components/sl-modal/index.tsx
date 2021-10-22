@@ -78,9 +78,9 @@ export default class SlModal extends React.Component<
     const { _isOpened, isWEB } = this.state
     const { title, content, cancelText, confirmText } = this.props
     const rootClass = classNames(
-      'slc',
+      'slc-modal',
       {
-        'slc--active': _isOpened
+        'slc-modal--active': _isOpened
       },
       this.props.className
     )

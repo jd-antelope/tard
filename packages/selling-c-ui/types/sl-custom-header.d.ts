@@ -11,7 +11,11 @@ export interface SlCustomHeaderProps extends SlComponent {
     /**
      * 触发返回事件
      */
-    onBack?: CommonEventFunction
+    onBack?: CommonEventFunctio,
+    /**
+     * 页面标题
+     */
+    title?: string
 }
 
 declare const SlCustomHeader: ComponentClass<SlCustomHeaderProps>
