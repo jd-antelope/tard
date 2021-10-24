@@ -11,3 +11,5 @@ export { default as SlIcon } from './components/sl-icon'
 export { default as SlPopup } from './components/sl-popup'
 
 export { default as SlSkeleton } from './components/sl-skeleton'
+export { default as SlTab } from './components/sl-tab'
+export { default as SlTabPane } from './components/sl-tab-pane'

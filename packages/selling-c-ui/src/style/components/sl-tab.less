@@ -1,0 +1,179 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@slc-tab-pane-min-height: 100px;
+
+.@{--css-prefix}-tab {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  /* elements */
+  &__item {
+    position: relative;
+    flex: 1;
+    padding: @spacing-v-lg @spacing-h-lg;
+    color: @slc-tab-color;
+    font-size: @slc-tab-font-size;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &-underline {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: @slc-tab-line-height;
+      background-color: @slc-tab-color-active;
+      transform: scaleX(0);
+      transition: all 0.15s;
+    }
+
+    &--active {
+      color: @slc-tab-color-active;
+
+      .@{--css-prefix}__item-underline {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    background-color: @slc-tab-bg-color;
+    box-sizing: border-box;
+    overflow: -moz-scrollbars-none;
+
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0 !important;
+      height: 0 !important;
+      background: transparent;
+    }
+  }
+
+  &__body {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    transition: all 0.3s;
+    will-change: transform, left, top;
+    overflow: visible;
+  }
+
+  &__underline {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    width: 600%;
+    height: @slc-tab-line-height;
+    background-color: @slc-tab-underline-color;
+  }
+
+  /* modifiers */
+  &--scroll {
+    .@{--css-prefix}__header {
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+    }
+
+    .@{--css-prefix}__item {
+      display: inline-block;
+      overflow: visible;
+    }
+  }
+
+  &--vertical {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+
+    .@{--css-prefix}__body {
+      display: inline-block;
+      flex: 1;
+      height: @slc-tab-pane-min-height;
+      width: auto;
+    }
+
+    .@{--css-prefix}__underline {
+      top: 0;
+      left: 0;
+      bottom: auto;
+      width: @slc-tab-line-height;
+      height: 100%;
+    }
+
+    .@{--css-prefix}__header {
+      display: inline-block;
+      width: auto;
+    }
+
+    .@{--css-prefix}__item {
+      display: flex;
+      justify-content: center;
+      width: auto;
+      align-items: center;
+
+      &-underline {
+        display: block;
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: auto;
+        width: @slc-tab-line-height;
+        height: 100%;
+        transform: scaleY(0);
+      }
+
+      &--active {
+        .@{--css-prefix}__item-underline {
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+}
+
+/* hack SWAN */
+
+.@{--css-prefix}--scroll .@{--css-prefix}--horizontal .@{--css-prefix}--SWAN {
+  .@{--css-prefix}__item-underline {
+    bottom: @slc-tab-line-height;
+  }
+}
+
+/* hack SWAN */
+
+.@{--css-prefix}-tab-pane {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: initial;
+  vertical-align: top;
+
+  /* modifiers */
+  &--active {
+    height: auto;
+  }
+
+  &--inactive {
+    height: 0;
+    overflow: hidden;
+  }
+
+  &--vertical {
+    display: block;
+    height: 100%;
+    overflow: scroll;
+  }
+}
