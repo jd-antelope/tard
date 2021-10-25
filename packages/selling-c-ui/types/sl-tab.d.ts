@@ -68,11 +68,36 @@ export interface SlTabProps extends SlComponent {
    * 
    */
   animated: boolean
+
+  /**
+   * 
+   * 自定义选中标签的颜色
+   * 
+   */
+  activeColor?: string
 }
 
 export interface SlTabState {
+  /**
+   * 
+   * 距离左边或上层控件的位置
+   * 
+   */
   _scrollLeft: number, 
+  /**
+   * 
+   * 距离上方或上层控件的位置
+   * 
+   */
   _scrollTop: number,
+  /**
+   * 
+   * //滚动的元素id
+   * 
+   */
   _scrollIntoView: string
 }
+declare const SlTab: ComponentClass<SlTabProps>
+
+export default SlTab
 

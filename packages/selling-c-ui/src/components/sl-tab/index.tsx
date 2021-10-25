@@ -36,9 +36,9 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
   public constructor(props: SlTabProps) {
     super(props)
     this.state = {
-      _scrollLeft: 0,
-      _scrollTop: 0,
-      _scrollIntoView: ''
+      _scrollLeft: 0, //距离左边或上层控件的位置
+      _scrollTop: 0,  //距离上方或上层控件的位置
+      _scrollIntoView: '' //滚动的元素id
     }
     this._tabId = isTest() ? 'tab-AUTO2021': uuid()
     this._touchDot = 0
@@ -89,7 +89,6 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
    * 
    */
   private handleClick(index: number, event: CommonEvent): void {
-    console.log(index, '-----------')
     this.props.onClick(index, event)
   }
 
@@ -191,6 +190,7 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
     const {
       customStyle = '',
       className,
+      activeColor,
       height,
       tabDirection,
       animated,
@@ -204,7 +204,7 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
     const heightStyle = { height }
     const underlineStyle = {
       height: tabDirection === 'vertical' ? `${tabList.length * 100}%` : '1PX',
-      width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX'
+      width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX',
     }
 
     const bodyStyle: React.CSSProperties = {}
@@ -221,10 +221,10 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
     }
 
     const tabItems = tabList.map((item, idx) => {
-      console.log(current === idx, current, idx, '==========')
+      const active = current === idx
       const itemCls = cn({
         'slc-tab__item': true,
-        'slc-tab__item--active': current === idx
+        'slc-tab__item--active': active
       })
 
       return (
@@ -233,9 +233,16 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
           id={`tab${this._tabId}${idx}`}
           key={`slc-tab-item-${idx}`}
           onClick={this.handleClick.bind(this, idx)}
+          style={{ color: active ? activeColor: '' }}
         >
-          {item.title}
-          <View className='slc-tab__item-underline'></View>
+          <View className="slc-tab__item-content">
+            {item.title}
+            <View className='slc-tab__item-underline' 
+              style={{
+                background: active ? activeColor: '' 
+              }}
+            ></View>
+          </View>
         </View>
       )
     })
@@ -299,7 +306,8 @@ SlTab.defaultProps = {
   animated: true,
   tabList: [],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onClick: (): void => {}
+  onClick: (): void => {},
+  activeColor: ''
 }
 
 SlTab.propTypes = {
