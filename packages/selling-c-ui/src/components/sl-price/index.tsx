@@ -21,17 +21,33 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
   public render (): JSX.Element | null {
     const { 
       price, className, color, commissionPrice, trigger,
-      originalColor, originalPrice, fixedNum
+      originalColor, originalPrice, fixedNum, type, size = 0, 
+      symbolSize
     } = this.props
     return (
       <Common className={ cn('slc-price', className) }>
         <View 
-          className="slc-price__text"
-          style={ color !== '' ? `color: ${color}` : '' }
+          className={
+            cn('slc-price__text',{
+              'slc-price__text-large': type === 'large',
+              'slc-price__text-middle': type === 'largeMiddle' || type === 'smallMiddle',
+              'slc-price__text-small': type === 'small' || type === 'middle',
+            })
+          }
+          style={ (color !== '' ? `color: ${color}` : '') + (size !== 0 ? `font-size: ${size}rpx` : '') }
         >
           ¥
           <Text 
-            className="slc-price__text-content"
+            className={
+              cn('slc-price__text-content', {
+                'slc-price__content-large': type === 'large',
+                'slc-price__content-large-middle': type === 'largeMiddle',
+                'slc-price__content-middle': type === 'middle',
+                'slc-price__content-small-middle': type === 'smallMiddle',
+                'slc-price__content-small': type === 'small',
+              })
+            }
+            style={ symbolSize !== 0 ? `font-size: ${symbolSize}rpx` : '' }
           >
             { this.arrayPrice(price) }
           </Text>
@@ -69,5 +85,8 @@ SlPrice.defaultProps = {
   trigger: '',
   commissionPrice: '',
   originalColor: '',
-  originalPrice: ''
+  originalPrice: '',
+  type: 'middle',
+  size: 0,
+  symbolSize: 0
 }

@@ -2,10 +2,11 @@
 @import "../mixins/index.less";
 
 @commission-mb: 5px;
+@price-lg: 60px;
+@price-ml: 48px;
 
 .@{--css-prefix}-price {
   .flex-direction(row);
-  height: @price-height;
   overflow: hidden;
 
   &__text {
@@ -15,8 +16,40 @@
     font-family: @family-regular;
   }
 
+  &__text-large {
+    font-size: @font-size-xl;
+  }
+
+  &__text-middle {
+    font-size: @font-size-base;
+  }
+
+  &__text-small {
+    font-size: @font-size-sm;
+  }
+
   &__text-content {
     font-size: @font-size-xl;
+  }
+
+  &__content-large {
+    font-size: @price-lg;
+  }
+
+  &__content-large-middle {
+    font-size: @price-ml;
+  }
+
+  &__content-middle {
+    font-size: @font-size-xl
+  }
+
+  &__content-small-middle {
+    font-size: @font-size-base;
+  }
+
+  &__content-small {
+    font-size: @font-size-sm;
   }
 
   &__commission {
