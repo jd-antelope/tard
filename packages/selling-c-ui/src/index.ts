@@ -15,7 +15,8 @@ export { default as SlPopup } from './components/sl-popup';
 export { default as SlSkeleton } from './components/sl-skeleton';
 export { default as SlCanvas } from './components/sl-canvas';
 export { default as SlButton } from './components/sl-button';
-
+export { default as SlTab } from './components/sl-tab'
+export { default as SlTabPane } from './components/sl-tab-pane'
 export { default as SlResult } from './components/sl-result';
 export { default as SlInputNumber } from './components/sl-input-number';
 export { default as SlFooterButton } from './components/sl-footer-button';
