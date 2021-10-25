@@ -23,6 +23,7 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
         <Sider className="site-layout-background">
           <LayoutMenu />
         </Sider>
+<<<<<<< Updated upstream
         <Content className="layout-md-contianer layout-h-100 pb-24 pl-12 layout-flex-row layout-over-flow-y ">
           {children}
           <div>
@@ -39,6 +40,14 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
             <div className='phone-pos'></div>
           </div>
         </Content>
+=======
+        <Content  style={{ padding: '0 30px', backgroundColor: '#fff', background: '#f7f8fa' }}>
+          <div className={styles.doc}>
+            {children}
+          </div>
+          <div className={styles.demo}></div>
+          </Content>
+>>>>>>> Stashed changes
       </Layout>
     </LayoutCommon>
   );
@@ -46,8 +55,13 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
 
 const LayoutCommon: FC = ({ children }) => {
   return (
+<<<<<<< Updated upstream
     <Layout className="layout-flex-col layout-h-100vh layout-w-100">
       <Header className={styles.header}>
+=======
+    <Layout style={{ height: '100vh' }}>
+      <Header className={styles.header} style={{ padding: '0 30px' }}>
+>>>>>>> Stashed changes
         <div onClick={() => history.push('/')}>
           <img
             className={styles.logo}
@@ -66,7 +80,11 @@ const LayoutCommon: FC = ({ children }) => {
           }
         </Menu>
       </Header>
+<<<<<<< Updated upstream
       <Content className="layout-w-100 layout-h-100  layout-flex-col layout-flex-1 pt-12">
+=======
+      <Content style={{ padding: '10px 0 0' }}>
+>>>>>>> Stashed changes
         {children}
       </Content>
     </Layout>
