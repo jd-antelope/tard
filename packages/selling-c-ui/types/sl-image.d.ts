@@ -2,8 +2,18 @@ import SlComponent from './base'
 import { ImageProps } from '@tarojs/components/types/Image'
 
 export interface SlImageProps extends ImageProps, SlComponent {
+  /**
+   * 图片链接
+   */
   src: string,
-  res?: any
+  /**
+   * 图片其他参数
+   */
+  res?: any,
+  /**
+   * 是否展示动画
+   */
+  isTransition?: boolean
 }
 
 export interface SlImageState {

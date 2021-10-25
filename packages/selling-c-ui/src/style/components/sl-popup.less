@@ -1,7 +1,8 @@
 
 @import '../variables/index.less';
 @import '../mixins/index.less';
-@float-layout-timer: 1000ms;
+@popup-mask-timer: 150ms;
+@popup-contianer-timer: 200ms;
 
 .@{--css-prefix}-popup {
    position: fixed;
@@ -9,22 +10,87 @@
    height: 100%;
    top: 0;
    left: 0;
+   visibility: hidden;
    z-index: @zindex-popup__layout;
-   background: green;
-   transition: visibility @float-layout-timer cubic-bezier(0.36, 0.66, 0.04, 1);
 
    &__mask {
       .mixin-overlay();
       opacity: 1;
-      transition: opacity 150ms ease-in;
+      transition: opacity @popup-mask-timer ease-in;
    } 
 
-   &__contiainer {
-      .flex-direction('column');
+   &__container {
+      .flex-direction(column);
+      position: fixed;
+      bottom:-100%;
+      width: 100%;
+      min-height: @popup-height-min;
+      max-height: @popup-height-max;
+      background-color: @color-bg;
+      border-radius: @border-radius-lg @border-radius-lg 0 0;
+      transition: all 0 ease-in;
 
-      height: @height-100;
-      border-radius: 12px;
-      background: @color-bg ;
-      
+      .popup-header{
+         position: relative;
+         width: 100%;
+         padding: 0 @spacing-v-sm;
+         height: @popup-header-height;
+        
+
+         &__title{
+            height: 100%;
+            line-height: @popup-header-height;
+            text-align: center;
+         }
+         &-btn__close{
+            position: absolute;
+            top: 50%;
+            right: @popup-header-position-right;
+            width: @popup-header-close-width;
+            height: @popup-header-close-width;
+            line-height: @line-height-base;
+            transform: translate(0, -50%);
+    
+            &::before,
+            &::after {
+               position: absolute;
+               content: '';
+               top: 50%;
+               left: 50%;
+               display: inline-block;
+               width: @popup-close-btn-width;
+               height: 2PX;
+               border-radius: 1PX;
+               background: @popup-close-btn-color;
+            }
+    
+            &::before {
+               transform: translate3d(-50%, -50%, 0) rotate(45deg);
+            }
+    
+            &::after {
+               transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+            }
+         }
+         
+        
+      }
+      .popup-main{
+         width: 100%;
+         height: 100%;
+         overflow-y: scroll;
+         padding: @spacing-v-sm;
+         flex: 1;
+      }   
    }
+}
+
+.@{--css-prefix}-popup__active {
+   visibility: visible;
+
+   .slc-popup__container__active {
+      bottom: 0;
+      transition: all @popup-contianer-timer ease-in;
+   }
+
 }

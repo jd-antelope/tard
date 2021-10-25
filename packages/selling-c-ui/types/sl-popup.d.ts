@@ -2,12 +2,18 @@
 export interface SlPopupProps{
   //组件标题
   title?: string
+  //是否允许外部点击关闭
+  outClose?: boolean
+  //头部标题的对齐方式
+  align?: string
   //组件是否显示
   isOpened: boolean
   //组件外部自定义类名
-  className: string
+  className?: string
   //组件关闭回调
-  onClose: Function
+  onClose?: Function
+  //自定义图标
+  icon?: React.ComponentType<any>
 }
 export interface SlPopupState {
   _isOpened: boolean

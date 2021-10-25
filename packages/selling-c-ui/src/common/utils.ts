@@ -112,7 +112,6 @@ function uuid(len = 8, radix = 16): string {
       }
     }
   }
-console.log(value.join(''))
   return value.join('')
 }
 
@@ -122,5 +121,6 @@ export {
   mergeStyle,
   pxTransform,
   isTest,
-  uuid
+  uuid,
+  objectToString
 }

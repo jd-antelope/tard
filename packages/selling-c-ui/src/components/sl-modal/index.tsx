@@ -4,20 +4,20 @@ import React from 'react'
 import { Button, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
-import { SlcModalProps, SlcModalState } from '../../../types/sl-modal'
+import { SlModalProps, SlModalState } from '../../../types/sl-modal'
 import { handleTouchScroll } from '../../common/utils'
-import AtModalAction from './action/index'
-import AtModalContent from './content/index'
-import AtModalHeader from './header/index'
+import SlModalAction from './action/index'
+import SlModalContent from './content/index'
+import SlModalHeader from './header/index'
 
-export default class AtModal extends React.Component<
-  SlcModalProps,
-  SlcModalState
+export default class SlModal extends React.Component<
+  SlModalProps,
+  SlModalState
 > {
-  public static defaultProps: SlcModalProps
-  public static propTypes: InferProps<SlcModalProps>
+  public static defaultProps: SlModalProps
+  public static propTypes: InferProps<SlModalProps>
 
-  public constructor (props: SlcModalProps) {
+  public constructor (props: SlModalProps) {
     super(props)
     const { isOpened } = props
     this.state = {
@@ -26,7 +26,7 @@ export default class AtModal extends React.Component<
     }
   }
 
-  public UNSAFE_componentWillReceiveProps (nextProps: SlcModalProps): void {
+  public UNSAFE_componentWillReceiveProps (nextProps: SlModalProps): void {
     const { isOpened } = nextProps
 
     if (this.props.isOpened !== isOpened) {
@@ -78,9 +78,9 @@ export default class AtModal extends React.Component<
     const { _isOpened, isWEB } = this.state
     const { title, content, cancelText, confirmText } = this.props
     const rootClass = classNames(
-      'slc',
+      'slc-modal',
       {
-        'slc--active': _isOpened
+        'slc-modal--active': _isOpened
       },
       this.props.className
     )
@@ -95,12 +95,12 @@ export default class AtModal extends React.Component<
           />
           <View className='slc-modal__container'>
             {title && (
-              <AtModalHeader>
+              <SlModalHeader>
                 <Text>{title}</Text>
-              </AtModalHeader>
+              </SlModalHeader>
             )}
             {content && (
-              <AtModalContent>
+              <SlModalContent>
                 <View className='content-simple'>
                   {isWEB ? (
                     <Text
@@ -114,17 +114,17 @@ export default class AtModal extends React.Component<
                     <Text>{content}</Text>
                   )}
                 </View>
-              </AtModalContent>
+              </SlModalContent>
             )}
             {isRenderAction && (
-              <AtModalAction isSimple>
+              <SlModalAction isSimple>
                 {cancelText && (
                   <Button onClick={this.handleCancel}>{cancelText}</Button>
                 )}
                 {confirmText && (
                   <Button onClick={this.handleConfirm}>{confirmText}</Button>
                 )}
-              </AtModalAction>
+              </SlModalAction>
             )}
           </View>
         </View>
@@ -140,12 +140,12 @@ export default class AtModal extends React.Component<
   }
 }
 
-AtModal.defaultProps = {
+SlModal.defaultProps = {
   isOpened: false,
   closeOnClickOverlay: true
 }
 
-AtModal.propTypes = {
+SlModal.propTypes = {
   title: PropTypes.string,
   isOpened: PropTypes.bool,
   onCancel: PropTypes.func,

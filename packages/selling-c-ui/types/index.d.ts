@@ -9,7 +9,14 @@ export { default as SlOverlay } from './sl-overlay'
 export { default as SlCustomHeader } from './sl-custom-header'
 export { default as SlIcon } from './sl-icon'
 export { default as SlPopup } from './sl-popup'
-
 export { default as SlSkeleton } from './sl-skeleton'
+export { default as SlCanvas } from './sl-canvas'
+export { default as SlButton } from './sl-button'
+export { default as SlResult } from './sl-result'
+export { default as SlInputNumber } from './sl-input-number'
+export { default as SlFooterButton } from './sl-footer-button'
 export { default as SlTab } from './sl-tab'
 export { default as SlTabPane } from './sl-tab-pane'
+export declare const SlModalHeader: ComponentClass
+export declare const SlModalAction: ComponentClass
+export declare const SlModalContent: ComponentClass

@@ -3,7 +3,7 @@ import { View } from '@tarojs/components'
 import Taro, { eventCenter, getCurrentInstance } from '@tarojs/taro'
 
 type CommonProps = {
-  className: string,
+  className?: string,
   style?: string,
   [propName: string]: any
 }

@@ -1,3 +1,4 @@
+import { ComponentClass } from 'react'
 import SlComponent from './base'
 
 export interface SlSkeletonProps extends SlComponent {
@@ -30,3 +31,7 @@ enum Type {
    */
   squared = 'squared'
 }
+
+declare const SlSkeleton: ComponentClass<SlSkeletonProps>
+
+export default SlSkeleton

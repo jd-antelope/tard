@@ -1,38 +1,44 @@
 @import '../variables/index.less';
 @import '../mixins/index.less';
 
-@modal-duration: 200ms;
+@slc-modal-duration: 200ms;
 
-.@{--css-prefix}-modal {
+.slc-modal {
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   visibility: hidden;
-  transition: visibility @modal-duration ease-in;
+  transition: visibility @slc-modal-duration ease-in;
   z-index: @zindex-modal;
 
   /* elements */
   &__overlay,
   &__container {
     opacity: 0;
-    transition: opacity @modal-duration ease-in;
+    transition: opacity @slc-modal-duration ease-in;
   }
 
   &__overlay {
+    .mixin-overlay;
   }
 
   &__container {
-    width: @modal-width;
+    .mixin-absolute-center();
+
+    width: @slc-modal-width;
     border-radius: @border-radius-lg;
-    background-color: @modal-bg-color;
+    background-color: @slc-modal-bg-color;
     overflow: hidden;
   }
 
   &__header {
+   .mixin-hairline-bottom-relative(@color: @color-grey-4);
+    .line(1);
+
     padding: @spacing-v-md @spacing-h-lg;
-    color: @modal-header-text-color;
+    color: @slc-modal-header-text-color;
     font-size: @font-size-lg;
     text-align: center;
   }
@@ -41,20 +47,27 @@
     padding: @spacing-h-xl @spacing-h-lg;
     min-height: 180px;
     max-height: 840px;
-    color: @modal-content-text-color;
+    color: @slc-modal-content-text-color;
     font-size: @font-size-base;
     box-sizing: content-box;
     width: auto;
   }
 
   &__footer {
-    .@{--css-prefix}-modal__action {
+    .mixin-hairline-top-relative(@color: @color-grey-4);
+
+    .slc-modal__action {
+      .mixin-display-flex;
 
       & > button {
+        .mixin-flex(auto);
+        .line(1);
+        .active;
+
         margin-top: 0;
         min-width: 160px;
         height: 88px;
-        color: @modal-btn-default-color;
+        color: @slc-modal-btn-default-color;
         font-size: @font-size-base;
         line-height: 86px;
         outline: 0;
@@ -70,16 +83,17 @@
         }
 
         &:not(:first-child) {
+          .mixin-hairline-left-relative(@color: @color-grey-4);
         }
 
         &:last-child {
-          color: @modal-btn-confirm-color;
+          color: @slc-modal-btn-confirm-color;
         }
       }
     }
 
-    &--simple .@{--css-prefix}-modal__action > button:last-child:nth-child(2) {
-      color: @modal-btn-confirm-color;
+    &--simple .slc-modal__action > button:last-child:nth-child(2) {
+      color: @slc-modal-btn-confirm-color;
     }
   }
 
@@ -87,8 +101,8 @@
   &--active {
     visibility: visible;
 
-    .@{--css-prefix}-modal__overlay,
-    .@{--css-prefix}-modal__container {
+    .slc-modal__overlay,
+    .slc-modal__container {
       opacity: 1;
     }
   }
