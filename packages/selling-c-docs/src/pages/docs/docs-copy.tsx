@@ -1,5 +1,5 @@
-import ButtonDoc from '@/docs/button.md'
+// import ButtonDoc from '@/docs/button.md'
 
-export default function DocsPage() {
-  return <ButtonDoc />
-}
+// export default function DocsPage() {
+//   return <ButtonDoc />
+// }

@@ -1,7 +1,7 @@
 const watch = require('gulp-watch')
 const start = require('./scripts/created-md')
 
-watch(['src/docs/*.md'], function() {
+watch(['packages/selling-c-ui/src/components/*/*.md'], function() {
   start()
 });
 

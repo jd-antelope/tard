@@ -13,7 +13,8 @@
     "version": "lerna version --conventional-commits",
     "updated": "lerna updated",
     "changed": "lerna changed",
-    "publish": "lerna publish --yes"
+    "publish": "lerna publish --yes",
+    "docs-dev": "gulp"
   },
   "author": "",
   "license": "MIT",
@@ -42,6 +43,10 @@
     "figlet": "^1.5.2",
     "fs-extra": "^10.0.0",
     "husky": "^4.2.3",
+    "globby": "^11.0.4",
+    "gulp": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "handlebars": "^4.7.7",
     "lerna": "^3.20.2",
     "lint-staged": "^10.1.2",
     "prettier": "^2.0.3",
