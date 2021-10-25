@@ -18,7 +18,7 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
     return (
       <View className='doc-header'>
         <View className='doc-header__title'>
-          <a href='#/pages/demo/index'>
+          <a href='#/pages/home/index'>
             <SlIcon value='chevron-left'></SlIcon>
           </a>
           {title}

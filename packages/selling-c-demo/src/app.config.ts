@@ -1,6 +1,7 @@
 export default {
   pages: [
-    'pages/demo/index',
+    'pages/home/index',
+    'pages/sl-badge/index',
     'pages/sl-button/index',
   ],
   window: {

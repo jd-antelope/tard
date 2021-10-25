@@ -1,3 +1,3 @@
-const routeData = [{"title":"button","path":"/docs/button"},{"title":"canvas","path":"/docs/canvas"},{"title":"price","path":"/docs/price"},{"title":"toast","path":"/docs/toast"}]
+const routeData = [{"title":"sl-badge","path":"/docs/sl-badge"},{"title":"sl-button","path":"/docs/sl-button"},{"title":"sl-price","path":"/docs/sl-price"},{"title":"sl-toast","path":"/docs/sl-toast"}]
 
 export default routeData

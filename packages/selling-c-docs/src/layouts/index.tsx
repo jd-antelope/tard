@@ -8,6 +8,12 @@ import styles from './index.less';
 
 const { Header, Content, Footer, Sider } = Layout;
 export default function LayoutComponent({ children, location }: IRouteComponentProps) {
+
+  const postIframeMessage = (title: string) => {
+    const childFrameObj = document.getElementById('iframeDemo');
+    (childFrameObj as any).contentWindow?.postMessage({ title }, '*');
+  }
+
   if (location.pathname === '/') {
     return (
       <LayoutCommon>
@@ -21,9 +27,8 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
     <LayoutCommon>
       <Layout className="site-layout-background">
         <Sider className="site-layout-background">
-          <LayoutMenu />
+          <LayoutMenu postIframeMessage={(title) => postIframeMessage(title)} />
         </Sider>
-<<<<<<< Updated upstream
         <Content className="layout-md-contianer layout-h-100 pb-24 pl-12 layout-flex-row layout-over-flow-y ">
           {children}
           <div>
@@ -32,22 +37,15 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
             >
               <iframe
                 className='iframe-content'
-                src={`/h5/index.html#/pages/tabBar/index/index`}
+                src='http://10.0.35.51:10086/#/pages/home/index'
                 frameBorder='0'
+                id='iframeDemo'
               />
               <div className='iphone-frame'></div>
             </div>
             <div className='phone-pos'></div>
           </div>
         </Content>
-=======
-        <Content  style={{ padding: '0 30px', backgroundColor: '#fff', background: '#f7f8fa' }}>
-          <div className={styles.doc}>
-            {children}
-          </div>
-          <div className={styles.demo}></div>
-          </Content>
->>>>>>> Stashed changes
       </Layout>
     </LayoutCommon>
   );
@@ -55,13 +53,8 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
 
 const LayoutCommon: FC = ({ children }) => {
   return (
-<<<<<<< Updated upstream
     <Layout className="layout-flex-col layout-h-100vh layout-w-100">
       <Header className={styles.header}>
-=======
-    <Layout style={{ height: '100vh' }}>
-      <Header className={styles.header} style={{ padding: '0 30px' }}>
->>>>>>> Stashed changes
         <div onClick={() => history.push('/')}>
           <img
             className={styles.logo}
@@ -80,11 +73,7 @@ const LayoutCommon: FC = ({ children }) => {
           }
         </Menu>
       </Header>
-<<<<<<< Updated upstream
       <Content className="layout-w-100 layout-h-100  layout-flex-col layout-flex-1 pt-12">
-=======
-      <Content style={{ padding: '10px 0 0' }}>
->>>>>>> Stashed changes
         {children}
       </Content>
     </Layout>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { SlButton } from '@jd/selling-c-ui'
+import { SlBadge } from '@jd/selling-c-ui'
 import { View } from '@tarojs/components'
 import DocsHeader from '../../components/doc-header'
 import './index.less'
@@ -15,7 +15,7 @@ export default class ButtonPage extends React.Component<{}, ButtonPageState> {
 
         return (
             <View className='container'>
-                <DocsHeader title='sl-button'></DocsHeader>
+                <DocsHeader title='sl-badge'></DocsHeader>
                 {/* S Body */}
                 <View className='doc-body'>
                     {/* <SlButton>按钮文案</SlButton> */}

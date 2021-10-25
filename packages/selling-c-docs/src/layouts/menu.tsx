@@ -1,47 +1,49 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, FC } from 'react'
 import { Menu } from 'antd'
 import { history } from 'umi';
 import MenuObj from '../business/docs-route'
 
-export default function DocsPage() {
-  const [selectedKeys, setSelectedKeys] = useState<number>(() => {
-    let key = 0
-    MenuObj.map((v, i) => {
-      if (v.path === history.location.pathname) {
-        key = i + 1
-      }
-    })
-    return key
-  })
+type Props = {
+  postIframeMessage: (title: string) => void
+}
 
-  const getSelentDefault = () => {
-    let key = 0
-    MenuObj.map((v, i) => {
-      if (v.path === history.location.pathname) {
-        key = i + 1
-      }
-    })
-    return key
+const SideMenu: FC<Props> = ({ postIframeMessage }) => {
+  const [selectedKeys, setSelectedKeys] = useState<String>(history.location.pathname.split('/')[-1] || 'sl-badge')
+
+  const iframeListener = (e: any) => {
+    const title = e.data.title
+    if (title) {
+      history.push(`/docs/${title}`);
+    }
   }
 
   useEffect(() => {
-    setSelectedKeys(getSelentDefault())
+    window.addEventListener("message", iframeListener, false);
+  })
+
+  useEffect(() => {
+    setSelectedKeys(history.location.pathname.replace('/docs/', ''))
   }, [history.location.pathname])
 
   return (
     <Menu
       mode="inline"
-      defaultSelectedKeys={[String(selectedKeys)]}
+      selectedKeys={[String(selectedKeys)]}
       style={{ height: '100%' }}
     >
       {
-        MenuObj.map((v, i) => (
-          <Menu.Item 
-            key={ String(i + 1) }
-            onClick={ () => history.push(v.path) }
-          >{ v.title }</Menu.Item>
+        MenuObj.map((v) => (
+          <Menu.Item
+            key={v.title}
+            onClick={() => {
+              history.push(v.path);
+              postIframeMessage(v.title)
+            }}
+          >{v.title}</Menu.Item>
         ))
       }
     </Menu>
   );
 }
+
+export default SideMenu
