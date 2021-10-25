@@ -15,7 +15,8 @@ export { default as SlButton } from './sl-button'
 export { default as SlResult } from './sl-result'
 export { default as SlInputNumber } from './sl-input-number'
 export { default as SlFooterButton } from './sl-footer-button'
-
+export { default as SlTab } from './sl-tab'
+export { default as SlTabPane } from './sl-tab-pane'
 export declare const SlModalHeader: ComponentClass
 export declare const SlModalAction: ComponentClass
 export declare const SlModalContent: ComponentClass

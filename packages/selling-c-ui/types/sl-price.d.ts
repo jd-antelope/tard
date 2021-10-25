@@ -29,6 +29,26 @@ export interface SlPriceProps extends SlComponent {
    * 保留几位小数点
    */
   fixedNum?: number
+  /**
+   * 类型
+   */
+  type?: Size | string
+  /**
+   * 大小
+   */
+  size?: number
+  /**
+   * 大小
+   */
+  symbolSize?: number
+}
+
+enum Size {
+  small = 'small',  // 24 + 24
+  smallMiddle = 'smallMiddle', // 28 + 28
+  middle = 'middle', // 24 + 36
+  largeMiddle = 'largeMiddle', // 28 + 48
+  large = 'large',  // 36 + 60
 }
 
 export interface SlPriceState {
