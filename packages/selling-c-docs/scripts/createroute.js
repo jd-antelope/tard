@@ -13,7 +13,7 @@ const getDocsPath = () => {
     deep: 1,
   })
 
-  return  packagePaths.map((item) => item.replace('../', ''))
+  return packagePaths.map((item) => item.replace('../', '')).filter(item => !item.includes('/index'))
 }
 
 const getFileNmae = (paths) => {
