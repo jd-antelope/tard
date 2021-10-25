@@ -6,7 +6,7 @@
   "author": "hawley",
   "scripts": {
     "start": "umi dev",
-    "build": "node scripts/created-md.js && umi build",
+    "build": "umi build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
@@ -48,6 +48,7 @@
     "loader-utils": "^2.0.0",
     "markdown-it": "^12.2.0",
     "markdown-it-container": "^3.0.0",
+    "node-watch": "^0.7.2",
     "prettier": "^2.2.0",
     "typescript": "^4.1.2",
     "yorkie": "^2.0.0"

@@ -1,4 +1,5 @@
 .markdown-body {
+  flex: 1;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   margin: 0;
@@ -9,10 +10,12 @@
   line-height: 1.5;
   word-wrap: break-word;
   padding-top: 20px;
+  padding-left: 24px;
 }
 
 .markdown-body .octicon {
   display: inline-block;
+  width: 100%;
   fill: currentColor;
   vertical-align: text-bottom;
 }
