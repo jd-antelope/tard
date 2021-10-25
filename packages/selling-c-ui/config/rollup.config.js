@@ -6,6 +6,7 @@ import RollupTypescript from 'rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
 import watch from "rollup-plugin-watch";
 import Package from '../package.json'
+import RollUpMd from '../scripts/buildmd'
 
 const resolveFile = path => NodePath.resolve(__dirname, '..', path)
 
@@ -41,8 +42,9 @@ export default {
         moduleDirectory: 'node_modules'
       }
     }),
+    RollUpMd(),
     RollupCommonjs({
-      extensions: ['.esm.js', '.mjs', '.js', '.ts'],
+      extensions: ['.esm.js', '.mjs', '.js', '.ts','.md'],
       include: /\/node_modules\//,
       namedExports: {
         'react': ['useState']

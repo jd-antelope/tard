@@ -1,5 +1,5 @@
 import { defineConfig } from 'umi';
-const  transformPlugin = require('./scripts/transformmd.js')
+const  transformPlugin = require('./scripts/createroute.js')
 const path = require('path')
 
 export default defineConfig({
