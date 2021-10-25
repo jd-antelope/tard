@@ -13,7 +13,7 @@
     4、提供几套通用主题，通用样式文件引入（优先级低）
     5、vscode组件代码补全插件（优先级低）
  */
-
+ 
 // 定义前缀
 @--css-prefix: slc;
 
@@ -63,7 +63,11 @@
 @color-text-title: #2C405A; // 文章标题
 @color-text-paragraph: #3F536E; // 文章段落
 
-/* Link */
+/* opacity*/
+@opacity-active: .8;
+@opacity-disabled: .3;
+
+
 @color-link: #6190E8;
 @color-link-hover: #79A1EB;
 @color-link-active: #4F7DE2;
@@ -73,15 +77,15 @@
 @color-bg: #FFF;
 @color-bg-base: #FAFBFC;
 @color-bg-light: #ECF5FD;
-@color-bg-lighter: tint(@color-bg-light, 50%);
+@color-bg-lighter: mix(#FFF, @color-bg-light, 50%);
 @color-bg-grey: #F7F7F7;
 
 /* 边框颜色 */
 @color-border-base: #C5D9E8;
-@color-border-split: tint(@color-border-base, 20%); // 分割线
-@color-border-light: tint(@color-border-base, 30%);
-@color-border-lighter: tint(@color-border-base, 50%);
-@color-border-lightest: tint(@color-border-base, 80%);
+@color-border-split: mix(#FFF, @color-border-base, 20%);
+@color-border-light: mix(#FFF, @color-border-base, 30%);
+@color-border-lighter: mix(#FFF, @color-border-base, 50%);
+@color-border-lightest: mix(#FFF, @color-border-base, 80%);
 @color-border-grey: #CCC;
 
 /* 图标颜色 */
@@ -115,14 +119,35 @@
 
 /* Border Radius */
 @border-radius-sm: 2px * @hd;
-@border-radius-md: 4px * @hd;
-@border-radius-lg: 6px * @hd;
+@border-radius-md: 8px;
+@border-radius-lg: 12px;
 @border-radius-circle: 50%;
 
 /* Line Height */
 @line-height-base: 1; // 单行
 @line-height-en: 1.3; // 英文多行
 @line-height-zh: 1.5; // 中文多行
+
+/* font family */
+
+@font-face {
+  font-family: "JDZhengHT-EN-Bold";
+  src: url('https://storage.360buyimg.com/hishop-images/hishop-demo-images/fontFamily/JDZhengHT-EN-Bold.ttf');
+}
+
+@font-face {
+  font-family: "JDZhengHT-EN-Light";
+  src: url('https://storage.360buyimg.com/hishop-images/hishop-demo-images/fontFamily/JDZhengHT-EN-Light.ttf');
+}
+
+@font-face {
+  font-family: "JDZhengHT-EN-Regular";
+  src: url('https://storage.360buyimg.com/hishop-images/hishop-demo-images/fontFamily/JDZhengHT-EN-Regular.ttf');
+}
+
+@family-regular: "JDZhengHT-EN-Regular";
+@family-bold: "JDZhengHT-EN-Bold";
+@family-light: "JDZhengHT-EN-Light";
 
 /**
  * 组件变量
@@ -159,3 +184,39 @@
 @popup-close-btn-width: 36px;
 @popup-close-btn-color: @color-grey-3;
 
+/* Button */
+@slc-button-height: 80px;
+@slc-button-border-color: red;
+@slc-button-height-sm: 80px;
+@slc-button-small-width-min: 100px;
+@slc-button-small-width-max: 1600px;
+@slc-button-normal-width-min: 220px;
+@slc-button-normal-width-max: 280px;
+@slc-button-middle-width-min: 340px;
+@slc-button-middle-width-max: 400px;
+@slc-button-large-width-min: 480px;
+@slc-button-large-width-max: 540px;
+
+/* Result*/
+@slc-result-image-size:200px;
+@slc-result-image-size:200px;
+@slc-result-image-radius:24px;
+@slc-result-text-size:32px;
+
+/* InputNumber */
+@slc-input-number-text-color: @color-text-base;
+@slc-input-number-font-size: @font-size-base;
+@slc-input-number-font-size-lg: @font-size-xl;
+@slc-input-number-btn-color: @color-brand;
+@slc-input-number-btn-size: 30px;
+@slc-input-number-btn-size-lg: 36px;
+@slc-input-number-width-min: 80px;
+@slc-input-number-width-min-lg: 120px;
+
+/* Modal */
+@slc-modal-width: 540px;
+@slc-modal-header-text-color: @color-text-base;
+@slc-modal-content-text-color: @color-text-base;
+@slc-modal-btn-default-color: @color-text-base;
+@slc-modal-btn-confirm-color: @color-brand;
+@slc-modal-bg-color: @color-white;

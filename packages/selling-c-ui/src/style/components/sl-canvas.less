@@ -1,0 +1,43 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@keyframes canvasBuffer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.@{--css-prefix}-canvas {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  &-box {
+    .mixin-absolute-center(absolute);
+    overflow: hidden;
+    animation: buffer 0.3s;
+  }
+  &-content {
+    border-radius: @border-radius-lg;
+  }
+  &-icon {
+    width: 100%;
+    margin-bottom: @spacing-v-sm;
+    .flex-justify(flex-end)
+  }
+  &-save {
+    margin-top: @spacing-v-sm;
+    background: var(--promotionColor);
+    color: @color-white;
+  }
+  &.@{--css-prefix}-canvas-show {
+    display: block;
+  }
+}

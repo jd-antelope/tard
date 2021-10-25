@@ -19,7 +19,7 @@ export default class SlCustomHeader extends React.Component<SlCustomHeaderProps>
     }
 
     public render(): JSX.Element {
-        const { back, bgStyle, children } = this.props
+        const { back, bgStyle, title, children } = this.props
 
         const { statusBarHeight } = getSystemInfoSync();
         const { height: boundHeight } = getMenuButtonBoundingClientRect()
@@ -44,6 +44,10 @@ export default class SlCustomHeader extends React.Component<SlCustomHeaderProps>
                                 <View className="slc-custom-header-content-back-btn" onClick={this.handleBack.bind(this)}>
                                     <Text className='slc-icon slc-icon-chevron-left' style={{ fontSize: 20 }}></Text>
                                 </View>
+                                {title &&
+                                    <View className="slc-custom-header-content-title">
+                                        {title}
+                                    </View>}
                                 {children}
                             </View>
                         </View> :
@@ -70,4 +74,5 @@ SlCustomHeader.propTypes = {
     bgStyle: PropTypes.string,
     back: PropTypes.bool,
     onBack: PropTypes.func,
+    title: PropTypes.string
 }

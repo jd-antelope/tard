@@ -6,6 +6,14 @@ export interface SlPriceProps extends SlComponent {
    */
   price?: string | string[]
   /**
+   * 原价
+   */
+  originalPrice?: string
+  /**
+   * 原价颜色
+   */
+  originalColor?: string
+  /**
    * 颜色
    */
   color?: string
@@ -17,6 +25,10 @@ export interface SlPriceProps extends SlComponent {
    * 是否展示佣金
    */
   commissionPrice?: string
+  /**
+   * 保留几位小数点
+   */
+  fixedNum?: number
 }
 
 export interface SlPriceState {
