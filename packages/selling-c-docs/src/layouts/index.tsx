@@ -38,10 +38,7 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
             </div>
             <div className='phone-pos'></div>
           </div>
-
         </Content>
-
-
       </Layout>
     </LayoutCommon>
   );
@@ -72,7 +69,6 @@ const LayoutCommon: FC = ({ children }) => {
       <Content className="layout-w-100 layout-h-100  layout-flex-col layout-flex-1 pt-12">
         {children}
       </Content>
-
     </Layout>
   );
 }

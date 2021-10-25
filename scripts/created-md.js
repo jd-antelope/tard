@@ -2,7 +2,6 @@ const globby = require('globby')
 const path = require("path");
 const fs = require('fs-extra');
 const cwd = process.cwd()
-const watch = require('node-watch');
 
 const getDocsPath = () => {
   const packagePaths = globby.sync('../packages/selling-c-ui/src/components', {
@@ -12,8 +11,7 @@ const getDocsPath = () => {
 		},
     deep: 2,
   })
-
-  return  packagePaths.map((item) => item.replace('../', ''))
+  return packagePaths.map((item) => item.replace('../', ''))
 }
 
 const getFileNmae = (paths) => {
@@ -35,7 +33,6 @@ const writeMarkdown = (mdContent, v) => {
 const changeDocRoute = (docs) => {
   const list = []
   docs.map(v => {
-      console.log(v)
     list.push({
       title: getFileNmae(v),
       path: `/docs/${getFileNmae(v)}`
@@ -48,26 +45,13 @@ const changeDocRoute = (docs) => {
 }
 
 const start = () => {
-  const docs = getDocsPath();
+  const docs = getDocsPath()
   docs.map(v => {
     writeMarkdown(getMdFile(v), getFileNmae(v))
   })
   changeDocRoute(docs)
 }
 
+module.exports = start
 
-
-class CopyrightWebpackPlugin {
-    constructor () {
-      console.log('插件被使用了');
-      start();
-      watch(path.join(__dirname, '../src/docs'), { recursive: true }, function(evt, name) {
-        console.log('%s changed.', name);
-        start();
-      });
-    }
-    apply (compiler) { // 其中compiler为webpack实例，下面我们详细讲
-
-    }
-}
-module.exports = CopyrightWebpackPlugin
+start()
