@@ -158,8 +158,9 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
             onReset={this.onReset.bind(this)}
           >
             {button}
-          </Form>
+          </Form> 
         )}
+
         <View className='slc-button__text'>{this.props.children}</View>
       </Common>
     )
