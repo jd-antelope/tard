@@ -1,5 +1,6 @@
+import SlComponent from './base'
 
-export interface SlPopupProps{
+export interface SlPopupProps extends SlComponent {
   //组件标题
   title?: string
   //是否允许外部点击关闭
@@ -8,8 +9,6 @@ export interface SlPopupProps{
   align?: string
   //组件是否显示
   isOpened: boolean
-  //组件外部自定义类名
-  className?: string
   //组件关闭回调
   onClose?: Function
   //自定义图标

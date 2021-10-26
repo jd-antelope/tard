@@ -34,7 +34,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
               'slc-price__text-small': type === 'small' || type === 'middle',
             })
           }
-          style={ (color !== '' ? `color: ${color}` : '') + (size !== 0 ? `font-size: ${size}rpx` : '') }
+          style={ (color !== '' ? `color: ${color};` : '') + (size !== 0 ? `font-size: ${size}rpx` : '') }
         >
           ¥
           <Text 
