@@ -7,21 +7,6 @@
 import { SlPrice } from '@jd/selling-c-ui'
 ```
 
-## api
-
-### type 现在分为5种类型
-```js
-  small = 'small',  // 24 + 24
-  smallMiddle = 'smallMiddle', // 28 + 28
-  middle = 'middle', // 24 + 36
-  largeMiddle = 'largeMiddle', // 28 + 48
-  large = 'large',  // 36 + 60
-```
-### size 价格大小 number
-
-### symbolSize 符号大小 number
-  
-# price
 
 ## api
 |  属性   | 说明  | 类型 | 默认值 |

@@ -15,21 +15,19 @@ const getTypesPath = () => {
 const readTypes = (v) => {
   const list = []
   const str = fs.readFileSync(`${cwd}/${v}`, 'utf-8')
-  const s = str.split('SlComponent {')[1].split('}')[0]
-  const a = s.split('/').filter(v => !v.includes('*'))
-  const a1 = s.split('/').filter(v => v.includes('*'))
-  const b = a.map(v => {
+  const attrStr = str.split('SlComponent {')[1].split('}')[0]
+  const attrArray = attrStr.split('/').filter(v => !v.includes('*')).map(v => {
     return v.replace(/ /g, '').split('\n').join('')
   }).filter(v => v !== '')
-  const b1 = a1.map(v => {
+  const resArray = attrStr.split('/').filter(v => v.includes('*')).map(v => {
     return v.replace(/ /g, '').replace(/\*/g, '').split('\n').join('')
   }).filter(v => v !== '')
-  b.map((v, i) => {
+  attrArray.map((v, i) => {
     list.push({
       attr: v.split(':')[0].replace('?', ''),
       type: v.split(':')[1],
-      des: String(b1[i]).split('@default')[0],
-      default: String(b1[i]).split('@default')[1] || '-'
+      des: String(resArray[i]).split('@default')[0],
+      default: String(resArray[i]).split('@default')[1] || '-'
     })
   })
   return list
@@ -38,8 +36,7 @@ const readTypes = (v) => {
 const readMdFile = (path, list) => {
   
   const p = path.split('/')[1].split('.')[0].replace('sl-', '')
-  let str = `
-## api
+  let str = `## api
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 `

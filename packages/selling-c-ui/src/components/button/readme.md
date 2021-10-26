@@ -7,10 +7,6 @@
 import { SlButton } from '@jd/selling-c-ui'
 ```
 
-## api
-type# button
-
-# button
 
 ## api
 |  属性   | 说明  | 类型 | 默认值 |
