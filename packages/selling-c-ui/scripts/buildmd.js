@@ -10,7 +10,6 @@ const getDocsPath =
 		const packagePaths = globby.sync('../src/components/*/index.tsx', {
 			cwd: __dirname
 		})
-		console.log(packagePaths)
 
 		return packagePaths.map((item) => item.replace('/index.tsx', '').replace('../', ''))
 	}

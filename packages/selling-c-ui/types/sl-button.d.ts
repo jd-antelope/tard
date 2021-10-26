@@ -10,7 +10,7 @@ type TaroButtonProps = Pick<ButtonProps, 'formType' | 'openType' |
   'onGetUserInfo' | 'onGetPhoneNumber' | 'onOpenSetting' | 'onError'>
 
 
-export interface SlButtonProps extends SlComponent, TaroButtonProps {
+export interface SlButtonProps extends TaroButtonProps, SlComponent {
   /**
    * 是否填充背景
    */

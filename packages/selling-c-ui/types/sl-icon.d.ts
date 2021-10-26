@@ -3,7 +3,10 @@ import { CommonEventFunction } from '@tarojs/components/types/common'
 
 import SlComponent, { SlIconBaseProps } from './base'
 
-export interface SlIconProps extends SlComponent, SlIconBaseProps {
+export interface SlIconProps extends SlIconBaseProps, SlComponent {
+  /**
+   * 点击事件
+   */
   onClick?: CommonEventFunction
 }
 
