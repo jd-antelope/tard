@@ -7,23 +7,22 @@ const cwd = process.cwd()
 
 const getDocsPath =
     () => {
-        const packagePaths = globby.sync('../src/components', {
-            cwd: __dirname,
-            expandDirectories: {
-                files: ['*/*.md'],
-            },
-            deep: 2,
+        const packagePaths = globby.sync('../src/components/*/index.tsx', {
+            cwd: __dirname
         })
+        console.log(packagePaths)
 
-        return packagePaths.map((item) => item.replace('../', ''))
+        return packagePaths.map((item) => item.replace('/index.tsx', '').replace('../', ''))
     }
 
 const getFileNmae = (paths) => {
-    return path.basename(paths).split('.')[0]
+    return paths.split('/')[2]
 }
 
 const getMdFile = (path) => {
-    const mdPathContent = fs.readFileSync(`${cwd}/${path}`, 'utf-8')
+    const mdPath = `${cwd}/${path}/readme.md`
+    fs.ensureFileSync(mdPath)
+    const mdPathContent = fs.readFileSync(mdPath, 'utf-8')
     return mdPathContent.replace(/`/g, '~')
 }
 

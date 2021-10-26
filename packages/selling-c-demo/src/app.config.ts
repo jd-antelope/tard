@@ -1,8 +1,8 @@
 export default {
   pages: [
     'pages/home/index',
-    'pages/sl-badge/index',
-    'pages/sl-button/index',
+    'pages/badge/index',
+    'pages/button/index',
   ],
   window: {
     backgroundTextStyle: 'light',

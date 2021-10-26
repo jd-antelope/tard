@@ -31,6 +31,7 @@ const changeDocRoute = (docs) => {
   const jsonContent = fs.readFileSync(`./scripts/doc-route-template.txt`, 'utf-8')
   const jsonResult = jsonContent.replace(`{{this}}`, JSON.stringify(list))
   fs.writeFileSync(path.resolve(__dirname,'../src/business/docs-route.ts'), jsonResult)
+  fs.writeFileSync(path.resolve(__dirname,'../../selling-c-demo/src/docs-route.ts'), jsonResult)
   console.log('列表加载完成')
 }
 
@@ -38,8 +39,6 @@ const start = () => {
   const docs = getDocsPath();
   changeDocRoute(docs)
 }
-
-
 
 class CreateRoutePlugin {
     constructor () {
