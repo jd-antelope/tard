@@ -1,7 +1,7 @@
 const globby = require('globby')
 const path = require("path");
 const fs = require('fs-extra');
-const watch = require('node-watch');
+const nodeWatch = require('node-watch');
 
 const cwd = process.cwd()
 
@@ -40,14 +40,16 @@ const start = () => {
 
 }
 
-export default function pluginBuildMd (opts) {
+export default function pluginBuildMd ({watch}) {
 	return {
 		name: "rollup-plugin-md", // rollup插件名称，必须符合格式
 		buildStart (source) {
-			watch(path.join(__dirname, '../src/components'), { recursive: true }, function (evt, name) {
-				// fs.emptyDir(`${cwd}/../selling-c-docs/src/pages/docs`)
-				name.includes('.md') && start();
-			});
+			console.log(watch)
+			if(watch){
+				nodeWatch(path.join(__dirname, '../src/components'), { recursive: true }, function (evt, name) {
+					name.includes('.md') && start();
+				});
+			}
 			start();
 		},
 		load () {
