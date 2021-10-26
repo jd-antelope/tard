@@ -20,7 +20,7 @@ const getFileNmae = (paths) => {
 }
 
 const getMdFile = (path) => {
-    const mdPath = `${cwd}/${path}/readme.md`
+    const mdPath = `${cwd}/${path}/README.md`
     fs.ensureFileSync(mdPath)
     const mdPathContent = fs.readFileSync(mdPath, 'utf-8')
     return mdPathContent.replace(/`/g, '~')
@@ -41,18 +41,20 @@ const start = () => {
   
 }
 
-export default function pluginBuildMd (opts) {
-    return {
-        name: "rollup-plugin-md", // rollup插件名称，必须符合格式
-        buildStart (source) {
-            watch(path.join(__dirname, '../src/components'), { recursive: true }, function (evt, name) {
-                // fs.emptyDir(`${cwd}/../selling-c-docs/src/pages/docs`)
-                name.includes('.md') && start();
-            });
-            start();
-        },
-        load () {
+start()
 
-        }
-    }
-}
+// export default function pluginBuildMd (opts) {
+//     return {
+//         name: "rollup-plugin-md", // rollup插件名称，必须符合格式
+//         buildStart (source) {
+//             watch(path.join(__dirname, '../src/components'), { recursive: true }, function (evt, name) {
+//                 // fs.emptyDir(`${cwd}/../selling-c-docs/src/pages/docs`)
+//                 name.includes('.md') && start();
+//             });
+//             start();
+//         },
+//         load () {
+
+//         }
+//     }
+// }
