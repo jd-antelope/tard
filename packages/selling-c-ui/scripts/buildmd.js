@@ -41,20 +41,18 @@ const start = () => {
   
 }
 
-start()
+export default function pluginBuildMd (opts) {
+    return {
+        name: "rollup-plugin-md", // rollup插件名称，必须符合格式
+        buildStart (source) {
+            watch(path.join(__dirname, '../src/components'), { recursive: true }, function (evt, name) {
+                // fs.emptyDir(`${cwd}/../selling-c-docs/src/pages/docs`)
+                name.includes('.md') && start();
+            });
+            start();
+        },
+        load () {
 
-// export default function pluginBuildMd (opts) {
-//     return {
-//         name: "rollup-plugin-md", // rollup插件名称，必须符合格式
-//         buildStart (source) {
-//             watch(path.join(__dirname, '../src/components'), { recursive: true }, function (evt, name) {
-//                 // fs.emptyDir(`${cwd}/../selling-c-docs/src/pages/docs`)
-//                 name.includes('.md') && start();
-//             });
-//             start();
-//         },
-//         load () {
-
-//         }
-//     }
-// }
+        }
+    }
+}
