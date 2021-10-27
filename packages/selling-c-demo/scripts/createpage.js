@@ -20,7 +20,7 @@ function createCompenent (cName) {
   const filePath = path.resolve(__dirname, `../src/pages/${cName}/index.tsx`);
   const configPath = path.resolve(__dirname, `../src/pages/${cName}/index.config.ts`);
   const stylePath = path.resolve(__dirname, `../src/pages/${cName}/index.less`);
-  if (fs.pathExistsSync(filePath)) {
+  if (!fs.pathExistsSync(filePath)) {
     fs.ensureFileSync(filePath)
     fs.writeFileSync(filePath, readTempl(cName, path.resolve(__dirname, './template/indextmpl.txt')));
     fs.writeFileSync(configPath, readTempl(cName, path.resolve(__dirname, './template/configtmpl.txt')));
@@ -63,12 +63,5 @@ function getComponentList () {
 }
 getComponentList()
 
-/**
- * 读取路由文件
- */
-
-
-
-//  console.log(JSON.stringify(content.replace(/(export default)|(\n|\s)/g, '')))
 
 

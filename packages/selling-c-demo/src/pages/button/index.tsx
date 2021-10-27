@@ -15,4 +15,5 @@ const Button: FC = () => {
     </View>
   );
 };
+
 export default memo(Button);
