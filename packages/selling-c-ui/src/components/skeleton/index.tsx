@@ -18,8 +18,8 @@ export default class SlSkeleton extends React.Component<SlSkeletonProps> {
   public render (): JSX.Element | null {
     const { className, width, height, type } = this.props
     const customStyle = {
-      'width': pxTransform(width || 24),
-      'minHeight': pxTransform(height || 24),
+      'width': pxTransform(width || 24, 750),
+      'minHeight': pxTransform(height || 24, 750),
     };
     return (
       <View className={ cn('slc-skeleton', className) }>

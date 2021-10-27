@@ -3,9 +3,9 @@ import _toString from 'lodash/toString'
 import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { Input, Text, View } from '@tarojs/components'
+import { pxTransform } from '@tarojs/taro'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
 import { SlInputNumberProps, InputError } from '../../../types/input-number'
-import { pxTransform } from '../../common/utils'
 
 // TODO: Check all types
 
@@ -140,7 +140,7 @@ export default class SlInputNumber extends React.Component<SlInputNumberProps> {
     } = this.props
 
     const inputStyle = {
-      width: width ? `${pxTransform(width)}` : ''
+      width: width ? `${pxTransform(width, 750)}` : ''
     }
     const inputValue = Number(this.handleValue(value))
     const rootCls = classNames(

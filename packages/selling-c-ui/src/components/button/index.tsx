@@ -113,7 +113,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
       'slc-button--fill': fill
     }
     const style = (objectToString(Object.assign(customStyle, {
-      'border-radius': Taro.pxTransform(radius),
+      'border-radius': Taro.pxTransform(radius, 750),
       'color': color,
       'border-color': borderColor,
       'background-color': fillColor
