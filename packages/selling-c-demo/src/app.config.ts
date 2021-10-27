@@ -1,5 +1,6 @@
 export default {
   pages: [
+    'pages/home/index',
 		'pages/badge/index',
 		'pages/button/index',
 		'pages/canvas/index',
