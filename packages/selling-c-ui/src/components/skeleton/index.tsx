@@ -2,7 +2,7 @@
 import React from 'react'
 import cn from 'classnames'
 import { View } from '@tarojs/components'
-import { pxTransform } from '@tarojs/taro'
+import { pxTransform } from '../../common/utils'
 import { SlSkeletonProps } from '../../../types/skeleton'
 
 const obj = {

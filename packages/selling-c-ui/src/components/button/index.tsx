@@ -8,7 +8,7 @@ import { View, Button, Form } from '@tarojs/components'
 import { BaseEventOrig, CommonEvent } from '@tarojs/components/types/common'
 import { SlButtonProps, SlButtonState } from '../../../types/button'
 import Common from '../../common/common'
-import { objectToString } from '../../common/utils'
+import { objectToString, pxTransform } from '../../common/utils'
 
 const SIZE_CLASS = {
   small: 'small',
@@ -113,7 +113,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
       'slc-button--fill': fill
     }
     const style = (objectToString(Object.assign(customStyle, {
-      'border-radius': Taro.pxTransform(radius, 750),
+      'border-radius': pxTransform(radius),
       'color': color,
       'border-color': borderColor,
       'background-color': fillColor

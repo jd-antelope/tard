@@ -2,9 +2,9 @@
 import React, { Fragment } from 'react'
 import cn from 'classnames'
 import { View, Canvas, Button } from '@tarojs/components'
-import Taro, { 
-  pxTransform, eventCenter, getCurrentInstance, showToast
+import Taro, {eventCenter, getCurrentInstance, showToast
 } from '@tarojs/taro'
+import { pxTransform } from '../../common/utils'
 import SlIcon from '../icon'
 import { SlCanvasProps, SlCanvasState } from '../../../types/canvas'
 
