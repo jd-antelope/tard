@@ -4,7 +4,7 @@ import { navigateBack } from '@tarojs/taro'
 import { SlIcon } from '@jd/selling-c-ui'
 import { View } from '@tarojs/components'
 import './index.less'
-s
+
 export interface DocsHeaderProps {
   title?: string
 }
