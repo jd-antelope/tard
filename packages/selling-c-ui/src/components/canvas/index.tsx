@@ -154,7 +154,7 @@ export default class SlCanvas extends React.Component<SlCanvasProps, SlCanvasSta
               <View className="slc-canvas-mask"></View>
               <View 
                 className="slc-canvas-box"
-                style={ `width: ${pxTransform(width, 750)};` }
+                style={ `width: ${pxTransform(width)};` }
               >
                 <View className="slc-canvas-icon" onClick={ () => this.close() }>
                   <SlIcon
@@ -166,7 +166,7 @@ export default class SlCanvas extends React.Component<SlCanvasProps, SlCanvasSta
                 <Canvas 
                   className={ cn('slc-canvas-content', className) } 
                   canvas-id="canvas"
-                  style={ `width: ${pxTransform(width, 750)}; height: ${pxTransform(height, 750)}` }
+                  style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)}` }
                 />
                 <Button 
                   className="slc-canvas-save" 
@@ -179,7 +179,7 @@ export default class SlCanvas extends React.Component<SlCanvasProps, SlCanvasSta
             <Canvas 
               className={ cn('slc-canvas-content', className) } 
               canvas-id="canvas"
-              style={ `width: ${pxTransform(width, 750)}; height: ${pxTransform(height, 750)}` }
+              style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)}` }
             />
         }
         
