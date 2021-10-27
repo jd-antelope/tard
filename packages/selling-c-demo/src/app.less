@@ -114,6 +114,35 @@ view {
       }
     }
   }
+  &-header {
+    height: 150px;
+    background: #FFF0F0;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    font-size: 36px;
+    border-radius: 12px;
+    margin-top: 12px;
+  }
+  &-content {
+    &-tip {
+      height: 100px;
+      line-height: 100px;
+      padding-left: 30px;
+      font-size: 30px;
+      position: relative;
+      margin-bottom: 12px;
+      &::after {
+        content: '';
+        width: 5px;
+        height: 30px;
+        background: #FF2929;
+        position: absolute;
+        top: 35px;
+        left: 0;
+      }
+    }
+  }
 }
 
 .container{

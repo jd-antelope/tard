@@ -21,7 +21,7 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
         <View className='doc-header__title' 
           onClick={ () => navigateTo({ url: `/pages/home/index` }) }
         >
-          <SlIcon value='chevron-left' size={ 40 }></SlIcon>
+          <SlIcon value='chevron-left' size={ 30 }></SlIcon>
           {title}
         </View>
       </View>
