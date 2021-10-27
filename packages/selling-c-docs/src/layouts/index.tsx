@@ -38,7 +38,7 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
             >
               <iframe
                 className='iframe-content'
-                src={ `http://localhost:10086/#/pages/${path}/index` }
+                src={ `${process.env.API_IFRAME_URL}/#/pages/${path}/index` }
                 frameBorder='0'
                 id='iframeDemo'
               />
