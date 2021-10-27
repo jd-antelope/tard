@@ -43,7 +43,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@jd/selling-c-ui": "file:../selling-c-ui",
+    "@test/selling-c-ui": "^0.0.2",
     "@tarojs/components": "~3.0.2",
     "@tarojs/react": "~3.0.2",
     "@tarojs/runtime": "~3.0.2",
