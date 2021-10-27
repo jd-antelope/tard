@@ -7,9 +7,10 @@ import './index.less';
 
 const ButtonPage: FC = () => {
   return (
-    <View className="container-page">
-      <DocsHeader title='sl-button'></DocsHeader>
+    <View className="container">
+      <DocsHeader title='button'></DocsHeader>
       <View className='doc-body'>
+        <View className='doc-body-header'>button</View>
         {/* <SlButton>按钮文案</SlButton> */}
       </View>
     </View>

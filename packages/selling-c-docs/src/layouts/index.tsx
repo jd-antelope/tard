@@ -6,9 +6,8 @@ import LayoutMenu from './menu'
 import './layout.less'
 import styles from './index.less';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 export default function LayoutComponent({ children, location }: IRouteComponentProps) {
-
   const postIframeMessage = (title: string) => {
     const childFrameObj = document.getElementById('iframeDemo');
     (childFrameObj as any).contentWindow?.postMessage({ title }, '*');

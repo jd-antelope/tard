@@ -5,8 +5,10 @@
   "description": "",
   "author": "hawley",
   "scripts": {
-    "start": "umi dev",
-    "build": "umi build",
+    "start": "cross-env UMI_ENV=dev umi dev",
+    "start:prod": "cross-env UMI_ENV=prod umi dev",
+    "build": "cross-env UMI_ENV=dev umi build",
+    "build:prod": "cross-env UMI_ENV=prod umi build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",

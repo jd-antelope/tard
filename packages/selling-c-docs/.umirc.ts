@@ -1,6 +1,5 @@
 import { defineConfig } from 'umi';
 const  transformPlugin = require('./scripts/createroute.js')
-const path = require('path')
 
 export default defineConfig({
   nodeModulesTransform: {
@@ -11,7 +10,9 @@ export default defineConfig({
     "primary-color": "#FF2929",
   },
   chainWebpack (config) {
-    config.plugin('transformMd').use(new transformPlugin())
-
+    console.log(process.env)
+    if (process.env.UMI_ENV !== 'prod') {
+      config.plugin('transformMd').use(new transformPlugin())
+    }
   }
 })
