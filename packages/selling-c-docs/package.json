@@ -40,6 +40,7 @@
     "@umijs/preset-react": "^1.8.24",
     "@umijs/test": "^3.5.20",
     "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
     "copy-to-clipboard": "^3.3.1",
     "front-matter": "^4.0.2",
     "fs-extra": "^10.0.0",

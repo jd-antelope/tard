@@ -18,7 +18,7 @@ const hasSameComponent = (name) => {
  * @param name 组件名称
  */
 const transformCom = (name) => {
-  return name.split('-').reduce((pre, v) => (pre += v.slice(0, 1).toLocaleUpperCase() + v.slice(1)), '')
+  return `Sl${name.split('-').reduce((pre, v) => (pre += v.slice(0, 1).toLocaleUpperCase() + v.slice(1)), '')}`
 }
 
 const transformFront = (name) => {
@@ -92,6 +92,7 @@ export interface ${transformCom(name)}Props extends SlComponent {
 
 export interface ${transformCom(name)}State {
 }
+declare const ${transformCom(name)}: ComponentClass<${transformCom(name)}Props>
 `
 }
 
