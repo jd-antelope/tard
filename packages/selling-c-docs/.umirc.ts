@@ -10,7 +10,6 @@ export default defineConfig({
     "primary-color": "#FF2929",
   },
   chainWebpack (config) {
-    console.log(process.env)
     if (process.env.UMI_ENV !== 'prod') {
       config.plugin('transformMd').use(new transformPlugin())
     }
