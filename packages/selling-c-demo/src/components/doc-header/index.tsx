@@ -1,5 +1,6 @@
 import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
+import { navigateBack } from '@tarojs/taro'
 import { SlIcon } from '@test/selling-c-ui'
 import { View } from '@tarojs/components'
 import './index.less'
@@ -17,10 +18,8 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
 
     return (
       <View className='doc-header'>
-        <View className='doc-header__title'>
-          <a href='#/pages/home/index'>
-            <SlIcon value='chevron-left' size={ 40 }></SlIcon>
-          </a>
+        <View className='doc-header__title' onClick={ () => navigateBack() }>
+          <SlIcon value='chevron-left' size={ 40 }></SlIcon>
           {title}
         </View>
       </View>

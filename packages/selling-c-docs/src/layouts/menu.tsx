@@ -8,7 +8,7 @@ type Props = {
 }
 
 const SideMenu: FC<Props> = ({ postIframeMessage }) => {
-  const [selectedKeys, setSelectedKeys] = useState<String>(history.location.pathname.split('/')[-1] || 'badge')
+  const [selectedKeys, setSelectedKeys] = useState<string>(history.location.pathname.split('/')[-1] || 'badge')
 
   const iframeListener = (e: any) => {
     const title = e.data.title
@@ -22,7 +22,8 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
   }, [])
 
   useEffect(() => {
-    setSelectedKeys(history.location.pathname.replace('/docs/', ''))
+    const pathTitle = history.location.pathname.replace('/docs/', '')
+    setSelectedKeys(pathTitle)
   }, [history.location.pathname])
 
   return (

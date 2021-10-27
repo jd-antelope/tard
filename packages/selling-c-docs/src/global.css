@@ -75,7 +75,7 @@
   margin: .67em 0;
   font-weight: 600;
   padding-bottom: .3em;
-  border-bottom: 1px solid hsla(210,18%,87%,1);
+  border-bottom: 1px solid #FFF0F0;
 }
 
 .markdown-body mark {
@@ -126,7 +126,7 @@
   box-sizing: content-box;
   overflow: hidden;
   background: transparent;
-  border-bottom: 1px solid hsla(210,18%,87%,1);
+  border-bottom: 1px solid #FFF0F0;
   height: .25em;
   padding: 0;
   margin: 24px 0;
@@ -207,7 +207,7 @@
 }
 
 .markdown-body table thead tr {
-  background: #f7f7f7;
+  background: #FFBEBE;
 }
 
 .markdown-body table thead th {
@@ -236,7 +236,7 @@
   line-height: 10px;
   color: #333;
   vertical-align: middle;
-  background-color: #f6f8fa;
+  background-color: #FFF0F0;
   border: solid 1px rgba(175,184,193,0.2);
   border-bottom-color: rgba(175,184,193,0.2);
   border-radius: 6px;
@@ -259,7 +259,7 @@
   font-weight: 600;
   padding-bottom: .3em;
   font-size: 1em;
-  border-bottom: 1px solid hsla(210,18%,87%,1);
+  border-bottom: 1px solid #FFF0F0;
 }
 
 .markdown-body h3 {
@@ -394,12 +394,12 @@
 }
 
 .markdown-body .pl-ii {
-  color: #f6f8fa;
+  color: #FFF0F0;
   background-color: #82071e;
 }
 
 .markdown-body .pl-c2 {
-  color: #f6f8fa;
+  color: #FFF0F0;
   background-color: #cf222e;
 }
 
@@ -668,7 +668,7 @@
 }
 
 .markdown-body table tr:nth-child(2n) {
-  background-color: #f6f8fa;
+  background-color: #FFF0F0;
 }
 
 .markdown-body table img {
@@ -823,7 +823,7 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f6f8fa;
+  background-color: #FFF0F0;
   border-radius: 6px;
 }
 
@@ -863,7 +863,7 @@
 
 .markdown-body .csv-data th {
   font-weight: 600;
-  background: #f6f8fa;
+  background: #FFF0F0;
   border-top: 0;
 }
 

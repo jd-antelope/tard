@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { IRouteComponentProps, history } from 'umi'
 import { Layout, Menu } from 'antd';
 import { menuData, logoUrl } from '@/business/layout'
@@ -8,6 +8,8 @@ import styles from './index.less';
 
 const { Header, Content, Sider } = Layout;
 export default function LayoutComponent({ children, location }: IRouteComponentProps) {
+  const [path] = useState<string>(history.location.pathname.split('/')[2] || 'home')
+
   const postIframeMessage = (title: string) => {
     const childFrameObj = document.getElementById('iframeDemo');
     (childFrameObj as any).contentWindow?.postMessage({ title }, '*');
@@ -36,7 +38,7 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
             >
               <iframe
                 className='iframe-content'
-                src='http://localhost:10086/#/pages/home/index'
+                src={ `http://localhost:10086/#/pages/${path}/index` }
                 frameBorder='0'
                 id='iframeDemo'
               />
