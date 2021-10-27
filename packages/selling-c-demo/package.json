@@ -33,6 +33,7 @@
     "dev:rn": "yarn run build:rn --watch",
     "dev:qq": "yarn run build:qq --watch",
     "dev:quickapp": "yarn run build:quickapp --watch",
+    "create:page": "node ./scripts/createpage.js",
     "clean": "rimraf .temp dist"
   },
   "browserslist": [
@@ -61,6 +62,8 @@
     "dotenv-flow": "^3.2.0",
     "babel-preset-taro": "~3.0.2",
     "eslint-config-taro": "~3.0.2",
+    "fs-extra": "^10.0.0",
+    "handlebars": "^4.7.7",
     "typescript": "^3.8.3"
   }
 }

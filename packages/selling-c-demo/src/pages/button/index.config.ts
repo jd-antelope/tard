@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: 'button'
+  navigationBarTitleText: 'Button'
 }

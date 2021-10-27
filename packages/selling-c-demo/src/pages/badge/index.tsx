@@ -1,27 +1,19 @@
-import React from 'react'
+import React, { memo } from 'react';
+import { FC } from '@tarojs/taro';
+import { View } from '@tarojs/components';
 import { SlBadge } from '@test/selling-c-ui'
-import { View } from '@tarojs/components'
 import DocsHeader from '../../components/doc-header'
-import './index.less'
+import './index.less';
 
-interface ButtonPageState {
-    isWEAPP: boolean
-    isALIPAY: boolean
-}
+const Badge: FC = () => {
+  return (
+    <View className="container">
+      <DocsHeader title='Badge'></DocsHeader>
+      <View className='doc-body'>
+        <View className='doc-body-header'>button</View>
+      </View>
+    </View>
+  );
+};
 
-export default class ButtonPage extends React.Component<{}, ButtonPageState> {
-
-    public render(): JSX.Element {
-
-        return (
-            <View className='container'>
-                <DocsHeader title='sl-badge'></DocsHeader>
-                {/* S Body */}
-                <View className='doc-body'>
-                    {/* <SlButton>按钮文案</SlButton> */}
-                    {/* E Body */}
-                </View>
-            </View>
-        )
-    }
-}
+export default memo(Badge);
