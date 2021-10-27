@@ -4,7 +4,7 @@ import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { Input, Text, View } from '@tarojs/components'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
-import { SlInputNumberProps, InputError } from '../../../types/sl-input-number'
+import { SlInputNumberProps, InputError } from '../../../types/input-number'
 import { pxTransform } from '../../common/utils'
 
 // TODO: Check all types

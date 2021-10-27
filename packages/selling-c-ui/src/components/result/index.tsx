@@ -5,7 +5,7 @@ import SlImage from '../image'
 import SlButton from '../button'
 import PropTypes, { InferProps } from 'prop-types'
 import { View, Text } from '@tarojs/components'
-import { SlResultProps, SlResultState } from '../../../types/sl-result'
+import { SlResultProps, SlResultState } from '../../../types/result'
 
 export default class SlResult extends React.Component<SlResultProps, SlResultState> {
   public static defaultProps: SlResultProps

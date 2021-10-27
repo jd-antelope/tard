@@ -9,7 +9,7 @@ import {
   ITouchEvent 
 } from '@tarojs/components/types/common'
 // import Common from '../../common/common'
-import { SlTabProps, SlTabState } from '../../../types/sl-tab'
+import { SlTabProps, SlTabState } from '../../../types/tab'
 import { isTest, uuid, mergeStyle } from '../../common/utils'
 
 const ENV = Taro.getEnv()

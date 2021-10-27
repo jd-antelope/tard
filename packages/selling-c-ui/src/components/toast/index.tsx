@@ -3,7 +3,7 @@ import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { Image, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
-import { SlToastProps, SlToastState } from '../../../types/sl-toast'
+import { SlToastProps, SlToastState } from '../../../types/toast'
 import statusImg from './img.json'
 
 export default class SlToast extends React.Component<

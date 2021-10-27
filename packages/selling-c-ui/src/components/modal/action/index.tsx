@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { View } from '@tarojs/components'
-import { SlModalActionProps } from '../../../../types/sl-modal'
+import { SlModalActionProps } from '../../../../types/modal'
 
 export default class SlModalAction extends React.Component<SlModalActionProps> {
   public static defaultProps: SlModalActionProps

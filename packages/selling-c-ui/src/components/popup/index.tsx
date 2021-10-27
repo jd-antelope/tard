@@ -4,7 +4,7 @@ import { View } from '@tarojs/components'
 import PropTypes, { InferProps } from 'prop-types'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
-import { SlPopupProps, SlPopupState } from '../../../types/sl-popup'
+import { SlPopupProps, SlPopupState } from '../../../types/popup'
 import { objectToString } from '../../common/utils'
 
 export default class SlPopup extends React.Component<SlPopupProps, SlPopupState> {

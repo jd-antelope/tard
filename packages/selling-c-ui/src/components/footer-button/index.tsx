@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { View } from '@tarojs/components'
-import { SlFooterButtonProps, SlFooterButtonState } from '../../../types/sl-footer-button'
+import { SlFooterButtonProps, SlFooterButtonState } from '../../../types/footer-button'
 import PropTypes, {InferProps} from "prop-types";
 import { objectToString } from '../../common/utils'
 

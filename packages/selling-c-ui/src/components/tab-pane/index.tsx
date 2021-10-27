@@ -3,7 +3,7 @@ import React from 'react'
 import cn from 'classnames'
 import { View } from '@tarojs/components'
 import PropTypes, { InferProps } from 'prop-types'
-import { SlTabPaneProps } from '../../../types/sl-tab-pane'
+import { SlTabPaneProps } from '../../../types/tab-pane'
 
 export default class SlTabPane extends React.Component<SlTabPaneProps> {
   public static defaultProps: SlTabPaneProps

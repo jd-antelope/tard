@@ -4,7 +4,7 @@ import { View, Text } from '@tarojs/components'
 import PropTypes, { InferProps } from 'prop-types'
 import { getSystemInfoSync, getMenuButtonBoundingClientRect } from '@tarojs/taro';
 import cn from 'classnames';
-import { SlCustomHeaderProps } from '../../../types/sl-custom-header'
+import { SlCustomHeaderProps } from '../../../types/custom-header'
 export default class SlCustomHeader extends React.Component<SlCustomHeaderProps> {
     public static defaultProps: SlCustomHeaderProps
     public static propTypes: InferProps<SlCustomHeaderProps>

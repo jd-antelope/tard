@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 import { ScrollView } from '@tarojs/components'
-import { SlModalContentProps } from '../../../../types/sl-modal'
+import { SlModalContentProps } from '../../../../types/modal'
 
 export default class SlModalContent extends React.Component<
 SlModalContentProps

@@ -6,7 +6,7 @@ import PropTypes, { InferProps } from 'prop-types'
 import { ButtonProps } from '@tarojs/components/types/Button'
 import { View, Button, Form } from '@tarojs/components'
 import { BaseEventOrig, CommonEvent } from '@tarojs/components/types/common'
-import { SlButtonProps, SlButtonState } from '../../../types/sl-button'
+import { SlButtonProps, SlButtonState } from '../../../types/button'
 import Common from '../../common/common'
 import { objectToString } from '../../common/utils'
 

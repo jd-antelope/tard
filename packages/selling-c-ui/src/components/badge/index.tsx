@@ -3,7 +3,7 @@ import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { View } from '@tarojs/components'
 // import Common from '../../common/common'
-import { SlBadgeProps } from '../../../types/sl-badge'
+import { SlBadgeProps } from '../../../types/badge'
 
 export default class SlBadge extends React.Component<SlBadgeProps> {
   public static defaultProps: SlBadgeProps

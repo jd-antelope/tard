@@ -6,7 +6,7 @@ import Taro, {
   pxTransform, eventCenter, getCurrentInstance, showToast
 } from '@tarojs/taro'
 import SlIcon from '../icon'
-import { SlCanvasProps, SlCanvasState } from '../../../types/sl-canvas'
+import { SlCanvasProps, SlCanvasState } from '../../../types/canvas'
 
 export default class SlCanvas extends React.Component<SlCanvasProps, SlCanvasState> {
   $instance = getCurrentInstance()

@@ -2,7 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 import { View, Text } from '@tarojs/components'
 import Common from '../../common/common'
-import { SlPriceProps, SlPriceState } from '../../../types/sl-price'
+import { SlPriceProps, SlPriceState } from '../../../types/price'
 
 export default class SlPrice extends React.Component<SlPriceProps, SlPriceState> {
   public static defaultProps: SlPriceProps

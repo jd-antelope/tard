@@ -3,7 +3,7 @@ import React from 'react'
 import cn from 'classnames'
 import { View } from '@tarojs/components'
 import { pxTransform } from '@tarojs/taro'
-import { SlSkeletonProps } from '../../../types/sl-skeleton'
+import { SlSkeletonProps } from '../../../types/skeleton'
 
 const obj = {
   'squared': 'slc-skeleton-squared',

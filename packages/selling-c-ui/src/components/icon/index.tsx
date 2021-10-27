@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { Text } from '@tarojs/components'
-import { SlIconProps } from '../../../types/sl-icon'
+import { SlIconProps } from '../../../types/icon'
 import { mergeStyle, pxTransform } from '../../common/utils'
 
 export default class SlIcon extends React.Component<SlIconProps> {

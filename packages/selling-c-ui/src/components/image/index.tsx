@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import cn from 'classnames'
 import { Image } from '@tarojs/components'
 import { BUYIMG } from '../../common/constants'
-import { SlImageProps, SlImageState } from '../../../types/sl-image'
+import { SlImageProps, SlImageState } from '../../../types/image'
 
 export default class SlImage extends React.Component<SlImageProps, SlImageState> {
   public static defaultProps: SlImageProps
