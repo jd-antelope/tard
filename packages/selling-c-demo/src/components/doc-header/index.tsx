@@ -1,6 +1,6 @@
 import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
-import { SlIcon } from '@jd/selling-c-ui'
+import { SlIcon } from '@test/selling-c-ui'
 import { View } from '@tarojs/components'
 import './index.less'
 
@@ -19,7 +19,7 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
       <View className='doc-header'>
         <View className='doc-header__title'>
           <a href='#/pages/home/index'>
-            <SlIcon value='chevron-left'></SlIcon>
+            <SlIcon value='chevron-left' size={ 40 }></SlIcon>
           </a>
           {title}
         </View>

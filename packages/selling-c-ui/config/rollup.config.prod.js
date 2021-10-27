@@ -4,12 +4,10 @@ import RollupNodeResolve from '@rollup/plugin-node-resolve'
 import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
-import watch from "rollup-plugin-watch";
 import Package from '../package.json'
 import RollUpMd from '../scripts/buildmd'
 
 const resolveFile = path => NodePath.resolve(__dirname, '..', path)
-
 const externalPackages = [
   'classnames',
   'react',
@@ -33,7 +31,6 @@ export default {
       sourcemap: true
     }
   ],
-  watch: resolveFile('src'),
   external: externalPackages,
   extensions: ['json', 'js', 'ts'],
   plugins: [
@@ -42,9 +39,9 @@ export default {
         moduleDirectory: 'node_modules'
       }
     }),
-    RollUpMd(),
+    RollUpMd({ watch: process.env.NODE_ENV  === 'development'}),
     RollupCommonjs({
-      extensions: ['.esm.js', '.mjs', '.js', '.ts','.md'],
+      extensions: ['.esm.js', '.mjs', '.js', '.ts'],
       include: /\/node_modules\//,
       namedExports: {
         'react': ['useState']
@@ -63,8 +60,5 @@ export default {
         }
       ]
     }),
-    watch({
-      dir:resolveFile('src/style')
-    })
   ]
 }

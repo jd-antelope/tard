@@ -1,25 +1,21 @@
-import React from 'react'
-import { SlButton } from '@jd/selling-c-ui'
-import { View } from '@tarojs/components'
+import React, { memo } from 'react';
+import { FC } from '@tarojs/taro';
+import { View } from '@tarojs/components';
+import { SlButton } from '@test/selling-c-ui'
 import DocsHeader from '../../components/doc-header'
-import './index.less'
+import './index.less';
 
-interface BadgePageState {
-}
+const ButtonPage: FC = () => {
+  return (
+    <View className="container">
+      <DocsHeader title='button'></DocsHeader>
+      <View className='doc-body'>
+        <View className='doc-body-header'>button</View>
+        {/* <SlButton>按钮文案</SlButton> */}
+      </View>
+    </View>
+  );
+};
 
-export default class ButtonPage extends React.Component<{}, BadgePageState> {
+export default memo(ButtonPage);
 
-    public render(): JSX.Element {
-
-        return (
-            <View className='container'>
-                <DocsHeader title='sl-button'></DocsHeader>
-                {/* S Body */}
-                <View className='doc-body'>
-                    {/* <SlButton>按钮文案</SlButton> */}
-                    {/* E Body */}
-                </View>
-            </View>
-        )
-    }
-}

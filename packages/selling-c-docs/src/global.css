@@ -3,7 +3,7 @@
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   margin: 0;
-  color: #24292f;
+  color: #666;
   background-color: #ffffff;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
   font-size: 16px;
@@ -75,7 +75,6 @@
   margin: .67em 0;
   font-weight: 600;
   padding-bottom: .3em;
-  font-size: 2em;
   border-bottom: 1px solid hsla(210,18%,87%,1);
 }
 
@@ -203,10 +202,18 @@
 .markdown-body table {
   border-spacing: 0;
   border-collapse: collapse;
-  display: block;
-  width: max-content;
-  max-width: 100%;
+  width: 100%;
   overflow: auto;
+}
+
+.markdown-body table thead tr {
+  background: #f7f7f7;
+}
+
+.markdown-body table thead th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .markdown-body td,
@@ -227,7 +234,7 @@
   padding: 3px 5px;
   font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
   line-height: 10px;
-  color: #24292f;
+  color: #333;
   vertical-align: middle;
   background-color: #f6f8fa;
   border: solid 1px rgba(175,184,193,0.2);
@@ -251,7 +258,7 @@
 .markdown-body h2 {
   font-weight: 600;
   padding-bottom: .3em;
-  font-size: 1.5em;
+  font-size: 1em;
   border-bottom: 1px solid hsla(210,18%,87%,1);
 }
 
@@ -651,13 +658,13 @@
 
 .markdown-body table th,
 .markdown-body table td {
-  padding: 6px 13px;
-  border: 1px solid #d0d7de;
+  padding: 8px 13px;
+  font-size: 14px;
+  color: #666;
 }
 
 .markdown-body table tr {
   background-color: #ffffff;
-  border-top: 1px solid hsla(210,18%,87%,1);
 }
 
 .markdown-body table tr:nth-child(2n) {

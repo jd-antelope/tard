@@ -1,5 +1,5 @@
 import React from 'react'
-import { SlBadge } from '@jd/selling-c-ui'
+import { SlBadge } from '@test/selling-c-ui'
 import { View } from '@tarojs/components'
 import DocsHeader from '../../components/doc-header'
 import './index.less'

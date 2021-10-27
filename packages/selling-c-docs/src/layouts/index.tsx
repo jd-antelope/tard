@@ -6,9 +6,8 @@ import LayoutMenu from './menu'
 import './layout.less'
 import styles from './index.less';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 export default function LayoutComponent({ children, location }: IRouteComponentProps) {
-
   const postIframeMessage = (title: string) => {
     const childFrameObj = document.getElementById('iframeDemo');
     (childFrameObj as any).contentWindow?.postMessage({ title }, '*');
@@ -37,7 +36,7 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
             >
               <iframe
                 className='iframe-content'
-                src='http://10.0.35.51:10086/#/pages/home/index'
+                src='http://localhost:10086/#/pages/home/index'
                 frameBorder='0'
                 id='iframeDemo'
               />

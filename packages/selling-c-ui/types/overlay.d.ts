@@ -1,3 +1,4 @@
+import SlComponent from './base'
 
-export interface SlOverlayProps{
+export interface SlOverlayProps extends SlComponent {
 }

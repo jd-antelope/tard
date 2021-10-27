@@ -7,4 +7,16 @@
 import { SlToast } from '@jd/selling-c-ui'
 ```
 
+
 ## api
+|  属性   | 说明  | 类型 | 默认值 |
+|  ----  | ----  | ---- | ---- |
+| isOpened | 是否展示元素 | boolean | false |
+| text | 元素的内容 | string | - |
+| icon | icon的类型 | string | - |
+| image | 元素展示的图片 | string | - |
+| status | 元素的状态 | 'error'|'loading'|'success' | - |
+| duration | 元素持续的事件（设置为0将不会自动消失） | number | 3000 |
+| hasMask | 是否存在底部遮罩层(无法点击底部的内容区) | boolean | - |
+| onClick | 元素被点击之后触发的事件 | CommonEventFunction | - |
+| onClose | 元素被关闭之后触发的事件 | CommonEventFunction | - |
