@@ -18,17 +18,30 @@ function removeComponent(name) {
     const typePath = path.resolve(__dirname, '../types/')
     const docPath = path.resolve(__dirname, '../../selling-c-docs/src/pages/docs')
 
+    // 删除创建的模块文件
+    rmFileOrDir([
+      { type: 'dir', path: componentPath},
+      { type: 'file', path: `${typePath}/${name}.d.ts`},
+      { type: 'file', path: `${stylePath}/${name}.less`},
+      { type: 'file', path: `${docPath}/${name}.tsx`}
+    ])
+    // 删除依赖模块文件的内容
+    const removeTypes = ['component', 'style', 'type']
+    removeTypes.forEach(v => handleComponentRemove(name, v))
+}
+
+function rmFileOrDir(params) {
+  params.forEach(v => {
     try {
-        execSync(`rm -rf ${componentPath}`)
-        execSync(`rm -rf ${typePath}/${name}.d.ts`)
-        execSync(`rm -rf ${stylePath}/${name}.less`)
-        execSync(`rm -rf ${docPath}/${name}.tsx`)
-        const removeTypes = ['component', 'style', 'type']
-        removeTypes.forEach(v => handleComponentRemove(name, v))
+      const method = v.type === 'dir' ? 'rmdirSync' : 'unlinkSync'
+      fs[method](v.path, {
+        recursive: true
+      })
     } catch (error) {
-      log(`组件${name}删除失败`)
+      log(`删除${v.path}失败`)
       log(`失败原因:\n ${error}`)
     }
+  })
 }
 
 
