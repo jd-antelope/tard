@@ -10,24 +10,22 @@ const {
 // eslint-disable-next-line no-console
 const log = console.log
 
-const { execSync } = require('child_process')
-
 function removeComponent(name) {
-    const componentPath = path.resolve(__dirname, '../src/components/' + name)
-    const stylePath = path.resolve(__dirname, '../src/style/components/')
-    const typePath = path.resolve(__dirname, '../types/')
-    const docPath = path.resolve(__dirname, '../../selling-c-docs/src/pages/docs')
+  const componentPath = path.resolve(__dirname, '../src/components/' + name)
+  const stylePath = path.resolve(__dirname, '../src/style/components/')
+  const typePath = path.resolve(__dirname, '../types/')
+  const docPath = path.resolve(__dirname, '../../selling-c-docs/src/pages/docs')
 
-    // 删除创建的模块文件
-    rmFileOrDir([
-      { type: 'dir', path: componentPath},
-      { type: 'file', path: `${typePath}/${name}.d.ts`},
-      { type: 'file', path: `${stylePath}/${name}.less`},
-      { type: 'file', path: `${docPath}/${name}.tsx`}
-    ])
-    // 删除依赖模块文件的内容
-    const removeTypes = ['component', 'style', 'type']
-    removeTypes.forEach(v => handleComponentRemove(name, v))
+  // 删除创建的模块文件
+  rmFileOrDir([
+    { type: 'dir', path: componentPath},
+    { type: 'file', path: `${typePath}/${name}.d.ts`},
+    { type: 'file', path: `${stylePath}/${name}.less`},
+    { type: 'file', path: `${docPath}/${name}.tsx`}
+  ])
+  // 删除依赖模块文件的内容
+  const removeTypes = ['component', 'style', 'type']
+  removeTypes.forEach(v => handleComponentRemove(name, v))
 }
 
 function rmFileOrDir(params) {
