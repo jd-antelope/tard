@@ -43,13 +43,13 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@test/selling-c-ui": "^0.0.2",
     "@tarojs/components": "3.3.9",
     "@tarojs/react": "3.3.9",
     "@tarojs/runtime":"3.3.9",
     "@tarojs/taro": "3.3.9",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "@jd/selling-c-ui": "file:../selling-c-ui"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

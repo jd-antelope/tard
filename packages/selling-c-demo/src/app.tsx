@@ -2,7 +2,7 @@ import PropTypes, { InferProps } from 'prop-types'
 import Taro from '@tarojs/taro'
 import React from 'react'
 import './app.less'
-
+import "@jd/selling-c-ui/dist/style/index.less";
 class App extends React.Component {
   public static propTypes: InferProps<{}>
 

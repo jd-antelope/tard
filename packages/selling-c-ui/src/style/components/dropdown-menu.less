@@ -1,0 +1,38 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+.@{--css-prefix}-dropdown-menu {
+  // color: var(--mainColor);
+
+  &__bar {
+    background: #FFFFFF;
+    box-shadow: 0 2px 12px #ebedf0;
+    height: 80px;
+    line-height: 80px;
+    .flex-space-between();
+  }
+
+  &-item{
+    flex: 1;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+
+    &__active{
+      color: var(--mainColor);
+    }
+
+    &__title{
+      height: 100%;
+      .flex-center();
+      &-text{
+        padding: 10px;
+      }
+    }
+
+    &__view{
+      height: 80px;
+    }
+  }
+}

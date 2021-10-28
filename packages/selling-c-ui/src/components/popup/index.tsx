@@ -100,7 +100,6 @@ SlPopup.propTypes = {
   align: PropTypes.oneOf(['center', 'left']),
   isOpened: PropTypes.bool,
   onClose: PropTypes.func,
-
 }
 
 SlPopup.defaultProps = {

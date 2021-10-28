@@ -37,7 +37,6 @@ const start = () => {
 	docs.map(v => {
 		writeMarkdown(getMdFile(v), getFileNmae(v))
 	})
-
 }
 
 export default function pluginBuildMd ({watch}) {
