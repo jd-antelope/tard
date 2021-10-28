@@ -6,12 +6,13 @@ const path = require('path')
  * @param  name 组件名称
  */
 const hasSameComponent = (name) => {
+  let files;
   try {
-    fs.readdirSync(path.resolve(__dirname, `../components/${name}`))
+    files = fs.readdirSync(path.resolve(__dirname, `../components/${name}`))
   } catch (error) {
-    return false
+    files = []
   }
-  return true
+  return files.length > 0;
 }
 /**
  * 组件名称转换

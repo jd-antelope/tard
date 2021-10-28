@@ -20,3 +20,5 @@ export { default as SlTabPane } from './components/tab-pane'
 export { default as SlResult } from './components/result';
 export { default as SlInputNumber } from './components/input-number';
 export { default as SlFooterButton } from './components/footer-button';
+
+export { default as SlRate } from './components/rate'

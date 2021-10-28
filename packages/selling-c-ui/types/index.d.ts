@@ -20,3 +20,5 @@ export { default as SlTabPane } from './tab-pane'
 export declare const SlModalHeader: ComponentClass
 export declare const SlModalAction: ComponentClass
 export declare const SlModalContent: ComponentClass
+
+export { default as SlRate } from './rate'
