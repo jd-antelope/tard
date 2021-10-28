@@ -22,6 +22,7 @@ const Button: FC = () => {
           max= { 5 }
           onChange = { handleChange }
           size = { 105 }
+          activeColor = 'pink'
         />
         <SlBadge
           value = { 10 }

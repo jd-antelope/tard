@@ -7,6 +7,7 @@
   "source": "src/index.ts",
   "scripts": {
     "create": "node scripts/generator.js",
+    "remove": "node scripts/remove.js",
     "dev": "yarn run dev:lib",
     "dev:lib": "tsc --project ./config/tsconfig.build.json --watch --incremental",
     "build": "yarn run build:rollup && yarn run build:lib",
@@ -41,6 +42,7 @@
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "postcss": "^8.3.6",
+    "prettier": "^2.4.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "rollup": "^2.3.1",
