@@ -1,6 +1,10 @@
 
 @import '../variables/index.less';
 @import '../mixins/index.less';
+@slc-time-picker-font-size: 28px;
+@slc-time-picker-btn-font-size: 32px;
+@slc-time-picker-default-font-color: #333;
+@slc-time-picker-gray-font-color: #999;
 
 .@{--css-prefix}-time {
   position: fixed;
@@ -48,11 +52,11 @@
   text-align: center;
   display: flex;
   width: 100%;
-  font-size: 32px;
+  font-size: @slc-time-picker-btn-font-size;
   .cancel-btn {
     box-sizing: border-box;
     line-height: 108px;
-    color: #2A2B2E;
+    color: @slc-time-picker-default-font-color;
     width: 50%;
   }
 
@@ -60,7 +64,7 @@
     box-sizing: border-box;
     line-height: 108px;
     color: #fff;
-    background: #FF2929;
+    background: var(--promotionColor);
     width: 50%;
   }
 }
@@ -84,25 +88,25 @@
     }
 
     .time-show-left-title {
-      color: #999;
-      font-size: 28px;
+      color: @slc-time-picker-gray-font-color;
+      font-size: @slc-time-picker-font-size;
     }
 
     .time-show-left-content {
-      color: #999;
-      font-size: 28px;
+      color: @slc-time-picker-gray-font-color;
+      font-size: @slc-time-picker-font-size;
     }
 
     &.active {
       background: #fff;
       //border-bottom: 1px solid transparent;
       .time-show-left-title {
-        color: #333;
+        color: @slc-time-picker-default-font-color;
         font-weight: 700;
       }
 
       .time-show-left-content {
-        color: #333;
+        color: @slc-time-picker-default-font-color;
         font-weight: 700;
       }
     }
@@ -122,25 +126,25 @@
     }
 
     .time-show-left-title {
-      color: #999;
-      font-size: 28px;
+      color: @slc-time-picker-gray-font-color;
+      font-size: @slc-time-picker-font-size;
     }
 
     .time-show-left-content {
-      color: #999;
-      font-size: 28px;
+      color: @slc-time-picker-gray-font-color;
+      font-size: @slc-time-picker-font-size;
     }
 
     &.active {
       background: #fff;
       //border-bottom: 1px solid transparent;
       .time-show-left-title {
-        color: #333;
+        color: @slc-time-picker-default-font-color;
         font-weight: 700;
       }
 
       .time-show-left-content {
-        color: #333;
+        color: @slc-time-picker-default-font-color;
         font-weight: 700;
       }
     }
