@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from '@tarojs/components'
-import Taro, { eventCenter, getCurrentInstance } from '@tarojs/taro'
+import Taro, { eventCenter, getCurrentInstance, getEnv, ENV_TYPE } from '@tarojs/taro'
 
 type CommonProps = {
   className?: string,
@@ -37,15 +37,19 @@ export default class Common extends React.Component<CommonProps, CommonState> {
 
   public componentDidMount(): void {
     this.setThemeStyle()
-    const onShowEventId = (this.$instance as any).router.onShow
-    // 监听
-    eventCenter.on(onShowEventId, this.onShow)
+    if (getEnv() === ENV_TYPE.WEAPP) {
+      const onShowEventId = (this.$instance as any).router.onShow
+      // 监听
+      eventCenter.on(onShowEventId, this.onShow)
+    }
   }
 
   public componentWillUnmount (): void {
-    const onShowEventId = (this.$instance as any).router.onShow
-    // 卸载
-    eventCenter.off(onShowEventId, this.onShow)
+    if (getEnv() === ENV_TYPE.WEAPP) {
+      const onShowEventId = (this.$instance as any).router.onShow
+      // 卸载
+      eventCenter.off(onShowEventId, this.onShow)
+    }
   }
 
   onShow = () => {

@@ -15,10 +15,11 @@ export { default as SlPopup } from './components/popup';
 export { default as SlSkeleton } from './components/skeleton';
 export { default as SlCanvas } from './components/canvas';
 export { default as SlButton } from './components/button';
-export { default as SlTab } from './components/tab'
-export { default as SlTabPane } from './components/tab-pane'
+export { default as SlTab } from './components/tab';
+export { default as SlTabPane } from './components/tab-pane';
 export { default as SlResult } from './components/result';
 export { default as SlInputNumber } from './components/input-number';
 export { default as SlFooterButton } from './components/footer-button';
 
+export { default as SlRate } from './components/rate';
 export { default as SlTimePicker } from './components/time-picker'

@@ -16,7 +16,7 @@ const createComponent = (name, style) => {
     const stylePath = path.resolve(__dirname, '../src/style/components/')
     const typePath = path.resolve(__dirname, '../types/')
     try {
-      fs.mkdirSync(componentPath)
+      fs.mkdirSync(componentPath, {recursive: true})
       fs.writeFileSync(componentPath + '/index.tsx', crateIndexTemplate(name))
       fs.writeFileSync(typePath + `/${name}.d.ts`, crateTypeTemplate(name))
       if (style) {
@@ -48,14 +48,14 @@ const init = () => {
 
 const promptList = [{
   type: 'input',
-  message: '请输入组件名称(默认添加sl-前缀):',
+  message: '请输入组件名称(默认添加sl前缀):',
   name: 'componentName',
   require: true,
   validate: function (val) {
     return hasSameComponent(val) ? log('同名组件已经存在,请重新指定') : true
   },
   filter: function (val) {
-    return `sl-${val}`
+    return `${val}`
   }
 
 }, {
