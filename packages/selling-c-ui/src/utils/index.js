@@ -1,17 +1,19 @@
 const fs = require('fs-extra')
 const path = require('path')
+const prettier = require('prettier')
 
 /**
  * 判断是否存在同名组件
  * @param  name 组件名称
  */
 const hasSameComponent = (name) => {
+  let files;
   try {
-    fs.readdirSync(path.resolve(__dirname, `../components/${name}`))
+    files = fs.readdirSync(path.resolve(__dirname, `../components/${name}`))
   } catch (error) {
-    return false
+    files = []
   }
-  return true
+  return files.length > 0;
 }
 /**
  * 组件名称转换
@@ -36,7 +38,42 @@ const appendComponent = (name) => {
    `\n@import './${name}.less';`, 'utf-8', { flag: 'a' })
   fs.appendFileSync(path.resolve(__dirname, '../../types/index.d.ts'),
    `\nexport { default as ${transformCom(name)} } from './${name}'`, 'utf-8', { flag: 'a' })
-}
+};
+
+/**
+* 删除根目录的组件引入
+*  @param name 组件名称
+*/
+const handleComponentRemove = (name, type) => {
+  const pathMap = new Map(
+    [['component', {
+      path: path.resolve(__dirname, '../index.ts'),
+      filter: `export { default as ${transformCom(name)} } from './components/${name}'`,
+      parser: 'typescript'
+    }],
+    ['style', {
+      path: path.resolve(__dirname, '../style/components/index.less'),
+      filter: `@import './${name}.less';`,
+      parser: 'less'
+    }],
+    ['type', {
+      path: path.resolve(__dirname, '../../types/index.d.ts'),
+      filter: `export { default as ${transformCom(name)} } from './${name}'`,
+      parser: 'typescript'
+    }]]
+  )
+ 
+  const typeInfo = pathMap.get(type)
+  if (!typeInfo) return console.log('类型不正确')
+
+  const componentFile = fs.readFileSync(typeInfo.path).toString();
+  const newComponentFile = componentFile.replace(typeInfo.filter, '')
+  fs.writeFileSync(typeInfo.path, prettier.format(newComponentFile, {
+    semi: true,
+    parser: typeInfo.parser,
+    singleQuote: true
+  }))
+};
 
 /**
  * 创建组件文件模版
@@ -102,5 +139,6 @@ module.exports = {
   hasSameComponent,
   crateIndexTemplate,
   crateStyleTemplate,
-  crateTypeTemplate
+  crateTypeTemplate,
+  handleComponentRemove
 }

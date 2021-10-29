@@ -16,7 +16,7 @@ const createComponent = (name, style) => {
     const stylePath = path.resolve(__dirname, '../src/style/components/')
     const typePath = path.resolve(__dirname, '../types/')
     try {
-      fs.mkdirSync(componentPath)
+      fs.mkdirSync(componentPath, {recursive: true})
       fs.writeFileSync(componentPath + '/index.tsx', crateIndexTemplate(name))
       fs.writeFileSync(typePath + `/${name}.d.ts`, crateTypeTemplate(name))
       if (style) {
