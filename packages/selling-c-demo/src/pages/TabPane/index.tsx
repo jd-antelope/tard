@@ -1,5 +1,5 @@
 import React from 'react'
-import { SlTabPane } from '@jd/selling-c-ui'
+import { SlTabPane } from '@test/selling-c-ui'
 import { View } from '@tarojs/components'
 import DocsHeader from '../../components/doc-header'
 import './index.less'
