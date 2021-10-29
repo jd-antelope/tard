@@ -13,14 +13,14 @@ const markdown = `
 | replaceContent | 自定义按钮内容 | React.ReactNode | - |
 | color | 按钮颜色 | string | - |
 | background | 填充颜色 | string | - |
-| padding | 外边框的padding | string | - |
-| radius | 按钮radius | string | - |
-| lineHeight | line-height | string | - |
-| doubleBtn | 是否为双按钮 | boolean | - |
-| secondName | 第二个按钮文字 | string | - |
+| padding | 外边框的padding | string | 20px |
+| radius | 按钮radius | string | 0 |
+| lineHeight | 按钮高度 | string | 40px |
+| doubleBtn | 是否为双按钮 | boolean | false |
+| secondName | 第二个按钮文字 | string | 取消 |
 | secColor | 第二个按钮按钮颜色 | string | - |
 | secBackground | 第二个按钮填充颜色 | string | - |
-| secOnlick | 点击事件 | CommonEventFunction | - |
+| secOnlick | 第二个按钮点击事件 | CommonEventFunction | - |
 `
 
 export default function DocsPage() {
