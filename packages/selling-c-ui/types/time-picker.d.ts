@@ -38,12 +38,12 @@ export interface SlTimePickerProps extends SlComponent {
     endTitle: string
     /**
      *  默认开始时间
-     * @default [9999, 1, 1]
+     * @default 9999-1-1
      */
     timeStr: string
     /**
      *  默认结束时间
-     * @default [9999, 1, 1]
+     * @default 9999-1-1
      */
     endTimeStr?: string
 }
