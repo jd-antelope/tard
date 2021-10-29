@@ -49,20 +49,62 @@ export interface SlTimePickerProps extends SlComponent {
 }
 
 export interface SlTimePickerState {
-    _isOpened: boolean, // 打开弹窗
-    years: Array<number>, // 年份array
-    year: number, // 左侧年份
-    yearEndTime: number, // 右侧年份
-    months: Array<number>, // 月份array
-    month: number, // 左侧月份
-    monthEndTime: number, // 右侧月份
-    days: Array<number>, // 日期array
-    day: number, // 左侧日期
-    dayEndTime: number, // 右侧日期
-    value: Array<number>, // 左侧时间选择器选中的值的index
-    valueEndTime: Array<number> | undefined, // 右侧时间选择器选中的值的index
-    active: number, // 当前激活了左侧时间还是右侧时间
-    showToast: boolean // 是否现实toast提示
+    /**
+     *  打开弹窗
+     */
+    _isOpened: boolean,
+    /**
+     *  年份array
+     */
+    years: Array<number>,
+    /**
+     *  左侧年份
+     */
+    year: number,
+    /**
+     *  右侧年份
+     */
+    yearEndTime: number,
+    /**
+     *  月份array
+     */
+    months: Array<number>,
+    /**
+     *  左侧月份
+     */
+    month: number,
+    /**
+     *  右侧月份
+     */
+    monthEndTime: number,
+    /**
+     *  日期array
+     */
+    days: Array<number>,
+    /**
+     *  左侧日期
+     */
+    day: number,
+    /**
+     *  右侧日期
+     */
+    dayEndTime: number,
+    /**
+     *  左侧时间选择器选中的值的index
+     */
+    value: Array<number>,
+    /**
+     *  右侧时间选择器选中的值的index
+     */
+    valueEndTime: Array<number> | undefined,
+    /**
+     *  当前激活了左侧时间还是右侧时间
+     */
+    active: number,
+    /**
+     *  是否现实toast提示
+     */
+    showToast: boolean
 }
 
 declare const SlTimePicker: ComponentClass<SlTimePickerProps>

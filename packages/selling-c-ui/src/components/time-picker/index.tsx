@@ -2,18 +2,14 @@
 import React from 'react'
 import { View, PickerView, PickerViewColumn } from '@tarojs/components'
 import { SlTimePickerProps, SlTimePickerState } from '../../../types/time-picker'
-import PropTypes, {InferProps} from "prop-types";
 import {CommonEvent} from "@tarojs/components/types/common";
 import classNames from "classnames";
-// import {SlPopupProps} from "../../../types/popup";
 import SlToast from "../toast/index"
 
 export default class SlTimePicker extends React.Component<SlTimePickerProps, SlTimePickerState> {
   public static defaultProps: SlTimePickerProps
-  public static propTypes: InferProps<SlTimePickerProps>
   public constructor(props: SlTimePickerProps) {
     super(props)
-
 
     const { isOpened, timeStr, endTimeStr } = props
     const date = new Date()
@@ -33,15 +29,15 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
       days.push(i)
     }
 
-    const getTimeArray = (input: any) => {
+    const getTimeArray = (input: string) => {
       const timeArray = input.split('-')
       const year = +timeArray[0] < date.getFullYear() ? +timeArray[0] : date.getFullYear()
       // @ts-ignore
-      const yearIndex: any = +years.indexOf(year) !== -1 ? +years.indexOf(year) : years[years.length -1]
+      const yearIndex = +years.indexOf(year) !== -1 ? +years.indexOf(year) : years[years.length -1]
       // @ts-ignore
-      const monthIndex: any = months.indexOf(+timeArray[1]) !== -1 ? months.indexOf(+timeArray[1]) : 1
+      const monthIndex = months.indexOf(+timeArray[1]) !== -1 ? months.indexOf(+timeArray[1]) : 1
       // @ts-ignore
-      const dateIndex: any = days.indexOf(+timeArray[2]) !== -1 ? days.indexOf(+timeArray[2]) : 1
+      const dateIndex = days.indexOf(+timeArray[2]) !== -1 ? days.indexOf(+timeArray[2]) : 1
       return [yearIndex, monthIndex, dateIndex]
     }
 
@@ -76,7 +72,7 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
   }
 
   // 改变时间函数
-  private onChange = (e: any) => {
+  private onChange = (e) => {
     const val = e.detail.value
     if (this.state.active === 1) {
       this.setState({
@@ -125,14 +121,14 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
   }
 
   // 确定函数函数
-  private transDate = (input: any) => {
+  private transDate = (input) => {
     if (input < 10) return `0${input}`
     return input
   }
 
   // 确认回调
   handleConfirm = () => {
-    const timeArr: Array<any> = []
+    const timeArr: Array<string> = []
     const startTime = `${this.state.year}-${this.transDate(this.state.month)}-${this.transDate(this.state.day)}`
     timeArr.push(startTime)
     if (this.props.endTime) {
@@ -165,12 +161,7 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
       this.setState({showToast: true})
       return
     }
-    this.setState(
-        {
-          _isOpened: false
-        },
-        this.handleConfirm
-    )
+    this.setState({_isOpened: false}, this.handleConfirm)
   }
 
   // 点击tab页面
@@ -184,34 +175,34 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
   public render (): JSX.Element | null {
     const { _isOpened } = this.state
     const rootClass = classNames(
-        'slc-time',
-        {
-          'slc-time__active': _isOpened
-        },
+      'slc-time',
+      {
+        'slc-time__active': _isOpened
+      },
     )
 
     const containerClass = classNames(
-        'slc-time__container',
-        {
-          'slc-time__container__active': _isOpened
-        },
+      'slc-time__container',
+      {
+        'slc-time__container__active': _isOpened
+      },
     )
 
     const tabLeftClass = classNames(
-        'time-show-left',
-        {
-          'half': this.props.endTime,
-          'active': this.state.active === 1
-        },
+      'time-show-left',
+      {
+        'half': this.props.endTime,
+        'active': this.state.active === 1
+      },
     )
 
     const tabRightClass = classNames(
-        'time-show-right',
-        {
-          'hidden': !this.props.endTime,
-          'half': this.props.endTime,
-          'active': this.state.active === 2
-        },
+      'time-show-right',
+      {
+        'hidden': !this.props.endTime,
+        'half': this.props.endTime,
+        'active': this.state.active === 2
+      },
     )
 
     return (
@@ -222,15 +213,26 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
               <View className="time-show-container">
                 <View className={tabLeftClass} onClick={ () => this.handleClickTab(1) }>
                   <View className="time-show-left-title">{this.props.title}</View>
-                  <View className="time-show-left-content">{this.state.year}.{this.transDate(this.state.month)}.{this.transDate(this.state.day)}</View>
+                  <View className="time-show-left-content">
+                    {this.state.year}.{this.transDate(this.state.month)}.{this.transDate(this.state.day)}
+                  </View>
                 </View>
                 <View className={tabRightClass} onClick={ () => this.setState({active: 2})}>
                   <View className="time-show-left-title">{this.props.endTitle}</View>
-                  <View className="time-show-left-content">{this.state.yearEndTime}.{this.transDate(this.state.monthEndTime)}.{this.transDate(this.state.dayEndTime)}</View>
+                  <View className="time-show-left-content">
+                    {this.state.yearEndTime}.{this.transDate(this.state.monthEndTime)}.{this.transDate(this.state.dayEndTime)}
+                  </View>
                 </View>
               </View>
-              <PickerView indicatorStyle='height: 50px;' style='width: 100%; height: 300px;' value={ this.state.active === 1 ? this.state.value : this.state.valueEndTime } onChange={this.onChange}>
-                <PickerViewColumn style='line-height: 50px; text-align: center;'>
+              <PickerView
+                indicatorStyle='height: 50px;'
+                className="picker-row"
+                value={ this.state.active === 1 ? this.state.value : this.state.valueEndTime }
+                onChange={this.onChange}
+              >
+                <PickerViewColumn
+                  style='line-height: 50px; text-align: center;'
+                >
                   {this.state.years.map(item => {
                     return (
                         <View>{item}年</View>
@@ -277,16 +279,4 @@ SlTimePicker.defaultProps = {
   endTitle: '结束时间',
   timeStr: '9999-1-1',
   endTimeStr: '9999-1-1'
-}
-
-SlTimePicker.propTypes = {
-  endTime: PropTypes.bool,
-  isOpened: PropTypes.bool,
-  onClose: PropTypes.func,
-  onOk: PropTypes.func,
-  outClose: PropTypes.bool,
-  title: PropTypes.string,
-  endTitle: PropTypes.string,
-  timeStr: PropTypes.string,
-  endTimeStr: PropTypes.string
 }
