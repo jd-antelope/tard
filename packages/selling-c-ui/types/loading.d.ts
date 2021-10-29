@@ -1,6 +1,31 @@
-export interface SlLoadingProps{
-    size: string
+import { ComponentClass } from 'react'
+import SlComponent from './base'
+import { CommonEventFunction } from '@tarojs/components/types/common'
+
+export interface SlLoadingProps extends SlComponent {
+  /**
+   * 颜色
+   */
+  color?: string
+  /**
+   * 类型
+   * @default default
+   */
+  type?: 'default' | 'ios' | 'loading'
+  /**
+   * 是否有全局定位
+   */
+  isMask?: boolean
+  /**
+   * loading大小
+   */
+  distance?: number
+  /**
+   * 点击事件
+   */
+  onClick?: CommonEventFunction
 }
-declare const SlLoading: SlLoadingProps
+
+declare const SlLoading: ComponentClass<SlLoadingProps>
 
 export default SlLoading

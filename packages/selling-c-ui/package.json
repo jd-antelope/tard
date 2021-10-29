@@ -1,5 +1,5 @@
 {
-  "name": "@jd/selling-c-ui",
+  "name": "@test/selling-c-ui",
   "version": "2.2.30",
   "description": "",
   "module": "dist/index.esm.js",
