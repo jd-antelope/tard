@@ -2,7 +2,7 @@
 import React, { cloneElement, ReactElement, ComponentProps } from 'react'
 import cn from 'classnames'
 import { View } from '@tarojs/components'
-import PropTypes, { InferProps } from 'prop-types'
+import { InferProps } from 'prop-types'
 import { SlDropdownMenuProps, SlDropdownMenuState } from '../../../types/dropdown-menu'
 import Common from '../../common/common'
 import SlDropdownMenuItem from './dropdown-menu-item';
@@ -72,7 +72,14 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
               const { value, options, activeColor } = item.props
               return (
                 <View
-                  className={cn('slc-dropdown-menu__overlay', { 'slc-dropdown-menu__overlay-active': isOpen && activeKey !== -1 })}
+                  className={
+                    cn(
+                      'slc-dropdown-menu__overlay',
+                      {
+                        'slc-dropdown-menu__overlay-active': isOpen && activeKey !== -1
+                      }
+                    )
+                  }
                   onClick={() => {
                     changeActive(-1);
                     this.setState(
@@ -121,10 +128,4 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
 
 SlDropdownMenu.defaultProps = {
   activeColor: '',
-  overlay: true
-}
-
-SlDropdownMenu.propTypes = {
-  activeColor: PropTypes.string,
-  overlay: PropTypes.bool,
 }

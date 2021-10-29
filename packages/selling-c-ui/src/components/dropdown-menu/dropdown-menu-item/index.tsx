@@ -2,21 +2,15 @@
 import React from 'react'
 import cn from 'classnames'
 import { View } from '@tarojs/components'
-import PropTypes, { InferProps } from 'prop-types'
-import { SlDropdownMenuItemProps, SlDropdownMenuItemState } from '../../../../types/dropdown-menu'
+import { InferProps } from 'prop-types'
+import { SlDropdownMenuItemProps } from '../../../../types/dropdown-menu'
 import SlIcon from '../../icon'
 import Common from '../../../common/common'
 
-export default class SlDropdownMenuItem extends React.Component<SlDropdownMenuItemProps, SlDropdownMenuItemState> {
+export default class SlDropdownMenuItem extends React.Component<SlDropdownMenuItemProps> {
   public static defaultProps: SlDropdownMenuItemProps
   public static propTypes: InferProps<SlDropdownMenuItemProps>
 
-  public constructor(props: SlDropdownMenuItemProps) {
-    super(props)
-    this.state = {
-      isActive: false
-    }
-  }
   public render(): JSX.Element {
     const { title, active, onClick, options, value, activeColor } = this.props
     return (
@@ -58,12 +52,4 @@ SlDropdownMenuItem.defaultProps = {
   options: [],
   activeColor: '',
   onClick: () => { }
-}
-
-SlDropdownMenuItem.propTypes = {
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  title: PropTypes.string,
-  options: PropTypes.array,
-  onClick: PropTypes.func,
-  key: PropTypes.number
 }

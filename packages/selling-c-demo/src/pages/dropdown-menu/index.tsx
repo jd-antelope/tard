@@ -54,9 +54,6 @@ const DropdownMenu: FC = () => {
         </SlDropdownMenu>
 
       </View>
-
-
-
     </View>
   );
 };
