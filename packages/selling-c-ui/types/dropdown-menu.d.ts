@@ -1,5 +1,5 @@
 
-import { CommonEventFunction } from '@tarojs/components/types/common'
+
 import SlComponent from './base'
 
 interface Option {
@@ -35,18 +35,22 @@ export interface SlDropdownMenuProps extends SlComponent {
 }
 
 export interface SlDropdownMenuItemProps extends SlComponent {
-     /**
-     * 是否为当前选中项
-     */
+    /**
+    * 是否为当前选中项
+    */
     active?: boolean
+    onClick: function
+    onChange?: function
+    key?: number
+    activeColor: string
     /**
      * 当前选中项对应的 value
      */
     value?: number | string
     /**
-     * 菜单项标题
-     * @default 当前选中项的文字
-     */
+    * 菜单项标题
+    * @default 当前选中项的文字
+    */
     title?: string
     /**
      * 选项数组，text字段-文字，value字段标识符
@@ -56,11 +60,17 @@ export interface SlDropdownMenuItemProps extends SlComponent {
      * 是否显示遮罩层
      * @default true
      */
-    overlay?: boolean
+    overlay?: boolean,
+    /**
+     * 自定义内容
+     * @default true
+     */
+    customContent?:  React.ReactNode
 }
 
 export interface SlDropdownMenuState {
     activeKey: number
+    isOpen: boolean
 }
 
 export interface SlDropdownMenuItemState {
