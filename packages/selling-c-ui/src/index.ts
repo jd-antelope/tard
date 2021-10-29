@@ -10,6 +10,8 @@ export { default as SlToast } from './components/toast';
 export { default as SlBadge } from './components/badge';
 export { default as SlOverlay } from './components/overlay';
 export { default as SlCustomHeader } from './components/custom-header';
+export { default as SlCustomerSearch } from './components/customer-search';
+export { default as SlImageTextItem } from './components/image-text-item';
 export { default as SlIcon } from './components/icon';
 export { default as SlPopup } from './components/popup';
 export { default as SlSkeleton } from './components/skeleton';
