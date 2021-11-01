@@ -1,5 +1,5 @@
 const globby = require('globby')
-const path = require("path");
+const path = require('path');
 const fs = require('fs-extra');
 
 const cwd = process.cwd()
@@ -9,7 +9,7 @@ const getTypesPath = () => {
     cwd: __dirname
   })
 
-  return packagePaths.filter(item => item.includes('sl-')).map((item) => item.replace('../', ''))
+  return packagePaths.filter(item => !item.includes('index') && !item.includes('base')).map((item) => item.replace('../', ''))
 }
 
 const readTypes = (v) => {
