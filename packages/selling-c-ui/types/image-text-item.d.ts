@@ -1,26 +1,32 @@
 import SlComponent from './base'
 import { ImageProps } from '@tarojs/components/types/Image'
+import SlComponent from './base'
 
-export interface SlImageTextItemProps extends ImageProps, SlComponent {
+export interface SlImageTextItemProps extends SlComponent, ImageProps, SlComponent {
   /**
-   * 图片链接
-   */
+  * 图片链接
+  */
   src?: string,
   /**
-   * 图片其他参数
-   */
-  res?: any,
+  * 文字
+  */
+  tetx?: string,
   /**
-   * 是否展示动画
-   */
-  isTransition?: boolean,
-  data?:any,
-  tetx?:string,
- 
+  * 图文位置
+  */
+  isUp?: boolean,
+  /**
+  * 点击事件
+  */
+  onClick?: CommonEventFunction,
+  /**
+  * 父级传递数据
+  */
+  propsData?: Array,
 }
 
 export interface SlImageTextItemState {
-  id: string, 
+
 }
 
 declare const SlImageTextItemProps: ComponentClass<SlImageProps>
