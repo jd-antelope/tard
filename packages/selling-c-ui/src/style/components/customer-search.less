@@ -1,76 +1,91 @@
-.Tsearch{
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@Tcomponent: .slc-customer-search-Tsearch;
+@Fcomponent: .slc-customer-search-Fsearch;
+
+@slc-customer-search-background: rgb(247, 247, 247);
+@slc-customer-search-text-color: rgb(7, 193, 96);
+@slc-customer-search-text-background: #fff;
+@slc-customer-search-delete-background: #acacac;
+@slc-customer-search-height: 100px;
+@slc-customer-search-border-radius: 20px;
+@slc-customer-search-cursor-left: 70px;
+@slc-customer-search-delete-size: 40rpx;
+@slc-customer-search-delete-position-top: 33px;
+@slc-customer-search-delete-position-left: 77%;
+@slc-customer-search-delete-position-line-height: 37rpx;
+@slc-customer-search-icon-top: 30px;
+@slc-customer-search-icon-true-left: 10px;
+@slc-customer-search-icon-false-left: 30%;
+@slc-customer-search-false-width: 95%;
+
+@{Tcomponent}{
     display: flex;
-    height: 100px;
+    height: @slc-customer-search-height;
     margin-left: 5%;
     position: relative;
-    .search{
+    &-search{
       width: 75%;
       height: 100%;
-      border-radius: 20px;
-      background: rgb(247, 247, 247);
-      padding-left: 70px;
+      border-radius: @slc-customer-search-border-radius;
+      background: @slc-customer-search-background;
+      padding-left: @slc-customer-search-cursor-left;
     }
-    .phcolor{
+    &-phcolor{
       margin-left: 1%;
+    }
+    .slc-customer-search-Tsearch-inputDelete{
+      width: @slc-customer-search-delete-size;
+      height: @slc-customer-search-delete-size;
+      border-radius: 50%;
+      background: @slc-customer-search-delete-background;
+      position: absolute;
+      top: @slc-customer-search-delete-position-top;
+      left: @slc-customer-search-delete-position-left;
+      line-height: @slc-customer-search-delete-position-line-height;
+      text-align: center;
+      color: @slc-customer-search-text-background;
+      z-index: 2;
+    }
+    &-Icon{
+        position: absolute;
+        top: @slc-customer-search-icon-top;
+        left: @slc-customer-search-icon-true-left;
     }
     text{    
       flex: 1;
       text-align: center;
-      line-height: 100px;
+      line-height: @slc-customer-search-height;
       display: inline-block;
-      background: #fff;
-      color: rgb(7, 193, 96);
+      background: @slc-customer-search-text-background;
+      color: @slc-customer-search-text-color;
       border: none;
       position: relative;
     }
-    .inputDelete{
-        width: 40rpx;
-        height: 40rpx;
-        border-radius: 50%;
-        background: #acacac;
-        position: absolute;
-        top: 33px;
-        left: 77%;
-        line-height: 37rpx;
-        text-align: center;
-        color: #fff;
-        z-index: 2;
-    }
-    .Icon{
-        position: absolute;
-        top: 30px;
-        left: 10px;
-    }
   }
 
-.Fsearch{
+@{Fcomponent}{
     display: flex;
-    height: 100px;
+    height: @slc-customer-search-height;
     margin-left: 4%;
     position: relative;
-    .search{
-        width: 95%;
+    &-search{
+        width: @slc-customer-search-false-width;
         height: 100%;
-        border-radius: 20px;
-        background: rgb(247, 247, 247);
+        border-radius: @slc-customer-search-border-radius;
+        background: @slc-customer-search-background;
       }
-    .phcolor{
+    &-phcolor{
         margin-left: 40%;
       }
     text{
-        flex: 1;
-        text-align: center;
-        line-height: 100px;
-        display: inline-block;
-        background: #fff;
-        color: rgb(7, 193, 96);
-        border: none;
         display: none;
       }
-    .Icon{
-        left: 30%;
+    &-Icon{
+        left: @slc-customer-search-icon-false-left;
         position: absolute;
-        top: 30px;
+        top: @slc-customer-search-icon-top;
     }
   }
   

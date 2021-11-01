@@ -1,122 +1,126 @@
 
-import PropTypes, { InferProps } from 'prop-types'
+import { InferProps } from 'prop-types'
 import React from 'react'
+import classNames from 'classnames'
 import { View, Input, Text, Icon } from '@tarojs/components'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
 import { SlCustomerSearchProps, SlCustomerSearchState } from '../../../types/customer-search'
 
 export default class SlCustomerSearch extends React.Component<SlCustomerSearchProps, SlCustomerSearchState> {
-    public static defaultProps: SlCustomerSearchProps
-    public static propTypes: InferProps<SlCustomerSearchProps>
-
-    public constructor(props: SlCustomerSearchProps) {
-        super(props)
-        this.state = {
-            inputVal: '',       //提交按钮抛出数据
-            isFocus: false,     //是否显示搜索按钮
-        }
+  public static defaultProps: SlCustomerSearchProps
+  public static propTypes: InferProps<SlCustomerSearchProps>
+  public constructor(props: SlCustomerSearchProps) {
+    super(props)
+    this.state = {
+      // 提交按钮抛出数据
+      inputVal: '',
+      // 是否显示搜索按钮 
+      isFocus: false,
     }
+  }
 
-    private handleBlur = (): void => {   //失去焦点
-        //判断输入框内是否有内容
-        if (this.state.inputVal !== "") {
-            this.setState({
-                isFocus: true
-            })
-        } else {
-            this.setState({
-                isFocus: false
-            })
-        }
+  // 失去焦点
+  private handleBlur = (): void => {
+    // 判断输入框内是否有内容
+    if (this.state.inputVal !== "") {
+      this.setState({
+        isFocus: true
+      })
+    } else {
+      this.setState({
+        isFocus: false
+      })
     }
+  }
 
-    private handleFocus = (): void => {    //获取焦点
-        this.setState({
-            isFocus: true
-        })
-    }
+  // 获取焦点
+  private handleFocus = (): void => {
+    this.setState({
+      isFocus: true
+    })
+  }
 
-    private handleConfirm = (): void => {  //回车键确认提交
-        this.props.onConfirm(this.state.inputVal)
-    }
+  // 回车键确认提交
+  private handleConfirm = (): void => {
+    this.props.onConfirm(this.state.inputVal)
+  }
 
-    private Confirm = (): void => {     //按钮确认提交
-        this.props.onConfirm(this.state.inputVal)
-    }
+  // 按钮确认提交
+  private Confirm = (): void => {
+    this.props.onConfirm(this.state.inputVal)
+  }
 
-    private inputDelete = (): void => {     //清除内容
-        this.setState({
-            inputVal: '',
-            isFocus: false
-        })
-    }
+  // 清除内容
+  private inputDelete = (): void => {
+    this.setState({
+      inputVal: '',
+      isFocus: false
+    })
+  }
 
-    private handleInput = (e: CommonEvent | ITouchEvent): void => {  // input 事件
-        this.setState({
-            inputVal: e.detail.value
-        })
-    }
+  // input事件
+  private handleInput = (e: CommonEvent | ITouchEvent): void => {
+    this.setState({
+      inputVal: e.detail.value
+    })
+  }
 
-    public render(): JSX.Element {
+  public render(): JSX.Element {
 
-        const {
-            placeholder,
-            disabled,
-        } = this.props
+    const {
+      placeholder,
+      disabled,
+    } = this.props
+    const Tsearch = classNames('slc-customer-search-Tsearch')
+    const Fsearch = classNames('slc-customer-search-Fsearch')
+    return (
+      this.state.isFocus ? <View className={Tsearch}>
+        <Icon size='20' type='search' className="slc-customer-search-Tsearch-Icon" />
+        <Input
+          className="slc-customer-search-Tsearch-search"
+          value={this.state.inputVal}
+          placeholder={placeholder}
+          placeholder-class="slc-customer-search-Tsearch-phcolor"
+          disabled={disabled}
+          onFocus={this.handleFocus}                        
+          onInput={this.handleInput}
+          onBlur={this.handleBlur}
+          onConfirm={this.handleConfirm}
+        />
+        {this.state.inputVal === "" ? "" : <Text
+          onClick={this.inputDelete}
+          className="slc-customer-search-Tsearch-inputDelete">x
+        </Text>}
+        <Text onClick={this.Confirm}>搜索</Text>
+      </View> : <View className={Fsearch}>
+        <Icon size='20' type='search' className="slc-customer-search-Fsearch-Icon" />
+        <Input
+          className="slc-customer-search-Fsearch-search"
+          value={this.state.inputVal}
+          placeholder={placeholder}
+          placeholder-class="slc-customer-search-Fsearch-phcolor"
+          disabled={disabled}
+          onFocus={this.handleFocus}
+          onInput={this.handleInput}
+          onBlur={this.handleBlur}
+          onConfirm={this.handleConfirm}
+        />
+        <Text onClick={this.Confirm}>搜索</Text>
+      </View>
 
-        return (
-
-            this.state.isFocus ? <View className="Tsearch">
-                <Icon size='20' type='search' className="Icon" />
-                <Input
-                    className="search"
-                    value={this.state.inputVal}
-                    placeholder={placeholder}
-                    placeholder-class="phcolor"
-                    disabled={disabled}
-                    onFocus={this.handleFocus}
-                    onInput={this.handleInput}
-                    onBlur={this.handleBlur}
-                    onConfirm={this.handleConfirm}
-                />
-                {this.state.inputVal === "" ? "" : <Text onClick={this.inputDelete} className="inputDelete">x</Text>}
-                <Text onClick={this.Confirm}>搜索</Text>
-            </View> : <View className="Fsearch">
-                <Icon size='20' type='search' className="Icon" />
-                <Input
-                    className="search"
-                    value={this.state.inputVal}
-                    placeholder={placeholder}
-                    placeholder-class="phcolor"
-                    disabled={disabled}
-                    onFocus={this.handleFocus}
-                    onInput={this.handleInput}
-                    onBlur={this.handleBlur}
-                    onConfirm={this.handleConfirm}
-                />
-                <Text onClick={this.Confirm}>搜索</Text>
-            </View>
-
-        )
-    }
+    )
+  }
 }
 
 SlCustomerSearch.defaultProps = {
-    value: "",
-    placeholder: "搜索团购标题",
-    disabled: false,
-    isFocus: false,
+  value: "",
+  placeholder: "搜索团购标题",
+  disabled: false,
+  isFocus: false,
 
 }
 
 SlCustomerSearch.propTypes = {
-    value: PropTypes.string,
-    placeholder: PropTypes.string,
-    disabled: PropTypes.bool,
-    isFocus: PropTypes.bool,
-    onFocus: PropTypes.func,
-    onInput: PropTypes.func,
-    onBlur: PropTypes.func,
-    onConfirm: PropTypes.func,
+
 
 }
