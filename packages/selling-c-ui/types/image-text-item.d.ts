@@ -25,10 +25,6 @@ export interface SlImageTextItemProps extends SlComponent, ImageProps, SlCompone
   propsData?: Array,
 }
 
-export interface SlImageTextItemState {
-
-}
-
 declare const SlImageTextItemProps: ComponentClass<SlImageProps>
 
 export default SlImageTextItemProps

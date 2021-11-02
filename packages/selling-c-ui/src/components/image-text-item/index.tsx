@@ -3,9 +3,9 @@ import { InferProps } from 'prop-types'
 import React from 'react'
 import { View, Text, Image } from '@tarojs/components'
 import classNames from 'classnames'
-import { SlImageTextItemProps, SlImageTextItemState } from '../../../types/image-text-item'
+import { SlImageTextItemProps } from '../../../types/image-text-item'
 
-export default class SlImageTextItem extends React.Component<SlImageTextItemProps, SlImageTextItemState> {
+export default class SlImageTextItem extends React.Component<SlImageTextItemProps> {
   public static defaultProps: SlImageTextItemProps
   public static propTypes: InferProps<SlImageTextItemProps>
 
@@ -59,10 +59,5 @@ export default class SlImageTextItem extends React.Component<SlImageTextItemProp
 SlImageTextItem.defaultProps = {
   propsData: [],
   isUp: true,
-
-}
-
-SlImageTextItem.propTypes = {
-
 
 }
