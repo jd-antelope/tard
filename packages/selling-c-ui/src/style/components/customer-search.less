@@ -21,71 +21,71 @@
 @slc-customer-search-false-width: 95%;
 
 @{Tcomponent}{
-    display: flex;
-    height: @slc-customer-search-height;
-    margin-left: 5%;
-    position: relative;
-    &-search{
-      width: 75%;
-      height: 100%;
-      border-radius: @slc-customer-search-border-radius;
-      background: @slc-customer-search-background;
-      padding-left: @slc-customer-search-cursor-left;
-    }
-    &-phcolor{
-      margin-left: 1%;
-    }
-    .slc-customer-search-Tsearch-inputDelete{
-      width: @slc-customer-search-delete-size;
-      height: @slc-customer-search-delete-size;
-      border-radius: 50%;
-      background: @slc-customer-search-delete-background;
-      position: absolute;
-      top: @slc-customer-search-delete-position-top;
-      left: @slc-customer-search-delete-position-left;
-      line-height: @slc-customer-search-delete-position-line-height;
-      text-align: center;
-      color: @slc-customer-search-text-background;
-      z-index: 2;
-    }
-    &-Icon{
-        position: absolute;
-        top: @slc-customer-search-icon-top;
-        left: @slc-customer-search-icon-true-left;
-    }
-    text{    
-      flex: 1;
-      text-align: center;
-      line-height: @slc-customer-search-height;
-      display: inline-block;
-      background: @slc-customer-search-text-background;
-      color: @slc-customer-search-text-color;
-      border: none;
-      position: relative;
-    }
+  display: flex;
+  height: @slc-customer-search-height;
+  margin-left: 5%;
+  position: relative;
+  &-search{
+    width: 75%;
+    height: 100%;
+    border-radius: @slc-customer-search-border-radius;
+    background: @slc-customer-search-background;
+    padding-left: @slc-customer-search-cursor-left;
   }
+  &-phcolor{
+    margin-left: 1%;
+  }
+  .slc-customer-search-Tsearch-inputDelete{
+    width: @slc-customer-search-delete-size;
+    height: @slc-customer-search-delete-size;
+    border-radius: 50%;
+    background: @slc-customer-search-delete-background;
+    position: absolute;
+    top: @slc-customer-search-delete-position-top;
+    left: @slc-customer-search-delete-position-left;
+    line-height: @slc-customer-search-delete-position-line-height;
+    text-align: center;
+    color: @slc-customer-search-text-background;
+    z-index: 2;
+  }
+  &-Icon{
+    position: absolute;
+    top: @slc-customer-search-icon-top;
+    left: @slc-customer-search-icon-true-left;
+  }
+  text{    
+    flex: 1;
+    text-align: center;
+    line-height: @slc-customer-search-height;
+    display: inline-block;
+    background: @slc-customer-search-text-background;
+    color: @slc-customer-search-text-color;
+    border: none;
+    position: relative;
+  }
+}
 
 @{Fcomponent}{
-    display: flex;
-    height: @slc-customer-search-height;
-    margin-left: 4%;
-    position: relative;
-    &-search{
-        width: @slc-customer-search-false-width;
-        height: 100%;
-        border-radius: @slc-customer-search-border-radius;
-        background: @slc-customer-search-background;
-      }
-    &-phcolor{
-        margin-left: 40%;
-      }
-    text{
-        display: none;
-      }
-    &-Icon{
-        left: @slc-customer-search-icon-false-left;
-        position: absolute;
-        top: @slc-customer-search-icon-top;
-    }
+  display: flex;
+  height: @slc-customer-search-height;
+  margin-left: 4%;
+  position: relative;
+  &-search{
+    width: @slc-customer-search-false-width;
+    height: 100%;
+    border-radius: @slc-customer-search-border-radius;
+    background: @slc-customer-search-background;
   }
+  &-phcolor{
+    margin-left: 40%;
+  }
+  text{
+    display: none;
+  }
+  &-Icon{
+    left: @slc-customer-search-icon-false-left;
+    position: absolute;
+    top: @slc-customer-search-icon-top;
+  }
+}
   

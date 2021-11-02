@@ -120,7 +120,3 @@ SlCustomerSearch.defaultProps = {
 
 }
 
-SlCustomerSearch.propTypes = {
-
-
-}
