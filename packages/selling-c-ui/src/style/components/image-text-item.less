@@ -1,0 +1,36 @@
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@ImageText: .slc-image-text-item-ImageText;
+
+@slc-image-text-item-ImageText-width: 100%;
+@slc-image-text-item-ImageText-ImageTextItem-width: 20%;
+@slc-image-text-item-ImageText-ImageTextItem-height: 140px;
+@slc-image-text-item-ImageText-ImageTextItem-padding-top: 45px;
+@slc-image-text-item-ImageText-Image-size: 50px;
+@slc-image-text-item-ImageText-Text-margin-top: 10px;
+@slc-image-text-item-ImageText-Text-font-size: 26px;
+
+@{ImageText}{
+  width: @slc-image-text-item-ImageText-width;
+  display: flex;
+  flex-wrap: wrap;
+  &-ImageTextItem{
+    width: @slc-image-text-item-ImageText-ImageTextItem-width;
+    height: @slc-image-text-item-ImageText-ImageTextItem-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: @slc-image-text-item-ImageText-ImageTextItem-padding-top;
+    Image{
+      height: @slc-image-text-item-ImageText-Image-size;
+      width: @slc-image-text-item-ImageText-Image-size;
+    }
+    Text{
+      height: @slc-image-text-item-ImageText-Image-size;
+      margin-top: @slc-image-text-item-ImageText-Text-margin-top;
+      font-size: @slc-image-text-item-ImageText-Text-font-size;
+    }
+  }
+}
