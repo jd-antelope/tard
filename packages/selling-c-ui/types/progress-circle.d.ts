@@ -8,7 +8,7 @@ export interface SlProgressCircleProps extends SlComponent {
     */
     percent: number
     /**
-     * 圆环直径，H5默认单位为px，小程序为rpx
+     * 圆环直径，单位为px
      * @default 100
      */
     size: number
@@ -18,7 +18,7 @@ export interface SlProgressCircleProps extends SlComponent {
      */
     color: string
     /**
-     * 轨道颜色
+     * 轨道背景颜色
      *  @default #EFEFEF
      */
     layerColor: string
@@ -27,12 +27,10 @@ export interface SlProgressCircleProps extends SlComponent {
      */
     text?: string
     /**
-     * 进度条宽度，H5默认单位为px，小程序为rpx
+     * 进度条宽度，单位为px
      * @default 4
      */
     strokeWidth: number
 }
 
-export interface SlProgressCircleState {
-}
 declare const SlProgressCircle: ComponentClass<SlProgressCircleProps>

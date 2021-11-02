@@ -3,33 +3,39 @@ import SlComponent from './base'
 
 export interface SlProgressProps extends SlComponent {
   /**
-   * 进度条类型 line or circle
+   * 进度百分比
+   * @default 0
    */
-  type?: string
+  percent: number
   /**
-   * 元素的颜色
+   * 进度条粗细
+   * @default 4px
    */
-  color?: string
+  strokeWidth: number
   /**
-   * 当type为circle时需要指定圆形半径，不需要单位
+   * 进度条颜色
+   * @default #DC8D20
    */
-  radius?: number
+  color: string
   /**
-   * 元素的状态
+   * 轨道颜色
+   * @default #EFEFEF
+   */
+  trackColor: string
+  /**
+   * 进度文字内容
+   * @default 百分比
+   */
+  pivotText?: string
+  /**
+   * 是否显示进度文字
+   * @default true
+   */
+  showPivot: boolean
+  /**
+   * 进度条状态
    */
   status?: 'progress' | 'error' | 'success'
-  /**
-   * 元素的进度
-   */
-  percent?: number
-  /**
-   * 元素的规格
-   */
-  strokeWidth?: number
-  /**
-   * 是否隐藏文字
-   */
-  isHidePercent?: boolean
 }
 
 export interface SlProgressState {
