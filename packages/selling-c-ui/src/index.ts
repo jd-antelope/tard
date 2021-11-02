@@ -25,3 +25,4 @@ export { default as SlDropdownMenuItem } from './components/dropdown-menu/dropdo
 export { default as SlRate } from './components/rate';
 export { default as SlTimePicker } from './components/time-picker'
 export { default as SlProgress } from './components/progress'
+export { default as SlProgressCircle } from './components/progress-circle'

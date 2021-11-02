@@ -15,6 +15,8 @@ export default {
 		'pages/overlay/index',
 		'pages/popup/index',
 		'pages/price/index',
+		'pages/progress/index',
+		'pages/progress-circle/index',
 		'pages/result/index',
 		'pages/skeleton/index',
 		'pages/tab/index',
