@@ -2,9 +2,9 @@ import React from 'react'
 import classNames from 'classnames'
 import { View, Text } from '@tarojs/components'
 // import { pxTransform } from 'src/common/utils';
-import { SlProgressProps, SlProgressState } from '../../../types/progress'
+import { SlProgressProps } from '../../../types/progress'
 
-export default class SlProgress extends React.Component<SlProgressProps, SlProgressState> {
+export default class SlProgress extends React.Component<SlProgressProps> {
   public static defaultProps: SlProgressProps
   public constructor(props) {
     super(props)

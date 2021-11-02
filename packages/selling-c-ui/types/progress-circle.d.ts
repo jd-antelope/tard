@@ -34,3 +34,4 @@ export interface SlProgressCircleProps extends SlComponent {
 }
 
 declare const SlProgressCircle: ComponentClass<SlProgressCircleProps>
+export default SlProgressCircle

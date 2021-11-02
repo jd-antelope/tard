@@ -38,7 +38,5 @@ export interface SlProgressProps extends SlComponent {
   status?: 'progress' | 'error' | 'success'
 }
 
-export interface SlProgressState {
-}
 declare const SlProgress: ComponentClass<SlProgressProps>
 export default SlProgress

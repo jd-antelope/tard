@@ -56,11 +56,7 @@
     .@{--css-prefix}-progress__outer-inner-background::before {
       content: "";
       opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      .mixin-position-absolute();
       background: @slc-progress-bar-bg-color-active;
       border-radius: @slc-progress-height / 2;
       animation: progress-active 2s @ease-out-quad infinite;
