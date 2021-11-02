@@ -41,4 +41,6 @@ export interface SlCustomerSearchState extends Omit<InputHTMLAttributes<HTMLElem
 
 }
 
+declare const SlCustomerSearch: ComponentClass<SlCustomerSearchProps>
+
 export default SlCustomerSearch

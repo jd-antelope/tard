@@ -91,7 +91,7 @@ export default class SlCustomerSearch extends React.Component<SlCustomerSearchPr
           onClick={this.inputDelete}
           className="slc-customer-search-Tsearch-inputDelete">x
         </Text>}
-        <Text onClick={this.Confirm}>搜索</Text>
+        <Text onClick={this.Confirm} className="slc-customer-search-Tsearch-text">搜索</Text>
       </View> : <View className={Fsearch}>
         <Icon size='20' type='search' className="slc-customer-search-Fsearch-Icon" />
         <Input
@@ -105,7 +105,7 @@ export default class SlCustomerSearch extends React.Component<SlCustomerSearchPr
           onBlur={this.handleBlur}
           onConfirm={this.handleConfirm}
         />
-        <Text onClick={this.Confirm}>搜索</Text>
+        <Text onClick={this.Confirm} className="slc-customer-search-Fsearch-text">搜索</Text>
       </View>
 
     )

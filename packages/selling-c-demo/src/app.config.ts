@@ -21,6 +21,8 @@ export default {
 		'pages/tab-pane/index',
 		'pages/toast/index',
 		'pages/upload/index',
+		'pages/customer-search/index',
+		'pages/image-text-item/index',
 ],
   window: {
     backgroundTextStyle: 'light',
