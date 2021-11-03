@@ -7,14 +7,35 @@ import { SlPriceProps, SlPriceState } from '../../../types/price'
 export default class SlPrice extends React.Component<SlPriceProps, SlPriceState> {
   public static defaultProps: SlPriceProps
 
+  private saveMax = (getPrice) => {
+    const price = Number(getPrice);
+    if (String(price).indexOf('.') === -1) {
+      return price;
+    }
+    let str = ''
+    str += String(price).split('.')[0];
+    const floatPrice = String(price).split('.')[1];
+    if (Number(floatPrice) === 0) {
+      str += '';
+    } else if (Number(floatPrice) < 10) {
+      str += '.' + String(price).split('.')[1];
+    } else {
+      if (Number(floatPrice)%10 !== 0) {
+        str += '.' + String(Number(floatPrice));
+      } else {
+        str += '.' + String(Number(floatPrice)).substr(0, 1);
+      }
+    }
+    return str
+  };
+
   // 价格处理
   private arrayPrice = (price) => {
-    const { fixedNum } = this.props
     if (price instanceof Array && price.length > 1) {
       const arr = price.map(v => Number(v)).sort((a, b) => a - b)
-      return `${Number(arr[0]).toFixed(fixedNum)}-${Number(arr[arr.length - 1]).toFixed(fixedNum)}`
+      return `${this.saveMax(arr[0])}-${this.saveMax(arr[arr.length - 1])}`
     }
-    return Number(price).toFixed(fixedNum)
+    return this.saveMax(price)
   }
 
   // eslint-disable-next-line no-undef
