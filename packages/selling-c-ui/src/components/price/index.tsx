@@ -29,13 +29,21 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
     return str
   };
 
+  private filterPrice = (price) => {
+    const { fixedNum } = this.props
+    if (fixedNum === -1) {
+      return this.saveMax(price)
+    }
+    return  Number(price).toFixed(fixedNum)
+  }
+
   // 价格处理
   private arrayPrice = (price) => {
     if (price instanceof Array && price.length > 1) {
       const arr = price.map(v => Number(v)).sort((a, b) => a - b)
-      return `${this.saveMax(arr[0])}-${this.saveMax(arr[arr.length - 1])}`
+      return `${this.filterPrice(arr[0])}-${this.filterPrice(arr[arr.length - 1])}`
     }
-    return this.saveMax(price)
+    return this.filterPrice(price)
   }
 
   // eslint-disable-next-line no-undef
@@ -101,7 +109,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
 SlPrice.defaultProps = {
   className: '',
   price: '',
-  fixedNum: 2,
+  fixedNum: -1,
   color: '',
   trigger: '',
   commissionPrice: '',
