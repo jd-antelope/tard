@@ -1,6 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import { View, Text } from '@tarojs/components'
+import { pxTransform } from '../../common/utils'
 import Common from '../../common/common'
 import { SlPriceProps, SlPriceState } from '../../../types/price'
 
@@ -34,7 +35,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
     if (fixedNum === -1) {
       return this.saveMax(price)
     }
-    return  Number(price).toFixed(fixedNum)
+    return Number(price).toFixed(fixedNum)
   }
 
   // 价格处理
@@ -50,8 +51,8 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
   public render (): JSX.Element | null {
     const { 
       price, className, color, commissionPrice, trigger,
-      originalColor, originalPrice, fixedNum, type, size = 0, 
-      symbolSize
+      originalColor, originalPrice, type, size = 0, 
+      symbolSize = 0
     } = this.props
     return (
       <Common className={ cn('slc-price', className) }>
@@ -63,7 +64,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
               'slc-price__text-small': type === 'small' || type === 'middle',
             })
           }
-          style={ (color !== '' ? `color: ${color};` : '') + (size !== 0 ? `font-size: ${size}rpx` : '') }
+          style={ (color !== '' ? `color: ${color};` : '') + (size !== 0 ? `font-size: ${pxTransform(size)}` : '') }
         >
           ¥
           <Text 
@@ -76,7 +77,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
                 'slc-price__content-small': type === 'small',
               })
             }
-            style={ symbolSize !== 0 ? `font-size: ${symbolSize}rpx` : '' }
+            style={ symbolSize !== 0 ? `font-size: ${pxTransform(symbolSize)}` : '' }
           >
             { this.arrayPrice(price) }
           </Text>
@@ -86,7 +87,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
               className="slc-price__origin-price" 
               style={ `color: ${ originalColor }` }
             >
-              ¥{ Number(originalPrice).toFixed(fixedNum) }
+              ¥{ Number(originalPrice).toFixed(2) }
             </Text>
           }
         </View>
