@@ -36,6 +36,20 @@ function transfromCName (cName) {
   return cName.split('-').reduce((pre, v) => pre + v.slice(0, 1).toLocaleUpperCase() + v.slice(1), '')
 }
 
+/**
+ * 路由置换
+ */
+function resetRouter (list) {
+  let str = '['
+  list.map(res => {
+    let dirName = res.split('/')[res.split('/').length - 2];
+    str += `{"title":"${dirName}","path":"/docs/${dirName}"},`
+  })
+  str += ']'
+  const content = fs.readFileSync(path.resolve(__dirname, './template/routerTmpl.txt'), 'utf-8')
+  const routerContent = content.replace('{{this}}', str);
+  fs.writeFileSync(path.resolve(__dirname, `../src/docs-route.ts`), routerContent);
+}
 
 /**
  * 读取组件项目中的组件列表
@@ -54,14 +68,14 @@ function getComponentList () {
     let dirName = v.split('/')[v.split('/').length - 2];
     cNames.push(dirName)
     createCompenent(dirName);
+    return v
   })
   let configObj = content.replace(reg, ($1, $2, $3, $4) => {
     return $2 + cNames.reduce((pre, v) => pre + `\n\t\t'pages/${v}/index',`, '') + `\n${$4}`
   });
   fs.writeFileSync(path.resolve(__dirname, `../src/app.config.ts`), configObj);
-
+  resetRouter(packagePaths)
 }
+
 getComponentList()
-
-
 

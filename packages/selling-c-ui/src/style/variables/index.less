@@ -96,6 +96,13 @@
 /* 图标颜色 */
 @color-icon-base: #CCC;
 
+/**
+* CSS cubic-bezier timing functions
+* http://bourbon.io/docs/#timing-functions
+*/
+@ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+@ease-in-out-quad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
 /* Font */
 @font-size-xs: 10px * @hd; // 非常用字号，用于标签
 @font-size-sm: 12px * @hd; // 用于辅助信息
@@ -248,4 +255,12 @@
 @slc-rate-icon-size: 20px;
 @slc-rate-star-color: @color-rate-base;
 @slc-rate-star-color-on: @color-rate-on;
+
+/* progress */
+@slc-progress-height: 16px; 
+@slc-progress-text-size: @font-size-sm;
+@slc-progress-icon-size: @font-size-xl;
+@slc-progress-inner-bg-color: @color-grey-6;
+@slc-progress-bar-bg-color: @color-brand-light; 
+@slc-progress-bar-bg-color-active: @color-white;
 

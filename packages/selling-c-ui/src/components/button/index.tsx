@@ -27,7 +27,6 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
     }
   }
 
-
   private onClick(event: CommonEvent): void {
     if (!this.props.disabled) {
       this.props.onClick && this.props.onClick(event)
@@ -79,7 +78,6 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
       })
     }
   }
-
 
   // eslint-disable-next-line no-undef
   public render(): JSX.Element | null {
@@ -147,7 +145,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
     )
 
     return (
-      <Common 
+      <Common
         className={classNames(rootClassName, classObject, this.props.className)}
         style={style}
         onClick={this.onClick.bind(this)}>
@@ -158,7 +156,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
             onReset={this.onReset.bind(this)}
           >
             {button}
-          </Form> 
+          </Form>
         )}
 
         <View className='slc-button__text'>{this.props.children}</View>

@@ -42,7 +42,7 @@ const ImageTextItem: FC = () => {
 |  ----  | ----  | ---- | ---- |
 | isUp | 是否显示图片在上 | 	boolean | true |
 | propsData | 需要传入的内容 | 	Array | - |
-| onClick | 点击item触发事件 | 	CommonEventFunction | - |
+| onClick | 点击item返回整个对象 | 	CommonEventFunction | - |
 
 
 `

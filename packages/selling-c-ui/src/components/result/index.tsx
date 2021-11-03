@@ -35,7 +35,7 @@ export default class SlResult extends React.Component<SlResultProps, SlResultSta
       <View className={ rootClass }>
         <SlImage src={ src } className={ resultImgClass } />
         <Text className="slc-result__text">{ text }</Text>
-        <SlButton className={classNames('aaa',{'name':true})} fill size="smll" radius={ 12 } onClick={ this.click }>{ btnText }</SlButton>
+        <SlButton fill size="small" radius={ 12 } onClick={ this.click }>{ btnText }</SlButton>
       </View>
     )
   }
