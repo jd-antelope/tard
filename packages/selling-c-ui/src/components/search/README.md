@@ -1,10 +1,10 @@
-# customer-seacher
+# search
 
 ## 介绍
 带搜索按钮的输入框。
 ## 引入
 ```js
-import { SlCustomerSearch } from '@jd/selling-c-ui'
+import { SlSearch } from '@jd/selling-c-ui'
 ```
 # 代码演示
 ## 基础用法
@@ -12,13 +12,13 @@ import { SlCustomerSearch } from '@jd/selling-c-ui'
 import React, { memo } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlCustomerSearch } from '@test/selling-c-ui'
+import { SlSearch } from '@test/selling-c-ui'
 
 const CustomerSearch: FC = () => {
  
   return (
      <View className="container">
-        <SlCustomerSearch onConfirm={(data)=>{ console.log(data,"父组件内容 ")}} />
+        <SlSearch onConfirm={(data)=>{ console.log(data,"父组件内容 ")}} />
     </View>
   );
 };
@@ -28,6 +28,7 @@ const CustomerSearch: FC = () => {
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | value | 输入框的初始内容 | 	string | - |
+| height | 输入框的高度 | 	string | 66px |
 | placeholder | 输入框为空时占位符 | 	string | - |
 | disabled | 是否禁用 | 	boolean | false |
 | onFocus | 输入框聚焦时触发 | BaseEventOrigFunction<inputForceEventDetail> | - |

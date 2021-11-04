@@ -4,7 +4,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { View, Input, Text, Icon } from '@tarojs/components'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
-import { SlCustomerSearchProps, SlCustomerSearchState } from '../../../types/customer-search'
+import { SlCustomerSearchProps, SlCustomerSearchState } from '../../../types/search'
 
 export default class SlCustomerSearch extends React.Component<SlCustomerSearchProps, SlCustomerSearchState> {
   public static defaultProps: SlCustomerSearchProps
@@ -75,8 +75,9 @@ export default class SlCustomerSearch extends React.Component<SlCustomerSearchPr
     const Fsearch = classNames('slc-customer-search-Fsearch')
     return (
       this.state.isFocus ? <View className={Tsearch}>
-        <Icon size='20' type='search' className="slc-customer-search-Tsearch-Icon" />
+        <Icon size='30' type='search' className="slc-customer-search-Tsearch-Icon" onClick={this.Confirm}/>
         <Input
+          style={{height:`${this.props.height}`}}
           className="slc-customer-search-Tsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
@@ -91,10 +92,10 @@ export default class SlCustomerSearch extends React.Component<SlCustomerSearchPr
           onClick={this.inputDelete}
           className="slc-customer-search-Tsearch-inputDelete">x
         </Text>}
-        <Text onClick={this.Confirm} className="slc-customer-search-Tsearch-text">搜索</Text>
       </View> : <View className={Fsearch}>
-        <Icon size='20' type='search' className="slc-customer-search-Fsearch-Icon" />
+        <Icon size='30' type='search' className="slc-customer-search-Fsearch-Icon" onClick={this.Confirm}/>
         <Input
+          style={{height:`${this.props.height}`}}
           className="slc-customer-search-Fsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
@@ -105,7 +106,6 @@ export default class SlCustomerSearch extends React.Component<SlCustomerSearchPr
           onBlur={this.handleBlur}
           onConfirm={this.handleConfirm}
         />
-        <Text onClick={this.Confirm} className="slc-customer-search-Fsearch-text">搜索</Text>
       </View>
 
     )
@@ -114,7 +114,8 @@ export default class SlCustomerSearch extends React.Component<SlCustomerSearchPr
 
 SlCustomerSearch.defaultProps = {
   value: "",
-  placeholder: "搜索团购标题",
+  height: "66px",
+  placeholder: "搜索",
   disabled: false,
   isFocus: false,
 

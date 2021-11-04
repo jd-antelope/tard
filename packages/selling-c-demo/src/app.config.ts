@@ -5,7 +5,6 @@ export default {
 		'pages/button/index',
 		'pages/canvas/index',
 		'pages/custom-header/index',
-		'pages/customer-search/index',
 		'pages/dropdown-menu/index',
 		'pages/footer-button/index',
 		'pages/icon/index',
@@ -27,7 +26,7 @@ export default {
 		'pages/time-picker/index',
 		'pages/toast/index',
 		'pages/upload/index',
-		'pages/customer-search/index',
+		'pages/search/index',
 		'pages/image-text-item/index',
 ],
   window: {
