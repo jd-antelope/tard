@@ -52,7 +52,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
     const { 
       price, className, color, commissionPrice, trigger,
       originalColor, originalPrice, fixedNum, type, size = 0, 
-      symbolSize,priceUnit,unitSize
+      symbolSize=0,priceUnit,unitSize
     } = this.props
     return (
       <Common className={ cn('slc-price', className) }>
