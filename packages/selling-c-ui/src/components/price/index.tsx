@@ -1,20 +1,50 @@
 import React from 'react'
 import cn from 'classnames'
 import { View, Text } from '@tarojs/components'
+import { pxTransform } from '../../common/utils'
 import Common from '../../common/common'
 import { SlPriceProps, SlPriceState } from '../../../types/price'
 
 export default class SlPrice extends React.Component<SlPriceProps, SlPriceState> {
   public static defaultProps: SlPriceProps
 
-  // 价格处理
-  private arrayPrice = (price) => {
+  private saveMax = (getPrice) => {
+    const price = Number(getPrice);
+    if (String(price).indexOf('.') === -1) {
+      return price;
+    }
+    let str = ''
+    str += String(price).split('.')[0];
+    const floatPrice = String(price).split('.')[1];
+    if (Number(floatPrice) === 0) {
+      str += '';
+    } else if (Number(floatPrice) < 10) {
+      str += '.' + String(price).split('.')[1];
+    } else {
+      if (Number(floatPrice)%10 !== 0) {
+        str += '.' + String(Number(floatPrice));
+      } else {
+        str += '.' + String(Number(floatPrice)).substr(0, 1);
+      }
+    }
+    return str
+  };
+
+  private filterPrice = (price) => {
     const { fixedNum } = this.props
-    if (price instanceof Array && price.length > 1) {
-      const arr = price.map(v => Number(v)).sort((a, b) => a - b)
-      return `${Number(arr[0]).toFixed(fixedNum)}-${Number(arr[arr.length - 1]).toFixed(fixedNum)}`
+    if (fixedNum === -1) {
+      return this.saveMax(price)
     }
     return Number(price).toFixed(fixedNum)
+  }
+
+  // 价格处理
+  private arrayPrice = (price) => {
+    if (price instanceof Array && price.length > 1) {
+      const arr = price.map(v => Number(v)).sort((a, b) => a - b)
+      return `${this.filterPrice(arr[0])}-${this.filterPrice(arr[arr.length - 1])}`
+    }
+    return this.filterPrice(price)
   }
 
   // eslint-disable-next-line no-undef
@@ -34,7 +64,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
               'slc-price__text-small': type === 'small' || type === 'middle',
             })
           }
-          style={ (color !== '' ? `color: ${color};` : '') + (size !== 0 ? `font-size: ${size}rpx` : '') }
+          style={ (color !== '' ? `color: ${color};` : '') + (size !== 0 ? `font-size: ${pxTransform(size)}` : '') }
         >
          <Text style={ `font-size: ${unitSize}rpx` }>{priceUnit}</Text>
           <Text 
@@ -47,7 +77,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
                 'slc-price__content-small': type === 'small',
               })
             }
-            style={ symbolSize !== 0 ? `font-size: ${symbolSize}rpx` : '' }
+            style={ symbolSize !== 0 ? `font-size: ${pxTransform(symbolSize)}` : '' }
           >
             { this.arrayPrice(price) }
           </Text>
@@ -81,7 +111,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
 SlPrice.defaultProps = {
   className: '',
   price: '',
-  fixedNum: 2,
+  fixedNum: -1,
   color: '',
   trigger: '',
   commissionPrice: '',
