@@ -53,3 +53,5 @@ export { default as SlRate } from './rate';
 export { default as SlTimePicker } from './sl-time-picker'
 export { default as SlProgress } from './progress'
 export { default as SlProgressCircle } from './progress-circle'
+export { default as SlForm } from './form'
+export { default as SlField } from './field'

@@ -1,12 +1,13 @@
 export default {
-  pages: [
-	    'pages/home/index',
+	pages: [
+		'pages/home/index',
 		'pages/badge/index',
 		'pages/button/index',
 		'pages/canvas/index',
 		'pages/custom-header/index',
 		'pages/dropdown-menu/index',
 		'pages/footer-button/index',
+		'pages/form/index',
 		'pages/icon/index',
 		'pages/image/index',
 		'pages/image-text-item/index',
@@ -20,6 +21,7 @@ export default {
 		'pages/progress-circle/index',
 		'pages/rate/index',
 		'pages/result/index',
+		'pages/search/index',
 		'pages/skeleton/index',
 		'pages/tab/index',
 		'pages/tab-pane/index',

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { View, Image } from '@tarojs/components'
-import { navigateTo } from '@tarojs/taro';
+import { navigateTo, pxTransform } from '@tarojs/taro';
 import './index.less'
 import MenuObj from '../../docs-route'
 
@@ -15,6 +15,7 @@ function Home() {
   }
 
   useEffect(() => {
+    console.log(pxTransform(32, 750))
     window.addEventListener("message", iframeListener, false);
   })
 
