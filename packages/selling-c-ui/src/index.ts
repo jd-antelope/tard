@@ -28,3 +28,4 @@ export { default as SlRate } from './components/rate';
 export { default as SlTimePicker } from './components/time-picker'
 export { default as SlProgress } from './components/progress'
 export { default as SlProgressCircle } from './components/progress-circle'
+export { default as SlSort } from './components/sort'

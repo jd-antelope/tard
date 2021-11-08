@@ -46,7 +46,7 @@ function mergeStyle(
 
 function pxTransform(size: number): string {
   if (!size) return ''
-  return Taro.pxTransform(size, 750)
+  return ''
 }
 
 function objectToString(style: object | string): string {

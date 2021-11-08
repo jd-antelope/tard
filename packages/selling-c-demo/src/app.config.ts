@@ -1,6 +1,5 @@
 export default {
   pages: [
-	    'pages/home/index',
 		'pages/badge/index',
 		'pages/button/index',
 		'pages/canvas/index',
@@ -20,14 +19,14 @@ export default {
 		'pages/progress-circle/index',
 		'pages/rate/index',
 		'pages/result/index',
+		'pages/search/index',
 		'pages/skeleton/index',
+		'pages/sort/index',
 		'pages/tab/index',
 		'pages/tab-pane/index',
 		'pages/time-picker/index',
 		'pages/toast/index',
 		'pages/upload/index',
-		'pages/search/index',
-		'pages/image-text-item/index',
 ],
   window: {
     backgroundTextStyle: 'light',
