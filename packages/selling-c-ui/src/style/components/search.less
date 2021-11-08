@@ -10,7 +10,7 @@
 @slc-search-delete-background: #acacac;
 @slc-search-width:100%;
 @slc-search-height: 100%;
-@slc-search-margin: 11%;
+@slc-search-margin: 24px;
 @slc-search-border-radius: 76px;
 @slc-search-delete-position-top: 30%;
 @slc-search-icon-top: 29%;
@@ -24,24 +24,21 @@
   font-size: @slc-search-font-size;
   border-radius: @slc-search-border-radius;
   &-search{
-    width: calc(@slc-search-width - 60%);
+    width: calc(@slc-search-width - 144px);
     height: @slc-search-height;
     border-radius: @slc-search-border-radius;
-    padding-left: @slc-search-margin;
+    margin-left: @slc-search-margin;
     overflow: hidden;
   }
-  &-phcolor{
-    position: relative;
-    left: @slc-search-margin;
-  }
+ 
   &-inputDelete{
     width: @slc-search-width;
     height: @slc-search-width;
     border-radius: 50%;
     background: @slc-search-delete-background;
     position: absolute;
-    top: @slc-search-delete-position-top;
-    right: 30%;
+    top: calc((@slc-search-height - 30px) / 2);
+    left: calc(@slc-search-width - 104px);
     line-height: 90%;
     text-align: center;
     color: @slc-search-text-background;
@@ -49,9 +46,9 @@
   }
  
   &-Icon{
-    right: @slc-search-margin;;
+    right: @slc-search-margin;
     position: absolute;
-    top: @slc-search-icon-top;
+    top: calc((@slc-search-height - 30px) / 2);
   }
 }
 
@@ -70,9 +67,9 @@
   }
   
   &-Icon{
-    right: @slc-search-margin;;
+    right: @slc-search-margin;
     position: absolute;
-    top: @slc-search-icon-top;
+    top: calc((@slc-search-height - 30px) / 2);
   }
 }
 .weui-input{
