@@ -1,11 +1,12 @@
 import { IconProps } from "@tarojs/components/types/Icon"
 import { InputHTMLAttributes, ReactElement, ReactEventHandler } from "react"
 
-export interface SlCustomerSearchProps extends Omit<InputHTMLAttributes<HTMLElement>, "size"> {
+export interface SlSearchProps extends Omit<InputHTMLAttributes<HTMLElement>, "size"> {
     disabled?: boolean;
     value?: string;
     placeholder?: string;
     icon?: IconProps;
+    fontSize?: string;
     /**
     *  判断是否聚焦
     */
@@ -29,7 +30,7 @@ export interface SlCustomerSearchProps extends Omit<InputHTMLAttributes<HTMLElem
 }
 
 
-export interface SlCustomerSearchState extends Omit<InputHTMLAttributes<HTMLElement>, "size"> {
+export interface SlSearchState extends Omit<InputHTMLAttributes<HTMLElement>, "size"> {
     /**
      * 点击提交时Input框的内容
      */
@@ -41,6 +42,6 @@ export interface SlCustomerSearchState extends Omit<InputHTMLAttributes<HTMLElem
 
 }
 
-declare const SlCustomerSearch: ComponentClass<SlCustomerSearchProps>
+declare const SlSearch: ComponentClass<SlSearchProps>
 
-export default SlCustomerSearch
+export default SlSearch

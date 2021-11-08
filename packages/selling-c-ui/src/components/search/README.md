@@ -14,7 +14,7 @@ import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import { SlSearch } from '@test/selling-c-ui'
 
-const CustomerSearch: FC = () => {
+const Search: FC = () => {
  
   return (
      <View className="container">
@@ -29,6 +29,7 @@ const CustomerSearch: FC = () => {
 |  ----  | ----  | ---- | ---- |
 | value | 输入框的初始内容 | 	string | - |
 | height | 输入框的高度 | 	string | 66px |
+| width | 输入框的宽度 | 	string | 220px |
 | placeholder | 输入框为空时占位符 | 	string | - |
 | disabled | 是否禁用 | 	boolean | false |
 | onFocus | 输入框聚焦时触发 | BaseEventOrigFunction<inputForceEventDetail> | - |
