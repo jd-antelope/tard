@@ -46,7 +46,16 @@ function mergeStyle(
 
 function pxTransform(size: number): string {
   if (!size) return ''
-  return Taro.pxTransform(size, 750)
+  const designWidth = 750
+  const deviceRatio = {
+    640: 2.34 / 2,
+    750: 1,
+    828: 1.81 / 2
+  }
+  if (process.env.TARO_ENV === 'h5') {
+    return 16 / 750 * size + 'rem';
+  }
+  return `${size / deviceRatio[designWidth]}rpx`
 }
 
 function objectToString(style: object | string): string {
