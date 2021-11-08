@@ -27,6 +27,7 @@ export default {
 		'pages/toast/index',
 		'pages/upload/index',
 		'pages/search/index',
+		'pages/cell/index',
 		'pages/image-text-item/index',
 ],
   window: {
