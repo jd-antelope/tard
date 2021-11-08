@@ -1,12 +1,15 @@
 import { IconProps } from "@tarojs/components/types/Icon"
-import { InputHTMLAttributes, ReactElement, ReactEventHandler } from "react"
 
-export interface SlSearchProps extends Omit<InputHTMLAttributes<HTMLElement>, "size"> {
+import SlComponent from './base'
+
+export interface SlSearchProps extends SlComponent {
     disabled?: boolean;
     value?: string;
     placeholder?: string;
     icon?: IconProps;
     fontSize?: string;
+    width: number;
+    height: number;
     /**
     *  判断是否聚焦
     */
@@ -30,7 +33,7 @@ export interface SlSearchProps extends Omit<InputHTMLAttributes<HTMLElement>, "s
 }
 
 
-export interface SlSearchState extends Omit<InputHTMLAttributes<HTMLElement>, "size"> {
+export interface SlSearchState {
     /**
      * 点击提交时Input框的内容
      */

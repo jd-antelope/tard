@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import { View, Input, Text, Icon } from '@tarojs/components'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
 import { SlSearchProps, SlSearchState } from '../../../types/search'
+import { pxTransform } from '../../common/utils'
 
 export default class SlSearch extends React.Component<SlSearchProps, SlSearchState> {
   public static defaultProps: SlSearchProps
@@ -75,10 +76,10 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
     const Tsearch = classNames('slc-search-Tsearch')
     const Fsearch = classNames('slc-search-Fsearch')
     return (
-      this.state.isFocus ? <View className={Tsearch} style={{ width: `${this.props.width}` }}>
+      this.state.isFocus ? <View className={Tsearch} style={{ width: `${pxTransform(this.props.width)}` }}>
         <Icon size='30' type='search' className="slc-search-Tsearch-Icon" onClick={this.Confirm} />
         <Input
-          style={{ height: `${this.props.height}`, fontSize: `${fontSize}` }}
+          style={{ height: `${pxTransform(this.props.height)}`, fontSize: `${fontSize}` }}
           className="slc-search-Tsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
@@ -93,10 +94,10 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
           onClick={this.inputDelete}
           className="slc-search-Tsearch-inputDelete" style={{ height: `30px`, width: `30px`, fontSize: `${fontSize}` }}>x
         </Text>}
-      </View> : <View className={Fsearch} style={{ width: `${this.props.width}` }}>
+      </View> : <View className={Fsearch} style={{ width: `${pxTransform(this.props.width)}` }}>
         <Icon size='30' type='search' className="slc-search-Fsearch-Icon" onClick={this.Confirm} />
         <Input
-          style={{ height: `${this.props.height}`, fontSize: `${fontSize}` }}
+          style={{ height:`${pxTransform(this.props.height)}`, fontSize: `${fontSize}` }}
           className="slc-search-Fsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
@@ -115,11 +116,11 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
 
 SlSearch.defaultProps = {
   value: "",
-  height: "66px",
+  height: 66,
   placeholder: "搜索",
   disabled: false,
   isFocus: false,
-  width: "220px",
+  width: 220,
   fontSize: "26px",
 }
 
