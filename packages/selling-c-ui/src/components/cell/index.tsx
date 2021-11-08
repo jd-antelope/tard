@@ -20,12 +20,12 @@ export default class SlCell extends React.Component<SlCellProps> {
       title,
       value,
       icon,
-      height
+      height = 100
     } = this.props
     const Cell = classNames('slc-cell')
 
     return (
-      <View className={Cell} style={{ height: `${pxTransform(height as number)}` }} onClick={this.handleClick.bind(this)}>
+      <View className={Cell} style={{ height: `${pxTransform(height)}` }} onClick={this.handleClick.bind(this)}>
         <View className="slc-cell-title">{title}</View>
         <View className="slc-cell-value">
           <Text className="slc-cell-text">{value}</Text>

@@ -3,13 +3,33 @@ import { CommonEventFunction } from '@tarojs/components/types/common'
 import SlComponent from './base'
 
 export interface SlSearchProps extends SlComponent {
+  /**
+  *  是否禁止输入
+  */
   disabled?: boolean;
+  /**
+  *  判断是否聚焦
+  */
   value?: string;
+  /**
+  *  占位符
+  */
   placeholder?: string;
-  icon?: IconProps;
+  /**
+  *  文字大小
+  */
   fontSize?: number | undefineds;
-  width: number;
-  height: number;
+  /**
+  *  搜索框的宽带
+  */
+  width?: number;
+  /**
+  *  搜索框的高度
+  */
+  height?: number;
+  /**
+  *  点击事件
+  */
   onClick?: CommonEventFunction
   /**
   *  判断是否聚焦

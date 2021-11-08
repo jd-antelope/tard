@@ -12,11 +12,8 @@
 @slc-search-height: 100%;
 @slc-search-margin: 11%;
 @slc-search-border-radius: 76px;
-@slc-search-delete-size: 30px;
 @slc-search-delete-position-top: 30%;
-@slc-search-delete-position-right: calc(@slc-search-margin + @slc-search-icon-font-size + 10%);
 @slc-search-icon-top: 29%;
-@slc-search-icon-font-size: 30px;
 @slc-search-font-size: 26px;
 
 @{Tcomponent}{
@@ -33,20 +30,19 @@
     padding-left: @slc-search-margin;
     overflow: hidden;
   }
-  
-  .slc-search-Tsearch-phcolor{
+  &-phcolor{
     position: relative;
     left: @slc-search-margin;
   }
-  .slc-search-Tsearch-inputDelete{
-    width: 30px;
-    height: 30px;
+  &-inputDelete{
+    width: @slc-search-width;
+    height: @slc-search-width;
     border-radius: 50%;
     background: @slc-search-delete-background;
     position: absolute;
     top: @slc-search-delete-position-top;
     right: 30%;
-    line-height: @slc-search-width;
+    line-height: 90%;
     text-align: center;
     color: @slc-search-text-background;
     z-index: 2;

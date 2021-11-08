@@ -77,17 +77,21 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
       placeholder,
       disabled,
       fontSize,
+      width = 220,
+      height = 58,
     } = this.props
     const Tsearch = classNames('slc-search-Tsearch')
     const Fsearch = classNames('slc-search-Fsearch')
     return (
       this.state.isFocus ? <View className={Tsearch}
-        style={{ width: `${pxTransform(this.props.width)}` }}
+        style={{ width: `${pxTransform(width)}` }}
         onClick={this.props.isSkip ? this.handleClick.bind(this) : ""}
       >
-        <Icon size={`${pxTransform(fontSize)}`} type='search' className="slc-search-Tsearch-Icon" onClick={this.Confirm} />
+        <Icon size={`${pxTransform(parseInt(String(30)))}`}
+          type='search' className="slc-search-Tsearch-Icon"
+          onClick={this.Confirm} />
         <Input
-          style={{ height: `${pxTransform(this.props.height)}`, fontSize: `${pxTransform(fontSize)}` }}
+          style={{ height: `${pxTransform(height)}`, fontSize: `${pxTransform(fontSize)}` }}
           className="slc-search-Tsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
@@ -107,12 +111,14 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
             fontSize: `${pxTransform(fontSize)}`
           }}>x
         </Text>}
-      </View> : <View className={Fsearch} style={{ width: `${pxTransform(this.props.width)}` }}
+      </View> : <View className={Fsearch} style={{ width: `${pxTransform(width)}` }}
         onClick={this.props.isSkip ? this.handleClick.bind(this) : ""}
       >
-        <Icon size={String(pxTransform(fontSize))} type='search' className="slc-search-Fsearch-Icon" onClick={this.Confirm} />
+        <Icon size={`${pxTransform(parseInt(String(30)))}`}
+          type='search' className="slc-search-Fsearch-Icon"
+          onClick={this.Confirm} />
         <Input
-          style={{ height: `${pxTransform(this.props.height)}`, fontSize: `${pxTransform(fontSize)}` }}
+          style={{ height: `${pxTransform(height)}`, fontSize: `${pxTransform(fontSize)}` }}
           className="slc-search-Fsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}

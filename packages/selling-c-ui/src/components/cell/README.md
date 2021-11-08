@@ -18,7 +18,7 @@ const Cell: FC = () => {
  
   return (
      <View className="container">
-        <SlCell  onClick={()=>{console.log("触发点击事件")}}   url={"pages/cell/index"}  title={"左侧标题"}  value={"右侧内容"}/>
+        <SlCell  onClick={()=>{console.log("触发点击事件")}}    title={"左侧标题"}  value={"右侧内容"}/>
     </View>
   );
 };

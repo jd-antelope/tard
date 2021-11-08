@@ -10,8 +10,7 @@ const Search: FC = () => {
     <View className="container">
       <DocsHeader title='Search'></DocsHeader>
       <View className='doc-body' style={{width:"220px",height:"58px"}}>
-        <SlSearch onClick={()=>{alert("asd")
-        }} isSkip={true} onConfirm={(data)=>{ console.log(data,"父组件内容 ")}} /> 
+        <SlSearch onClick={()=>{ console.log("跳转")}} isSkip={true} onConfirm={(data)=>{ console.log(data,"父组件内容 ")}} /> 
       </View>
     </View>
   );

@@ -6,14 +6,15 @@
 @slc-cell-icon-font-size: 30px;
 @slc-cell-witch: 100%;
 @slc-cell-margin: 3%;
+@slc-cell-border: 1px solid rgb(249,249,253);
 
 @{Cell}{
   width: @slc-cell-witch;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgb(249,249,253);
-  border-top: 1px solid rgb(249,249,253);
+  border-bottom: @slc-cell-border;
+  border-top: @slc-cell-border;
   &-title{
     margin-left: @slc-cell-margin;
   }
