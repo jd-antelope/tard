@@ -35,6 +35,8 @@ const Search: FC = () => {
 | width | 输入框的宽度 | 	string | 220px |
 | placeholder | 输入框为空时占位符 | 	string | - |
 | disabled | 是否禁用 | 	boolean | false |
+| isSkip | 是否跳转页面 | 	boolean | false |
+| onClick | 点击输入框是触发 | BaseEventOrigFunction<inputForceEventDetail> | - |
 | onFocus | 输入框聚焦时触发 | BaseEventOrigFunction<inputForceEventDetail> | - |
 | onBlur | 输入框聚焦时触发 | BaseEventOrigFunction<inputValueEventDetail>| - |
 | onConfirm | 点击完成按钮时触发 | BaseEventOrigFunction<inputValueEventDetail> | - |

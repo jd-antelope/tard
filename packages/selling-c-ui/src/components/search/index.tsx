@@ -59,6 +59,11 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
     })
   }
 
+  //点击抛出方法 是否跳转
+  private handleClick(): void {
+    this.props.onClick && this.props.onClick(arguments as any)
+  }
+
   // input事件
   private handleInput = (e: CommonEvent | ITouchEvent): void => {
     this.setState({
@@ -76,10 +81,13 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
     const Tsearch = classNames('slc-search-Tsearch')
     const Fsearch = classNames('slc-search-Fsearch')
     return (
-      this.state.isFocus ? <View className={Tsearch} style={{ width: `${pxTransform(this.props.width)}` }}>
-        <Icon size='30' type='search' className="slc-search-Tsearch-Icon" onClick={this.Confirm} />
+      this.state.isFocus ? <View className={Tsearch}
+        style={{ width: `${pxTransform(this.props.width)}` }}
+        onClick={this.props.isSkip ? this.handleClick.bind(this) : ""}
+      >
+        <Icon size={`${pxTransform(fontSize)}`} type='search' className="slc-search-Tsearch-Icon" onClick={this.Confirm} />
         <Input
-          style={{ height: `${pxTransform(this.props.height)}`, fontSize: `${fontSize}` }}
+          style={{ height: `${pxTransform(this.props.height)}`, fontSize: `${pxTransform(fontSize)}` }}
           className="slc-search-Tsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
@@ -92,12 +100,19 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
         />
         {this.state.inputVal === "" ? "" : <Text
           onClick={this.inputDelete}
-          className="slc-search-Tsearch-inputDelete" style={{ height: `30px`, width: `30px`, fontSize: `${fontSize}` }}>x
+          className="slc-search-Tsearch-inputDelete"
+          style={{
+            height: `${pxTransform(fontSize)}`,
+            width: `${pxTransform(fontSize)}`,
+            fontSize: `${pxTransform(fontSize)}`
+          }}>x
         </Text>}
-      </View> : <View className={Fsearch} style={{ width: `${pxTransform(this.props.width)}` }}>
-        <Icon size='30' type='search' className="slc-search-Fsearch-Icon" onClick={this.Confirm} />
+      </View> : <View className={Fsearch} style={{ width: `${pxTransform(this.props.width)}` }}
+        onClick={this.props.isSkip ? this.handleClick.bind(this) : ""}
+      >
+        <Icon size={String(pxTransform(fontSize))} type='search' className="slc-search-Fsearch-Icon" onClick={this.Confirm} />
         <Input
-          style={{ height:`${pxTransform(this.props.height)}`, fontSize: `${fontSize}` }}
+          style={{ height: `${pxTransform(this.props.height)}`, fontSize: `${pxTransform(fontSize)}` }}
           className="slc-search-Fsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
@@ -116,11 +131,13 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
 
 SlSearch.defaultProps = {
   value: "",
-  height: 66,
+  height: 58,
   placeholder: "搜索",
   disabled: false,
   isFocus: false,
   width: 220,
-  fontSize: "26px",
+  fontSize: 26,
+  // 是否跳转
+  isSkip: false,
 }
 
