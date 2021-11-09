@@ -15,8 +15,12 @@ export default class SlForm extends React.Component<SlFormProps> {
   }
 
   public render(): JSX.Element {
-    const { customStyle, className, reportSubmit } = this.props
-    const rootCls = classNames('slc-form', className)
+    const { customStyle, className, reportSubmit, border } = this.props
+    const rootCls = classNames(
+      'slc-form', 
+      className,
+      { 'slc-form-border': border }
+    )
 
     return (
       <Form
@@ -35,5 +39,6 @@ export default class SlForm extends React.Component<SlFormProps> {
 SlForm.defaultProps = {
   customStyle: '',
   className: '',
-  reportSubmit: false
+  reportSubmit: false,
+  border: false
 }

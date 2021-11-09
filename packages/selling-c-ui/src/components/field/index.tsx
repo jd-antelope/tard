@@ -171,18 +171,22 @@ export default class SlField extends React.Component<SlFieldProps> {
     const rootCls = classNames(
       'slc-field',
       {
-        'slc-field--without-border': !border
+        'slc-field--without-border': !border,
+        'slc-field__textarea-padding': textareaType == 'textarea' && !title
       },
       className
     )
+
     const containerCls = classNames('slc-field__container', {
       'slc-field--error': error,
       'slc-field--disabled': disabled,
       'slc-field__content-textarea': textareaType == 'textarea'
     })
+
     const overlayCls = classNames('slc-field__overlay', {
       'slc-field__overlay--hidden': !disabled
     })
+
     const placeholderCls = classNames('placeholder', placeholderClass)
 
     const id = name && { id: name }
@@ -217,13 +221,13 @@ export default class SlField extends React.Component<SlFieldProps> {
                 }
               </View>
               : textareaType === 'textarea' ? 
-                <View className="slc-field__box">
+                <View className={ classNames('slc-field__box', { 'slc-field__box-title' : !title }) }>
                   <Textarea 
                     className='slc-field__box-textarea'
                     {...id}
                     name={name}
                     placeholderStyle={placeholderStyle}
-                    placeholderClass={placeholderCls}
+                    placeholderClass={classNames('slc-field__box-textarea__ph', placeholderCls)}
                     placeholder={placeholder}
                     cursorSpacing={cursorSpacing}
                     maxlength={maxlength}

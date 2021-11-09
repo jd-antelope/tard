@@ -2,7 +2,7 @@ import SlComponent from './base'
 import { ImageProps } from '@tarojs/components/types/Image'
 import SlComponent from './base'
 
-export interface SlImageTextItemProps extends SlComponent, ImageProps, SlComponent {
+export interface SlImageTextItemProps extends ImageProps, SlComponent {
   /**
   * 图片链接
   */

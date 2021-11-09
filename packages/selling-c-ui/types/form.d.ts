@@ -11,6 +11,11 @@ export interface SlFormProps extends SlComponent {
    */
   reportSubmit?: boolean
   /**
+   * 是否需要border
+   * @default false
+   */
+  border?: boolean
+  /**
    * 携带 form 中的数据触发 submit 事件，由于小程序组件化的限制，onSubmit 事件获得的 event 中的 event.detail.value 始终为空对象，开发者要获取数据，可以自行在页面的 state 中获取
    */
   onSubmit?: FormFunction

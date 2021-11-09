@@ -12,7 +12,6 @@
   position: relative;
   padding: @field-padding-x 0;
   color: @slc-field-label-color;
-  background-color: @color-bg;
 
   /* 修复底线隐藏问题 */
   margin-bottom: 1PX;
@@ -90,6 +89,9 @@
         background: #f9f9f9;
       }
     }
+    &-textarea__ph {
+      color: #ccc;
+    }
     &-number {
       position: absolute;
       bottom: 16px;
@@ -99,6 +101,10 @@
         color: #2A2B2E;
       }
     }
+  }
+
+  &__box-title {
+    margin-top: 0;
   }
 
   &__content {
@@ -177,4 +183,25 @@
       border: none;
     }
   }
+
+  textarea::-webkit-input-placeholder{
+    color: @color-grey-3;
+    font-size: @font-size-base;
+  }
+  textarea::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color: @color-grey-3;
+    font-size: @font-size-base;
+  }
+  textarea:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color: @color-grey-3;
+    font-size: @font-size-base;
+  }
+  textarea:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+    color: @color-grey-3;
+    font-size: @font-size-base;
+  }
+  &.@{--css-prefix}-field__textarea-padding {
+    padding: 0;
+  }
 }
+
