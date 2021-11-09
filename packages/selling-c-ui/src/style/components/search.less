@@ -24,13 +24,10 @@
   font-size: @slc-search-font-size;
   border-radius: @slc-search-border-radius;
   &-search{
-    width: calc(@slc-search-width - 144px);
+    width: calc(@slc-search-width - 120px);
     height: @slc-search-height;
     border-radius: @slc-search-border-radius;
-    margin-left: @slc-search-margin;
-    overflow: hidden;
   }
- 
   &-inputDelete{
     width: @slc-search-width;
     height: @slc-search-width;
@@ -61,11 +58,6 @@
     border-radius: @slc-search-border-radius;
     background: @slc-search-background;
   }
-  .weui-input::placeholder{
-    position: relative;
-    left: @slc-search-margin;
-  }
-  
   &-Icon{
     right: @slc-search-margin;
     position: absolute;
@@ -73,7 +65,10 @@
   }
 }
 .weui-input{
+  width: calc(@slc-search-width - @slc-search-margin);
+  margin-left: @slc-search-margin;
   height: @slc-search-height;
+  overflow: hidden;
 }
 
 

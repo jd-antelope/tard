@@ -95,7 +95,6 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
           className="slc-search-Tsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
-          placeholder-class="slc-search-Tsearch-phcolor"
           disabled={disabled}
           onFocus={this.handleFocus}
           onInput={this.handleInput}
@@ -122,7 +121,6 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
           className="slc-search-Fsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
-          placeholder-class="slc-search-Fsearch-phcolor"
           disabled={disabled}
           onFocus={this.handleFocus}
           onInput={this.handleInput}
