@@ -1,10 +1,6 @@
 export default {
-<<<<<<< HEAD
-  pages: [
-=======
 	pages: [
 		'pages/home/index',
->>>>>>> dev-1.0.0
 		'pages/badge/index',
 		'pages/button/index',
 		'pages/canvas/index',
