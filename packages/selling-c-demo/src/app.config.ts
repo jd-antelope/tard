@@ -1,11 +1,17 @@
 export default {
+<<<<<<< HEAD
   pages: [
+=======
+	pages: [
+		'pages/home/index',
+>>>>>>> dev-1.0.0
 		'pages/badge/index',
 		'pages/button/index',
 		'pages/canvas/index',
 		'pages/custom-header/index',
 		'pages/dropdown-menu/index',
 		'pages/footer-button/index',
+		'pages/form/index',
 		'pages/icon/index',
 		'pages/image/index',
 		'pages/image-text-item/index',
@@ -27,6 +33,10 @@ export default {
 		'pages/time-picker/index',
 		'pages/toast/index',
 		'pages/upload/index',
+		'pages/search/index',
+		'pages/cell/index',
+		'pages/image-text-item/index',
+		'pages/field/index'
 ],
   window: {
     backgroundTextStyle: 'light',

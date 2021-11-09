@@ -41,6 +41,14 @@ export interface SlPriceProps extends SlComponent {
    * 大小
    */
   symbolSize?: number
+   /**
+   * 价格单位
+   */
+    priceUnit?: any
+      /**
+   * 价格单位大小
+   */
+    unitSize?: number
 }
 
 enum Size {

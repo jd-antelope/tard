@@ -51,8 +51,8 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
   public render (): JSX.Element | null {
     const { 
       price, className, color, commissionPrice, trigger,
-      originalColor, originalPrice, type, size = 0, 
-      symbolSize = 0
+      originalColor, originalPrice, fixedNum, type, size = 0, 
+      symbolSize=0,priceUnit,unitSize
     } = this.props
     return (
       <Common className={ cn('slc-price', className) }>
@@ -66,7 +66,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
           }
           style={ (color !== '' ? `color: ${color};` : '') + (size !== 0 ? `font-size: ${pxTransform(size)}` : '') }
         >
-          ¥
+         <Text style={ `font-size: ${unitSize}rpx` }>{priceUnit}</Text>
           <Text 
             className={
               cn('slc-price__text-content', {
@@ -87,7 +87,8 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
               className="slc-price__origin-price" 
               style={ `color: ${ originalColor }` }
             >
-              ¥{ Number(originalPrice).toFixed(2) }
+             <Text style={`font-size: ${unitSize}rpx`}>{priceUnit}</Text>
+             { Number(originalPrice).toFixed(fixedNum) }
             </Text>
           }
         </View>
@@ -118,5 +119,7 @@ SlPrice.defaultProps = {
   originalPrice: '',
   type: 'middle',
   size: 0,
-  symbolSize: 0
+  symbolSize: 0,
+  priceUnit:"",
+  unitSize: 32,
 }

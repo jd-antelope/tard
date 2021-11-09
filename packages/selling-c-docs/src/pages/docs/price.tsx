@@ -27,20 +27,21 @@ import { SlPrice } from '@jd/selling-c-ui'
 ~~~
 
 ## api
-| 属性            | 说明           | 类型             | 默认值   |
-| --------------- | -------------- | ---------------- | -------- |
-| price           | 价格           | string           | string[] | - |
-| originalPrice   | 原价           | string           | -        |
-| originalColor   | 原价颜色       | string           | -        |
-| color           | 颜色           | string           | -        |
-| trigger         | 价格后面的内容 | React.ReactNode, | -        |
-| commissionPrice | 是否展示佣金   | string           | -        |
-| fixedNum        | 保留几位小数点 | number           | -        |
-| type            | 类型           | Size             | string   | - |
-| size            | 大小           | number           | -        |
-| symbolSize      | 大小           | number           | -        |
-
-### Size`
+|  属性   | 说明  | 类型 | 默认值 |
+|  ----  | ----  | ---- | ---- |
+| price | 价格 | string|string[] | - |
+| originalPrice | 原价 | string | - |
+| originalColor | 原价颜色 | string | - |
+| color | 颜色 | string | - |
+| trigger | 价格后面的内容 | React.ReactNode, | - |
+| commissionPrice | 是否展示佣金 | string | - |
+| fixedNum | 保留几位小数点 | number | - |
+| type | 类型 | Size|string | - |
+| size | 大小 | number | - |
+| symbolSize | 大小 | number | - |
+| priceUnit | 价格单位 | any | - |
+| unitSize | 价格单位大小 | number | 32 |
+`
 
 export default function DocsPage() {
   return (

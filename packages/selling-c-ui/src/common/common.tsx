@@ -16,8 +16,8 @@ export default class Common extends React.Component<CommonProps, CommonState> {
   $instance = getCurrentInstance()
   public static defaultProps: CommonProps
 
-  private setThemeStyle () {
-    if (!(Taro as any).Current.app || !(Taro as any).Current.app.themeParams) return 
+  private setThemeStyle() {
+    if (!(Taro as any).Current.app || !(Taro as any).Current.app.themeParams) return
     const { themeParams } = (Taro as any).Current.app
     let themeStyle = ''
     for (const item in themeParams) {
@@ -44,7 +44,7 @@ export default class Common extends React.Component<CommonProps, CommonState> {
     }
   }
 
-  public componentWillUnmount (): void {
+  public componentWillUnmount(): void {
     if (getEnv() === ENV_TYPE.WEAPP) {
       const onShowEventId = (this.$instance as any).router.onShow
       // 卸载
@@ -57,12 +57,12 @@ export default class Common extends React.Component<CommonProps, CommonState> {
   }
 
   // eslint-disable-next-line no-undef
-  public render (): JSX.Element | null {
+  public render(): JSX.Element | null {
     const { className, children, style, ...rest } = this.props
     const { themeStyle } = this.state
     return (
-      <View className={ className } style={ themeStyle + style } { ...rest }>
-        { children }
+      <View className={className} style={themeStyle + style} {...rest}>
+        {children}
       </View>
     )
   }

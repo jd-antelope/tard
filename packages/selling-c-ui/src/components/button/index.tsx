@@ -82,7 +82,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
   // eslint-disable-next-line no-undef
   public render(): JSX.Element | null {
     const {
-      size = 'normal',
+      size = '',
       radius = 0,
       fill,
       full,
@@ -108,13 +108,14 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
       [`slc-button--${SIZE_CLASS[size]}`]: SIZE_CLASS[size],
       'slc-button--disabled': disabled,
       'slc-button--full': full,
-      'slc-button--fill': fill
+      'slc-button--fill': fill,
+      'slc-button__no-border': (fill || fillColor) && !borderColor
     }
     const style = (objectToString(Object.assign(customStyle, {
       'border-radius': pxTransform(radius),
       'color': color,
       'border-color': borderColor,
-      'background-color': fillColor
+      'background-color': fillColor,
     })))
     const webButton = (
       <Button
@@ -172,7 +173,6 @@ SlButton.defaultProps = {
   fillColor: '',
   borderColor: '',
   radius: 0,
-  loading: false,
   disabled: false,
   full: false,
   customStyle: {},
@@ -191,9 +191,8 @@ SlButton.propTypes = {
   color: PropTypes.string,
   borderColor: PropTypes.string,
   fillColor: PropTypes.string,
-  size: PropTypes.oneOf(['normal', 'small', 'middle', 'large']),
+  size: PropTypes.oneOf(['small', 'middle', 'large']),
   full: PropTypes.bool,
-  loading: PropTypes.bool,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
   customStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),

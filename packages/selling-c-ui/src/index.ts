@@ -13,6 +13,7 @@ export { default as SlCustomHeader } from './components/custom-header';
 export { default as SlSearch } from './components/search';
 export { default as SlImageTextItem } from './components/image-text-item';
 export { default as SlIcon } from './components/icon';
+export { default as SlCell } from './components/cell';
 export { default as SlPopup } from './components/popup';
 export { default as SlSkeleton } from './components/skeleton';
 export { default as SlCanvas } from './components/canvas';
@@ -29,3 +30,5 @@ export { default as SlTimePicker } from './components/time-picker'
 export { default as SlProgress } from './components/progress'
 export { default as SlProgressCircle } from './components/progress-circle'
 export { default as SlSort } from './components/sort'
+export { default as SlForm } from './components/form'
+export { default as SlField } from './components/field'

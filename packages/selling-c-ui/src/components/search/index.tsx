@@ -4,12 +4,13 @@ import React from 'react'
 import classNames from 'classnames'
 import { View, Input, Text, Icon } from '@tarojs/components'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
-import { SlCustomerSearchProps, SlCustomerSearchState } from '../../../types/search'
+import { SlSearchProps, SlSearchState } from '../../../types/search'
+import { pxTransform } from '../../common/utils'
 
-export default class SlCustomerSearch extends React.Component<SlCustomerSearchProps, SlCustomerSearchState> {
-  public static defaultProps: SlCustomerSearchProps
-  public static propTypes: InferProps<SlCustomerSearchProps>
-  public constructor(props: SlCustomerSearchProps) {
+export default class SlSearch extends React.Component<SlSearchProps, SlSearchState> {
+  public static defaultProps: SlSearchProps
+  public static propTypes: InferProps<SlSearchProps>
+  public constructor(props: SlSearchProps) {
     super(props)
     this.state = {
       // 提交按钮抛出数据
@@ -58,6 +59,11 @@ export default class SlCustomerSearch extends React.Component<SlCustomerSearchPr
     })
   }
 
+  //点击抛出方法 是否跳转
+  private handleClick(): void {
+    this.props.onClick && this.props.onClick(arguments as any)
+  }
+
   // input事件
   private handleInput = (e: CommonEvent | ITouchEvent): void => {
     this.setState({
@@ -70,36 +76,53 @@ export default class SlCustomerSearch extends React.Component<SlCustomerSearchPr
     const {
       placeholder,
       disabled,
+      fontSize,
+      width = 220,
+      height = 58,
     } = this.props
-    const Tsearch = classNames('slc-customer-search-Tsearch')
-    const Fsearch = classNames('slc-customer-search-Fsearch')
+    const Tsearch = classNames('slc-search-Tsearch')
+    const Fsearch = classNames('slc-search-Fsearch')
     return (
-      this.state.isFocus ? <View className={Tsearch}>
-        <Icon size='30' type='search' className="slc-customer-search-Tsearch-Icon" onClick={this.Confirm}/>
+      this.state.isFocus ? <View className={Tsearch}
+        style={{ width: `${pxTransform(width)}` }}
+        onClick={this.props.isSkip ? this.handleClick.bind(this) : ""}
+      >
+        <Icon size={`${pxTransform(parseInt(String(30)))}`}
+          type='search' className="slc-search-Tsearch-Icon"
+          onClick={this.Confirm} />
         <Input
-          style={{height:`${this.props.height}`}}
-          className="slc-customer-search-Tsearch-search"
+          style={{ height: `${pxTransform(height)}`, fontSize: `${pxTransform(fontSize)}` }}
+          className="slc-search-Tsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
-          placeholder-class="slc-customer-search-Tsearch-phcolor"
+          placeholder-class="slc-search-Tsearch-phcolor"
           disabled={disabled}
-          onFocus={this.handleFocus}                        
+          onFocus={this.handleFocus}
           onInput={this.handleInput}
           onBlur={this.handleBlur}
           onConfirm={this.handleConfirm}
         />
         {this.state.inputVal === "" ? "" : <Text
           onClick={this.inputDelete}
-          className="slc-customer-search-Tsearch-inputDelete">x
+          className="slc-search-Tsearch-inputDelete"
+          style={{
+            height: `${pxTransform(fontSize)}`,
+            width: `${pxTransform(fontSize)}`,
+            fontSize: `${pxTransform(fontSize)}`
+          }}>x
         </Text>}
-      </View> : <View className={Fsearch}>
-        <Icon size='30' type='search' className="slc-customer-search-Fsearch-Icon" onClick={this.Confirm}/>
+      </View> : <View className={Fsearch} style={{ width: `${pxTransform(width)}` }}
+        onClick={this.props.isSkip ? this.handleClick.bind(this) : ""}
+      >
+        <Icon size={`${pxTransform(parseInt(String(30)))}`}
+          type='search' className="slc-search-Fsearch-Icon"
+          onClick={this.Confirm} />
         <Input
-          style={{height:`${this.props.height}`}}
-          className="slc-customer-search-Fsearch-search"
+          style={{ height: `${pxTransform(height)}`, fontSize: `${pxTransform(fontSize)}` }}
+          className="slc-search-Fsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
-          placeholder-class="slc-customer-search-Fsearch-phcolor"
+          placeholder-class="slc-search-Fsearch-phcolor"
           disabled={disabled}
           onFocus={this.handleFocus}
           onInput={this.handleInput}
@@ -112,12 +135,15 @@ export default class SlCustomerSearch extends React.Component<SlCustomerSearchPr
   }
 }
 
-SlCustomerSearch.defaultProps = {
+SlSearch.defaultProps = {
   value: "",
-  height: "66px",
+  height: 58,
   placeholder: "搜索",
   disabled: false,
   isFocus: false,
-
+  width: 220,
+  fontSize: 26,
+  // 是否跳转
+  isSkip: false,
 }
 
