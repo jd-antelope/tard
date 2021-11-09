@@ -12,9 +12,9 @@
 }
 
 .@{--css-prefix}-button {
-
   position: relative;
   justify-content: center;
+  height: 42px;
   margin: 0 auto;
   padding: 0 @spacing-h-xl;
   height: @slc-button-height;
@@ -42,8 +42,8 @@
     padding: 0;
     left: 0;
     top: 0;
-
     height: 100%;
+    padding: 0 24px;
     border: none;
     outline: none;
     background-color: transparent;
@@ -66,9 +66,9 @@
       opacity: @opacity-disabled;
     }
   }
-
-
-
+  &--normal {
+    display: inline-block;
+  }
   &--small {
     padding: 0 @spacing-h-md;
     width: auto;
@@ -77,11 +77,6 @@
     height: @slc-button-height-sm;
     font-size: @font-size-base;
     line-height: @slc-button-height-sm - 2;
-  }
-  &--normal {
-    display: inline-block;
-    min-width: @slc-button-normal-width-min;
-    max-width: @slc-button-normal-width-max;
   }
   &--middle {
     display: inline-block;
@@ -94,8 +89,11 @@
     max-width: @slc-button-large-width-max;
   }
   &--fill {
-  background: var(--mainColor);
-  color: @color-text-base-inverse;
+    background: var(--mainColor);
+    color: @color-text-base-inverse;
+  }
+  &__no-border{
+    border: none
   }
 
   &--full {

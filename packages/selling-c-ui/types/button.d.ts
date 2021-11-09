@@ -40,11 +40,6 @@ export interface SlButtonProps extends TaroButtonProps, SlComponent {
    */
   radius?: number
   /**
-   * 设置按钮的载入状态
-   * @default false
-   */
-  loading?: boolean
-  /**
    * 设置按钮为禁用态（不可点击）
    * @default false
    */
