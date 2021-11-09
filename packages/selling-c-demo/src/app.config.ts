@@ -31,6 +31,7 @@ export default {
 		'pages/search/index',
 		'pages/cell/index',
 		'pages/image-text-item/index',
+		'pages/field/index'
 ],
   window: {
     backgroundTextStyle: 'light',

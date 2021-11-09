@@ -30,13 +30,11 @@ const Cell: FC = () => {
 ## api
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
-| title | 输入框的初始内容 | 	string | - |
-| value | 右侧内容 | 	string | - |
-| icon | 右侧图标 | 	string | - |
-| height | 单元格高度 | 	number | 100 |
-| onClick | 点击右侧内容时触发 | CommonEventFunction | - |
-
-
+| onClick | 点击事件 | CommonEventFunction | - |
+| title | 左侧标题 | number|string | - |
+| value | 右侧内容 | value | - |
+| icon | icon图标 | keyofIconProps.TIconType | - |
+| height | 单元格高度 | number|undefined | - |
 `
 
 export default function DocsPage() {
