@@ -109,7 +109,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
       'slc-button--disabled': disabled,
       'slc-button--full': full,
       'slc-button--fill': fill,
-      'slc-button--no-border': (fill || fillColor) && !borderColor
+      'slc-button__no-border': (fill || fillColor) && !borderColor
     }
     const style = (objectToString(Object.assign(customStyle, {
       'border-radius': pxTransform(radius),
