@@ -15,7 +15,6 @@ function Home() {
   }
 
   useEffect(() => {
-    console.log(pxTransform(32, 750))
     window.addEventListener("message", iframeListener, false);
   })
 

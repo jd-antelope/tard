@@ -51,7 +51,7 @@ const Form: FC = () => {
               type='text'
               value='323'
               required
-              editable={ false }
+              readonly
               onChange={(e) => change({ imgDes: e })} 
             />
             <SlField
@@ -61,7 +61,7 @@ const Form: FC = () => {
               required
               isLink
               linkSlot={'fdf'}
-              editable={ false }
+              readonly
               onChange={(e) => change({ imgDes: e })} 
             />
             <SlField
@@ -69,7 +69,7 @@ const Form: FC = () => {
               title='图片描述' 
               value='3232'
               required
-              editable={ false }
+              readonly
               isLink
               linkText='322f'
               onLink={ () => { console.log(111) } }
@@ -79,7 +79,7 @@ const Form: FC = () => {
               title='图片描述' 
               value='3232'
               required
-              editable={ false }
+              readonly
               contentColor="red"
               onLink={ () => { console.log(111) } }
             />

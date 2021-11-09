@@ -11,7 +11,7 @@
 .@{--css-prefix}-field {
   position: relative;
   padding: @field-padding-x 0;
-  color: @slc-input-label-color;
+  color: @slc-field-label-color;
   background-color: @color-bg;
 
   /* 修复底线隐藏问题 */
@@ -43,7 +43,7 @@
 
   &__title {
     width: @field-title-w;
-    font-size: @slc-input-font-size;
+    font-size: @slc-field-font-size;
     height: @field-label-h;
     line-height: @field-label-h;
     vertical-align: middle;
@@ -54,7 +54,7 @@
       &::before {
         display: inline-block;
         color: @color-error;
-        font-size: @slc-input-font-size;
+        font-size: @slc-field-font-size;
         font-family: SimSun, sans-serif;
         line-height: 1;
         content: "*";
@@ -66,11 +66,11 @@
     flex: 1;
     display: inline-block;
     padding-right: @spacing-v-md;
-    color: @slc-input-text-color;
-    font-size: @slc-input-font-size;
+    color: @slc-field-text-color;
+    font-size: @slc-field-font-size;
     line-height: @line-height-zh;
     vertical-align: middle;
-    .placeholder(@slc-input-placeholder-color);
+    .placeholder(@slc-field-placeholder-color);
   }
 
   &__box {
@@ -104,16 +104,14 @@
   &__content {
     flex: 1;
     height: @field-label-h;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: @slc-input-font-size;
+    font-size: @slc-field-font-size;
+    .mixin-flex-space-between();
   }
 
   input {
-    color: @slc-input-text-color;
-    font-size: @slc-input-font-size;
-    height: @slc-input-font-size * 1.4;
+    color: @slc-field-text-color;
+    font-size: @slc-field-font-size;
+    height: @slc-field-font-size * 1.4;
     line-height: @line-height-zh;
   }
 
@@ -125,7 +123,7 @@
     width: 40px;
     min-width: 40px;
     height: 100%;
-    font-size: @slc-input-font-size;
+    font-size: @slc-field-font-size;
     text-align: center;
     line-height: 1;
 
@@ -151,7 +149,7 @@
       display: inline-block;
       padding: 0 @spacing-v-md;
       color: @color-brand-dark;
-      font-size: @slc-input-font-size;
+      font-size: @slc-field-font-size;
       text-align: center;
     }
 

@@ -158,7 +158,7 @@ export default class SlField extends React.Component<SlFieldProps> {
       value,
       required,
       children,
-      editable,
+      readonly,
       linkText,
       isLink,
       contentColor,
@@ -202,7 +202,7 @@ export default class SlField extends React.Component<SlFieldProps> {
           )}
           {
             children ? 
-              children : (!editable || isLink) ? 
+              children : (readonly || isLink) ? 
               <View className="slc-field__content">
                 <View className="slc-field__content-title" style={ `color: ${contentColor}` }>{value}</View>
                 {
@@ -319,7 +319,7 @@ SlField.defaultProps = {
   type: 'text',
   disabled: false,
   border: true,
-  editable: true,
+  readonly: false,
   error: false,
   clear: false,
   autoFocus: false,
