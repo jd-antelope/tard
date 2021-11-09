@@ -1,11 +1,11 @@
 
 import React from 'react'
 import { View } from '@tarojs/components'
-import PropTypes, { InferProps } from 'prop-types'
 import { SlSortProps, SlSortState } from '../../../types/sort'
+import { isFunction } from '../../common/is'
+
 export default class SlSort extends React.Component<SlSortProps, SlSortState> {
   public static defaultProps: SlSortProps
-  public static propTypes: InferProps<SlSortProps>
 
   public constructor(props: SlSortProps) {
     super(props)
@@ -19,7 +19,9 @@ export default class SlSort extends React.Component<SlSortProps, SlSortState> {
   public render (): JSX.Element | null {
     const { list, textColor, arrowColor, activeColor } = this.props
     const onChange= (key, sort) => {
-      this.props.onChange && this.props.onChange(key, sort)
+      if (isFunction(this.props.onChange)) {
+        this.props.onChange(key, sort)
+      }
       this.setState({
         activeKey: key,
         activeSort: sort
@@ -31,12 +33,20 @@ export default class SlSort extends React.Component<SlSortProps, SlSortState> {
       activeSort
     } = this.state
  
-    return <View className="slc-sort" style={{
+    const containerStyle: any ={
       flexWrap: this.props.scroll ? 'nowrap': 'wrap', 
       overflow: list.length > 1 && this.props.scroll ? 'auto': '',
-    }} >
+    }
+
+    return <View className="slc-sort" style={containerStyle} >
     {
       list.map((item:any, index)=>{
+        const textStyle = {
+          border: this.props.border && list.length === 1 ? '1px solid' : '',
+          borderRadius: list.length === 1 ? '21px' : '',
+          color: activeKey === item.key ? activeColor: textColor
+        }
+
         return <View key={index} 
           className="slc-sort__item"
           onClick={()=>{
@@ -44,11 +54,7 @@ export default class SlSort extends React.Component<SlSortProps, SlSortState> {
             onChange(item.key, tmpSort)
           }}
         >
-          <View className="slc-sort__item-text" style={{
-            border: this.props.border && list.length === 1 ? '1px solid' : '',
-            borderRadius: list.length === 1 ? '21px' : '',
-            color: activeKey === item.key ? activeColor: textColor
-          }}>
+          <View className="slc-sort__item-text" style={textStyle}>
             {item.text}
             <View className="slc-sort__item-icon">
               <View 
@@ -56,13 +62,13 @@ export default class SlSort extends React.Component<SlSortProps, SlSortState> {
                 style={{
                   color: activeKey === item.key && activeSort === 'asc' ? activeColor : arrowColor
                 }}
-              ></View>
+              />
               <View  
                 className="slc-sort__item-icon-item"
                 style={{
                   color: activeKey === item.key && activeSort === 'desc' ? activeColor : arrowColor
                 }}
-              ></View>
+              />
             </View>
           </View>
         </View>
@@ -81,10 +87,4 @@ SlSort.defaultProps = {
   arrowColor: '#CCCCCC',
   activeColor: '#FF2929',
   border: false,
-}
-
-SlSort.propTypes = {
-  list: PropTypes.array,
-  activeKey: PropTypes.string,
-  activeSort: PropTypes.oneOf(['asc', 'desc'])
 }

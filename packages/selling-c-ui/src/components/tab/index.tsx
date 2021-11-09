@@ -2,7 +2,6 @@
 import React from 'react'
 import cn from 'classnames'
 import Taro from '@tarojs/taro'
-import PropTypes, { InferProps } from 'prop-types'
 import { ScrollView, View } from '@tarojs/components'
 import { 
   CommonEvent, 
@@ -18,7 +17,6 @@ const MAX_INTERVAL = 10
 
 export default class SlTab extends React.Component<SlTabProps, SlTabState> {
   public static defaultProps: SlTabProps
-  public static propTypes: InferProps<SlTabProps>
 
   private _tabId: string
   private _touchDot: number  //触摸点
@@ -196,7 +194,8 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
       animated,
       tabList,
       scroll,
-      current
+      current,
+      color
     } = this.props
 
     const { _scrollLeft, _scrollTop, _scrollIntoView } = this.state
@@ -233,10 +232,10 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
           id={`tab${this._tabId}${idx}`}
           key={`slc-tab-item-${idx}`}
           onClick={this.handleClick.bind(this, idx)}
-          style={{ color: active ? activeColor: '' }}
+          style={{ color: active ? activeColor: color }}
         >
           <View className="slc-tab__item-content">
-            {item.title}
+            <View className="slc-tab__item-text">{item.title}</View>
             <View className='slc-tab__item-underline' 
               style={{
                 background: active ? activeColor: '' 
@@ -285,7 +284,7 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
           onTouchStart={this.handleTouchStart.bind(this)}
           onTouchEnd={this.handleTouchEnd.bind(this)}
           onTouchMove={this.handleTouchMove.bind(this)}
-          style={mergeStyle(bodyStyle, heightStyle)}
+          style={mergeStyle(bodyStyle, {minHeight: '1PX'})}
         >
           <View className='slc-tab__underline' style={underlineStyle}></View>
           {this.props.children}
@@ -297,9 +296,8 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
 
 SlTab.defaultProps = {
   customStyle: '',
-  className: '',
   tabDirection: 'horizontal',
-  height: '',
+  height: '64px',
   current: 0,
   swipeable: true,
   scroll: false,
@@ -307,18 +305,6 @@ SlTab.defaultProps = {
   tabList: [],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onClick: (): void => {},
-  activeColor: ''
-}
-
-SlTab.propTypes = {
-  customStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  className: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-  height: PropTypes.string,
-  tabDirection: PropTypes.oneOf(['horizontal', 'vertical']),
-  current: PropTypes.number,
-  swipeable: PropTypes.bool,
-  scroll: PropTypes.bool,
-  animated: PropTypes.bool,
-  tabList: PropTypes.array,
-  onClick: PropTypes.func
+  activeColor: '#FF2929',
+  color:'#666666'
 }
