@@ -6,8 +6,8 @@ import { BaseEventOrig, ITouchEvent } from '@tarojs/components/types/common'
 import { InputProps } from '@tarojs/components/types/Input'
 import { TextareaProps } from '@tarojs/components/types/Textarea'
 import { pxTransform } from '../../common/utils'
+import { isFunction } from '../../common/is'
 import SlIcon from '../icon'
-import { isFunction } from 'src/common/is'
 import {
   SlFieldProps,
   BlurEventDetail,
@@ -169,11 +169,12 @@ export default class SlField extends React.Component<SlFieldProps> {
       linkSlot,
       labelClass,
       labelWidth = 144,
-      labelAlign
+      labelAlign,
+      autoHeight
     } = this.props
     const { type, maxlength, disabled, password } = getInputProps(this.props)
 
-    const { type: textareaType, autoHeight, fixed } = getTextareaProps(this.props)
+    const { type: textareaType, fixed } = getTextareaProps(this.props)
 
     const rootCls = classNames(
       'slc-field',

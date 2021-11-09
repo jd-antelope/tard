@@ -126,7 +126,7 @@ export default memo(Form);
 |  ----  | ----  | ---- | ---- |
 | reportSubmit | 是否返回formId用于发送模板消息 | boolean | false |
 | border | 是否需要border | boolean | false |
-| onSubmit | 携带form中的数据触发submit事件 | FormFunction | - |
+| onSubmit | 携带form中的数据触发submit事件，由于小程序组件化的限制，onSubmit事件获得的event中的event.detail.value始终为空对象，开发者要获取数据，可以自行在页面的state中获取 | FormFunction | - |
 | onReset | 表单重置时会触发reset事件 | FormFunction | - |
 `
 
