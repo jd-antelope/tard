@@ -109,6 +109,16 @@ export interface SlFieldProps extends OmitInputProps, SlComponent {
    */
   autoFocus?: boolean
   /**
+   * 是否自动增高 textarea适用
+   * @default false
+   */
+  autoHeight?: boolean
+  /**
+   * 如果 Textarea 是在一个 position:fixed 的区域，需要显示指定属性
+   * @default false
+   */
+  fixed?: boolean
+  /**
    * 是否聚焦
    * @default false
    */
@@ -132,12 +142,24 @@ export interface SlFieldProps extends OmitInputProps, SlComponent {
    * 是否展示右侧箭头名称
    * @default false
    */
-  linkText?: String
+  linkText?: string
   /**
    * 自定义右侧箭头信息
    * @default false
    */
   linkSlot?: React.ReactNode
+  /**
+   * 左侧title的class
+   */
+  labelClass?: string
+  /**
+   * 左侧title的宽度 
+   */
+  labelWidth?: number
+  /**
+   * 左侧title的对齐方式
+   */
+  labelAlign?: 'center' | 'left' | 'right'
   /**
    * 输入框失去焦点时触发的事件，v2.0.3 版本可以获取 event 参数
    */

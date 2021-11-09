@@ -4,6 +4,8 @@ import React, { Fragment } from 'react'
 import { Input, Label, Text, View, Textarea } from '@tarojs/components'
 import { BaseEventOrig, ITouchEvent } from '@tarojs/components/types/common'
 import { InputProps } from '@tarojs/components/types/Input'
+import { TextareaProps } from '@tarojs/components/types/Textarea'
+import { pxTransform } from '../../common/utils'
 import SlIcon from '../icon'
 import { isFunction } from 'src/common/is'
 import {
@@ -21,7 +23,7 @@ type PickSlInputProps = Pick<
 >
 type GetInputPropsReturn = PickSlInputProps & Pick<InputProps, 'type'>
 
-type GetTextareaPropsReturn = PickSlInputProps & Pick<SlFieldProps, 'type'>
+type GetTextareaPropsReturn = TextareaProps & Pick<SlFieldProps, 'type'>
 
 function getInputProps(props: SlFieldProps): GetInputPropsReturn {
   const actualProps = {
@@ -52,6 +54,8 @@ function getTextareaProps(props: SlFieldProps): GetTextareaPropsReturn {
     type: props.type,
     maxlength: props.maxlength,
     disabled: props.disabled,
+    autoHeight: props.autoHeight,
+    fixed: props.fixed,
     password: false
   }
 
@@ -162,11 +166,14 @@ export default class SlField extends React.Component<SlFieldProps> {
       linkText,
       isLink,
       contentColor,
-      linkSlot
+      linkSlot,
+      labelClass,
+      labelWidth = 144,
+      labelAlign
     } = this.props
     const { type, maxlength, disabled, password } = getInputProps(this.props)
 
-    const { type: textareaType } = getTextareaProps(this.props)
+    const { type: textareaType, autoHeight, fixed } = getTextareaProps(this.props)
 
     const rootCls = classNames(
       'slc-field',
@@ -189,6 +196,17 @@ export default class SlField extends React.Component<SlFieldProps> {
 
     const placeholderCls = classNames('placeholder', placeholderClass)
 
+    const labelCls = classNames(
+      'slc-field__title', {
+        'slc-field__title--required': required
+      }, labelClass
+    )
+
+    const labelStyle = {
+      'width': pxTransform(labelWidth),
+      'text-align': labelAlign
+    }
+
     const id = name && { id: name }
     return (
       <View className={rootCls} style={customStyle}>
@@ -196,9 +214,8 @@ export default class SlField extends React.Component<SlFieldProps> {
           <View className={overlayCls} onClick={this.handleClick}></View>
           {title && (
             <Label
-              className={`slc-field__title ${
-                required && 'slc-field__title--required'
-              }`}
+              className={labelCls}
+              style={labelStyle}
               for={name}
             >
               {title}
@@ -207,11 +224,20 @@ export default class SlField extends React.Component<SlFieldProps> {
           {
             children ? 
               children : (readonly || isLink) ? 
-              <View className="slc-field__content">
-                <View className="slc-field__content-title" style={ `color: ${contentColor}` }>{value}</View>
+              <View className="slc-field__content" onClick={this.handleLink}>
+                <View className="slc-field__content-title" style={ `color: ${contentColor}` }>
+                  <Input
+                    className='slc-field__input'
+                    {...id}
+                    name={name}
+                    value={value}
+                    confirmType={confirmType}
+                    disabled
+                  />
+                </View>
                 {
                   isLink && 
-                  <View className="slc-field__content-link" onClick={this.handleLink}>
+                  <View className="slc-field__content-link">
                     {
                       linkSlot !== '' ? linkSlot : <Text>{linkText}</Text>
                     }
@@ -232,6 +258,8 @@ export default class SlField extends React.Component<SlFieldProps> {
                     cursorSpacing={cursorSpacing}
                     maxlength={maxlength}
                     autoFocus={autoFocus}
+                    autoHeight={autoHeight}
+                    fixed={fixed}
                     focus={focus}
                     value={value}
                     cursor={cursor}
@@ -295,9 +323,6 @@ export default class SlField extends React.Component<SlFieldProps> {
                 {/* <View className='slc-field__children'>{this.props.children}</View> */}
               </Fragment>
           }
-          
-          
-          
         </View>
       </View>
     )
@@ -327,12 +352,17 @@ SlField.defaultProps = {
   error: false,
   clear: false,
   autoFocus: false,
+  autoHeight: false,
+  fixed: false,
   focus: false,
   contentColor: '#333333',
   required: false,
   isLink: false,
   linkText: '',
   linkSlot: '',
+  labelClass: '',
+  labelWidth: 144,
+  labelAlign: 'left',
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (): void => {},
   onLink: (): void => {}

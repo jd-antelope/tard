@@ -103,6 +103,51 @@ const Field: FC = () => {
             />
           </SlForm>
 
+          <View className='doc-body-content-tip'>labelClass</View>
+          <SlForm onSubmit={onSubmit} border>
+            <SlField
+              name='a' 
+              title='图片描述' 
+              value='323'
+              required
+              isLink
+              linkSlot={'fdf'}
+              readonly
+              labelClass="fsdf"
+              onChange={(e) => change({ imgDes: e })} 
+            />
+          </SlForm>
+
+          <View className='doc-body-content-tip'>labelWidth</View>
+          <SlForm onSubmit={onSubmit} border>
+            <SlField
+              name='a' 
+              title='图' 
+              value='323'
+              required
+              isLink
+              linkSlot={'fdf'}
+              readonly
+              labelWidth={ 50 }
+              onChange={(e) => change({ imgDes: e })} 
+            />
+          </SlForm>
+
+          <View className='doc-body-content-tip'>labelAlign</View>
+          <SlForm onSubmit={onSubmit} border>
+            <SlField
+              name='a' 
+              title='图' 
+              value='323'
+              required
+              isLink
+              linkSlot={'fdf'}
+              readonly
+              labelAlign='right'
+              onChange={(e) => change({ imgDes: e })} 
+            />
+          </SlForm>
+
           <View className='doc-body-content-tip'>type='textarea' title</View>
           <SlForm onSubmit={onSubmit} border>
             <SlField
@@ -123,7 +168,7 @@ const Field: FC = () => {
               placeholder="fsdfsdf"
             />
           </SlForm>
-
+          
         </View>
       </View>
     </View>
