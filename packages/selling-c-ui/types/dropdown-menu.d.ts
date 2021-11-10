@@ -18,7 +18,12 @@ export interface SlDropdownMenuProps extends SlComponent {
      * 菜单标题和选中态颜色
      *  @default 主题色
      */
-    activeColor?: string
+    activeColor?: string,
+    /**
+     * 菜单标题对齐方式
+     *  @default 'center'
+     */
+    titleAlign: 'center' | 'right' | 'left'
 }
 
 export interface SlDropdownMenuItemProps extends SlComponent {
@@ -34,6 +39,11 @@ export interface SlDropdownMenuItemProps extends SlComponent {
      * 菜单标题和选项的选中态颜色，不暴露
      */
     activeColor: string
+    /**
+     * 菜单标题对齐方式，不暴露
+     *  @default 'center'
+     */
+    titleAlign: 'center' | 'right' | 'left'
     /**
      * 当前选中项对应的 value
      */

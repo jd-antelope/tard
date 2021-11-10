@@ -34,7 +34,7 @@
       z-index: @dropdown-item-z-index;
       position: absolute;
       width: 100%;
-      background-color: #FFFFFF;
+      background-color: @dropdown-menu-background-color;
       border-bottom-right-radius: @dropdown-item-border-radius;
       border-bottom-left-radius: @dropdown-item-border-radius;
       display: none;
@@ -53,7 +53,7 @@
     opacity: 0;
     display: none;
     overflow: hidden;
-    .mixin-overlay();
+    .mixin-overlay(@dropdown-overlay-bg-color);
     &-active {
       display: block;
       opacity: 1;

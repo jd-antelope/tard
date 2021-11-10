@@ -20,7 +20,7 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
 
   public render(): JSX.Element {
     const { activeKey, isOpen } = this.state
-    const { activeColor } = this.props
+    const { activeColor, titleAlign } = this.props
 
     const items: ReactElement<ComponentProps<typeof SlDropdownMenuItem>>[] = []
 
@@ -50,6 +50,8 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
             changeActive(index);
             this.setState({ isOpen: true })
           },
+          activeColor: activeColor,
+          titleAlign: titleAlign,
           active: index === activeKey,
         }
         items.push(child)
@@ -60,7 +62,7 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
     })
 
     return (
-      <Common className='slc-dropdown-menu' style={`color: ${activeColor}`}>
+      <Common className='slc-dropdown-menu'>
 
         <View className='slc-dropdown-menu__bar'>
           {nav}
@@ -69,7 +71,7 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
         <View className={cn('slc-dropdown-menu__popup')}>
           {
             items.map((item, index) => {
-              const { value, options, activeColor } = item.props
+              const { value, options } = item.props
               return (
                 <View
                   className={
@@ -128,4 +130,5 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
 
 SlDropdownMenu.defaultProps = {
   activeColor: '',
+  titleAlign: 'center'
 }

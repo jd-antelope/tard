@@ -41,16 +41,20 @@ const DropdownMenu: FC = () => {
 
         <View className='doc-body-content-tip'>自定义菜单内容</View>
         <SlDropdownMenu>
-          <SlDropdownMenuItem title="订单类型" value={value1} options={option1} onChange={(value) => { setValue1(value) }} />
-          <SlDropdownMenuItem title="筛选" customContent={(<View>自定义菜单内容</View>)}>
-          </SlDropdownMenuItem>
+          <SlDropdownMenuItem value={value1} options={option1} onChange={(value) => { setValue1(value) }} />
+          <SlDropdownMenuItem title="筛选" customContent={(<View>自定义菜单内容</View>)} />
         </SlDropdownMenu>
 
         <View className='doc-body-content-tip'>自定义菜单标题颜色</View>
-        <SlDropdownMenu>
-          <SlDropdownMenuItem title="订单类型" activeColor="blue" value={value1} options={option1} onChange={(value) => { setValue1(value) }} />
-          <SlDropdownMenuItem title="筛选" activeColor="blue" customContent={(<View>自定义菜单内容</View>)}>
-          </SlDropdownMenuItem>
+        <SlDropdownMenu activeColor="blue">
+          <SlDropdownMenuItem value={value1} options={option1} onChange={(value) => { setValue1(value) }} />
+          <SlDropdownMenuItem value={value2} options={option2} onChange={(value) => { setValue2(value) }} />
+        </SlDropdownMenu>
+
+        <View className='doc-body-content-tip'>自定义标题对齐方式</View>
+        <SlDropdownMenu titleAlign="left">
+          <SlDropdownMenuItem value={value1} options={option1} onChange={(value) => { setValue1(value) }} />
+          <SlDropdownMenuItem value={value2} options={option2} onChange={(value) => { setValue2(value) }} />
         </SlDropdownMenu>
 
       </View>
