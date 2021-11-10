@@ -55,7 +55,7 @@ function resetRouter (list) {
  * 读取组件项目中的组件列表
  */
 function getComponentList () {
-  let cNames = [];
+  let cNames = ['home'];
   const content = fs.readFileSync(path.resolve(__dirname, `../src/app.config.ts`), 'utf-8');
   const reg = /((?:\n|.)*\[)((?:\n|.)*)(\](?:\n|.)*)/gm
   const packagePaths = globby.sync('../../selling-c-ui/src/components', {
