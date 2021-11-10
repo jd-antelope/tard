@@ -5,7 +5,7 @@
 ## api
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
-| endTime | 是否现实结束时间 | boolean | false |
+| endTime | 是否显示结束时间 | boolean | false |
 | isOpened | 打开弹窗 | boolean | false |
 | onClose | 关闭回调 | CommonEventFunction | - |
 | onOk | 确认回调(返回是array['1990-1-1','2021-1-1']) | CommonEventFunction | - |

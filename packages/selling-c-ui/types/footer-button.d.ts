@@ -11,7 +11,7 @@ export interface SlFooterButtonProps extends SlComponent {
     /**
      * 点击事件
      */
-    onlick?: CommonEventFunction
+    onClick?: CommonEventFunction
     /**
      * 自定义按钮内容
      */
@@ -31,11 +31,11 @@ export interface SlFooterButtonProps extends SlComponent {
     /**
      * 按钮radius
      */
-    radius?: string
+    radius?: number
     /**
      * line-height
      */
-    lineHeight?: string
+    lineHeight?: number
     /**
      * 是否为双按钮
      */
@@ -55,7 +55,7 @@ export interface SlFooterButtonProps extends SlComponent {
     /**
      * 点击事件
      */
-    secOnlick?: CommonEventFunction
+    secClick?: CommonEventFunction
 }
 
 export interface SlFooterButtonState {
