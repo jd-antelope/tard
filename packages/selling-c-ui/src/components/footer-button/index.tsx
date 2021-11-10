@@ -3,6 +3,7 @@ import { View } from '@tarojs/components'
 import { SlFooterButtonProps, SlFooterButtonState } from '../../../types/footer-button'
 import PropTypes, {InferProps} from "prop-types";
 import { objectToString, pxTransform } from '../../common/utils'
+import { isFunction } from '../../common/is'
 
 export default class SlFooterButton extends React.Component<SlFooterButtonProps, SlFooterButtonState> {
   public static defaultProps: SlFooterButtonProps
@@ -14,11 +15,11 @@ export default class SlFooterButton extends React.Component<SlFooterButtonProps,
   }
 
   private handleClick() {
-    this.props.onClick && this.props.onClick(arguments as any)
+    isFunction(this.props.onClick) && this.props.onClick()
   }
 
   private handleClickSecBtn() {
-    this.props.secClick && this.props.secClick(arguments as any)
+    isFunction(this.props.secClick) && this.props.secClick()
   }
 
   public getPadding () {
