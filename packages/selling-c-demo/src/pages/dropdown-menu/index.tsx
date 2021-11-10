@@ -57,6 +57,12 @@ const DropdownMenu: FC = () => {
           <SlDropdownMenuItem value={value2} options={option2} onChange={(value) => { setValue2(value) }} />
         </SlDropdownMenu>
 
+        <View className='doc-body-content-tip'>自定义点击事件</View>
+        <SlDropdownMenu>
+          <SlDropdownMenuItem value={value1} options={option1} onChange={(value) => { setValue1(value) }} />
+          <SlDropdownMenuItem title="自定义点击事件" onClick={() => { alert('自定义点击事件') }} />
+        </SlDropdownMenu>
+
       </View>
     </View>
   );

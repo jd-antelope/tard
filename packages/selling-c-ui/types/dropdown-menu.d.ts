@@ -66,6 +66,10 @@ export interface SlDropdownMenuItemProps extends SlComponent {
      * 点击options导致 value 变化时触发
      */
     onChange?: function
+    /**
+     * 自定义点击事件
+     */
+    onClick?: function
 }
 export interface SlDropdownMenuState {
     /**

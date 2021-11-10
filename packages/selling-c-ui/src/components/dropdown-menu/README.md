@@ -111,6 +111,20 @@ const DropdownMenu: FC = () => {
     />
 </SlDropdownMenu>
 ```
+## 自定义点击事件
+```js
+<SlDropdownMenu>
+  <SlDropdownMenuItem 
+    value={value1} 
+    options={option1} 
+    onChange={(value) => { setValue1(value) }} 
+    />
+  <SlDropdownMenuItem 
+    title="自定义点击事件" 
+    onClick={() => { alert('自定义点击事件') }} 
+    />
+</SlDropdownMenu>
+```
 # API
 ## DropdownMenu Props
 |  参数   | 说明  | 类型 | 默认值 |
@@ -130,7 +144,7 @@ const DropdownMenu: FC = () => {
 |  事件名   | 说明  | 回调参数 |
 |  ----  | ----  | ---- |
 | change | 点击选项导致 value 变化时触发 | value |
-
+| onClick | 自定义点击事件 | - |
 ## Option 数据结构
 |  键名   | 说明  | 类型 |
 |  ----  | ----  | ---- |
