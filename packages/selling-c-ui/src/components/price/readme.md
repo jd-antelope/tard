@@ -36,5 +36,5 @@ import { SlPrice } from '@jd/selling-c-ui'
 | type | 类型 | Size|string | - |
 | size | 大小 | number | - |
 | symbolSize | 大小 | number | - |
-| priceUnit | 价格单位 | any | - |
+| priceUnit | 价格单位 | any | ¥ |
 | unitSize | 价格单位大小 | number | 32 |
