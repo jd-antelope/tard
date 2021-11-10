@@ -23,6 +23,7 @@ export default {
 		'pages/result/index',
 		'pages/search/index',
 		'pages/skeleton/index',
+		'pages/sort/index',
 		'pages/tab/index',
 		'pages/tab-pane/index',
 		'pages/time-picker/index',

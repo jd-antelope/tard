@@ -11,23 +11,30 @@
 
   /* elements */
   &__item {
-    flex: 1;
     padding: @spacing-v-lg 0 0;
     color: @slc-tab-color;
     font-size: @slc-tab-font-size;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin-right: @slc-tab-item-space;
 
     &-content {
       display: inline-block;
     } 
+
+    &-text {
+      line-height: @line-height-base;
+      font-size: @slc-tab-font-size;
+    }
+
     &-underline {
-      margin-top: @spacing-v-lg;
+      margin-top: @slc-tab-item-underline-space;
       width: 100%;
       height: @slc-tab-line-height;
       background-color: @slc-tab-color-active;
       transform: scaleX(0);
       transition: all 0.15s;
+      border-radius: 3px;
     }
     &--active {
       color: @slc-tab-color-active;
@@ -43,9 +50,9 @@
     position: relative;
     display: flex;
     width: 100%;
-    text-align: center;
+    // text-align: center;
     white-space: nowrap;
-    background-color: @slc-tab-bg-color;
+    // background-color: @slc-tab-bg-color;
     box-sizing: border-box;
     overflow: -moz-scrollbars-none;
 
@@ -66,6 +73,7 @@
     overflow: visible;
   }
 
+  
   &__underline {
     display: block;
     position: absolute;
@@ -80,13 +88,13 @@
 
   /* modifiers */
   &--scroll {
-    .@{--css-prefix}__header {
+    .@{--css-prefix}-tab__header {
       overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
       white-space: nowrap;
     }
 
-    .@{--css-prefix}__item {
+    .@{--css-prefix}-tab__item {
       display: inline-block;
       overflow: visible;
     }
@@ -97,14 +105,14 @@
     flex: 1;
     overflow: hidden;
 
-    .@{--css-prefix}__body {
+    .@{--css-prefix}-tab__body {
       display: inline-block;
       flex: 1;
       height: @slc-tab-pane-min-height;
       width: auto;
     }
 
-    .@{--css-prefix}__underline {
+    .@{--css-prefix}-tab__underline {
       top: 0;
       left: 0;
       bottom: auto;
@@ -112,12 +120,12 @@
       height: 100%;
     }
 
-    .@{--css-prefix}__header {
+    .@{--css-prefix}-tab__header {
       display: inline-block;
       width: auto;
     }
 
-    .@{--css-prefix}__item {
+    .@{--css-prefix}-tab__item {
       display: flex;
       justify-content: center;
       width: auto;
@@ -132,6 +140,7 @@
         width: @slc-tab-line-height;
         height: 100%;
         transform: scaleY(0);
+        border-radius: 3px;
       }
 
       &--active {
@@ -145,8 +154,8 @@
 
 /* hack SWAN */
 
-.@{--css-prefix}--scroll .@{--css-prefix}--horizontal .@{--css-prefix}--SWAN {
-  .@{--css-prefix}__item-underline {
+.@{--css-prefix}-tab--scroll .@{--css-prefix}-tab--horizontal .@{--css-prefix}-tab--SWAN {
+  .@{--css-prefix}-tab__item-underline {
     bottom: @slc-tab-line-height;
   }
 }
