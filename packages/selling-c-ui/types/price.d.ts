@@ -44,7 +44,7 @@ export interface SlPriceProps extends SlComponent {
    /**
    * 价格单位
    */
-  priceUnit?: any
+  priceUnit?: string
       /**
    * 价格单位大小
    */
