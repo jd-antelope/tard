@@ -59,4 +59,10 @@ export interface SlModalHeaderProps extends SlComponent {}
 
 declare const SlModal: ComponentClass<SlModalProps>
 
+export declare const SlModalHeader: ComponentClass;
+
+export declare const SlModalAction: ComponentClass;
+
+export declare const SlModalContent: ComponentClass;
+
 export default SlModal
