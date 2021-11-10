@@ -84,7 +84,11 @@ export interface SlMediaPickerProps extends SlComponent {
 }
 
 export interface SlMediaPickerState {
-    playObj?: any
+    playObj: SlVideoInterface
+}
+export interface SlVideoInterface {
+    file: string
+    url: string
 }
 declare const SlMediaPicker: ComponentClass<SlMediaPickerProps>
 
