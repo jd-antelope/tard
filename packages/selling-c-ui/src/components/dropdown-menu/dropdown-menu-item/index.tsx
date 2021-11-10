@@ -12,12 +12,13 @@ export default class SlDropdownMenuItem extends React.Component<SlDropdownMenuIt
   public static propTypes: InferProps<SlDropdownMenuItemProps>
 
   public render(): JSX.Element {
-    const { title, active, onClick, options, value, activeColor, titleAlign } = this.props
+    const { title, active, onClick, options, value, activeColor, titleAlign, flex } = this.props
     return (
       <Common
         className={
           cn('slc-dropdown-menu-item')
         }
+        style={`flex: ${flex}`}
         onClick={() => onClick()}>
         <View
           className={
@@ -52,5 +53,6 @@ SlDropdownMenuItem.defaultProps = {
   options: [],
   activeColor: '',
   titleAlign: 'center',
+  flex: 1,
   onClick: () => { }
 }

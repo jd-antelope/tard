@@ -54,6 +54,11 @@ export interface SlDropdownMenuItemProps extends SlComponent {
      */
     title?: string
     /**
+     * 所占比例
+     *   @default 1
+     */
+    flex: 1
+    /**
      * 选项数组，text字段-文字，value字段标识符
      */
     options?: Option[]
