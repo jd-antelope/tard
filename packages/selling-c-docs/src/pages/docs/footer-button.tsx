@@ -9,7 +9,7 @@ const markdown = `
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | name | 按钮名字 | string | 按钮 |
-| onlick | 点击事件 | CommonEventFunction | - |
+| onClick | 点击事件 | CommonEventFunction | - |
 | replaceContent | 自定义按钮内容 | React.ReactNode | - |
 | color | 按钮颜色 | string | - |
 | background | 填充颜色 | string | - |
@@ -20,7 +20,7 @@ const markdown = `
 | secondName | 第二个按钮文字 | string | 取消 |
 | secColor | 第二个按钮按钮颜色 | string | - |
 | secBackground | 第二个按钮填充颜色 | string | - |
-| secOnlick | 第二个按钮点击事件 | CommonEventFunction | - |
+| secClick | 第二个按钮点击事件 | CommonEventFunction | - |
 `
 
 export default function DocsPage() {
