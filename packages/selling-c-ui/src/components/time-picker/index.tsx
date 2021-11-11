@@ -1,9 +1,10 @@
 
-import React from 'react'
-import { View, PickerView, PickerViewColumn } from '@tarojs/components'
-import { SlTimePickerProps, SlTimePickerState } from '../../../types/time-picker'
-import {CommonEvent} from "@tarojs/components/types/common";
+import React, { Fragment } from 'react'
 import classNames from "classnames";
+import { View, PickerView, PickerViewColumn } from '@tarojs/components'
+import {CommonEvent} from "@tarojs/components/types/common";
+import { getDateUTC } from "../../common/utils"
+import { SlTimePickerProps, SlTimePickerState } from '../../../types/time-picker'
 import SlToast from "../toast/index"
 
 export default class SlTimePicker extends React.Component<SlTimePickerProps, SlTimePickerState> {
@@ -11,96 +12,158 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
   public constructor(props: SlTimePickerProps) {
     super(props)
 
-    const { isOpened, timeStr, endTimeStr } = props
+    const { isOpened, timeStr, endTimeStr = '' } = props
     const date = new Date()
     const years = []
     const months = []
     const days = []
-    for (let i: any = 1990; i <= date.getFullYear(); i++) {
+    const hours = []
+    const minutes = []
+    for (let i: number = 1990; i <= date.getFullYear(); i++) {
       // @ts-ignore
       years.push(i)
     }
-    for (let i: any = 1; i <= 12; i++) {
+    for (let i: number = 1; i <= 12; i++) {
       // @ts-ignore
       months.push(i)
     }
-    for (let i: any = 1; i <= 31; i++) {
+    for (let i: number = 1; i <= 31; i++) {
       // @ts-ignore
       days.push(i)
     }
-
-    const getTimeArray = (input: string) => {
-      const timeArray = input.split('-')
-      const year = +timeArray[0] < date.getFullYear() ? +timeArray[0] : date.getFullYear()
+    for (let i: number = 1; i <= 24; i++) {
       // @ts-ignore
-      const yearIndex = +years.indexOf(year) !== -1 ? +years.indexOf(year) : years[years.length -1]
+      hours.push(i)
+    }
+    for (let i: number = 1; i <= 60; i++) {
       // @ts-ignore
-      const monthIndex = months.indexOf(+timeArray[1]) !== -1 ? months.indexOf(+timeArray[1]) : 1
-      // @ts-ignore
-      const dateIndex = days.indexOf(+timeArray[2]) !== -1 ? days.indexOf(+timeArray[2]) : 1
-      return [yearIndex, monthIndex, dateIndex]
-    }
-
-    const getYear = (input: any) => {
-      return input?.split('-')[0] || date.getFullYear()
-    }
-
-    const getMonth = (input: any) => {
-      return input?.split('-')[1] || 1
-    }
-
-    const getDate = (input: any) => {
-      return input?.split('-')[2] || 1
+      minutes.push(i)
     }
 
     this.state = {
       _isOpened: isOpened,
-      years: years,
-      year: getYear(timeStr),
-      yearEndTime: getYear(endTimeStr),
-      months: months,
-      month: getMonth(timeStr),
-      monthEndTime: getMonth(endTimeStr),
-      days: days,
-      day: getDate(timeStr),
-      dayEndTime: getDate(endTimeStr),
-      value: getTimeArray(timeStr),
-      valueEndTime: endTimeStr ? getTimeArray(endTimeStr) : [9999, 0, 0],
+      years,
+      year: this.getYear(timeStr),
+      yearEndTime: this.getYear(endTimeStr),
+      months,
+      month: this.getMonth(timeStr),
+      monthEndTime: this.getMonth(endTimeStr),
+      days,
+      day: this.getDate(timeStr),
+      dayEndTime: this.getDate(endTimeStr),
+      value: this.getTimeArray(timeStr),
+      valueEndTime: endTimeStr ? this.getTimeArray(endTimeStr) : [9999, 0, 0],
       active: 1, // 现在激活的tab
-      showToast: false
+      showToast: false,
+      hours,
+      hour: this.getHour(timeStr),
+      hourEndTime: this.getHour(endTimeStr),
+      minutes,
+      minute: this.getMinute(timeStr),
+      minuteEndTime: this.getMinute(endTimeStr),
     }
+  }
+
+  private getTimeArray = (input: string) => {
+    const { isShowTime } = this.props
+    const date = new Date()
+    const timeArray = [this.getYear(input), this.getMonth(input), this.getDate(input), this.getHour(input), this.getMinute(input)]
+    const year = +timeArray[0] < date.getFullYear() ? +timeArray[0] : date.getFullYear()
+    // @ts-ignore
+    const yearIndex = +years.indexOf(year) !== -1 ? +years.indexOf(year) : years[years.length -1]
+    // @ts-ignore
+    const monthIndex = months.indexOf(+timeArray[1]) !== -1 ? months.indexOf(+timeArray[1]) : 1
+    // @ts-ignore
+    const dateIndex = days.indexOf(+timeArray[2]) !== -1 ? days.indexOf(+timeArray[2]) : 1
+    if (isShowTime) {
+      // @ts-ignore
+      const hourIndex = hours.indexOf(+timeArray[3]) !== -1 ? hours.indexOf(+timeArray[3]) : 1
+      // @ts-ignore
+      const minuteIndex = minutes.indexOf(+timeArray[4]) !== -1 ? minutes.indexOf(+timeArray[4]) : 1
+      return [yearIndex, monthIndex, dateIndex, hourIndex, minuteIndex]
+    }
+    return [yearIndex, monthIndex, dateIndex]
+  }
+
+  private getYear = (input: any) => {
+    return getDateUTC(input).getFullYear()
+  }
+
+  private getMonth = (input: any) => {
+    return getDateUTC(input).getMonth() + 1
+  }
+
+  private getDate = (input: any) => {
+    return getDateUTC(input).getDate()
+  }
+
+  private getHour = (input: string) => {
+    return getDateUTC(input).getHours()
+  }
+
+  private getMinute = (input: string) => {
+    return getDateUTC(input).getMinutes()
   }
 
   // 改变时间函数
   private onChange = (e) => {
+    const { isShowTime } = this.props
+    const { hours, minutes } = this.state
     const val = e.detail.value
     if (this.state.active === 1) {
+      const obj = isShowTime ? {
+        hour: hours[val[3]],
+        minuts: minutes[val[4]]
+      } : {} as any
       this.setState({
         year: this.state.years[val[0]],
         month: this.state.months[val[1]],
         day: this.state.days[val[2]],
-        value: val
+        value: val,
+        ...obj
       })
     } else {
+      const obj = isShowTime ? {
+        hourEndTime: hours[val[3]],
+        minuteEndTime: minutes[val[4]],
+      } : {} as any
       this.setState({
         yearEndTime: this.state.years[val[0]],
         monthEndTime: this.state.months[val[1]],
         dayEndTime: this.state.days[val[2]],
-        valueEndTime: val
+        valueEndTime: val,
+        ...obj
       })
     }
   }
 
   public UNSAFE_componentWillReceiveProps(nextProps: SlTimePickerProps): void {
-    const { isOpened } = nextProps
+    const { isOpened, timeStr, endTimeStr = '' } = nextProps
     if (isOpened !== this.state._isOpened) {
       this.setState({
         _isOpened: isOpened
       })
     }
-  }
-
-  componentDidMount() {
+    if (timeStr != this.props.timeStr) {
+      this.setState({
+        year: this.getYear(timeStr),
+        month: this.getMonth(timeStr),
+        day: this.getDate(timeStr),
+        value: this.getTimeArray(timeStr),
+        hour: this.getHour(timeStr),
+        minute: this.getMinute(timeStr),
+      })
+    }
+    if (endTimeStr != this.props.endTimeStr) {
+      this.setState({
+        yearEndTime: this.getYear(endTimeStr),
+        monthEndTime: this.getMonth(endTimeStr),
+        dayEndTime: this.getDate(endTimeStr),
+        valueEndTime: endTimeStr ? this.getTimeArray(endTimeStr) : [9999, 0, 0],
+        hourEndTime: this.getHour(endTimeStr),
+        minuteEndTime: this.getMinute(endTimeStr),
+      })
+    }
   }
 
   // 点击mask关闭
@@ -128,11 +191,14 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
 
   // 确认回调
   handleConfirm = () => {
+    const { isShowTime } = this.props
     const timeArr: Array<string> = []
-    const startTime = `${this.state.year}-${this.transDate(this.state.month)}-${this.transDate(this.state.day)}`
+    let startTime = `${this.state.year}-${this.transDate(this.state.month)}-${this.transDate(this.state.day)}`
+    if (isShowTime) startTime += ` ${this.transDate(this.state.hour)}:${this.transDate(this.state.minute)}`
     timeArr.push(startTime)
-    if (this.props.endTime) {
-      const endTime = `${this.state.yearEndTime}-${this.transDate(this.state.monthEndTime)}-${this.transDate(this.state.dayEndTime)}`
+    if (this.props.isEndDate) {
+      let endTime = `${this.state.yearEndTime}-${this.transDate(this.state.monthEndTime)}-${this.transDate(this.state.dayEndTime)}`
+      if (isShowTime) endTime += ` ${this.transDate(this.state.hourEndTime)}:${this.transDate(this.state.minuteEndTime)}`
       timeArr.push(endTime)
     }
     if (typeof this.props.onOk === 'function') {
@@ -152,12 +218,7 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
 
   // 确定函数函数
   private confirm = (): void => {
-    if (
-        this.props.endTime &&
-        (this.state.year >= this.state.yearEndTime) &&
-        (this.state.month >= this.state.monthEndTime) &&
-        (this.state.day >= this.state.dayEndTime)
-    ) {
+    if (this.props.isEndDate && this.getArrayTime('start') > this.getArrayTime('end')) {
       this.setState({showToast: true})
       return
     }
@@ -171,9 +232,20 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
     })
   }
 
+  private getArrayTime (isDown) {
+    if (isDown === 'start') {
+      const { year, month, day, hour, minute } = this.state
+      return new Date(`${year}/${month}/${day} ${hour}:${minute}`).getTime()
+    } else {
+      const { yearEndTime, monthEndTime, dayEndTime, hourEndTime, minuteEndTime } = this.state
+      return new Date(`${yearEndTime}/${monthEndTime}/${dayEndTime} ${hourEndTime}:${minuteEndTime}`).getTime()
+    }
+  }
+
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
-    const { _isOpened } = this.state
+    const { isShowTime } = this.props
+    const { _isOpened, hours, minutes } = this.state
     const rootClass = classNames(
       'slc-time',
       {
@@ -191,7 +263,7 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
     const tabLeftClass = classNames(
       'time-show-left',
       {
-        'half': this.props.endTime,
+        'half': this.props.isEndDate,
         'active': this.state.active === 1
       },
     )
@@ -199,8 +271,8 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
     const tabRightClass = classNames(
       'time-show-right',
       {
-        'hidden': !this.props.endTime,
-        'half': this.props.endTime,
+        'hidden': !this.props.isEndDate,
+        'half': this.props.isEndDate,
         'active': this.state.active === 2
       },
     )
@@ -234,25 +306,34 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
                   style='line-height: 50px; text-align: center;'
                 >
                   {this.state.years.map(item => {
-                    return (
-                        <View>{item}年</View>
-                    );
+                    return <View>{item}年</View>;
                   })}
                 </PickerViewColumn>
                 <PickerViewColumn style='line-height: 50px; text-align: center;'>
                   {this.state.months.map(item => {
-                    return (
-                        <View>{item}月</View>
-                    )
+                    return <View>{item}月</View>
                   })}
                 </PickerViewColumn>
                 <PickerViewColumn style='line-height: 50px; text-align: center;'>
                   {this.state.days.map(item => {
-                    return (
-                        <View>{item}日</View>
-                    )
+                    return <View>{item}日</View>
                   })}
                 </PickerViewColumn>
+                {
+                  isShowTime &&
+                  <Fragment>
+                    <PickerViewColumn style='line-height: 50px; text-align: center;'>
+                      {hours.map(item => {
+                        return <View>{item}时</View>
+                      })}
+                    </PickerViewColumn>
+                    <PickerViewColumn style='line-height: 50px; text-align: center;'>
+                      {minutes.map(item => {
+                        return <View>{item}分</View>
+                      })}
+                    </PickerViewColumn>
+                  </Fragment>
+                }
               </PickerView>
             </View>
             <View className="time-bottom">
@@ -262,9 +343,9 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
           </View>
 
           <SlToast
-              isOpened={ this.state.showToast}
-              text="结束时间不能小于开始时间"
-              onClose={ () => this.setState({showToast: false})}
+            isOpened={ this.state.showToast}
+            text="结束时间不能小于开始时间"
+            onClose={ () => this.setState({showToast: false})}
           />
         </View>
     )
@@ -272,11 +353,12 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
 }
 
 SlTimePicker.defaultProps = {
-  endTime: false, // 默认不显示
+  isEndDate: false, // 默认不显示
   isOpened: false,
   outClose: false, // 是否能点击遮罩层关闭
   title: '选中时间',
   endTitle: '结束时间',
+  isShowTime: false,
   timeStr: '9999-1-1',
   endTimeStr: '9999-1-1'
 }
