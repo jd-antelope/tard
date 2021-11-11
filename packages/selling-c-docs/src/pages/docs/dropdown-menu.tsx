@@ -8,6 +8,12 @@ const markdown = `
 ~~~js
 import { SlDropdownMenu, SlDropdownMenuItem } from '@jd/selling-c-ui'
 ~~~
+
+## 注意
+>
+在最外层容器添加className，用来解决出现遮罩滑动问题**slc-dropdown-menu-container**
+
+
 # 代码演示
 ## 基础用法
 ~~~js
@@ -33,7 +39,7 @@ const DropdownMenu: FC = () => {
   ]
  
   return (
-    <View className="container">
+    <View className="container slc-dropdown-menu-container">
       <SlDropdownMenu>
         <SlDropdownMenuItem 
             value={value1} 

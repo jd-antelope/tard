@@ -23,7 +23,7 @@ const DropdownMenu: FC = () => {
   ]
 
   return (
-    <View className="container">
+    <View className="container dropdown-menu-container">
       <DocsHeader title='DropdownMenu'></DocsHeader>
       <View className='doc-body'>
 

@@ -27,7 +27,7 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
     const changeActive = (key) => {
       this.setState({
         activeKey: key,
-      })
+      });
       if (key === -1) {
         this.setState({
           activeKey: key,
