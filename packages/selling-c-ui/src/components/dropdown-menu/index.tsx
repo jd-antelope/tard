@@ -95,6 +95,7 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
                       }
                     )
                   }}
+                  catchMove
                 >
                   <View
                     key={index}
