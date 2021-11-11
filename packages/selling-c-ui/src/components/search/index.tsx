@@ -79,12 +79,17 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
       fontSize,
       width = 220,
       height = 58,
+      borderRadius = 30,
+      backgroundColor,
     } = this.props
     const Tsearch = classNames('slc-search-Tsearch')
     const Fsearch = classNames('slc-search-Fsearch')
     return (
       this.state.isFocus ? <View className={Tsearch}
-        style={{ width: `${pxTransform(width)}` }}
+        style={{
+          width: `${pxTransform(width)}`,
+          background: `${backgroundColor}`, borderRadius: `${pxTransform(borderRadius)}`
+        }}
         onClick={this.props.isSkip ? this.handleClick.bind(this) : ""}
       >
         <Icon size={`${pxTransform(parseInt(String(30)))}`}
@@ -117,7 +122,11 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
           type='search' className="slc-search-Fsearch-Icon"
           onClick={this.Confirm} />
         <Input
-          style={{ height: `${pxTransform(height)}`, fontSize: `${pxTransform(fontSize)}` }}
+          style={{
+            height: `${pxTransform(height)}`,
+            background: `${backgroundColor}`,
+            borderRadius: `${pxTransform(borderRadius)}`, fontSize: `${pxTransform(fontSize)}`
+          }}
           className="slc-search-Fsearch-search"
           value={this.state.inputVal}
           placeholder={placeholder}
@@ -135,7 +144,7 @@ export default class SlSearch extends React.Component<SlSearchProps, SlSearchSta
 
 SlSearch.defaultProps = {
   value: "",
-  height: 58,
+  height: 66,
   placeholder: "搜索",
   disabled: false,
   isFocus: false,
@@ -143,5 +152,7 @@ SlSearch.defaultProps = {
   fontSize: 26,
   // 是否跳转
   isSkip: false,
+  borderRadius: 30,
+  backgroundColor: "#F3F3F3",
 }
 

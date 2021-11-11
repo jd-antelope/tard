@@ -19,6 +19,14 @@ export interface SlSearchProps extends SlComponent {
   *  文字大小
   */
   fontSize?: number | undefineds;
+   /**
+  *  背景颜色
+  */
+  backgroundColor?: string
+  /**
+  *  圆角大小
+  */
+  borderRadius?: number;
   /**
   *  搜索框的宽带
   */
