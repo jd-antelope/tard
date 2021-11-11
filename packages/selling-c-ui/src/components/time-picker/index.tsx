@@ -113,14 +113,14 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
     if (this.state.active === 1) {
       const obj = isShowTime ? {
         hour: hours[val[3]],
-        minuts: minutes[val[4]]
+        minut: minutes[val[4]]
       } : {} as any
       this.setState({
+        ...obj,
         year: this.state.years[val[0]],
         month: this.state.months[val[1]],
         day: this.state.days[val[2]],
         value: val,
-        ...obj
       })
     } else {
       const obj = isShowTime ? {
@@ -209,10 +209,10 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
   // 关闭函数
   private close = (): void => {
     this.setState(
-        {
-          _isOpened: false
-        },
-        this.handleClose
+      {
+        _isOpened: false
+      },
+      this.handleClose
     )
   }
 
@@ -286,13 +286,13 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
                 <View className={tabLeftClass} onClick={ () => this.handleClickTab(1) }>
                   <View className="time-show-left-title">{this.props.title}</View>
                   <View className="time-show-left-content">
-                    {this.state.year}.{this.transDate(this.state.month)}.{this.transDate(this.state.day)}
+                    {this.state.year}.{this.transDate(this.state.month)}.{this.transDate(this.state.day)} {this.transDate(this.state.hour)}:{this.transDate(this.state.minute)}
                   </View>
                 </View>
                 <View className={tabRightClass} onClick={ () => this.setState({active: 2})}>
                   <View className="time-show-left-title">{this.props.endTitle}</View>
                   <View className="time-show-left-content">
-                    {this.state.yearEndTime}.{this.transDate(this.state.monthEndTime)}.{this.transDate(this.state.dayEndTime)}
+                    {this.state.yearEndTime}.{this.transDate(this.state.monthEndTime)}.{this.transDate(this.state.dayEndTime)} {this.transDate(this.state.hourEndTime)}:{this.transDate(this.state.minuteEndTime)}
                   </View>
                 </View>
               </View>
@@ -355,7 +355,7 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
 SlTimePicker.defaultProps = {
   isEndDate: false, // 默认不显示
   isOpened: false,
-  outClose: false, // 是否能点击遮罩层关闭
+  outClose: true, // 是否能点击遮罩层关闭
   title: '选中时间',
   endTitle: '结束时间',
   isShowTime: false,
