@@ -47,7 +47,7 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
         const childProps = {
           ...child.props,
           onClick: () => {
-            if(child.props.onClick.toString().length === 21){
+            if (!child.props.onClick) {
               changeActive(activeKey === index ? -1 : index);
               this.setState({ isOpen: true })
             } else {

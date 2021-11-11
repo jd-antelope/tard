@@ -54,5 +54,5 @@ SlDropdownMenuItem.defaultProps = {
   activeColor: '',
   titleAlign: 'center',
   flex: 1,
-  onClick: () => { }
+  onClick: null
 }
