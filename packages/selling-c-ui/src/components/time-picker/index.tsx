@@ -85,15 +85,15 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
     return [yearIndex, monthIndex, dateIndex]
   }
 
-  private getYear = (input: any) => {
+  private getYear = (input: string) => {
     return getDateUTC(input).getFullYear()
   }
 
-  private getMonth = (input: any) => {
+  private getMonth = (input: string) => {
     return getDateUTC(input).getMonth() + 1
   }
 
-  private getDate = (input: any) => {
+  private getDate = (input: string) => {
     return getDateUTC(input).getDate()
   }
 
@@ -113,7 +113,7 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
     if (this.state.active === 1) {
       const obj = isShowTime ? {
         hour: hours[val[3]],
-        minut: minutes[val[4]]
+        minute: minutes[val[4]],
       } : {} as any
       this.setState({
         ...obj,
@@ -359,6 +359,6 @@ SlTimePicker.defaultProps = {
   title: '选中时间',
   endTitle: '结束时间',
   isShowTime: false,
-  timeStr: '9999-1-1',
-  endTimeStr: '9999-1-1'
+  timeStr: '',
+  endTimeStr: ''
 }

@@ -119,7 +119,8 @@ function uuid(len = 8, radix = 16): string {
 }
 
 function getDateUTC (value) {
-  return new Date(value.replace(/-/g, '/'))
+  if (value) return new Date(value.replace(/-/g, '/'))
+  return new Date()
 }
 
 export {
