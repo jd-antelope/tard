@@ -7,7 +7,7 @@ export interface SlTimePickerProps extends SlComponent {
      * 是否有开始时间和结束时间两个时间选项
      * @default false
      */
-    endTime?: boolean
+    isEndDate?: boolean
     /**
      * 打开弹窗
      * @default false
@@ -46,6 +46,11 @@ export interface SlTimePickerProps extends SlComponent {
      * @default 9999-1-1
      */
     endTimeStr?: string
+    /**
+     * 是否展示时间
+     * @default false
+     */
+    isShowTime?: boolean
 }
 
 export interface SlTimePickerState {
@@ -105,6 +110,30 @@ export interface SlTimePickerState {
      *  是否现实toast提示
      */
     showToast: boolean
+    /**
+     *  小时array
+     */
+    hours: Array<number>,
+    /**
+     *  分钟array
+     */
+    minutes: Array<number>
+    /**
+     *  开始小时
+     */
+    hour: number
+    /**
+     *  结束小时
+     */
+    hourEndTime: number
+    /**
+     *  开始分钟
+     */
+    minute: number
+    /**
+     *  结束分钟
+     */
+    minuteEndTime: number
 }
 
 declare const SlTimePicker: ComponentClass<SlTimePickerProps>

@@ -118,6 +118,9 @@ function uuid(len = 8, radix = 16): string {
   return value.join('')
 }
 
+function getDateUTC (value) {
+  return new Date(value.replace(/-/g, '/'))
+}
 
 export {
   handleTouchScroll,
@@ -125,5 +128,6 @@ export {
   pxTransform,
   isTest,
   uuid,
-  objectToString
+  objectToString,
+  getDateUTC
 }
