@@ -10,8 +10,7 @@ import { SlDropdownMenu, SlDropdownMenuItem } from '@jd/selling-c-ui'
 ~~~
 
 ## 注意
->
-在最外层容器添加className，用来解决出现遮罩滑动问题**slc-dropdown-menu-container**
+> 在最外层容器添加className，用来解决出现遮罩滑动问题**slc-dropdown-menu-container**
 
 
 # 代码演示
