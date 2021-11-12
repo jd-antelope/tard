@@ -35,3 +35,4 @@ export { default as SlField } from './components/field'
 export { default as SlMedia } from './components/media'
 
 export { default as SlTagPrice } from './components/tag-price'
+export { default as SlSwitch } from './components/switch'
