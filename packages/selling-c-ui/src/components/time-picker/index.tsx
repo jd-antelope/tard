@@ -4,6 +4,9 @@ import classNames from "classnames";
 import { View, PickerView, PickerViewColumn } from '@tarojs/components'
 import {CommonEvent} from "@tarojs/components/types/common";
 import { getDateUTC } from "../../common/utils"
+import { 
+  getYears, getDays, getMonths, getHours, getMinutes
+} from "../../common/dateMap"
 import { SlTimePickerProps, SlTimePickerState } from '../../../types/time-picker'
 import SlToast from "../toast/index"
 
@@ -12,53 +15,35 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
   public constructor(props: SlTimePickerProps) {
     super(props)
 
-    const { isOpened, timeStr, endTimeStr = '' } = props
-    const date = new Date()
-    const years = []
-    const months = []
-    const days = []
-    const hours = []
-    const minutes = []
-    for (let i: number = 1990; i <= date.getFullYear(); i++) {
-      // @ts-ignore
-      years.push(i)
-    }
-    for (let i: number = 1; i <= 12; i++) {
-      // @ts-ignore
-      months.push(i)
-    }
-    for (let i: number = 1; i <= 31; i++) {
-      // @ts-ignore
-      days.push(i)
-    }
-    for (let i: number = 0; i <= 23; i++) {
-      // @ts-ignore
-      hours.push(i)
-    }
-    for (let i: number = 0; i <= 59; i++) {
-      // @ts-ignore
-      minutes.push(i)
-    }
+    const { isOpened, timeStr, endTimeStr = '', minDate, maxDate } = props
+    const years = getYears(minDate, maxDate)
+    const months = getMonths(this.getYear(timeStr), minDate, maxDate) || []
+    const days = getDays(this.getYear(timeStr), this.getMonth(timeStr), minDate, maxDate)
+    const hours = getHours(this.getMonth(timeStr), this.getDate(timeStr), this.getYear(timeStr), minDate, maxDate)
+    const minutes = getMinutes(
+      this.getMonth(timeStr), this.getDate(timeStr), this.getYear(timeStr), this.getHour(timeStr),
+      minDate, maxDate
+    )
 
     this.state = {
       _isOpened: isOpened,
       years,
+      months,
+      days,
+      hours,
+      minutes,
       year: this.getYear(timeStr),
       yearEndTime: this.getYear(endTimeStr),
-      months,
       month: this.getMonth(timeStr),
       monthEndTime: this.getMonth(endTimeStr),
-      days,
       day: this.getDate(timeStr),
       dayEndTime: this.getDate(endTimeStr),
       value: this.getTimeArray(timeStr),
       valueEndTime: endTimeStr ? this.getTimeArray(endTimeStr) : [9999, 0, 0],
       active: 1, // 现在激活的tab
       showToast: false,
-      hours,
       hour: this.getHour(timeStr),
       hourEndTime: this.getHour(endTimeStr),
-      minutes,
       minute: this.getMinute(timeStr),
       minuteEndTime: this.getMinute(endTimeStr),
     }
@@ -107,38 +92,51 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
 
   // 改变时间函数
   private onChange = (e) => {
-    const { isShowTime } = this.props
-    const { hours, minutes } = this.state
+    const { isShowTime, minDate, maxDate } = this.props
+    const { hours, years, months, days } = this.state
     const val = e.detail.value
+    const selectMonths = getMonths(years[val[0]], minDate, maxDate) || []
+    const selectDays = getDays(years[val[0]], months[val[1]], minDate, maxDate)
+    const selectHours = getHours(years[val[0]], months[val[1]], days[val[2]], minDate, maxDate)
+    const selectMinutes = getMinutes(years[val[0]], months[val[1]], days[val[2]], hours[val[3]], minDate, maxDate)
+    
     if (this.state.active === 1) {
       const obj = isShowTime ? {
-        hour: hours[val[3]],
-        minute: minutes[val[4]],
+        hour: selectHours[val[3]],
+        minute: selectMinutes[val[4]],
       } : {} as any
       this.setState({
         ...obj,
-        year: this.state.years[val[0]],
-        month: this.state.months[val[1]],
-        day: this.state.days[val[2]],
+        year: years[val[0]],
+        month: selectMonths[val[1]],
+        day: selectDays[val[2]],
+        months: selectMonths,
+        days: selectDays,
+        hours: selectHours,
+        minutes: selectMinutes,
         value: val,
       })
     } else {
       const obj = isShowTime ? {
-        hourEndTime: hours[val[3]],
-        minuteEndTime: minutes[val[4]],
+        hourEndTime: selectHours[val[3]],
+        minuteEndTime: selectMinutes[val[4]],
       } : {} as any
       this.setState({
-        yearEndTime: this.state.years[val[0]],
-        monthEndTime: this.state.months[val[1]],
-        dayEndTime: this.state.days[val[2]],
+        yearEndTime: years[val[0]],
+        monthEndTime: selectMonths[val[1]],
+        dayEndTime: selectDays[val[2]],
         valueEndTime: val,
+        months: selectMonths,
+        days: selectDays,
+        hours: selectHours,
+        minutes: selectMinutes,
         ...obj
       })
     }
   }
 
   public UNSAFE_componentWillReceiveProps(nextProps: SlTimePickerProps): void {
-    const { isOpened, timeStr, endTimeStr = '' } = nextProps
+    const { isOpened, timeStr, endTimeStr = '', minDate, maxDate } = nextProps
     if (isOpened !== this.state._isOpened) {
       this.setState({
         _isOpened: isOpened
@@ -162,6 +160,23 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
         valueEndTime: endTimeStr ? this.getTimeArray(endTimeStr) : [9999, 0, 0],
         hourEndTime: this.getHour(endTimeStr),
         minuteEndTime: this.getMinute(endTimeStr),
+      })
+    }
+    if (minDate != this.props.minDate || maxDate != this.props.maxDate) {
+      const years = getYears(minDate, maxDate)
+      const months = getMonths(this.getYear(timeStr), minDate, maxDate) || []
+      const days = getDays(this.getYear(timeStr), this.getMonth(timeStr), minDate, maxDate)
+      const hours = getHours(this.getMonth(timeStr), this.getDate(timeStr), this.getYear(timeStr), minDate, maxDate)
+      const minutes = getMinutes(
+        this.getMonth(timeStr), this.getDate(timeStr), this.getYear(timeStr), this.getHour(timeStr),
+        minDate, maxDate
+      )
+      this.setState({
+        years,
+        months,
+        days,
+        hours,
+        minutes,
       })
     }
   }
@@ -360,5 +375,7 @@ SlTimePicker.defaultProps = {
   endTitle: '结束时间',
   isShowTime: false,
   timeStr: '',
-  endTimeStr: ''
+  endTimeStr: '',
+  minDate: '1990-01-01',
+  maxDate: `${new Date().getFullYear() + 5}-01-01`
 }
