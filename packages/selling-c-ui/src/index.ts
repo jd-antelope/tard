@@ -33,3 +33,5 @@ export { default as SlSort } from './components/sort'
 export { default as SlForm } from './components/form'
 export { default as SlField } from './components/field'
 export { default as SlMedia } from './components/media'
+
+export { default as SlTagPrice } from './components/tag-price'
