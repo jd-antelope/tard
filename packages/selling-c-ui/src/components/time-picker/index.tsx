@@ -31,11 +31,11 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
       // @ts-ignore
       days.push(i)
     }
-    for (let i: number = 1; i <= 24; i++) {
+    for (let i: number = 0; i <= 23; i++) {
       // @ts-ignore
       hours.push(i)
     }
-    for (let i: number = 1; i <= 60; i++) {
+    for (let i: number = 0; i <= 59; i++) {
       // @ts-ignore
       minutes.push(i)
     }

@@ -209,6 +209,8 @@ export default class SlField extends React.Component<SlFieldProps> {
     }
 
     const id = name && { id: name }
+
+    const nameProps = name ? { name } : {}
     return (
       <View className={rootCls} style={customStyle}>
         <View className={containerCls}>
@@ -229,8 +231,8 @@ export default class SlField extends React.Component<SlFieldProps> {
                 <View className="slc-field__content-title" style={ `color: ${contentColor}` }>
                   <Input
                     className='slc-field__input'
-                    {...id}
-                    name={name}
+                    { ...id }
+                    { ...nameProps }
                     value={value}
                     confirmType={confirmType}
                     disabled
@@ -251,8 +253,8 @@ export default class SlField extends React.Component<SlFieldProps> {
                 <View className={ classNames('slc-field__box', { 'slc-field__box-title' : !title }) }>
                   <Textarea 
                     className='slc-field__box-textarea'
-                    {...id}
-                    name={name}
+                    { ...id }
+                    { ...nameProps }
                     placeholderStyle={placeholderStyle}
                     placeholderClass={classNames('slc-field__box-textarea__ph', placeholderCls)}
                     placeholder={placeholder}
@@ -283,8 +285,8 @@ export default class SlField extends React.Component<SlFieldProps> {
               <Fragment>
                 <Input
                   className='slc-field__input'
-                  {...id}
-                  name={name}
+                  { ...id }
+                  { ...nameProps }
                   type={type}
                   password={password}
                   placeholderStyle={placeholderStyle}

@@ -51,7 +51,7 @@ export interface SlFieldProps extends OmitInputProps, SlComponent {
   /**
    * 输入框的唯一标识，有传入点击 title 会聚焦输入框
    */
-  name: string
+  name?: string
   /**
    * 输入框左侧标题，若传入为空，则不显示标题
    */
