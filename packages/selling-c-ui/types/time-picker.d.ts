@@ -51,6 +51,16 @@ export interface SlTimePickerProps extends SlComponent {
      * @default false
      */
     isShowTime?: boolean
+    /**
+     * 最小时间
+     * @default 1990-01-01
+     */
+    minDate?: string
+    /**
+     * 最大时间
+     * @default 2025-01-01
+     */
+    maxDate?: string
 }
 
 export interface SlTimePickerState {

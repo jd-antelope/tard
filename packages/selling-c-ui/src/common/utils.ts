@@ -120,7 +120,7 @@ function uuid(len = 8, radix = 16): string {
 
 function getDateUTC (value) {
   if (value) return new Date(value.replace(/-/g, '/'))
-  return new Date()
+  return new Date(new Date().getTime() + 5 * 60 * 1000)
 }
 
 export {
