@@ -1,0 +1,31 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+.@{--css-prefix}-tag-price {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: @slc-tag-price-color;
+  font-size: @slc-tag-price-text-size;
+
+  &__title {
+    padding: @slc-tag-price-padding;
+    line-height: 1;
+    background: @slc-tag-price-color;
+    color: @color-white;
+    border: 1px solid @slc-tag-price-color;
+    border-radius: @slc-tag-price-border-radius 0 0 @slc-tag-price-border-radius;
+  }
+
+  &__price {
+    padding: @slc-tag-price-padding;
+    line-height: 1;
+    border: 1px solid;
+    border-radius: 0 @slc-tag-price-border-radius @slc-tag-price-border-radius 0;
+
+    .slc-price__text {
+      line-height: 1;
+    }
+  }
+}

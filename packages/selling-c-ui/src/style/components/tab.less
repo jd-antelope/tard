@@ -11,12 +11,12 @@
 
   /* elements */
   &__item {
-    padding: @spacing-v-lg 0 0;
+    flex: 1;
+    padding: @spacing-v-lg @spacing-h-lg 0;
     color: @slc-tab-color;
     font-size: @slc-tab-font-size;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-right: @slc-tab-item-space;
 
     &-content {
       display: inline-block;
@@ -50,7 +50,7 @@
     position: relative;
     display: flex;
     width: 100%;
-    // text-align: center;
+    text-align: center;
     white-space: nowrap;
     // background-color: @slc-tab-bg-color;
     box-sizing: border-box;

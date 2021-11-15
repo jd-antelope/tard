@@ -297,7 +297,7 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
 SlTab.defaultProps = {
   customStyle: '',
   tabDirection: 'horizontal',
-  height: '64px',
+  height: '',
   current: 0,
   swipeable: true,
   scroll: false,

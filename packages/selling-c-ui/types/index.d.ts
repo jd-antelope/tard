@@ -29,3 +29,6 @@ export { default as SlSort } from './sort'
 export { default as SlForm } from './form'
 export { default as SlField } from './field'
 export { default as SlMedia } from './media'
+
+export { default as SlTagPrice } from './tag-price'
+export { default as SlSwitch } from './switch'
