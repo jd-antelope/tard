@@ -232,6 +232,7 @@ export default class SlField extends React.Component<SlFieldProps> {
                   <Input
                     className='slc-field__input'
                     placeholder={placeholder}
+                    style={ `color: ${ contentColor }` }
                     { ...id }
                     { ...nameProps }
                     value={value}
@@ -290,6 +291,7 @@ export default class SlField extends React.Component<SlFieldProps> {
                   { ...nameProps }
                   type={type}
                   password={password}
+                  style={ `color: ${ contentColor }` }
                   placeholderStyle={placeholderStyle}
                   placeholderClass={placeholderCls}
                   placeholder={placeholder}
