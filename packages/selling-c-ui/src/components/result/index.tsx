@@ -48,12 +48,12 @@ SlResult.defaultProps = {
   rect:'normal',
   onClick: () => { }
 }
+
 SlResult.propTypes = {
   src: PropTypes.string,
   rect: PropTypes.oneOf(['angle', 'circle']),
   text: PropTypes.string,
   btnText: PropTypes.bool,
   onClick: PropTypes.func,
-
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { View, Text } from '@tarojs/components'
-// import { pxTransform } from 'src/common/utils';
+import { pxTransform } from 'src/common/utils';
 import { SlProgressProps } from '../../../types/progress'
 
 export default class SlProgress extends React.Component<SlProgressProps> {
@@ -27,13 +27,13 @@ export default class SlProgress extends React.Component<SlProgressProps> {
 
     const trackStyle = {
       backgroundColor: trackColor,
-      borderRadius: `${radius}rpx`,
+      borderRadius: `${pxTransform(radius)}`,
     }
 
     const progressStyle = {
       width: percent && `${+percent}%`,
-      height: strokeWidth && `${+strokeWidth}rpx`,
-      borderRadius: `${radius}rpx`,
+      height: strokeWidth && `${pxTransform(+strokeWidth)}`,
+      borderRadius: `${pxTransform(radius)}`,
       backgroundColor: color
     }
 

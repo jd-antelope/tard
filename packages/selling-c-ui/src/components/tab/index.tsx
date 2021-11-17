@@ -207,9 +207,9 @@ export default class SlTab extends React.Component<SlTabProps, SlTabState> {
     }
 
     const bodyStyle: React.CSSProperties = {}
-    let transformStyle = `translate3d(0px, -${current * 100}%, 0px)`
+    let transformStyle = `translate3d(0px, -${current * 100}%, 0)`
     if (tabDirection === 'horizontal') {
-      transformStyle = `translate3d(-${current * 100}%, 0px, 0px)`
+      transformStyle = `translate3d(-${current * 100}%, 0, 0)`
     }
     Object.assign(bodyStyle, {
       transform: transformStyle,

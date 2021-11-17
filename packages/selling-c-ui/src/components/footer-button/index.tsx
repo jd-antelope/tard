@@ -23,9 +23,9 @@ export default class SlFooterButton extends React.Component<SlFooterButtonProps,
   }
 
   public getPadding () {
-    if (!this.props.padding) return '20px'
+    if (!this.props.padding) return pxTransform(20)
     const paddingArray: Array<any> = this.props.padding.split(' ')
-    if (!paddingArray.length) return '20px'
+    if (!paddingArray.length) return pxTransform(20)
     const reg = '/px/g'
     paddingArray.forEach(item => {
       item = +item.replace(reg, '')
@@ -91,7 +91,7 @@ export default class SlFooterButton extends React.Component<SlFooterButtonProps,
 
 SlFooterButton.defaultProps = {
   name: '按钮',
-  padding: '20px',
+  padding: pxTransform(20),
   radius: 0,
   lineHeight: 80,
   doubleBtn: false,

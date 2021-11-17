@@ -36,7 +36,7 @@ export default class SlRate extends React.Component<SlRateProps, SlRateState> {
     }
 
     const starIconStyle = {
-      fontSize: size ? `${size}px` : ''
+      fontSize: size ? `${pxTransform(size)}` : ''
     }
 
     const activeIconStyle = {

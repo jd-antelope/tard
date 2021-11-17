@@ -3,6 +3,7 @@ import React from 'react'
 import { View } from '@tarojs/components'
 import { SlSortProps, SlSortState } from '../../../types/sort'
 import { isFunction } from '../../common/is'
+import { pxTransform } from '../../common/utils'
 
 export default class SlSort extends React.Component<SlSortProps, SlSortState> {
   public static defaultProps: SlSortProps
@@ -42,8 +43,8 @@ export default class SlSort extends React.Component<SlSortProps, SlSortState> {
     {
       list.map((item:any, index)=>{
         const textStyle = {
-          border: this.props.border && list.length === 1 ? '1px solid' : '',
-          borderRadius: list.length === 1 ? '21px' : '',
+          border: this.props.border && list.length === 1 ? '1PX solid' : '',
+          borderRadius: list.length === 1 ? pxTransform(21) : '',
           color: activeKey === item.key ? activeColor: textColor
         }
 

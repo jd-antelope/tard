@@ -4,75 +4,76 @@ import { View, Text } from '@tarojs/components'
 import PropTypes, { InferProps } from 'prop-types'
 import { getSystemInfoSync, getMenuButtonBoundingClientRect } from '@tarojs/taro';
 import cn from 'classnames';
+import { pxTransform } from '../../common/utils'
 import { SlCustomHeaderProps } from '../../../types/custom-header'
 export default class SlCustomHeader extends React.Component<SlCustomHeaderProps> {
-    public static defaultProps: SlCustomHeaderProps
-    public static propTypes: InferProps<SlCustomHeaderProps>
+  public static defaultProps: SlCustomHeaderProps
+  public static propTypes: InferProps<SlCustomHeaderProps>
 
-    public constructor(props: SlCustomHeaderProps) {
-        super(props)
-        this.state = {}
-    }
+  public constructor(props: SlCustomHeaderProps) {
+    super(props)
+    this.state = {}
+  }
 
-    private handleBack() {
-        this.props.onBack && this.props.onBack(arguments as any)
-    }
+  private handleBack() {
+    this.props.onBack && this.props.onBack(arguments as any)
+  }
 
-    public render(): JSX.Element {
-        const { back, bgStyle, title, children } = this.props
+  public render(): JSX.Element {
+    const { back, bgStyle, title, children } = this.props
 
-        const { statusBarHeight } = getSystemInfoSync();
-        const { height: boundHeight } = getMenuButtonBoundingClientRect()
-        const statusStyle = {
-            'height': statusBarHeight + 'px',
-        };
+    const { statusBarHeight } = getSystemInfoSync();
+    const { height: boundHeight } = getMenuButtonBoundingClientRect()
+    const statusStyle = {
+      'height': pxTransform(statusBarHeight),
+    };
 
-        const contentStyle = {
-            'height': boundHeight + 10 + 'px',
-        };
+    const contentStyle = {
+      'height': pxTransform(boundHeight + 10),
+    };
 
-        statusStyle
+    statusStyle
 
-        return (
-            <View className="slc-custom-header" style={bgStyle}>
-                <View className={cn('slc-custom-header-fixed')}>
-                    {/* 状态栏 */}
-                    <View className="status-height" style={{ ...statusStyle }} />
-                    {back ?
-                        <View className="slc-custom-header-content" style={{ ...contentStyle }} >
-                            <View className="slc-custom-header-content-back">
-                                <View className="slc-custom-header-content-back-btn" onClick={this.handleBack.bind(this)}>
-                                    <Text className='slc-icon slc-icon-chevron-left' style={{ fontSize: 20 }}></Text>
-                                </View>
-                                {title &&
-                                    <View className="slc-custom-header-content-title">
-                                        {title}
-                                    </View>}
-                                {children}
-                            </View>
-                        </View> :
-                        <View className="slc-custom-header-content" style={{ ...contentStyle }} >{children}</View>
-                    }
-
+    return (
+      <View className="slc-custom-header" style={bgStyle}>
+        <View className={cn('slc-custom-header-fixed')}>
+          {/* 状态栏 */}
+          <View className="status-height" style={{ ...statusStyle }} />
+          {back ?
+            <View className="slc-custom-header-content" style={{ ...contentStyle }} >
+              <View className="slc-custom-header-content-back">
+                <View className="slc-custom-header-content-back-btn" onClick={this.handleBack.bind(this)}>
+                  <Text className='slc-icon slc-icon-chevron-left' style={{ fontSize: 20 }}></Text>
                 </View>
+                {title &&
+                  <View className="slc-custom-header-content-title">
+                    {title}
+                  </View>}
+                {children}
+              </View>
+            </View> :
+            <View className="slc-custom-header-content" style={{ ...contentStyle }} >{children}</View>
+          }
 
-                <View className="slc-custom-header-height">
-                    <View className="slc-custom-header-height-status" style={{ ...statusStyle }} />
-                    <View className="slc-custom-header-height-seat" style={{ ...contentStyle }} />
-                </View>
+        </View>
 
-            </View>
-        )
-    }
+        <View className="slc-custom-header-height">
+          <View className="slc-custom-header-height-status" style={{ ...statusStyle }} />
+          <View className="slc-custom-header-height-seat" style={{ ...contentStyle }} />
+        </View>
+
+      </View>
+    )
+  }
 }
 
 SlCustomHeader.defaultProps = {
-    back: false,
+  back: false,
 }
 
 SlCustomHeader.propTypes = {
-    bgStyle: PropTypes.string,
-    back: PropTypes.bool,
-    onBack: PropTypes.func,
-    title: PropTypes.string
+  bgStyle: PropTypes.string,
+  back: PropTypes.bool,
+  onBack: PropTypes.func,
+  title: PropTypes.string
 }

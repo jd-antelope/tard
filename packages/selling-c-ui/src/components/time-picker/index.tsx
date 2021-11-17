@@ -1,5 +1,5 @@
 
-import React, { Fragment } from 'react'
+import React, { Fragment, CSSProperties } from 'react'
 import classNames from "classnames";
 import { View, PickerView, PickerViewColumn } from '@tarojs/components'
 import {CommonEvent} from "@tarojs/components/types/common";
@@ -8,6 +8,7 @@ import {
   getYears, getDays, getMonths, getHours, getMinutes
 } from "../../common/dateMap"
 import { SlTimePickerProps, SlTimePickerState } from '../../../types/time-picker'
+import { pxTransform } from '../../common/utils'
 import SlToast from "../toast/index"
 
 export default class SlTimePicker extends React.Component<SlTimePickerProps, SlTimePickerState> {
@@ -292,6 +293,11 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
       },
     )
 
+    const columnStyle = {
+      'line-height': pxTransform(50),
+      'text-align': 'center'
+    } as CSSProperties
+
     return (
         <View className={rootClass} onTouchMove={this.handleTouchMove}>
           <View className="slc-time__mask" onClick={this.outClick} />
@@ -312,24 +318,24 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
                 </View>
               </View>
               <PickerView
-                indicatorStyle='height: 50px;'
+                indicatorStyle={ `'height: ${pxTransform(50)}` }
                 className="picker-row"
                 value={ this.state.active === 1 ? this.state.value : this.state.valueEndTime }
                 onChange={this.onChange}
               >
                 <PickerViewColumn
-                  style='line-height: 50px; text-align: center;'
+                  style={ columnStyle }
                 >
                   {this.state.years.map(item => {
                     return <View>{item}年</View>;
                   })}
                 </PickerViewColumn>
-                <PickerViewColumn style='line-height: 50px; text-align: center;'>
+                <PickerViewColumn style={ columnStyle }>
                   {this.state.months.map(item => {
                     return <View>{item}月</View>
                   })}
                 </PickerViewColumn>
-                <PickerViewColumn style='line-height: 50px; text-align: center;'>
+                <PickerViewColumn style={ columnStyle }>
                   {this.state.days.map(item => {
                     return <View>{item}日</View>
                   })}
@@ -337,12 +343,12 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
                 {
                   isShowTime &&
                   <Fragment>
-                    <PickerViewColumn style='line-height: 50px; text-align: center;'>
+                    <PickerViewColumn style={ columnStyle }>
                       {hours.map(item => {
                         return <View>{item}时</View>
                       })}
                     </PickerViewColumn>
-                    <PickerViewColumn style='line-height: 50px; text-align: center;'>
+                    <PickerViewColumn style={ columnStyle }>
                       {minutes.map(item => {
                         return <View>{item}分</View>
                       })}
