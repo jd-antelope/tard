@@ -17,6 +17,11 @@ export interface SlProgressProps extends SlComponent {
    * @default #DC8D20
    */
   color: string
+   /**
+   * 进度条圆角
+   * @default 6px
+   */
+  radius: number
   /**
    * 轨道颜色
    * @default #EFEFEF

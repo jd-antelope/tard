@@ -11,7 +11,7 @@ export default class SlProgress extends React.Component<SlProgressProps> {
   }
 
   public render(): JSX.Element {
-    const { percent, strokeWidth, color, trackColor, showPivot, status, pivotText } = this.props
+    const { percent, strokeWidth, color, radius, trackColor, showPivot, status, pivotText } = this.props
 
     const rootClass = classNames(
       'slc-progress',
@@ -26,12 +26,14 @@ export default class SlProgress extends React.Component<SlProgressProps> {
     })
 
     const trackStyle = {
-      backgroundColor: trackColor
+      backgroundColor: trackColor,
+      borderRadius: `${radius}rpx`,
     }
 
     const progressStyle = {
       width: percent && `${+percent}%`,
-      height: strokeWidth && `${+strokeWidth}px`,
+      height: strokeWidth && `${+strokeWidth}rpx`,
+      borderRadius: `${radius}rpx`,
       backgroundColor: color
     }
 
@@ -66,5 +68,7 @@ SlProgress.defaultProps = {
   strokeWidth: 4,
   color: '#DC8D20',
   trackColor: '#EFEFEF',
-  showPivot: true
+  showPivot: true,
+  radius: 6,
+
 }
