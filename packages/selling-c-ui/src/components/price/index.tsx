@@ -87,7 +87,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
               className="slc-price__origin-price" 
               style={ `color: ${ originalColor }` }
             >
-             <Text style={`font-size: ${pxTransform(unitSize)}`}>{priceUnit}</Text>
+             <Text>{priceUnit}</Text>
              { Number(originalPrice).toFixed(fixedNum) }
             </Text>
           }
