@@ -19,7 +19,6 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
 
   public render(): JSX.Element {
     if(isWeb()) {
-      console.log('h5h5h5')
       document.body.style.overflow = 'hidden'
     }
     const { activeKey, isOpen } = this.state
