@@ -58,5 +58,4 @@
     "*.{js,jsx,ts,tsx}": "eslint --quiet  --fix",
     "src/**/*.scss": "stylelint --syntax less --fix"
   }
-
 }

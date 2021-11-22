@@ -3,12 +3,12 @@ import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { Button, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
-import Taro from '@tarojs/taro'
 import { SlModalProps, SlModalState } from '../../../types/modal'
 import { handleTouchScroll } from '../../common/utils'
 import SlModalAction from './action/index'
 import SlModalContent from './content/index'
 import SlModalHeader from './header/index'
+import { isWeb } from '../../common/utils'
 
 export default class SlModal extends React.Component<
   SlModalProps,
@@ -22,7 +22,7 @@ export default class SlModal extends React.Component<
     const { isOpened } = props
     this.state = {
       _isOpened: isOpened,
-      isWEB: Taro.getEnv() === Taro.ENV_TYPE.WEB
+      isWEB: isWeb
     }
   }
 

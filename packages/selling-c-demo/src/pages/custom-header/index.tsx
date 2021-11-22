@@ -10,7 +10,7 @@ const CustomHeader: FC = () => {
     <View className="container">
       <DocsHeader title='CustomHeader'></DocsHeader>
       <View className='doc-body'>
-        <View className='doc-body-header'>button</View>
+        <SlCustomHeader>button</SlCustomHeader>
       </View>
     </View>
   );

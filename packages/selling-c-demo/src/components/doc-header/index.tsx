@@ -3,6 +3,7 @@ import React from 'react'
 import { navigateTo } from '@tarojs/taro'
 import { SlIcon } from '@test/selling-c-ui'
 import { View } from '@tarojs/components'
+import { isWeb } from '../../utils'
 import './index.less'
 
 export interface DocsHeaderProps {
@@ -17,11 +18,11 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
     const { title } = this.props
 
     return (
-      <View className='doc-header'>
-        <View className='doc-header__title' 
-          onClick={ () => navigateTo({ url: `/pages/home/index` }) }
+      <View className='doc-header' style={!isWeb ? 'display:none' : ''}>
+        <View className='doc-header__title'
+          onClick={() => navigateTo({ url: `/pages/home/index` })}
         >
-          <SlIcon value='chevron-left' size={ 30 }></SlIcon>
+          <SlIcon value='chevron-left' size={30}></SlIcon>
           {title}
         </View>
       </View>

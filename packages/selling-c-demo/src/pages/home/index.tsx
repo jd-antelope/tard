@@ -3,7 +3,7 @@ import { View, Image } from '@tarojs/components'
 import { navigateTo, pxTransform } from '@tarojs/taro';
 import './index.less'
 import MenuObj from '../../docs-route'
-
+import { isWeb } from '../../utils'
 function Home() {
   const iframeListener = (e: any) => {
     const activeMenu = e.data.title
@@ -15,11 +15,15 @@ function Home() {
   }
 
   useEffect(() => {
-    window.addEventListener("message", iframeListener, false);
+    if (isWeb) {
+      window.addEventListener("message", iframeListener, false);
+    }
   })
 
   const postIframeParentMessage = (title: string) => {
-    window.parent.postMessage({ title }, '*');
+    if (isWeb) {
+      window.parent.postMessage({ title }, '*');
+    }
   }
 
   return (
@@ -29,15 +33,15 @@ function Home() {
       </View>
       <View className='comp'>
         {MenuObj.map(item => (
-          <View 
+          <View
             className='comp-item'
-            key={item.title} 
+            key={item.title}
             onClick={() => {
               postIframeParentMessage(item.title)
               navigateTo({
                 url: `/pages/${item.title}/index`
               });
-            }} 
+            }}
           >{item.title}</View>
         ))
         }

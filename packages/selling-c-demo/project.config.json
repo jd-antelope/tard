@@ -1,13 +1,34 @@
 {
-  "miniprogramRoot": "./dist",
+  "miniprogramRoot": "dist/",
   "projectname": "taro-ui-demo",
   "description": "Taro UI demo",
-  "appid": "touristappid",
+  "appid": "wxb200ca50f517e470",
   "setting": {
     "urlCheck": true,
+    "scopeDataCheck": false,
+    "coverView": true,
     "es6": false,
-    "postcss": false,
-    "minified": false
+    "postcss": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "autoAudits": false,
+    "newFeature": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "useIsolateContext": true,
+    "nodeModules": false,
+    "enhance": true,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
   },
-  "compileType": "miniprogram"
+  "compileType": "miniprogram",
+  "libVersion": "2.20.2",
+  "condition": {}
 }

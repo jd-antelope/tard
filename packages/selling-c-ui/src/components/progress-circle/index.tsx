@@ -37,7 +37,7 @@ export default class SlProgressCircle extends React.Component<SlProgressCirclePr
     return (
       <View className="slc-circle" style={`width:${pxTransformRem(size)}; height:${pxTransformRem(size)}`}>
 
-        {!isWeapp()
+        {!isWeapp
           ? <svg style={svgStyle}>
             <circle id="circleBg"
               cx={pxTransform(size / 2)}

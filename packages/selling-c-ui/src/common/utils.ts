@@ -2,16 +2,12 @@ import Taro from '@tarojs/taro'
 
 let scrollTop = 0
 
-function isWeapp() {
-  return Taro.getEnv() === Taro.ENV_TYPE.WEAPP
-}
+const isWeapp =  Taro.getEnv() === Taro.ENV_TYPE.WEAPP
 
-function isWeb() {
-  return Taro.getEnv() === Taro.ENV_TYPE.WEB
-}
+const isWeb = Taro.getEnv() === Taro.ENV_TYPE.WEB
 
 function handleTouchScroll(flag: any): void {
-  if (!isWeb()) {
+  if (!isWeb) {
     return
   }
   if (flag) {
@@ -59,7 +55,7 @@ function pxTransform(size: number): string {
     750: 1,
     828: 1.81 / 2
   }
-  if (isWeb()) {
+  if (isWeb) {
     return 16 / 750 * size + 'rem';
   }
   return `${size / deviceRatio[designWidth]}rpx`

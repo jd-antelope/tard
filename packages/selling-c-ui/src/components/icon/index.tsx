@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { Text } from '@tarojs/components'
 import { SlIconProps } from '../../../types/icon'
@@ -7,7 +6,6 @@ import { mergeStyle, pxTransform } from '../../common/utils'
 
 export default class SlIcon extends React.Component<SlIconProps> {
   public static defaultProps: SlIconProps
-  public static propTypes: InferProps<SlIconProps>
 
   private handleClick(): void {
     this.props.onClick && this.props.onClick(arguments as any)
@@ -46,14 +44,4 @@ SlIcon.defaultProps = {
   value: '',
   color: '',
   size: 24
-}
-
-SlIcon.propTypes = {
-  customStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  className: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-  prefixClass: PropTypes.string,
-  value: PropTypes.string,
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onClick: PropTypes.func
 }

@@ -18,7 +18,7 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
   }
 
   public componentWillUnmount(): void {
-    if (isWeb()) {
+    if (isWeb) {
       document.body.style.overflow = 'auto'
     }
   }
@@ -34,11 +34,11 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
         activeKey: key,
       });
       if (key === -1) {
-        if (isWeb()) {
+        if (isWeb) {
           document.body.style.overflow = 'auto'
         }
       } else {
-        if (isWeb()) {
+        if (isWeb) {
           document.body.style.overflow = 'hidden'
         }
       }
