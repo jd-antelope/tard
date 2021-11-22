@@ -8,8 +8,8 @@ export interface SlProgressCircleProps extends SlComponent {
     */
     percent: number
     /**
-     * 圆环直径，单位为px
-     * @default 100
+     * 圆环直径
+     * @default 200
      */
     size: number
     /**

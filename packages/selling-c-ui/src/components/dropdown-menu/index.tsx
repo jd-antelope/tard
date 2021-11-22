@@ -17,10 +17,13 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
     }
   }
 
-  public render(): JSX.Element {
-    if(isWeb()) {
-      document.body.style.overflow = 'hidden'
+  public componentWillUnmount(): void {
+    if (isWeb()) {
+      document.body.style.overflow = 'auto'
     }
+  }
+
+  public render(): JSX.Element {
     const { activeKey, isOpen } = this.state
     const { activeColor, titleAlign } = this.props
 
@@ -31,9 +34,13 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
         activeKey: key,
       });
       if (key === -1) {
-        this.setState({
-          activeKey: key,
-        })
+        if (isWeb()) {
+          document.body.style.overflow = 'auto'
+        }
+      } else {
+        if (isWeb()) {
+          document.body.style.overflow = 'hidden'
+        }
       }
     }
 
