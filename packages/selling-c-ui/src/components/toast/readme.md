@@ -12,11 +12,11 @@ import { SlToast } from '@jd/selling-c-ui'
 import React, { memo, useState, useCallback } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
+import { SlToastProps } from '@test/selling-c-ui/types/toast'
 import { SlToast, SlButton } from '@test/selling-c-ui'
-import './index.less';
 
 const Toast: FC = () => {
-  const [toast, setToast] = useState<any>({ isOpened: false });
+  const [toast, setToast] = useState<SlToastProps>({ isOpened: false });
 
   const showHsToast = useCallback((toastParams) => {
     setToast({
@@ -43,75 +43,45 @@ const Toast: FC = () => {
 
 ### 自定义Icon
 ```js
-<SlButton 
-  size="large"
-  onClick={ () => showHsToast({ text: '成功', icon: 'analytics', duration: 2000 }) }
->
-  文本 Icom
-</SlButton>
+showHsToast({ text: '成功', icon: 'analytics', duration: 2000 })
 ```
 
 ### 自定义图片
 ```js
-<SlButton 
-  size="large"
-  onClick={ () => showHsToast({ 
-    text: '自定义图片', 
-    image: 'http://storage.360buyimg.com/mtd/home/group-21533885306540.png' 
-  }) }
->
-  自定义图片
-</SlButton>
+showHsToast({ 
+  text: '自定义图片', 
+  image: 'http://storage.360buyimg.com/mtd/home/group-21533885306540.png' 
+})
 ```
 
 
 ### 添加遮罩层
 ```js
-<SlButton 
-  size="large"
-  onClick={ () => showHsToast({ text: '文本', hasMask: true }) }
->
-  添加遮罩层
-</SlButton>
+showHsToast({ text: '文本', hasMask: true })
 ```
 ### Error Toast
 ```js
-<SlButton 
-  size="large"
-  onClick={ () => showHsToast({ 
-    text: '文本', 
-    hasMask: true,
-    status: 'error' 
-  }) }
->
-  Error
-</SlButton>
+showHsToast({ 
+  text: '文本', 
+  hasMask: true,
+  status: 'error' 
+})
 ```
 ### Success Toast
 ```js
-<SlButton 
-  size="large"
-  onClick={ () => showHsToast({ 
-    text: '文本', 
-    hasMask: true,
-    status: 'success' 
-  }) }
->
-  Success
-</SlButton>
+showHsToast({ 
+  text: '文本', 
+  hasMask: true,
+  status: 'success' 
+})
 ```
 ### Loading Toast
 ```js
-<SlButton 
-  size="large"
-  onClick={ () => showHsToast({ 
-    text: '文本', 
-    hasMask: true,
-    status: 'loading' 
-  }) }
->
-  Loading
-</SlButton>
+showHsToast({ 
+  text: '文本', 
+  hasMask: true,
+  status: 'loading' 
+})
 ```
 
 

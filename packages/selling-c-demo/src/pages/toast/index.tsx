@@ -2,11 +2,12 @@ import React, { memo, useState, useCallback } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import { SlToast, SlButton } from '@test/selling-c-ui'
+import { SlToastProps } from '@test/selling-c-ui/types/toast'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 
 const Toast: FC = () => {
-  const [toast, setToast] = useState<any>({ isOpened: false });
+  const [toast, setToast] = useState<SlToastProps>({ isOpened: false });
 
   const showHsToast = useCallback((toastParams) => {
     setToast({
