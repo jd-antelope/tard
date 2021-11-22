@@ -17,6 +17,16 @@ export interface SlBadgeProps extends SlComponent {
    * @default 99
    */
   maxValue?: number
+  /**
+   * 徽标背景颜色
+   * @default 主题色
+   */
+  color?: string
+   /**
+   * 自定义内容
+   */
+  content?: React.ReactNode
+
 }
 
 declare const SlBadge: ComponentClass<SlBadgeProps>

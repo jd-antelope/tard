@@ -1,3 +1,5 @@
+import { CommonEventFunction } from "@tarojs/components"
+
 export interface SlCustomHeaderProps extends SlComponent {
     /**
      * 是否需要返回按钮
@@ -11,7 +13,7 @@ export interface SlCustomHeaderProps extends SlComponent {
     /**
      * 触发返回事件
      */
-    onBack?: CommonEventFunctio,
+    onBack?: CommonEventFunction,
     /**
      * 页面标题
      */

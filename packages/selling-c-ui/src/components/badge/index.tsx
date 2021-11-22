@@ -1,13 +1,11 @@
 import classNames from 'classnames'
-import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { View } from '@tarojs/components'
-// import Common from '../../common/common'
+import Common from '../../common/common'
 import { SlBadgeProps } from '../../../types/badge'
 
 export default class SlBadge extends React.Component<SlBadgeProps> {
   public static defaultProps: SlBadgeProps
-  public static propTypes: InferProps<SlBadgeProps>
 
   public constructor(props: SlBadgeProps) {
     super(props)
@@ -28,23 +26,41 @@ export default class SlBadge extends React.Component<SlBadgeProps> {
   }
 
   public render(): JSX.Element {
-    const { dot, value, maxValue = 99, customStyle } = this.props
+    const { dot, value, maxValue = 99, color, content } = this.props
     const rootClassName = ['slc-badge']
 
     const val = this.formatValue(value, maxValue)
 
     return (
-      <View
+      <Common
         className={classNames(rootClassName, this.props.className)}
-        style={customStyle}
       >
         {this.props.children}
-        {dot ? (
-          <View className='slc-badge__dot'></View>
-        ) : (
-          val !== '' && <View className='slc-badge__num'>{val}</View>
-        )}
-      </View>
+        {
+          content ?
+            <View
+              className='slc-badge__num'
+              style={color ? `background:${color}` : ''}
+            >
+              {content}
+            </View>
+            :
+            dot ?
+              (
+                <View
+                  className='slc-badge__dot'
+                  style={color ? `background:${color}` : ''}
+                />
+              ) : (
+                val !== '' &&
+                <View
+                  className='slc-badge__num'
+                  style={color ? `background:${color}` : ''}
+                >
+                  {val}
+                </View>
+              )}
+      </Common>
     )
   }
 }
@@ -53,14 +69,5 @@ SlBadge.defaultProps = {
   dot: false,
   value: '',
   maxValue: 99,
-  customStyle: {},
-  className: ''
 }
 
-SlBadge.propTypes = {
-  dot: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  maxValue: PropTypes.number,
-  customStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  className: PropTypes.oneOfType([PropTypes.array, PropTypes.string])
-}
