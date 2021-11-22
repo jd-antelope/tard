@@ -3,7 +3,7 @@ import React from 'react'
 import { View, Text } from '@tarojs/components'
 import { SlProgressCircleProps } from '../../../types/progress-circle'
 import { pxTransform } from '../../common/utils'
-import Taro from '@tarojs/taro'
+import { isWeapp } from '../../common/utils'
 
 export default class SlProgressCircle extends React.Component<SlProgressCircleProps> {
   public static defaultProps: SlProgressCircleProps
@@ -12,50 +12,60 @@ export default class SlProgressCircle extends React.Component<SlProgressCirclePr
     return color.replace('#', '%23')
   }
 
+  private pxTransformRem = (size: number) => {
+    if (!size) return ''
+    return 16 / 750 * size + 'rem';
+  }
+
   public render(): JSX.Element | null {
     const { percent, size, strokeWidth, layerColor, color, text } = this.props
     const r = (size - strokeWidth * 2) / 2
     const circumference = 2 * Math.PI * r
-    const isWeapp = Taro.getEnv() === Taro.ENV_TYPE.WEAPP
+    const svgStyle: React.CSSProperties = {
+      height: '100%',
+      width: '100%'
+    }
+
+    const pxTransformRem = this.pxTransformRem
+
     const style: React.CSSProperties = {
-      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='${size}' width='${size}' viewBox='0 0 ${size} ${size}'%3E%3Ccircle id='circleBg' cx='${size / 2}' cy='${size / 2}' r='${r}' fill='none' stroke-width='${strokeWidth}' stroke='${this.transColor(layerColor)}'%3E%3C/circle%3E%3Ccircle id='circle' cx='${size / 2}' cy='${size / 2}' r='${r}' fill='none' stroke-width='${strokeWidth}' stroke='${this.transColor(color)}' stroke-dasharray='${circumference}' stroke-dashoffset='${circumference * (1 - percent / 100)}' stroke-linecap='round' style='transform: rotate(-90deg); transform-origin: 50%25 50%25;'%3E%3C/circle%3E%3C/svg%3E")`,
-      width: pxTransform(size),
-      height: pxTransform(size)
+      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle id='circleBg' cx='${pxTransformRem(size / 2)}' cy='${pxTransformRem(size / 2)}' r='${pxTransformRem(r)}' fill='none' stroke-width='${pxTransformRem(strokeWidth)}' stroke='${this.transColor(layerColor)}'%3E%3C/circle%3E%3Ccircle id='circle' cx='${pxTransformRem(size / 2)}' cy='${pxTransformRem(size / 2)}' r='${pxTransformRem(r)}' fill='none' stroke-width='${pxTransformRem(strokeWidth)}' stroke='${this.transColor(color)}' stroke-dasharray='${pxTransformRem(circumference)}' stroke-dashoffset='${pxTransformRem(circumference * (1 - percent / 100))}' stroke-linecap='round' style='transform: rotate(-90deg); transform-origin: 50%25 50%25;'%3E%3C/circle%3E%3C/svg%3E")`,
+      width: pxTransformRem(size),
+      height: pxTransformRem(size)
     }
 
     return (
-      <View className="slc-circle" style={`width:${pxTransform(size)}; height:${pxTransform(size)}`}>
-        
-        {!isWeapp &&
-          <svg height={size} width={size} viewBox={`0 0 ${size} ${size}`}>
+      <View className="slc-circle" style={`width:${pxTransformRem(size)}; height:${pxTransformRem(size)}`}>
+
+        {!isWeapp()
+          ? <svg style={svgStyle}>
             <circle id="circleBg"
-              cx={size / 2}
-              cy={size / 2}
-              r={r}
+              cx={pxTransform(size / 2)}
+              cy={pxTransform(size / 2)}
+              r={pxTransform(r)}
               fill="none"
-              strokeWidth={strokeWidth}
+              strokeWidth={pxTransform(strokeWidth)}
               stroke={layerColor}
             />
             <circle id="circle"
               style={{ transform: 'rotate(-90deg)', transformOrigin: ' 50% 50%' }}
-              cx={size / 2}
-              cy={size / 2}
-              r={r}
+              cx={pxTransform(size / 2)}
+              cy={pxTransform(size / 2)}
+              r={pxTransform(r)}
               fill="none"
-              strokeWidth={strokeWidth}
+              strokeWidth={pxTransform(strokeWidth)}
               stroke={color}
-              strokeDasharray={circumference}
-              strokeDashoffset={circumference * (1 - percent / 100)}
+              strokeDasharray={pxTransform(circumference)}
+              strokeDashoffset={pxTransform(circumference * (1 - percent / 100))}
               strokeLinecap='round'
             />
-          </svg>}
-        {isWeapp &&
-          <View>
-            <view
-              style={style}
-            >
-            </view>
-          </View>}
+          </svg>
+          :
+          <view
+            style={style}
+          >
+          </view>
+        }
         <Text className="slc-circle-text">{text}</Text>
 
       </View>
@@ -65,7 +75,7 @@ export default class SlProgressCircle extends React.Component<SlProgressCirclePr
 
 SlProgressCircle.defaultProps = {
   percent: 0,
-  size: 100,
+  size: 200,
   strokeWidth: 4,
   layerColor: '#EFEFEF',
   color: '#DC8D20'
