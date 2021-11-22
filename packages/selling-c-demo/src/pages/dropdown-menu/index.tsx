@@ -42,7 +42,7 @@ const DropdownMenu: FC = () => {
         <View className='doc-body-content-tip'>自定义菜单内容</View>
         <SlDropdownMenu>
           <SlDropdownMenuItem value={value1} options={option1} onChange={(value) => { setValue1(value) }} />
-          <SlDropdownMenuItem title="筛选" customContent={(<View>自定义菜单内容</View>)} />
+          <SlDropdownMenuItem title="筛选" content={(<View>自定义菜单内容</View>)} />
         </SlDropdownMenu>
 
         <View className='doc-body-content-tip'>自定义菜单标题颜色</View>

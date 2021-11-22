@@ -1,10 +1,17 @@
 import Taro from '@tarojs/taro'
-const ENV = Taro.getEnv()
 
 let scrollTop = 0
 
+function isWeapp() {
+  return Taro.getEnv() === Taro.ENV_TYPE.WEAPP
+}
+
+function isWeb() {
+  return Taro.getEnv() === Taro.ENV_TYPE.WEB
+}
+
 function handleTouchScroll(flag: any): void {
-  if (ENV !== Taro.ENV_TYPE.WEB) {
+  if (!isWeb()) {
     return
   }
   if (flag) {
@@ -52,7 +59,7 @@ function pxTransform(size: number): string {
     750: 1,
     828: 1.81 / 2
   }
-  if (process.env.TARO_ENV === 'h5') {
+  if (isWeb()) {
     return 16 / 750 * size + 'rem';
   }
   return `${size / deviceRatio[designWidth]}rpx`
@@ -123,6 +130,7 @@ function getDateUTC (value) {
   return new Date(new Date().getTime() + 5 * 60 * 1000)
 }
 
+
 export {
   handleTouchScroll,
   mergeStyle,
@@ -130,5 +138,7 @@ export {
   isTest,
   uuid,
   objectToString,
-  getDateUTC
+  getDateUTC,
+  isWeapp,
+  isWeb
 }

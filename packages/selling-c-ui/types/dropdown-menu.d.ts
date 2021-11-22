@@ -66,7 +66,7 @@ export interface SlDropdownMenuItemProps extends SlComponent {
      * 自定义内容
      * @default true
      */
-    customContent?: React.ReactNode
+    content?: React.ReactNode
     /**
      * 点击options导致 value 变化时触发
      */

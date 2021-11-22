@@ -9,10 +9,6 @@ const markdown = `
 import { SlDropdownMenu, SlDropdownMenuItem } from '@jd/selling-c-ui'
 ~~~
 
-## 注意
-> 在最外层容器添加className，用来解决出现遮罩滑动问题**slc-dropdown-menu-container**
-
-
 # 代码演示
 ## 基础用法
 ~~~js
@@ -57,6 +53,7 @@ const DropdownMenu: FC = () => {
 };
 ~~~
 ## 自定义标题
+通过 title 属性可以自定义标题
 ~~~js
 <SlDropdownMenu>
   <SlDropdownMenuItem 
@@ -74,6 +71,7 @@ const DropdownMenu: FC = () => {
 </SlDropdownMenu>
 ~~~
 ## 自定义菜单内容
+通过 content 属性可以自定义菜单内容
 ~~~js
 <SlDropdownMenu>
   <SlDropdownMenuItem 
@@ -83,12 +81,13 @@ const DropdownMenu: FC = () => {
     />
   <SlDropdownMenuItem 
     title="筛选" 
-    customContent={(<View>自定义菜单内容</View>)} 
+    content={(<View>自定义菜单内容</View>)} 
     />
 </SlDropdownMenu>
 ~~~
 
 ## 自定义菜单标题颜色
+通过 activeColor 属性可以自定义菜单标题和选项的选中态颜色
 ~~~js
 <SlDropdownMenu activeColor="blue">
   <SlDropdownMenuItem 
@@ -146,13 +145,14 @@ const DropdownMenu: FC = () => {
 | value | 当前选中项对应的 value | number｜string | 主题色 |
 | title | 菜单项标题 | 	string | 当前选中项文字 |
 | options | 选项数组 | 	Option[] | [] |
-| customContent | 自定义内容 | 	元素 | - |
+| content | 自定义内容 | 	元素 | - |
 
 ## DropdownItem Events
 |  事件名   | 说明  | 回调参数 |
 |  ----  | ----  | ---- |
 | change | 点击选项导致 value 变化时触发 | value |
 | onClick | 自定义点击事件 | - |
+
 ## Option 数据结构
 |  键名   | 说明  | 类型 |
 |  ----  | ----  | ---- |

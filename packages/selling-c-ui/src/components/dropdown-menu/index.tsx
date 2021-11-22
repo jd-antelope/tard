@@ -2,13 +2,12 @@
 import React, { cloneElement, ReactElement, ComponentProps } from 'react'
 import cn from 'classnames'
 import { View } from '@tarojs/components'
-import { InferProps } from 'prop-types'
 import { SlDropdownMenuProps, SlDropdownMenuState } from '../../../types/dropdown-menu'
 import Common from '../../common/common'
 import SlDropdownMenuItem from './dropdown-menu-item';
+import { isWeb } from '../../common/utils'
 export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps, SlDropdownMenuState> {
   public static defaultProps: SlDropdownMenuProps
-  public static propTypes: InferProps<SlDropdownMenuProps>
 
   public constructor(props: SlDropdownMenuProps) {
     super(props)
@@ -19,6 +18,10 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
   }
 
   public render(): JSX.Element {
+    if(isWeb()) {
+      console.log('h5h5h5')
+      document.body.style.overflow = 'hidden'
+    }
     const { activeKey, isOpen } = this.state
     const { activeColor, titleAlign } = this.props
 
@@ -121,7 +124,7 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
                         </View>
                       ))
                     }
-                    {item.props?.customContent}
+                    {item.props?.content}
                   </View>
                 </View>
               )
