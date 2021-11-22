@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { Image, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
@@ -11,7 +10,6 @@ export default class SlToast extends React.Component<
   SlToastState
 > {
   public static defaultProps: SlToastProps
-  public static propTypes: InferProps<SlToastProps>
 
   private _timer: NodeJS.Timeout | null
 
@@ -149,16 +147,4 @@ export default class SlToast extends React.Component<
 SlToast.defaultProps = {
   duration: 3000,
   isOpened: false
-}
-
-SlToast.propTypes = {
-  text: PropTypes.string,
-  icon: PropTypes.string,
-  hasMask: PropTypes.bool,
-  image: PropTypes.string,
-  isOpened: PropTypes.bool,
-  duration: PropTypes.number,
-  status: PropTypes.oneOf(['', 'error', 'loading', 'success']),
-  onClick: PropTypes.func,
-  onClose: PropTypes.func
 }

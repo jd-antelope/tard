@@ -45,7 +45,9 @@ const readMdFile = (path, list) => {
     str += `| ${v.attr} | ${v.des} | ${v.type} | ${v.default} |
 `
   })
-  fs.writeFileSync(`${cwd}/src/components/${p}/README.md`, jsonContent.split('## api')[0] + str)
+  if (!jsonContent.includes('## api')) {
+    fs.writeFileSync(`${cwd}/src/components/${p}/README.md`, jsonContent.split('## api')[0] + str)
+  }
 }
 
 function start () {
