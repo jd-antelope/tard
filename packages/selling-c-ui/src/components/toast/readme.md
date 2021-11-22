@@ -42,11 +42,13 @@ const Toast: FC = () => {
 ```
 
 ### 自定义Icon
+通过 icon 属性可以自定义toast中展示的图片
 ```js
 showHsToast({ text: '成功', icon: 'analytics', duration: 2000 })
 ```
 
 ### 自定义图片
+通过 image 属性自定义图片链接可以修改toast中展示的图片
 ```js
 showHsToast({ 
   text: '自定义图片', 
@@ -54,12 +56,14 @@ showHsToast({
 })
 ```
 
-
 ### 添加遮罩层
+当属性 hasMask 属性为 true 的时候, 会出现遮罩层
 ```js
 showHsToast({ text: '文本', hasMask: true })
 ```
+
 ### Error Toast
+当属性 status 为 error 时会展示失败图片
 ```js
 showHsToast({ 
   text: '文本', 
@@ -67,7 +71,9 @@ showHsToast({
   status: 'error' 
 })
 ```
+
 ### Success Toast
+当属性 status 为 success 时会展示成功图片
 ```js
 showHsToast({ 
   text: '文本', 
@@ -76,6 +82,7 @@ showHsToast({
 })
 ```
 ### Loading Toast
+当属性 status 为 loading 时会展示加载中图片
 ```js
 showHsToast({ 
   text: '文本', 
