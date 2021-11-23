@@ -26,6 +26,11 @@
   }
   &-content {
     border-radius: @border-radius-lg;
+    background: @color-bg;
+  }
+  &-contenth5 {
+    padding: @spacing-h-lg;
+    box-sizing: border-box;
   }
   &-icon {
     width: 100%;
@@ -33,9 +38,15 @@
     .flex-justify(flex-end)
   }
   &-save {
-    margin-top: @spacing-v-sm;
-    background: var(--promotionColor);
-    color: @color-white;
+    margin-top: @spacing-v-lg;
+    .flex-center();
+    width: 100%;
+
+    &__button {
+      margin-top: @spacing-v-sm;
+      background: var(--promotionColor);
+      color: @color-white;
+    }
   }
   &.@{--css-prefix}-canvas-show {
     display: block;

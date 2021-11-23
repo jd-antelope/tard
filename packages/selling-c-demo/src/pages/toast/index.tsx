@@ -7,13 +7,13 @@ import DocsHeader from '../../components/doc-header'
 import './index.less';
 
 const Toast: FC = () => {
-  const [toast, setToast] = useState<SlToastProps>({ isOpened: false });
+  const [toast, setToast] = useState<SlToastProps>({ visible: false });
 
-  const showHsToast = useCallback((toastParams) => {
+  const showSlToast = useCallback((toastParams) => {
     setToast({
-      isOpened: true,
+      visible: true,
       ...toastParams,
-      onClose: () => setToast({ isOpened: false, text: toastParams.text, status: toastParams.status })
+      onClose: () => setToast({ visible: false, text: toastParams.text, status: toastParams.status })
     });
   }, []);
 
@@ -26,16 +26,16 @@ const Toast: FC = () => {
           <View className='doc-body-content-tip'>基本案例</View>
           <SlButton 
             size="large"
-            onClick={ () => showHsToast({ text: '文本', duration: 2000 }) }
+            onClick={ () => showSlToast({ text: '文本', duration: 2000 }) }
           >文本 Toast</SlButton>
           <SlButton 
             size="large"
-            onClick={ () => showHsToast({ text: '成功', icon: 'analytics', duration: 2000 }) }
+            onClick={ () => showSlToast({ text: '成功', icon: 'analytics', duration: 2000 }) }
           >文本 Icom</SlButton>
           <View className='doc-body-content-tip'>自定义图片</View>
           <SlButton 
             size="large"
-            onClick={ () => showHsToast({ 
+            onClick={ () => showSlToast({ 
               text: '自定义图片', 
               image: 'http://storage.360buyimg.com/mtd/home/group-21533885306540.png' 
             }) }
@@ -43,12 +43,12 @@ const Toast: FC = () => {
           <View className='doc-body-content-tip'>添加遮罩层</View>
           <SlButton 
             size="large"
-            onClick={ () => showHsToast({ text: '文本', hasMask: true }) }
+            onClick={ () => showSlToast({ text: '文本', hasMask: true }) }
           >添加遮罩层</SlButton>
           <View className='doc-body-content-tip'>Error Toast</View>
           <SlButton 
             size="large"
-            onClick={ () => showHsToast({ 
+            onClick={ () => showSlToast({ 
               text: '文本', 
               hasMask: true,
               status: 'error' 
@@ -57,7 +57,7 @@ const Toast: FC = () => {
           <View className='doc-body-content-tip'>Success Toast</View>
           <SlButton 
             size="large"
-            onClick={ () => showHsToast({ 
+            onClick={ () => showSlToast({ 
               text: '文本', 
               hasMask: true,
               status: 'success' 
@@ -66,7 +66,7 @@ const Toast: FC = () => {
           <View className='doc-body-content-tip'>Loading Toast</View>
           <SlButton 
             size="large"
-            onClick={ () => showHsToast({ 
+            onClick={ () => showSlToast({ 
               text: '文本', 
               hasMask: true,
               status: 'loading' 
