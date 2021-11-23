@@ -1,7 +1,8 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-const markdown = `## 介绍
+const markdown = `# ProgressCircle
+## 介绍
 圆环形的进度条组件，支持进度渐变动画。
 > ⚠️ 该组件通过svg实现，svg不支持rpx，故小程序和H5单位均转换为rem
 ## 引入

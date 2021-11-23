@@ -47,7 +47,7 @@
     "@tarojs/react": "3.3.11",
     "@tarojs/runtime": "3.3.11",
     "@tarojs/taro": "3.3.11",
-    "@test/selling-c-ui": "^0.0.5",
+    "@test/selling-c-ui": "^0.0.6",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "taro-ui": "^2.0.0"

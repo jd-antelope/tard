@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-const markdown = `# badge
+const markdown = `# Badge
 ## 介绍
 在右上角展示徽标数字或小红点。
 ## 引入
