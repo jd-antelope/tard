@@ -31,7 +31,7 @@ export interface SlInputNumberProps extends SlComponent {
   /**
    * 最大值
    * @type {number}
-   * @default 100
+   * @default 9999
    */
   max?: number
   /**
@@ -63,7 +63,7 @@ export interface SlInputNumberProps extends SlComponent {
    * @type {boolean}
    * @default false
    */
-  disabledInput?: boolean
+  readonly?: boolean
   /**
    * 输入框值改变时触发的事件
    * @param {number} value 输入框当前值

@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import _toString from 'lodash/toString'
-import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { Input, Text, View } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
@@ -46,7 +45,6 @@ type ExtendEvent = {
 
 export default class SlInputNumber extends React.Component<SlInputNumberProps> {
   public static defaultProps: SlInputNumberProps
-  public static propTypes: InferProps<SlInputNumberProps>
 
   private handleClick(clickType: 'minus' | 'plus', e: CommonEvent): void {
     const { disabled, value, min = 0, max = 100, step = 1 } = this.props
@@ -136,7 +134,7 @@ export default class SlInputNumber extends React.Component<SlInputNumberProps> {
       min = 0,
       max = 100,
       size,
-      disabledInput
+      readonly
     } = this.props
 
     const inputStyle = {
@@ -170,7 +168,7 @@ export default class SlInputNumber extends React.Component<SlInputNumberProps> {
           style={inputStyle}
           type={type}
           value={String(inputValue)}
-          disabled={disabledInput || disabled}
+          disabled={readonly || disabled}
           onInput={this.handleInput}
           onBlur={this.handleBlur}
         />
@@ -188,31 +186,14 @@ export default class SlInputNumber extends React.Component<SlInputNumberProps> {
 SlInputNumber.defaultProps = {
   className: '',
   disabled: false,
-  disabledInput: false,
-  value: 1,
+  readonly: false,
+  value: 0,
   type: 'number',
   width: 0,
   min: 0,
-  max: 100,
+  max: 9999,
   step: 1,
   size: 'normal',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (): void => {}
 }
 
-SlInputNumber.propTypes = {
-  customStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  className: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  type: PropTypes.oneOf(['number', 'digit']),
-  disabled: PropTypes.bool,
-  width: PropTypes.number,
-  min: PropTypes.number,
-  max: PropTypes.number,
-  step: PropTypes.number,
-  size: PropTypes.oneOf(['normal', 'large']),
-  disabledInput: PropTypes.bool,
-  onChange: PropTypes.func,
-  onBlur: PropTypes.func,
-  onErrorInput: PropTypes.func
-}
