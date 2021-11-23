@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-const markdown = `# toast
+const markdown = `# Toast
 按钮用于传递用户触摸时会触发的操作
 
 ## 代码演示
@@ -15,13 +15,13 @@ import { SlToast } from '@jd/selling-c-ui'
 import React, { memo, useState, useCallback } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlToastProps } from '@test/selling-c-ui/types/toast'
-import { SlToast, SlButton } from '@test/selling-c-ui'
+import { SlToastProps } from '@jd/selling-c-ui/types/toast'
+import { SlToast, SlButton } from '@jd/selling-c-ui'
 
 const Toast: FC = () => {
   const [toast, setToast] = useState<SlToastProps>({ isOpened: false });
 
-  const showHsToast = useCallback((toastParams) => {
+  const showSlToast = useCallback((toastParams) => {
     setToast({
       isOpened: true,
       ...toastParams,
@@ -33,7 +33,7 @@ const Toast: FC = () => {
     <View className="container">
       <SlButton 
         size="large"
-        onClick={ () => showHsToast({ text: '文本', duration: 2000 }) }
+        onClick={ () => showSlToast({ text: '文本', duration: 2000 }) }
       >
         文本 Toast
       </SlButton>
@@ -47,13 +47,13 @@ const Toast: FC = () => {
 ### 自定义Icon
 通过 icon 属性可以自定义toast中展示的图片
 ~~~js
-showHsToast({ text: '成功', icon: 'analytics', duration: 2000 })
+showSlToast({ text: '成功', icon: 'analytics', duration: 2000 })
 ~~~
 
 ### 自定义图片
 通过 image 属性自定义图片链接可以修改toast中展示的图片
 ~~~js
-showHsToast({ 
+showSlToast({ 
   text: '自定义图片', 
   image: 'http://storage.360buyimg.com/mtd/home/group-21533885306540.png' 
 })
@@ -68,7 +68,7 @@ showHsToast({ text: '文本', hasMask: true })
 ### Error Toast
 当属性 status 为 error 时会展示失败图片
 ~~~js
-showHsToast({ 
+showSlToast({ 
   text: '文本', 
   hasMask: true,
   status: 'error' 
@@ -78,7 +78,7 @@ showHsToast({
 ### Success Toast
 当属性 status 为 success 时会展示成功图片
 ~~~js
-showHsToast({ 
+showSlToast({ 
   text: '文本', 
   hasMask: true,
   status: 'success' 
@@ -87,7 +87,7 @@ showHsToast({
 ### Loading Toast
 当属性 status 为 loading 时会展示加载中图片
 ~~~js
-showHsToast({ 
+showSlToast({ 
   text: '文本', 
   hasMask: true,
   status: 'loading' 
