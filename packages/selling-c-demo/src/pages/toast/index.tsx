@@ -7,13 +7,13 @@ import DocsHeader from '../../components/doc-header'
 import './index.less';
 
 const Toast: FC = () => {
-  const [toast, setToast] = useState<SlToastProps>({ isOpened: false });
+  const [toast, setToast] = useState<SlToastProps>({ visible: false });
 
   const showSlToast = useCallback((toastParams) => {
     setToast({
-      isOpened: true,
+      visible: true,
       ...toastParams,
-      onClose: () => setToast({ isOpened: false, text: toastParams.text, status: toastParams.status })
+      onClose: () => setToast({ visible: false, text: toastParams.text, status: toastParams.status })
     });
   }, []);
 

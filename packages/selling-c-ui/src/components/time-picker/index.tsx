@@ -364,7 +364,7 @@ export default class SlTimePicker extends React.Component<SlTimePickerProps, SlT
           </View>
 
           <SlToast
-            isOpened={ this.state.showToast}
+            visible={ this.state.showToast}
             text="结束时间不能小于开始时间"
             onClose={ () => this.setState({showToast: false})}
           />

@@ -15,13 +15,13 @@ export default class SlToast extends React.Component<
 
   public constructor(props: SlToastProps) {
     super(props)
-    const { isOpened, duration } = props
-    if (isOpened) {
+    const { visible, duration } = props
+    if (visible) {
       this.makeTimer(duration || 0)
     }
     this._timer = null
     this.state = {
-      _isOpened: isOpened
+      _isOpened: visible
     }
   }
 
@@ -74,8 +74,8 @@ export default class SlToast extends React.Component<
   }
 
   public UNSAFE_componentWillReceiveProps(nextProps: SlToastProps): void {
-    const { isOpened, duration } = nextProps
-    if (!isOpened) {
+    const { visible, duration } = nextProps
+    if (!visible) {
       this.close()
       return
     }
@@ -92,7 +92,7 @@ export default class SlToast extends React.Component<
 
   public render(): JSX.Element | null {
     const { _isOpened } = this.state
-    const { customStyle, text, icon, status, image, hasMask } = this.props
+    const { customStyle, text, icon, status, image, overlay } = this.props
 
     /* eslint-disable @typescript-eslint/no-non-null-assertion */
     const realImg = image || statusImg[status!] || null
@@ -111,7 +111,7 @@ export default class SlToast extends React.Component<
 
     return _isOpened ? (
       <View className={classNames('slc-toast', this.props.className)}>
-        {hasMask && <View className='slc-toast__overlay' />}
+        {overlay && <View className='slc-toast__overlay' />}
         <View
           className={bodyClass}
           style={customStyle}
@@ -146,5 +146,6 @@ export default class SlToast extends React.Component<
 
 SlToast.defaultProps = {
   duration: 3000,
-  isOpened: false
+  visible: false,
+  overlay: false
 }

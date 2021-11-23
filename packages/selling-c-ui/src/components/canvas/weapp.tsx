@@ -31,11 +31,11 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
   }
 
   public UNSAFE_componentWillReceiveProps(nextProps: SlCanvasProps): void {
-    const { isOpened } = nextProps
+    const { visible } = nextProps
 
-    if (isOpened !== this.state.open) {
+    if (visible !== this.state.open) {
       this.setState({
-        open: isOpened
+        open: visible
       })
     }
   }
@@ -43,7 +43,7 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
   onShow = () => {
     this.canvasShow()
     this.setState({
-      open: this.props.isOpened
+      open: this.props.visible
     })
   }
 
@@ -145,12 +145,12 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
 
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
-    const { className, width = 600, height = 800, isMask } = this.props
+    const { className, width = 600, height = 800, overlay } = this.props
     const { open } = this.state
     return (
       <Fragment>
         {
-          isMask ? 
+          overlay ? 
             <View className={ cn('slc-canvas', {
               'slc-canvas-show': open
             }) }>
@@ -200,8 +200,8 @@ SlCanvasWeapp.defaultProps = {
   className: '',
   width: 600,
   height: 800,
-  isOpened: false,
-  isMask: true,
+  visible: false,
+  overlay: true,
   onClose: () => {},
   contentCallback: () => {}
 }

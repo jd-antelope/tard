@@ -1,4 +1,5 @@
-# canvas
+# Canvas
+该组件是为了给海报功能提供方便，里面有关闭和保存图片功能。目前该组件不支持h5，后续会进行优化。
 
 ## 代码演示
 ### 引入
@@ -65,11 +66,11 @@ showSlCanvas({
 ```
 
 ### 无遮照展示
-通过属性 isMask 可以将外面遮照去掉，只留canvas本身内容
+通过属性 overlay 可以将外面遮照去掉，只留canvas本身内容
 ```js
 <SlCanvas 
   isOpened
-  isMask={ false }
+  overlay={ false }
   contentCallback={(ctx, dpr) => {
     ctx.setFontSize(8 * dpr);
     ctx.setFillStyle('#333');
@@ -83,7 +84,7 @@ showSlCanvas({
 |  ----  | ----  | ---- | ---- |
 | width | 宽度 | number | - |
 | height | 高度 | number | - |
-| isMask | 是否有遮照 | boolean | - |
+| overlay | 是否有遮照 | boolean | true |
 | isOpened | 是否打开 | boolean | - |
 | onClose | 关闭回调 | Function | - |
 | contentCallback | 内容方法@paramctxcanvas实例@paramdpr数字计算 | (ctx,dpr)=>void | - |

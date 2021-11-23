@@ -8,23 +8,23 @@ import './index.less';
 
 const Canvas: FC = () => {
   const [canvasProps, setCanvasProps] = useState<SlCanvasProps>({ 
-    isOpened: false,
-    onClose: () => setCanvasProps({ isOpened: false })
+    visible: false,
+    onClose: () => setCanvasProps({ visible: false })
   });
 
   const showSlCanvas = useCallback((toastParams) => {
     setCanvasProps({
-      isOpened: true,
+      visible: true,
       ...toastParams,
-      onClose: () => setCanvasProps({ isOpened: false })
+      onClose: () => setCanvasProps({ visible: false })
     });
   }, []);
 
   return (
     <View className="container">
-      <DocsHeader title='Toast'></DocsHeader>
+      <DocsHeader title='Canvas'></DocsHeader>
       <View className='doc-body toast-page'>
-        <View className='doc-body-header'>canvas</View>
+        <View className='doc-body-header'>Canvas</View>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip'>基本案例</View>
           <SlButton 
@@ -55,8 +55,8 @@ const Canvas: FC = () => {
           </SlButton>
           <View className='doc-body-content-tip'>遮罩不展示</View>
           <SlCanvas 
-            isOpened
-            isMask={ false }
+            visible
+            overlay={ false }
             contentCallback={(ctx, dpr) => {
               ctx.setFontSize(8 * dpr);
               ctx.setFillStyle('#333');
