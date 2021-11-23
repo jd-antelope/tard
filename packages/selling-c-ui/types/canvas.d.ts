@@ -13,15 +13,15 @@ export interface SlCanvasProps extends SlComponent {
   /**
    * 是否有遮照
    */
-  isMask?: boolean
+  overlay?: boolean
   /**
    * 是否打开
    */
-  isOpen: boolean
+  visible: boolean
   /**
    * 关闭回调
    */
-  onClose: Function
+  onClose?: Function
   /**
    * 内容方法
    * @param ctx canvas实例

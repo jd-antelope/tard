@@ -8,7 +8,7 @@ export interface SlToastProps extends SlComponent {
    * 是否展示元素
    * @default false
    */
-  isOpened: boolean
+  visible: boolean
   /**
    * 元素的内容
    */
@@ -33,7 +33,7 @@ export interface SlToastProps extends SlComponent {
   /**
    * 是否存在底部遮罩层(无法点击底部的内容区)
    */
-  hasMask?: boolean
+  overlay?: boolean
   /**
    * 元素被点击之后触发的事件
    */
