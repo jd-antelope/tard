@@ -30,7 +30,7 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
     <Menu
       mode="inline"
       selectedKeys={[String(selectedKeys)]}
-      style={{ height: '100%' }}
+      style={{ height: '100%',overflowY:'scroll' }}
     >
       {
         MenuObj.map((v) => (
