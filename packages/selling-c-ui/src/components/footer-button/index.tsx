@@ -3,6 +3,8 @@ import { View } from '@tarojs/components'
 import { SlFooterButtonProps, SlFooterButtonState } from '../../../types/footer-button'
 import PropTypes, {InferProps} from "prop-types";
 import { objectToString, pxTransform } from '../../common/utils'
+import Common from '../../common/common'
+import classNames from 'classnames';
 import { isFunction } from '../../common/is'
 
 export default class SlFooterButton extends React.Component<SlFooterButtonProps, SlFooterButtonState> {
@@ -69,9 +71,11 @@ export default class SlFooterButton extends React.Component<SlFooterButtonProps,
       width: '100%',
       padding: this.getPadding(),
     }))
+  
 
     return (
-      <View className="slc-custom-footer-container">
+     
+      <Common className={classNames("slc-custom-footer-container",this.props.className)}>
         <View style={styleContainer}>
           { this.props.replaceContent ?
               <Fragment>{ this.props.replaceContent }</Fragment>
@@ -84,7 +88,7 @@ export default class SlFooterButton extends React.Component<SlFooterButtonProps,
               </View>
           }
         </View>
-      </View>
+      </Common>
     )
   }
 }
@@ -105,8 +109,8 @@ SlFooterButton.propTypes = {
   color: PropTypes.string,
   background: PropTypes.string,
   padding: PropTypes.string,
-  radius: PropTypes.string,
-  lineHeight: PropTypes.string,
+  radius: PropTypes.number,
+  lineHeight: PropTypes.number,
   doubleBtn: PropTypes.bool,
   secondName: PropTypes.string,
   secColor: PropTypes.string,

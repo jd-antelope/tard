@@ -13,10 +13,12 @@ type TaroButtonProps = Pick<ButtonProps, 'formType' | 'openType' |
 export interface SlButtonProps extends TaroButtonProps, SlComponent {
   /**
    * 是否填充背景
+   * @default false
    */
   fill?: boolean
   /**
    * 自动充满父容器
+   * @default false
    */
   full?: boolean
   /**
@@ -41,7 +43,6 @@ export interface SlButtonProps extends TaroButtonProps, SlComponent {
   radius?: number
   /**
    * 设置按钮为禁用态（不可点击）
-   * @default false
    */
   disabled?: boolean
   /**

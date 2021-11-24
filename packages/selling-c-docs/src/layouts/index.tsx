@@ -26,7 +26,7 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
   }
   return (
     <LayoutCommon>
-      <Layout className="site-layout-background">
+      <Layout className="site-layout-background site-main">
         <Sider className="site-layout-background">
           <LayoutMenu postIframeMessage={(title) => postIframeMessage(title)} />
         </Sider>
