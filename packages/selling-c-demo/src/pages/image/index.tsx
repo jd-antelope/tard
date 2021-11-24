@@ -17,7 +17,7 @@ const Image: FC = () => {
         <SlImage className="base-image" src="" />
 
         <View className='doc-body-content-tip'>取消加载动画</View>
-        <SlImage isTransition={ false } className="base-image" src="https://storage.360buyimg.com/hawley-common/selling-logo.png" />
+        <SlImage transition={ false } className="base-image" src="https://storage.360buyimg.com/hawley-common/selling-logo.png" />
       </View>
     </View>
   );

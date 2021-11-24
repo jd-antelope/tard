@@ -13,7 +13,7 @@ export interface SlImageProps extends ImageProps, SlComponent {
   /**
    * 是否展示动画
    */
-  isTransition?: boolean
+  transition?: boolean
 }
 
 export interface SlImageState {

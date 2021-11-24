@@ -5,14 +5,14 @@
 ### 引入
 在 Taro 文件中引入组件
 ```js
-import { SlToast } from '@jd/selling-c-ui'
+import { SlImage } from '@jd/selling-c-ui'
 ```
 ### 基础用法
 ```js
 import React from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlImage } from '@test/selling-c-ui'
+import { SlImage } from '@jd/selling-c-ui'
 
 const Image: FC = () => {
   return (
@@ -33,7 +33,7 @@ const Image: FC = () => {
 ### 取消加载动画
 ```js
 <SlImage 
-  isTransition={ false } 
+  transition={ false } 
   className="base-image" 
   src="https://storage.360buyimg.com/hawley-common/selling-logo.png" 
 />
@@ -44,4 +44,4 @@ const Image: FC = () => {
 | ------------ | ------------ | ------- | ------ |
 | src          | 图片链接     | string | -      |
 | res          | 图片其他参数 | Image   | -      |
-| isTransition | 是否展示动画 | boolean | -      |
+| transition | 是否展示动画 | boolean | -      |
