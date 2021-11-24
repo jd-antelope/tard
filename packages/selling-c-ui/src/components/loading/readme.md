@@ -1,11 +1,11 @@
 
-# Image
+# Loading
 该标签在 Taro 的 Image 标签上面增加了错误处理、加载动画等属性
 ## 代码演示
 ### 引入
 在 Taro 文件中引入组件
 ```js
-import { SlImage } from '@jd/selling-c-ui'
+import { SlLoading } from '@jd/selling-c-ui'
 ```
 ### 基础用法
 ```js
@@ -23,6 +23,7 @@ const Loading: FC = () => {
 };
 ```
 ### 颜色修改
+通过修改 color 属性，修改背景颜色
 ```js
 <SlLoading color="red" />
 ```
@@ -38,6 +39,7 @@ const Loading: FC = () => {
 ```
 
 ### 大小
+修改属性 size 改变大小，基于750的尺寸 
 ```js
 <SlLoading size={ 100 } />
 ```

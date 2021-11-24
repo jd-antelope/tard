@@ -12,7 +12,6 @@ const Loading: FC = () => {
     <View className="container">
       <DocsHeader title='Loading'></DocsHeader>
       <View className='doc-body toast-page'>
-        <View className='doc-body-header'>loading</View>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip'>基本案例</View>
           <SlLoading />

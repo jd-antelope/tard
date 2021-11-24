@@ -20,7 +20,7 @@ export interface SlPriceProps extends SlComponent {
   /**
    * 价格后面的内容
    */
-  trigger?: React.ReactNode,
+  content?: React.ReactNode,
   /**
    * 是否展示佣金
    */
@@ -34,18 +34,18 @@ export interface SlPriceProps extends SlComponent {
    */
   type?: Size | string
   /**
-   * 大小
+   * 整体价格大小
    */
   size?: number
   /**
-   * 大小
+   * 只有价格大小
    */
   symbolSize?: number
-   /**
+  /**
    * 价格单位
    */
   priceUnit?: string
-      /**
+  /**
    * 价格单位大小
    */
   unitSize?: number

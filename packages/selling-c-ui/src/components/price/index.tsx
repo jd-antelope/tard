@@ -50,8 +50,8 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
     const { 
-      price, className, color, commissionPrice, trigger,
-      originalColor, originalPrice, fixedNum, type, size = 0, 
+      price, className, color, commissionPrice, content,
+      originalColor, originalPrice, type, size = 0, 
       symbolSize = 0, priceUnit, unitSize = 32
     } = this.props
     return (
@@ -88,15 +88,15 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
               style={ `color: ${ originalColor }` }
             >
              <Text>{priceUnit}</Text>
-             { Number(originalPrice).toFixed(fixedNum) }
+             { this.filterPrice(originalColor) }
             </Text>
           }
         </View>
         {
-          trigger !== '' && trigger
+          content !== '' && content
         }
         {
-          (commissionPrice !== '' && trigger === '') && 
+          (commissionPrice !== '' && content === '') && 
           <View className="slc-price__commission">
             <View className="slc-price__commission--box">
               佣金 { commissionPrice }
@@ -113,7 +113,7 @@ SlPrice.defaultProps = {
   price: '',
   fixedNum: -1,
   color: '',
-  trigger: '',
+  content: '',
   commissionPrice: '',
   originalColor: '',
   originalPrice: '',
