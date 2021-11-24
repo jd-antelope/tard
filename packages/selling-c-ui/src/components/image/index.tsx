@@ -30,7 +30,7 @@ export default class SlImage extends React.Component<SlImageProps, SlImageState>
             'slc-image-none': url.includes(noImg) && isTransition
           }) }
           onError={ () => {
-            this.setState({ url: `${BUYIMG}${noImg}` });
+            this.setState({ url: `${noImg}` });
           } }
         />
       </Fragment>
