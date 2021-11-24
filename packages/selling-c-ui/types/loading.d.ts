@@ -15,11 +15,11 @@ export interface SlLoadingProps extends SlComponent {
   /**
    * 是否有全局定位
    */
-  isMask?: boolean
+  overlay?: boolean
   /**
    * loading大小
    */
-  distance?: number
+  size?: number
   /**
    * 点击事件
    */

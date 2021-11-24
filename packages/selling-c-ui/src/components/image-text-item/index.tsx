@@ -20,12 +20,13 @@ export default class SlImageTextItem extends React.Component<SlImageTextItemProp
   }
 
   public render(): JSX.Element {
-
     const {
       propsData,
       isUp,
     } = this.props
+
     const ImageText = classNames('slc-image-text-item-ImageText')
+    
     return (
       <View className={ImageText}>
         {
@@ -59,5 +60,5 @@ export default class SlImageTextItem extends React.Component<SlImageTextItemProp
 SlImageTextItem.defaultProps = {
   propsData: [],
   isUp: true,
-
+  onClick: () => {}
 }

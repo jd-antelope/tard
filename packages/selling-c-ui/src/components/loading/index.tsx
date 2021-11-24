@@ -25,20 +25,20 @@ export default class SlLoading extends React.Component<SlLoadingProps> {
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
     const { 
-      type = 'default', color, isMask, distance = 0
+      type = 'default', color, overlay, size = 0
     } = this.props
 
     const iconClass = cn('slc-loading-icon slc-icon', `slc-icon-${loadingObj[type]}`)
 
-    const style = (objectToString(distance !== 0 ? { 
-      'width': pxTransform(distance),
-      'height': pxTransform(distance),
-      'font-size': pxTransform(distance),
+    const style = (objectToString(size !== 0 ? { 
+      'width': pxTransform(size),
+      'height': pxTransform(size),
+      'font-size': pxTransform(size),
     } : {}))
   
     return (
       <View 
-        className={ cn('slc-loading', { 'slc-loading-flex': isMask }) }
+        className={ cn('slc-loading', { 'slc-loading-flex': overlay }) }
         onClick={ this.handler }
       >
         <Text 
@@ -57,7 +57,7 @@ SlLoading.defaultProps = {
   className: '', 
   type: 'default',
   color: '',
-  isMask: false,
-  distance: 0,
+  overlay: false,
+  size: 0,
   onClick: () => {}
 }

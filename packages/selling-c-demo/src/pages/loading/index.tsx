@@ -6,7 +6,7 @@ import DocsHeader from '../../components/doc-header'
 import './index.less';
 
 const Loading: FC = () => {
-  const [isMask, setIsMask] = useState<boolean>(false)
+  const [overlay, setOverlay] = useState<boolean>(false)
 
   return (
     <View className="container">
@@ -18,19 +18,23 @@ const Loading: FC = () => {
           <SlLoading />
           <View className='doc-body-content-tip'>颜色修改</View>
           <SlLoading color="red" />
-          <View className='doc-body-content-tip'>type ios</View>
+          <View className='doc-body-content-tip'>类型 ios</View>
           <SlLoading type="ios" />
-          <View className='doc-body-content-tip'>type loading</View>
+          <View className='doc-body-content-tip'>类型 loading</View>
           <SlLoading type="loading" />
-          <View className='doc-body-content-tip'>type distance</View>
-          <SlLoading distance={ 100 } />
-          <View className='doc-body-content-tip'>type mask</View>
-          <SlButton size="large" onClick={ () => setIsMask(true) }>点击</SlButton>
+          <View className='doc-body-content-tip'>大小</View>
+          <SlLoading size={ 100 } />
+          <View className='doc-body-content-tip'>展示遮罩</View>
+          <SlButton size="large" onClick={ () => setOverlay(true) }>点击</SlButton>
           {
-            isMask && <SlLoading onClick={ () => {
-              setIsMask(false) 
-              console.log(1)
-            }} distance={ 100 } isMask />
+            overlay && 
+            <SlLoading 
+              onClick={ () => {
+                setOverlay(false) 
+              }} 
+              size={ 100 } 
+              overlay 
+            />
           }
         </View>
       </View>
