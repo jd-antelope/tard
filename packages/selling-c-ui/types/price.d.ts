@@ -38,7 +38,7 @@ export interface SlPriceProps extends SlComponent {
    */
   size?: number
   /**
-   * 只有价格大小
+   * 只修改价格大小
    */
   symbolSize?: number
   /**

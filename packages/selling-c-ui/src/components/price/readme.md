@@ -82,7 +82,7 @@ price 可以传入数组
 | fixedNum | 保留几位小数点 | number | - |
 | type | 类型 | Size | - |
 | size | 整体价格大小 | number | - |
-| symbolSize | 只有价格大小 | number | - |
+| symbolSize | 只修改价格大小 | number | - |
 | priceUnit | 价格单位 | string | ¥ |
 | unitSize | 价格单位大小 | number | 32 |
 
