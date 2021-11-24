@@ -10,7 +10,8 @@ const FooterButton: FC = () => {
     <View className="container">
       <DocsHeader title='FooterButton'></DocsHeader>
       <View className='doc-body'>
-        <View className='doc-body-header'>button</View>
+      
+        <SlFooterButton  className='pos-1'>你好</SlFooterButton>
       </View>
     </View>
   );
