@@ -1,6 +1,6 @@
 import { CommonEventFunction } from "@tarojs/components"
 
-export interface SlCustomHeaderProps extends SlComponent {
+export interface SlNavBarProps extends SlComponent {
     /**
      * 是否需要返回按钮
      * @default false
@@ -20,6 +20,6 @@ export interface SlCustomHeaderProps extends SlComponent {
     title?: string
 }
 
-declare const SlCustomHeader: ComponentClass<SlCustomHeaderProps>
+declare const SlNavBar: ComponentClass<SlNavBarProps>
 
-export default SlCustomHeader
+export default SlNavBar
