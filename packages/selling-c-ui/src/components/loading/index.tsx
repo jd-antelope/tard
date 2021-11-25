@@ -59,5 +59,5 @@ SlLoading.defaultProps = {
   color: '',
   overlay: false,
   size: 0,
-  onClick: () => {}
+  onClick: null
 }

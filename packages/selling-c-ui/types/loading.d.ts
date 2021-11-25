@@ -23,7 +23,7 @@ export interface SlLoadingProps extends SlComponent {
   /**
    * 点击事件
    */
-  onClick?: CommonEventFunction
+  onClick?: CommonEventFunction | null
 }
 
 declare const SlLoading: ComponentClass<SlLoadingProps>
