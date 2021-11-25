@@ -1,5 +1,5 @@
  
-# skeleton
+# Skeleton
 该标签设计了简单的骨架结构
 ## 代码演示
 ### 引入
@@ -29,28 +29,24 @@ const Skeleton: FC = () => {
 <SlSkeleton width={ 500 } height={ 40 } />
 ```
 
-### 类型 圆角
+### 圆角
 修改属性 type=rounded 时可将元素变成圆角
 ```js
 <SlSkeleton width={ 50 } height={ 50 } type="rounded" />
 ```
 
-### 类型 直角
+### 直角
 修改属性 type=squared 时可将元素变成直角
 ```js
 <SlSkeleton width={ 500 } height={ 40 } type="squared" />
 ```
 
+
 ## Api
+### props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
-| width | 宽 | number | - |
-| height | 高 | number | - |
-| type | 圆角类型 | Type | - |
+| width | 宽 | number | 24 |
+| height | 高 | number | 24 |
+| type | 圆角类型 | default｜rounded｜squared | default |
 
-## Type 数据结构
-|  键名   | 含义  |
-|  ----  | ----  |
-| default | 默认8像素圆角 |
-| rounded | 圆角 |
-| squared | 直角 |
