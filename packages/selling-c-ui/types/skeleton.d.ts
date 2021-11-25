@@ -11,10 +11,6 @@ export interface SlSkeletonProps extends SlComponent {
    */
   height?: number
   /**
-   * 外盒子高度
-   */
-  boxheight?: number
-  /**
    * 圆角类型
    */
   type?: Type | string
