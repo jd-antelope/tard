@@ -9,7 +9,7 @@ export { default as SlModal } from './modal';
 export { default as SlToast } from './toast';
 export { default as SlBadge } from './badge';
 export { default as SlOverlay } from './overlay';
-export { default as SlCustomHeader } from './custom-header';
+export { default as SlNavBar } from './nav-bar';
 export { default as SlIcon } from './icon';
 export { default as SlPopup } from './popup';
 export { default as SlSkeleton } from './skeleton';

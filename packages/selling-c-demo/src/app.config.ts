@@ -5,7 +5,7 @@ export default {
 		'pages/button/index',
 		'pages/canvas/index',
 		'pages/cell/index',
-		'pages/custom-header/index',
+		'pages/nav-bar/index',
 		'pages/dropdown-menu/index',
 		'pages/field/index',
 		'pages/footer-button/index',
