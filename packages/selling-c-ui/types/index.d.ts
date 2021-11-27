@@ -22,7 +22,7 @@ export { default as SlTab } from './tab';
 export { default as SlTabPane } from './tab-pane';
 export declare const SlDropdownMenuItem: ComponentClass
 export { default as SlRate } from './rate';
-export { default as SlTimePicker } from './sl-time-picker'
+export { default as SlDatetimePicker } from './datetime-picker'
 export { default as SlProgress } from './progress'
 export { default as SlProgressCircle } from './progress-circle'
 export { default as SlSort } from './sort'

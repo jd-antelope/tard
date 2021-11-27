@@ -1,12 +1,12 @@
 
 @import '../variables/index.less';
 @import '../mixins/index.less';
-@slc-time-picker-font-size: 28px;
-@slc-time-picker-btn-font-size: 32px;
-@slc-time-picker-default-font-color: #333;
-@slc-time-picker-gray-font-color: #999;
+@slc-datetime-picker-font-size: 28px;
+@slc-datetime-picker-btn-font-size: 32px;
+@slc-datetime-picker-default-font-color: #333;
+@slc-datetime-picker-gray-font-color: #999;
 
-.@{--css-prefix}-time {
+.@{--css-prefix}-datetime {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -14,6 +14,7 @@
   left: 0;
   visibility: hidden;
   z-index: @zindex-popup__layout;
+  transition: all .3s linear 0s;
 
   &__mask {
     top: 0;
@@ -37,12 +38,15 @@
     padding-bottom: constant(safe-area-inset-bottom) !important;
     padding-bottom: env(safe-area-inset-bottom) !important;
   }
+  &-picker__label {
+    .flex-center();
+  }
 }
 
-.@{--css-prefix}-time__active {
+.@{--css-prefix}-datetime__active {
   visibility: visible;
 
-  .slc-time__container__active {
+  .slc-datetime__container__active {
     bottom: 0;
     //transition: all 0 ease-in;
   }
@@ -52,11 +56,11 @@
   text-align: center;
   display: flex;
   width: 100%;
-  font-size: @slc-time-picker-btn-font-size;
+  font-size: @slc-datetime-picker-btn-font-size;
   .cancel-btn {
     box-sizing: border-box;
     line-height: 108px;
-    color: @slc-time-picker-default-font-color;
+    color: @slc-datetime-picker-default-font-color;
     width: 50%;
   }
 
@@ -88,25 +92,25 @@
     }
 
     .time-show-left-title {
-      color: @slc-time-picker-gray-font-color;
-      font-size: @slc-time-picker-font-size;
+      color: @slc-datetime-picker-gray-font-color;
+      font-size: @slc-datetime-picker-font-size;
     }
 
     .time-show-left-content {
-      color: @slc-time-picker-gray-font-color;
-      font-size: @slc-time-picker-font-size;
+      color: @slc-datetime-picker-gray-font-color;
+      font-size: @slc-datetime-picker-font-size;
     }
 
     &.active {
       background: #fff;
       //border-bottom: 1px solid transparent;
       .time-show-left-title {
-        color: @slc-time-picker-default-font-color;
+        color: @slc-datetime-picker-default-font-color;
         font-weight: 700;
       }
 
       .time-show-left-content {
-        color: @slc-time-picker-default-font-color;
+        color: @slc-datetime-picker-default-font-color;
         font-weight: 700;
       }
     }
@@ -126,25 +130,25 @@
     }
 
     .time-show-left-title {
-      color: @slc-time-picker-gray-font-color;
-      font-size: @slc-time-picker-font-size;
+      color: @slc-datetime-picker-gray-font-color;
+      font-size: @slc-datetime-picker-font-size;
     }
 
     .time-show-left-content {
-      color: @slc-time-picker-gray-font-color;
-      font-size: @slc-time-picker-font-size;
+      color: @slc-datetime-picker-gray-font-color;
+      font-size: @slc-datetime-picker-font-size;
     }
 
     &.active {
       background: #fff;
       //border-bottom: 1px solid transparent;
       .time-show-left-title {
-        color: @slc-time-picker-default-font-color;
+        color: @slc-datetime-picker-default-font-color;
         font-weight: 700;
       }
 
       .time-show-left-content {
-        color: @slc-time-picker-default-font-color;
+        color: @slc-datetime-picker-default-font-color;
         font-weight: 700;
       }
     }
