@@ -21,7 +21,6 @@ const Toast: FC = () => {
     <View className="container">
       <DocsHeader title='Toast'></DocsHeader>
       <View className='doc-body toast-page'>
-        <View className='doc-body-header'>toast 轻提示</View>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip'>基本案例</View>
           <SlButton 

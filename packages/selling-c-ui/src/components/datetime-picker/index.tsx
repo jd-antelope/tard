@@ -16,13 +16,13 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
   public constructor(props: SlDatetimePickerProps) {
     super(props)
 
-    const { visible, timeStr = '', endTimeStr = '', minDate, maxDate } = props
+    const { visible, value = '', endValue = '', minDate, maxDate } = props
     const years = getYears(minDate, maxDate)
-    const months = getMonths(this.getYear(timeStr), minDate, maxDate) || []
-    const days = getDays(this.getYear(timeStr), this.getMonth(timeStr), minDate, maxDate)
-    const hours = getHours(this.getMonth(timeStr), this.getDate(timeStr), this.getYear(timeStr), minDate, maxDate)
+    const months = getMonths(this.getYear(value), minDate, maxDate) || []
+    const days = getDays(this.getYear(value), this.getMonth(value), minDate, maxDate)
+    const hours = getHours(this.getMonth(value), this.getDate(value), this.getYear(value), minDate, maxDate)
     const minutes = getMinutes(
-      this.getMonth(timeStr), this.getDate(timeStr), this.getYear(timeStr), this.getHour(timeStr),
+      this.getMonth(value), this.getDate(value), this.getYear(value), this.getHour(value),
       minDate, maxDate
     )
 
@@ -33,20 +33,20 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
       days,
       hours,
       minutes,
-      year: this.getYear(timeStr),
-      yearEndTime: this.getYear(endTimeStr),
-      month: this.getMonth(timeStr),
-      monthEndTime: this.getMonth(endTimeStr),
-      day: this.getDate(timeStr),
-      dayEndTime: this.getDate(endTimeStr),
-      value: this.getTimeArray(timeStr),
-      valueEndTime: endTimeStr ? this.getTimeArray(endTimeStr) : [9999, 0, 0],
+      year: this.getYear(value),
+      yearEndTime: this.getYear(endValue),
+      month: this.getMonth(value),
+      monthEndTime: this.getMonth(endValue),
+      day: this.getDate(value),
+      dayEndTime: this.getDate(endValue),
+      value: this.getTimeArray(value),
+      valueEndTime: endValue ? this.getTimeArray(endValue) : [9999, 0, 0],
       active: 1, // 现在激活的tab
       showToast: false,
-      hour: this.getHour(timeStr),
-      hourEndTime: this.getHour(endTimeStr),
-      minute: this.getMinute(timeStr),
-      minuteEndTime: this.getMinute(endTimeStr),
+      hour: this.getHour(value),
+      hourEndTime: this.getHour(endValue),
+      minute: this.getMinute(value),
+      minuteEndTime: this.getMinute(endValue),
     }
   }
 
@@ -137,39 +137,39 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
   }
 
   public UNSAFE_componentWillReceiveProps(nextProps: SlDatetimePickerProps): void {
-    const { visible, timeStr = '', endTimeStr = '', minDate, maxDate } = nextProps
+    const { visible, value = '', endValue = '', minDate, maxDate } = nextProps
     if (visible !== this.state._isOpened) {
       this.setState({
         _isOpened: visible
       })
     }
-    if (timeStr != this.props.timeStr) {
+    if (value != this.props.value) {
       this.setState({
-        year: this.getYear(timeStr),
-        month: this.getMonth(timeStr),
-        day: this.getDate(timeStr),
-        value: this.getTimeArray(timeStr),
-        hour: this.getHour(timeStr),
-        minute: this.getMinute(timeStr),
+        year: this.getYear(value),
+        month: this.getMonth(value),
+        day: this.getDate(value),
+        value: this.getTimeArray(value),
+        hour: this.getHour(value),
+        minute: this.getMinute(value),
       })
     }
-    if (endTimeStr != this.props.endTimeStr) {
+    if (endValue != this.props.endValue) {
       this.setState({
-        yearEndTime: this.getYear(endTimeStr),
-        monthEndTime: this.getMonth(endTimeStr),
-        dayEndTime: this.getDate(endTimeStr),
-        valueEndTime: endTimeStr ? this.getTimeArray(endTimeStr) : [9999, 0, 0],
-        hourEndTime: this.getHour(endTimeStr),
-        minuteEndTime: this.getMinute(endTimeStr),
+        yearEndTime: this.getYear(endValue),
+        monthEndTime: this.getMonth(endValue),
+        dayEndTime: this.getDate(endValue),
+        valueEndTime: endValue ? this.getTimeArray(endValue) : [9999, 0, 0],
+        hourEndTime: this.getHour(endValue),
+        minuteEndTime: this.getMinute(endValue),
       })
     }
     if (minDate != this.props.minDate || maxDate != this.props.maxDate) {
       const years = getYears(minDate, maxDate)
-      const months = getMonths(this.getYear(timeStr), minDate, maxDate) || []
-      const days = getDays(this.getYear(timeStr), this.getMonth(timeStr), minDate, maxDate)
-      const hours = getHours(this.getMonth(timeStr), this.getDate(timeStr), this.getYear(timeStr), minDate, maxDate)
+      const months = getMonths(this.getYear(value), minDate, maxDate) || []
+      const days = getDays(this.getYear(value), this.getMonth(value), minDate, maxDate)
+      const hours = getHours(this.getMonth(value), this.getDate(value), this.getYear(value), minDate, maxDate)
       const minutes = getMinutes(
-        this.getMonth(timeStr), this.getDate(timeStr), this.getYear(timeStr), this.getHour(timeStr),
+        this.getMonth(value), this.getDate(value), this.getYear(value), this.getHour(value),
         minDate, maxDate
       )
       this.setState({
@@ -212,7 +212,7 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
     let startTime = `${this.state.year}-${this.transDate(this.state.month)}-${this.transDate(this.state.day)}`
     if (type === 'time') startTime += ` ${this.transDate(this.state.hour)}:${this.transDate(this.state.minute)}`
     timeArr.push(startTime)
-    if (this.props.isEndDate) {
+    if (this.props.showEndDate) {
       let endTime = `${this.state.yearEndTime}-${this.transDate(this.state.monthEndTime)}-${this.transDate(this.state.dayEndTime)}`
       if (type === 'time') endTime += ` ${this.transDate(this.state.hourEndTime)}:${this.transDate(this.state.minuteEndTime)}`
       timeArr.push(endTime)
@@ -234,7 +234,7 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
 
   // 确定函数函数
   private confirm = (): void => {
-    if (this.props.isEndDate && this.getArrayTime('start') > this.getArrayTime('end')) {
+    if (this.props.showEndDate && this.getArrayTime('start') > this.getArrayTime('end')) {
       this.setState({showToast: true})
       return
     }
@@ -279,7 +279,7 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
     const tabLeftClass = classNames(
       'time-show-left',
       {
-        'half': this.props.isEndDate,
+        'half': this.props.showEndDate,
         'active': this.state.active === 1
       },
     )
@@ -287,8 +287,8 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
     const tabRightClass = classNames(
       'time-show-right',
       {
-        'hidden': !this.props.isEndDate,
-        'half': this.props.isEndDate,
+        'hidden': !this.props.showEndDate,
+        'half': this.props.showEndDate,
         'active': this.state.active === 2
       },
     )
@@ -317,7 +317,11 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
               <View className={tabRightClass} onClick={ () => this.setState({active: 2})}>
                 <View className="time-show-left-title">{this.props.endTitle}</View>
                 <View className="time-show-left-content">
-                  {this.state.yearEndTime}.{this.transDate(this.state.monthEndTime)}.{this.transDate(this.state.dayEndTime)} {this.transDate(this.state.hourEndTime)}:{this.transDate(this.state.minuteEndTime)}
+                  {this.state.yearEndTime}.{this.transDate(this.state.monthEndTime)}.{this.transDate(this.state.dayEndTime)}
+                  {
+                    type === 'time' && 
+                    <Fragment> {this.transDate(this.state.hourEndTime)}:{this.transDate(this.state.minuteEndTime)}</Fragment>
+                  }
                 </View>
               </View>
             </View>
@@ -378,14 +382,14 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
 }
 
 SlDatetimePicker.defaultProps = {
-  isEndDate: false, // 默认不显示
+  showEndDate: false, // 默认不显示
   visible: false,
   outClose: true, // 是否能点击遮罩层关闭
   title: '选中时间',
   endTitle: '结束时间',
   type: 'date',
-  timeStr: '',
-  endTimeStr: '',
+  value: '',
+  endValue: '',
   minDate: '1990-01-01',
   maxDate: `${new Date().getFullYear() + 5}-01-01`
 }

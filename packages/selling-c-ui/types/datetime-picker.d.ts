@@ -7,7 +7,7 @@ export interface SlDatetimePickerProps extends SlComponent {
    * 是否有开始时间和结束时间两个时间选项
    * @default false
    */
-  isEndDate?: boolean
+  showEndDate?: boolean
   /**
    * 打开弹窗
    * @default false
@@ -38,14 +38,14 @@ export interface SlDatetimePickerProps extends SlComponent {
   endTitle?: string
   /**
    *  默认开始时间
-   * @default 9999-1-1
+   * @default now
    */
-  timeStr?: string
+  value?: string
   /**
    *  默认结束时间
-   * @default 9999-1-1
+   * @default now
    */
-  endTimeStr?: string
+  endValue?: string
   /**
    * 是否展示时间
    * @default false
