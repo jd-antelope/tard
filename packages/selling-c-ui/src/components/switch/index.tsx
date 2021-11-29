@@ -27,10 +27,9 @@ export default class SlSwitch extends React.Component<SlSwitchProps, SlSwitchSta
       radius = 19 ,
       activeColor,
       bgColor,
-      btnColor
+      btnColor,
+      checked
     } = this.props
-
-    const { checked } = this.state
 
     const rootCls = cn(
       'slc-switch',
@@ -47,10 +46,7 @@ export default class SlSwitch extends React.Component<SlSwitchProps, SlSwitchSta
 
     return <Common className={rootCls} style={rootSty} 
       onClick={()=>{
-        const  v = !this.state.checked
-        this.setState({
-          checked: v
-        })
+        const  v = !checked
         if(isFunction(this.props.onChange)) {
           this.props.onChange(v)
         }

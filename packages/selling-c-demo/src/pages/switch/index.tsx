@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import { SlSwitch } from '@test/selling-c-ui'
