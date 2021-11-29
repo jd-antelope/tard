@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-const markdown = `# field
+const markdown = `# Field
 ## 代码演示
 ### 引入
 在 Taro 文件中引入组件
@@ -11,42 +11,18 @@ import { SlField } from '@jd/selling-c-ui'
 
 ### 基本用法
 ~~~js
-import React, { useState } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlField } from '@jd/selling-c-ui'
-
-const Field: FC = () => {
-  const [form, setForm] = useState({
-    shopName: ''
-  })
-
-  const onSubmit = (event) => {
-    console.log(event)
-  }
-
-  const change = (res) => {
-    setForm({
-      ...form,
-      ...res
-    })
-  }
-  return (
-    <View className="container">
-      <SlField
-        name='shopName' 
-        title='商品名称' 
-        type='text' 
-        placeholder='单行文本' 
-        value={form.shopName} 
-        onChange={(e) => change({ shopName: e })} 
-      />
-    </View>
-  );
-};
+<SlField
+  name='shopName' 
+  title='商品名称' 
+  type='text' 
+  placeholder='单行文本' 
+  value={form.shopName} 
+  onChange={(e) => change({ shopName: e })} 
+/>
 ~~~
 
 ### 必填
+修改 required 属性显示必填标识 *
 ~~~js
 <SlField
   name='shopName' 
@@ -60,10 +36,12 @@ const Field: FC = () => {
 ~~~
 
 ### 边框
+属性 border 为 false 时就能去掉元素边框
 ~~~js
 <SlField
   name='shopName' 
   title='商品名称' 
+  border={ false }
   type='text' 
   placeholder='单行文本' 
   value={form.shopName} 
@@ -72,38 +50,37 @@ const Field: FC = () => {
 ~~~
 
 ### 只读
+添加属性 readonly 不能修改元素
 ~~~js
 <SlField
   name='shopName' 
   title='图片描述' 
   type='text'
   value='信息'
-  required
   readonly
   onChange={(e) => change({ imgDes: e })} 
 />
 ~~~
 
 ### 内容区域文字颜色
+修改属性 contentColor 可以修改中间区域文字颜色
 ~~~js
 <SlField
   name='shopName' 
   title='图片描述' 
   value='value2'
-  required
-  readonly
   contentColor="red"
   onLink={ () => { } }
 />
 ~~~
 
 ### 自定义跳转内容
+修改属性 linkSlot 可以自定义右侧跳转内容
 ~~~js
 <SlField
   name='shopName' 
   title='图片描述' 
   value='信息'
-  required
   isLink
   linkSlot={'自定义'}
   readonly
@@ -112,12 +89,12 @@ const Field: FC = () => {
 ~~~
 
 ### 左侧文本额外类名
+添加 labelClass 属性可以自定义左侧 class 名
 ~~~js
 <SlField
   name='shopName' 
   title='图片描述' 
   value='信息'
-  required
   isLink
   linkSlot={'自定义'}
   readonly
@@ -127,12 +104,12 @@ const Field: FC = () => {
 ~~~
 
 ### 左侧文本宽度
+修改属性 labelWidth 可以控制左侧宽度
 ~~~js
 <SlField
   name='shopName' 
   title='图' 
   value='信息'
-  required
   isLink
   linkSlot={'自定义'}
   readonly
@@ -142,12 +119,12 @@ const Field: FC = () => {
 ~~~
 
 ### 左侧文本对齐方式
+修改属性 labelAlign 可以控制左侧对齐方式
 ~~~js
 <SlField
   name='shopName' 
   title='图' 
   value='信息'
-  required
   isLink
   linkSlot={'自定义'}
   readonly
@@ -157,6 +134,7 @@ const Field: FC = () => {
 ~~~
 
 ### 多行输入框
+当属性 type 为 textarea 时 可以切换到多行文本框
 ~~~js
 <SlField
   name='shopName' 
@@ -167,7 +145,8 @@ const Field: FC = () => {
 />
 ~~~
 
-### 多行输入框无标题
+### 无标题
+属性 title 不写时可以去掉左侧内容
 ~~~js
 <SlField
   name='shopName' 
@@ -177,7 +156,8 @@ const Field: FC = () => {
 />
 ~~~
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | name | 输入框的唯一标识，有传入点击title会聚焦输入框 | string | - |

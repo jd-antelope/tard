@@ -38,7 +38,7 @@ const Field: FC = () => {
           </SlForm>
 
           <View className='doc-body-content-tip'>必填</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='imgDes' 
               title='图片描述' 
@@ -50,11 +50,12 @@ const Field: FC = () => {
             />
           </SlForm>
           <View className='doc-body-content-tip'>边框</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='shopName' 
               title='商品名称' 
               type='text' 
+              border={ false }
               placeholder='单行文本' 
               value={form.shopName} 
               onChange={(e) => change({ shopName: e })} 
@@ -62,38 +63,34 @@ const Field: FC = () => {
           </SlForm>
 
           <View className='doc-body-content-tip'>只读</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='s' 
               title='图片描述' 
               type='text'
               value='信息'
-              required
               readonly
               onChange={(e) => change({ imgDes: e })} 
             />
           </SlForm>
 
           <View className='doc-body-content-tip'>内容区域文字颜色</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='h' 
               title='图片描述' 
               value='信息'
-              required
-              readonly
               contentColor="red"
               onLink={ () => { console.log(111) } }
             />
           </SlForm>
 
           <View className='doc-body-content-tip'>自定义跳转内容</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
               title='图片描述' 
               value='信息'
-              required
               isLink
               linkSlot={'自定义'}
               readonly
@@ -102,12 +99,11 @@ const Field: FC = () => {
           </SlForm>
 
           <View className='doc-body-content-tip'>左侧文本额外类名</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
               title='图片描述' 
               value='信息'
-              required
               isLink
               linkSlot={'自定义'}
               readonly
@@ -117,12 +113,11 @@ const Field: FC = () => {
           </SlForm>
 
           <View className='doc-body-content-tip'>左侧文本宽度</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
               title='图' 
               value='信息'
-              required
               isLink
               linkSlot={'自定义'}
               readonly
@@ -132,12 +127,11 @@ const Field: FC = () => {
           </SlForm>
 
           <View className='doc-body-content-tip'>左侧文本对齐方式</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
               title='图' 
               value='信息'
-              required
               isLink
               linkSlot={'自定义'}
               readonly
@@ -147,7 +141,7 @@ const Field: FC = () => {
           </SlForm>
 
           <View className='doc-body-content-tip'>多行输入框</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='o' 
               type='textarea'
@@ -158,7 +152,7 @@ const Field: FC = () => {
           </SlForm>
 
           <View className='doc-body-content-tip'>多行输入框无标题</View>
-          <SlForm onSubmit={onSubmit} border>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='o' 
               type='textarea'
