@@ -1,28 +1,13 @@
-import React, { useEffect, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { View, Image } from '@tarojs/components'
 import { navigateTo } from '@tarojs/taro';
 import './index.less'
 import MenuObj from '../../docs-route'
 import { isWeb } from '../../utils'
 function Home() {
-  const iframeListener = (e: any) => {
-    const activeMenu = e.data.path
-    if (activeMenu) {
-      navigateTo({
-        url: `/pages${activeMenu}/index`
-      });
-    }
-  }
-
-  useEffect(() => {
+  const postIframeParentMessage = (path: string) => {
     if (isWeb) {
-      window.addEventListener("message", iframeListener, false);
-    }
-  })
-
-  const postIframeParentMessage = (title: string) => {
-    if (isWeb) {
-      window.parent.postMessage({ title: title.substring(1) }, '*');
+      window.parent.postMessage({ path }, '*');
     }
   }
 

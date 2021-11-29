@@ -10,9 +10,9 @@ const { Header, Content, Sider } = Layout;
 export default function LayoutComponent({ children, location }: IRouteComponentProps) {
   const [path] = useState<string>(history.location.pathname.split('/')[2] || 'home')
 
-  const postIframeMessage = (title: string) => {
+  const postIframeMessage = (path: string) => {
     const childFrameObj = document.getElementById('iframeDemo');
-    (childFrameObj as any).contentWindow?.postMessage({ title }, '*');
+    (childFrameObj as any).contentWindow?.postMessage({ path }, '*');
   }
 
   if (location.pathname === '/') {

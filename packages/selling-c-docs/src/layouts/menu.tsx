@@ -1,4 +1,4 @@
-import { useEffect, useState, FC } from 'react'
+import { useEffect, useState, FC, Fragment } from 'react'
 import { Menu } from 'antd'
 import { history } from 'umi';
 import MenuObj from '../business/docs-route'
@@ -56,13 +56,12 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
       style={{ height: '100%',overflowY:'scroll' }}
     >
       {
-        [...list, ...MenuObj.routes].map((v) => (
-          <>
+        [...list, ...MenuObj.routes].map((v, i) => (
+          <Fragment key={i} >
             <Menu.Item
               key={v.name}
               onClick={() => {
                 if (v.path) history.push(v.path);
-                postIframeMessage(v.name)
               }}
             >{v.name}</Menu.Item>
             {
@@ -72,14 +71,14 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
                   key={val.path.substring(1)}
                   onClick={() => {
                     if (val.path) history.push(`/docs${val.path}`);
-                    postIframeMessage(val.name)
+                    postIframeMessage(val.path)
                   }}
                 >
                   {val.nameEn || ''} {val.name}
                 </Menu.Item>
               ))
             }
-          </>
+          </Fragment>
         ))
       }
     </Menu>
