@@ -6,6 +6,7 @@ import RollupTypescript from 'rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
 import Package from '../package.json'
 import RollUpMd from '../scripts/buildmd'
+import RollupRoute from '../scripts/route'
 
 const resolveFile = path => NodePath.resolve(__dirname, '..', path)
 const externalPackages = [
@@ -39,6 +40,7 @@ export default {
         moduleDirectory: 'node_modules'
       }
     }),
+    RollupRoute(),
     RollUpMd({ watch: process.env.NODE_ENV  === 'development'}),
     RollupCommonjs({
       extensions: ['.esm.js', '.mjs', '.js', '.ts'],

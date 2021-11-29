@@ -31,7 +31,7 @@ export default {
 		'pages/tab/index',
 		'pages/tab-pane/index',
 		'pages/tag-price/index',
-		'pages/time-picker/index',
+		'pages/datetime-picker/index',
 		'pages/toast/index',
 		'pages/upload/index',
 ],

@@ -6,7 +6,7 @@ import { SlDatetimePickerProps } from '@test/selling-c-ui/types/datetime-picker'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 
-const TimePicker: FC = () => {
+const DatetimePicker: FC = () => {
   const [datetimePicker, setDatetimePicker] = useState<SlDatetimePickerProps>({ visible: false });
 
   const showSlDatetimePicker = useCallback((toastParams = {}) => {
@@ -34,4 +34,4 @@ const TimePicker: FC = () => {
   );
 };
 
-export default memo(TimePicker);
+export default memo(DatetimePicker);
