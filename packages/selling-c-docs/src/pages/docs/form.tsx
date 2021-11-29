@@ -1,18 +1,24 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-const markdown = `# form
+const markdown = `# Form
 ## 代码演示
+### 引入
+在 Taro 文件中引入组件
+~~~js
+import { SlForm } from '@jd/selling-c-ui'
+~~~
+
 ### 基本用法
 ~~~js
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlForm, SlField, SlButton } from '@test/selling-c-ui'
+import { SlForm, SlField, SlButton } from '@jd/selling-c-ui'
 
 const Form: FC = () => {
-  const [form, setForm] = useState<any>({
-    value: ''
+  const [form, setForm] = useState({
+    shopName: ''
   })
 
   const onSubmit = (event) => {
@@ -27,101 +33,32 @@ const Form: FC = () => {
   }
   return (
     <View className="container">
-      <View className='doc-body'>
-        <View className='doc-body-header'>form</View>
-        <View className='doc-body-content'>
-          <View className='doc-body-content-tip'>基本案例</View>
-          <SlForm onSubmit={onSubmit}>
-            <SlField
-              name='shopName' 
-              title='商品名称' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
-            />
-          </SlForm>
-
-          <View className='doc-body-content-tip'>border 属性</View>
-          <SlForm onSubmit={onSubmit} border>
-            <SlField
-              name='shopName' 
-              title='商品名称' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
-            />
-          </SlForm>
-        </View>
-      </View>
+      <SlForm onSubmit={onSubmit}>
+        <SlField
+          name='shopName' 
+          title='商品名称' 
+          type='text' 
+          placeholder='单行文本' 
+          value={form.shopName} 
+          onChange={(e) => change({ shopName: e })} 
+        />
+      </SlForm>
+      <SlButton formType='submit'>提交</SlButton>
     </View>
   );
 };
-
-export default memo(Form);
 ~~~
-### border
+
+### 边框
+增加属性 border 显示 form 外边框
 ~~~js
-import React, { memo, useState } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlForm, SlField, SlButton } from '@test/selling-c-ui'
-import DocsHeader from '../../components/doc-header'
-import './index.less';
-
-const Form: FC = () => {
-  const [form, setForm] = useState<any>({
-    value: ''
-  })
-
-  const onSubmit = (event) => {
-    console.log(event)
-  }
-
-  const change = (res) => {
-    setForm({
-      ...form,
-      ...res
-    })
-  }
-  return (
-    <View className="container">
-      <View className='doc-body'>
-        <View className='doc-body-header'>form</View>
-        <View className='doc-body-content'>
-          <View className='doc-body-content-tip'>基本案例</View>
-          <SlForm onSubmit={onSubmit}>
-            <SlField
-              name='shopName' 
-              title='商品名称' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
-            />
-          </SlForm>
-
-          <View className='doc-body-content-tip'>border 属性</View>
-          <SlForm onSubmit={onSubmit} border>
-            <SlField
-              name='shopName' 
-              title='商品名称' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
-            />
-          </SlForm>
-        </View>
-      </View>
-    </View>
-  );
-};
-
-export default memo(Form);
+<SlForm onSubmit={onSubmit} border>
+  ...
+</SlForm>
 ~~~
-## api
+
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | reportSubmit | 是否返回formId用于发送模板消息 | boolean | false |

@@ -24,7 +24,6 @@ const Form: FC = () => {
     <View className="container">
       <DocsHeader title='Form'></DocsHeader>
       <View className='doc-body'>
-        <View className='doc-body-header'>form</View>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip'>基本案例</View>
           <SlForm onSubmit={onSubmit}>
@@ -45,53 +44,6 @@ const Form: FC = () => {
               required
               onChange={(e) => change({ imgDes: e })} 
             />
-            <SlField
-              name='s' 
-              title='图片描述' 
-              type='text'
-              value='323'
-              required
-              readonly
-              onChange={(e) => change({ imgDes: e })} 
-            />
-            <SlField
-              name='a' 
-              title='图片描述' 
-              value='323'
-              required
-              isLink
-              linkSlot={'fdf'}
-              readonly
-              onChange={(e) => change({ imgDes: e })} 
-            />
-            <SlField
-              name='v' 
-              title='图片描述' 
-              value='3232'
-              required
-              readonly
-              isLink
-              linkText='322f'
-              onLink={ () => { console.log(111) } }
-            />
-            <SlField
-              name='h' 
-              title='图片描述' 
-              value='3232'
-              required
-              readonly
-              contentColor="red"
-              onLink={ () => { console.log(111) } }
-            />
-
-            <SlField
-              name='o' 
-              type='textarea'
-              title='图片' 
-              value='3232'
-              placeholder="fsdfsdf"
-            />
-
             <SlField
               name='o' 
               type='textarea'
