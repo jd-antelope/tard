@@ -6,10 +6,9 @@
   color: #666;
   background-color: #ffffff;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   word-wrap: break-word;
-  padding-top: 20px;
   padding-left: 24px;
 }
 
@@ -69,13 +68,6 @@
 
 .markdown-body dfn {
   font-style: italic;
-}
-
-.markdown-body h1 {
-  margin: .67em 0;
-  font-weight: 600;
-  padding-bottom: .3em;
-  border-bottom: 1px solid #FFF0F0;
 }
 
 .markdown-body mark {
@@ -207,7 +199,7 @@
 }
 
 .markdown-body table thead tr {
-  background: #FFBEBE;
+  background: #F5F7FA;
 }
 
 .markdown-body table thead th {
@@ -249,22 +241,26 @@
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  margin-top: 24px;
-  margin-bottom: 16px;
+  margin: 0;
+  color: #333;
   font-weight: 600;
-  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+
+.markdown-body h1 {
+  margin-top: 60px;
+  font-size: 32px;
 }
 
 .markdown-body h2 {
-  font-weight: 600;
-  padding-bottom: .3em;
-  font-size: 1em;
-  border-bottom: 1px solid #FFF0F0;
+  margin-top: 60px;
+  font-size: 24px;
 }
 
 .markdown-body h3 {
   font-weight: 600;
-  font-size: 1em;
+  font-size: 18px;
 }
 
 .markdown-body h4 {
@@ -284,6 +280,7 @@
 }
 
 .markdown-body p {
+  color: #666;
   margin-top: 0;
   margin-bottom: 10px;
 }
@@ -497,7 +494,7 @@
 }
 
 .markdown-body>*:first-child {
-  margin-top: 0 !important;
+  margin-top: 60px !important;
 }
 
 .markdown-body>*:last-child {
@@ -658,17 +655,15 @@
 
 .markdown-body table th,
 .markdown-body table td {
-  padding: 8px 13px;
-  font-size: 14px;
-  color: #666;
+  padding-left: 20px;
+  height: 53px;
+  line-height: 53px;
+  color: #333;
+  border-bottom: 1px solid #F5F7FA;
 }
 
 .markdown-body table tr {
   background-color: #ffffff;
-}
-
-.markdown-body table tr:nth-child(2n) {
-  background-color: #FFF0F0;
 }
 
 .markdown-body table img {
@@ -823,7 +818,7 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #FFF0F0;
+  background-color: #F5F7FA;
   border-radius: 6px;
 }
 

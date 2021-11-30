@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { View, Image } from '@tarojs/components'
 import { navigateTo } from '@tarojs/taro';
+import { SlIcon } from '@test/selling-c-ui'
 import './index.less'
 import MenuObj from '../../docs-route'
 import { isWeb } from '../../utils'
@@ -14,15 +15,16 @@ function Home() {
   return (
     <View className='container'>
       <View className='title'>
-        <Image className='logo' src="https://img14.360buyimg.com/imagetools/jfs/t1/159678/7/15538/12373/605c0737Ef5035728/36f752fdd6a999e9.png" />selling-ui
+        <Image className='logo' src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
+        <View className="logo-des">一套基于Taro框架开发的多端React UI组件库</View>
       </View>
       <View className='comp'>
         {MenuObj.routes.map(v => (
           <Fragment>
             <View
-              className='comp-item comp-item-partent'
+              className='comp-item-parent'
               key={v.nameEn}
-            >{v.nameEn}</View>
+            >{v.name}</View>
             {
               v.children.map(val => (
                 <View
@@ -34,7 +36,10 @@ function Home() {
                       url: `/pages${val.path}/index`
                     });
                   }}
-                >{val.nameEn}</View>
+                >
+                  <View>{val.nameEn}</View>
+                  <SlIcon value="chevron-right" color="#333" size={16}></SlIcon>
+                </View>
               ))
             }
             </Fragment>
