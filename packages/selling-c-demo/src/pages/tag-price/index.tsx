@@ -16,8 +16,8 @@ const TagPrice: FC = () => {
         <SlTagPrice price="120" color="green" /> 
         <View className='doc-body-content-tip'>自定义字体</View>
         <SlTagPrice price="120" size={28} /> 
-        <View className='doc-body-content-tip'>自定义颜色、title、字体</View>
-        <SlTagPrice price="120" color="green" size={32} title="推广价"/> 
+        <View className='doc-body-content-tip'>自定义标题</View>
+        <SlTagPrice price="120" title="推广价"/> 
       </View>
     </View>
   );

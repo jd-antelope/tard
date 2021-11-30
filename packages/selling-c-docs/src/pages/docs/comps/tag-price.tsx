@@ -1,34 +1,37 @@
-# tab
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
+const markdown = `# tab
 价格标签组件
 ## 代码演示
 ### 引入
 文件中引入组件
-```js
+~~~js
 import { SlTagPrice } from '@jd/selling-c-ui'
-```
+~~~
 ### 基本用法
 
-```js
+~~~js
 <SlTagPrice price="120" /> 
-```
+~~~
 
 ### 自定义颜色
 
-```js
+~~~js
 <SlTagPrice price="120" color="green" /> 
-```
+~~~
 
 ### 自定义字体
 
-```js
+~~~js
 <SlTagPrice price="120" color="green" size={28} />  
-```
+~~~
 
 ### 自定义标题
 
-```js
+~~~js
 <SlTagPrice price="120" title="推广价"/> 
-```
+~~~
         
 ## Api
 ### props
@@ -38,3 +41,12 @@ import { SlTagPrice } from '@jd/selling-c-ui'
 | title | 价格标签title | string | '渠道奖励' |
 | price | 价格 | string | - |
 | size | 字体大小 | number | 24 |
+`
+
+export default function DocsPage() {
+  return (
+    <div className="markdown-body">
+      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
+    </div>
+  );
+}

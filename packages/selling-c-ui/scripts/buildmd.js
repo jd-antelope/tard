@@ -28,7 +28,7 @@ const getMdFile = (path) => {
 const writeMarkdown = (mdContent, v) => {
 	const jsonContent = fs.readFileSync(`${cwd}/scripts/template.txt`, 'utf-8')
 	const jsonResult = jsonContent.replace(`{{this}}`, mdContent)
-	fs.writeFileSync(`${cwd}/../selling-c-docs/src/pages/docs/${v}.tsx`, jsonResult)
+	fs.writeFileSync(`${cwd}/../selling-c-docs/src/pages/docs/comps/${v}.tsx`, jsonResult)
 	console.log(`${v}解析完成`)
 }
 

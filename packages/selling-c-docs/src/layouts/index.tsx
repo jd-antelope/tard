@@ -8,7 +8,7 @@ import styles from './index.less';
 
 const { Header, Content, Sider } = Layout;
 export default function LayoutComponent({ children, location }: IRouteComponentProps) {
-  const [path] = useState<string>(history.location.pathname.split('/')[2] || 'home')
+  const [path] = useState<string>(history.location.pathname.split('/')[3] || 'home')
 
   const postIframeMessage = (path: string) => {
     const childFrameObj = document.getElementById('iframeDemo');
