@@ -9,7 +9,7 @@ const markdown = `# Badge
 import { SlBadge } from '@jd/selling-c-ui'
 ~~~
 ## 代码演示
-#### 基础用法
+### 基础用法
 设置 ~value~ 属性后， ~Badge~ 会在子元素的右上角显示对应的徽标
 ~~~js
 <SlBadge value={5}>
