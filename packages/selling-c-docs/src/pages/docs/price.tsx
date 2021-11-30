@@ -12,18 +12,7 @@ import { SlPrice } from '@jd/selling-c-ui'
 
 ### 基础用法
 ~~~js
-import React from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlPrice } from '@jd/selling-c-ui'
-
-const Price: FC = () => {
-  return (
-    <View className="container">
-      <SlPrice price="23.00" />
-    </View>
-  );
-};
+<SlPrice price="23.00" />
 ~~~
 ### 价格传入数组
 price 可以传入数组
@@ -72,6 +61,11 @@ price 可以传入数组
 ~~~js
 <SlPrice price="23.00" content={ <View>商羚</View> } />
 ~~~
+### 千分号形式显示
+增加 thousands 属性，按照千分号形式显示
+~~~js
+<SlPrice price="233232323.00" thousands />
+~~~
 
 ## api
 |  属性   | 说明  | 类型 | 默认值 |
@@ -88,6 +82,7 @@ price 可以传入数组
 | symbolSize | 只修改价格大小 | number | - |
 | priceUnit | 价格单位 | string | ¥ |
 | unitSize | 价格单位大小 | number | 32 |
+| thousands | 是否按照千分号形式显示 | boolean | false |
 
 ## Size 数据结构
 |  键名   | 单位和价格大小  |

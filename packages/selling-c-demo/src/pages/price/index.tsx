@@ -29,6 +29,8 @@ const Price: FC = () => {
           <SlPrice price="23.00" fixedNum={ 2 } />
           <View className='doc-body-content-tip'>自定义价格后面内容</View>
           <SlPrice price="23.00" content={ <View>商羚</View> } />
+          <View className='doc-body-content-tip'>千分号形式显示</View>
+          <SlPrice price="233232323.00" thousands />
         </View>
       </View>
     </View>

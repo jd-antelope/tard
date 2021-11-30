@@ -77,7 +77,7 @@ const [value1, setValue1] = useState(0)
 |  @slc-input-number-text-color | @color-text-base |
 |  @slc-input-number-font-size | @font-size-base |
 |  @slc-input-number-font-size-lg  | @font-size-xl |
-|  @slc-input-number-btn-color | @color-brand |
+|  @slc-input-number-btn-color | @primary-color |
 |  @slc-input-number-btn-size  | 30px |
 |  @slc-input-number-btn-size-lg  | 36px |
 |  @slc-input-number-width-min | 36px |
