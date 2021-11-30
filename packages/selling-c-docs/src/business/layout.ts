@@ -30,4 +30,4 @@ export const introduceList = [{
   }]
 }]
 
-export const logoUrl = 'https://img14.360buyimg.com/imagetools/jfs/t1/159678/7/15538/12373/605c0737Ef5035728/36f752fdd6a999e9.png'
+export const logoUrl = 'https://storage.360buyimg.com/hawley-common/tard-image/logo.png'

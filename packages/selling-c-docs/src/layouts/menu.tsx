@@ -4,6 +4,7 @@ import { history } from 'umi';
 import MenuObj from '../business/docs-route'
 import { introduceList } from '../business/layout'
 import { LayoutList } from '../interface/layout'
+import styles from './menu.less';
 
 type Props = {
   postIframeMessage: (title: string) => void
@@ -35,7 +36,7 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
     <Menu
       mode="inline"
       selectedKeys={[String(selectedKeys)]}
-      style={{ height: '100%',overflowY:'scroll' }}
+      style={{ height: '100%', overflowY:'scroll', background: '#F7F8FF' }}
     >
       {
         list.map((v, i) => (
@@ -43,6 +44,7 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
             {
               v.children.map((val) => (
                 <Menu.Item
+                  className={ styles.menuItem }
                   key={ v.isDocs ? val.path.replace('/docs/', ''): val.path.substring(1)}
                   onClick={() => {
                     if (v.isDocs) {
@@ -53,6 +55,7 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
                       postIframeMessage(val.path)
                     }
                   }}
+                  style={{ paddingLeft: '20px' }}
                 >
                   {val.nameEn || ''} {val.name}
                 </Menu.Item>

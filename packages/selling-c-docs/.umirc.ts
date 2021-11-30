@@ -7,7 +7,9 @@ export default defineConfig({
   },
   fastRefresh: {},
   theme: {
-    "primary-color": "#FF2929",
+    "primary-color": "#102DF5",
+    "primary-color-light": "#F7F8FF",
+    "black-color": "#333"
   },
   chainWebpack (config) {
     if (process.env.UMI_ENV !== 'prod') {
