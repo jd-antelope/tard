@@ -95,7 +95,7 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
                       }
                     )
                   }
-                  key={value}
+                  key={index}
                   onClick={() => {
                     changeActive(-1);
                     this.setState(

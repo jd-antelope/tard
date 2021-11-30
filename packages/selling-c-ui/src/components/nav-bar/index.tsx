@@ -1,79 +1,192 @@
-
+import classNames from 'classnames'
 import React from 'react'
-import { View, Text } from '@tarojs/components'
-import PropTypes, { InferProps } from 'prop-types'
-import { getSystemInfoSync, getMenuButtonBoundingClientRect } from '@tarojs/taro';
-import cn from 'classnames';
-import { pxTransform } from '../../common/utils'
 import { SlNavBarProps } from '../../../types/nav-bar'
+import { Text, View } from '@tarojs/components'
+import { ITouchEvent } from '@tarojs/components/types/common'
+import Taro from '@tarojs/taro'
+import { mergeStyle } from '../../common/utils'
+// import { initTestEnv } from '../../common/utils'
+
+// initTestEnv()
+
 export default class SlNavBar extends React.Component<SlNavBarProps> {
   public static defaultProps: SlNavBarProps
-  public static propTypes: InferProps<SlNavBarProps>
 
-  public constructor(props: SlNavBarProps) {
-    super(props)
-    this.state = {}
+  private handleClickLeftView(event: ITouchEvent): void {
+    this.props.onClickLeft && this.props.onClickLeft(event)
   }
 
-  private handleBack() {
-    this.props.onBack && this.props.onBack(arguments as any)
+  private handleClickSt(event: ITouchEvent): void {
+    this.props.onClickRgIconSt && this.props.onClickRgIconSt(event)
+  }
+
+  private handleClickNd(event: ITouchEvent): void {
+    this.props.onClickRgIconNd && this.props.onClickRgIconNd(event)
   }
 
   public render(): JSX.Element {
-    const { back, bgStyle, title, children } = this.props
+    const {
+      customStyle,
+      className,
+      color,
+      fixed,
+      border,
+      leftIcon,
+      leftIconType,
+      leftText,
+      title,
+      rightFirstIconType,
+      rightSecondIconType
+    } = this.props
+    const linkStyle = { color }
 
-    const { statusBarHeight } = getSystemInfoSync();
-    const { height: boundHeight } = getMenuButtonBoundingClientRect()
-    const statusStyle = {
-      'height': pxTransform(statusBarHeight),
-    };
+    const defaultIconInfo = {
+      customStyle: '',
+      className: '',
+      prefixClass: 'slc-icon',
+      value: '',
+      color: '',
+      size: 24
+    }
 
-    const contentStyle = {
-      'height': pxTransform(boundHeight + 10),
-    };
+    const leftIconInfo =
+      leftIconType instanceof Object
+        ? { ...defaultIconInfo, ...leftIconType }
+        : { ...defaultIconInfo, value: leftIconType }
+    const leftIconClass = classNames(
+      leftIconInfo.prefixClass,
+      {
+        [`${leftIconInfo.prefixClass}-${leftIconInfo.value}`]: leftIconInfo.value
+      },
+      leftIconInfo.className
+    )
 
-    statusStyle
+    const rightFirstIconInfo =
+      rightFirstIconType instanceof Object
+        ? { ...defaultIconInfo, ...rightFirstIconType }
+        : { ...defaultIconInfo, value: rightFirstIconType }
+    const rightFirstIconClass = classNames(
+      rightFirstIconInfo.prefixClass,
+      {
+        [`${rightFirstIconInfo.prefixClass}-${rightFirstIconInfo.value}`]: rightFirstIconInfo.value
+      },
+      rightFirstIconInfo.className
+    )
+
+    const rightSecondIconInfo =
+      rightSecondIconType instanceof Object
+        ? { ...defaultIconInfo, ...rightSecondIconType }
+        : { ...defaultIconInfo, value: rightSecondIconType }
+    const rightSecondIconClass = classNames(
+      rightSecondIconInfo.prefixClass,
+      {
+        [`${rightSecondIconInfo.prefixClass}-${rightSecondIconInfo.value}`]: rightSecondIconInfo.value
+      },
+      rightSecondIconInfo.className
+    )
 
     return (
-      <View className="slc-nav-bar" style={bgStyle}>
-        <View className={cn('slc-nav-bar-fixed')}>
-          {/* 状态栏 */}
-          <View className="status-height" style={{ ...statusStyle }} />
-          {back ?
-            <View className="slc-nav-bar-content" style={{ ...contentStyle }} >
-              <View className="slc-nav-bar-content-back">
-                <View className="slc-nav-bar-content-back-btn" onClick={this.handleBack.bind(this)}>
-                  <Text className='slc-icon slc-icon-chevron-left' style={{ fontSize: 20 }}></Text>
-                </View>
-                {title &&
-                  <View className="slc-nav-bar-content-title">
-                    {title}
-                  </View>}
-                {children}
-              </View>
-            </View> :
-            <View className="slc-nav-bar-content" style={{ ...contentStyle }} >{children}</View>
-          }
-
+      <View
+        className={classNames(
+          {
+            'slc-nav-bar': true,
+            'slc-nav-bar--fixed': fixed,
+            'slc-nav-bar--no-border': !border
+          },
+          className
+        )}
+        style={customStyle}
+      >
+        <View
+          className='slc-nav-bar__left-view'
+          onClick={this.handleClickLeftView.bind(this)}
+          style={linkStyle}
+        >
+          {leftIcon && leftIconType && (
+            <Text
+              className={leftIconClass}
+              style={mergeStyle(
+                {
+                  color: leftIconInfo.color,
+                  fontSize: `${Taro.pxTransform(
+                    parseInt(leftIconInfo.size.toString()) * 2
+                  )}`
+                },
+                leftIconInfo.customStyle
+              )}
+            ></Text>
+          )}
+          <Text className='slc-nav-bar__text'>{leftText}</Text>
         </View>
-
-        <View className="slc-nav-bar-height">
-          <View className="slc-nav-bar-height-status" style={{ ...statusStyle }} />
-          <View className="slc-nav-bar-height-seat" style={{ ...contentStyle }} />
+        <View className='slc-nav-bar__title'>
+          {title || this.props.children}
         </View>
-
+        <View className='slc-nav-bar__right-view'>
+          <View
+            className={classNames({
+              'slc-nav-bar__container': true,
+              'slc-nav-bar__container--hide': !rightSecondIconType
+            })}
+            style={linkStyle}
+            onClick={this.handleClickNd.bind(this)}
+          >
+            {rightSecondIconType && (
+              <Text
+                className={rightSecondIconClass}
+                style={mergeStyle(
+                  {
+                    color: rightSecondIconInfo.color,
+                    fontSize: `${Taro.pxTransform(
+                      parseInt(rightSecondIconInfo.size.toString()) * 2
+                    )}`
+                  },
+                  rightSecondIconInfo.customStyle
+                )}
+              ></Text>
+            )}
+          </View>
+          <View
+            className={classNames({
+              'slc-nav-bar__container': true,
+              'slc-nav-bar__container--hide': !rightFirstIconType
+            })}
+            style={linkStyle}
+            onClick={this.handleClickSt.bind(this)}
+          >
+            {rightFirstIconType && (
+              <Text
+                className={rightFirstIconClass}
+                style={mergeStyle(
+                  {
+                    color: rightFirstIconInfo.color,
+                    fontSize: `${Taro.pxTransform(
+                      parseInt(rightFirstIconInfo.size.toString()) * 2
+                    )}`
+                  },
+                  rightFirstIconInfo.customStyle
+                )}
+              ></Text>
+            )}
+          </View>
+        </View>
       </View>
     )
   }
 }
 
 SlNavBar.defaultProps = {
-  back: false,
-}
-
-SlNavBar.propTypes = {
-  bgStyle: PropTypes.string,
-  back: PropTypes.bool,
-  onBack: PropTypes.func,
-  title: PropTypes.string
+  customStyle: '',
+  className: '',
+  fixed: false,
+  border: true,
+  color: '',
+  leftIcon: false,
+  leftIconType: 'chevron-left',
+  leftText: '',
+  title: '',
+  rightFirstIconType: '',
+  rightSecondIconType: '',
+  onClickLeft: () => {},
+  onClickRgIconSt: () => {},
+  onClickRgIconNd: () => {}
 }

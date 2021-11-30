@@ -1,57 +1,99 @@
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@slc-nav-bar-spacing-v: 9PX;
+@slc-nav-bar-spacing-h: 5PX;
+@slc-nav-bar-font-size: 18PX;
+@slc-nav-bar-back-font-size: 16PX;
+
 .slc-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: @color-bg;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  .mixin-hairline-bottom();
+
+  /* elements */
+  &__left-view {
+    flex: 2;
+    padding-left: @slc-nav-bar-spacing-v @slc-nav-bar-spacing-h;
+    height: 100%;
+    color: @slc-nav-bar-link-color;
+    font-size: @slc-nav-bar-font-size;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    .active();
+
+    .slc-icon {
+      font-size: 48px;
+    }
+  }
+
+  &__right-view {
+    flex: 2;
+    height: 100%;
+    color: @slc-nav-bar-link-color;
+    text-align: right;
+    overflow: hidden;
+  }
+
+  &__title {
+    flex: 5;
+    color: @slc-nav-bar-title-color;
+    font-size: @slc-nav-bar-font-size;
+    text-align: center;
+    vertical-align: middle;
+    line-height: @line-height-base;
+    .line();
+  }
+
+  &__text {
+    display: inline-block;
+    padding-left: @slc-nav-bar-spacing-h;
+    height: 100%;
+    font-size: @slc-nav-bar-back-font-size;
+    vertical-align: middle;
+    line-height: @line-height-base;
+    .line();
+  }
+
+  &__container {
+    display: inline-block;
+    padding: @slc-nav-bar-spacing-v @slc-nav-bar-spacing-h;
+    width: 50%;
+    height: 100%;
+    font-size: @slc-nav-bar-font-size;
+    text-align: center;
     box-sizing: border-box;
-    width: 100%;
-    background: #fff;
-    z-index: 9999;
+    .active();
 
-    &-content {
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        padding: 0 16px;
-        &-back {
-            width: 100%;
-            max-width: 100%;
-            display: flex;
-            align-items: center;
-            &-btn {
-                font-size: 20px;
-                border: 1rpx solid #ccc;
-                border-radius: 50%;
-                width: 50px;
-                height: 50px;
-                line-height: 50px;
-                text-align: center;
-                background: #ddd;
-            }
-        }
-
-        &-title{
-            margin: auto;
-        }
+    .slc-icon {
+      font-size: 48px;
     }
 
-    &-fixed {
-        background: inherit;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        box-sizing: border-box;
-        width: 100%;
+    &--hide {
+      display: inline-block;
+      visibility: hidden;
     }
+  }
 
-    &-height{
-        &-status {
-            width: 100%;
-        }
-    
-        &-seat {
-            width: 100%;
-        }
+  /* modifiers */
+  &--no-border {
+    &::after {
+      border-bottom-width: 0;
     }
-   
+  }
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: @zindex-nav;
+  }
 }
-
-
