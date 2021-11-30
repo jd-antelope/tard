@@ -18,6 +18,10 @@ const Media: FC = () => {
         mediaType="camera" length={ 2 } count={ 3 }
          files={ iamges } onChange={ (v) => {setImages(v)} }
       />
+         <SlMedia
+        mediaType="camera" length={ 2 } count={ 3 }
+         files={ iamges } onChange={ (v) => {setImages(v)} }
+      >测试文本</SlMedia>
     </View>
   )
 }
