@@ -37,7 +37,7 @@ function Home() {
                     });
                   }}
                 >
-                  <View>{val.nameEn}</View>
+                  <View>{val.nameEn} {val.name}</View>
                   <SlIcon value="chevron-right" color="#333" size={16}></SlIcon>
                 </View>
               ))
