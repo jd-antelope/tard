@@ -2,10 +2,12 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 const markdown = `
-# overlay
+# overlay 遮罩
 
 
-## api
+## API
+
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 `

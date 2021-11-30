@@ -1,30 +1,30 @@
 # ProgressCircle
-## 介绍
+### 介绍
 圆环形的进度条组件，支持进度渐变动画。
 > ⚠️ 该组件通过svg实现，svg不支持rpx，故小程序和H5单位均转换为rem
-## 引入
+### 引入
 ```js
 import { SlProgressCircle } from '@jd/selling-c-ui'
 ```
 # 代码演示
-## 基础用法
-percent 属性表示进度条的进度，表示 percent / 100
+### 基础用法
+`percent` 属性表示进度条的进度，表示 `percent / 100`
 ```js
 <SlProgressCircle percent={25} text="25%" />
 ```
-## 自定义颜色
-通过 color 属性来控制进度条颜色，layerColor 属性来控制轨道颜色
+### 自定义颜色
+通过 `color` 属性来控制进度条颜色， `layerColor` 属性来控制轨道颜色
 ```js
 <SlProgressCircle percent={25} color="#FF2929" text="自定义颜色" />
 ```
-## 自定义圆环直径
-通过 size 属性设置圆环直径
+### 自定义圆环直径
+通过 `size` 属性设置圆环直径
 ```js
 <SlProgressCircle percent={25} size={300} text="自定义圆环直径" />
 ```
 
-## 自定义进度条宽度
-通过 strokeWidth 属性设置进度条宽度
+### 自定义进度条宽度
+通过 `strokeWidth` 属性设置进度条宽度
 ```js
 <SlProgressCircle percent={25} strokeWidth={10} text="自定义进度条宽度" />
 ```

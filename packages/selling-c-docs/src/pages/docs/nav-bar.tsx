@@ -2,7 +2,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 const markdown = `
-# NavBar
+# NavBar 头部导航
 ### 介绍
 为页面提供导航功能，常用于页面顶部。
 ### 引入
@@ -11,13 +11,13 @@ import { SlNavBar } from '@jd/selling-c-ui'
 ~~~
 ## 代码演示
 ### 基本用法
-通过 title 属性设置导航栏标题
+通过 ~title~ 属性设置导航栏标题
 ~~~js
 <SlNavBar title="标题" />
 ~~~
 
 ### 返回上一级
-在导航栏实现返回上级功能，设置 leftIcon 属性显示左侧箭头，通过 leftText 属性来设置左边文字
+在导航栏实现返回上级功能，设置 ~leftIcon~ 属性显示左侧箭头，通过 ~leftText~ 属性来设置左边文字
 ~~~js
 const onClickLeft = () => {
     // todo改为Toast
@@ -28,7 +28,7 @@ const onClickLeft = () => {
 ~~~
 
 ### 自定义左侧图标
-设置 leftIconType 属性来设置左边图标
+设置 ~leftIconType~ 属性来设置左边图标
 ~~~js
 <SlNavBar title="标题"
     leftIcon
@@ -39,7 +39,7 @@ const onClickLeft = () => {
 ~~~
 
 ### 自定义左侧图标
-设置 leftIconType 属性来设置左边图标
+设置 ~leftIconType~ 属性来设置左边图标
 ~~~js
 <SlNavBar title="标题"
     leftIcon
@@ -48,7 +48,6 @@ const onClickLeft = () => {
     onClickLeft={onClickLeft}
 />
 ~~~
-### 
 
 ## API
 ### Props

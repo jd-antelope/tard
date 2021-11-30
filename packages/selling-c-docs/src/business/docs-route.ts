@@ -100,8 +100,8 @@ const routerObj = {
     path: null,
     children: [{
       name: '徽标',
-      nameEn: 'Brdge',
-      path: '/brdge'
+      nameEn: 'Badge',
+      path: '/badge'
     }, {
       name: '空状态',
       nameEn: 'Empty',
