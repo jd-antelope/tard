@@ -1,11 +1,12 @@
-## 介绍
+# Sort
+### 介绍
 排序项组件，支持元素换行或滚动展示。
-## 引入
+### 引入
 ```js
 import { SlSort } from '@jd/selling-c-ui'
 ```
-# 代码演示
-## 基础用法
+## 代码演示
+### 基础用法
 ```js
 <SlSort 
   list={ [
@@ -24,7 +25,7 @@ import { SlSort } from '@jd/selling-c-ui'
   }
 />
 ```
-## 一个选项时，可设置border
+### 一个选项时，可设置border
 ```js
  <SlSort 
   list={ [
@@ -35,7 +36,7 @@ import { SlSort } from '@jd/selling-c-ui'
 />
 ```
 
-## 元素不换行，滚动展示
+### 元素不换行，滚动展示
 ```js
 <SlSort 
   list={ [
@@ -50,7 +51,7 @@ import { SlSort } from '@jd/selling-c-ui'
 />
 ```
 
-## 多参数设置，箭头默认色、文字颜色、选中颜色、选中排序项
+### 多参数设置，箭头默认色、文字颜色、选中颜色、选中排序项
 ```js
 <SlSort 
   list={ [
@@ -68,8 +69,8 @@ import { SlSort } from '@jd/selling-c-ui'
 />
 ```
 
-# API
-## Props
+## API
+### Props
 |  参数   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | list | 排序列表 | array | [] |

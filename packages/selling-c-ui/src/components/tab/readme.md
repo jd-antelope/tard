@@ -7,7 +7,7 @@
 ```js
 import { SlTab } from '@jd/selling-c-ui'
 ```
-## 基本用法
+### 基本用法
 
 ```js
 const orderStatus = [{
@@ -32,7 +32,7 @@ const OrderManage: FC = () => {
 }
 ```
 
-## 支持滚动
+### 支持滚动
 
 ```js
 const orderStatus = [{
@@ -67,7 +67,7 @@ const OrderManage: FC = () => {
 }
 ```
 
-## 文字颜色变换
+### 文字颜色变换
 
 ```js
 const orderStatus = [{
@@ -102,7 +102,8 @@ const OrderManage: FC = () => {
 }
 ```
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | tabList | tab列表 | array | - |

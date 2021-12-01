@@ -73,7 +73,8 @@ const Loading: FC = () => {
 };
 ```
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | color | 颜色 | string | - |
