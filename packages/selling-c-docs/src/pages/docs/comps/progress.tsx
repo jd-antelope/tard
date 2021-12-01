@@ -1,38 +1,38 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
-const markdown = `## 介绍
+const markdown = `# Propress
+### 介绍
 用于展示操作的当前进度。
-## 引入
+### 引入
 ~~~js
 import { SlProgress } from '@jd/selling-c-ui'
         
 ~~~
-# 代码演示
-## 基础用法
+## 代码演示
+### 基础用法
 ~~~js
 <SlProgress percent={30} />
 ~~~
-## 自定义线条粗细
+### 自定义线条粗细
 ~~~js
 <SlProgress percent={30} strokeWidth={8} />
 ~~~
-## 自定状态
+### 自定状态
 ~~~js
 <SlProgress color="#FF2929" percent={70} status="error" />
 ~~~
 
-## 自定文案
+### 自定文案
 ~~~js
 <SlProgress percent={70} pivotText="700/1000" />
 ~~~
 
-## 自定隐藏文案
+### 自定隐藏文案
 ~~~js
 <SlProgress percent={70} showPivot={false} />
 ~~~
-# API
-## Props
+## API
+### Props
 |  参数   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | percent | 进度百分比 | number | 0 |
@@ -45,8 +45,6 @@ import { SlProgress } from '@jd/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

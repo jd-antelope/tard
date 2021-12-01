@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# DropdownMenu 下拉菜单
 ### 介绍
@@ -122,14 +121,14 @@ const option2 = [
     />
 </SlDropdownMenu>
 ~~~
-# API
-## DropdownMenu Props
+## API
+### DropdownMenu Props
 |  参数   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | activeColor | 菜单标题和选项的选中态颜色 | string | 主题色 |
 | titleAlign | 菜单标题对齐方式 | 'center' ｜ 'right' ｜ 'left' | 'center' |
 
-## DropdownItem Props
+### DropdownItem Props
 |  参数   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | value | 当前选中项对应的 value | number｜string | 主题色 |
@@ -137,13 +136,13 @@ const option2 = [
 | options | 选项数组 | 	Option[] | [] |
 | content | 自定义内容 | 	元素 | - |
 
-## DropdownItem Events
+### DropdownItem Events
 |  事件名   | 说明  | 回调参数 |
 |  ----  | ----  | ---- |
 | change | 点击选项导致 value 变化时触发 | value |
 | onClick | 自定义点击事件 | - |
 
-## Option 数据结构
+### Option 数据结构
 |  键名   | 说明  | 类型 |
 |  ----  | ----  | ---- |
 | text | 文字 | string | 
@@ -152,8 +151,6 @@ const option2 = [
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

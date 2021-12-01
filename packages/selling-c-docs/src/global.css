@@ -836,7 +836,39 @@
   word-wrap: normal;
   background-color: transparent;
   border: 0;
+  color: #333;
+  font-size: 14px;
 }
+
+.markdown-body pre>view {
+  padding: 0 !important;
+}
+
+.markdown-body pre .language-js .punctuation {
+  color: rgb(153, 153, 153);
+}
+
+.markdown-body pre .language-js .string {
+  color: rgb(102, 153, 0);
+}
+
+.markdown-body pre .language-js .operator {
+  color: rgb(102, 153, 0);
+}
+
+.markdown-body pre .language-js .keyword {
+  color: rgb(0, 119, 170);
+}
+
+.markdown-body pre .language-js .module, .markdown-body pre .language-js .control-flow{
+  color: rgb(0, 119, 170);
+}
+
+.markdown-body pre .language-js .maybe-class-name, .markdown-body pre .language-js .constant{
+  color: #CC372E;
+}
+
+
 
 .markdown-body .csv-data td,
 .markdown-body .csv-data th {

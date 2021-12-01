@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# Canvas
 该组件是为了给海报功能提供方便，里面有关闭和保存图片功能。目前该组件不支持h5，后续会进行优化。
@@ -82,7 +81,8 @@ showSlCanvas({
 />
 ~~~
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | width | 宽度 | number | - |
@@ -95,8 +95,6 @@ showSlCanvas({
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

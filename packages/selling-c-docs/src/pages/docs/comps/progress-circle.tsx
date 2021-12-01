@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# ProgressCircle
 ### 介绍
@@ -9,7 +8,7 @@ const markdown = `# ProgressCircle
 ~~~js
 import { SlProgressCircle } from '@jd/selling-c-ui'
 ~~~
-# 代码演示
+## 代码演示
 ### 基础用法
 ~percent~ 属性表示进度条的进度，表示 ~percent / 100~
 ~~~js
@@ -31,8 +30,8 @@ import { SlProgressCircle } from '@jd/selling-c-ui'
 ~~~js
 <SlProgressCircle percent={25} strokeWidth={10} text="自定义进度条宽度" />
 ~~~
-# API
-## Props
+## API
+### Props
 |  参数   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | percent | 百分比 | number | 0 |
@@ -44,8 +43,6 @@ import { SlProgressCircle } from '@jd/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# Price
 该组件封装了业务中常用的价格用法
@@ -67,7 +66,8 @@ price 可以传入数组
 <SlPrice price="233232323.00" thousands />
 ~~~
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | price | 价格 | string或者string[] | - |
@@ -84,7 +84,7 @@ price 可以传入数组
 | unitSize | 价格单位大小 | number | 32 |
 | thousands | 是否按照千分号形式显示 | boolean | false |
 
-## Size 数据结构
+### Size 数据结构
 |  键名   | 单位和价格大小  |
 |  ----  | ----  |
 | small | 24 + 24 |
@@ -96,8 +96,6 @@ price 可以传入数组
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

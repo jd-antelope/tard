@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# Toast
 按钮用于传递用户触摸时会触发的操作
@@ -95,7 +94,8 @@ showSlToast({
 ~~~
 
 
-## api
+## Api
+### Props
 | 属性     | 说明                                     | 类型                | 默认值    |
 | -------- | ---------------------------------------- | ------------------- | --------- |
 | visible | 是否展示元素                             | boolean             | false     |
@@ -111,8 +111,6 @@ showSlToast({
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

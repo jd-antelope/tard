@@ -2,7 +2,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 const markdown = `
-# quickstart
+# theme
 `
 
 export default function DocsPage() {

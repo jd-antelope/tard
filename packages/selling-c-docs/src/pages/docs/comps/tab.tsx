@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = ` 
 # tab
@@ -10,7 +9,7 @@ const markdown = `
 ~~~js
 import { SlTab } from '@jd/selling-c-ui'
 ~~~
-## 基本用法
+### 基本用法
 
 ~~~js
 const orderStatus = [{
@@ -35,7 +34,7 @@ const OrderManage: FC = () => {
 }
 ~~~
 
-## 支持滚动
+### 支持滚动
 
 ~~~js
 const orderStatus = [{
@@ -70,7 +69,7 @@ const OrderManage: FC = () => {
 }
 ~~~
 
-## 文字颜色变换
+### 文字颜色变换
 
 ~~~js
 const orderStatus = [{
@@ -105,7 +104,8 @@ const OrderManage: FC = () => {
 }
 ~~~
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | tabList | tab列表 | array | - |
@@ -124,8 +124,6 @@ const OrderManage: FC = () => {
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

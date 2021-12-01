@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# tab
 价格标签组件
@@ -10,13 +9,12 @@ const markdown = `# tab
 import { SlTagPrice } from '@jd/selling-c-ui'
 ~~~
 ### 基本用法
-
 ~~~js
 <SlTagPrice price="120" /> 
 ~~~
 
 ### 自定义颜色
-
+设置属性 ~color~ 可以自定义价格颜色 
 ~~~js
 <SlTagPrice price="120" color="green" /> 
 ~~~
@@ -45,8 +43,6 @@ import { SlTagPrice } from '@jd/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }
