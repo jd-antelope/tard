@@ -3,25 +3,25 @@ import { InferProps } from 'prop-types'
 import React from 'react'
 import { View, Text, Image } from '@tarojs/components'
 import classNames from 'classnames'
-import { SlImageTextItemProps } from '../../../types/image-text-item'
+import { SlGridProps } from '../../../types/grid'
 
-export default class SlImageTextItem extends React.Component<SlImageTextItemProps> {
-  public static defaultProps: SlImageTextItemProps
-  public static propTypes: InferProps<SlImageTextItemProps>
+export default class SlImageTextItem extends React.Component<SlGridProps> {
+  public static defaultProps: SlGridProps
+  public static propTypes: InferProps<SlGridProps>
 
-  public constructor(props: SlImageTextItemProps) {
+  public constructor(props: SlGridProps) {
     super(props)
     this.state = {}
   }
 
   // 点击事件
   private onClick = (id): void => {
-    this.props.onClick(id)
+    // this.props.onClick(id)
   }
 
   public render(): JSX.Element {
     const {
-      propsData,
+      propsData = [],
       isUp,
     } = this.props
 

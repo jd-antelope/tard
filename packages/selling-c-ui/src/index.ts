@@ -11,7 +11,7 @@ export { default as SlBadge } from './components/badge';
 export { default as SlOverlay } from './components/overlay';
 export { default as SlNavBar } from './components/nav-bar';
 export { default as SlSearch } from './components/search';
-export { default as SlImageTextItem } from './components/image-text-item';
+export { default as SlImageTextItem } from './components/grid';
 export { default as SlIcon } from './components/icon';
 export { default as SlCell } from './components/cell';
 export { default as SlPopup } from './components/popup';
