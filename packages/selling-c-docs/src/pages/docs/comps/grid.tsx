@@ -1,50 +1,146 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# image-text-item
+const markdown = `# Grid
 
 ### 介绍
-渲染图片文字。
+宫格可以在水平方向上把页面分隔成等宽度的区块，用于展示内容或进行页面导航。
 ### 引入
 ~~~js
-import { SlImageTextItem } from '@test/selling-c-ui'
+import { SlGrid, SlGridItem } from 'tard'
 ~~~
+
 ## 代码演示
 ### 基础用法
+通过 ~url~ 属性设置格子内的图标，~text~ 属性设置文字内容。
 ~~~js
-import React, { memo } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlImageTextItem } from '@test/selling-c-ui'
-
-const ImageTextItem: FC = () => {
- 
-  return (
-    <View className="container">
-     <SlImageTextItem propsData={
-        [
-          {
-            image:"src",
-            text: "测试",
-            id: 123321
-          },
-      ]
-      }
-       isUp={true} onClick={(data)=>{ console.log(data,"父组件内容 ")}}/>
-  </View>
-  );
-};
+<SlGrid>
+  {
+    new Array(4).fill('').map((_, i) => (
+      <SlGridItem 
+        key={ i }
+        text="文字" 
+        url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
+      />
+    ))
+  }
+</SlGrid>
 ~~~
 
+### 自定义列数
+默认一行展示四个格子，可以通过 ~columnNum~ 自定义列数。
+~~~js
+<SlGrid columnNum={ 3 }>
+  {
+    new Array(3).fill('').map((_, i) => (
+      <SlGridItem 
+        key={ i }
+        text="文字" 
+        url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
+      />
+    ))
+  }
+</SlGrid>
+~~~
+
+### 边框
+通过 ~border~ 属性展示格子边框
+~~~js
+<SlGrid border>
+  {
+    new Array(8).fill('').map((_, i) => (
+      <SlGridItem 
+        key={ i }
+        text="文字" 
+        url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
+      />
+    ))
+  }
+</SlGrid>
+~~~
+
+### 自定义图片大小
+通过 ~url~ 属性设置格子内的图标，~text~ 属性设置文字内容。
+~~~js
+<SlGrid iconSize={ 40 }>
+  {
+    new Array(4).fill('').map((_, i) => (
+      <SlGridItem 
+        key={ i }
+        text="文字" 
+        url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
+      />
+    ))
+  }
+</SlGrid>
+~~~
+
+### 自定义内容
+通过插槽可以自定义格子展示的内容。
+~~~js
+<SlGrid>
+  {
+    new Array(4).fill('').map((_, i) => (
+      <SlGridItem 
+        key={ i }
+        text="文字" 
+        url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
+      />
+    ))
+  }
+</SlGrid>
+~~~
+
+### 内容排版——横向
+修改属性 ~direction~，可以让宫格的内容顺序更换
+~~~js
+<SlGrid direction='left'>
+  {
+    new Array(4).fill('').map((_, i) => (
+      <SlGridItem 
+        key={ i }
+        text="文字" 
+        url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
+      />
+    ))
+  }
+</SlGrid>
+~~~
 
 ## Api
-### Props
+### Grid Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
-| isUp | 是否显示图片在上 | 	boolean | true |
-| propsData | 需要传入的内容 | 	Array | - |
-| onClick | 点击item返回整个对象 | 	CommonEventFunction | - |
+| columnNum | 列数 | number | 4 |
+| iconSize | 图标大小，默认单位为px | number | 60px |
+| border | 图文位置 |	boolean | down |
+| direction | 是否开启格子点击反馈 | 'top'|'bottom'|'left'|'right' | false |
+| clickable | 列数 | boolean | false |
 
+### GridItem Props
+|  属性   | 说明  | 类型 | 默认值 |
+|  ----  | ----  | ---- | ---- |
+| url | 图片链接 | string | - |
+| icon | icon类型 | string | - |
+| text | 文字 | string | - |
+| columnNum | 列数 | number | 4 |
+| iconSize | 图标大小，默认单位为px | number | 60px |
+| border | 图文位置 |	boolean | down |
+| direction | 是否开启格子点击反馈 | 'top'|'bottom'|'left'|'right' | false |
+| onClick | 列数 | boolean | false |
 
+### GridItem Events
+|  属性   | 说明  | 类型 | 默认值 |
+|  ----  | ----  | ---- | ---- |
+| onClick | 点击格子时触发 | CommonEventFunction | - |
+
+### 样式变量
+组件提供了下列 Less 变量，可用于自定义样式
+|  名称  | 默认值 | 描述 ｜
+|  ---- | ---- | ---- |
+|  @slc-grid-item-padding-y | 18px | - |
+|  @slc-grid-item-image-size | 60px | - |
+|  @slc-grid-item-text-padding | 12px | - |
+|  @slc-badge-dot-size  | 24px | - |
 `
 
 export default function DocsPage() {

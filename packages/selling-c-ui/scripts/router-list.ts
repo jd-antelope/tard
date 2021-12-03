@@ -130,7 +130,7 @@ const routerObj = {
     children: [{
       name: '宫格',
       nameEn: 'Grid',
-      path: '/image-text-item'
+      path: '/grid'
     }, {
       name: '导航栏',
       nameEn: 'NavBar',

@@ -6,7 +6,7 @@ const markdown = `# tab
 ### 引入
 文件中引入组件
 ~~~js
-import { SlTagPrice } from '@jd/selling-c-ui'
+import { SlTagPrice } from 'tard'
 ~~~
 ### 基本用法
 ~~~js

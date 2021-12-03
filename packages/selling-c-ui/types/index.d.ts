@@ -33,3 +33,4 @@ export { default as SlMedia } from './media'
 export { default as SlTagPrice } from './tag-price'
 export { default as SlSwitch } from './switch'
 export { default as SlGrid } from './grid'
+export declare const SlGridItem: ComponentClass

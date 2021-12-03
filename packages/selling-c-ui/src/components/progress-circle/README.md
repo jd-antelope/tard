@@ -4,7 +4,7 @@
 > ⚠️ 该组件通过svg实现，svg不支持rpx，故小程序和H5单位均转换为rem
 ### 引入
 ```js
-import { SlProgressCircle } from '@jd/selling-c-ui'
+import { SlProgressCircle } from 'tard'
 ```
 ## 代码演示
 ### 基础用法

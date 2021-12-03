@@ -5,7 +5,7 @@ const markdown = `# Button
 按钮用于传递用户触摸时会触发的操作
 ## 引入
 ~~~js
-import { SlButton } from '@jd/selling-c-ui'
+import { SlButton } from 'tard'
 ~~~
 
 ## 使用指南
@@ -15,34 +15,34 @@ import { SlButton } from '@jd/selling-c-ui'
   <SlButton>按钮基本使用</SlButton>
 ~~~
 ### 基础用法
-设置disabled属性设置按钮禁用状态
+设置 ~disabled~ 属性设置按钮禁用状态
 ~~~js
   <SlButton disabled>禁用按钮</SlButton>
 ~~~
 ### 通栏按钮
-设置full属性后按钮会自动铺满父容器
+设置 ~full~ 属性后按钮会自动铺满父容器
 ~~~js
   <SlButton full>通栏按钮</SlButton>
 ~~~
 ### 自定义边框颜色
-设置borderColor属性可以指定按钮边框颜色
+设置 ~borderColor~ 属性可以指定按钮边框颜色
 ~~~js
  <SlButton full borderColor='pink'>自定义边框颜色</SlButton>
 ~~~
 ### 自定义背景颜色
-设置fillColor属性可以指定按钮背景颜色
+设置 ~fillColor~ 属性可以指定按钮背景颜色
 ~~~js
  <SlButton full fillColor='pink'>自定义背景颜色</SlButton>
 ~~~
 ### 尺寸大小
-通过设置size尺寸属性可以选择三种默认尺寸按钮，也可通过类名自定义生成您需要的按钮尺寸
+通过设置 ~size~ 尺寸属性可以选择三种默认尺寸按钮，也可通过类名自定义生成您需要的按钮尺寸
 ~~~js
 <SlButton size='small'>small button</SlButton>
 <SlButton size='middle'>middle button</SlButton>
 <SlButton size='large'>large button</SlButton>
 ~~~
 ### 自定义圆角
-通过设置radius属性的值可以改变按钮的圆角值
+通过设置 ~radius~ 属性的值可以改变按钮的圆角值
 ~~~js
 <SlButton>默认</SlButton>
 <SlButton radius={24}>24px</SlButton>

@@ -5,7 +5,7 @@
 ## 使用指南
 在 Taro 文件中引入组件
 ```js
-import { SlTab } from '@jd/selling-c-ui'
+import { SlTab } from 'tard'
 ```
 ### 基本用法
 

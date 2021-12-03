@@ -1,27 +1,16 @@
 
 # Image
+### 介绍
 该标签在 Taro 的 Image 标签上面增加了错误处理、加载动画等属性
 ## 代码演示
 ### 引入
 在 Taro 文件中引入组件
 ```js
-import { SlImage } from '@jd/selling-c-ui'
+import { SlImage } from 'tard'
 ```
 ### 基础用法
 ```js
-import React from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlImage } from '@jd/selling-c-ui'
-
-const Image: FC = () => {
-  return (
-    <View className="container">
-      <View className='doc-body-content-tip'>基本用法</View>
-      <SlImage className="base-image" src="https://storage.360buyimg.com/hawley-common/selling-logo.png" />
-    </View>
-  );
-};
+<SlImage className="base-image" src="https://storage.360buyimg.com/hawley-common/selling-logo.png" />
 ```
 
 ### 错误处理

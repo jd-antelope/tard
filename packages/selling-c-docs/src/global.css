@@ -286,6 +286,13 @@
   margin-bottom: 10px;
 }
 
+.markdown-body p del {
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: #F5F7FA;
+}
+
 .markdown-body blockquote {
   margin: 0;
   padding: 0 1em;
