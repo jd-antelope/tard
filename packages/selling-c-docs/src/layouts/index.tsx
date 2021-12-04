@@ -19,7 +19,7 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
   if (location.pathname === '/') {
     return (
       <LayoutHeader >
-        <Content>{children}</Content>
+        <Content className="layout-md-contianer layout-h-100 layout-over-flow-y ">{children}</Content>
       </LayoutHeader>
     )
   }

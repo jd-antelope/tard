@@ -1,3 +1,99 @@
+@keyframes fadeInLeft{
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate(-100%)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate(0)
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container-footer {
+  display: flex;
+  flex-direction: row;
+}
+
+.index-page {
+  background: #fff;
+  margin: 0 auto;
+
+  &__banner {
+    height: 648px;
+    overflow: hidden;
+
+    &-content {
+      width: 362px;
+      height: 214px;
+      margin-top: 164px;
+
+      &__login {
+        width: 193px;
+        height: 94px;
+        margin-bottom: 20px;
+        animation: fadeInLeft 1s both;
+
+        img {
+          width: 193px;
+          height: 94px;
+        }
+      }
+
+      &__p {
+        color: #666;
+        font-size: 18px;
+        animation: fadeInLeft 1s both .5s;
+      }
+
+      &__buttons {
+        margin-top: 40px;
+        animation: fadeInLeft 1s both 1s;
+      }
+
+      &__button {
+        width: 132px;
+        height: 42px;
+        font-size: 18px;
+        border-radius: 21px;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 60px 0;
+    background: #F6F8FB;
+
+    &-list {
+      width: 280px;
+
+      &__logo {
+        width: 108px;
+        height: 28px;
+      }
+    }
+
+    &-header {
+      margin-bottom: 16px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    &-item {
+      line-height: 35px;
+      color: 333;
+      font-size: 14px;
+    }
+  }
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -48,6 +144,39 @@
         border-radius: 21px;
         margin-right: 20px;
       }
+
+      .scan-button {
+        position: relative;
+
+        &__content {
+          width: 132px;
+          padding: 6px;
+          background: #fff;
+          position: absolute;
+          top: 50px;
+          left: 0;
+          border-radius: 8px;
+          transition: all .3s linear 0s;
+          opacity: 0;
+          box-shadow: 0px 0px 5px #ccc;
+          &-p {
+            width: 100%;
+            line-height: 30px;
+            font-size: 14px;
+            color: #333;
+          }
+          &-img {
+            width: 120px;
+            height: 120px;
+          }
+        }
+
+        &:hover {
+          .scan-button__content {
+            opacity: 1;
+          }
+        }        
+      }
     }
   }
 
@@ -75,6 +204,18 @@
       line-height: 35px;
       color: 333;
       font-size: 14px;
+    }
+  }
+
+  &__footer-bottom {
+    background: #F6F8FB;
+    border-top: 1px solid #EDEEF0;
+    
+    .container-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 68px;
     }
   }
 }
