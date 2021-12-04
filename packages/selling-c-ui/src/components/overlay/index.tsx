@@ -1,11 +1,22 @@
 
-import React, { memo } from 'react'
+import React from 'react'
 import { View } from '@tarojs/components'
-import { FC } from '@tarojs/taro'
+import { SlOverlayProps } from '../../../types/overlay'
 
-const  SlOverlay:FC = () => {
-return <View className="sl-overlay-wrapper">this is SlOverlay</View>
+export default class SlOverlay extends React.Component<SlOverlayProps> {
+    public static defaultProps: SlOverlayProps
+    public render(): JSX.Element {
+        const { show, onClick } = this.props;
+        return <View
+            className="slc-overlay-wrapper"
+            style={`display: ${show ? 'block' : 'none'} `}
+            onClick={() => onClick()}
+        >
+            {this.props.children}
+        </View>
+    }
 }
 
-export default memo(SlOverlay)
-        
+SlOverlay.defaultProps = {
+    show: false
+}

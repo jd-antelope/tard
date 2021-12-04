@@ -74,7 +74,7 @@ export interface SlDropdownMenuItemProps extends SlComponent {
   /**
    * 自定义点击事件
    */
-  onClick?: function
+  onClick?: Function
 }
 export interface SlDropdownMenuState {
   /**

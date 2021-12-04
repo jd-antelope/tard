@@ -104,9 +104,13 @@ const [isOpened, setIsOpened] = useState(false)
 | closeOnClickOverlay | 点击浮层的时候时候自动关闭 | boolean | true |
 | cancelText | 取消按钮的文本 | string | - |
 | confirmText | 确认按钮的文本 | string | - |
-| onClose | 触发关闭时的事件 | CommonEventFunction | - |
-| onCancel | 点击取消按钮触发的事件 | CommonEventFunction | - |
-| onConfirm | 点击确认按钮触发的事件 | CommonEventFunction | - |
+
+### Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onClose | 触发关闭时的事件 | - | 
+| onCancel | 点击取消按钮触发的事件 | -  |
+| onConfirm | 点击确认按钮触发的事件 | - |
 
 ### 样式变量
 |  名称  | 默认值 |

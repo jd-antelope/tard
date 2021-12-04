@@ -68,7 +68,7 @@ const [value1, setValue1] = useState(0)
 |  size  | 组件的大小  | 'normal' ｜ 'large' | 'normal'  |
 |  width  | 不包括两侧按钮，单位根据环境转为 rpx 或 rem | number | 120 |
 
-### Event
+### Events
 |  事件名   | 说明  | 回调参数 |
 |  ----  | ----  | ---- |
 |  onChange  | 输入框值改变时触发的事件  | 输入框当前值 value |
