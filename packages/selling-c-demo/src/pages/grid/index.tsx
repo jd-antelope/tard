@@ -65,9 +65,7 @@ const Grid: FC = () => {
               new Array(4).fill('').map((_, i) => (
                 <SlGridItem 
                   key={ i }
-                  text="文字" 
-                  url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
-                />
+                >自定义内容</SlGridItem>
               ))
             }
           </SlGrid>

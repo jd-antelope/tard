@@ -2,12 +2,12 @@
 
 ### 介绍
 宫格可以在水平方向上把页面分隔成等宽度的区块，用于展示内容或进行页面导航。
+
+## 代码演示
 ### 引入
 ```js
 import { SlGrid, SlGridItem } from 'tard'
 ```
-
-## 代码演示
 ### 基础用法
 通过 `url` 属性设置格子内的图标，`text` 属性设置文字内容。
 ```js
@@ -104,15 +104,15 @@ import { SlGrid, SlGridItem } from 'tard'
 </SlGrid>
 ```
 
-## Api
+## API
 ### Grid Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | columnNum | 列数 | number | 4 |
 | iconSize | 图标大小，默认单位为px | number | 60px |
-| border | 图文位置 |	boolean | down |
-| direction | 是否开启格子点击反馈 | 'top'|'bottom'|'left'|'right' | false |
-| clickable | 列数 | boolean | false |
+| border | 是否支持边框 |	boolean | down |
+| direction | 格子内容排列的方向 | 'top'|'bottom'|'left'|'right' | false |
+| clickable | 是否开启格子点击反馈 | boolean | false |
 
 ### GridItem Props
 |  属性   | 说明  | 类型 | 默认值 |
@@ -122,20 +122,18 @@ import { SlGrid, SlGridItem } from 'tard'
 | text | 文字 | string | - |
 | columnNum | 列数 | number | 4 |
 | iconSize | 图标大小，默认单位为px | number | 60px |
-| border | 图文位置 |	boolean | down |
-| direction | 是否开启格子点击反馈 | 'top'|'bottom'|'left'|'right' | false |
-| onClick | 列数 | boolean | false |
+| border | 是否支持边框 |	boolean | down |
+| direction | 格子内容排列的方向 | 'top'|'bottom'|'left'|'right' | false |
 
 ### GridItem Events
-|  属性   | 说明  | 类型 | 默认值 |
-|  ----  | ----  | ---- | ---- |
-| onClick | 点击格子时触发 | CommonEventFunction | - |
-
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onClick | 点击格子时触发 | - |
 ### 样式变量
 组件提供了下列 Less 变量，可用于自定义样式
-|  名称  | 默认值 | 描述 ｜
-|  ---- | ---- | ---- |
-|  @slc-grid-item-padding-y | 18px | - |
-|  @slc-grid-item-image-size | 60px | - |
-|  @slc-grid-item-text-padding | 12px | - |
-|  @slc-badge-dot-size  | 24px | - |
+|  名称  | 默认值 |
+|  ---- | ---- |
+|  @slc-grid-item-padding-y | 18px |
+|  @slc-grid-item-image-size | 60px |
+|  @slc-grid-item-text-padding | 12px |
+|  @slc-badge-dot-size  | 24px |

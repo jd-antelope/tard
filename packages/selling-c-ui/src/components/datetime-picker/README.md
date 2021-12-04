@@ -1,5 +1,6 @@
 
 # DatetimePicker
+### 介绍
 选择时间的控件，将日期和分秒封装了一起。目前支持小程序，h5暂不支持
 
 ## 代码演示
@@ -59,8 +60,8 @@ import { SlDatetimePicker } from 'tard'
 />
 ```
 
-## Api
-### props
+## API
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | showEndDate | 是否显示结束时间 | boolean | false |
@@ -70,5 +71,9 @@ import { SlDatetimePicker } from 'tard'
 | endTitle | 右侧的时间title | string | 结束时间 |
 | value | 默认开始时间 | string | 9999-1-1 |
 | endValue | 默认结束时间 | string | 9999-1-1 |
-| onClose | 关闭回调 | CommonEventFunction | - |
-| onOk | 确认回调(返回是array['1990-1-1','2021-1-1']) | CommonEventFunction | - |
+
+### Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onClose | 关闭回调 | - |
+| onOk | 确认回调 | array['1990-1-1','2021-1-1'] |

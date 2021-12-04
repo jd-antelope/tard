@@ -1,8 +1,8 @@
 # tab
+### 介绍
 价格标签组件
 ## 代码演示
 ### 引入
-文件中引入组件
 ```js
 import { SlTagPrice } from 'tard'
 ```
@@ -29,8 +29,8 @@ import { SlTagPrice } from 'tard'
 <SlTagPrice price="120" title="推广价"/> 
 ```
         
-## Api
-### props
+## API
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | color | 价格标签颜色 | string | '#FF2929' |

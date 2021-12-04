@@ -2,10 +2,10 @@ import MarkDown from '@/components/markdown'
 
 const markdown = ` 
 # Skeleton
+### 介绍
 该标签设计了简单的骨架结构
 ## 代码演示
 ### 引入
-在 Taro 文件中引入组件
 ~~~js
 import { SlSkeleton } from 'tard'
 ~~~
@@ -33,8 +33,8 @@ import { SlSkeleton } from 'tard'
 ~~~
 
 
-## Api
-### props
+## API
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | width | 宽 | number | 24 |

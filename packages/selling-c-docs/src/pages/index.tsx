@@ -29,7 +29,7 @@ export default function IndexPage() {
                 扫码体验
                 <div className="scan-button__content">
                   <p className="scan-button__content-p">请用微信扫码体验</p>
-                  <img className="scan-button__content-img" src={ `${IMG_PREFIX}/login-big.png` } />
+                  <img className="scan-button__content-img" src={ `${IMG_PREFIX}/scan-dev.png` } />
                 </div>
               </Button>
             </div>

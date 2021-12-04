@@ -1,7 +1,8 @@
 # Field
+### 介绍
+表单中的输入框组件。
 ## 代码演示
 ### 引入
-在 Taro 文件中引入组件
 ```js
 import { SlField } from 'tard'
 ```
@@ -153,7 +154,7 @@ import { SlField } from 'tard'
 />
 ```
 
-## Api
+## API
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
@@ -181,11 +182,14 @@ import { SlField } from 'tard'
 | labelClass | 左侧title的class | string | - |
 | labelWidth | 左侧title的宽度 | number | - |
 | labelAlign | 左侧title的对齐方式 | 'center'|'left'|'right' | - |
-| onBlur | 输入框失去焦点时触发的事件，v2.0.3版本可以获取event参数 | InputFunction<string|number,BlurEventDetail> | - |
-| onFocus | 输入框被选中时触发的事件，v2.0.3版本可以获取event参数 | InputFunction<string|number,FocusEventDetail> | - |
-| onChange | 输入框值改变时触发的事件，开发者需要通过onChange事件来更新value值变化，onChange函数必填。小程序中，如果想改变value的值，需要returnvalue从而改变输入框的当前值,v2.0.3版本可以获取event参数 | InputFunction<string|number,InputEventDetail,any> | - |
-| onConfirm | 点击完成按钮时触发，v2.0.3版本可以获取event参数 | InputFunction<string|number,ConfirmEventDetail> | - |
-| onClick | 当editable为false时，点击组件触发的事件，v2.3.3版本可以获取event参数 | (event? | - |
-| onKeyboardHeightChange | 键盘高度发生变化的时候触发此事件 | (event? | - |
-| onErrorClick | 点击错误按钮触发的事件，v2.3.3版本可以获取event参数 | (event? | - |
-| onLink | 点击右侧箭头 | ()=>void | - |
+
+### Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onBlur | 输入框失去焦点时触发的事件，v2.0.3版本可以获取event参数 | event |
+| onFocus | 输入框被选中时触发的事件，v2.0.3版本可以获取event参数 | event |
+| onChange | 输入框值改变时触发的事件，开发者需要通过onChange事件来更新value值变化，onChange函数必填。小程序中，如果想改变value的值，需要returnvalue从而改变输入框的当前值,v2.0.3版本可以获取event参数 | event |
+| onConfirm | 点击完成按钮时触发，v2.0.3版本可以获取event参数 | event |
+| onClick | 当editable为false时，点击组件触发的事件，v2.3.3版本可以获取event参数 | event |
+| onErrorClick | 点击错误按钮触发的事件，v2.3.3版本可以获取event参数 | event |
+| onLink | 点击右侧箭头 | - |

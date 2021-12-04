@@ -6,7 +6,6 @@ const markdown = `
 该标签在 Taro 的 Image 标签上面增加了错误处理、加载动画等属性
 ## 代码演示
 ### 引入
-在 Taro 文件中引入组件
 ~~~js
 import { SlImage } from 'tard'
 ~~~
@@ -30,12 +29,12 @@ import { SlImage } from 'tard'
 />
 ~~~
 
-## Api
+## API
 ### Props
+相关属性沿用 ~taro~ 中 ~Image~
 | 属性         | 说明         | 类型    | 默认值 |
 | ------------ | ------------ | ------- | ------ |
 | src          | 图片链接     | string | -      |
-| res          | 图片其他参数 | Image   | -      |
 | transition | 是否展示动画 | boolean | -      |
 `
 

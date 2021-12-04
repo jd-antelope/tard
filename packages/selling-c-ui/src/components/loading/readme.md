@@ -3,7 +3,6 @@
 该标签在 Taro 的 Image 标签上面增加了错误处理、加载动画等属性
 ## 代码演示
 ### 引入
-在 Taro 文件中引入组件
 ```js
 import { SlLoading } from 'tard'
 ```
@@ -55,7 +54,7 @@ return (
 );
 ```
 
-## Api
+## API
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
@@ -63,4 +62,8 @@ return (
 | type | 类型 | 'default'|'ios'|'loading' | default |
 | isMask | 是否有全局定位 | boolean | - |
 | size | loading大小 | number | - |
-| onClick | 点击事件 | CommonEventFunction | - |
+
+### Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onClick | 点击格子时触发 | - |

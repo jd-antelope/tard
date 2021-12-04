@@ -1,8 +1,8 @@
 # Price
+### 代码演示
 该组件封装了业务中常用的价格用法
 
 ## 使用指南
-在 Taro 文件中引入组件
 ```js
 import { SlPrice } from 'tard'
 ```
@@ -64,7 +64,7 @@ import { SlPrice } from 'tard'
 <SlPrice price="233232323.00" thousands />
 ```
 
-## Api
+## API
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
