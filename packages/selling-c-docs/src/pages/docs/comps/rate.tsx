@@ -21,52 +21,32 @@ import { SlRate } from 'tard'
 <SlRate value={3.5}/>
 ~~~
 ### 设置元素总个数
-<<<<<<< HEAD
-通过设置max属性的值可以更改选中元素的总个数
-=======
 通过设置 ~max~ 属性的值可以更改选中元素的总个数
->>>>>>> dev-1.0.0
 ~~~js
 <SlRate value={3} max={6}/>
 ~~~
 
 ### 设置元素之间的间隔
-<<<<<<< HEAD
-通过设置margin属性的值可以更改元素之间的间隔
-=======
 通过设置 ~margin~ 属性的值可以更改元素之间的间隔
->>>>>>> dev-1.0.0
 ~~~js
  <SlRate value={3} max={5} margin={20} />
 ~~~
 
 ### 设置元素之间的间隔
-<<<<<<< HEAD
-通过设置activeColor属性的值可以更改选中元素的颜色
-=======
 通过设置 ~activeColor~ 属性的值可以更改选中元素的颜色
->>>>>>> dev-1.0.0
 ~~~js
  <SlRate value={3} max={5} activeColor='pink' />
 ~~~
 
 
 ### 设置元素的大小
-<<<<<<< HEAD
-通过设置size属性的值可以更改选中元素的颜色
-=======
 通过设置 ~size~ 属性的值可以更改选中元素的颜色
->>>>>>> dev-1.0.0
 ~~~js
  <SlRate value={3} max={5} size={20} />
 ~~~
 
 ### 动态选取元素
-<<<<<<< HEAD
-通过指定onchange时间实时改变选中元素的个数
-=======
 通过指定 ~onchange~ 时间实时改变选中元素的个数
->>>>>>> dev-1.0.0
 ~~~js
   const [value, setValue] = useState(3)
   const chage = (v) => {

@@ -33,7 +33,6 @@ const [isOpenedSelf, setIsOPendSelf] = useState<Boolean>(false)
 export default memo(Popup);
 ~~~
 
-## Api
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |

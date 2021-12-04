@@ -15,7 +15,7 @@ import { SlButton } from 'tard'
   <SlButton>按钮基本使用</SlButton>
 ~~~
 ### 基础用法
-设置disabled属性设置按钮禁用状态
+设置 ~disabled~ 属性设置按钮禁用状态
 ~~~js
   <SlButton disabled>禁用按钮</SlButton>
 ~~~
@@ -27,7 +27,7 @@ import { SlButton } from 'tard'
 ~~~
 
 ### 通栏按钮
-设置full属性后按钮会自动铺满父容器
+设置 ~full~ 属性后按钮会自动铺满父容器
 ~~~js
   <SlButton full>通栏按钮</SlButton>
 ~~~
