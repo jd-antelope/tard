@@ -2,43 +2,37 @@ import { history } from 'umi';
 import { Button } from 'antd';
 import { IMG_PREFIX } from '@/business/constants'
 import { logoUrl } from '@/business/layout'
+import FooterResources from '@/business/home-footer-resources'
 import './index.less';
-
-const list = [{
-  title: '相关产品',
-  children: [{
-    title: 'Taro',
-    clickCallback: () => {}
-  }, {
-    title: 'React',
-    clickCallback: () => {}
-  }, {
-    title: 'Relay',
-    clickCallback: () => {}
-  }]
-}]
 
 export default function IndexPage() {
   return (
     <div className="index-page">
-      <div className="container index-page__banner">
-        <div className="index-page__banner-content">
-          <div className="index-page__banner-content__login">
-            <img src={ `${IMG_PREFIX}/login-big.png` } />
-          </div>
-          <p className="index-page__banner-content__p">一套基于Taro框架开发的多端React UI组件库</p>
-          <div className="index-page__banner-content__buttons">
-            <Button 
-              className="index-page__banner-content__button" 
-              onClick={ () => history.push('/docs') } 
-              type="primary"
-            >起步</Button>
-            <Button
-              className="index-page__banner-content__button"
-              onClick={ () => window.location.href = 'https://coding.jd.com/selling-front/shop-c-components/' } 
-              type="primary"
-              ghost
-            >扫码体验</Button>
+      <div className="index-page__banner">
+        <div className="container">
+          <div className="index-page__banner-content">
+            <div className="index-page__banner-content__login">
+              <img src={ `${IMG_PREFIX}/login-big.png` } />
+            </div>
+            <p className="index-page__banner-content__p">一套基于Taro框架开发的多端React UI组件库</p>
+            <div className="index-page__banner-content__buttons">
+              <Button 
+                className="index-page__banner-content__button" 
+                onClick={ () => history.push('/docs') } 
+                type="primary"
+              >起步</Button>
+              <Button
+                className="index-page__banner-content__button scan-button"
+                type="primary"
+                ghost
+              >
+                扫码体验
+                <div className="scan-button__content">
+                  <p className="scan-button__content-p">请用微信扫码体验</p>
+                  <img className="scan-button__content-img" src={ `${IMG_PREFIX}/login-big.png` } />
+                </div>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -52,9 +46,9 @@ export default function IndexPage() {
             />
           </div>
           {
-            list.map((v, i) => (
+            FooterResources.map((v, i) => (
               <div className="index-page__footer-list" key={ i }>
-                <div className="index-page__footer-header">{v.title}</div>
+                <div className="index-page__footer-header">{ v.title }</div>
                 {
                   v.children.map((val, idx) =>(
                     <div 
@@ -68,6 +62,11 @@ export default function IndexPage() {
           }
         </div>
       </div>
+      <div className="index-page__footer-bottom">
+          <div className="container container-footer">
+            源自京东零售云商羚 ｜ Copyright (c) 2021-present by jd-antelope
+          </div>
+        </div>
     </div>
   );
 }

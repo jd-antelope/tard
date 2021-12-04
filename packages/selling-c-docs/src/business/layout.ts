@@ -1,10 +1,21 @@
-export const menuData = [{
-  title: '文档',
-  path: '/docs'
-},{
-  title: '资源',
-  path: '/docs'
-}]
+export const menuData = [
+  {
+    title: '指南',
+    path: '/docs'
+  }, {
+    title: '组件',
+    path: '/docs'
+  },
+  {
+    title: '示例',
+    path: '/docs'
+  }, {
+    title: '资源',
+    path: '/docs'
+  }, {
+    title: '加入我们',
+    path: '/docs'
+  }]
 
 export const introduceList = [{
   nameEn: 'Guide',
