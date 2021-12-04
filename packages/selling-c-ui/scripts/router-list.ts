@@ -112,8 +112,8 @@ const routerObj = {
       path: '/progress'
     }, {
       name: '圆形进度条',
-      nameEn: 'ProgressCricle',
-      path: '/progress-cricle'
+      nameEn: 'ProgressCircle',
+      path: '/progress-circle'
     }, {
       name: '骨架屏',
       nameEn: 'Skeleton',

@@ -3,6 +3,11 @@
   margin: 0 auto;
 }
 
+.container-footer {
+  display: flex;
+  flex-direction: row;
+}
+
 .index-page {
   background: #fff;
   margin: 0 auto;
@@ -43,6 +48,33 @@
         border-radius: 21px;
         margin-right: 20px;
       }
+    }
+  }
+
+  &__footer {
+    padding: 60px 0;
+    background: #F6F8FB;
+
+    &-list {
+      width: 280px;
+
+      &__logo {
+        width: 108px;
+        height: 28px;
+      }
+    }
+
+    &-header {
+      margin-bottom: 16px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    &-item {
+      line-height: 35px;
+      color: 333;
+      font-size: 14px;
     }
   }
 }
