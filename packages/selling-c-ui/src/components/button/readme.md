@@ -5,6 +5,8 @@
 ```js
 import { SlButton } from 'tard'
 ```
+ ![](./info.png)
+ 
 
 ## 使用指南
 ### 基础用法

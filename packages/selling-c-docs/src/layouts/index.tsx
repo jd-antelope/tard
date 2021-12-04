@@ -4,8 +4,8 @@ import { IRouteComponentProps, history } from 'umi'
 import { Layout, Menu } from 'antd';
 import { menuData, logoUrl } from '@/business/layout'
 import LayoutMenu from './menu'
+import LayoutHeader from './layoutheader';
 import './layout.less'
-import styles from './index.less';
 
 const { Header, Content, Sider } = Layout;
 export default function LayoutComponent({ children, location }: IRouteComponentProps) {
@@ -18,17 +18,15 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
 
   if (location.pathname === '/') {
     return (
-      <LayoutCommon>
-        <Layout className="site-layout-background">
-          <Content>{children}</Content>
-        </Layout>
-      </LayoutCommon>
+      <LayoutHeader >
+        <Content>{children}</Content>
+      </LayoutHeader>
     )
   }
   return (
-    <LayoutCommon>
+    <LayoutHeader fullHeader>
       <Layout className="site-layout-background site-main">
-        <Sider className={ cn('site-layout-background', styles.siteSider) } width="260px">
+        <Sider className="site-layout-background site-sider" width="260px">
           <LayoutMenu postIframeMessage={(title) => postIframeMessage(title)} />
         </Sider>
         <Content className="layout-md-contianer layout-h-100 pb-24 pl-12 layout-flex-row layout-over-flow-y ">
@@ -38,7 +36,7 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
           >
             <iframe
               className='iframe-content'
-              src={ `${process.env.API_IFRAME_URL}/#/pages/${path}/index` }
+              src={`${process.env.API_IFRAME_URL}/#/pages/${path}/index`}
               frameBorder='0'
               id='iframeDemo'
             />
@@ -47,36 +45,6 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
           <div className='phone-pos'></div>
         </Content>
       </Layout>
-    </LayoutCommon>
-  );
-}
-
-const LayoutCommon: FC = ({ children }) => {
-  return (
-    <Layout className="layout-flex-col layout-h-100vh layout-w-100">
-      <Header className={styles.header}>
-        <div className={styles.logoBox} onClick={() => history.push('/')}>
-          <img
-            className={styles.logo}
-            src={logoUrl}
-          />
-        </div>
-        <Menu
-          className={ styles.layoutTopMenu }
-          theme="light"
-          mode="horizontal"
-          selectable
-        >
-          {
-            menuData.map((v, i) => (
-              <Menu.Item key={i} onClick={() => history.push(v.path)}>{v.title}</Menu.Item>
-            ))
-          }
-        </Menu>
-      </Header>
-      <Content className="layout-w-100 layout-h-100  layout-flex-col layout-flex-1">
-        {children}
-      </Content>
-    </Layout>
+    </LayoutHeader>
   );
 }
