@@ -23,7 +23,6 @@ export default function IndexPage() {
               >起步</Button>
               <Button
                 className="index-page__banner-content__button scan-button"
-                onClick={ () => window.location.href = 'https://coding.jd.com/selling-front/shop-c-components/' } 
                 type="primary"
                 ghost
               >
