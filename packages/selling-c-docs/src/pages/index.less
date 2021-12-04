@@ -1,32 +1,80 @@
-.indexpage {
-  background: #fff;
-  height: calc(100vh - 76px);
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container-footer {
   display: flex;
-  justify-content: center;
-  position: relative;
-  h2 {
-    font-size: 50px;
+  flex-direction: row;
+}
+
+.index-page {
+  background: #fff;
+  margin: 0 auto;
+
+  &__banner {
+    height: 648px;
+    overflow: hidden;
+
+    &-content {
+      width: 362px;
+      height: 214px;
+      margin-top: 164px;
+
+      &__login {
+        width: 193px;
+        height: 94px;
+        margin-bottom: 20px;
+
+        img {
+          width: 193px;
+          height: 94px;
+        }
+      }
+
+      &__p {
+        color: #666;
+        font-size: 18px;
+      }
+
+      &__buttons {
+        margin-top: 40px;
+      }
+
+      &__button {
+        width: 132px;
+        height: 42px;
+        font-size: 18px;
+        border-radius: 21px;
+        margin-right: 20px;
+      }
+    }
   }
-  h3 {
-    font-size: 20px;
-  }
-  .header {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translate(-50%);
-    margin-top: 100px;
-    width: 700px;
-    text-align: center;
-  }
-  .buttons {
-    margin-top: 30px;
-  }
-  .button {
-    width: 100px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 25px;
-    margin: 0 20px;
+
+  &__footer {
+    padding: 60px 0;
+    background: #F6F8FB;
+
+    &-list {
+      width: 280px;
+
+      &__logo {
+        width: 108px;
+        height: 28px;
+      }
+    }
+
+    &-header {
+      margin-bottom: 16px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    &-item {
+      line-height: 35px;
+      color: 333;
+      font-size: 14px;
+    }
   }
 }

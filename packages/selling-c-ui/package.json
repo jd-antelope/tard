@@ -1,5 +1,5 @@
 {
-  "name": "@test/selling-c-ui",
+  "name": "tard",
   "version": "0.0.9",
   "description": "",
   "module": "dist/index.esm.js",
