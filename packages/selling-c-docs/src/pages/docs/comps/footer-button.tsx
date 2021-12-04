@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `
 # Footerbutton
@@ -58,8 +57,6 @@ import { SlFooterButton } from '@test/selling-c-ui'
 ~~~
 
 
-
-
 ## Api
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
@@ -82,8 +79,6 @@ import { SlFooterButton } from '@test/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

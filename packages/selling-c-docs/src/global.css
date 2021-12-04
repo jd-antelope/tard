@@ -286,6 +286,13 @@
   margin-bottom: 10px;
 }
 
+.markdown-body p del {
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: #F5F7FA;
+}
+
 .markdown-body blockquote {
   margin: 0;
   padding: 0 1em;
@@ -492,6 +499,8 @@
   display: table;
   clear: both;
   content: "";
+  width: 100%;
+  height: 9px;
 }
 
 .markdown-body>*:first-child {
@@ -499,7 +508,7 @@
 }
 
 .markdown-body>*:last-child {
-  margin-bottom: 0 !important;
+  margin-bottom: 20px !important;
 }
 
 .markdown-body a:not([href]) {
@@ -834,7 +843,39 @@
   word-wrap: normal;
   background-color: transparent;
   border: 0;
+  color: #333;
+  font-size: 14px;
 }
+
+.markdown-body pre>view {
+  padding: 0 !important;
+}
+
+.markdown-body pre .language-js .punctuation {
+  color: rgb(153, 153, 153);
+}
+
+.markdown-body pre .language-js .string {
+  color: rgb(102, 153, 0);
+}
+
+.markdown-body pre .language-js .operator {
+  color: rgb(102, 153, 0);
+}
+
+.markdown-body pre .language-js .keyword {
+  color: rgb(0, 119, 170);
+}
+
+.markdown-body pre .language-js .module, .markdown-body pre .language-js .control-flow{
+  color: rgb(0, 119, 170);
+}
+
+.markdown-body pre .language-js .maybe-class-name, .markdown-body pre .language-js .constant{
+  color: #CC372E;
+}
+
+
 
 .markdown-body .csv-data td,
 .markdown-body .csv-data th {
@@ -906,7 +947,6 @@
 }
 
 body {
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   height: 100vh;
   overflow: hidden;
   display: flex;

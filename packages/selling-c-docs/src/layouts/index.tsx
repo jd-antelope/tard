@@ -62,6 +62,7 @@ const LayoutCommon: FC = ({ children }) => {
           />
         </div>
         <Menu
+          className={ styles.layoutTopMenu }
           theme="light"
           mode="horizontal"
           selectable

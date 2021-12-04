@@ -3,7 +3,7 @@
 评分组件，可自定义评分星星图标的大小、间隔、评分数
 ### 引入
 ~~~js
-import { SlRate } from '@jd/selling-c-ui'
+import { SlRate } from 'tard'
 ~~~
 ## 代码演示
 ### 基础用法
@@ -13,38 +13,38 @@ import { SlRate } from '@jd/selling-c-ui'
 ~~~
 
 ### 设置选中元素个数
-通过设置 value属性的值可以更改选中元素的个数，支持0.5
+通过设置 `value` 属性的值可以更改选中元素的个数，支持0.5
 ~~~js
 <SlRate value={3}/>
 <SlRate value={3.5}/>
 ~~~
 ### 设置元素总个数
-通过设置max属性的值可以更改选中元素的总个数
+通过设置 `max` 属性的值可以更改选中元素的总个数
 ~~~js
 <SlRate value={3} max={6}/>
 ~~~
 
 ### 设置元素之间的间隔
-通过设置margin属性的值可以更改元素之间的间隔
+通过设置 `margin` 属性的值可以更改元素之间的间隔
 ~~~js
  <SlRate value={3} max={5} margin={20} />
 ~~~
 
 ### 设置元素之间的间隔
-通过设置activeColor属性的值可以更改选中元素的颜色
+通过设置 `activeColor` 属性的值可以更改选中元素的颜色
 ~~~js
  <SlRate value={3} max={5} activeColor='pink' />
 ~~~
 
 
 ### 设置元素的大小
-通过设置size属性的值可以更改选中元素的颜色
+通过设置 `size` 属性的值可以更改选中元素的颜色
 ~~~js
  <SlRate value={3} max={5} size={20} />
 ~~~
 
 ### 动态选取元素
-通过指定onchange时间实时改变选中元素的个数
+通过指定 `onchange` 时间实时改变选中元素的个数
 ~~~js
   const [value, setValue] = useState(3)
   const chage = (v) => {

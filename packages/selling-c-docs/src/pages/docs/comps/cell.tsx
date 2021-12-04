@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# cell
 
@@ -7,22 +6,12 @@ const markdown = `# cell
 单元格
 ### 引入
 ~~~js
-import { SlCell } from '@jd/selling-c-ui'
+import { SlCell } from 'tard'
 ~~~
 ## 代码演示
 ### 基础用法
 ~~~js
-import React, { memo } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlCell } from '@test/selling-c-ui'
-
-const Cell: FC = () => {
-  return (
-     <View className="container">
-        <SlCell  onClick={()=>{console.log("触发点击事件")}}    title={"左侧标题"}  value={"右侧内容"}/>
-    </View>
-  );
+<SlCell onClick={() => { console.log("触发点击事件")} } title={"左侧标题"} value={"右侧内容"}/>
 };
 ~~~
 
@@ -39,8 +28,6 @@ const Cell: FC = () => {
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

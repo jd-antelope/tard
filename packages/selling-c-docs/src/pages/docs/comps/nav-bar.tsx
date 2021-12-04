@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `
 # NavBar 头部导航
@@ -7,7 +6,7 @@ const markdown = `
 为页面提供导航功能，常用于页面顶部。
 ### 引入
 ~~~js
-import { SlNavBar } from '@jd/selling-c-ui'
+import { SlNavBar } from 'tard'
 ~~~
 ## 代码演示
 ### 基本用法
@@ -95,8 +94,6 @@ const onClickLeft = () => {
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

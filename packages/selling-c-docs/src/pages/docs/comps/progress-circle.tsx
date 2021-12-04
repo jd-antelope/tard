@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# ProgressCircle
 ### 介绍
@@ -7,7 +6,7 @@ const markdown = `# ProgressCircle
 > ⚠️ 该组件通过svg实现，svg不支持rpx，故小程序和H5单位均转换为rem
 ### 引入
 ~~~js
-import { SlProgressCircle } from '@jd/selling-c-ui'
+import { SlProgressCircle } from 'tard'
 ~~~
 ## 代码演示
 ### 基础用法
@@ -44,8 +43,6 @@ import { SlProgressCircle } from '@jd/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

@@ -1,56 +1,48 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# Form
 ## 代码演示
 ### 引入
 在 Taro 文件中引入组件
 ~~~js
-import { SlForm } from '@jd/selling-c-ui'
+import { SlForm } from 'tard'
 ~~~
 
 ### 基本用法
 ~~~js
-import React, { useState } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlForm, SlField, SlButton } from '@jd/selling-c-ui'
+const [form, setForm] = useState({
+  shopName: ''
+})
 
-const Form: FC = () => {
-  const [form, setForm] = useState({
-    shopName: ''
+const onSubmit = (event) => {
+  console.log(event)
+}
+
+const change = (res) => {
+  setForm({
+    ...form,
+    ...res
   })
-
-  const onSubmit = (event) => {
-    console.log(event)
-  }
-
-  const change = (res) => {
-    setForm({
-      ...form,
-      ...res
-    })
-  }
-  return (
-    <View className="container">
-      <SlForm onSubmit={onSubmit}>
-        <SlField
-          name='shopName' 
-          title='商品名称' 
-          type='text' 
-          placeholder='单行文本' 
-          value={form.shopName} 
-          onChange={(e) => change({ shopName: e })} 
-        />
-      </SlForm>
-      <SlButton formType='submit'>提交</SlButton>
-    </View>
-  );
-};
+}
+return (
+  <View className="container">
+    <SlForm onSubmit={onSubmit}>
+      <SlField
+        name='shopName' 
+        title='商品名称' 
+        type='text' 
+        placeholder='单行文本' 
+        value={form.shopName} 
+        onChange={(e) => change({ shopName: e })} 
+      />
+    </SlForm>
+    <SlButton formType='submit'>提交</SlButton>
+  </View>
+);
 ~~~
 
 ### 边框
-增加属性 border 显示 form 外边框
+增加属性 ~border~ 显示 form 外边框
 ~~~js
 <SlForm onSubmit={onSubmit} border>
   ...
@@ -69,8 +61,6 @@ const Form: FC = () => {
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

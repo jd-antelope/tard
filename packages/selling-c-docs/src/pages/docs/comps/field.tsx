@@ -1,12 +1,11 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# Field
 ## 代码演示
 ### 引入
 在 Taro 文件中引入组件
 ~~~js
-import { SlField } from '@jd/selling-c-ui'
+import { SlField } from 'tard'
 ~~~
 
 ### 基本用法
@@ -22,7 +21,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 必填
-修改 required 属性显示必填标识 *
+修改 ~required~ 属性显示必填标识 *
 ~~~js
 <SlField
   name='shopName' 
@@ -36,7 +35,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 边框
-属性 border 为 false 时就能去掉元素边框
+属性 ~border~ 为 false 时就能去掉元素边框
 ~~~js
 <SlField
   name='shopName' 
@@ -50,7 +49,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 只读
-添加属性 readonly 不能修改元素
+添加属性 ~readonly~ 不能修改元素
 ~~~js
 <SlField
   name='shopName' 
@@ -63,7 +62,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 内容区域文字颜色
-修改属性 contentColor 可以修改中间区域文字颜色
+修改属性 ~contentColor~ 可以修改中间区域文字颜色
 ~~~js
 <SlField
   name='shopName' 
@@ -75,7 +74,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 自定义跳转内容
-修改属性 linkSlot 可以自定义右侧跳转内容
+修改属性 ~linkSlot~ 可以自定义右侧跳转内容
 ~~~js
 <SlField
   name='shopName' 
@@ -89,7 +88,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 左侧文本额外类名
-添加 labelClass 属性可以自定义左侧 class 名
+添加 ~labelClass~ 属性可以自定义左侧 class 名
 ~~~js
 <SlField
   name='shopName' 
@@ -104,7 +103,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 左侧文本宽度
-修改属性 labelWidth 可以控制左侧宽度
+修改属性 ~labelWidth~ 可以控制左侧宽度
 ~~~js
 <SlField
   name='shopName' 
@@ -119,7 +118,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 左侧文本对齐方式
-修改属性 labelAlign 可以控制左侧对齐方式
+修改属性 ~labelAlign~ 可以控制左侧对齐方式
 ~~~js
 <SlField
   name='shopName' 
@@ -134,7 +133,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 多行输入框
-当属性 type 为 textarea 时 可以切换到多行文本框
+当属性 ~type~ 为 ~textarea~ 时 可以切换到多行文本框
 ~~~js
 <SlField
   name='shopName' 
@@ -146,7 +145,7 @@ import { SlField } from '@jd/selling-c-ui'
 ~~~
 
 ### 无标题
-属性 title 不写时可以去掉左侧内容
+属性 ~title~ 不写时可以去掉左侧内容
 ~~~js
 <SlField
   name='shopName' 
@@ -196,8 +195,6 @@ import { SlField } from '@jd/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

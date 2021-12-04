@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# Price
 该组件封装了业务中常用的价格用法
@@ -7,7 +6,7 @@ const markdown = `# Price
 ## 使用指南
 在 Taro 文件中引入组件
 ~~~js
-import { SlPrice } from '@jd/selling-c-ui'
+import { SlPrice } from 'tard'
 ~~~
 
 ### 基础用法
@@ -15,54 +14,54 @@ import { SlPrice } from '@jd/selling-c-ui'
 <SlPrice price="23.00" />
 ~~~
 ### 价格传入数组
-price 可以传入数组
+~price~ 可以传入数组
 ~~~js
 <SlPrice price={ ['6.00', '7.00', '23.00'] } />
 ~~~
 
 ### 大小
-修改 size 属性改变大小，基于750的尺寸
+修改 ~size~ 属性改变大小，基于750的尺寸
 ~~~js
 <SlPrice price="23.00" size={ 35 } />
 ~~~
 
 ### 颜色
-修改 color 属性修改颜色
+修改 ~color~ 属性修改颜色
 ~~~js
 <SlPrice price="23.00" color="#000" size={ 35 } />
 ~~~
 
 ### 修改类型
-修改 type 属性，可以修改价格类型，目前有五种类型供大家选择
+修改 ~type~ 属性，可以修改价格类型，目前有五种类型供大家选择
 ~~~js
 <SlPrice price="23.00" type="largeMiddle" />
 ~~~
 
 ### 原价内容
-添加 originalPrice 属性可以展示原价
+添加 ~originalPrice~ 属性可以展示原价
 ~~~js
 <SlPrice price="23.00" originalPrice="21.00" />
 ~~~
 
 ### 修改单位
-修改 priceUnit 属性，可以修改价格的单位
+修改 ~priceUnit~ 属性，可以修改价格的单位
 ~~~js
 <SlPrice price="23.00" priceUnit="$" />
 ~~~
 
 ### 保留几位小数点
-修改 fixedNum 属性保留小数点几位，支持 1-100 的整数
+修改 ~fixedNum~ 属性保留小数点几位，支持 1-100 的整数
 ~~~js
 <SlPrice price="23.00" fixedNum={ 2 } />
 ~~~
 
 ### 自定义价格后面内容
-修改 content 属性，配置价格后面的内容
+修改 ~content~ 属性，配置价格后面的内容
 ~~~js
 <SlPrice price="23.00" content={ <View>商羚</View> } />
 ~~~
 ### 千分号形式显示
-增加 thousands 属性，按照千分号形式显示
+增加 ~thousands~ 属性，按照千分号形式显示
 ~~~js
 <SlPrice price="233232323.00" thousands />
 ~~~
@@ -97,8 +96,6 @@ price 可以传入数组
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

@@ -3,7 +3,7 @@
 排序项组件，支持元素换行或滚动展示。
 ### 引入
 ```js
-import { SlSort } from '@jd/selling-c-ui'
+import { SlSort } from 'tard'
 ```
 ## 代码演示
 ### 基础用法

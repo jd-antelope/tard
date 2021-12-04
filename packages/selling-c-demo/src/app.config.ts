@@ -15,7 +15,7 @@ export default {
 		'pages/form/index',
 		'pages/icon/index',
 		'pages/image/index',
-		'pages/image-text-item/index',
+		'pages/grid/index',
 		'pages/input-number/index',
 		'pages/loading/index',
 		'pages/media/index',

@@ -1,12 +1,11 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# Sort
 ### 介绍
 排序项组件，支持元素换行或滚动展示。
 ### 引入
 ~~~js
-import { SlSort } from '@jd/selling-c-ui'
+import { SlSort } from 'tard'
 ~~~
 ## 代码演示
 ### 基础用法
@@ -87,8 +86,6 @@ import { SlSort } from '@jd/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

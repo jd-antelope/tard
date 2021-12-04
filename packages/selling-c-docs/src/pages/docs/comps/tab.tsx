@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = ` 
 # tab
@@ -8,7 +7,7 @@ const markdown = `
 ## 使用指南
 在 Taro 文件中引入组件
 ~~~js
-import { SlTab } from '@jd/selling-c-ui'
+import { SlTab } from 'tard'
 ~~~
 ### 基本用法
 
@@ -125,8 +124,6 @@ const OrderManage: FC = () => {
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

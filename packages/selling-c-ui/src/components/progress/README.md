@@ -3,7 +3,7 @@
 用于展示操作的当前进度。
 ### 引入
 ```js
-import { SlProgress } from '@jd/selling-c-ui'
+import { SlProgress } from 'tard'
         
 ```
 ## 代码演示

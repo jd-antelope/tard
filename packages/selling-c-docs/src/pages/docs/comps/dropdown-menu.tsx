@@ -1,12 +1,11 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# DropdownMenu 下拉菜单
 ### 介绍
 向下弹出的菜单列表。
 ### 引入
 ~~~js
-import { SlDropdownMenu, SlDropdownMenuItem } from '@jd/selling-c-ui'
+import { SlDropdownMenu, SlDropdownMenuItem } from 'tard'
 ~~~
 
 ## 代码演示
@@ -152,8 +151,6 @@ const option2 = [
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

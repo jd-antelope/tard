@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `
 # Loading
@@ -8,25 +7,14 @@ const markdown = `
 ### 引入
 在 Taro 文件中引入组件
 ~~~js
-import { SlLoading } from '@jd/selling-c-ui'
+import { SlLoading } from 'tard'
 ~~~
 ### 基础用法
 ~~~js
-import React from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlLoading } from '@jd/selling-c-ui'
-
-const Loading: FC = () => {
-  return (
-    <View className="container">
-      <SlLoading />  
-    </View>
-  );
-};
+<SlLoading />  
 ~~~
 ### 颜色修改
-通过修改 color 属性，修改背景颜色
+通过修改 ~color~ 属性，修改背景颜色
 ~~~js
 <SlLoading color="red" />
 ~~~
@@ -42,7 +30,7 @@ const Loading: FC = () => {
 ~~~
 
 ### 大小
-修改属性 size 改变大小，基于750的尺寸 
+修改属性 ~size~ 改变大小，基于750的尺寸 
 ~~~js
 <SlLoading size={ 100 } />
 ~~~
@@ -50,30 +38,23 @@ const Loading: FC = () => {
 ### 展示遮罩
 传入的图片找不到或者加载不出来就会显示默认图片
 ~~~js
-import React, { useState } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlLoading, SlButton } from '@jd/selling-c-ui'
+const [overlay, setOverlay] = useState<boolean>(false)
 
-const Loading: FC = () => {
-  const [overlay, setOverlay] = useState<boolean>(false)
-
-  return (
-    <View className="container">  
-      <SlButton size="large" onClick={ () => setOverlay(true) }>点击</SlButton>
-      {
-        overlay && 
-        <SlLoading 
-          onClick={ () => {
-            setOverlay(false) 
-          }} 
-          size={ 100 } 
-          overlay 
-        />
-      }
-    </View>
-  );
-};
+return (
+  <View className="container">  
+    <SlButton size="large" onClick={ () => setOverlay(true) }>点击</SlButton>
+    {
+      overlay && 
+      <SlLoading 
+        onClick={ () => {
+          setOverlay(false) 
+        }} 
+        size={ 100 } 
+        overlay 
+      />
+    }
+  </View>
+);
 ~~~
 
 ## Api
@@ -89,8 +70,6 @@ const Loading: FC = () => {
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# tab
 价格标签组件
@@ -7,7 +6,7 @@ const markdown = `# tab
 ### 引入
 文件中引入组件
 ~~~js
-import { SlTagPrice } from '@jd/selling-c-ui'
+import { SlTagPrice } from 'tard'
 ~~~
 ### 基本用法
 ~~~js
@@ -44,8 +43,6 @@ import { SlTagPrice } from '@jd/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

@@ -8,7 +8,7 @@ class App extends React.Component {
 
   componentDidShow () {
     (Taro as any).Current.app.themeParams = {
-      primaryColor: '#FF2929',
+      primaryColor: '#102DF5',
     }
     
     if (isWeb) {

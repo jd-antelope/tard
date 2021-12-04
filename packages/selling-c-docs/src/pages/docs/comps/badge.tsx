@@ -1,12 +1,11 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# Badge
 ### 介绍
 在右上角展示徽标数字或小红点。
 ### 引入
 ~~~js
-import { SlBadge } from '@jd/selling-c-ui'
+import { SlBadge } from 'tard'
 ~~~
 ## 代码演示
 ### 基础用法
@@ -123,8 +122,6 @@ import { SlBadge } from '@jd/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }

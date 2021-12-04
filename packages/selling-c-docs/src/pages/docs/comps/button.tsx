@@ -1,12 +1,11 @@
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import MarkDown from '@/components/markdown'
 
 const markdown = `# Button
 ### 介绍
 按钮用于传递用户触摸时会触发的操作
 ## 引入
 ~~~js
-import { SlButton } from '@jd/selling-c-ui'
+import { SlButton } from 'tard'
 ~~~
 
 ## 使用指南
@@ -33,24 +32,24 @@ import { SlButton } from '@jd/selling-c-ui'
   <SlButton full>通栏按钮</SlButton>
 ~~~
 ### 自定义边框颜色
-设置borderColor属性可以指定按钮边框颜色
+设置 ~borderColor~ 属性可以指定按钮边框颜色
 ~~~js
  <SlButton full borderColor='pink'>自定义边框颜色</SlButton>
 ~~~
 ### 自定义背景颜色
-设置fillColor属性可以指定按钮背景颜色
+设置 ~fillColor~ 属性可以指定按钮背景颜色
 ~~~js
  <SlButton full fillColor='pink'>自定义背景颜色</SlButton>
 ~~~
 ### 尺寸大小
-通过设置size尺寸属性可以选择三种默认尺寸按钮，也可通过类名自定义生成您需要的按钮尺寸
+通过设置 ~size~ 尺寸属性可以选择三种默认尺寸按钮，也可通过类名自定义生成您需要的按钮尺寸
 ~~~js
 <SlButton size='small'>small button</SlButton>
 <SlButton size='middle'>middle button</SlButton>
 <SlButton size='large'>large button</SlButton>
 ~~~
 ### 自定义圆角
-通过设置radius属性的值可以改变按钮的圆角值
+通过设置 ~radius~ 属性的值可以改变按钮的圆角值
 ~~~js
 <SlButton>默认</SlButton>
 <SlButton radius={24}>24px</SlButton>
@@ -91,8 +90,6 @@ import { SlButton } from '@jd/selling-c-ui'
 
 export default function DocsPage() {
   return (
-    <div className="markdown-body">
-      <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
-    </div>
+    <MarkDown markdown={ markdown } />
   );
 }
