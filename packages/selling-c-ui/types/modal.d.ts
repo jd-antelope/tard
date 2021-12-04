@@ -18,6 +18,11 @@ export interface SlModalProps extends SlComponent {
    */
   content?: string
   /**
+   * 元素的内容对齐方式
+   * @default center
+   */
+  contentAlign?: 'center' | 'left' | 'right'
+  /**
    * 点击浮层的时候时候自动关闭
    * @default true
    */
@@ -53,9 +58,9 @@ export interface SlModalActionProps extends SlComponent {
   isSimple: boolean
 }
 
-export interface SlModalContentProps extends SlComponent {}
+export interface SlModalContentProps extends SlComponent { }
 
-export interface SlModalHeaderProps extends SlComponent {}
+export interface SlModalHeaderProps extends SlComponent { }
 
 declare const SlModal: ComponentClass<SlModalProps>
 

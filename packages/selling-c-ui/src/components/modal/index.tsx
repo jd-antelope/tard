@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { Button, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
@@ -15,9 +14,8 @@ export default class SlModal extends React.Component<
   SlModalState
 > {
   public static defaultProps: SlModalProps
-  public static propTypes: InferProps<SlModalProps>
 
-  public constructor (props: SlModalProps) {
+  public constructor(props: SlModalProps) {
     super(props)
     const { isOpened } = props
     this.state = {
@@ -26,7 +24,7 @@ export default class SlModal extends React.Component<
     }
   }
 
-  public UNSAFE_componentWillReceiveProps (nextProps: SlModalProps): void {
+  public UNSAFE_componentWillReceiveProps(nextProps: SlModalProps): void {
     const { isOpened } = nextProps
 
     if (this.props.isOpened !== isOpened) {
@@ -74,9 +72,23 @@ export default class SlModal extends React.Component<
     e.stopPropagation()
   }
 
-  public render (): JSX.Element {
+  public render(): JSX.Element {
     const { _isOpened, isWEB } = this.state
-    const { title, content, cancelText, confirmText } = this.props
+    const { title, content, cancelText, confirmText, contentAlign } = this.props
+
+    const children = {
+      SlModalHeader: null,
+      SlModalContent: null,
+      SlModalAction: null
+    }
+
+    React.Children.map(this.props.children, (child) => {
+      if (React.isValidElement(child)) {
+        const displayName = (child.type as any).displayName
+        children[displayName] = child
+      }
+    })
+    
     const rootClass = classNames(
       'slc-modal',
       {
@@ -99,9 +111,10 @@ export default class SlModal extends React.Component<
                 <Text>{title}</Text>
               </SlModalHeader>
             )}
+            {children.SlModalHeader}
             {content && (
               <SlModalContent>
-                <View className='content-simple'>
+                <View className='content-simple' style={`text-align: ${contentAlign}`}>
                   {isWEB ? (
                     <Text
                       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
@@ -116,16 +129,18 @@ export default class SlModal extends React.Component<
                 </View>
               </SlModalContent>
             )}
+            {children.SlModalContent}
             {isRenderAction && (
               <SlModalAction isSimple>
                 {cancelText && (
-                  <Button onClick={this.handleCancel}>{cancelText}</Button>
+                  <Button className='slc-modal__button' onClick={this.handleCancel}>{cancelText}</Button>
                 )}
                 {confirmText && (
-                  <Button onClick={this.handleConfirm}>{confirmText}</Button>
+                  <Button className='slc-modal__button slc-modal__button-confirm' onClick={this.handleConfirm}>{confirmText}</Button>
                 )}
               </SlModalAction>
             )}
+             {children.SlModalAction}
           </View>
         </View>
       )
@@ -142,17 +157,6 @@ export default class SlModal extends React.Component<
 
 SlModal.defaultProps = {
   isOpened: false,
-  closeOnClickOverlay: true
-}
-
-SlModal.propTypes = {
-  title: PropTypes.string,
-  isOpened: PropTypes.bool,
-  onCancel: PropTypes.func,
-  onConfirm: PropTypes.func,
-  onClose: PropTypes.func,
-  content: PropTypes.string,
-  closeOnClickOverlay: PropTypes.bool,
-  cancelText: PropTypes.string,
-  confirmText: PropTypes.string
+  closeOnClickOverlay: true,
+  contentAlign: 'center'
 }
