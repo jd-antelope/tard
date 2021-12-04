@@ -38,13 +38,35 @@ const onClickLeft = () => {
 ~~~
 
 ### 自定义左侧图标
-设置 ~leftIconType~ 属性来设置左边图标
+设置 ~leftIconType~ 属性来设置左侧图标， ~onClickLeft~ 设置左侧点击事件
 ~~~js
 <SlNavBar title="标题"
     leftIcon
     leftText='返回'
     leftIconType='arrow-left'
     onClickLeft={onClickLeft}
+/>
+~~~
+
+### 自定义链接颜色
+设置 ~color~ 属性来设置链接颜色
+~~~js
+<SlNavBar title="标题"
+    leftIcon
+    leftText='返回'
+    leftIconType='arrow-left'
+    onClickLeft={onClickLeft}
+/>
+~~~
+### 自定义右侧图标
+设置 ~rightIconType~ 属性来设置右侧图标， ~onClickRight~ 设置左侧点击事件
+~~~js
+<SlNavBar title="标题"
+    leftIcon
+    leftText='返回'
+    rightIconType='search'
+    onClickLeft={onClickLeft}
+    onClickRight={onClickRight}
 />
 ~~~
 
@@ -61,35 +83,24 @@ const onClickLeft = () => {
 | leftText | 左边文字 | string | - |
 | fixed | 触发返回事件 | boolean | false |
 | border | 是否显示下划线 | boolean | true |
+| rightIconType | 右边图标类型，图标类型请看 SlIcon 文档 |  string | SlIconBaseProps | - |
 
 ### Events
 |  事件名   | 说明  | 回调参数 |
 |  ----  | ----  | ---- |
 |  onClickLeft  | 点击左侧按钮及文字时触发  |  - |
+|  onClickRight  | 点击右侧按钮及文字时触发  |  - |
 
-
-
-
-    /**
-     * 从右到左，第一个图标类型，图标类型请看 SlIcon 文档
-     */
-    rightFirstIconType?: string | SlIconBaseProps
-    /**
-     * 从右到左第二个图标类型，图标类型请看 SlIcon 文档
-     */
-    rightSecondIconType?: string | SlIconBaseProps
-    /**
-     * 左边第一个图标类型点击事件
-     */
-    onClickLeft?: CommonEventFunction
-    /**
-     * 从右到左第一个图标类型点击事件
-     */
-    onClickRgIconSt?: CommonEventFunction
-    /**
-     * 从右到左第二个图标类型点击事件
-     */
-    onClickRgIconNd?: CommonEventFunction
+### 样式变量
+|  名称  | 默认值 |
+|  ---- | ---- |
+|  @slc-nav-bar-title-color | @color-text-base |
+|  @slc-nav-bar-link-color  | @color-text-base |
+|  @slc-nav-bar-spacing-v | 9PX |
+|  @slc-nav-bar-spacing-h  | 5PX |
+|  @slc-nav-bar-font-size | 16PX|
+|  @slc-nav-bar-back-font-size | 14PX |
+|  @slc-nav-bar-height | 92px |
 `
 
 export default function DocsPage() {

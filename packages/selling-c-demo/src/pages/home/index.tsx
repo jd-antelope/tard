@@ -37,7 +37,7 @@ function Home() {
                     });
                   }}
                 >
-                  <View>{val.nameEn} {val.name}</View>
+                  <View className="comp-item-text">{val.nameEn} {val.name}</View>
                   <SlIcon value="chevron-right" color="#333" size={16}></SlIcon>
                 </View>
               ))

@@ -4,8 +4,6 @@ export default {
 		'pages/badge/index',
 		'pages/button/index',
 		'pages/canvas/index',
-		'pages/canvas/index',
-		'pages/canvas/index',
 		'pages/cell/index',
 		'pages/datetime-picker/index',
 		'pages/dropdown-menu/index',
@@ -40,7 +38,7 @@ export default {
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'Taro UI',
+    navigationBarTitleText: 'Tard',
     navigationBarTextStyle: 'black'
   }
 }

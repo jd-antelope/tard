@@ -43,3 +43,4 @@ const [show, setShow] = useState(false)
 |  名称  | 默认值 |
 |  ---- | ---- |
 |  @slc-overlay-bg-color | @overlay-bg-color |
+|  @zindex-overlay  | 1000 |

@@ -41,23 +41,15 @@ export interface SlNavBarProps extends SlComponent {
     /**
      * 从右到左，第一个图标类型，图标类型请看 SlIcon 文档
      */
-    rightFirstIconType?: string | SlIconBaseProps
-    /**
-     * 从右到左第二个图标类型，图标类型请看 SlIcon 文档
-     */
-    rightSecondIconType?: string | SlIconBaseProps
+    rightIconType?: string | SlIconBaseProps
     /**
      * 点击左侧按钮及文字时触发
      */
     onClickLeft?: CommonEventFunction
     /**
-     * 从右到左第一个图标类型点击事件
+     * 点击右侧按钮及文字时触发
      */
-    onClickRgIconSt?: CommonEventFunction
-    /**
-     * 从右到左第二个图标类型点击事件
-     */
-    onClickRgIconNd?: CommonEventFunction
+    onClickRight?: CommonEventFunction
 }
 
 declare const SlNavBar: ComponentClass<SlNavBarProps>

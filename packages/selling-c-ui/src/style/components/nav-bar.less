@@ -1,11 +1,6 @@
 @import '../variables/index.less';
 @import '../mixins/index.less';
 
-@slc-nav-bar-spacing-v: 9PX;
-@slc-nav-bar-spacing-h: 5PX;
-@slc-nav-bar-font-size: 18PX;
-@slc-nav-bar-back-font-size: 16PX;
-
 .slc-nav-bar {
   display: flex;
   align-items: center;
@@ -15,6 +10,8 @@
   box-sizing: border-box;
   white-space: nowrap;
   overflow: hidden;
+  height: @slc-nav-bar-height;
+  line-height: @slc-nav-bar-height;
   .mixin-hairline-bottom();
 
   /* elements */
@@ -46,6 +43,7 @@
     flex: 5;
     color: @slc-nav-bar-title-color;
     font-size: @slc-nav-bar-font-size;
+    font-weight: 500;
     text-align: center;
     vertical-align: middle;
     line-height: @line-height-base;
@@ -58,15 +56,14 @@
     height: 100%;
     font-size: @slc-nav-bar-back-font-size;
     vertical-align: middle;
-    line-height: @line-height-base;
+    line-height: @slc-nav-bar-height;
     .line();
   }
 
   &__container {
     display: inline-block;
-    padding: @slc-nav-bar-spacing-v @slc-nav-bar-spacing-h;
+    padding: 0 @slc-nav-bar-spacing-h;
     width: 50%;
-    height: 100%;
     font-size: @slc-nav-bar-font-size;
     text-align: center;
     box-sizing: border-box;

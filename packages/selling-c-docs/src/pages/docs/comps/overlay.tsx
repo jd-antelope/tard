@@ -44,7 +44,8 @@ const [show, setShow] = useState(false)
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @slc-overlay-bg-color | @overlay-bg-color |`
+|  @slc-overlay-bg-color | @overlay-bg-color |
+|  @zindex-overlay  | 1000 |`
 
 export default function DocsPage() {
   return (
