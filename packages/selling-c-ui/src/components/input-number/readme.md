@@ -4,7 +4,7 @@
 带加减按钮的数字输入框，用户可以控制每次点击增加的数值，支持小数，同时支持自定义输入框宽度
 ### 引入
 ```js
-import { SlInputNumber } from '@jd/selling-c-ui'
+import { SlInputNumber } from 'tard'
 ```
 ## 代码演示
 ### 基础用法

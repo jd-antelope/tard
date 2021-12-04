@@ -2,17 +2,17 @@
 @import '../variables/index.less';
 @import '../mixins/index.less';
 
-.@{--css-prefix}-result {
+.@{--css-prefix}-empty {
   .flex-center();
   .flex-direction(column);
 
   &__image {
-    width: @slc-result-image-size;
-    height: @slc-result-image-size;
+    width: @slc-empty-image-size;
+    height: @slc-empty-image-size;
     margin-bottom: @spacing-v-sm;
   }
   &__image__angle{
-    border-radius: @slc-result-image-radius;
+    border-radius: @slc-empty-image-radius;
   }
   &__image__circle{
     border-radius: 50%;
@@ -20,7 +20,7 @@
 
   &__text {
     margin-bottom: @spacing-v-lg;
-    font-size: @slc-result-text-size;
+    font-size: @slc-empty-text-size;
     color: @color-grey-0;
 
   }

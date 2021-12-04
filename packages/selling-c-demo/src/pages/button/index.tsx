@@ -16,6 +16,9 @@ const Button: FC = () => {
 				<View className='doc-body-content-tip'>基本用法</View>
 				<SlButton>按钮基本使用</SlButton>
 
+				<View className='doc-body-content-tip'>圆角按钮</View>
+				<SlButton round>圆角按钮</SlButton>
+
 				<View className='doc-body-content-tip'>禁用状态</View>
 		
 				<SlButton disabled>按钮基本使用</SlButton>		

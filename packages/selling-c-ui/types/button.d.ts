@@ -26,6 +26,11 @@ export interface SlButtonProps extends TaroButtonProps, SlComponent {
    */
   size?: string
   /**
+   * 是否圆角
+   * @default false
+   */
+  round?: boolean
+  /**
    * 按钮颜色
    */
   color?: string

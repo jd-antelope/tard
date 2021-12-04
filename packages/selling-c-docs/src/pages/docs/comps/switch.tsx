@@ -6,7 +6,7 @@ const markdown = `# tab
 ## 使用指南
 在 Taro 文件中引入组件
 ~~~js
-import { SlSwitch } from '@jd/selling-c-ui'
+import { SlSwitch } from 'tard'
 ~~~
 ### 基本用法
 

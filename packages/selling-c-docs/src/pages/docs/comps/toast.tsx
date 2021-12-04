@@ -7,16 +7,10 @@ const markdown = `# Toast
 ### 引入
 在 Taro 文件中引入组件
 ~~~js
-import { SlToast } from '@jd/selling-c-ui'
+import { SlToast } from 'tard'
 ~~~
 ### 基础用法
 ~~~js
-import React, { memo, useState, useCallback } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlToastProps } from '@jd/selling-c-ui/types/toast'
-import { SlToast, SlButton } from '@jd/selling-c-ui'
-
 const Toast: FC = () => {
   const [toast, setToast] = useState<SlToastProps>({ visible: false });
 
@@ -44,13 +38,13 @@ const Toast: FC = () => {
 ~~~
 
 ### 自定义Icon
-通过 icon 属性可以自定义toast中展示的图片
+通过 ~icon~ 属性可以自定义toast中展示的图片
 ~~~js
 showSlToast({ text: '成功', icon: 'analytics', duration: 2000 })
 ~~~
 
 ### 自定义图片
-通过 image 属性自定义图片链接可以修改toast中展示的图片
+通过 ~image~ 属性自定义图片链接可以修改toast中展示的图片
 ~~~js
 showSlToast({ 
   text: '自定义图片', 
@@ -59,13 +53,13 @@ showSlToast({
 ~~~
 
 ### 添加遮罩层
-当属性 hasMask 属性为 true 的时候, 会出现遮罩层
+当属性 ~hasMask~ 属性为 true 的时候, 会出现遮罩层
 ~~~js
 showHsToast({ text: '文本', overlay: true })
 ~~~
 
 ### Error Toast
-当属性 status 为 error 时会展示失败图片
+当属性 ~status~ 为 error 时会展示失败图片
 ~~~js
 showSlToast({ 
   text: '文本', 

@@ -4,7 +4,7 @@
 为页面提供导航功能，常用于页面顶部。
 ### 引入
 ```js
-import { SlNavBar } from '@jd/selling-c-ui'
+import { SlNavBar } from 'tard'
 ```
 ## 代码演示
 ### 基本用法

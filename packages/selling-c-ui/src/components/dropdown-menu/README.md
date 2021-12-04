@@ -3,7 +3,7 @@
 向下弹出的菜单列表。
 ### 引入
 ```js
-import { SlDropdownMenu, SlDropdownMenuItem } from '@jd/selling-c-ui'
+import { SlDropdownMenu, SlDropdownMenuItem } from 'tard'
 ```
 
 ## 代码演示
