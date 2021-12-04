@@ -10,13 +10,12 @@ const markdown = `# tab
 import { SlTagPrice } from '@jd/selling-c-ui'
 ~~~
 ### 基本用法
-
 ~~~js
 <SlTagPrice price="120" /> 
 ~~~
 
 ### 自定义颜色
-
+设置属性 ~color~ 可以自定义价格颜色 
 ~~~js
 <SlTagPrice price="120" color="green" /> 
 ~~~

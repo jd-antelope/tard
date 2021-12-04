@@ -5,7 +5,8 @@ const markdown = `
 # result
 
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | src | 结果提示所需要的图片src | string | - |

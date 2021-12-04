@@ -17,6 +17,13 @@ import { SlButton } from '@jd/selling-c-ui'
 ```js
   <SlButton disabled>禁用按钮</SlButton>
 ```
+### 圆角按钮
+设置disabled属性设置按钮禁用状态
+```js
+	<SlButton round>圆角按钮</SlButton>
+
+```
+
 ### 通栏按钮
 设置full属性后按钮会自动铺满父容器
 ```js
@@ -54,6 +61,7 @@ import { SlButton } from '@jd/selling-c-ui'
 | fill | 是否填充背景 | boolean | false |
 | full | 自动充满父容器 | boolean | false|
 | size | 按钮尺寸大小 | string | - |
+| round | 是否圆角 | boolean | false|
 | color | 按钮颜色 | string | - |
 | fillColor | 按钮填充颜色 | string | - |
 | borderColor | 边框颜色 | string | - |

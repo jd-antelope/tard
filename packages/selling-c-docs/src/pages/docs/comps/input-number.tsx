@@ -56,8 +56,8 @@ const [value1, setValue1] = useState(0)
 
 <SlInputNumber value={value1} width={150} onChange={e => setValue1(e)} />
 ~~~
-# API
-## Props
+## API
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 |  value  | 必填，输入框当前值，开发者需要通过 onChange 事件来更新 value 值  | number ｜ string | 1 |
@@ -69,14 +69,14 @@ const [value1, setValue1] = useState(0)
 |  size  | 组件的大小  | 'normal' ｜ 'large' | 'normal'  |
 |  width  | 不包括两侧按钮，单位根据环境转为 rpx 或 rem | number | 120 |
 
-## Event
+### Event
 |  事件名   | 说明  | 回调参数 |
 |  ----  | ----  | ---- |
 |  onChange  | 输入框值改变时触发的事件  | 输入框当前值 value |
 |  onBlur  | 输入框值失去焦点时触发的事件  | event |
 |  onErrorInput  | 输入框尝试输入错误数组触发的事件  | ({ type: OVER | LOW | DISABLED, errorValue: number}) |
 
-## 样式变量
+### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
 |  @slc-input-number-text-color | @color-text-base |

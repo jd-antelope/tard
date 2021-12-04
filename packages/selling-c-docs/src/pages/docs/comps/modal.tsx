@@ -5,7 +5,8 @@ const markdown = `
 # modal
 
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | title | 元素的标题 | string | - |

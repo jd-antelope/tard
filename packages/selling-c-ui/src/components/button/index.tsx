@@ -87,6 +87,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
       fill,
       full,
       lang,
+      round,
       disabled,
       formType,
       openType,
@@ -108,6 +109,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
       [`slc-button--${SIZE_CLASS[size]}`]: SIZE_CLASS[size],
       'slc-button--disabled': disabled,
       'slc-button--full': full,
+      'slc-button--round': round,
       'slc-button--fill': fill,
       'slc-button__no-border': (fill || fillColor) && !borderColor
     }

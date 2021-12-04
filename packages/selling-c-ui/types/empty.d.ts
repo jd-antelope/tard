@@ -2,7 +2,7 @@
 
 import SlComponent from './base'
 
-export interface SlResultProps extends SlComponent {
+export interface SlEmptyProps extends SlComponent {
     /**
      * 结果提示所需要的图片src
      */
@@ -26,8 +26,8 @@ export interface SlResultProps extends SlComponent {
 
 }
 
-export interface SlResultState {
+export interface SlEmptyState {
 }
-declare const SlResult: ComponentClass<SlResultProps>
+declare const SlEmpty: ComponentClass<SlEmptyProps>
 
-export default SlResult
+export default SlEmpty
