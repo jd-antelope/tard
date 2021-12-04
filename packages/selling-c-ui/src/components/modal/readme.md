@@ -75,7 +75,7 @@ const [isOpened, setIsOpened] = useState(false)
     contentAlign='left'
 >
     <SlModalContent>
-        <Image style="width:100%; height:100%" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
+        <Image style="width:100%; height:40px" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
     </SlModalContent>
 </SlModal>
 
@@ -83,7 +83,7 @@ const [isOpened, setIsOpened] = useState(false)
 <SlModal isOpened={isOpened4}>
     <SlModalHeader>标题</SlModalHeader>
     <SlModalContent>
-        <Image style="width:100%; height:100%" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
+        <Image style="width:100%; height:40px" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
     </SlModalContent>
     <SlModalAction>
         <Button onClick={() => { setIsOpened4(false) }}>取消</Button>

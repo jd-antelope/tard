@@ -65,7 +65,7 @@
     .slc-modal__action {
       .mixin-display-flex;
 
-      & > taro-button-core {
+      & > taro-button-core, & > button {
         .mixin-flex(auto);
         .line(1);
         .active;
@@ -98,7 +98,7 @@
       }
     }
 
-    &--simple .slc-modal__action > taro-button-core:last-child:nth-child(2) {
+    &--simple .slc-modal__action > taro-button-core:last-child:nth-child(2), &--simple .slc-modal__action > button:last-child:nth-child(2) {
       color: @slc-modal-btn-confirm-color;
     }
   }
