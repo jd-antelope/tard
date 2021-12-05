@@ -4,12 +4,12 @@
     0、使用less开发、采用BEM风格
     1、制定变量范围及规范
         （1）包括主色、圆角、边框、字体、阴影等【需要UI支持】
-        （2）可自定义变量统一前缀，如vant->van；antd-moblie->atm；taro-ui->at 【taro-ui暂不支持】
-        （3）颜色算法，定义主题色，相关辅色系能根据算法生成，可只定义主色【taro-ui暂不支持】
+        （2）可自定义变量统一前缀，如vant->van；antd-moblie->atm；tard->at 【tard暂不支持】
+        （3）颜色算法，定义主题色，相关辅色系能根据算法生成，可只定义主色【tard暂不支持】
     2、支持自定义方式：原理是覆盖less变量
         （1）样式文件覆盖，根据组件暴露的样式变量自定义样式文件，引入使用进行覆盖
         （2）webpack配置，利用less-loader进行变量覆盖配置 vant-less
-    3、自定义主题生成器（优先级低），taro有https://nervjs.github.io/taro-ui-theme-preview/，vant、antd-moblie没有
+    3、自定义主题生成器（优先级低），taro有https://nervjs.github.io/tard-theme-preview/，vant、antd-moblie没有
     4、提供几套通用主题，通用样式文件引入（优先级低）
     5、vscode组件代码补全插件（优先级低）
  */

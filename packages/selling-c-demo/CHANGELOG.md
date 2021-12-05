@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 3.0.1 (2020-04-18)
 
-**Note:** Version bump only for package taro-ui-demo
+**Note:** Version bump only for package tard-demo

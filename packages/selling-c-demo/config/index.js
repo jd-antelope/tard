@@ -10,7 +10,7 @@ const {
 } = process.env
 
 const config = {
-  projectName: 'taro-ui-demo',
+  projectName: 'tard-demo',
   date: '2020-4-5',
   designWidth: 750,
   deviceRatio: {

@@ -196,6 +196,7 @@
   border-collapse: collapse;
   width: 100%;
   overflow: auto;
+  margin-bottom: 30px !important;
 }
 
 .markdown-body table thead tr {
