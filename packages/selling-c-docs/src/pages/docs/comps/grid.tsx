@@ -90,7 +90,7 @@ import { SlGrid, SlGridItem } from 'tard'
 </SlGrid>
 ~~~
 
-### 内容排版——横向
+### 内容横排
 修改属性 ~direction~，可以让宫格的内容顺序更换
 ~~~js
 <SlGrid direction='left'>
@@ -112,8 +112,8 @@ import { SlGrid, SlGridItem } from 'tard'
 |  ----  | ----  | ---- | ---- |
 | columnNum | 列数 | number | 4 |
 | iconSize | 图标大小，默认单位为px | number | 60px |
-| border | 是否支持边框 |	boolean | down |
-| direction | 格子内容排列的方向 | 'top'|'bottom'|'left'|'right' | false |
+| border | 是否支持边框 |	boolean | false |
+| direction | 格子内容排列的方向 | 'top'｜'bottom'｜'left'｜'right' | false |
 | clickable | 是否开启格子点击反馈 | boolean | false |
 
 ### GridItem Props
@@ -124,13 +124,14 @@ import { SlGrid, SlGridItem } from 'tard'
 | text | 文字 | string | - |
 | columnNum | 列数 | number | 4 |
 | iconSize | 图标大小，默认单位为px | number | 60px |
-| border | 是否支持边框 |	boolean | down |
-| direction | 格子内容排列的方向 | 'top'|'bottom'|'left'|'right' | false |
+| border | 是否支持边框 |	boolean | false |
+| direction | 格子内容排列的方向 | 'top'｜'bottom'｜'left'｜'right' | false |
 
 ### GridItem Events
 |  事件名   | 说明  | 回调参数 |
 |  ----  | ----  | ---- |
 | onClick | 点击格子时触发 | - |
+
 ### 样式变量
 组件提供了下列 Less 变量，可用于自定义样式
 |  名称  | 默认值 |

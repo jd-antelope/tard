@@ -18,12 +18,23 @@ import { SlImage } from 'tard'
 <SlImage className="base-image" src="" />
 ```
 
-### 取消加载动画
+### 自定义加载失败提示
+增加属性 `errorContent` 自定义加载失败提示
 ```js
 <SlImage 
-  transition={ false } 
   className="base-image" 
-  src="https://storage.360buyimg.com/hawley-common/selling-logo.png" 
+  src="" 
+  errorContent={ <View>加载失败</View> } 
+/>
+```
+
+### 增加预览效果
+增加属性 `preview` 增加图片预览功能
+```js
+<SlImage 
+  preview 
+  className="base-image" 
+  src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" 
 />
 ```
 
@@ -33,4 +44,11 @@ import { SlImage } from 'tard'
 | 属性         | 说明         | 类型    | 默认值 |
 | ------------ | ------------ | ------- | ------ |
 | src          | 图片链接     | string | -      |
-| transition | 是否展示动画 | boolean | -      |
+| transition | 是否展示动画 | boolean | true      |
+| errorContent | 自定义失败内容 | React.ReactNode | -      |
+| preview | 是否支持全屏预览图片 | boolean | false      |
+
+### GridItem Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onClick | 点击图片时触发 | - |

@@ -29,7 +29,7 @@ import { SlLoading } from 'tard'
 ~~~
 
 ### 大小
-修改属性 ~size~ 改变大小，基于750的尺寸 
+修改属性 ~size~ 改变大小
 ~~~js
 <SlLoading size={ 100 } />
 ~~~
@@ -61,9 +61,9 @@ return (
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | color | 颜色 | string | - |
-| type | 类型 | 'default'|'ios'|'loading' | default |
-| isMask | 是否有全局定位 | boolean | - |
-| size | loading大小 | number | - |
+| type | 类型 | 'default'｜'ios' | default |
+| overlay | 是否有全局定位 | boolean | false |
+| size | loading大小 | number | 50px |
 
 ### Events
 |  事件名   | 说明  | 回调参数 |

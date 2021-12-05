@@ -29,7 +29,7 @@ const Form: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='shopName' 
-              title='商品名称' 
+              label='商品名称' 
               type='text' 
               placeholder='单行文本' 
               value={form.shopName} 
@@ -37,7 +37,7 @@ const Form: FC = () => {
             />
             <SlField
               name='imgDes' 
-              title='图片描述' 
+              label='图片描述' 
               type='text' 
               placeholder='单行文本' 
               value={form.value} 
@@ -50,20 +50,20 @@ const Form: FC = () => {
               value='3232'
               placeholder="fsdfsdf"
             />
-
-            <SlButton formType='submit'>提交</SlButton>
+            <SlButton className="form-submit" formType='submit'>提交</SlButton>
           </SlForm>
 
           <View className='doc-body-content-tip'>border 属性</View>
           <SlForm onSubmit={onSubmit} border>
             <SlField
               name='shopName' 
-              title='商品名称' 
+              label='商品名称' 
               type='text' 
               placeholder='单行文本' 
               value={form.shopName} 
               onChange={(e) => change({ shopName: e })} 
             />
+            <SlButton className="form-submit" formType='submit'>提交</SlButton>
           </SlForm>
         </View>
       </View>

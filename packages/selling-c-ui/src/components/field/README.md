@@ -11,7 +11,7 @@ import { SlField } from 'tard'
 ```js
 <SlField
   name='shopName' 
-  title='商品名称' 
+  label='商品名称' 
   type='text' 
   placeholder='单行文本' 
   value={form.shopName} 
@@ -24,7 +24,7 @@ import { SlField } from 'tard'
 ```js
 <SlField
   name='shopName' 
-  title='图片描述' 
+  label='图片描述' 
   type='text' 
   placeholder='单行文本' 
   value={form.value} 
@@ -38,7 +38,7 @@ import { SlField } from 'tard'
 ```js
 <SlField
   name='shopName' 
-  title='商品名称' 
+  label='商品名称' 
   border={ false }
   type='text' 
   placeholder='单行文本' 
@@ -52,7 +52,7 @@ import { SlField } from 'tard'
 ```js
 <SlField
   name='shopName' 
-  title='图片描述' 
+  label='图片描述' 
   type='text'
   value='信息'
   readonly
@@ -65,7 +65,7 @@ import { SlField } from 'tard'
 ```js
 <SlField
   name='shopName' 
-  title='图片描述' 
+  label='图片描述' 
   value='value2'
   contentColor="red"
   onLink={ () => { } }
@@ -77,7 +77,7 @@ import { SlField } from 'tard'
 ```js
 <SlField
   name='shopName' 
-  title='图片描述' 
+  label='图片描述' 
   value='信息'
   isLink
   linkSlot={'自定义'}
@@ -91,7 +91,7 @@ import { SlField } from 'tard'
 ```js
 <SlField
   name='shopName' 
-  title='图片描述' 
+  label='图片描述' 
   value='信息'
   isLink
   linkSlot={'自定义'}
@@ -106,7 +106,7 @@ import { SlField } from 'tard'
 ```js
 <SlField
   name='shopName' 
-  title='图' 
+  label='图' 
   value='信息'
   isLink
   linkSlot={'自定义'}
@@ -121,7 +121,7 @@ import { SlField } from 'tard'
 ```js
 <SlField
   name='shopName' 
-  title='图' 
+  label='图' 
   value='信息'
   isLink
   linkSlot={'自定义'}
@@ -137,7 +137,7 @@ import { SlField } from 'tard'
 <SlField
   name='shopName' 
   type='textarea'
-  title='图片' 
+  label='图片' 
   value='信息'
   placeholder="多行文本"
 />
@@ -159,7 +159,7 @@ import { SlField } from 'tard'
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | name | 输入框的唯一标识，有传入点击title会聚焦输入框 | string | - |
-| title | 输入框左侧标题，若传入为空，则不显示标题 | string | - |
+| label | 输入框左侧标题，若传入为空，则不显示标题 | string | - |
 | type | 输入框类型@defalut'text' | 'text'|'number'|'password'|'phone'|'idcard'|'digit'|'textarea' | - |
 | error | 是否出现错误 | boolean | false |
 | clear | 是否显示清除按钮，需要传入onChange事件来改变value | boolean | false |
@@ -181,7 +181,7 @@ import { SlField } from 'tard'
 | linkSlot | 自定义右侧箭头信息 | React.ReactNode | false |
 | labelClass | 左侧title的class | string | - |
 | labelWidth | 左侧title的宽度 | number | - |
-| labelAlign | 左侧title的对齐方式 | 'center'|'left'|'right' | - |
+| labelAlign | 左侧title的对齐方式 | 'center'｜'left'｜'right' | - |
 
 ### Events
 |  事件名   | 说明  | 回调参数 |

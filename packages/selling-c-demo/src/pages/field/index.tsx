@@ -29,7 +29,7 @@ const Field: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='shopName' 
-              title='商品名称' 
+              label='商品名称' 
               type='text' 
               placeholder='单行文本' 
               value={form.shopName} 
@@ -41,7 +41,7 @@ const Field: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='imgDes' 
-              title='图片描述' 
+              label='图片描述' 
               type='text' 
               placeholder='单行文本' 
               value={form.value} 
@@ -53,7 +53,7 @@ const Field: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='shopName' 
-              title='商品名称' 
+              label='商品名称' 
               type='text' 
               border={ false }
               placeholder='单行文本' 
@@ -66,7 +66,7 @@ const Field: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='s' 
-              title='图片描述' 
+              label='图片描述' 
               type='text'
               value='信息'
               readonly
@@ -78,7 +78,7 @@ const Field: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='h' 
-              title='图片描述' 
+              label='图片描述' 
               value='信息'
               contentColor="red"
               onLink={ () => { console.log(111) } }
@@ -89,7 +89,7 @@ const Field: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
-              title='图片描述' 
+              label='图片描述' 
               value='信息'
               isLink
               linkSlot={'自定义'}
@@ -102,7 +102,7 @@ const Field: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
-              title='图片描述' 
+              label='图片描述' 
               value='信息'
               isLink
               linkSlot={'自定义'}
@@ -116,7 +116,7 @@ const Field: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
-              title='图' 
+              label='图' 
               value='信息'
               isLink
               linkSlot={'自定义'}
@@ -130,7 +130,7 @@ const Field: FC = () => {
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
-              title='图' 
+              label='图' 
               value='信息'
               isLink
               linkSlot={'自定义'}
@@ -145,7 +145,7 @@ const Field: FC = () => {
             <SlField
               name='o' 
               type='textarea'
-              title='图片' 
+              label='图片' 
               value='信息'
               placeholder="多行文本"
             />

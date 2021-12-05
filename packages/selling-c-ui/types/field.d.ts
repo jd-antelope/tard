@@ -55,7 +55,7 @@ export interface SlFieldProps extends OmitInputProps, SlComponent {
   /**
    * 输入框左侧标题，若传入为空，则不显示标题
    */
-  title?: string
+  label?: string
   /**
    * 输入框类型
    * @defalut 'text'

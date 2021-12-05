@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
+import { View, Image } from '@tarojs/components';
 import { SlGrid, SlGridItem } from '@test/selling-c-ui'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
@@ -65,7 +65,9 @@ const Grid: FC = () => {
               new Array(4).fill('').map((_, i) => (
                 <SlGridItem 
                   key={ i }
-                >自定义内容</SlGridItem>
+                >
+                  <Image className="grid-image" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
+                </SlGridItem>
               ))
             }
           </SlGrid>

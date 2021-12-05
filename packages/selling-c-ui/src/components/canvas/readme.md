@@ -77,8 +77,8 @@ showSlCanvas({
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
-| width | 宽度 | number | - |
-| height | 高度 | number | - |
+| width | 宽度 | number | 600px |
+| height | 高度 | number | 800px |
 | overlay | 是否有遮照 | boolean | true |
 | visible | 是否打开 | boolean | - |
 

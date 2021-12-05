@@ -30,7 +30,7 @@ const Toast: FC = () => {
           <SlButton 
             size="large"
             onClick={ () => showSlToast({ text: '成功', icon: 'analytics', duration: 2000 }) }
-          >文本 Icom</SlButton>
+          >文本 Icon</SlButton>
           <View className='doc-body-content-tip'>自定义图片</View>
           <SlButton 
             size="large"
@@ -44,7 +44,7 @@ const Toast: FC = () => {
             size="large"
             onClick={ () => showSlToast({ text: '文本', hasMask: true }) }
           >添加遮罩层</SlButton>
-          <View className='doc-body-content-tip'>Error Toast</View>
+          <View className='doc-body-content-tip'>错误类型</View>
           <SlButton 
             size="large"
             onClick={ () => showSlToast({ 
@@ -53,7 +53,7 @@ const Toast: FC = () => {
               status: 'error' 
             }) }
           >Error</SlButton>
-          <View className='doc-body-content-tip'>Success Toast</View>
+          <View className='doc-body-content-tip'>成功类型</View>
           <SlButton 
             size="large"
             onClick={ () => showSlToast({ 
@@ -62,7 +62,7 @@ const Toast: FC = () => {
               status: 'success' 
             }) }
           >Success</SlButton>
-          <View className='doc-body-content-tip'>Loading Toast</View>
+          <View className='doc-body-content-tip'>加载类型</View>
           <SlButton 
             size="large"
             onClick={ () => showSlToast({ 

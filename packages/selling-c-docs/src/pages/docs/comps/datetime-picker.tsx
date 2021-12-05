@@ -68,9 +68,9 @@ import { SlDatetimePicker } from 'tard'
 |  ----  | ----  | ---- | ---- |
 | showEndDate | 是否显示结束时间 | boolean | false |
 | visible | 打开弹窗 | boolean | false |
-| outClose | 遮罩层关闭 | boolean | false |
-| title | 左侧时间的title | string | 选中时间 |
-| endTitle | 右侧的时间title | string | 结束时间 |
+| closeOnclickOverlay | 遮罩层关闭 | boolean | false |
+| title | 开始时间title | string | 开始时间 |
+| endTitle | 结束时间title | string | 结束时间 |
 | value | 默认开始时间 | string | 9999-1-1 |
 | endValue | 默认结束时间 | string | 9999-1-1 |
 

@@ -12,13 +12,6 @@
   }
 }
 
-@sl-toast-min-width: 256px;
-@sl-toast-image-size: 120px;
-@sl-toast-font-size: @font-size-base;
-@sl-toast-icon-size: 80px;
-@sl-toast-color: @color-white;
-@sl-toast-bg-color: rgba(0, 0, 0, 0.8);
-
 .@{--css-prefix}-toast {
   /* elements */
   &__overlay {
@@ -40,15 +33,15 @@
     .mixin-absolute-center(fixed);
 
     padding: @spacing-v-lg @spacing-h-xl;
-    min-width: @sl-toast-min-width;
+    min-width: @slc-toast-min-width;
     border-radius: @border-radius-md;
-    background-color: @sl-toast-bg-color;
+    background-color: @slc-toast-bg-color;
     z-index: @zindex-toast;
 
     &-content {
       &__icon {
-        color: @sl-toast-color;
-        font-size: @sl-toast-icon-size;
+        color: @slc-toast-color;
+        font-size: @slc-toast-icon-size;
         text-align: center;
       }
 
@@ -57,15 +50,15 @@
         text-align: center;
 
         &-item {
-          width: @sl-toast-image-size;
-          height: @sl-toast-image-size;
+          width: @slc-toast-image-size;
+          height: @slc-toast-image-size;
         }
       }
 
       &__info {
         margin-top: @spacing-v-md;
-        color: @sl-toast-color;
-        font-size: @sl-toast-font-size;
+        color: @slc-toast-color;
+        font-size: @slc-toast-font-size;
         line-height: @line-height-zh;
         text-align: center;
       }
@@ -85,7 +78,7 @@
     &.@{--css-prefix}-toast__body--success,
     &.@{--css-prefix}-toast__body--error,
     &.@{--css-prefix}-toast__body--loading {
-      padding-bottom: @spacing-v-lg - ((@sl-toast-font-size * @line-height-zh - @sl-toast-font-size) / 2);
+      padding-bottom: @spacing-v-lg - ((@slc-toast-font-size * @line-height-zh - @slc-toast-font-size) / 2);
     }
   }
 }

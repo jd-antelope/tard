@@ -1,6 +1,6 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# tab
+const markdown = `# TabPrice
 ### 介绍
 价格标签组件
 ## 代码演示
@@ -20,13 +20,13 @@ import { SlTagPrice } from 'tard'
 ~~~
 
 ### 自定义字体
-
+设置属性 ~size~ 可以自定义价格大小 
 ~~~js
 <SlTagPrice price="120" color="green" size={28} />  
 ~~~
 
 ### 自定义标题
-
+设置属性 ~title~ 可以修改标题文字 
 ~~~js
 <SlTagPrice price="120" title="推广价"/> 
 ~~~
@@ -35,8 +35,8 @@ import { SlTagPrice } from 'tard'
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
-| color | 价格标签颜色 | string | '#FF2929' |
-| title | 价格标签title | string | '渠道奖励' |
+| color | 价格标签颜色 | string | - |
+| title | 价格标签title | string | - |
 | price | 价格 | string | - |
 | size | 字体大小 | number | 24 |
 `

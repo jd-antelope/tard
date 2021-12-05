@@ -28,7 +28,7 @@ return (
     <SlForm onSubmit={onSubmit}>
       <SlField
         name='shopName' 
-        title='商品名称' 
+        label='商品名称' 
         type='text' 
         placeholder='单行文本' 
         value={form.shopName} 

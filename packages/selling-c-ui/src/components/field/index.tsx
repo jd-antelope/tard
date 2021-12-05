@@ -151,7 +151,7 @@ export default class SlField extends React.Component<SlFieldProps> {
       selectionEnd,
       adjustPosition,
       border,
-      title,
+      label,
       error,
       clear,
       placeholder,
@@ -180,7 +180,7 @@ export default class SlField extends React.Component<SlFieldProps> {
       'slc-field',
       {
         'slc-field--without-border': !border,
-        'slc-field__textarea-padding': textareaType == 'textarea' && !title
+        'slc-field__textarea-padding': textareaType == 'textarea' && !label
       },
       className
     )
@@ -215,13 +215,13 @@ export default class SlField extends React.Component<SlFieldProps> {
       <View className={rootCls} style={customStyle}>
         <View className={containerCls}>
           <View className={overlayCls} onClick={this.handleClick}></View>
-          {title && (
+          {label && (
             <Label
               className={labelCls}
               style={labelStyle}
               for={name}
             >
-              {title}
+              {label}
             </Label>
           )}
           {
@@ -252,7 +252,7 @@ export default class SlField extends React.Component<SlFieldProps> {
                 }
               </View>
               : textareaType === 'textarea' ? 
-                <View className={ classNames('slc-field__box', { 'slc-field__box-title' : !title }) }>
+                <View className={ classNames('slc-field__box', { 'slc-field__box-title' : !label }) }>
                   <Textarea 
                     className='slc-field__box-textarea'
                     { ...id }
@@ -343,7 +343,7 @@ SlField.defaultProps = {
   placeholder: '',
   placeholderStyle: '',
   placeholderClass: '',
-  title: '',
+  label: '',
   cursorSpacing: 50,
   confirmType: 'done',
   cursor: 0,
