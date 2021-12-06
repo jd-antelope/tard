@@ -6,7 +6,7 @@ const markdown = `
 ## 使用指南
 在taro文件中引入
 ~~~javascript
-import { SlFooterButton } from '@test/selling-c-ui'
+import { SlFooterButton } from 'tard'
 ~~~
 ### 基本使用
 ~~~javascript

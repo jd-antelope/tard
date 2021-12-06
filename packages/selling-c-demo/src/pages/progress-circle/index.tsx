@@ -1,7 +1,7 @@
 import React from 'react'
 import { FC } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { SlProgressCircle } from '@test/selling-c-ui'
+import { SlProgressCircle } from 'tard'
 import DocsHeader from '../../components/doc-header'
 
 const Person: FC = () => {

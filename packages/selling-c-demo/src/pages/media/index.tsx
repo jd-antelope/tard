@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FC } from '@tarojs/taro'
-import { SlMedia } from '@test/selling-c-ui'
+import { SlMedia } from 'tard'
 import { View } from '@tarojs/components'
 
 const Media: FC = () => {

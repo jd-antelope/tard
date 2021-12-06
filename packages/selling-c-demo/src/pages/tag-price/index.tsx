@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlTagPrice } from '@test/selling-c-ui'
+import { SlTagPrice } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 

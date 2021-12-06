@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlLoading, SlButton } from '@test/selling-c-ui'
+import { SlLoading, SlButton } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 

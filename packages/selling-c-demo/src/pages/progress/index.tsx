@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { FC, createCanvasContext } from '@tarojs/taro'
 import { View, Canvas } from '@tarojs/components'
-import { SlProgress } from '@test/selling-c-ui'
+import { SlProgress } from 'tard'
 import DocsHeader from '../../components/doc-header'
 
 const Person: FC = () => {

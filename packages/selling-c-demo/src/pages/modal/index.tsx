@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View, Button, Image } from '@tarojs/components';
-import { SlModal, SlModalHeader, SlModalContent, SlButton, SlModalAction } from '@test/selling-c-ui'
+import { SlModal, SlModalHeader, SlModalContent, SlButton, SlModalAction } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 

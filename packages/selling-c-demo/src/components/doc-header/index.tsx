@@ -1,7 +1,7 @@
 import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { navigateTo } from '@tarojs/taro'
-import { SlIcon } from '@test/selling-c-ui'
+import { SlIcon } from 'tard'
 import { View } from '@tarojs/components'
 import { isWeb } from '../../utils'
 import './index.less'

@@ -1,8 +1,8 @@
 import React, { memo, useState, useCallback } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlToast, SlButton } from '@test/selling-c-ui'
-import { SlToastProps } from '@test/selling-c-ui/types/toast'
+import { SlToast, SlButton } from 'tard'
+import { SlToastProps } from 'tard/types/toast'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 

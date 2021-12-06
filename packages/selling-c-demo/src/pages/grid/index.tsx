@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { FC } from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
-import { SlGrid, SlGridItem } from '@test/selling-c-ui'
+import { SlGrid, SlGridItem } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 

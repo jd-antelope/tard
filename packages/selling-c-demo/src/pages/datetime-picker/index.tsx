@@ -1,8 +1,8 @@
 import React, { memo, useState, useCallback } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlDatetimePicker, SlButton } from '@test/selling-c-ui'
-import { SlDatetimePickerProps } from '@test/selling-c-ui/types/datetime-picker'
+import { SlDatetimePicker, SlButton } from 'tard'
+import { SlDatetimePickerProps } from 'tard/types/datetime-picker'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 

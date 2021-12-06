@@ -71,3 +71,5 @@ export interface SlSortState {
 }
 
 declare const SlSort: ComponentClass<SlSortProps>
+
+export default SlSort
