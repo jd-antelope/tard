@@ -60,30 +60,30 @@ const Toast: FC = () => {
 ### 错误类型
 当属性 `status` 为 `error` 时会展示失败图片
 ```js
-showSlToast({ 
-  text: '文本', 
-  hasMask: true,
-  status: 'error' 
-})
+<SlToast
+  visible={ open }
+  text='文本'
+  status='error' 
+/>
 ```
 
 ### 成功类型
 当属性 `status` 为 `success` 时会展示成功图片
 ```js
-showSlToast({ 
-  text: '文本', 
-  hasMask: true,
-  status: 'success' 
-})
+<SlToast
+  visible={ open }
+  text='文本'
+  status='success' 
+/>
 ```
 ### 加载类型
 当属性 `status` 为 `loading` 时会展示加载中图片
 ```js
-showSlToast({ 
-  text: '文本', 
-  overlay: true,
-  status: 'loading' 
-})
+<SlToast
+  visible={ open }
+  text='文本'
+  status='loading' 
+/>
 ```
 
 
