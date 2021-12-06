@@ -29,7 +29,7 @@ export default function LayoutComponent({ children, location }: IRouteComponentP
         <Sider className="site-layout-background site-sider" width="260px">
           <LayoutMenu postIframeMessage={(title) => postIframeMessage(title)} />
         </Sider>
-        <Content className="layout-md-contianer layout-h-100 pb-24 pl-12 layout-flex-row layout-over-flow-y ">
+        <Content className="layout-md-contianer layout-h-100 pb-24 pl-12 layout-flex-row layout-over-flow-y layout-border-top ">
           {children}
           <div
             id='docs-frame'
