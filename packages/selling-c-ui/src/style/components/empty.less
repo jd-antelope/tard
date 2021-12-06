@@ -1,0 +1,27 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+.@{--css-prefix}-empty {
+  .flex-center();
+  .flex-direction(column);
+
+  &__image {
+    width: @slc-empty-image-size;
+    height: @slc-empty-image-size;
+    margin-bottom: @spacing-v-sm;
+  }
+  &__image__angle{
+    border-radius: @slc-empty-image-radius;
+  }
+  &__image__circle{
+    border-radius: 50%;
+  }
+
+  &__text {
+    margin-bottom: @spacing-v-lg;
+    font-size: @slc-empty-text-size;
+    color: @color-grey-0;
+
+  }
+}

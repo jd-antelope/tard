@@ -1,48 +1,48 @@
-import React, { useEffect } from 'react'
+import React, { Fragment } from 'react'
 import { View, Image } from '@tarojs/components'
-import { navigateTo, pxTransform } from '@tarojs/taro';
+import { navigateTo } from '@tarojs/taro';
+import { SlIcon } from '@test/selling-c-ui'
 import './index.less'
 import MenuObj from '../../docs-route'
 import { isWeb } from '../../utils'
 function Home() {
-  const iframeListener = (e: any) => {
-    const activeMenu = e.data.title
-    if (activeMenu) {
-      navigateTo({
-        url: `/pages/${activeMenu}/index`
-      });
-    }
-  }
-
-  useEffect(() => {
+  const postIframeParentMessage = (path: string) => {
     if (isWeb) {
-      window.addEventListener("message", iframeListener, false);
-    }
-  })
-
-  const postIframeParentMessage = (title: string) => {
-    if (isWeb) {
-      window.parent.postMessage({ title }, '*');
+      window.parent.postMessage({ path }, '*');
     }
   }
 
   return (
     <View className='container'>
       <View className='title'>
-        <Image className='logo' src="https://img14.360buyimg.com/imagetools/jfs/t1/159678/7/15538/12373/605c0737Ef5035728/36f752fdd6a999e9.png" />selling-ui
+        <Image className='logo' src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
+        <View className="logo-des">一套基于Taro框架开发的多端React UI组件库</View>
       </View>
       <View className='comp'>
-        {MenuObj.map(item => (
-          <View
-            className='comp-item'
-            key={item.title}
-            onClick={() => {
-              postIframeParentMessage(item.title)
-              navigateTo({
-                url: `/pages/${item.title}/index`
-              });
-            }}
-          >{item.title}</View>
+        {MenuObj.routes.map(v => (
+          <Fragment>
+            <View
+              className='comp-item-parent'
+              key={v.nameEn}
+            >{v.name}</View>
+            {
+              v.children.map(val => (
+                <View
+                  className='comp-item'
+                  key={val.nameEn}
+                  onClick={() => {
+                    postIframeParentMessage(val.path)
+                    navigateTo({
+                      url: `/pages${val.path}/index`
+                    });
+                  }}
+                >
+                  <View className="comp-item-text">{val.nameEn} {val.name}</View>
+                  <SlIcon value="chevron-right" color="#333" size={16}></SlIcon>
+                </View>
+              ))
+            }
+            </Fragment>
         ))
         }
       </View>

@@ -7,10 +7,12 @@ export interface SlPopupProps extends SlComponent {
   title?: string
   /**
    * 是否允许外部点击关闭
+   *  @default false
    */
   outClose?: boolean
   /**
    * 头部标题的对齐方式
+   * @default center
    */
   align?: string
   /**
@@ -19,12 +21,10 @@ export interface SlPopupProps extends SlComponent {
   isOpened: boolean
   /**
    * 组件关闭回调
+   * @default false
    */
   onClose?: Function
-  /**
-   * 自定义图标
-   */
-  icon?: React.ComponentType<any>
+
 }
 export interface SlPopupState {
   _isOpened: boolean

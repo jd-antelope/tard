@@ -28,6 +28,10 @@ export interface SlFooterButtonProps extends SlComponent {
      * 外边框的padding
      */
     padding?: string
+      /**
+     * 双按钮之间的间隔巨鹿
+     */
+    margin?: number
     /**
      * 按钮radius
      */

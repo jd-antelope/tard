@@ -23,6 +23,7 @@ export interface SlTagPriceProps extends SlComponent {
   size?: number;
 }
 
-export interface SlTagPriceState {
-}
+export interface SlTagPriceState {}
 declare const SlTagPrice: ComponentClass<SlTagPriceProps>
+
+export default SlTagPrice

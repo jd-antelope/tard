@@ -79,7 +79,6 @@ view {
 
 .doc-body {
   min-height: calc(100vh - 180px);
-  background: #fff;
   padding-bottom: 60px;
   padding-bottom: calc(constant(safe-area-inset-bottom) + 60px);
   padding-bottom: calc(env(safe-area-inset-bottom) + 60px);
@@ -133,26 +132,20 @@ view {
     &-tip {
       height: 100px;
       line-height: 100px;
-      padding-left: 30px;
-      font-size: 30px;
+      font-size: 28px;
       position: relative;
       margin-bottom: 12px;
-      &::after {
-        content: '';
-        width: 5px;
-        height: 30px;
-        background: #FF2929;
-        position: absolute;
-        top: 35px;
-        left: 0;
-      }
+      color: rgba(69, 90, 100, 0.6);
     }
   }
 }
 
+
 .container{
-  background: #ffffff;
+  background: linear-gradient(180deg, rgba(245,247,250,1) 0%,rgba(245,247,250,1) 100%);;
   font-size: 28px;
   overflow: hidden;
   padding: 0 24px;
+  box-sizing: border-box;
+  min-height: 100vh;
 }

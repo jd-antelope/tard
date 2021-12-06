@@ -24,7 +24,6 @@ const Canvas: FC = () => {
     <View className="container">
       <DocsHeader title='Canvas'></DocsHeader>
       <View className='doc-body toast-page'>
-        <View className='doc-body-header'>Canvas</View>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip'>基本案例</View>
           <SlButton 

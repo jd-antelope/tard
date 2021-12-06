@@ -14,7 +14,7 @@ interface MatrixFile extends Partial<File> {
 	uuid: string
 
 }
-const MEDIA_TYPES ={
+const MEDIA_TYPES = {
 	camera: '图片',
 	video: '视频'
 }
@@ -136,7 +136,8 @@ export default class SlMediaPicker extends React.Component<SlMediaPickerProps, S
 			mediaType = 'camera',
 			length = 3,
 			maxCount = 3,
-			showAddBtn = true
+			showAddBtn = true,
+			children,
 		} = this.props
 		const rowLength = (mediaType === 'video' || length <= 0) ? 1 : length
 		// 行数
@@ -169,7 +170,7 @@ export default class SlMediaPicker extends React.Component<SlMediaPickerProps, S
 												<Video
 													id='video'
 													className='slc-media-picker__preview-video'
-													src={this.state.playObj.file }
+													src={this.state.playObj.file}
 													poster={this.state.playObj.url}
 													controls={true}
 													autoplay={false}
@@ -191,10 +192,15 @@ export default class SlMediaPicker extends React.Component<SlMediaPickerProps, S
 													className='slc-media-picker__item slc-media-picker__choose-btn'
 													onClick={this.chooseFile}
 												>
-													<SlIcon value={mediaType} color="#666666" size={32} />
-													<View className='text'>
-														添加{MEDIA_TYPES[mediaType]}{maxCount > 1 && `(${files.length}/${maxCount})`}
-													</View>
+													{
+														children ? children:
+															<Fragment>
+																<SlIcon value={mediaType} color="#666666" size={32} />
+																<View className='text'>
+																	添加{MEDIA_TYPES[mediaType]}{maxCount > 1 && `(${files.length}/${maxCount})`}
+																</View>
+															</Fragment>
+													}
 												</View>
 											)}
 										</View> : null}

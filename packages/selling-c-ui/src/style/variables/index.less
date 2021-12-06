@@ -4,12 +4,12 @@
     0、使用less开发、采用BEM风格
     1、制定变量范围及规范
         （1）包括主色、圆角、边框、字体、阴影等【需要UI支持】
-        （2）可自定义变量统一前缀，如vant->van；antd-moblie->atm；taro-ui->at 【taro-ui暂不支持】
-        （3）颜色算法，定义主题色，相关辅色系能根据算法生成，可只定义主色【taro-ui暂不支持】
+        （2）可自定义变量统一前缀，如vant->van；antd-moblie->atm；tard->at 【tard暂不支持】
+        （3）颜色算法，定义主题色，相关辅色系能根据算法生成，可只定义主色【tard暂不支持】
     2、支持自定义方式：原理是覆盖less变量
         （1）样式文件覆盖，根据组件暴露的样式变量自定义样式文件，引入使用进行覆盖
         （2）webpack配置，利用less-loader进行变量覆盖配置 vant-less
-    3、自定义主题生成器（优先级低），taro有https://nervjs.github.io/taro-ui-theme-preview/，vant、antd-moblie没有
+    3、自定义主题生成器（优先级低），taro有https://nervjs.github.io/tard-theme-preview/，vant、antd-moblie没有
     4、提供几套通用主题，通用样式文件引入（优先级低）
     5、vscode组件代码补全插件（优先级低）
  */
@@ -28,9 +28,7 @@
 
 /* Info Color
 -------------------------- */
-@color-brand: #FF2929;
-@color-brand-light: #78A4F4;
-@color-brand-dark: #346FC2;
+@primary-color: var(--primaryColor);
 
 /* Color */
 @color-success: #13CE66;
@@ -117,7 +115,9 @@
 @zindex-toast: 1090;
 @zindex-modal: 1000;
 @zindex-popup__layout:1000;
+@zindex-nav: 800;
 @zindex-loading: 1090;
+@zindex-overlay: 1000;
 
 /* 水平间距 */
 @spacing-h-sm: 3px * @hd;
@@ -178,7 +178,7 @@
 @modal-header-text-color: @color-text-base;
 @modal-content-text-color: @color-text-base;
 @modal-btn-default-color: @color-text-base;
-@modal-btn-confirm-color: @color-brand;
+@modal-btn-confirm-color: @primary-color;
 @modal-bg-color: @color-white;
 
 /* Badge */
@@ -193,7 +193,7 @@
 @popup-height-min: 600px;
 @popup-height-max: 950px;
 @popup-header-height: 72px;
-@popup--height: 72px;
+@popup-height: 72px;
 @popup-header-position-right: 48px;
 @popup-header-close-width: 40px;
 @popup-header-close-height: 40px;
@@ -212,17 +212,17 @@
 @slc-button-large-width-min: 480px;
 @slc-button-large-width-max: 540px;
 
-/* Result*/
-@slc-result-image-size:200px;
-@slc-result-image-size:200px;
-@slc-result-image-radius:24px;
-@slc-result-text-size:32px;
+/* Empty*/
+@slc-empty-image-size:200px;
+@slc-empty-image-size:200px;
+@slc-empty-image-radius:24px;
+@slc-empty-text-size:32px;
 
 /* InputNumber */
 @slc-input-number-text-color: @color-text-base;
 @slc-input-number-font-size: @font-size-base;
 @slc-input-number-font-size-lg: @font-size-xl;
-@slc-input-number-btn-color: @color-brand;
+@slc-input-number-btn-color: @primary-color;
 @slc-input-number-btn-size: 30px;
 @slc-input-number-btn-size-lg: 36px;
 @slc-input-number-width-min: 80px;
@@ -249,7 +249,7 @@
 @slc-modal-header-text-color: @color-text-base;
 @slc-modal-content-text-color: @color-text-base;
 @slc-modal-btn-default-color: @color-text-base;
-@slc-modal-btn-confirm-color: @color-brand;
+@slc-modal-btn-confirm-color: @primary-color;
 @slc-modal-bg-color: @color-white;
 
 /* DropdownMenu */
@@ -262,6 +262,7 @@
 @dropdown-item-border-radius: 16px;
 @dropdown-menu-active-background-color: #F4F6FA;
 @dropdown-overlay-bg-color: @overlay-bg-color;
+@dropdown-overlay-z-index: 99;
 
 
 @slc-rate-icon-size: 20px;
@@ -273,7 +274,7 @@
 @slc-progress-text-size: @font-size-sm;
 @slc-progress-icon-size: @font-size-xl;
 @slc-progress-inner-bg-color: @color-grey-6;
-@slc-progress-bar-bg-color: @color-brand-light; 
+@slc-progress-bar-bg-color: #78A4F4; 
 @slc-progress-bar-bg-color-active: @color-white;
 /* sort */
 @slc-sort-arrow-color: @color-grey-3;
@@ -297,3 +298,29 @@
 @slc-switch-bg-color: #F2F2F2;
 @slc-switch-btn-color: @color-white;
 @slc-switch-box-shadow: 0 4px 12px 0 #000000E5;
+
+/* NavBar */
+@slc-nav-bar-title-color: @color-text-base;
+@slc-nav-bar-link-color: @color-text-base;
+@slc-nav-bar-spacing-v: 9PX;
+@slc-nav-bar-spacing-h: 5PX;
+@slc-nav-bar-font-size: 16PX;
+@slc-nav-bar-back-font-size: 14PX;
+@slc-nav-bar-height: 92px;
+
+/* GridItem */
+@slc-grid-item-padding-y: 18px;
+@slc-grid-item-image-size: 60px;
+@slc-grid-item-text-padding: 12px;
+@slc-grid-item-text-size: 24px;
+
+/* GridItem */
+@slc-overlay-bg-color: @overlay-bg-color;
+
+/* Toast */
+@slc-toast-min-width: 256px;
+@slc-toast-image-size: 120px;
+@slc-toast-font-size: @font-size-base;
+@slc-toast-icon-size: 80px;
+@slc-toast-color: @color-white;
+@slc-toast-bg-color: rgba(0, 0, 0, 0.8);

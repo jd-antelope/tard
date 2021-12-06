@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "dist/",
-  "projectname": "taro-ui-demo",
-  "description": "Taro UI demo",
-  "appid": "wxb200ca50f517e470",
+  "projectname": "tard-demo",
+  "description": "Tard demo",
+  "appid": "wx3044a91b8feca20b",
   "setting": {
     "urlCheck": true,
     "scopeDataCheck": false,

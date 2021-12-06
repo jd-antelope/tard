@@ -1,27 +1,15 @@
 
 # Image
+### 介绍
 该标签在 Taro 的 Image 标签上面增加了错误处理、加载动画等属性
 ## 代码演示
 ### 引入
-在 Taro 文件中引入组件
 ```js
-import { SlImage } from '@jd/selling-c-ui'
+import { SlImage } from 'tard'
 ```
 ### 基础用法
 ```js
-import React from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlImage } from '@jd/selling-c-ui'
-
-const Image: FC = () => {
-  return (
-    <View className="container">
-      <View className='doc-body-content-tip'>基本用法</View>
-      <SlImage className="base-image" src="https://storage.360buyimg.com/hawley-common/selling-logo.png" />
-    </View>
-  );
-};
+<SlImage className="base-image" src="https://storage.360buyimg.com/hawley-common/selling-logo.png" />
 ```
 
 ### 错误处理
@@ -30,18 +18,37 @@ const Image: FC = () => {
 <SlImage className="base-image" src="" />
 ```
 
-### 取消加载动画
+### 自定义加载失败提示
+增加属性 `errorContent` 自定义加载失败提示
 ```js
 <SlImage 
-  transition={ false } 
   className="base-image" 
-  src="https://storage.360buyimg.com/hawley-common/selling-logo.png" 
+  src="" 
+  errorContent={ <View>加载失败</View> } 
 />
 ```
 
-## api
+### 增加预览效果
+增加属性 `preview` 增加图片预览功能
+```js
+<SlImage 
+  preview 
+  className="base-image" 
+  src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" 
+/>
+```
+
+## API
+### Props
+相关属性沿用 `taro` 中 `Image`
 | 属性         | 说明         | 类型    | 默认值 |
 | ------------ | ------------ | ------- | ------ |
 | src          | 图片链接     | string | -      |
-| res          | 图片其他参数 | Image   | -      |
-| transition | 是否展示动画 | boolean | -      |
+| transition | 是否展示动画 | boolean | true      |
+| errorContent | 自定义失败内容 | React.ReactNode | -      |
+| preview | 是否支持全屏预览图片 | boolean | false      |
+
+### GridItem Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onClick | 点击图片时触发 | - |

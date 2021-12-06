@@ -91,11 +91,11 @@ export default class SlDropdownMenu extends React.Component<SlDropdownMenuProps,
                     cn(
                       'slc-dropdown-menu__overlay',
                       {
-                        'slc-dropdown-menu__overlay-active': isOpen && activeKey !== -1
+                        'slc-dropdown-menu__overlay-active': isOpen && activeKey === index
                       }
                     )
                   }
-                  key={value}
+                  key={index}
                   onClick={() => {
                     changeActive(-1);
                     this.setState(

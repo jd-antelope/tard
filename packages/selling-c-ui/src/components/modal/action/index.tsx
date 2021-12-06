@@ -1,12 +1,11 @@
 import classNames from 'classnames'
-import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { View } from '@tarojs/components'
 import { SlModalActionProps } from '../../../../types/modal'
 
 export default class SlModalAction extends React.Component<SlModalActionProps> {
   public static defaultProps: SlModalActionProps
-  public static propTypes: InferProps<SlModalActionProps>
+  static displayName  = 'SlModalAction';
 
   public render (): JSX.Element {
     const rootClass = classNames(
@@ -29,6 +28,3 @@ SlModalAction.defaultProps = {
   isSimple: false
 }
 
-SlModalAction.propTypes = {
-  isSimple: PropTypes.bool
-}

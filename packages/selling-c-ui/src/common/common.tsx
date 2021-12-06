@@ -31,7 +31,7 @@ export default class Common extends React.Component<CommonProps, CommonState> {
   public constructor(props: CommonProps) {
     super(props)
     this.state = {
-      themeStyle: '--mainColor: #13CE66;--secondaryColor: #FF9B48;--promotionColor: #FF2929;'
+      themeStyle: ''
     }
   }
 

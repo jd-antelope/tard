@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { View } from '@tarojs/components'
 import { SlFooterButtonProps, SlFooterButtonState } from '../../../types/footer-button'
-import PropTypes, {InferProps} from "prop-types";
 import { objectToString, pxTransform } from '../../common/utils'
 import Common from '../../common/common'
 import classNames from 'classnames';
@@ -9,7 +8,6 @@ import { isFunction } from '../../common/is'
 
 export default class SlFooterButton extends React.Component<SlFooterButtonProps, SlFooterButtonState> {
   public static defaultProps: SlFooterButtonProps
-  public static propTypes: InferProps<SlFooterButtonProps>
 
   public constructor(props: SlFooterButtonProps) {
     super(props)
@@ -41,10 +39,10 @@ export default class SlFooterButton extends React.Component<SlFooterButtonProps,
   public getStyle () {
     const styleObj = {
       'border-radius': pxTransform(this.props.radius || 0),
-      width: this.props.doubleBtn? '50%' : '100%',
       lineHeight: pxTransform(this.props.lineHeight || 0)
     }
     if (this.props.color) styleObj['color'] = this.props.color
+    if (this.props.margin && this.props.doubleBtn) styleObj['margin-left'] = pxTransform(this.props.margin)
     if (this.props.background) styleObj['background'] = this.props.background
     return styleObj
   }
@@ -52,7 +50,6 @@ export default class SlFooterButton extends React.Component<SlFooterButtonProps,
   public getStyle2 () {
     const styleObj = {
       'border-radius': pxTransform(this.props.radius || 0),
-      width: this.props.doubleBtn? '50%' : '100%',
       lineHeight: pxTransform(this.props.lineHeight || 0)
     }
     if (this.props.secColor) styleObj['color'] = this.props.secColor
@@ -96,24 +93,9 @@ export default class SlFooterButton extends React.Component<SlFooterButtonProps,
 SlFooterButton.defaultProps = {
   name: '按钮',
   padding: pxTransform(20),
+  margin: 0,
   radius: 0,
   lineHeight: 80,
   doubleBtn: false,
   secondName: '取消',
-}
-
-SlFooterButton.propTypes = {
-  name: PropTypes.string,
-  onClick: PropTypes.func,
-  replaceContent: PropTypes.any,
-  color: PropTypes.string,
-  background: PropTypes.string,
-  padding: PropTypes.string,
-  radius: PropTypes.number,
-  lineHeight: PropTypes.number,
-  doubleBtn: PropTypes.bool,
-  secondName: PropTypes.string,
-  secColor: PropTypes.string,
-  secBackground: PropTypes.string,
-  secClick: PropTypes.func,
 }

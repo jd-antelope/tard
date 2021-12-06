@@ -24,6 +24,13 @@
     .mixin-overlay;
   }
 
+  // &__button{
+  //   margin: 0;
+  //   &-confirm{
+  //     color:  @slc-modal-btn-confirm-color;
+  //   }
+  // }
+
   &__container {
     .mixin-absolute-center();
 
@@ -34,7 +41,7 @@
   }
 
   &__header {
-   .mixin-hairline-bottom-relative(@color: @color-grey-4);
+    .mixin-hairline-bottom-relative(@color: @color-grey-4);
     .line(1);
 
     padding: @spacing-v-md @spacing-h-lg;
@@ -45,7 +52,6 @@
 
   &__content {
     padding: @spacing-h-xl @spacing-h-lg;
-    min-height: 180px;
     max-height: 840px;
     color: @slc-modal-content-text-color;
     font-size: @font-size-base;
@@ -59,7 +65,7 @@
     .slc-modal__action {
       .mixin-display-flex;
 
-      & > button {
+      & > taro-button-core, & > button {
         .mixin-flex(auto);
         .line(1);
         .active;
@@ -92,7 +98,7 @@
       }
     }
 
-    &--simple .slc-modal__action > button:last-child:nth-child(2) {
+    &--simple .slc-modal__action > taro-button-core:last-child:nth-child(2), &--simple .slc-modal__action > button:last-child:nth-child(2) {
       color: @slc-modal-btn-confirm-color;
     }
   }

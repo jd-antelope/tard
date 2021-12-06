@@ -3,27 +3,15 @@
 该标签在 Taro 的 Image 标签上面增加了错误处理、加载动画等属性
 ## 代码演示
 ### 引入
-在 Taro 文件中引入组件
 ```js
-import { SlLoading } from '@jd/selling-c-ui'
+import { SlLoading } from 'tard'
 ```
 ### 基础用法
 ```js
-import React from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlLoading } from '@jd/selling-c-ui'
-
-const Loading: FC = () => {
-  return (
-    <View className="container">
-      <SlLoading />  
-    </View>
-  );
-};
+<SlLoading />  
 ```
 ### 颜色修改
-通过修改 color 属性，修改背景颜色
+通过修改 `color` 属性，修改背景颜色
 ```js
 <SlLoading color="red" />
 ```
@@ -39,7 +27,7 @@ const Loading: FC = () => {
 ```
 
 ### 大小
-修改属性 size 改变大小，基于750的尺寸 
+修改属性 `size` 改变大小
 ```js
 <SlLoading size={ 100 } />
 ```
@@ -47,37 +35,35 @@ const Loading: FC = () => {
 ### 展示遮罩
 传入的图片找不到或者加载不出来就会显示默认图片
 ```js
-import React, { useState } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlLoading, SlButton } from '@jd/selling-c-ui'
+const [overlay, setOverlay] = useState<boolean>(false)
 
-const Loading: FC = () => {
-  const [overlay, setOverlay] = useState<boolean>(false)
-
-  return (
-    <View className="container">  
-      <SlButton size="large" onClick={ () => setOverlay(true) }>点击</SlButton>
-      {
-        overlay && 
-        <SlLoading 
-          onClick={ () => {
-            setOverlay(false) 
-          }} 
-          size={ 100 } 
-          overlay 
-        />
-      }
-    </View>
-  );
-};
+return (
+  <View className="container">  
+    <SlButton size="large" onClick={ () => setOverlay(true) }>点击</SlButton>
+    {
+      overlay && 
+      <SlLoading 
+        onClick={ () => {
+          setOverlay(false) 
+        }} 
+        size={ 100 } 
+        overlay 
+      />
+    }
+  </View>
+);
 ```
 
-## api
+## API
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | color | 颜色 | string | - |
-| type | 类型 | 'default'|'ios'|'loading' | default |
-| isMask | 是否有全局定位 | boolean | - |
-| size | loading大小 | number | - |
-| onClick | 点击事件 | CommonEventFunction | - |
+| type | 类型 | 'default'｜'ios' | default |
+| overlay | 是否有全局定位 | boolean | false |
+| size | loading大小 | number | 50px |
+
+### Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onClick | 点击格子时触发 | - |

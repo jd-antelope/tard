@@ -25,6 +25,7 @@
 }
 .layout-w-100 {
 	width: 100%;
+	background: #fff;
 }
 .layout-h-100 {
 	height: 100%;
@@ -43,34 +44,33 @@
 }
 
 .ant-layout .site-main{
-	padding-bottom: 12px;
 	background: #fff;
-  }
+	.site-sider {
+		padding-left: 40px;
+		background: @primary-color-light;
+	  }
+}
 
 .phone-pos{
 	width: 448px;
 	padding-top: 24px;
 }
-#J-demo-frame{
+#docs-frame{
 	position: fixed;
-	width: 400px;
-	margin-left: 20px;
-	margin-top: 50px;
-	height: 788px;
-	margin-right: 12px;
+	top: 133px;
+	right: 40px;
+	width: 375px;
+	height: 720px;
 	background-color: #fff;
 	box-shadow: 0 4px 30px 0 rgba(4, 59, 85, 0.1);
-	border-radius: 60px;
+	border-radius: 32px;
+	overflow: hidden;
     
 	.iframe-content{
 		position: absolute;
-		top:58px ;
-		left: 12px;
-		padding-top: 30px;
-		height: 630px;
-		padding:0 22px;
+		left: 0px;
+		height: 720px;
 		width: 375px;
-		margin-top: 40px;
 	}
 	.iphone-frame{
 		position: absolute;
@@ -86,3 +86,44 @@
 
 }
 
+.ant-layout-header {
+	padding-left: 0;
+}
+
+.ant-menu-item-group-title {
+	padding: 0;
+	height: 58px;
+	font-size: 18px;
+	color: @black-color;
+	box-sizing: border-box;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+}
+
+.ant-menu-inline .ant-menu-item {
+	height: 44px;
+	margin: 0;
+	overflow: initial;
+}
+
+.ant-menu-inline .ant-menu-item:not(:last-child) {
+	margin: 0;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+	background: #fff;
+	border-radius: 22px 0 0 22px;
+}
+
+.ant-menu-inline .ant-menu-item::after {
+	border: none;
+	width: 9px;
+	height: 62px;
+	background: #fff;
+	top: -9px;
+}
+
+.ant-menu-inline {
+	border: none;
+}

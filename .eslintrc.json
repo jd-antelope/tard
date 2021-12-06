@@ -155,7 +155,7 @@
               "@md": "./markdown"
             },
             "packages": [
-              "packages/taro-ui-docs"
+              "packages/tard-docs"
             ]
           }
         },
@@ -166,7 +166,7 @@
     },
     {
       "files": [
-        "packages/taro-ui-docs/build/*.js"
+        "packages/tard-docs/build/*.js"
       ],
       "rules": {
         "no-console": "off",
@@ -175,8 +175,8 @@
     },
     {
       "files": [
-        "packages/taro-ui-demo/**/*.ts",
-        "packages/taro-ui-demo/**/*.tsx"
+        "packages/tard-demo/**/*.ts",
+        "packages/tard-demo/**/*.tsx"
       ],
       "extends": [
         "taro/react"
@@ -184,8 +184,8 @@
     },
     {
       "files": [
-        "packages/taro-ui-demo/config/*.js",
-        "packages/taro-ui-demo/babel.config.js"
+        "packages/tard-demo/config/*.js",
+        "packages/tard-demo/babel.config.js"
       ],
       "rules": {
         "import/no-commonjs": "off"

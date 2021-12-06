@@ -36,21 +36,21 @@ const changeDocRoute = (docs) => {
 }
 
 const start = () => {
-  const docs = getDocsPath();
-  changeDocRoute(docs)
+  // const docs = getDocsPath();
+  // changeDocRoute(docs)
 }
 
 class CreateRoutePlugin {
-    constructor () {
+  constructor () {
+    start();
+    watch(path.join(__dirname, '../src/pages/docs'), { recursive: true }, function (evt, name) {
       start();
-        watch(path.join(__dirname, '../src/pages/docs'), { recursive: true }, function (evt, name) {
-         start();
-        });
-        start();
+    });
+    start();
 
-    }
-    apply (compiler) { // 其中compiler为webpack实例，下面我们详细讲
+  }
+  apply (compiler) { // 其中compiler为webpack实例，下面我们详细讲
 
-    }
+  }
 }
 module.exports = CreateRoutePlugin

@@ -18,12 +18,12 @@
   margin: 0 auto;
   padding: 0 @spacing-h-xl;
   height: @slc-button-height;
-  color: var(--mainColor);
+  color: @primary-color;
   font-size: @font-size-lg;
   line-height: @slc-button-height - 2;
   text-align: center;
   border-radius: @border-radius-md;
-  border: 1PX solid var(--mainColor);
+  border: 1PX solid @primary-color;
   box-sizing: border-box;
   .line();
 
@@ -69,6 +69,9 @@
   &--normal {
     display: inline-block;
   }
+  &--round {
+    border-radius: 24px;
+  }
   &--small {
     padding: 0 @spacing-h-md;
     width: auto;
@@ -89,7 +92,7 @@
     max-width: @slc-button-large-width-max;
   }
   &--fill {
-    background: var(--mainColor);
+    background: @primary-color;
     color: @color-text-base-inverse;
   }
   &__no-border{

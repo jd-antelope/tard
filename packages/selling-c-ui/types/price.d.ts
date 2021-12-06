@@ -49,6 +49,10 @@ export interface SlPriceProps extends SlComponent {
    * 价格单位大小
    */
   unitSize?: number
+  /**
+   * 是否按照千分号形式显示
+   */
+  thousands?: boolean
 }
 
 enum Size {

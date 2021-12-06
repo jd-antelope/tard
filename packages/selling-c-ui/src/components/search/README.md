@@ -1,30 +1,19 @@
 # search
 
-## 介绍
+### 介绍
 带搜索按钮的输入框。
-## 引入
+### 引入
 ```js
-import { SlSearch } from '@jd/selling-c-ui'
+import { SlSearch } from 'tard'
 ```
-# 代码演示
-## 基础用法
+## 代码演示
+### 基础用法
 ```js
-import React, { memo } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlSearch } from '@test/selling-c-ui'
-
-const Search: FC = () => {
- 
-  return (
-     <View className="container">
-        <SlSearch onConfirm={(data)=>{ console.log(data,"父组件内容 ")}} />
-    </View>
-  );
-};
+<SlSearch onConfirm={(data)=>{ console.log(data,"父组件内容 ")}} />
 ```
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | value | 输入框的初始内容 | 	string | - |

@@ -25,7 +25,7 @@ export interface SlDatetimePickerProps extends SlComponent {
    * 是否能点击遮罩层关闭
    * @default false
    */
-  outClose?: boolean
+  closeOnclickOverlay?: boolean
   /**
    *  左侧默认提示title
    * @default '选中时间'

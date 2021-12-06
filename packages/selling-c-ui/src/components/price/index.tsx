@@ -31,11 +31,18 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
   };
 
   private filterPrice = (price) => {
-    const { fixedNum } = this.props
+    const { fixedNum, thousands } = this.props
     if (fixedNum === -1) {
-      return this.saveMax(price)
+      return thousands ? this.thousandsFilter(this.saveMax(price)) : this.saveMax(price)
     }
-    return Number(price).toFixed(fixedNum)
+    return thousands ? this.thousandsFilter(Number(price).toFixed(fixedNum)) : Number(price).toFixed(fixedNum)
+  }
+
+  // 千分位处理
+  private thousandsFilter = (price) => {
+    const reg = /\d{1,3}(?=(\d{3})+$)/g
+    const returnPrice = String(price).replace(/^(\d+)((\.\d+)?)$/, (_, s1, s2) => s1.replace(reg, '$&,') + s2)
+    return returnPrice
   }
 
   // 价格处理
@@ -120,6 +127,7 @@ SlPrice.defaultProps = {
   type: 'middle',
   size: 0,
   symbolSize: 0,
-  priceUnit:"¥",
+  priceUnit: '¥',
   unitSize: 32,
+  thousands: false
 }

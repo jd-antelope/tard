@@ -18,19 +18,21 @@ export interface SlRateProps extends SlComponent {
    */
   max?: number;
   /**
-   * 星星间隔,单位根据环境自动转为 rpx 或 rem
+   * 元素间隔,单位根据环境自动转为 rpx 或 rem
    * @default 5
    */
   margin?: number;
   /**
+   * 选中元素的颜色
+   */
+     activeColor?: string
+  /**
    * 输入框值改变时触发的事件，开发者需要通过 onChange 事件来更新 value 值变化，但不填写 onChange 函数时，该组件只读
    */
   onChange?: CommonEventFunction;
-  /**
-   * 高亮的星星的颜色
-   */
-   activeColor?: string
+
 }
 
 export interface SlRateState {}
-declare const SlRate: ComponentClass<SlRateProps>;
+ declare const SlRate: ComponentClass<SlRateProps>;
+ export default SlRate

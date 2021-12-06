@@ -184,7 +184,7 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
 
   // 点击mask关闭
   private outClick = () => {
-    this.props.outClose && this.close()
+    this.props.closeOnclickOverlay && this.close()
   }
 
   // 阻止冒泡
@@ -384,7 +384,7 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
 SlDatetimePicker.defaultProps = {
   showEndDate: false, // 默认不显示
   visible: false,
-  outClose: true, // 是否能点击遮罩层关闭
+  closeOnclickOverlay: true, // 是否能点击遮罩层关闭
   title: '选中时间',
   endTitle: '结束时间',
   type: 'date',

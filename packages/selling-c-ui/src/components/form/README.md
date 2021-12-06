@@ -1,127 +1,62 @@
-# form
+# Form
+### 介绍
+用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。2.5 版本开始支持此组件。
 ## 代码演示
+### 引入
+```js
+import { SlForm } from 'tard'
+```
+
 ### 基本用法
 ```js
-import React, { memo, useState } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlForm, SlField, SlButton } from '@test/selling-c-ui'
+const [form, setForm] = useState({
+  shopName: ''
+})
 
-const Form: FC = () => {
-  const [form, setForm] = useState<any>({
-    value: ''
+const onSubmit = (event) => {
+  console.log(event)
+}
+
+const change = (res) => {
+  setForm({
+    ...form,
+    ...res
   })
-
-  const onSubmit = (event) => {
-    console.log(event)
-  }
-
-  const change = (res) => {
-    setForm({
-      ...form,
-      ...res
-    })
-  }
-  return (
-    <View className="container">
-      <View className='doc-body'>
-        <View className='doc-body-header'>form</View>
-        <View className='doc-body-content'>
-          <View className='doc-body-content-tip'>基本案例</View>
-          <SlForm onSubmit={onSubmit}>
-            <SlField
-              name='shopName' 
-              title='商品名称' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
-            />
-          </SlForm>
-
-          <View className='doc-body-content-tip'>border 属性</View>
-          <SlForm onSubmit={onSubmit} border>
-            <SlField
-              name='shopName' 
-              title='商品名称' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
-            />
-          </SlForm>
-        </View>
-      </View>
-    </View>
-  );
-};
-
-export default memo(Form);
+}
+return (
+  <View className="container">
+    <SlForm onSubmit={onSubmit}>
+      <SlField
+        name='shopName' 
+        label='商品名称' 
+        type='text' 
+        placeholder='单行文本' 
+        value={form.shopName} 
+        onChange={(e) => change({ shopName: e })} 
+      />
+    </SlForm>
+    <SlButton formType='submit'>提交</SlButton>
+  </View>
+);
 ```
-### border
+
+### 边框
+增加属性 `border` 显示 form 外边框
 ```js
-import React, { memo, useState } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlForm, SlField, SlButton } from '@test/selling-c-ui'
-import DocsHeader from '../../components/doc-header'
-import './index.less';
-
-const Form: FC = () => {
-  const [form, setForm] = useState<any>({
-    value: ''
-  })
-
-  const onSubmit = (event) => {
-    console.log(event)
-  }
-
-  const change = (res) => {
-    setForm({
-      ...form,
-      ...res
-    })
-  }
-  return (
-    <View className="container">
-      <View className='doc-body'>
-        <View className='doc-body-header'>form</View>
-        <View className='doc-body-content'>
-          <View className='doc-body-content-tip'>基本案例</View>
-          <SlForm onSubmit={onSubmit}>
-            <SlField
-              name='shopName' 
-              title='商品名称' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
-            />
-          </SlForm>
-
-          <View className='doc-body-content-tip'>border 属性</View>
-          <SlForm onSubmit={onSubmit} border>
-            <SlField
-              name='shopName' 
-              title='商品名称' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
-            />
-          </SlForm>
-        </View>
-      </View>
-    </View>
-  );
-};
-
-export default memo(Form);
+<SlForm onSubmit={onSubmit} border>
+  ...
+</SlForm>
 ```
-## api
+
+## API
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | reportSubmit | 是否返回formId用于发送模板消息 | boolean | false |
 | border | 是否需要border | boolean | false |
-| onSubmit | 携带form中的数据触发submit事件，由于小程序组件化的限制，onSubmit事件获得的event中的event.detail.value始终为空对象，开发者要获取数据，可以自行在页面的state中获取 | FormFunction | - |
-| onReset | 表单重置时会触发reset事件 | FormFunction | - |
+
+### Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onSubmit | 携带form中的数据触发submit事件，由于小程序组件化的限制，onSubmit事件获得的event中的event.detail.value始终为空对象，开发者要获取数据，可以自行在页面的state中获取 | event |
+| onReset | 表单重置时会触发reset事件 | event |

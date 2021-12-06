@@ -2,7 +2,8 @@
 # tab-pane
 
 
-## api
+## Api
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | tabDirection | Tab方向，请跟AtTabs保持一致 | 'horizontal'|'vertical' | 'horizontal' |

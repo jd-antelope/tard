@@ -1,124 +1,165 @@
-# field
+# Field
+### 介绍
+表单中的输入框组件。
 ## 代码演示
-### 基本用法
+### 引入
 ```js
-import React, { memo, useState } from 'react';
-import { FC } from '@tarojs/taro';
-import { View } from '@tarojs/components';
-import { SlForm, SlField, SlButton } from '@test/selling-c-ui'
-import DocsHeader from '../../components/doc-header'
-import './index.less';
-
-const Form: FC = () => {
-  const [form, setForm] = useState<any>({
-    value: ''
-  })
-
-  const onSubmit = (event) => {
-    console.log(event)
-  }
-
-  const change = (res) => {
-    setForm({
-      ...form,
-      ...res
-    })
-  }
-  return (
-    <View className="container">
-      <DocsHeader title='Form'></DocsHeader>
-      <View className='doc-body'>
-        <View className='doc-body-header'>form</View>
-        <View className='doc-body-content'>
-          <View className='doc-body-content-tip'>基本案例</View>
-          <SlForm onSubmit={onSubmit}>
-            <SlField
-              name='shopName' 
-              title='商品名称' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
-            />
-            <SlField
-              name='imgDes' 
-              title='图片描述' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.value} 
-              required
-              onChange={(e) => change({ imgDes: e })} 
-            />
-            <SlField
-              name='s' 
-              title='图片描述' 
-              type='text'
-              value='323'
-              required
-              readonly
-              onChange={(e) => change({ imgDes: e })} 
-            />
-            <SlField
-              name='a' 
-              title='图片描述' 
-              value='323'
-              required
-              isLink
-              linkSlot={'fdf'}
-              readonly
-              onChange={(e) => change({ imgDes: e })} 
-            />
-            <SlField
-              name='v' 
-              title='图片描述' 
-              value='3232'
-              required
-              readonly
-              isLink
-              linkText='322f'
-              onLink={ () => { console.log(111) } }
-            />
-            <SlField
-              name='h' 
-              title='图片描述' 
-              value='3232'
-              required
-              readonly
-              contentColor="red"
-              onLink={ () => { console.log(111) } }
-            />
-
-            <SlField
-              name='o' 
-              type='textarea'
-              title='图片' 
-              value='3232'
-              placeholder="fsdfsdf"
-            />
-
-            <SlField
-              name='o' 
-              type='textarea'
-              value='3232'
-              placeholder="fsdfsdf"
-            />
-
-            <SlButton formType='submit'>提交</SlButton>
-          </SlForm>
-        </View>
-      </View>
-    </View>
-  );
-};
-
-export default memo(Form);
+import { SlField } from 'tard'
 ```
 
-## api
+### 基本用法
+```js
+<SlField
+  name='shopName' 
+  label='商品名称' 
+  type='text' 
+  placeholder='单行文本' 
+  value={form.shopName} 
+  onChange={(e) => change({ shopName: e })} 
+/>
+```
+
+### 必填
+修改 `required` 属性显示必填标识 *
+```js
+<SlField
+  name='shopName' 
+  label='图片描述' 
+  type='text' 
+  placeholder='单行文本' 
+  value={form.value} 
+  required
+  onChange={(e) => change({ imgDes: e })} 
+/>
+```
+
+### 边框
+属性 `border` 为 false 时就能去掉元素边框
+```js
+<SlField
+  name='shopName' 
+  label='商品名称' 
+  border={ false }
+  type='text' 
+  placeholder='单行文本' 
+  value={form.shopName} 
+  onChange={(e) => change({ shopName: e })} 
+/>
+```
+
+### 只读
+添加属性 `readonly` 不能修改元素
+```js
+<SlField
+  name='shopName' 
+  label='图片描述' 
+  type='text'
+  value='信息'
+  readonly
+  onChange={(e) => change({ imgDes: e })} 
+/>
+```
+
+### 内容区域文字颜色
+修改属性 `contentColor` 可以修改中间区域文字颜色
+```js
+<SlField
+  name='shopName' 
+  label='图片描述' 
+  value='value2'
+  contentColor="red"
+  onLink={ () => { } }
+/>
+```
+
+### 自定义跳转内容
+修改属性 `linkSlot` 可以自定义右侧跳转内容
+```js
+<SlField
+  name='shopName' 
+  label='图片描述' 
+  value='信息'
+  isLink
+  linkSlot={'自定义'}
+  readonly
+  onChange={(e) => change({ imgDes: e })} 
+/>
+```
+
+### 左侧文本额外类名
+添加 `labelClass` 属性可以自定义左侧 class 名
+```js
+<SlField
+  name='shopName' 
+  label='图片描述' 
+  value='信息'
+  isLink
+  linkSlot={'自定义'}
+  readonly
+  labelClass="label-custom"
+  onChange={(e) => change({ imgDes: e })} 
+/>
+```
+
+### 左侧文本宽度
+修改属性 `labelWidth` 可以控制左侧宽度
+```js
+<SlField
+  name='shopName' 
+  label='图' 
+  value='信息'
+  isLink
+  linkSlot={'自定义'}
+  readonly
+  labelWidth={ 50 }
+  onChange={(e) => change({ imgDes: e })} 
+/>
+```
+
+### 左侧文本对齐方式
+修改属性 `labelAlign` 可以控制左侧对齐方式
+```js
+<SlField
+  name='shopName' 
+  label='图' 
+  value='信息'
+  isLink
+  linkSlot={'自定义'}
+  readonly
+  labelAlign='right'
+  onChange={(e) => change({ imgDes: e })} 
+/>
+```
+
+### 多行输入框
+当属性 `type` 为 `textarea` 时 可以切换到多行文本框
+```js
+<SlField
+  name='shopName' 
+  type='textarea'
+  label='图片' 
+  value='信息'
+  placeholder="多行文本"
+/>
+```
+
+### 无标题
+属性 `title` 不写时可以去掉左侧内容
+```js
+<SlField
+  name='shopName' 
+  type='textarea'
+  value='信息'
+  placeholder="多行文本"
+/>
+```
+
+## API
+### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | name | 输入框的唯一标识，有传入点击title会聚焦输入框 | string | - |
-| title | 输入框左侧标题，若传入为空，则不显示标题 | string | - |
+| label | 输入框左侧标题，若传入为空，则不显示标题 | string | - |
 | type | 输入框类型@defalut'text' | 'text'|'number'|'password'|'phone'|'idcard'|'digit'|'textarea' | - |
 | error | 是否出现错误 | boolean | false |
 | clear | 是否显示清除按钮，需要传入onChange事件来改变value | boolean | false |
@@ -140,12 +181,15 @@ export default memo(Form);
 | linkSlot | 自定义右侧箭头信息 | React.ReactNode | false |
 | labelClass | 左侧title的class | string | - |
 | labelWidth | 左侧title的宽度 | number | - |
-| labelAlign | 左侧title的对齐方式 | 'center'|'left'|'right' | - |
-| onBlur | 输入框失去焦点时触发的事件，v2.0.3版本可以获取event参数 | InputFunction<string|number,BlurEventDetail> | - |
-| onFocus | 输入框被选中时触发的事件，v2.0.3版本可以获取event参数 | InputFunction<string|number,FocusEventDetail> | - |
-| onChange | 输入框值改变时触发的事件，开发者需要通过onChange事件来更新value值变化，onChange函数必填。小程序中，如果想改变value的值，需要returnvalue从而改变输入框的当前值,v2.0.3版本可以获取event参数 | InputFunction<string|number,InputEventDetail,any> | - |
-| onConfirm | 点击完成按钮时触发，v2.0.3版本可以获取event参数 | InputFunction<string|number,ConfirmEventDetail> | - |
-| onClick | 当editable为false时，点击组件触发的事件，v2.3.3版本可以获取event参数 | (event? | - |
-| onKeyboardHeightChange | 键盘高度发生变化的时候触发此事件 | (event? | - |
-| onErrorClick | 点击错误按钮触发的事件，v2.3.3版本可以获取event参数 | (event? | - |
-| onLink | 点击右侧箭头 | ()=>void | - |
+| labelAlign | 左侧title的对齐方式 | 'center'｜'left'｜'right' | - |
+
+### Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onBlur | 输入框失去焦点时触发的事件，v2.0.3版本可以获取event参数 | event |
+| onFocus | 输入框被选中时触发的事件，v2.0.3版本可以获取event参数 | event |
+| onChange | 输入框值改变时触发的事件，开发者需要通过onChange事件来更新value值变化，onChange函数必填。小程序中，如果想改变value的值，需要returnvalue从而改变输入框的当前值,v2.0.3版本可以获取event参数 | event |
+| onConfirm | 点击完成按钮时触发，v2.0.3版本可以获取event参数 | event |
+| onClick | 当editable为false时，点击组件触发的事件，v2.3.3版本可以获取event参数 | event |
+| onErrorClick | 点击错误按钮触发的事件，v2.3.3版本可以获取event参数 | event |
+| onLink | 点击右侧箭头 | - |

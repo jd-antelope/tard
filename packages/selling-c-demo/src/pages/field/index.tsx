@@ -24,26 +24,24 @@ const Field: FC = () => {
     <View className="container">
       <DocsHeader title='Field'></DocsHeader>
       <View className='doc-body'>
-        <View className='doc-body-header'>Field</View>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip'>基本案例</View>
           <SlForm onSubmit={onSubmit}>
             <SlField
               name='shopName' 
-              title='商品名称' 
+              label='商品名称' 
               type='text' 
               placeholder='单行文本' 
               value={form.shopName} 
               onChange={(e) => change({ shopName: e })} 
             />
-            <SlButton formType='submit'>提交</SlButton>
           </SlForm>
 
-          <View className='doc-body-content-tip'>required</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>必填</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='imgDes' 
-              title='图片描述' 
+              label='图片描述' 
               type='text' 
               placeholder='单行文本' 
               value={form.value} 
@@ -51,121 +49,115 @@ const Field: FC = () => {
               onChange={(e) => change({ imgDes: e })} 
             />
           </SlForm>
-          <View className='doc-body-content-tip'>border 属性</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>边框</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='shopName' 
-              title='商品名称' 
+              label='商品名称' 
               type='text' 
+              border={ false }
               placeholder='单行文本' 
               value={form.shopName} 
               onChange={(e) => change({ shopName: e })} 
             />
           </SlForm>
 
-          <View className='doc-body-content-tip'>readonly</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>只读</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='s' 
-              title='图片描述' 
+              label='图片描述' 
               type='text'
-              value='323'
-              required
+              value='信息'
               readonly
               onChange={(e) => change({ imgDes: e })} 
             />
           </SlForm>
 
-          <View className='doc-body-content-tip'>contentColor</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>内容区域文字颜色</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='h' 
-              title='图片描述' 
-              value='3232'
-              required
-              readonly
+              label='图片描述' 
+              value='信息'
               contentColor="red"
               onLink={ () => { console.log(111) } }
             />
           </SlForm>
 
-          <View className='doc-body-content-tip'>isLink linkSlot</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>自定义跳转内容</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
-              title='图片描述' 
-              value='323'
-              required
+              label='图片描述' 
+              value='信息'
               isLink
-              linkSlot={'fdf'}
+              linkSlot={'自定义'}
               readonly
               onChange={(e) => change({ imgDes: e })} 
             />
           </SlForm>
 
-          <View className='doc-body-content-tip'>labelClass</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>左侧文本额外类名</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
-              title='图片描述' 
-              value='323'
-              required
+              label='图片描述' 
+              value='信息'
               isLink
-              linkSlot={'fdf'}
+              linkSlot={'自定义'}
               readonly
               labelClass="fsdf"
               onChange={(e) => change({ imgDes: e })} 
             />
           </SlForm>
 
-          <View className='doc-body-content-tip'>labelWidth</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>左侧文本宽度</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
-              title='图' 
-              value='323'
-              required
+              label='图' 
+              value='信息'
               isLink
-              linkSlot={'fdf'}
+              linkSlot={'自定义'}
               readonly
               labelWidth={ 50 }
               onChange={(e) => change({ imgDes: e })} 
             />
           </SlForm>
 
-          <View className='doc-body-content-tip'>labelAlign</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>左侧文本对齐方式</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='a' 
-              title='图' 
-              value='323'
-              required
+              label='图' 
+              value='信息'
               isLink
-              linkSlot={'fdf'}
+              linkSlot={'自定义'}
               readonly
               labelAlign='right'
               onChange={(e) => change({ imgDes: e })} 
             />
           </SlForm>
 
-          <View className='doc-body-content-tip'>type='textarea' title</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>多行输入框</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='o' 
               type='textarea'
-              title='图片' 
-              value='3232'
-              placeholder="fsdfsdf"
+              label='图片' 
+              value='信息'
+              placeholder="多行文本"
             />
           </SlForm>
 
-          <View className='doc-body-content-tip'>textarea</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>多行输入框无标题</View>
+          <SlForm onSubmit={onSubmit}>
             <SlField
               name='o' 
               type='textarea'
-              value='3232'
-              placeholder="fsdfsdf"
+              value='信息'
+              placeholder="多行文本"
             />
           </SlForm>
           

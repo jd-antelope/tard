@@ -1,0 +1,66 @@
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@slc-grid-item-width: 100%;
+
+.@{--css-prefix}-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+
+  &-item {
+    width: @slc-grid-item-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &__content{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 1%;
+      padding: @slc-grid-item-padding-y 0;
+
+      &-image {
+        width: @slc-grid-item-image-size;
+        height: @slc-grid-item-image-size;
+      }
+
+      &-text {
+        font-size: @slc-grid-item-text-size;
+        margin-top: @slc-grid-item-text-padding;
+      }
+    }
+
+    &__content_row {
+      flex-direction: row;
+      .slc-grid-item__content-text {
+        margin: 0;
+        margin-left: 12px;
+      }
+    }
+
+    &__content_top {
+      .slc-grid-item__content-text {
+        margin: 0;
+        margin-bottom: 12px;
+      }
+    }
+
+    &__content_right {
+      .slc-grid-item__content-text {
+        margin: 0;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &-item-border-right {
+    border-right: 1PX solid #ebedf0;
+  }
+
+  &-item-border-bottom {
+    border-bottom: 1PX solid #ebedf0;
+  }
+}
