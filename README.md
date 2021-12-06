@@ -120,3 +120,137 @@ ps:npm2 与npm3对peerDependencies字段的处理差异：
 2. 在项目里面我们为什么要使用rollup + ts 来构建我们的项目
 
 3. 
+
+
+
+
+## 统一修改
+1. 文档代码格式统一排版、 属性关键字高亮
+2. API统一大写
+3. 事件抽取到Evnent
+4. 使用指南统一换成代码演示
+5. 全局组件引入下面文字统一删除去掉
+6. 针对只支持小程序的组件需要在demo中放置小程序二维码引导用户去小程序中查看效果
+7. 函数类型统一改成function
+8. docs里面需要给form增加底部没margin，以及多行时的行高
+9. 类型值统一改成小写
+10. event列表属性需要统一改成事件名 说明 回调参数 
+11. 样式描述需要删除
+
+
+
+### button
+1. 引入字体需改
+### cell 
+1. 属性列表修改
+2. icon属性统一，类型指定到icon图标
+### image
+1. 增加预览
+2. 属性部分需要参考taroUI修改
+3. transtion 需增加默认值
+4. 商羚图片删除
+5. 过度效果是都需要添加展示动作
+6. 失败背景图可替换
+
+### toast
+1. demo 修改
+
+### datePicker
+1. outClose 属性需要改成closeOnclickOverlay
+2. title endTitle 属性默认值修改
+### Field
+1. labelAlign 改成titleAligin
+2. 对齐方式属性需要补齐
+3. 时间统一改成function
+
+### Form
+1. 没有介绍
+2. demo格式不规范
+
+### input-number
+1. 时间类型错误需要手动修改
+
+### rate
+1. onchange 返回值修改成value
+
+### searchBar 重写
+
+### switch
+1. 标题不对
+2. 组件宽度太长
+3. 增加动画效果
+4. 文档补充
+5. 自定义标题部分错误
+
+
+### uploader 待补充
+### loading
+1. 大小去除750px 部分
+2. 展示遮罩不生效
+3. 属性部分缺少overlay
+4. type属性、类型默认值不对
+5. size 缺少默认值
+6. isMask属性不明确不知道是干啥的
+7. 缺少events 和样式变量部分
+
+###  popup 
+1. demo和文档不规范需要修改
+2. outClose 属性需要改成closeOnclickOverlay
+3. align 需要修改为titleAlign
+4. isOend需要修改 overlay
+### sort
+1. 缺少事件以及样式部分
+2. 格式统一下
+3 。使用方式可能需要修改
+
+### badge
+1. 缩进统一改成2个
+
+### Empty 
+1. 重新修改
+### slProgress
+1. 使用缺少描述信息
+
+### 骨架屏
+1. 介绍没写
+2. 引入位置不对
+3. demo可以优化一下增加一个图文混排的效果
+
+### tagprice
+1. 标题错误
+2. 引入部分位置不对
+3. title 默认值应该为空
+4. color 默认色应该是主题色，写死是否合适
+
+###  grid
+1. 内容排版横向改成 横向
+2. demo内容改成图片
+3. clickable 描述错误
+4. border 描述错误
+5. direction 描述错误
+
+### navbar
+1. 字体统一换成小写px
+2. 小程序自定义头部demo
+
+### tab 和tabpanel合并
+
+### canvas 自己完善
+1. width height 需要默认值
+2. isopend 搞成overlay
+
+
+### footerbutton
+1. demo 不高亮，未对齐
+2. replaceContent 改成Content
+
+
+
+
+
+
+
+
+
+
+
