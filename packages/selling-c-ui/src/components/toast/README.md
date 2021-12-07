@@ -108,9 +108,9 @@ const Toast: FC = () => {
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @slc-toast-min-width | 256px |
-|  @slc-toast-image-size | 120px |
-|  @slc-toast-font-size  | @font-size-base |
-|  @slc-toast-icon-size  |  80px |
-|  @slc-toast-color  | @color-white |
-|  @slc-toast-bg-color | rgba(0, 0, 0, 0.8) |
+|  @toast-min-width | 256px |
+|  @toast-image-size | 120px |
+|  @toast-font-size  | @font-size-base |
+|  @toast-icon-size  |  80px |
+|  @toast-color  | @color-white |
+|  @toast-bg-color | rgba(0, 0, 0, 0.8) |

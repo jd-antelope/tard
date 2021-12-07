@@ -76,9 +76,9 @@ import { SlRate } from 'tard'
 ### 样式变量
 |  属性   | 默认值 |
 |  ----  | ---- |
-| @slc-rate-icon-size | 20px |
-| @slc-rate-star-color | @color-rate-base |
-| @slc-rate-star-color-on | @color-rate-on |`
+| @rate-icon-size | 20px |
+| @rate-star-color | @color-rate-base |
+| @rate-star-color-on | @color-rate-on |`
 
 export default function DocsPage() {
   return (

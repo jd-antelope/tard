@@ -78,15 +78,15 @@ const [value1, setValue1] = useState(0)
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @slc-input-number-text-color | @color-text-base |
-|  @slc-input-number-font-size | @font-size-base |
-|  @slc-input-number-font-size-lg  | @font-size-xl |
-|  @slc-input-number-btn-color | @primary-color |
-|  @slc-input-number-btn-size  | 30px |
-|  @slc-input-number-btn-size-lg  | 36px |
-|  @slc-input-number-width-min | 36px |
-|  @slc-input-number-width-min-lg | 80px |
-|  @slc-input-number-btn-size  | 120px |
+|  @input-number-text-color | @color-text-base |
+|  @input-number-font-size | @font-size-base |
+|  @input-number-font-size-lg  | @font-size-xl |
+|  @input-number-btn-color | @primary-color |
+|  @input-number-btn-size  | 30px |
+|  @input-number-btn-size-lg  | 36px |
+|  @input-number-width-min | 36px |
+|  @input-number-width-min-lg | 80px |
+|  @input-number-btn-size  | 120px |
 `
 
 export default function DocsPage() {

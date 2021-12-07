@@ -1,16 +1,14 @@
-import MarkDown from '@/components/markdown'
-
-const markdown = `# 主题定制
+# 主题定制
 
 ## 介绍
-Tard 提供了一套默认主题，~CSS~ 命名采用 ~BEM~ 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者其他样式，可以按照本文档进行主题定制。
+Tard 提供了一套默认主题，`CSS` 命名采用 `BEM` 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者其他样式，可以按照本文档进行主题定制。
 
 
 ## 样式变量
-Tard 使用了 ~Less~ 对样式进行预处理，并内置了一些样式变量，通过替换样式变量即可定制你自己需要的主题。
+Tard 使用了 `Less` 对样式进行预处理，并内置了一些样式变量，通过替换样式变量即可定制你自己需要的主题。
 
 下面是所有的基础样式变量，组件的颜色等变量请参考各个组件的文档或[配置文件](TODO)
-~~~css
+```css
 @--css-prefix: slc;
 /* Info Color
 -------------------------- */
@@ -129,10 +127,4 @@ Tard 使用了 ~Less~ 对样式进行预处理，并内置了一些样式变量�
 @line-height-base: 1; // 单行
 @line-height-en: 1.3; // 英文多行
 @line-height-zh: 1.5; // 中文多行
-~~~`
-
-export default function DocsPage() {
-  return (
-    <MarkDown markdown={ markdown } />
-  );
-}
+```

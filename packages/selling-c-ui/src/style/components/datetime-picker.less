@@ -1,10 +1,10 @@
 
 @import '../variables/index.less';
 @import '../mixins/index.less';
-@slc-datetime-picker-font-size: 28px;
-@slc-datetime-picker-btn-font-size: 32px;
-@slc-datetime-picker-default-font-color: #333;
-@slc-datetime-picker-gray-font-color: #999;
+@datetime-picker-font-size: 28px;
+@datetime-picker-btn-font-size: 32px;
+@datetime-picker-default-font-color: #333;
+@datetime-picker-gray-font-color: #999;
 
 .@{--css-prefix}-datetime {
   position: fixed;
@@ -56,11 +56,11 @@
   text-align: center;
   display: flex;
   width: 100%;
-  font-size: @slc-datetime-picker-btn-font-size;
+  font-size: @datetime-picker-btn-font-size;
   .cancel-btn {
     box-sizing: border-box;
     line-height: 108px;
-    color: @slc-datetime-picker-default-font-color;
+    color: @datetime-picker-default-font-color;
     width: 50%;
   }
 
@@ -92,25 +92,25 @@
     }
 
     .time-show-left-title {
-      color: @slc-datetime-picker-gray-font-color;
-      font-size: @slc-datetime-picker-font-size;
+      color: @datetime-picker-gray-font-color;
+      font-size: @datetime-picker-font-size;
     }
 
     .time-show-left-content {
-      color: @slc-datetime-picker-gray-font-color;
-      font-size: @slc-datetime-picker-font-size;
+      color: @datetime-picker-gray-font-color;
+      font-size: @datetime-picker-font-size;
     }
 
     &.active {
       background: #fff;
       //border-bottom: 1px solid transparent;
       .time-show-left-title {
-        color: @slc-datetime-picker-default-font-color;
+        color: @datetime-picker-default-font-color;
         font-weight: 700;
       }
 
       .time-show-left-content {
-        color: @slc-datetime-picker-default-font-color;
+        color: @datetime-picker-default-font-color;
         font-weight: 700;
       }
     }
@@ -130,25 +130,25 @@
     }
 
     .time-show-left-title {
-      color: @slc-datetime-picker-gray-font-color;
-      font-size: @slc-datetime-picker-font-size;
+      color: @datetime-picker-gray-font-color;
+      font-size: @datetime-picker-font-size;
     }
 
     .time-show-left-content {
-      color: @slc-datetime-picker-gray-font-color;
-      font-size: @slc-datetime-picker-font-size;
+      color: @datetime-picker-gray-font-color;
+      font-size: @datetime-picker-font-size;
     }
 
     &.active {
       background: #fff;
       //border-bottom: 1px solid transparent;
       .time-show-left-title {
-        color: @slc-datetime-picker-default-font-color;
+        color: @datetime-picker-default-font-color;
         font-weight: 700;
       }
 
       .time-show-left-content {
-        color: @slc-datetime-picker-default-font-color;
+        color: @datetime-picker-default-font-color;
         font-weight: 700;
       }
     }

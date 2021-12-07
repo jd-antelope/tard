@@ -2,7 +2,7 @@
 @import '../variables/index.less';
 @import '../mixins/index.less';
 
-@slc-tab-pane-min-height: 100px;
+@tab-pane-min-height: 100px;
 
 .@{--css-prefix}-tab {
   width: 100%;
@@ -13,8 +13,8 @@
   &__item {
     flex: 1;
     padding: @spacing-v-lg @spacing-h-lg 0;
-    color: @slc-tab-color;
-    font-size: @slc-tab-font-size;
+    color: @tab-color;
+    font-size: @tab-font-size;
     text-overflow: ellipsis;
     overflow: hidden;
 
@@ -24,23 +24,23 @@
 
     &-text {
       line-height: @line-height-base;
-      font-size: @slc-tab-font-size;
+      font-size: @tab-font-size;
     }
 
     &-underline {
-      margin-top: @slc-tab-item-underline-space;
+      margin-top: @tab-item-underline-space;
       width: 100%;
-      height: @slc-tab-line-height;
-      background-color: @slc-tab-color-active;
+      height: @tab-line-height;
+      background-color: @tab-color-active;
       transform: scaleX(0);
       transition: all 0.15s;
       border-radius: 3px;
     }
     &--active {
-      color: @slc-tab-color-active;
+      color: @tab-color-active;
 
       .@{--css-prefix}-tab__item-underline {
-        height: @slc-tab-line-height *2;
+        height: @tab-line-height *2;
         transform: scaleX(1);
       }
     }
@@ -52,7 +52,7 @@
     width: 100%;
     text-align: center;
     white-space: nowrap;
-    // background-color: @slc-tab-bg-color;
+    // background-color: @tab-bg-color;
     box-sizing: border-box;
     overflow: -moz-scrollbars-none;
 
@@ -82,8 +82,8 @@
     bottom: auto;
     right: auto;
     width: 600%;
-    height: @slc-tab-line-height;
-    background-color: @slc-tab-underline-color;
+    height: @tab-line-height;
+    background-color: @tab-underline-color;
   }
 
   /* modifiers */
@@ -108,7 +108,7 @@
     .@{--css-prefix}-tab__body {
       display: inline-block;
       flex: 1;
-      height: @slc-tab-pane-min-height;
+      height: @tab-pane-min-height;
       width: auto;
     }
 
@@ -116,7 +116,7 @@
       top: 0;
       left: 0;
       bottom: auto;
-      width: @slc-tab-line-height;
+      width: @tab-line-height;
       height: 100%;
     }
 
@@ -137,7 +137,7 @@
         right: 0;
         bottom: auto;
         left: auto;
-        width: @slc-tab-line-height;
+        width: @tab-line-height;
         height: 100%;
         transform: scaleY(0);
         border-radius: 3px;
@@ -156,7 +156,7 @@
 
 .@{--css-prefix}-tab--scroll .@{--css-prefix}-tab--horizontal .@{--css-prefix}-tab--SWAN {
   .@{--css-prefix}-tab__item-underline {
-    bottom: @slc-tab-line-height;
+    bottom: @tab-line-height;
   }
 }
 

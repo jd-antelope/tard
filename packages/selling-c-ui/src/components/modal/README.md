@@ -7,7 +7,7 @@ import { SlModal } from '@jd/selling-c-ui'
 ```
 ## 代码演示
 ### 基础用法
-`isOpened` 属性控制是否显示模态框，`confirmText` 属性表示确定按钮文案，存在改属性时才会显示确定操作按钮，按钮默认演示为主题色，可通过样式变量`@slc-modal-btn-confirm-color`修改， `onClose` 属性为点击遮罩层触发事件
+`isOpened` 属性控制是否显示模态框，`confirmText` 属性表示确定按钮文案，存在改属性时才会显示确定操作按钮，按钮默认演示为主题色，可通过样式变量`@modal-btn-confirm-color`修改， `onClose` 属性为点击遮罩层触发事件
 ```js
 const [isOpened, setIsOpened] = useState(false)
 const [isOpened1, setIsOpened1] = useState(false)
@@ -113,9 +113,9 @@ const [isOpened, setIsOpened] = useState(false)
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @slc-modal-width | 540px |
-|  @slc-modal-header-text-color | @color-text-base |
-|  @slc-modal-content-text-color  | @color-text-base |
-|  @slc-modal-btn-default-color | @color-text-base |
-|  @slc-modal-btn-confirm-color  | @primary-color |
-|  @slc-modal-bg-color | @color-white |
+|  @modal-width | 540px |
+|  @modal-header-text-color | @color-text-base |
+|  @modal-content-text-color  | @color-text-base |
+|  @modal-btn-default-color | @color-text-base |
+|  @modal-btn-confirm-color  | @primary-color |
+|  @modal-bg-color | @color-white |

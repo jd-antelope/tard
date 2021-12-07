@@ -74,15 +74,15 @@ import { SlButton } from 'tard'
 ### 样式变量
 |  属性   | 默认值 |
 |  ----  | ---- |
-| @slc-button-height | 80px |
-| @slc-button-height-sm | 80px |
-| @slc-button-small-width-min | 100px |
-| @slc-button-small-width-max | 160px |
-| @slc-button-normal-width-min| 220px |
-| @slc-button-normal-width-max | 280px |
-| @slc-button-middle-width-min | 340px |
-| @slc-button-middle-width-max | 400px |
-| @slc-button-large-width-min | 480px |
-| @slc-button-large-width-max | 540px |
+| @button-height | 80px |
+| @button-height-sm | 80px |
+| @button-small-width-min | 100px |
+| @button-small-width-max | 160px |
+| @button-normal-width-min| 220px |
+| @button-normal-width-max | 280px |
+| @button-middle-width-min | 340px |
+| @button-middle-width-max | 400px |
+| @button-large-width-min | 480px |
+| @button-large-width-max | 540px |
 
 

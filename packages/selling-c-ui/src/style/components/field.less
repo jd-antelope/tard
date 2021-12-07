@@ -11,7 +11,7 @@
 .@{--css-prefix}-field {
   position: relative;
   padding: @field-padding-x 0;
-  color: @slc-field-label-color;
+  color: @field-label-color;
 
   /* 修复底线隐藏问题 */
   margin-bottom: 1PX;
@@ -42,7 +42,7 @@
 
   &__title {
     width: @field-title-w;
-    font-size: @slc-field-font-size;
+    font-size: @field-font-size;
     height: @field-label-h;
     line-height: @field-label-h;
     text-align: left;
@@ -52,7 +52,7 @@
       &::before {
         display: inline-block;
         color: @color-error;
-        font-size: @slc-field-font-size;
+        font-size: @field-font-size;
         font-family: SimSun, sans-serif;
         line-height: 1;
         content: "*";
@@ -64,11 +64,11 @@
     flex: 1;
     display: inline-block;
     padding-right: @spacing-v-md;
-    color: @slc-field-text-color;
-    font-size: @slc-field-font-size;
+    color: @field-text-color;
+    font-size: @field-font-size;
     line-height: @line-height-zh;
     vertical-align: middle;
-    .placeholder(@slc-field-placeholder-color);
+    .placeholder(@field-placeholder-color);
   }
 
   &__box {
@@ -107,7 +107,7 @@
   &__content {
     flex: 1;
     height: @field-label-h;
-    font-size: @slc-field-font-size;
+    font-size: @field-font-size;
     .mixin-flex-space-between();
     &-title {
       flex: 1;
@@ -116,9 +116,9 @@
   }
 
   input {
-    color: @slc-field-text-color;
-    font-size: @slc-field-font-size;
-    height: @slc-field-font-size * 1.4;
+    color: @field-text-color;
+    font-size: @field-font-size;
+    height: @field-font-size * 1.4;
     line-height: @line-height-zh;
   }
 
@@ -130,7 +130,7 @@
     width: 40px;
     min-width: 40px;
     height: 100%;
-    font-size: @slc-field-font-size;
+    font-size: @field-font-size;
     text-align: center;
     line-height: 1;
 
@@ -156,7 +156,7 @@
       display: inline-block;
       padding: 0 @spacing-v-md;
       color: @primary-color;
-      font-size: @slc-field-font-size;
+      font-size: @field-font-size;
       text-align: center;
     }
 

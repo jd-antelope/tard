@@ -111,8 +111,8 @@ import { SlBadge } from 'tard'
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @slc-badge-color | @color-white |
-|  @slc-badge-bg-color | @color-error |
-|  @slc-badge-bg  | @slc-badge-bg-color |
-|  @slc-badge-font-size | @font-size-xs |
-|  @slc-badge-dot-size  | 20px |
+|  @badge-color | @color-white |
+|  @badge-bg-color | @color-error |
+|  @badge-bg  | @badge-bg-color |
+|  @badge-font-size | @font-size-xs |
+|  @badge-dot-size  | 20px |

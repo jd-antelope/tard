@@ -4,47 +4,47 @@
 @Tcomponent: .slc-search-Tsearch;
 @Fcomponent: .slc-search-Fsearch;
 
-@slc-search-background: #F9F9F9;
-@slc-search-text-color: rgb(7, 193, 96);
-@slc-search-text-background: #fff;
-@slc-search-delete-background: #acacac;
-@slc-search-width:100%;
-@slc-search-height: 100%;
-@slc-search-margin: 24px;
-@slc-search-border-radius: 76px;
-@slc-search-delete-position-top: 30%;
-@slc-search-icon-top: 29%;
-@slc-search-font-size: 26px;
+@search-background: #F9F9F9;
+@search-text-color: rgb(7, 193, 96);
+@search-text-background: #fff;
+@search-delete-background: #acacac;
+@search-width:100%;
+@search-height: 100%;
+@search-margin: 24px;
+@search-border-radius: 76px;
+@search-delete-position-top: 30%;
+@search-icon-top: 29%;
+@search-font-size: 26px;
 
 @{Tcomponent}{
   display: flex;
   position: relative;
-  width: @slc-search-width;
-  background: @slc-search-background;
-  font-size: @slc-search-font-size;
+  width: @search-width;
+  background: @search-background;
+  font-size: @search-font-size;
   &-search{
-    width: calc(@slc-search-width - 120px);
-    height: @slc-search-height;
-    padding-left: @slc-search-margin;
+    width: calc(@search-width - 120px);
+    height: @search-height;
+    padding-left: @search-margin;
   }
   &-inputDelete{
-    width: @slc-search-width;
-    height: @slc-search-width;
+    width: @search-width;
+    height: @search-width;
     border-radius: 50%;
-    background: @slc-search-delete-background;
+    background: @search-delete-background;
     position: absolute;
-    top: calc((@slc-search-height - 25px) / 2);
-    left: calc(@slc-search-width - 90px);
+    top: calc((@search-height - 25px) / 2);
+    left: calc(@search-width - 90px);
     line-height: 90%;
     text-align: center;
-    color: @slc-search-text-background;
+    color: @search-text-background;
     z-index: 2;
   }
  
   &-Icon{
-    right: @slc-search-margin;
+    right: @search-margin;
     position: absolute;
-    top: calc((@slc-search-height - 30px) / 2);
+    top: calc((@search-height - 30px) / 2);
   }
 }
 
@@ -52,20 +52,20 @@
   display: flex;
   position: relative;
   &-search{
-    width: @slc-search-width;
-    height:@slc-search-height;
-    background: @slc-search-background;
-    padding-left: @slc-search-margin;
+    width: @search-width;
+    height:@search-height;
+    background: @search-background;
+    padding-left: @search-margin;
   }
   &-Icon{
-    right: @slc-search-margin;
+    right: @search-margin;
     position: absolute;
-    top: calc((@slc-search-height - 30px) / 2);
+    top: calc((@search-height - 30px) / 2);
   }
 }
 .weui-input{
-  width: calc(@slc-search-width - @slc-search-margin);
-  height: @slc-search-height;
+  width: calc(@search-width - @search-margin);
+  height: @search-height;
   overflow: hidden;
 }
 

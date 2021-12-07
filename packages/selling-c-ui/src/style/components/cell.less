@@ -3,30 +3,30 @@
 
 @Cell: .slc-cell;
 
-@slc-cell-icon-font-size: 30px;
-@slc-cell-witch: 100%;
-@slc-cell-margin: 3%;
-@slc-cell-border: 1px solid rgb(249,249,253);
+@cell-icon-font-size: 30px;
+@cell-witch: 100%;
+@cell-margin: 3%;
+@cell-border: 1px solid rgb(249,249,253);
 
 @{Cell}{
-  width: @slc-cell-witch;
+  width: @cell-witch;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: @slc-cell-border;
-  border-top: @slc-cell-border;
+  border-bottom: @cell-border;
+  border-top: @cell-border;
   &-title{
-    margin-left: @slc-cell-margin;
+    margin-left: @cell-margin;
   }
   &-value{
      display: flex;   
      align-items: center;
      &-text{
-      margin-right: @slc-cell-margin;
+      margin-right: @cell-margin;
     }
     &-icon{
-      font-size: @slc-cell-icon-font-size;
-      margin-right: @slc-cell-margin;
+      font-size: @cell-icon-font-size;
+      margin-right: @cell-margin;
     }
   }
  

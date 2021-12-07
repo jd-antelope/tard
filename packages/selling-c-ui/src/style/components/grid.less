@@ -1,14 +1,14 @@
 @import '../variables/index.less';
 @import '../mixins/index.less';
 
-@slc-grid-item-width: 100%;
+@grid-item-width: 100%;
 
 .@{--css-prefix}-grid {
   display: grid;
   grid-template-columns: auto auto auto auto;
 
   &-item {
-    width: @slc-grid-item-width;
+    width: @grid-item-width;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,16 +20,16 @@
       justify-content: center;
       align-items: center;
       margin-left: 1%;
-      padding: @slc-grid-item-padding-y 0;
+      padding: @grid-item-padding-y 0;
 
       &-image {
-        width: @slc-grid-item-image-size;
-        height: @slc-grid-item-image-size;
+        width: @grid-item-image-size;
+        height: @grid-item-image-size;
       }
 
       &-text {
-        font-size: @slc-grid-item-text-size;
-        margin-top: @slc-grid-item-text-padding;
+        font-size: @grid-item-text-size;
+        margin-top: @grid-item-text-padding;
       }
     }
 

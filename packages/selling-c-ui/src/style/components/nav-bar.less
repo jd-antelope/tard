@@ -10,17 +10,17 @@
   box-sizing: border-box;
   white-space: nowrap;
   overflow: hidden;
-  height: @slc-nav-bar-height;
-  line-height: @slc-nav-bar-height;
+  height: @nav-bar-height;
+  line-height: @nav-bar-height;
   .mixin-hairline-bottom();
 
   /* elements */
   &__left-view {
     flex: 2;
-    padding-left: @slc-nav-bar-spacing-v @slc-nav-bar-spacing-h;
+    padding-left: @nav-bar-spacing-v @nav-bar-spacing-h;
     height: 100%;
-    color: @slc-nav-bar-link-color;
-    font-size: @slc-nav-bar-font-size;
+    color: @nav-bar-link-color;
+    font-size: @nav-bar-font-size;
     text-align: left;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -34,15 +34,15 @@
   &__right-view {
     flex: 2;
     height: 100%;
-    color: @slc-nav-bar-link-color;
+    color: @nav-bar-link-color;
     text-align: right;
     overflow: hidden;
   }
 
   &__title {
     flex: 5;
-    color: @slc-nav-bar-title-color;
-    font-size: @slc-nav-bar-font-size;
+    color: @nav-bar-title-color;
+    font-size: @nav-bar-font-size;
     font-weight: 500;
     text-align: center;
     vertical-align: middle;
@@ -52,19 +52,19 @@
 
   &__text {
     display: inline-block;
-    padding-left: @slc-nav-bar-spacing-h;
+    padding-left: @nav-bar-spacing-h;
     height: 100%;
-    font-size: @slc-nav-bar-back-font-size;
+    font-size: @nav-bar-back-font-size;
     vertical-align: middle;
-    line-height: @slc-nav-bar-height;
+    line-height: @nav-bar-height;
     .line();
   }
 
   &__container {
     display: inline-block;
-    padding: 0 @slc-nav-bar-spacing-h;
+    padding: 0 @nav-bar-spacing-h;
     width: 50%;
-    font-size: @slc-nav-bar-font-size;
+    font-size: @nav-bar-font-size;
     text-align: center;
     box-sizing: border-box;
     .active();
