@@ -979,3 +979,7 @@ body {
 .language-css > span {
   color: #eb6f6f;
 }
+
+::selection {
+  background: #b3d4fc !important;
+}
