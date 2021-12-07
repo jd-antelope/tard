@@ -884,6 +884,19 @@
   color: #4994df
 }
 
+.language-js .comment{
+  color: #999 !important;
+}
+
+.language-shell .comment{
+  color: #999 !important;
+}
+
+.language-shell{
+  color: #58727e !important;  
+}
+
+
 .markdown-body .csv-data td,
 .markdown-body .csv-data th {
   padding: 5px;
@@ -977,5 +990,9 @@ body {
 }
 
 .language-css > span {
-  color: #eb6f6f;
+  color: #999 !important;
+}
+
+.language-css .atrule{
+  color: #eb6f6f !important;
 }

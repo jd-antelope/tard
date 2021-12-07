@@ -3,15 +3,13 @@ import MarkDown from '@/components/markdown'
 const markdown = `# 主题定制
 
 ## 介绍
-Tard 提供了一套默认主题，~CSS~ 命名采用 ~BEM~ 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者其他样式，可以按照本文档进行主题定制。
-
+Tard 提供了一套默认主题，~CSS~ 命名采用 ~BEM~ 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者其他样式，可以按照本文档进行主题定制
 
 ## 样式变量
 Tard 使用了 ~Less~ 对样式进行预处理，并内置了一些样式变量，通过替换样式变量即可定制你自己需要的主题。
 
 下面是所有的基础样式变量，组件的颜色等变量请参考各个组件的文档或[配置文件](TODO)
 ~~~css
-
 // 定义前缀
 @--css-prefix: slc;
 
@@ -126,7 +124,48 @@ sans-serif;
 
 ## 定制方法
 ### 步骤一 引入样式源文件
-定制主题时，需要引入组件对应的 Less 样式文件，支持按需引入和手动引入两种方式。
+定制主题时，需要引入组件对应的 Less 样式文件
+
+~~~js
+// app.js
+// 引入全部样式
+import 'vant/lib/index.less';
+
+// 引入单个组件样式
+import 'vant/lib/button/style/less';
+~~~
+
+
+~~~css
+// app.css
+@import "~tard/dist/style/index.less";
+~~~
+
+### 步骤二 修改样式变量
+在组件文档的 "样式变量" 表格中，你可以查阅到每个组件暴露了都哪些 ~less~ 变量
+以 ~InputNumber~ 组件为例，我们可以在它的文档上找到类似于下面这样的表格
+
+|  名称  | 默认值 |
+|  ---- | ---- |
+|  @input-number-text-color | @color-text-base |
+|  @input-number-font-size | @font-size-base |
+|  @input-number-font-size-lg  | @font-size-xl |
+|  @input-number-btn-color | @primary-color |
+|  @input-number-btn-size  | 30px |
+|  @input-number-btn-size-lg  | 36px |
+|  @input-number-width-min | 36px |
+|  @input-number-width-min-lg | 80px |
+|  @input-number-btn-size  | 120px |
+
+接下来，设置 ~less~ 变量的值即可
+
+~~~css
+// app.css
+@import "~tard/dist/style/index.less";
+@input-number-text-color: #bbb;
+@input-number-btn-size: 100px;
+~~~
+
 `
 
 export default function DocsPage() {
