@@ -967,7 +967,15 @@ body {
   width: 100%;
   height: 100%;
   -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
   -webkit-animation: sky 200000ms linear infinite;
-          animation: sky 200000ms linear infinite;
+  animation: sky 200000ms linear infinite;
+}
+
+.language-css {
+  color: #999 !important;
+}
+
+.language-css > span {
+  color: #eb6f6f;
 }

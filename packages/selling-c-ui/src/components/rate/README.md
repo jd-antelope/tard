@@ -75,5 +75,5 @@ import { SlRate } from 'tard'
 |  属性   | 默认值 |
 |  ----  | ---- |
 | @rate-icon-size | 20px |
-| @rate-star-color | @color-rate-base |
-| @rate-star-color-on | @color-rate-on |
+| @rate-star-color | #ECECEC |
+| @rate-star-color-on | #FFCA3E |
