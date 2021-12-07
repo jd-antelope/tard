@@ -2,7 +2,7 @@
 
 ## 使用
 ```shell
-yarn add @jd/selling-c-ui
+yarn add tard
 ```
 页面中引用
 ```js
