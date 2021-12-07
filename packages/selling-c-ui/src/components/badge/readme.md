@@ -1,6 +1,6 @@
-# Badge
+# Badge 徽标
 ### 介绍
-在右上角展示徽标数字或小红点。
+在右上角展示徽标数字或小红点
 ### 引入
 ```js
 import { SlBadge } from 'tard'

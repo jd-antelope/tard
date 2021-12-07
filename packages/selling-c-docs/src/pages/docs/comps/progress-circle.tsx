@@ -1,8 +1,8 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# ProgressCircle
+const markdown = `# ProgressCircle 圆形进度条
 ### 介绍
-圆环形的进度条组件，支持进度渐变动画。
+圆环形的进度条组件，支持进度渐变动画
 > ⚠️ 该组件通过svg实现，svg不支持rpx，故小程序和H5单位均转换为rem
 ### 引入
 ~~~js

@@ -1,5 +1,5 @@
 
-# InputNumber
+# InputNumber 数字输入框
 ### 介绍
 带加减按钮的数字输入框，用户可以控制每次点击增加的数值，支持小数，同时支持自定义输入框宽度
 ### 引入
@@ -71,7 +71,7 @@ const [value1, setValue1] = useState(0)
 |  ----  | ----  | ---- |
 |  onChange  | 输入框值改变时触发的事件  | 输入框当前值 value |
 |  onBlur  | 输入框值失去焦点时触发的事件  | event |
-|  onErrorInput  | 输入框尝试输入错误数组触发的事件  | ({ type: OVER | LOW | DISABLED, errorValue: number}) |
+|  onErrorInput  | 输入框尝试输入错误数组触发的事件  | event |
 
 ### 样式变量
 |  名称  | 默认值 |

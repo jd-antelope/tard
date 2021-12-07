@@ -3,14 +3,30 @@
   align-items: center;
   height: 60px;
   line-height: 60px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: calc(100vw - 20px);
+  right: 0;
+  padding: 10px;
+  z-index: 99;
 
   &__title {
     position: relative;
     height: 60px;
     color: #333;
     font-size: 36px;
-    font-weight: bold;
+    font-weight: 500;
     display: flex;
     align-items: center;
+    margin: auto;
+  }
+
+  &__box {
+    height: 80px
+  }
+
+  &__icon{
+    cursor: pointer;
   }
 }

@@ -8,13 +8,13 @@ import { SlNavBar } from 'tard'
 ```
 ## 代码演示
 ### 基本用法
-通过 `title` 属性设置导航栏标题
+通过 `title` 属性设置头部导航标题
 ```js
 <SlNavBar title="标题" />
 ```
 
 ### 返回上一级
-在导航栏实现返回上级功能，设置 `leftIcon` 属性显示左侧箭头，通过 `leftText` 属性来设置左边文字
+在头部导航实现返回上级功能，设置 `leftIcon` 属性显示左侧箭头，通过 `leftText` 属性来设置左边文字
 ```js
 const onClickLeft = () => {
     // todo改为Toast

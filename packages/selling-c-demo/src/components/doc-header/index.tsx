@@ -14,7 +14,7 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
   public static defaultProps: DocsHeaderProps
   public static propTypes: InferProps<DocsHeaderProps>
 
-  postIframeParentMessage () {
+  postIframeParentMessage() {
     if (isWeb) {
       window.parent.postMessage({ path: '/' }, '*');
     }
@@ -24,16 +24,23 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
     const { title } = this.props
 
     return (
-      <View className='doc-header' style={!isWeb ? 'display:none' : ''}>
-        <View className='doc-header__title'
-          onClick={() => {
-            navigateTo({ url: `/pages/home/index` });
-            this.postIframeParentMessage()
-          }}
-        >
-          <SlIcon value='chevron-left' size={30}></SlIcon>
-          {title}
+      <View>
+        <View className='doc-header' style={!isWeb ? 'display:none' : ''}>
+          <SlIcon
+            className='doc-header__icon'
+            value='chevron-left'
+            size={26}
+            color="#333"
+            onClick={() => {
+              navigateTo({ url: `/pages/home/index` });
+              this.postIframeParentMessage()
+            }}
+          ></SlIcon>
+          <View className='doc-header__title'>
+            {title}
+          </View>
         </View>
+        <View className="doc-header__box"></View>
       </View>
     )
   }
