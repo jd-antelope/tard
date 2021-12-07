@@ -7,6 +7,7 @@ export default defineConfig({
     type: 'none',
   },
   fastRefresh: {},
+  links: [{ rel: 'icon', href: '/images/favicon.ico' }],
   theme: {
     "primary-color": "#102DF5",
     "primary-color-light": "#F7F8FF",

@@ -130,10 +130,24 @@
 
 .ant-menu-inline .ant-menu-item::after {
 	border: none;
-	width: 9px;
-	height: 62px;
-	background: #fff;
-	top: -9px;
+	width: 20px;
+	height: 20px;
+	top: -20px;
+  right: 0px;
+  background: #fff url('https://storage.360buyimg.com/hawley-common/tard-image/layout-menu-active.png');
+  background-size: 100%;
+}
+
+.ant-menu-inline .ant-menu-item-selected::before {
+  position: absolute;
+  content: '';
+	width: 20px;
+	height: 20px;
+	top: 44px;
+  right: 0px;
+  background: #fff url('https://storage.360buyimg.com/hawley-common/tard-image/layout-menu-active.png');
+  background-size: 100%;
+  transform: rotate(-90deg);
 }
 
 .ant-menu-inline {

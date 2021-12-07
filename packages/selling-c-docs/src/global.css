@@ -996,3 +996,7 @@ body {
 .language-css .atrule{
   color: #eb6f6f !important;
 }
+
+::selection {
+  background: #b3d4fc !important;
+}
