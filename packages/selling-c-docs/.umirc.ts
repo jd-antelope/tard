@@ -1,5 +1,6 @@
 import { defineConfig } from 'umi';
-const  transformPlugin = require('./scripts/createroute.js')
+const transformPlugin = require('./scripts/createroute.js')
+const setMarkdown = require('./scripts/set-markdown.js')
 
 export default defineConfig({
   nodeModulesTransform: {
@@ -14,6 +15,7 @@ export default defineConfig({
   chainWebpack (config) {
     if (process.env.UMI_ENV !== 'prod') {
       config.plugin('transformMd').use(new transformPlugin())
+      config.plugin('setMarkdown').use(new setMarkdown())
     }
   }
 })
