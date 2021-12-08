@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Cell'
+  navigationBarTitleText: 'Cell',
+  enableShareAppMessage: true
 }

@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'DropdownMenu'
+  navigationBarTitleText: 'DropdownMenu',
+  enableShareAppMessage: true
 }

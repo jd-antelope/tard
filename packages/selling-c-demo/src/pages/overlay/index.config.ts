@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Overlay'
+  navigationBarTitleText: 'Overlay',
+  enableShareAppMessage: true
 }

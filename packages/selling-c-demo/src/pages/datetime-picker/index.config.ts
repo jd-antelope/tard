@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'DatetimePicker'
+  navigationBarTitleText: 'DatetimePicker',
+  enableShareAppMessage: true
 }

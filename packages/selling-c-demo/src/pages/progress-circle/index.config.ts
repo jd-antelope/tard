@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'ProgressCircle'
+  navigationBarTitleText: 'ProgressCircle',
+  enableShareAppMessage: true
 }

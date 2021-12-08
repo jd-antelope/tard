@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Tab'
+  navigationBarTitleText: 'Tab',
+  enableShareAppMessage: true
 }

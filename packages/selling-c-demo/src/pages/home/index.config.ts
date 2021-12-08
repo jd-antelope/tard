@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: '主页'
+  navigationBarTitleText: '主页',
+  enableShareAppMessage: true
 }

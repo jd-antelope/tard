@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'InputNumber'
+  navigationBarTitleText: 'InputNumber',
+  enableShareAppMessage: true
 }

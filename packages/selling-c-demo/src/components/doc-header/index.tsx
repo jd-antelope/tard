@@ -40,7 +40,7 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
             {title}
           </View>
         </View>
-        <View className="doc-header__box"></View>
+        <View className="doc-header__box" style={!isWeb ? 'display:none' : ''}></View>
       </View>
     )
   }
