@@ -1,14 +1,14 @@
 import MarkDown from '@/components/markdown'
 
 const markdown = ` 
-# tab
+# Tab 标签页
+### 介绍
 选项卡切换组件
-
-## 使用指南
-在 Taro 文件中引入组件
+### 引入
 ~~~js
 import { SlTab } from 'tard'
 ~~~
+## 代码演示
 ### 基本用法
 
 ~~~js

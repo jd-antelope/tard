@@ -1,14 +1,13 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# Form
+const markdown = `# Form 表单
 ### 介绍
 用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。2.5 版本开始支持此组件。
-## 代码演示
 ### 引入
 ~~~js
 import { SlForm } from 'tard'
 ~~~
-
+## 代码演示
 ### 基本用法
 ~~~js
 const [form, setForm] = useState({

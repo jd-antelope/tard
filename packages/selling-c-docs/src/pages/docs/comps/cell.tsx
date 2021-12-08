@@ -1,7 +1,6 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# cell
-
+const markdown = `# Cell 单元格
 ### 介绍
 单元格
 ### 引入
@@ -12,7 +11,6 @@ import { SlCell } from 'tard'
 ### 基础用法
 ~~~js
 <SlCell onClick={() => { console.log("触发点击事件")} } title={"左侧标题"} value={"右侧内容"}/>
-};
 ~~~
 
 ## Api

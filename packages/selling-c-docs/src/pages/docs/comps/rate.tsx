@@ -1,6 +1,6 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# Rate
+const markdown = `# Rate 评分
 ### 介绍
 评分组件，可自定义评分星星图标的大小、间隔、评分数
 ### 引入

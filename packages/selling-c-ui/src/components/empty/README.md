@@ -1,8 +1,7 @@
-# Empty
+# Empty 空状态
+### 介绍
 该组件封装了日常业务中常见的空数据的展示效果
-
-## 使用指南
-在 Taro 文件中引入组件
+### 引入
 ```js
 import { SlEmpty } from '@jd/selling-c-ui'
 ```

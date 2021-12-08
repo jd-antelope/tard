@@ -1,15 +1,13 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# Canvas
+const markdown = `# Canvas 海报
 ### 介绍
 该组件是为了给海报功能提供方便，里面有关闭和保存图片功能。目前该组件不支持h5，后续会进行优化。
-
-## 代码演示
 ### 引入
 ~~~js
 import { SlCanvas } from 'tard'
 ~~~
-
+## 代码演示
 ### 基础用法
 通过 ~contentCallback~ 函数进行补充 ~canvas~ 内容，里面有两个参数，第一个是微信方法 ~createCanvasContext~ 的实例，第二个是换算单位，按750的设计去计算数据。
 ~~~js
