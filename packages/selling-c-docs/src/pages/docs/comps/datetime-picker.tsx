@@ -1,17 +1,15 @@
 import MarkDown from '@/components/markdown'
 
 const markdown = `
-# DatetimePicker
+# DatetimePicker 日期选择
 ### 介绍
 选择时间的控件，将日期和分秒封装了一起。目前支持小程序，h5暂不支持
-
-## 代码演示
 ### 引入
 在 Taro 文件中引入组件
 ~~~js
 import { SlDatetimePicker } from 'tard'
 ~~~
-
+## 代码演示
 ### 基础用法
 默认日期选择器
 ~~~js

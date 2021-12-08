@@ -1,15 +1,14 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# Toast
+const markdown = `# Toast 轻提示
 ### 介绍
 按钮用于传递用户触摸时会触发的操作
-
-## 代码演示
 ### 引入
-在 Taro 文件中引入组件
 ~~~js
 import { SlToast } from 'tard'
 ~~~
+
+## 代码演示
 ### 基础用法
 ~~~js
 const Toast: FC = () => {

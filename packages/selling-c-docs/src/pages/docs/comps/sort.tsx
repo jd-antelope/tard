@@ -1,6 +1,6 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# Sort
+const markdown = `# Sort 排序
 ### 介绍
 排序项组件，支持元素换行或滚动展示。
 ### 引入

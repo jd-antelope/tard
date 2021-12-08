@@ -1,14 +1,14 @@
 import MarkDown from '@/components/markdown'
 
 const markdown = ` 
-# Skeleton
+# Skeleton 骨架屏
 ### 介绍
 该标签设计了简单的骨架结构
-## 代码演示
 ### 引入
 ~~~js
 import { SlSkeleton } from 'tard'
 ~~~
+## 代码演示
 ### 基础用法
 ~~~js
 <SlSkeleton />

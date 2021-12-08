@@ -1,14 +1,13 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# Price
-### 代码演示
+const markdown = `# Price 价格
+### 介绍
 该组件封装了业务中常用的价格用法
-
-## 使用指南
+### 引入
 ~~~js
 import { SlPrice } from 'tard'
 ~~~
-
+## 代码演示
 ### 基础用法
 ~~~js
 <SlPrice price="23.00" />

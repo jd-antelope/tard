@@ -1,13 +1,14 @@
 import MarkDown from '@/components/markdown'
 
 const markdown = `
-# Footerbutton
+# Footerbutton 底部按钮
+### 介绍
 该组件封装了常用底部按钮常用功能
-## 使用指南
-在taro文件中引入
+### 引入
 ~~~javascript
 import { SlFooterButton } from 'tard'
 ~~~
+## 代码演示
 ### 基本使用
 ~~~javascript
    <SlFooterButton className='pos-1' name="按钮1"/>

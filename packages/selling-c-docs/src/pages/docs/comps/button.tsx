@@ -1,14 +1,13 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# Button
+const markdown = `# Button 按钮
 ### 介绍
 按钮用于传递用户触摸时会触发的操作
-## 引入
+### 引入
 ~~~js
 import { SlButton } from 'tard'
 ~~~
  ![](./info.png)
- 
 
 ## 使用指南
 ### 基础用法
