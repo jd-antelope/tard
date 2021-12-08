@@ -71,7 +71,7 @@ const Grid: FC = () => {
               ))
             }
           </SlGrid>
-          <View className='doc-body-content-tip'>内容排版——横向</View>
+          <View className='doc-body-content-tip'>内容横排</View>
           <SlGrid direction='left'>
             {
               new Array(4).fill('').map((_, i) => (
