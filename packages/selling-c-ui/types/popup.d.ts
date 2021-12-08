@@ -9,16 +9,16 @@ export interface SlPopupProps extends SlComponent {
    * 是否允许外部点击关闭
    *  @default false
    */
-  outClose?: boolean
+   closeOnclickOverlay?: boolean
   /**
    * 头部标题的对齐方式
    * @default center
    */
-  align?: string
+  titleAlign?: string
   /**
    * 组件是否显示
    */
-  isOpened: boolean
+   visible: boolean
   /**
    * 组件关闭回调
    * @default false

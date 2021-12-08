@@ -50,7 +50,7 @@ SlEmpty.defaultProps = {
   src: '',
   text: '',
   btnText: '',
-  rect: 'normal',
+  rect: 'rect',
   onClick: () => { }
 }
 

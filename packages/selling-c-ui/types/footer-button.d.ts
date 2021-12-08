@@ -15,7 +15,7 @@ export interface SlFooterButtonProps extends SlComponent {
     /**
      * 自定义按钮内容
      */
-    replaceContent?: React.ReactNode
+    content?: React.ReactNode
     /**
      * 按钮颜色
      */
@@ -60,6 +60,11 @@ export interface SlFooterButtonProps extends SlComponent {
      * 点击事件
      */
     secClick?: CommonEventFunction
+    /**
+     * 是否开启定位底部
+     * @default false
+     */
+    isFixed?: boolean
 }
 
 export interface SlFooterButtonState {

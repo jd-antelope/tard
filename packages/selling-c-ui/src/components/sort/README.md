@@ -81,3 +81,16 @@ import { SlSort } from 'tard'
 | textColor | 文字颜色 | string | '' |
 | arrowColor | 升序/降序箭头颜色 | string | '' |
 | activeColor | 选中的颜色 | string | '' |
+
+### Events
+|  事件名称   | 说明  | 返回参数 |
+|  ----      | ---- |   ----  |
+|  onChange  | 排序改变的回调 | value |
+
+
+### 样式变量
+|  属性   | 默认值 |
+|  ----  | ---- |
+|@slc-sort-arrow-color | @color-grey-3|
+|@slc-sort-text-default-color | @color-text-base|
+|@slc-sort-text-active-color | #FF2929|

@@ -71,17 +71,16 @@ export default class SlFooterButton extends React.Component<SlFooterButtonProps,
   
 
     return (
-     
-      <Common className={classNames("slc-custom-footer-container",this.props.className)}>
+      <Common className={classNames("slc-custom-footer-container", this.props.className, { "slc-custom-footer-container-fixed" :  this.props.isFixed})}>
         <View style={styleContainer}>
-          { this.props.replaceContent ?
-              <Fragment>{ this.props.replaceContent }</Fragment>
+          { this.props.content ?
+              <Fragment>{ this.props.content }</Fragment>
               :
               <View className='slc-custom-outer'>
                 {
                   this.props.doubleBtn && <View className="slc-custom-footer slc-custom-footer-btn2" style={style2} onClick={this.handleClickSecBtn.bind(this)}>{this.props.secondName}</View>
                 }
-                <View className="slc-custom-footer slc-custom-footer-btn1" style={style} onClick={this.handleClick.bind(this)}>{this.props.name}</View>
+                <View className="slc-custom-footer slc-custom-footer-btn1" style={style} onClick={this.handleClick.bind(this)}>{this.props.name} </View>
               </View>
           }
         </View>
@@ -97,5 +96,6 @@ SlFooterButton.defaultProps = {
   radius: 0,
   lineHeight: 80,
   doubleBtn: false,
+  isFixed: false,
   secondName: '取消',
 }

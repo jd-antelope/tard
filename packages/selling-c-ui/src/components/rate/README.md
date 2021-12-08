@@ -56,20 +56,20 @@ import { SlRate } from 'tard'
 
 
 
-## Api
+## API
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
-| value | 当前评分,需要通过 onChange 事件来更新 value 值，必填 | Number | 0 |
-| max | 元素的最大个数 | Number | 5 |
+| value | 当前评分,需要通过 onChange 事件来更新 value 值，必填 | number | 0 |
+| max | 元素的最大个数 | number | 5 |
 | size | 元素尺寸大小(单位:px) | string | - |
-| margin | 元素间隔(单位:px) | Number / String	 | 20 |
+| margin | 元素间隔(单位:px) | number / string	 | 20 |
 | activeColor | 选中元素的颜色 | string | '#ffca3e' |
 
-### 事件
+### Events
 |  事件名称   | 说明  | 返回参数 |
 |  ----      | ---- |   ----  |
-|  onChange  | 输入框值改变时触发的事件，开发者需要通过 onChange 事件来更新 value 值变化，但不填写 onChange 函数时，该组件只读  | 当前值 value |
+|  onChange  | 输入框值改变时触发的事件，开发者需要通过 onChange 事件来更新 value 值变化，但不填写 onChange 函数时，该组件只读  | value |
 
 ### 样式变量
 |  属性   | 默认值 |
