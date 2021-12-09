@@ -13,7 +13,7 @@ import { SlCell } from 'tard'
 <SlCell onClick={() => { console.log("触发点击事件")} } title={"左侧标题"} value={"右侧内容"}/>
 ~~~
 
-## Api
+## API
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |

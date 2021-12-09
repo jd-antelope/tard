@@ -71,10 +71,11 @@ showSlCanvas({
 />
 ```
 
-## Api
+## API
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
+| id | canvas唯一标识 | string | 'canvas' |
 | width | 宽度 | number | 600px |
 | height | 高度 | number | 800px |
 | overlay | 是否有遮照 | boolean | true |

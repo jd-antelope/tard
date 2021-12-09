@@ -23,7 +23,7 @@ const Loading: FC = () => {
           <SlLoading type="loading" />
           <View className='doc-body-content-tip'>大小</View>
           <SlLoading size={ 100 } />
-          <View className='doc-body-content-tip'>展示遮罩</View>
+          <View className='doc-body-content-tip'>全局定位</View>
           <SlButton size="large" onClick={ () => setOverlay(true) }>点击</SlButton>
           {
             overlay && 

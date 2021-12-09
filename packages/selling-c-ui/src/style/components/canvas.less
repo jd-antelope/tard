@@ -19,6 +19,7 @@
   left: 0;
   background: rgba(0, 0, 0, 0.4);
   display: none;
+  z-index: @zindex-overlay;
   &-box {
     .mixin-absolute-center(absolute);
     overflow: hidden;
@@ -49,6 +50,13 @@
     }
   }
   &.@{--css-prefix}-canvas-show {
+    display: block;
+  }
+}
+
+.@{--css-prefix}-canvas-overlay {
+  display: none;
+  &.@{--css-prefix}-canvas-overlay-show {
     display: block;
   }
 }

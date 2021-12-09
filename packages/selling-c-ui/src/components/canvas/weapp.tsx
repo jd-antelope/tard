@@ -32,8 +32,8 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
 
   public UNSAFE_componentWillReceiveProps(nextProps: SlCanvasProps): void {
     const { visible } = nextProps
-
     if (visible !== this.state.open) {
+      this.canvasShow()
       this.setState({
         open: visible
       })
@@ -47,11 +47,11 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
     })
   }
 
-  private canvasShow (): void {
+  private async canvasShow (): Promise<void> {
     try {
-      const { width = 600, height = 800, contentCallback = () => {} } = this.props
+      const { id = 'canvas', width = 600, height = 800, contentCallback = () => {} } = this.props
       const { dpr } = this
-      const ctx = Taro.createCanvasContext('canvas');
+      const ctx = Taro.createCanvasContext(id);
       // 白底
       ctx.beginPath();
       this.roundRect(ctx, '#fff', 0, 0, dpr(width), dpr(height), dpr(8));
@@ -145,7 +145,7 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
 
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
-    const { className, width = 600, height = 800, overlay } = this.props
+    const { className, width = 600, height = 800, overlay, id } = this.props
     const { open } = this.state
     return (
       <Fragment>
@@ -168,7 +168,7 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
                 </View>
                 <Canvas 
                   className={ cn('slc-canvas-content', className) } 
-                  canvas-id="canvas"
+                  canvas-id={ id }
                   style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)}` }
                 />
                 <View className="slc-canvas-save">
@@ -176,7 +176,6 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
                     size="large"
                     className="slc-canvas-save__button" 
                     onClick={ () => this.saveFile() }
-                    borderColor="#FF2929"
                     color="#ffffff"
                   >
                     保存
@@ -184,11 +183,15 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
                 </View>
               </View>
             </View> :
-            <Canvas 
-              className={ cn('slc-canvas-content', className) } 
-              canvas-id="canvas"
-              style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)}` }
-            />
+            <View className={ cn('slc-canvas-overlay', {
+              'slc-canvas-overlay-show': open
+            }) }>
+              <Canvas 
+                className={ cn('slc-canvas-content', className) } 
+                canvas-id={ id }
+                style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)}` }
+              />
+            </View>
         }
         
       </Fragment>
@@ -197,6 +200,7 @@ class SlCanvasWeapp extends React.Component<SlCanvasProps, SlCanvasState> {
 }
 
 SlCanvasWeapp.defaultProps = {
+  id: 'canvas',
   className: '',
   width: 600,
   height: 800,

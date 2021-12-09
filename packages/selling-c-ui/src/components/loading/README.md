@@ -33,8 +33,8 @@ import { SlLoading } from 'tard'
 <SlLoading size={ 100 } />
 ```
 
-### 展示遮罩
-传入的图片找不到或者加载不出来就会显示默认图片
+### 全局定位
+增加属性 `overlay` 全局定位展示
 ```js
 const [overlay, setOverlay] = useState<boolean>(false)
 

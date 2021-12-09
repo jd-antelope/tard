@@ -3,6 +3,10 @@ import SlComponent from './base'
 
 export interface SlCanvasProps extends SlComponent {
   /**
+   * canvas唯一标识
+   */
+  id?: string
+  /**
    * 宽度
    */
   width?: number
