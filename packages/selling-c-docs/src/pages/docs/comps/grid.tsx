@@ -134,7 +134,7 @@ import { SlGrid, SlGridItem } from 'tard'
 组件提供了下列 Less 变量，可用于自定义样式
 |  名称  | 默认值 |
 |  ---- | ---- |
-| @grid-bg | #ffffff |
+|  @grid-bg | #ffffff |
 |  @grid-item-padding-y | 18px |
 |  @grid-item-image-size | 60px |
 |  @grid-item-text-padding | 12px |
