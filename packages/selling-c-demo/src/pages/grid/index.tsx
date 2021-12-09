@@ -65,6 +65,7 @@ const Grid: FC = () => {
               new Array(4).fill('').map((_, i) => (
                 <SlGridItem 
                   key={ i }
+                  className="doc-grid-item-custom"
                 >
                   <Image className="grid-image" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
                 </SlGridItem>

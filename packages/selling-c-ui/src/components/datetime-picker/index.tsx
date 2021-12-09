@@ -262,10 +262,10 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
   public render (): JSX.Element | null {
     const { type } = this.props
     const { _isOpened, hours, minutes } = this.state
-    const rootClass = classNames(
-      'slc-datetime',
+    const rootClassMask = classNames(
+      'slc-datetime__mask',
       {
-        'slc-datetime__active': _isOpened
+        'slc-datetime__mask-active': _isOpened
       },
     )
 
@@ -299,8 +299,8 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
     } as CSSProperties
 
     return (
-      <View className={rootClass} onTouchMove={this.handleTouchMove}>
-        <View className="slc-datetime__mask" onClick={this.outClick} />
+      <View className="slc-datetime" onTouchMove={this.handleTouchMove}>
+        <View className={rootClassMask} onClick={this.outClick} />
         <View className={containerClass}>
           <View className="time-picker-container">
             <View className="time-show-container">

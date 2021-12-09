@@ -21,7 +21,7 @@ export default class SlGridItem extends React.Component<SlGridItemProps> {
 
   public render(): JSX.Element {
     const { 
-      url, icon, text, direction, border, children,
+      className, url, icon, text, direction, border, children,
       columnNum = 4, index = 0, length = 0, iconSize = 60
     } = this.props
 
@@ -29,7 +29,7 @@ export default class SlGridItem extends React.Component<SlGridItemProps> {
 
     const isBorderBottom = border && Math.ceil(index / columnNum) < Math.ceil(length / columnNum)
 
-    const imageText = classNames('slc-grid-item', { 
+    const imageText = classNames('slc-grid-item', className, { 
       'slc-grid-item-border-right': isBorderRight,
       'slc-grid-item-border-bottom': isBorderBottom
     })
@@ -92,6 +92,7 @@ export default class SlGridItem extends React.Component<SlGridItemProps> {
 }
 
 SlGridItem.defaultProps = {
+  className: '',
   icon: '',
   text: '',
   direction: 'bottom',
