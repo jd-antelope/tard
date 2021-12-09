@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { FC } from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
-import { SlGrid, SlGridItem } from '@test/selling-c-ui'
+import { SlGrid, SlGridItem } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 
@@ -65,13 +65,14 @@ const Grid: FC = () => {
               new Array(4).fill('').map((_, i) => (
                 <SlGridItem 
                   key={ i }
+                  className="doc-grid-item-custom"
                 >
                   <Image className="grid-image" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
                 </SlGridItem>
               ))
             }
           </SlGrid>
-          <View className='doc-body-content-tip'>内容排版——横向</View>
+          <View className='doc-body-content-tip'>内容横排</View>
           <SlGrid direction='left'>
             {
               new Array(4).fill('').map((_, i) => (

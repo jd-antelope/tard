@@ -2,14 +2,14 @@
 @import '../mixins/index.less';
 
 @component: .slc-input-number;
-@slc-input-number-btn-padding: 12px;
-@slc-input-number-btn-padding-lg: 20px;
+@input-number-btn-padding: 12px;
+@input-number-btn-padding-lg: 20px;
 
 @{component} {
   display: inline-flex;
   .border-thin(@width: 1PX);
 
-  font-size: @slc-input-number-font-size;
+  font-size: @input-number-font-size;
   border-radius: @border-radius-md;
   background-color: @color-bg;
   overflow: hidden;
@@ -20,8 +20,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: @slc-input-number-btn-padding;
-    color: @slc-input-number-btn-color;
+    padding: @input-number-btn-padding;
+    color: @input-number-btn-color;
     font-size: 0;
     text-align: center;
     line-height: @line-height-base;
@@ -30,8 +30,8 @@
 
     &-subtract,
     &-add {
-      font-size: @slc-input-number-btn-size;
-      line-height: @slc-input-number-btn-size;
+      font-size: @input-number-btn-size;
+      line-height: @input-number-btn-size;
     }
   }
 
@@ -42,10 +42,10 @@
   &__input,
   input {
     display: inline-block;
-    width: @slc-input-number-width-min;
+    width: @input-number-width-min;
     border-radius: 0;
-    color: @slc-input-number-text-color;
-    font-size: @slc-input-number-font-size;
+    color: @input-number-text-color;
+    font-size: @input-number-font-size;
     text-align: center;
     line-height: @line-height-zh;
   }
@@ -61,20 +61,20 @@
 
   &--lg {
     @{component}__btn {
-      padding: @slc-input-number-btn-padding-lg;
-      font-size: @slc-input-number-font-size-lg;
+      padding: @input-number-btn-padding-lg;
+      font-size: @input-number-font-size-lg;
 
       &-subtract,
       &-add {
-        font-size: @slc-input-number-btn-size-lg;
+        font-size: @input-number-btn-size-lg;
       }
     }
 
     input,
     @{component}__input {
       // padding: @spacing-v-sm;
-      font-size: @slc-input-number-font-size-lg;
-      width: @slc-input-number-width-min-lg;
+      font-size: @input-number-font-size-lg;
+      width: @input-number-width-min-lg;
     }
   }
 }

@@ -132,7 +132,7 @@ const routerObj = {
       nameEn: 'Grid',
       path: '/grid'
     }, {
-      name: '导航栏',
+      name: '头部导航',
       nameEn: 'NavBar',
       path: '/nav-bar'
     }, {

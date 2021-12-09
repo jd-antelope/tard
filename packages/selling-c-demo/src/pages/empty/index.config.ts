@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Empty'
+  navigationBarTitleText: 'Empty',
+  enableShareAppMessage: true
 }

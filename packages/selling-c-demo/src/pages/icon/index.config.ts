@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Icon'
+  navigationBarTitleText: 'Icon',
+  enableShareAppMessage: true
 }

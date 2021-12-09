@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Image'
+  navigationBarTitleText: 'Image',
+  enableShareAppMessage: true
 }

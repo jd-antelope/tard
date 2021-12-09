@@ -10,13 +10,13 @@ import { SlNavBar } from 'tard'
 ~~~
 ## 代码演示
 ### 基本用法
-通过 ~title~ 属性设置导航栏标题
+通过 ~title~ 属性设置头部导航标题
 ~~~js
 <SlNavBar title="标题" />
 ~~~
 
 ### 返回上一级
-在导航栏实现返回上级功能，设置 ~leftIcon~ 属性显示左侧箭头，通过 ~leftText~ 属性来设置左边文字
+在头部导航实现返回上级功能，设置 ~leftIcon~ 属性显示左侧箭头，通过 ~leftText~ 属性来设置左边文字
 ~~~js
 const onClickLeft = () => {
     // todo改为Toast
@@ -94,13 +94,13 @@ const onClickLeft = () => {
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @slc-nav-bar-title-color | @color-text-base |
-|  @slc-nav-bar-link-color  | @color-text-base |
-|  @slc-nav-bar-spacing-v | 9PX |
-|  @slc-nav-bar-spacing-h  | 5PX |
-|  @slc-nav-bar-font-size | 16PX|
-|  @slc-nav-bar-back-font-size | 14PX |
-|  @slc-nav-bar-height | 92px |
+|  @nav-bar-title-color | @color-text-base |
+|  @nav-bar-link-color  | @color-text-base |
+|  @nav-bar-spacing-v | 9PX |
+|  @nav-bar-spacing-h  | 5PX |
+|  @nav-bar-font-size | 16PX|
+|  @nav-bar-back-font-size | 14PX |
+|  @nav-bar-height | 92px |
 `
 
 export default function DocsPage() {

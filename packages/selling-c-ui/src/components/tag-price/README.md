@@ -1,11 +1,11 @@
-# TabPrice
+# TabPrice 价格标签
 ### 介绍
 价格标签组件
-## 代码演示
 ### 引入
 ```js
 import { SlTagPrice } from 'tard'
 ```
+## 代码演示
 ### 基本用法
 ```js
 <SlTagPrice price="120" /> 

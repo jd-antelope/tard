@@ -1,13 +1,12 @@
-# Toast
+# Toast 轻提示
 ### 介绍
 按钮用于传递用户触摸时会触发的操作
-
-## 代码演示
 ### 引入
-在 Taro 文件中引入组件
 ```js
 import { SlToast } from 'tard'
 ```
+
+## 代码演示
 ### 基础用法
 ```js
 const Toast: FC = () => {
@@ -60,30 +59,30 @@ const Toast: FC = () => {
 ### 错误类型
 当属性 `status` 为 `error` 时会展示失败图片
 ```js
-showSlToast({ 
-  text: '文本', 
-  hasMask: true,
-  status: 'error' 
-})
+<SlToast
+  visible={ open }
+  text='文本'
+  status='error' 
+/>
 ```
 
 ### 成功类型
 当属性 `status` 为 `success` 时会展示成功图片
 ```js
-showSlToast({ 
-  text: '文本', 
-  hasMask: true,
-  status: 'success' 
-})
+<SlToast
+  visible={ open }
+  text='文本'
+  status='success' 
+/>
 ```
 ### 加载类型
 当属性 `status` 为 `loading` 时会展示加载中图片
 ```js
-showSlToast({ 
-  text: '文本', 
-  overlay: true,
-  status: 'loading' 
-})
+<SlToast
+  visible={ open }
+  text='文本'
+  status='loading' 
+/>
 ```
 
 
@@ -108,9 +107,9 @@ showSlToast({
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @slc-toast-min-width | 256px |
-|  @slc-toast-image-size | 120px |
-|  @slc-toast-font-size  | @font-size-base |
-|  @slc-toast-icon-size  |  80px |
-|  @slc-toast-color  | @color-white |
-|  @slc-toast-bg-color | rgba(0, 0, 0, 0.8) |
+|  @toast-min-width | 256px |
+|  @toast-image-size | 120px |
+|  @toast-font-size  | @font-size-base |
+|  @toast-icon-size  |  80px |
+|  @toast-color  | @color-white |
+|  @toast-bg-color | rgba(0, 0, 0, 0.8) |

@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlSwitch } from '@test/selling-c-ui'
+import { SlSwitch } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 import { useState } from 'react';

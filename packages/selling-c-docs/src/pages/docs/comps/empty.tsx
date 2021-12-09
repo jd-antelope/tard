@@ -1,30 +1,35 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# Empty
+const markdown = `# Empty 空状态
+### 介绍
 该组件封装了日常业务中常见的空数据的展示效果
-
-## 使用指南
-在 Taro 文件中引入组件
+### 引入
 ~~~js
 import { SlEmpty } from '@jd/selling-c-ui'
 ~~~
-
+## 使用指南
 ### 基础用法
+最简单的使用是通过src设置一张默认显示图片即可
 ~~~js
-<SlPrice price="23.00" />
+  <SlEmpty src="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/hsresult/no-wifi.png" />
 ~~~
-### 价格传入数组
-price 可以传入数组
+### 图文混排效果
+通过指定src 与 text 实现图文混排的效果
 ~~~js
-<SlPrice price={ ['6.00', '7.00', '23.00'] } />
-~~~
-
-### 大小
-修改 size 属性改变大小，基于750的尺寸
-~~~js
-<SlPrice price="23.00" size={ 35 } />
+<SlEmpty
+ text="网络错误"
+ src="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/hsresult/no-wifi.png" />
 ~~~
 
+### 支持用户反馈操作
+可通过 btnText 属性展示默认按钮，支持用户交互操作
+~~~js
+<SlEmpty
+text="网络错误"
+src="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/hsresult/no-wifi.png"
+btnText="重试"
+        />
+~~~
 ### 颜色
 修改 color 属性修改颜色
 ~~~js
@@ -70,28 +75,22 @@ price 可以传入数组
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
-| price | 价格 | string或者string[] | - |
-| originalPrice | 原价 | string | - |
-| originalColor | 原价颜色 | string | - |
-| color | 颜色 | string | - |
-| content | 价格后面的内容 | React.ReactNode | - |
-| commissionPrice | 是否展示佣金 | string | - |
-| fixedNum | 保留几位小数点 | number | - |
-| type | 类型 | Size | - |
-| size | 整体价格大小 | number | - |
-| symbolSize | 只修改价格大小 | number | - |
-| priceUnit | 价格单位 | string | ¥ |
-| unitSize | 价格单位大小 | number | 32 |
-| thousands | 是否按照千分号形式显示 | boolean | false |
+| src | 默认展示图片路径 | sting | - |
+| rect | 默认图片默认圆角类型 | rectType | rect |
+| text | 默认提示文案 | sting | - |
+| btnText | 默认按钮的展示文案 | sting | - |
 
-### Size 数据结构
-|  键名   | 单位和价格大小  |
-|  ----  | ----  |
-| small | 24 + 24 |
-| smallMiddle | 28 + 28 |
-| middle | 24 + 36 |
-| largeMiddle | 28 + 48 |
-| large | 36 + 60 |
+### RectType 
+|  值   | 说明 |
+|  ----  | ----  | 
+|  rect  | 矩形 |
+|  angle  | 值为24px的倒角 |
+|  circle  | 圆形 |
+
+### Events
+|  事件名称   | 说明  | 回调参数 |
+|  ----      | ---- |   ----  |
+|  onClick  | 按钮点击回调 | - |
 `
 
 export default function DocsPage() {

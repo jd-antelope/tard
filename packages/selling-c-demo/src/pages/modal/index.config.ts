@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Modal'
+  navigationBarTitleText: 'Modal',
+  enableShareAppMessage: true
 }

@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Form'
+  navigationBarTitleText: 'Form',
+  enableShareAppMessage: true
 }

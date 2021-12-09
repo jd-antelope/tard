@@ -1,11 +1,12 @@
 
-# Loading
+# Loading 加载
+### 介绍
 该标签在 Taro 的 Image 标签上面增加了错误处理、加载动画等属性
-## 代码演示
 ### 引入
 ```js
 import { SlLoading } from 'tard'
 ```
+## 代码演示
 ### 基础用法
 ```js
 <SlLoading />  

@@ -287,7 +287,7 @@
   margin-bottom: 10px;
 }
 
-.markdown-body p del {
+.markdown-body del {
   padding: 2px 5px;
   border-radius: 3px;
   text-decoration: none;
@@ -884,6 +884,19 @@
   color: #4994df
 }
 
+.language-js .comment{
+  color: #999 !important;
+}
+
+.language-shell .comment{
+  color: #999 !important;
+}
+
+.language-shell{
+  color: #58727e !important;  
+}
+
+
 .markdown-body .csv-data td,
 .markdown-body .csv-data th {
   padding: 5px;
@@ -967,7 +980,23 @@ body {
   width: 100%;
   height: 100%;
   -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
   -webkit-animation: sky 200000ms linear infinite;
-          animation: sky 200000ms linear infinite;
+  animation: sky 200000ms linear infinite;
+}
+
+.language-css {
+  color: #999 !important;
+}
+
+.language-css > span {
+  color: #999 !important;
+}
+
+.language-css .atrule{
+  color: #eb6f6f !important;
+}
+
+::selection {
+  background: #b3d4fc !important;
 }

@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Rate'
+  navigationBarTitleText: 'Rate',
+  enableShareAppMessage: true
 }

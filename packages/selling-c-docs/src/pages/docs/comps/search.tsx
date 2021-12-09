@@ -1,7 +1,6 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# search
-
+const markdown = `# Search 搜索
 ### 介绍
 带搜索按钮的输入框。
 ### 引入

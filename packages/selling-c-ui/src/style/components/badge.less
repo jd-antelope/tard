@@ -1,8 +1,8 @@
 @import "../variables/index.less";
 @import "../mixins/index.less";
 
-@slc-badge-border-radius: @slc-badge-font-size * .7;
-@slc-badge-box-shadow: 0 4px 8px 0 rgba(@slc-badge-bg-color, .2);
+@badge-border-radius: @badge-font-size * .7;
+@badge-box-shadow: 0 4px 8px 0 rgba(@badge-bg-color, .2);
 
 .slc-badge {
   position: relative;
@@ -15,27 +15,27 @@
     position: absolute;
     top: -6px;
     right: -6px;
-    width: @slc-badge-dot-size;
-    height: @slc-badge-dot-size;
+    width: @badge-dot-size;
+    height: @badge-dot-size;
     border-radius: 50%;
-    box-shadow: @slc-badge-box-shadow;
+    box-shadow: @badge-box-shadow;
     overflow: hidden;
-    background: @slc-badge-bg;
+    background: @badge-bg;
   }
 
   &__num {
     position: absolute;
-    top: -@slc-badge-border-radius;
+    top: -@badge-border-radius;
     right: -6px;
     z-index: 1;
     padding: 0 @spacing-h-sm;
-    border-radius: @slc-badge-border-radius @slc-badge-border-radius @slc-badge-border-radius 0;
-    box-shadow: @slc-badge-box-shadow;
+    border-radius: @badge-border-radius @badge-border-radius @badge-border-radius 0;
+    box-shadow: @badge-box-shadow;
     overflow: hidden;
-    font-size: @slc-badge-font-size;
+    font-size: @badge-font-size;
     line-height: 1.4;
-    color: @slc-badge-color;
-    background: @slc-badge-bg;
+    color: @badge-color;
+    background: @badge-bg;
     transform: translate(50%, 0);
   }
 }

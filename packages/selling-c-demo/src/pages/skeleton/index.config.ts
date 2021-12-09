@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Skeleton'
+  navigationBarTitleText: 'Skeleton',
+  enableShareAppMessage: true
 }

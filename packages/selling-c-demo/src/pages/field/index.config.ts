@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Field'
+  navigationBarTitleText: 'Field',
+  enableShareAppMessage: true
 }

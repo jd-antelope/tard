@@ -1,7 +1,6 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `
-# 快速开始
+const markdown = `# 快速开始
 ## 使用前必备
 在你使用之前请确保您已经满足以下条件：
 + 您当前项目必须使用Taro框架进行开发
@@ -11,12 +10,12 @@ const markdown = `
 ## 使用步骤
 1. 配置Taro开发环境
  安装 Taro 开发工具 @tarojs/cli
- ~~~js
+ ~~~shell
  npm install -g @tarojs/cli
  ~~~
 
  检查安装是否正确
- ~~~js
+ ~~~shell
  npm info @tarojs/cli
  ~~~
  如果结果如下图，说明您已经安装成功，如果安装失败，进入Taro官网检查步骤后重新尝试
@@ -24,11 +23,11 @@ const markdown = `
 
 2. 项目初始化
 使用命令创建模板项目：
-~~~js
+~~~shell
 $ taro init myApp
 ~~~
 3. 安装Tard UI
-~~~js
+~~~shell
 $ cd  myApp
 $ npm install tard --save
 ~~~
@@ -76,7 +75,7 @@ export default memo(Button);
 ~~~
 ## 启动项目
  微信小程序编译预览模式
- ~~~js
+ ~~~shell
  # npm script
 $ npm run dev:weapp
 # 仅限全局安装
@@ -85,19 +84,17 @@ $ taro build --type weapp --watch
 $ npx taro build --type weapp --watch
  ~~~
 h5移动端编译预览模式
- ~~~js
+ ~~~shell
  # npm script
  $ npm run dev:h5
  # 仅限全局安装
  $ taro build --type h5 --watch
  # npx 用户也可以使用
  $ npx taro build --type h5 --watch
- ~~~
-`
-
+ ~~~`
 
 export default function DocsPage() {
   return (
-    <MarkDown markdown={markdown} />
+    <MarkDown markdown={ markdown } />
   );
 }

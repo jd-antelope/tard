@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { View, Image } from '@tarojs/components'
 import { navigateTo } from '@tarojs/taro';
-import { SlIcon } from '@test/selling-c-ui'
+import { SlIcon } from 'tard'
 import './index.less'
 import MenuObj from '../../docs-route'
 import { isWeb } from '../../utils'

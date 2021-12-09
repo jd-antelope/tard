@@ -63,3 +63,5 @@ export interface SlSwitchState {
   checked?: boolean
 }
 declare const SlSwitch: ComponentClass<SlSwitchProps>
+
+export default SlSwitch

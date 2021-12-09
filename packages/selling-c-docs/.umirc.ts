@@ -1,11 +1,13 @@
 import { defineConfig } from 'umi';
-const  transformPlugin = require('./scripts/createroute.js')
+const transformPlugin = require('./scripts/createroute.js')
+const setMarkdown = require('./scripts/set-markdown.js')
 
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
   fastRefresh: {},
+  links: [{ rel: 'icon', href: '/images/favicon.ico' }],
   theme: {
     "primary-color": "#102DF5",
     "primary-color-light": "#F7F8FF",
@@ -14,6 +16,7 @@ export default defineConfig({
   chainWebpack (config) {
     if (process.env.UMI_ENV !== 'prod') {
       config.plugin('transformMd').use(new transformPlugin())
+      config.plugin('setMarkdown').use(new setMarkdown())
     }
   }
 })

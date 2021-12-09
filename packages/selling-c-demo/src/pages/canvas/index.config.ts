@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Canvas'
+  navigationBarTitleText: 'Canvas',
+  enableShareAppMessage: true
 }

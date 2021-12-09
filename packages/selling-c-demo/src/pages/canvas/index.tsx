@@ -1,8 +1,8 @@
 import React, { memo, useState, useCallback } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlCanvas, SlButton } from '@test/selling-c-ui'
-import { SlCanvasProps } from '@test/selling-c-ui/types/canvas'
+import { SlCanvas, SlButton } from 'tard'
+import { SlCanvasProps } from 'tard/types/canvas'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 

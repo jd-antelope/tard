@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Media'
+  navigationBarTitleText: 'Media',
+  enableShareAppMessage: true
 }

@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Grid'
+  navigationBarTitleText: 'Grid',
+  enableShareAppMessage: true
 }

@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Result'
+  navigationBarTitleText: 'Result',
+  enableShareAppMessage: true
 }

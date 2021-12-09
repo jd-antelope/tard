@@ -1,13 +1,11 @@
-# Grid
-
+# Grid 宫格
 ### 介绍
 宫格可以在水平方向上把页面分隔成等宽度的区块，用于展示内容或进行页面导航。
-
-## 代码演示
 ### 引入
 ```js
 import { SlGrid, SlGridItem } from 'tard'
 ```
+## 代码演示
 ### 基础用法
 通过 `url` 属性设置格子内的图标，`text` 属性设置文字内容。
 ```js
@@ -134,7 +132,8 @@ import { SlGrid, SlGridItem } from 'tard'
 组件提供了下列 Less 变量，可用于自定义样式
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @slc-grid-item-padding-y | 18px |
-|  @slc-grid-item-image-size | 60px |
-|  @slc-grid-item-text-padding | 12px |
-|  @slc-badge-dot-size  | 24px |
+| @grid-bg | #ffffff |
+|  @grid-item-padding-y | 18px |
+|  @grid-item-image-size | 60px |
+|  @grid-item-text-padding | 12px |
+|  @badge-dot-size  | 24px |

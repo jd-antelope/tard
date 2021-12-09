@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Upload'
+  navigationBarTitleText: 'Upload',
+  enableShareAppMessage: true
 }

@@ -1,7 +1,7 @@
 @import '../variables/index.less';
 @import '../mixins/index.less';
 
-@slc-modal-duration: 200ms;
+@modal-duration: 200ms;
 
 .slc-modal {
   position: fixed;
@@ -10,14 +10,14 @@
   top: 0;
   left: 0;
   visibility: hidden;
-  transition: visibility @slc-modal-duration ease-in;
+  transition: visibility @modal-duration ease-in;
   z-index: @zindex-modal;
 
   /* elements */
   &__overlay,
   &__container {
     opacity: 0;
-    transition: opacity @slc-modal-duration ease-in;
+    transition: opacity @modal-duration ease-in;
   }
 
   &__overlay {
@@ -27,16 +27,16 @@
   // &__button{
   //   margin: 0;
   //   &-confirm{
-  //     color:  @slc-modal-btn-confirm-color;
+  //     color:  @modal-btn-confirm-color;
   //   }
   // }
 
   &__container {
     .mixin-absolute-center();
 
-    width: @slc-modal-width;
+    width: @modal-width;
     border-radius: @border-radius-lg;
-    background-color: @slc-modal-bg-color;
+    background-color: @modal-bg-color;
     overflow: hidden;
   }
 
@@ -45,7 +45,7 @@
     .line(1);
 
     padding: @spacing-v-md @spacing-h-lg;
-    color: @slc-modal-header-text-color;
+    color: @modal-header-text-color;
     font-size: @font-size-lg;
     text-align: center;
   }
@@ -53,7 +53,7 @@
   &__content {
     padding: @spacing-h-xl @spacing-h-lg;
     max-height: 840px;
-    color: @slc-modal-content-text-color;
+    color: @modal-content-text-color;
     font-size: @font-size-base;
     box-sizing: content-box;
     width: auto;
@@ -73,7 +73,7 @@
         margin-top: 0;
         min-width: 160px;
         height: 88px;
-        color: @slc-modal-btn-default-color;
+        color: @modal-btn-default-color;
         font-size: @font-size-base;
         line-height: 86px;
         outline: 0;
@@ -93,13 +93,13 @@
         }
 
         &:last-child {
-          color: @slc-modal-btn-confirm-color;
+          color: @modal-btn-confirm-color;
         }
       }
     }
 
     &--simple .slc-modal__action > taro-button-core:last-child:nth-child(2), &--simple .slc-modal__action > button:last-child:nth-child(2) {
-      color: @slc-modal-btn-confirm-color;
+      color: @modal-btn-confirm-color;
     }
   }
 

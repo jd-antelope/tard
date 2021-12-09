@@ -53,7 +53,7 @@ export interface SlButtonProps extends TaroButtonProps, SlComponent {
   /**
    * 点击按钮时触发
    */
-  onClick?: CommonEventFunction
+  onClick?: Function
 }
 
 

@@ -1,7 +1,7 @@
 import MarkDown from '@/components/markdown'
 
 const markdown = `
-# InputNumber
+# InputNumber 数字输入框
 ### 介绍
 带加减按钮的数字输入框，用户可以控制每次点击增加的数值，支持小数，同时支持自定义输入框宽度
 ### 引入
@@ -73,20 +73,20 @@ const [value1, setValue1] = useState(0)
 |  ----  | ----  | ---- |
 |  onChange  | 输入框值改变时触发的事件  | 输入框当前值 value |
 |  onBlur  | 输入框值失去焦点时触发的事件  | event |
-|  onErrorInput  | 输入框尝试输入错误数组触发的事件  | ({ type: OVER | LOW | DISABLED, errorValue: number}) |
+|  onErrorInput  | 输入框尝试输入错误数组触发的事件  | event |
 
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @slc-input-number-text-color | @color-text-base |
-|  @slc-input-number-font-size | @font-size-base |
-|  @slc-input-number-font-size-lg  | @font-size-xl |
-|  @slc-input-number-btn-color | @primary-color |
-|  @slc-input-number-btn-size  | 30px |
-|  @slc-input-number-btn-size-lg  | 36px |
-|  @slc-input-number-width-min | 36px |
-|  @slc-input-number-width-min-lg | 80px |
-|  @slc-input-number-btn-size  | 120px |
+|  @input-number-text-color | @color-text-base |
+|  @input-number-font-size | @font-size-base |
+|  @input-number-font-size-lg  | @font-size-xl |
+|  @input-number-btn-color | @primary-color |
+|  @input-number-btn-size  | 30px |
+|  @input-number-btn-size-lg  | 36px |
+|  @input-number-width-min | 36px |
+|  @input-number-width-min-lg | 80px |
+|  @input-number-btn-size  | 120px |
 `
 
 export default function DocsPage() {

@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Switch'
+  navigationBarTitleText: 'Switch',
+  enableShareAppMessage: true
 }

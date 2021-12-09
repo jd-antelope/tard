@@ -14,17 +14,17 @@ export default class SlPopup extends React.Component<SlPopupProps, SlPopupState>
   public constructor(props: SlPopupProps) {
     super(props)
 
-    const { isOpened } = props
+    const { visible } = props
     this.state = {
-      _isOpened: isOpened
+      _isOpened: visible
     }
   }
 
   public UNSAFE_componentWillReceiveProps(nextProps: SlPopupProps): void {
-    const { isOpened } = nextProps
-    if (isOpened !== this.state._isOpened) {
+    const { visible } = nextProps
+    if (visible !== this.state._isOpened) {
       this.setState({
-        _isOpened: isOpened
+        _isOpened: visible
       })
     }
   }
@@ -43,7 +43,7 @@ export default class SlPopup extends React.Component<SlPopupProps, SlPopupState>
     )
   }
   private outClick = () => {
-    this.props.outClose && this.close()
+    this.props.closeOnclickOverlay && this.close()
   }
 
   private handleTouchMove = (e: CommonEvent): void => {
@@ -53,7 +53,7 @@ export default class SlPopup extends React.Component<SlPopupProps, SlPopupState>
   public render(): JSX.Element {
     const { _isOpened } = this.state
     const {
-      title, children, align
+      title, children, titleAlign
     } = this.props
     const rootClass = classNames(
       'slc-popup',
@@ -69,7 +69,7 @@ export default class SlPopup extends React.Component<SlPopupProps, SlPopupState>
       }
     )
     const titleStyle: string = objectToString({
-      'text-align': align
+      'text-align': titleAlign
     })
 
     return (
@@ -97,15 +97,15 @@ export default class SlPopup extends React.Component<SlPopupProps, SlPopupState>
 
 SlPopup.propTypes = {
   title: PropTypes.string,
-  align: PropTypes.oneOf(['center', 'left']),
-  isOpened: PropTypes.bool,
+  titleAlign: PropTypes.oneOf(['center', 'left']),
+  visible: PropTypes.bool,
   onClose: PropTypes.func,
 }
 
 SlPopup.defaultProps = {
-  isOpened: false,
-  outClose: false,
-  align: 'center'
+  visible: false,
+  closeOnclickOverlay: false,
+  titleAlign: 'center'
 }
 
 

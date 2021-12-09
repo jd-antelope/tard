@@ -1,12 +1,11 @@
-# Field
+# Field 输入框
 ### 介绍
 表单中的输入框组件。
-## 代码演示
 ### 引入
 ```js
 import { SlField } from 'tard'
 ```
-
+## 代码演示
 ### 基本用法
 ```js
 <SlField

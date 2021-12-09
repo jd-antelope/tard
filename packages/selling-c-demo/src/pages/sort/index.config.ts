@@ -1,3 +1,4 @@
 export default {
-  navigationBarTitleText: 'Sort'
+  navigationBarTitleText: 'Sort',
+  enableShareAppMessage: true
 }

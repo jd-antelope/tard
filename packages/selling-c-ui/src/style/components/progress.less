@@ -25,15 +25,15 @@
 
     &-inner {
       width: 100%;
-      background-color: @slc-progress-inner-bg-color;
-      border-radius: @slc-progress-height / 2;
+      background-color: @progress-inner-bg-color;
+      border-radius: @progress-height / 2;
       vertical-align: middle;
 
       &-background {
         position: relative;
-        height: @slc-progress-height;
-        border-radius: @slc-progress-height / 2;
-        background-color: @slc-progress-bar-bg-color;
+        height: @progress-height;
+        border-radius: @progress-height / 2;
+        background-color: @progress-bar-bg-color;
         transition: all 0.3s @ease-in-out-quad;
         overflow: hidden;
       }
@@ -43,11 +43,11 @@
   &__content {
     flex: 1 1 70px;
     margin-left: 10px;
-    font-size: @slc-progress-text-size;
+    font-size: @progress-text-size;
     text-align: center;
 
     .@{--css-prefix}-icon {
-      font-size: @slc-progress-icon-size;
+      font-size: @progress-icon-size;
     }
   }
 
@@ -57,8 +57,8 @@
       content: "";
       opacity: 0;
       .mixin-position-absolute();
-      background: @slc-progress-bar-bg-color-active;
-      border-radius: @slc-progress-height / 2;
+      background: @progress-bar-bg-color-active;
+      border-radius: @progress-height / 2;
       animation: progress-active 2s @ease-out-quad infinite;
     }
   }
