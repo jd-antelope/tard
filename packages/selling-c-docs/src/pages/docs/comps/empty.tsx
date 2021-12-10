@@ -1,15 +1,8 @@
 import MarkDown from '@/components/markdown'
 
-<<<<<<< Updated upstream
 const markdown = `# Empty 空状态
 ### 介绍
 该组件封装了日常业务中常见的空数据的展示效果
-=======
-const markdown = `# Empty
-### 介绍
-该组件封装了日常业务中常见的空数据的展示效果
-
->>>>>>> Stashed changes
 ### 引入
 ~~~js
 import { SlEmpty } from '@jd/selling-c-ui'

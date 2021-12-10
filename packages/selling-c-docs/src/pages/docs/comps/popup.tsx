@@ -9,13 +9,9 @@ const markdown = `
 ~~~js
 import { SlPopup } from "@jd/selling-c-ui";
 ~~~
-
-## 使用指南
-
-### 基础用法
-
-直接引入组件即可
-
+## 代码演示
+### 基本用法
+直接引入组件后即可使用、也可以自定义标题、标题对齐方式、是否允许区域外点击
 ~~~js
 const Popup: FC = () => {
   const [isVisible, setIsVisible] = useState < Boolean > false;
