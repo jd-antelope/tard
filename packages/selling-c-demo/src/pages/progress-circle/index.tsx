@@ -20,7 +20,7 @@ const Person: FC = () => {
         <SlProgressCircle percent={25} size={300} text="圆环直径" />
 
         <View className='doc-body-content-tip'>自定义进度条宽度</View>
-        <SlProgressCircle percent={25} strokeWidth={10} text="进度条宽度" />
+        <SlProgressCircle percent={50} strokeWidth={10} text="进度条宽度" />
 
       </View>
     </View>
