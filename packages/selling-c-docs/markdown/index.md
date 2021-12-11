@@ -18,7 +18,8 @@
 + Android 5.0+
 + iOS 9.2+
 ## 贡献者
-
+![Alt](https://avatars.githubusercontent.com/u/51318010?v=4)
+![Alt](https://avatars.githubusercontent.com/u/29476081?v=4)
 ## 链接
 + 仓库地址
 + 意见反馈

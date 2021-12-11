@@ -287,6 +287,14 @@
   margin-bottom: 10px;
 }
 
+.markdown-body p img[alt=Alt] {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .markdown-body del {
   padding: 2px 5px;
   border-radius: 3px;
