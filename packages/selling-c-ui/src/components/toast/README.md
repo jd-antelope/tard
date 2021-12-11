@@ -109,7 +109,7 @@ const Toast: FC = () => {
 |  ---- | ---- |
 |  @toast-min-width | 248px |
 |  @toast-max-width | 460px |
-|  @toast-image-size | 120px |
+|  @toast-image-size | 80px |
 |  @toast-font-size  | @font-size-base |
 |  @toast-icon-size  |  80px |
 |  @toast-color  | @color-white |

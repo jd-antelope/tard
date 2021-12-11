@@ -119,13 +119,11 @@ export default class SlToast extends React.Component<
         >
           <View className='toast-body-content'>
             {realImg ? (
-              <View className='toast-body-content__img'>
                 <Image
                   className='toast-body-content__img-item'
                   src={realImg}
                   mode='scaleToFill'
                 />
-              </View>
             ) : null}
             {isRenderIcon && (
               <View className='toast-body-content__icon'>
@@ -134,7 +132,7 @@ export default class SlToast extends React.Component<
             )}
             {text && (
               <View className='toast-body-content__info'>
-                <Text>{text}</Text>
+              {text}
               </View>
             )}
           </View>
