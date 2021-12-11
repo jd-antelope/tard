@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages/selling-c-ui"
+    "packages/tard-ui"
   ],
   "command": {
     "version": {

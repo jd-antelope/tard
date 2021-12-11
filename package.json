@@ -7,9 +7,9 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "build:component": "lerna run --scope @jd/selling-c-ui build",
+    "build:component": "lerna run --scope tard-ui build",
     "clean": "lerna run clean",
-    "clean:component": "lerna run --scope @jd/selling-c-ui clean",
+    "clean:component": "lerna run --scope tard-ui clean",
     "version": "lerna version --conventional-commits",
     "updated": "lerna updated",
     "changed": "lerna changed",

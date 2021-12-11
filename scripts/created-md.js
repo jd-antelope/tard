@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 const cwd = process.cwd()
 
 const getDocsPath = () => {
-  const packagePaths = globby.sync('../packages/selling-c-ui/src/components', {
+  const packagePaths = globby.sync('../packages/tard-ui/src/components', {
     cwd: __dirname,
     expandDirectories: {
 			files: ['*/*.md'],
@@ -26,7 +26,7 @@ const getMdFile = (path) => {
 const writeMarkdown = (mdContent, v) => {
   const jsonContent = fs.readFileSync(`${cwd}/scripts/template.txt`, 'utf-8')
   const jsonResult = jsonContent.replace(`{{this}}`, mdContent)
-  fs.writeFileSync(`${cwd}/packages/selling-c-docs/src/pages/docs/${v}.tsx`, jsonResult)
+  fs.writeFileSync(`${cwd}/packages/tard-docs/src/pages/docs/${v}.tsx`, jsonResult)
   console.log(`${v}解析完成`)
 }
 
@@ -40,7 +40,7 @@ const changeDocRoute = (docs) => {
   })
   const jsonContent = fs.readFileSync(`${cwd}/scripts/doc-route-template.txt`, 'utf-8')
   const jsonResult = jsonContent.replace(`{{this}}`, JSON.stringify(list))
-  fs.writeFileSync(`${cwd}/packages/selling-c-docs/src/business/docs-route.ts`, jsonResult)
+  fs.writeFileSync(`${cwd}/packages/tard-docs/src/business/docs-route.ts`, jsonResult)
   console.log('列表加载完成')
 }
 

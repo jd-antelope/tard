@@ -39,9 +39,9 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",                            //为所有的子包自动安装package.json依赖
     "build": "lerna run build",                                //编译命令为我们编译每npm包下的的buil的命令   
-    "build:component": "lerna run --scope selling-c-ui build", //作用跟上一个命令类似 --scope 允许我们只执行指定包下命令
+    "build:component": "lerna run --scope tard-ui build", //作用跟上一个命令类似 --scope 允许我们只执行指定包下命令
     "clean": "lerna run clean",的                              //执行删除命令 删除各个包下的node_modules
-    "clean:component": "lerna run --scope selling-c-ui clean", //区别同上
+    "clean:component": "lerna run --scope tard-ui clean", //区别同上
     "version": "lerna version",                                //检查需要发布的包，并且提示用户指定版本号
     "publish": "lerna publish from-package "                   //发布npm包
   },

@@ -2,7 +2,7 @@
 ## 开发
 ```shell
 yarn
-cd packages/selling-c-ui
+cd packages/tard-ui
 yarn build:weapp
 ```
 开发新组件
@@ -16,11 +16,11 @@ npm run create
 
 ## 项目间调用
 ```shell
-cd packages/selling-c-ui
+cd packages/tard-ui
 yarn dev:watch
 yarn link
 ```
 另外的项目调用
 ```shell
-yarn link @jd/selling-c-ui
+yarn link tard
 ```

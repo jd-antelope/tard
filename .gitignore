@@ -7,8 +7,8 @@ package-lock.json
 
 # Build outputs
 dist
-packages/selling-c-ui/lib
-packages/selling-c-ui/dist
+packages/tard-ui/lib
+packages/tard-ui/dist
 
 # umi
 .umi

@@ -1,9 +1,0 @@
-import MarkDown from '@/components/markdown'
-
-const markdown = `{{this}}`
-
-export default function DocsPage() {
-  return (
-    <MarkDown markdown={ markdown } />
-  );
-}
