@@ -1,0 +1,14 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@sl-form-bg-color: transparent;
+
+.@{--css-prefix}-form {
+  display: block;
+  background-color: @sl-form-bg-color;
+
+  &.@{--css-prefix}-form-border {
+    .mixin-hairline-top-bottom(#f2f2f2);
+  }
+}

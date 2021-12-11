@@ -1,0 +1,44 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+.@{--css-prefix}-footer {
+  overflow: hidden
+}
+.slc-custom-footer-container {
+  //padding: 20px;
+  background: #fff;
+  max-width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+
+  .slc-custom-outer {
+    width: 100%;
+    display: flex;
+  }
+
+  .slc-custom-footer{
+    flex: 1;
+    text-align: center;
+  }
+
+  .slc-custom-footer-btn1 {
+    color: #fff;
+    background: @primary-color;
+  }
+
+  .slc-custom-footer-btn2{
+    color: #333;
+    background: #f1f1f1;
+  }
+}
+.slc-custom-footer-container-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  padding-bottom: constant(safe-area-inset-bottom) !important;
+  padding-bottom: env(safe-area-inset-bottom) !important;
+
+}

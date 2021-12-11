@@ -1,0 +1,208 @@
+
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@field-padding-x: 20px;
+@field-title-w: 144px;
+@field-label-h: 60px;
+@field-textarea-h: 202px;
+@field-box-borderRadius: 20px;
+
+.@{--css-prefix}-field {
+  position: relative;
+  padding: @field-padding-x 0;
+  color: @field-label-color;
+
+  /* 修复底线隐藏问题 */
+  margin-bottom: 1PX;
+  .mixin-hairline-bottom(#f2f2f2);
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: @zindex-form;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  /* elements */
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content-textarea {
+    display: block;
+  }
+
+  &__title {
+    width: @field-title-w;
+    font-size: @field-font-size;
+    height: @field-label-h;
+    line-height: @field-label-h;
+    text-align: left;
+    color: @color-grey-2;
+
+    &--required {
+      &::before {
+        display: inline-block;
+        color: @color-error;
+        font-size: @field-font-size;
+        font-family: SimSun, sans-serif;
+        line-height: 1;
+        content: "*";
+      }
+    }
+  }
+
+  &__input {
+    flex: 1;
+    display: inline-block;
+    padding-right: @spacing-v-md;
+    color: @field-text-color;
+    font-size: @field-font-size;
+    line-height: @line-height-zh;
+    vertical-align: middle;
+    .placeholder(@field-placeholder-color);
+  }
+
+  &__box {
+    width: 100%;
+    position: relative;
+    margin-top: @field-padding-x;
+    min-height: @field-textarea-h;
+    background: #f9f9f9;
+    border-radius: @field-box-borderRadius;
+    overflow: hidden;
+    &-textarea {
+      height: @field-textarea-h;
+      padding: @spacing-h-lg;
+      .taro-textarea {
+        background: #f9f9f9;
+      }
+    }
+    &-textarea__ph {
+      color: #ccc;
+    }
+    &-number {
+      position: absolute;
+      bottom: 16px;
+      right: 24px;
+      color: #C6C6CC;
+      &__active {
+        color: #2A2B2E;
+      }
+    }
+  }
+
+  &__box-title {
+    margin-top: 0;
+  }
+
+  &__content {
+    flex: 1;
+    height: @field-label-h;
+    font-size: @field-font-size;
+    .mixin-flex-space-between();
+    &-title {
+      flex: 1;
+      display: flex;
+    }
+  }
+
+  input {
+    color: @field-text-color;
+    font-size: @field-font-size;
+    height: @field-font-size * 1.4;
+    line-height: @line-height-zh;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    width: 40px;
+    min-width: 40px;
+    height: 100%;
+    font-size: @field-font-size;
+    text-align: center;
+    line-height: 1;
+
+    &-close {
+      color: #ccc;
+    }
+
+    &-alert {
+      color: #FF4949;
+    }
+  }
+
+  &__children {
+    display: inline-flex;
+    .mixin-hairline-left();
+
+    > view,
+    div,
+    span,
+    text,
+    image,
+    .taro-img {
+      display: inline-block;
+      padding: 0 @spacing-v-md;
+      color: @primary-color;
+      font-size: @field-font-size;
+      text-align: center;
+    }
+
+    > image,
+    img,
+    .taro-img {
+      display: inline-block;
+      width: 145px;
+      height: 60px;
+      vertical-align: middle;
+    }
+  }
+
+  /* modifiers */
+  &--error {
+    color: @color-error;
+  }
+
+  &--disabled {
+    opacity: @opacity-disabled;
+  }
+
+  &--without-border {
+    &::after {
+      border: none;
+    }
+  }
+
+  textarea::-webkit-input-placeholder{
+    color: @color-grey-3;
+    font-size: @font-size-base;
+  }
+  textarea::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color: @color-grey-3;
+    font-size: @font-size-base;
+  }
+  textarea:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color: @color-grey-3;
+    font-size: @font-size-base;
+  }
+  textarea:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+    color: @color-grey-3;
+    font-size: @font-size-base;
+  }
+  &.@{--css-prefix}-field__textarea-padding {
+    padding: 0;
+  }
+}
+

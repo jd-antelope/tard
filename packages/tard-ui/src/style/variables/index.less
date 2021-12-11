@@ -1,0 +1,258 @@
+// 定义前缀
+@--css-prefix: slc;
+
+// 基本单位
+@hd: 2;
+
+// Color
+@primary-color: var(--primaryColor);
+@color-success: #13CE66;
+@color-error: #FF4949;
+@color-warning: #FFC82C;
+@color-info: #78A4FA;
+
+// Color Palette
+@color-black-0: #000;
+@color-black-1: #333;
+@color-black-2: #7F7F7F;
+@color-black-3: #B2B2B2;
+@color-grey-0: #333;
+@color-grey-1: #666;
+@color-grey-2: #999;
+@color-grey-3: #CCC;
+@color-grey-4: #E5E5E5;
+@color-grey-5: #F0F0F0;
+@color-grey-6: #F7F7F7;
+@color-grey-7: #EFEFEF;
+@color-white: #FFF;
+@color-bg: #FFF;
+
+// Text Color
+@color-text-base: #333; // 文字的基本色
+@color-text-base-inverse: #FFF; // 反色
+@color-text-secondary: #36D57D; // 辅助色
+@color-text-placeholder: #C9C9C9;
+@color-text-disabled: #CCC;
+@color-text-title: #2C405A; // 文章标题
+@color-text-paragraph: #3F536E; // 文章段落
+
+// opacity
+@opacity-active: .8;
+@opacity-disabled: .3;
+
+// overlay
+@overlay-bg-color: rgba(0,0,0,0.65);
+
+// 边框颜色
+@color-border-base: #C5D9E8;
+@color-border-split: mix(#FFF, @color-border-base, 20%);
+@color-border-light: mix(#FFF, @color-border-base, 30%);
+@color-border-lighter: mix(#FFF, @color-border-base, 50%);
+@color-border-lightest: mix(#FFF, @color-border-base, 80%);
+@color-border-grey: #CCC;
+
+// 图标颜色
+@color-icon-base: #CCC;
+
+// ease
+@ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+@ease-in-out-quad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
+// Font
+@font-size-xs: 10px * @hd; // 非常用字号，用于标签
+@font-size-sm: 12px * @hd; // 用于辅助信息
+@font-size-base: 14px * @hd; // 常用字号
+@font-size-lg: 16px * @hd; // 常规标题
+@font-size-xl: 18px * @hd; // 大标题
+@font-size-xxl: 20px * @hd; // 用于大号的数字
+
+// z-index
+@zindex-form: 700;
+@zindex-toast: 1090;
+@zindex-modal: 1000;
+@zindex-popup__layout:1000;
+@zindex-nav: 800;
+@zindex-loading: 1090;
+@zindex-overlay: 1000;
+
+// 水平间距
+@spacing-h-sm: 3px * @hd;
+@spacing-h-md: 8px * @hd;
+@spacing-h-lg: 12px * @hd;
+@spacing-h-xl: 16px * @hd;
+
+// 垂直间距
+@spacing-v-xs: 3px * @hd;
+@spacing-v-sm: 6px * @hd;
+@spacing-v-md: 9px * @hd;
+@spacing-v-lg: 12px * @hd;
+@spacing-v-xl: 15px * @hd;
+
+// Border Radius
+@border-radius-sm: 2px * @hd;
+@border-radius-md: 8px;
+@border-radius-lg: 12px;
+@border-radius-hg: 20px;
+@border-radius-circle: 50%;
+
+// Line Height
+@line-height-base: 1; // 单行
+@line-height-en: 1.3; // 英文多行
+@line-height-zh: 1.5; // 中文多行
+
+// font family
+// 基本字体
+@family-base: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
+'Microsoft Yahei', sans-serif;
+// 数字字体
+@family-integer: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+sans-serif;
+
+// 组件变量
+// Badge
+@badge-color: @color-white;
+@badge-bg-color: @color-error;
+@badge-bg: @badge-bg-color;
+@badge-font-size: @font-size-xs;
+@badge-dot-size: 20px ;
+
+// Button
+@button-height: 80px;
+@button-height-sm: 80px;
+@button-small-width-min: 100px;
+@button-small-width-max: 1600px;
+@button-normal-width-min: 220px;
+@button-normal-width-max: 280px;
+@button-middle-width-min: 340px;
+@button-middle-width-max: 400px;
+@button-large-width-min: 480px;
+@button-large-width-max: 540px;
+
+// DropdownMenu
+@dropdown-menu-background-color: @color-bg;
+@dropdown-menu-title-font-size: @font-size-base;
+@dropdown-menu-title-text-color: @color-text-base;
+@dropdown-menu-height: 80px;
+@dropdown-menu-box-shadow: 0 2px 12px #ebedf0;
+@dropdown-item-z-index: 10;
+@dropdown-item-border-radius: 16px;
+@dropdown-menu-active-background-color: #F4F6FA;
+@dropdown-overlay-bg-color: @overlay-bg-color;
+@dropdown-overlay-z-index: 99;
+
+// Empty
+@empty-image-size:200px;
+@empty-image-size:200px;
+@empty-image-radius:24px;
+@empty-text-size:32px;
+
+// Field
+@field-label-color: @color-text-base;
+@field-text-color: @color-text-base;
+@field-font-size: @font-size-base;
+@field-placeholder-color: @color-grey-3;
+
+// Grid
+@grid-bg: #fff;
+@grid-item-padding-y: 18px;
+@grid-item-image-size: 60px;
+@grid-item-text-padding: 12px;
+@grid-item-text-size: 24px;
+
+// InputNumber
+@input-number-text-color: @color-text-base;
+@input-number-font-size: @font-size-base;
+@input-number-font-size-lg: @font-size-xl;
+@input-number-btn-color: @primary-color;
+@input-number-btn-size: 30px;
+@input-number-btn-size-lg: 36px;
+@input-number-width-min: 80px;
+@input-number-width-min-lg: 120px;
+
+// Modal
+@modal-width: 540px;
+@modal-header-text-color: @color-text-base;
+@modal-content-text-color: @color-text-base;
+@modal-btn-default-color: @color-text-base;
+@modal-btn-confirm-color: @primary-color;
+@modal-bg-color: @color-white;
+
+// NavBar
+@nav-bar-title-color: @color-text-base;
+@nav-bar-link-color: @color-text-base;
+@nav-bar-spacing-v: 9PX;
+@nav-bar-spacing-h: 5PX;
+@nav-bar-font-size: 16PX;
+@nav-bar-back-font-size: 14PX;
+@nav-bar-height: 92px;
+
+// Popup
+@popup-height-min: 600px;
+@popup-height-max: 950px;
+@popup-header-height: 72px;
+@popup-height: 72px;
+@popup-header-position-right: 48px;
+@popup-header-close-width: 40px;
+@popup-header-close-height: 40px;
+@popup-close-btn-width: 36px;
+@popup-close-btn-color: @color-grey-3;
+
+// Price
+@price-height: 50px;
+@price-commission-height: 30px;
+
+// Progress
+@progress-height: 16px; 
+@progress-text-size: @font-size-sm;
+@progress-icon-size: @font-size-xl;
+@progress-inner-bg-color: @color-grey-6;
+@progress-bar-bg-color: #78A4F4; 
+@progress-bar-bg-color-active: @color-white;
+
+// Rate
+@rate-icon-size: 20px;
+@rate-star-color: #ECECEC;
+@rate-star-color-on: #FFCA3E;
+
+// Sort
+@sort-arrow-color: @color-grey-3;
+@sort-text-default-color: @color-text-base;
+@sort-text-active-color: #FF2929;
+
+// Switch
+@switch-title-color: @color-text-base;
+@switch-bg-color: #F2F2F2;
+@switch-btn-color: @color-white;
+@switch-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+
+// Tab
+@tab-color: @color-text-base;
+@tab-color-active: #FF2929;
+@tab-font-size: @font-size-base;
+@tab-line-height: 3px;
+@tab-underline-color: @color-grey-7;
+@tab-bg-color: @color-bg;
+@tab-item-space: 60px;
+@tab-item-underline-space: @spacing-v-xl;
+
+// TagPrice
+@tag-price-color: #FF2929;
+@tag-price-padding: 3px 10px;
+@tag-price-text-size: 24px;
+@tag-price-border-radius: @border-radius-sm;
+
+// Toast
+@toast-min-width: 256px;
+@toast-image-size: 120px;
+@toast-font-size: @font-size-base;
+@toast-icon-size: 80px;
+@toast-color: @color-white;
+@toast-bg-color: rgba(0, 0, 0, 0.8);
+
+/* media-picker */
+@media-picker-btn-add-color: @color-grey-3;
+@media-picker-btn-remove-color: @color-white;
+@media-picker-btn-remove-bg-color: @color-grey-2;
+@media-picker-btn-remove-size: 30px;
+@media-picker-btn-remove-pos: -10px;

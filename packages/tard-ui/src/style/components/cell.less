@@ -1,0 +1,33 @@
+@import '../variables/index.less';
+@import '../mixins/index.less';
+
+@Cell: .slc-cell;
+
+@cell-icon-font-size: 30px;
+@cell-witch: 100%;
+@cell-margin: 3%;
+@cell-border: 1px solid rgb(249,249,253);
+
+@{Cell}{
+  width: @cell-witch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: @cell-border;
+  border-top: @cell-border;
+  &-title{
+    margin-left: @cell-margin;
+  }
+  &-value{
+     display: flex;   
+     align-items: center;
+     &-text{
+      margin-right: @cell-margin;
+    }
+    &-icon{
+      font-size: @cell-icon-font-size;
+      margin-right: @cell-margin;
+    }
+  }
+ 
+}
