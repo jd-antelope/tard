@@ -4,10 +4,10 @@ node_modules
 lerna-debug.log
 yarn.lock
 package-lock.json
-bin
-nginx
 
 # Build outputs
+/bin
+/nginx
 dist
 packages/tard-ui/lib
 packages/tard-ui/dist
@@ -17,3 +17,10 @@ packages/tard-ui/dist
 .umi-production
 .umi-test
 .env.local
+
+# dependencies
+/npm-debug.log*
+/yarn-error.log
+/yarn.lock
+/package-lock.json
+
