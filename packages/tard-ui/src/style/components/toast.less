@@ -2,6 +2,9 @@
 @import '../variables/index.less';
 @import '../mixins/index.less';
 
+@toast-padding-has-img: 60px;
+@toast-padding-no-img: 36px;
+
 @keyframes slRotate {
   0% {
     transform: rotate(0deg);
@@ -30,9 +33,9 @@
   }
 
   .toast-body {
-    .mixin-absolute-center(fixed);
+    .mixin-absolute-center(fixed, 40%);
 
-    padding: @spacing-v-lg @spacing-h-xl;
+    padding: @toast-padding-has-img;
     min-width: @toast-min-width;
     border-radius: @border-radius-md;
     background-color: @toast-bg-color;
@@ -40,6 +43,7 @@
 
     &-content {
       &__icon {
+        margin-bottom: @spacing-v-lg;
         color: @toast-color;
         font-size: @toast-icon-size;
         text-align: center;
@@ -48,6 +52,7 @@
       &__img {
         line-height: 0;
         text-align: center;
+        margin-bottom: @spacing-v-lg;
 
         &-item {
           width: @toast-image-size;
@@ -56,7 +61,6 @@
       }
 
       &__info {
-        margin-top: @spacing-v-md;
         color: @toast-color;
         font-size: @toast-font-size;
         line-height: @line-height-zh;
@@ -65,7 +69,7 @@
     }
 
     &--text {
-      padding: @spacing-v-sm @spacing-h-lg;
+      padding: @toast-padding-no-img;
       line-height: @line-height-zh;
       min-width: initial;
 
@@ -74,11 +78,11 @@
       }
     }
 
-    &.@{--css-prefix}-toast__body--custom-image,
-    &.@{--css-prefix}-toast__body--success,
-    &.@{--css-prefix}-toast__body--error,
-    &.@{--css-prefix}-toast__body--loading {
-      padding-bottom: @spacing-v-lg - ((@toast-font-size * @line-height-zh - @toast-font-size) / 2);
-    }
+    // &.@{--css-prefix}-toast__body--custom-image,
+    // &.@{--css-prefix}-toast__body--success,
+    // &.@{--css-prefix}-toast__body--error,
+    // &.@{--css-prefix}-toast__body--loading {
+    //   padding-bottom: @spacing-v-lg - ((@toast-font-size * @line-height-zh - @toast-font-size) / 2);
+    // }
   }
 }

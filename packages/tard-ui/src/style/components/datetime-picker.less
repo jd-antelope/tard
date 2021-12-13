@@ -5,6 +5,7 @@
 @datetime-picker-btn-font-size: 32px;
 @datetime-picker-default-font-color: #333;
 @datetime-picker-gray-font-color: #999;
+@datetime-picker-mask-index: 1;
 
 .@{--css-prefix}-datetime {
   width: 100%;
@@ -18,6 +19,7 @@
     height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
+    z-index: @datetime-picker-mask-index;
   }
 
   &__mask-active {
@@ -34,7 +36,8 @@
     background-color: #fff;
     padding-bottom: constant(safe-area-inset-bottom) !important;
     padding-bottom: env(safe-area-inset-bottom) !important;
-    transition: all .3s linear 0s
+    transition: all .3s linear 0s;
+    z-index: @datetime-picker-mask-index + 1;
   }
 
   &__container__active {

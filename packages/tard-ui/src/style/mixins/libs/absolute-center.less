@@ -1,9 +1,9 @@
 /**
  * 元素居中定位
  */
-.mixin-absolute-center (@pos: absolute) {
+.mixin-absolute-center (@pos: absolute, @top: 50%) {
   position: @pos;
-  top: 50%;
+  top: @top;
   left: 50%;
   transform: translate(-50%, -50%);
 }
