@@ -6,7 +6,6 @@ export {
 } from './modal';
 export { default as SlDropdownMenu } from './dropdown-menu';
 export { default as SlLoading } from './loading';
-export { default as SlUpload } from './upload';
 export { default as SlImage } from './image';
 export { default as SlPrice } from './price';
 export { default as SlModal } from './modal';
@@ -25,15 +24,16 @@ export { default as SlTab } from './tab';
 export { default as SlTabPane } from './tab-pane';
 export declare const SlDropdownMenuItem: ComponentClass;
 export { default as SlRate } from './rate';
-export { default as SlDatetimePicker } from './datetime-picker'
-export { default as SlProgress } from './progress'
-export { default as SlProgressCircle } from './progress-circle'
-export { default as SlSort } from './sort'
-export { default as SlForm } from './form'
-export { default as SlField } from './field'
-export { default as SlMedia } from './media'
-export { default as SlTagPrice } from './tag-price'
-export { default as SlSwitch } from './switch'
-export { default as SlGrid } from './grid'
+export { default as SlDatetimePicker } from './datetime-picker';
+export { default as SlProgress } from './progress';
+export { default as SlProgressCircle } from './progress-circle';
+export { default as SlSort } from './sort';
+export { default as SlForm } from './form';
+export { default as SlField } from './field';
+export { default as SlTagPrice } from './tag-price';
+export { default as SlSwitch } from './switch';
+export { default as SlGrid } from './grid';
 export { default as SlEmpty } from './empty';
-export declare const SlGridItem: ComponentClass
+export declare const SlGridItem: ComponentClass;
+
+export { default as SlUploader } from './uploader';

@@ -1,5 +1,4 @@
 export { default as SlLoading } from './components/loading';
-export { default as SlUpload } from './components/upload';
 export { default as SlImage } from './components/image';
 export { default as SlPrice } from './components/price';
 export { default as SlModal } from './components/modal';
@@ -32,8 +31,8 @@ export { default as SlProgressCircle } from './components/progress-circle';
 export { default as SlSort } from './components/sort';
 export { default as SlForm } from './components/form';
 export { default as SlField } from './components/field';
-export { default as SlMedia } from './components/media';
-
 export { default as SlTagPrice } from './components/tag-price';
 export { default as SlSwitch } from './components/switch';
 export { default as SlEmpty } from './components/empty';
+
+export { default as SlUploader } from './components/uploader';

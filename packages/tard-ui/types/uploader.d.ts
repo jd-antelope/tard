@@ -12,7 +12,7 @@ export interface File {
     file?: FileItem
 }
 
-export interface SlMediaPickerProps extends SlComponent {
+export interface SlUploaderProps extends SlComponent {
     /**
      * 媒体组件类型 image or video
      */
@@ -83,14 +83,14 @@ export interface SlMediaPickerProps extends SlComponent {
     onFail?: (message: string) => void
 }
 
-export interface SlMediaPickerState {
+export interface SlUploaderState {
     playObj: SlVideoInterface
 }
 export interface SlVideoInterface {
     file: string
     url: string
 }
-declare const SlMediaPicker: ComponentClass<SlMediaPickerProps>
+declare const SlUploader: ComponentClass<SlUploaderProps>
 
-export default SlMediaPicker
+export default SlUploader
 

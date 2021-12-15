@@ -6,7 +6,7 @@ import { Image, View, Video } from '@tarojs/components'
 import { ITouchEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
 
-import { SlMediaPickerProps, SlMediaPickerState, SlVideoInterface, File } from '../../../types/media'
+import { SlUploaderProps, SlUploaderState, SlVideoInterface, File } from '../../../types/uploader'
 import { uuid } from '../../common/utils'
 
 interface MatrixFile extends Partial<File> {
@@ -51,9 +51,9 @@ const generateMatrix = (
 
 const ENV = Taro.getEnv()
 
-export default class SlMediaPicker extends React.Component<SlMediaPickerProps, SlMediaPickerState> {
-	public static defaultProps: SlMediaPickerProps
-	public static propTypes: InferProps<SlMediaPickerProps>
+export default class SlUploader extends React.Component<SlUploaderProps, SlUploaderState> {
+	public static defaultProps: SlUploaderProps
+	public static propTypes: InferProps<SlUploaderProps>
 	private constructor(props) {
 		super(props)
 		this.state = {
@@ -142,34 +142,34 @@ export default class SlMediaPicker extends React.Component<SlMediaPickerProps, S
 		const rowLength = (mediaType === 'video' || length <= 0) ? 1 : length
 		// 行数
 		const matrix = generateMatrix(files as MatrixFile[], rowLength, showAddBtn)
-		const rootCls = classNames('slc-media-picker', className)
+		const rootCls = classNames('slc-uploader-picker', className)
 
 		return (
 			<View className={rootCls} style={customStyle}>
 				{matrix.map((row, i) => (
-					<View className='slc-media-picker__flex-box' key={i + 1}>
+					<View className='slc-uploader-picker__flex-box' key={i + 1}>
 						{row.map((item, j) =>
 							item.url ? (
 								<View
-									className='slc-media-picker__flex-item'
+									className='slc-uploader-picker__flex-item'
 									key={i * length + j}
 								>
-									<View className='slc-media-picker__item'>
+									<View className='slc-uploader-picker__item'>
 										<View
-											className='slc-media-picker__remove-btn'
+											className='slc-uploader-picker__remove-btn'
 											onClick={this.handleRemoveImg.bind(this, i * length + j)}
 										/>
 										{
 											mediaType === 'camera' ?
 												<Image
-													className='slc-media-picker__preview-img'
+													className='slc-uploader-picker__preview-img'
 													mode={mode}
 													src={item.url}
 													onClick={this.handleImageClick.bind(this, i * length + j)}
 												/> :
 												<Video
 													id='video'
-													className='slc-media-picker__preview-video'
+													className='slc-uploader-picker__preview-video'
 													src={this.state.playObj.file}
 													poster={this.state.playObj.url}
 													controls={true}
@@ -184,12 +184,12 @@ export default class SlMediaPicker extends React.Component<SlMediaPickerProps, S
 								<Fragment>
 									{files.length < maxCount ?
 										<View
-											className='slc-media-picker__flex-item'
+											className='slc-uploader-picker__flex-item'
 											key={'empty_' + i * length + j}
 										>
 											{item.type === 'btn' && (
 												<View
-													className='slc-media-picker__item slc-media-picker__choose-btn'
+													className='slc-uploader-picker__item slc-uploader-picker__choose-btn'
 													onClick={this.chooseFile}
 												>
 													{
@@ -214,7 +214,7 @@ export default class SlMediaPicker extends React.Component<SlMediaPickerProps, S
 	}
 }
 
-SlMediaPicker.defaultProps = {
+SlUploader.defaultProps = {
 	className: '',
 	customStyle: '',
 	files: [],
