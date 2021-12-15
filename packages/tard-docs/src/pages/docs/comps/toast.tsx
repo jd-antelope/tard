@@ -109,7 +109,8 @@ const Toast: FC = () => {
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @toast-min-width | 256px |
+|  @toast-min-width | 248px |
+|  @toast-max-width | 460px |
 |  @toast-image-size | 120px |
 |  @toast-font-size  | @font-size-base |
 |  @toast-icon-size  |  80px |

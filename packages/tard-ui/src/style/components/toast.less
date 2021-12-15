@@ -24,24 +24,27 @@
     z-index: @zindex-toast;
   }
 
-  &__body {
-    &--loading {
-      .toast-body-content__img-item {
-        animation: slRotate 1350ms linear infinite;
-      }
+  &__body--loading {
+    .toast-body-content__img-item {
+      animation: slRotate 1350ms linear infinite;
+      
     }
   }
 
   .toast-body {
     .mixin-absolute-center(fixed, 40%);
 
-    padding: @toast-padding-has-img;
-    min-width: @toast-min-width;
-    border-radius: @border-radius-md;
-    background-color: @toast-bg-color;
+    text-align: center;
     z-index: @zindex-toast;
 
     &-content {
+      min-width: @toast-min-width;
+      max-width: @toast-max-width;
+      padding: @spacing-v-lg @spacing-h-xl;
+      border-radius: @border-radius-md;
+      box-sizing: border-box;
+      background-color: @toast-bg-color;
+
       &__icon {
         margin-bottom: @spacing-v-lg;
         color: @toast-color;
@@ -49,40 +52,32 @@
         text-align: center;
       }
 
-      &__img {
+      &__img-item {
         line-height: 0;
         text-align: center;
-        margin-bottom: @spacing-v-lg;
-
-        &-item {
-          width: @toast-image-size;
-          height: @toast-image-size;
-        }
+        width: @toast-image-size;
+        height: @toast-image-size;
       }
+      
 
       &__info {
         color: @toast-color;
         font-size: @toast-font-size;
         line-height: @line-height-zh;
+        word-break: break-all;
         text-align: center;
       }
     }
 
-    &--text {
-      padding: @toast-padding-no-img;
-      line-height: @line-height-zh;
-      min-width: initial;
-
-      .toast-body-content__info {
-        margin-top: 0;
-      }
+    &.@{--css-prefix}-toast__body--custom-image,
+    &.@{--css-prefix}-toast__body--success,
+    &.@{--css-prefix}-toast__body--error,
+    &.@{--css-prefix}-toast__body--loading {
+      padding-bottom: @spacing-v-lg - ((@toast-font-size * @line-height-zh - @toast-font-size) / 2);
     }
-
-    // &.@{--css-prefix}-toast__body--custom-image,
-    // &.@{--css-prefix}-toast__body--success,
-    // &.@{--css-prefix}-toast__body--error,
-    // &.@{--css-prefix}-toast__body--loading {
-    //   padding-bottom: @spacing-v-lg - ((@toast-font-size * @line-height-zh - @toast-font-size) / 2);
-    // }
+  }
+  .toast-body--text .toast-body-content {
+    min-width: auto;
+    max-width: @toast-max-width;
   }
 }

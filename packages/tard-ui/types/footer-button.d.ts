@@ -62,7 +62,7 @@ export interface SlFooterButtonProps extends SlComponent {
     secClick?: CommonEventFunction
     /**
      * 是否开启定位底部
-     * @default false
+     * @default true
      */
     isFixed?: boolean
 }
