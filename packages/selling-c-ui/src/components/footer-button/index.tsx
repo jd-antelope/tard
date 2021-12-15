@@ -96,6 +96,6 @@ SlFooterButton.defaultProps = {
   radius: 0,
   lineHeight: 80,
   doubleBtn: false,
-  isFixed: false,
+  isFixed: true,
   secondName: '取消',
 }
