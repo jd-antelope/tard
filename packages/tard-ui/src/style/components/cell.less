@@ -1,33 +1,79 @@
 @import '../variables/index.less';
 @import '../mixins/index.less';
 
-@Cell: .slc-cell;
-
-@cell-icon-font-size: 30px;
-@cell-witch: 100%;
-@cell-margin: 3%;
-@cell-border: 1px solid rgb(249,249,253);
-
-@{Cell}{
-  width: @cell-witch;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: @cell-border;
-  border-top: @cell-border;
-  &-title{
-    margin-left: @cell-margin;
-  }
-  &-value{
-     display: flex;   
-     align-items: center;
-     &-text{
-      margin-right: @cell-margin;
-    }
-    &-icon{
-      font-size: @cell-icon-font-size;
-      margin-right: @cell-margin;
-    }
-  }
+.slc-cell{
+  position: relative;
+  .flex-justify(space-between);
+  font-size: @font-size-base;
+  padding: @cell-vertical-padding @cell-horizontal-padding;
+  background-color: #FFFFFF;
  
+  &__border{
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: @cell-horizontal-padding;
+      right: @cell-horizontal-padding;
+      border-bottom: 1px solid @color-border-base;
+      transform: scaleY(0.5);
+    }
+  }
+
+  &__center{
+    align-items: center;
+  }
+
+  &__item{
+    
+    &:last-child {
+      color: #999999;
+    }
+
+    &:first-child{
+      color: @color-text-base;
+    }
+
+    &-icon {
+      padding-right: 12px;
+    }
+  
+    &-title{
+      .flex-items(center);
+      font-size: @font-size-base;
+    }
+  
+    &-label{
+      font-size: @font-size-sm;
+      color: @color-text-secondary;
+    }
+
+    &-link{
+      padding-left: 12px;
+    }
+
+    &-click{
+      cursor: pointer;
+    }
+  }
+
+  &-group{
+    &-title{
+      padding: @cell-group-title-padding;
+    }
+
+    &-item{
+      background-color: #FFFFFF;
+    }
+  }
+
+  &__inset{
+    margin: 0 36px;
+    border-radius: 32px;
+    overflow: hidden;
+  }
+  
 }
+
+
+
