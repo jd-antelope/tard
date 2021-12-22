@@ -8,7 +8,7 @@ import './index.less';
 const Price: FC = () => {
   return (
     <View className="container px-0">
-      <DocsHeader title='Price'></DocsHeader>
+      <DocsHeader title='Price 价格'></DocsHeader>
       <View className='doc-body'>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip px-24'>基本案例</View>
