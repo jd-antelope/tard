@@ -74,8 +74,8 @@ import { SlPrice } from 'tard'
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | price | 价格 | string或者string[] | - |
-| originalPrice | 原价 | string | - |
-| originalColor | 原价颜色 | string | - |
+| originPrice | 划线价 | string | - |
+| originColor | 划线价颜色 | string | - |
 | color | 颜色 | string | - |
 | beforeContent | 自定义价格前内容 | React.ReactNode | - |
 | afterContent | 自定义价格后内容 | React.ReactNode | - |
@@ -100,4 +100,4 @@ import { SlPrice } from 'tard'
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @price-line-px | 12px |
+|  @price-line-horizontal-padding | 12px |

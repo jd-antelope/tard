@@ -113,7 +113,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
   public render (): JSX.Element | null {
     const { 
       price, className, color, commissionPrice, afterContent,
-      originalColor, originalPrice, type, size = 0, beforeContent,
+      originColor, originPrice, type, size = 0, beforeContent,
       priceUnit, unitSize = 0
     } = this.props
     return (
@@ -134,13 +134,13 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
           <Text style={ unitSize === 0 ? '': `font-size: ${pxTransform(unitSize)}` }>{priceUnit}</Text>
           { this.arrayPrice(price) }
           {
-            originalPrice !== '' && 
+            originPrice !== '' && 
             <Text 
               className="slc-price__origin-price" 
-              style={ `color: ${ originalColor }` }
+              style={ `color: ${ originColor }` }
             >
              <Text>{priceUnit}</Text>
-             { this.filterPrice(originalPrice) }
+             { this.filterPrice(originPrice) }
             </Text>
           }
         </View>
@@ -168,8 +168,8 @@ SlPrice.defaultProps = {
   afterContent: '',
   beforeContent: '',
   commissionPrice: '',
-  originalColor: '',
-  originalPrice: '',
+  originColor: '',
+  originPrice: '',
   type: 'middle',
   size: 0,
   symbolSize: 0,

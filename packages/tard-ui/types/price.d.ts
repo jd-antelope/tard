@@ -8,11 +8,11 @@ export interface SlPriceProps extends SlComponent {
   /**
    * 原价
    */
-  originalPrice?: string
+  originPrice?: string
   /**
    * 原价颜色
    */
-  originalColor?: string
+  originColor?: string
   /**
    * 颜色
    */
