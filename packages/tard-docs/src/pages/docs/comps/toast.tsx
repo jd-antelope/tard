@@ -9,85 +9,102 @@ import { SlToast } from 'tard'
 ~~~
 
 ## 代码演示
-### 基础用法
+### 文字提示
+默认文本为单行文本内容最大宽度为460px
 ~~~js
 const Toast: FC = () => {
-  const [open, setOpen] = useState({ false });
+  const [toastParams, setToastParams] = useState({ { text: '普通提示', visible:true } });
   return (
     <View className="container">
       <SlToast
-        visible={ open }
-        text='文本'
-        onClose={ () => setOpen(true) }
+        { ...toastParams}
+        onClose={  onClose: () => setToast({ visible: false, text: '', status: '' }) }
       />
     </View>
   );
 };
 ~~~
 
-### 自定义Icon
-通过 ~icon~ 属性可以自定义toast中展示的图片
+### 长文案提示
+Toast最多支持两行文字显示
 ~~~js
-<SlToast
-  visible={ open }
-  text='文本'
-  icon='analytics'
-  onClose={ () => setOpen(true) }
-/>
+const Toast: FC = () => {
+  const [toastParams, setToastParams] = useState({ { text: 'Toast文案很长，最多支持两行文字显示', visible:true } });
+  return (
+    <View className="container">
+      <SlToast
+        { ...toastParams}
+        onClose={  onClose: () => setToast({ visible: false, text: '', status: '' }) }
+      />
+    </View>
+  );
+};
 ~~~
 
+### 加载提示
+通过 
+通过~status~指定提示状态，可选值为~loading~、~success~、~error~,你可通过~text~自定义需要的文案
+~~~js
+const Toast: FC = () => {
+  const [toastParams, setToastParams] = useState({ {text: '加载中...',  status: 'loading' visible:true } });
+  return (
+    <View className="container">
+      <SlToast
+        { ...toastParams}
+        onClose={  onClose: () => setToast({ visible: false, text: '', status: '' }) }
+      />
+    </View>
+  );
+};
+~~~
+
+### 自定义图标
+可以通过icon属性设置自定义图标,具体参考SlIcon组件的属性进行选取
+~~~js
+const Toast: FC = () => {
+  const [toastParams, setToastParams] = useState({ {text: '自定义图标', icon: 'bell',visible:true } });
+  return (
+    <View className="container">
+      <SlToast
+        { ...toastParams}
+        onClose={  onClose: () => setToast({ visible: false, text: '', status: '' }) }
+      />
+    </View>
+  );
+};
+~~~
 ### 自定义图片
-通过 ~image~ 属性自定义图片链接可以修改toast中展示的图片
+可以通过image属性设置自定义图片也可以同时指定~status~属性值为loading实现自定义loading图片的效果
 ~~~js
-<SlToast
-  visible={ open }
-  text='自定义图片'
-  image='http://storage.360buyimg.com/mtd/home/group-21533885306540.png' 
-  onClose={ () => setOpen(true) }
-/>
+const Toast: FC = () => {
+  const [toastParams, setToastParams] = useState({ {text: '自定义图片',
+   image: 'http://storage.360buyimg.com/mtd/home/group-21533885306540.png',visible:true } });
+  return (
+    <View className="container">
+      <SlToast
+        { ...toastParams}
+        onClose={  onClose: () => setToast({ visible: false, text: '', status: '' }) }
+      />
+    </View>
+  );
+};
 ~~~
-
-### 添加遮罩层
-当属性 ~hasMask~ 属性为 true 的时候, 会出现遮罩层
+### 自定义位置
+设置top属性，设置弹窗在页面上的不同位置进行显示
 ~~~js
-<SlToast
-  visible={ open }
-  text='文本'
-  overlay={true}
-  onClose={ () => setOpen(true) }
-/>
+const Toast: FC = () => {
+  const [toastParams, setToastParams] = useState({ {text: '顶部展示', top:'20%'
+,visible:true } });
+  return (
+    <View className="container">
+      <SlToast
+        { ...toastParams}
+        onClose={  onClose: () => setToast({ visible: false, text: '', status: '' }) }
+      />
+    </View>
+  );
+};
 ~~~
-
-### 错误类型
-当属性 ~status~ 为 ~error~ 时会展示失败图片
-~~~js
-<SlToast
-  visible={ open }
-  text='文本'
-  status='error' 
-/>
-~~~
-
-### 成功类型
-当属性 ~status~ 为 ~success~ 时会展示成功图片
-~~~js
-<SlToast
-  visible={ open }
-  text='文本'
-  status='success' 
-/>
-~~~
-### 加载类型
-当属性 ~status~ 为 ~loading~ 时会展示加载中图片
-~~~js
-<SlToast
-  visible={ open }
-  text='文本'
-  status='loading' 
-/>
-~~~
-
-
 ## API
 ### Props
 | 属性     | 说明                                     | 类型                | 默认值    |
@@ -97,6 +114,7 @@ const Toast: FC = () => {
 | icon     | icon的类型                               | string              | -         |
 | image    | 元素展示的图片                           | string              | -         |
 | status   | 元素的状态                               | 'error'｜'loading'｜'success' | - |
+| top      | toast展示位置 支持百分比和px                           |string|            | 50%|
 | duration | 元素持续的事件（设置为0将不会自动消失）  | number              | 3000      |
 | overlay  | 是否存在底部遮罩层(无法点击底部的内容区) | boolean             | false        |
 
@@ -111,9 +129,9 @@ const Toast: FC = () => {
 |  ---- | ---- |
 |  @toast-min-width | 248px |
 |  @toast-max-width | 460px |
-|  @toast-image-size | 80px |
+|  @toast-image-size | 64px |
 |  @toast-font-size  | @font-size-base |
-|  @toast-icon-size  |  80px |
+|  @toast-icon-size  |  64px |
 |  @toast-color  | @color-white |
 |  @toast-bg-color | rgba(0, 0, 0, 0.8) |
 `

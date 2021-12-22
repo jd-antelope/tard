@@ -38,7 +38,7 @@ function Home() {
                   }}
                 >
                   <View className="comp-item-text">{val.nameEn} {val.name}</View>
-                  <SlIcon value="chevron-right" color="#333" size={16}></SlIcon>
+                  <SlIcon value="chevron-right" color="#999" size={16}></SlIcon>
                 </View>
               ))
             }

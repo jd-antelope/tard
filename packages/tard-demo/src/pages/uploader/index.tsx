@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FC } from '@tarojs/taro'
-import { SlMedia } from 'tard'
+import { SlUploader } from 'tard'
 import { View } from '@tarojs/components'
 
 const Media: FC = () => {
@@ -8,20 +8,20 @@ const Media: FC = () => {
   const [iamges, setImages] = useState<any>([])
   return (
     <View>
-      <SlMedia
+      <SlUploader
         mediaType="video" 
         multiple
         length={ 2} maxCount={1}
          files={ videos } onChange={ (v) => {setVideos(v)} }
       />
-         <SlMedia
+         <SlUploader
         mediaType="camera" length={ 2 } count={ 3 }
          files={ iamges } onChange={ (v) => {setImages(v)} }
       />
-         <SlMedia
+         <SlUploader
         mediaType="camera" length={ 2 } count={ 3 }
          files={ iamges } onChange={ (v) => {setImages(v)} }
-      >测试文本</SlMedia>
+      >测试文本</SlUploader>
     </View>
   )
 }

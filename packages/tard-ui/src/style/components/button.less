@@ -13,18 +13,15 @@
 
 .@{--css-prefix}-button {
   position: relative;
-  justify-content: center;
-  height: 42px;
-  margin: 0 auto;
-  padding: 0 @spacing-h-xl;
-  height: @button-height;
-  color: @primary-color;
-  font-size: @font-size-lg;
-  line-height: @button-height - 2;
-  text-align: center;
-  border-radius: @border-radius-md;
-  border: 1PX solid @primary-color;
+  display: inline-block;
   box-sizing: border-box;
+  margin: 0 auto;
+  color: @primary-color;
+  font-size: @font-size-base;
+  text-align: center;
+  color: #fff;
+  background: #fff;
+  border-radius: @border-radius-md;
   .line();
 
   &:active {
@@ -34,22 +31,31 @@
   /* elements */
 
   &__text {
-    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: @button-min-width;
+    height: @button-height;
+    line-height: @button-height;
+    padding: 0 @button-default-v-padding;
   }
 
   &__wxbutton {
     position: absolute;
+    box-sizing: border-box;
     padding: 0;
     left: 0;
     top: 0;
     height: 100%;
-    padding: 0 24px;
+    padding: 0 @button-default-v-padding;
+    min-width: @button-min-width;
     border: none;
     outline: none;
     background-color: transparent;
     opacity: 0;
     z-index: 1;
-
+  
     &::after {
       display: none;
     }
@@ -61,36 +67,109 @@
   }
 
   &--disabled {
-    opacity: @opacity-disabled;
+    opacity:0.6;
     &:active {
-      opacity: @opacity-disabled;
+      opacity:0.6;
     }
   }
-  &--normal {
-    display: inline-block;
+  &--default {
+    color: #666;
+    border: 1PX solid #CCC;
   }
-  &--round {
-    border-radius: 24px;
+  &--primary {
+    background: @primary-color;
   }
-  &--small {
-    padding: 0 @spacing-h-md;
-    width: auto;
-    min-width: @button-small-width-min;
-    max-width: @button-small-width-max;
-    height: @button-height-sm;
-    font-size: @font-size-base;
-    line-height: @button-height-sm - 2;
+  &--info {
+    background: @button-color-info;
   }
-  &--middle {
-    display: inline-block;
-    min-width: @button-middle-width-min;
-    max-width: @button-middle-width-max;
+  &--danger {
+    background: @button-color-danger;
+  }
+  &--warning {
+    background: @button-color-warning;
+  }
+  &--success {
+    background: @button-color-success;
+  }
+
+  &--primary--border {
+    box-sizing: border-box;
+    background: none;
+    border: 1PX solid @primary-color;
+    color: @primary-color;
+  }
+  &--info--border {
+    box-sizing: border-box;
+    background: none;
+    border: 1PX solid @button-color-info;
+    color: @button-color-info;
+  }
+  &--warning--border {
+    box-sizing: border-box;
+    background: none;
+    border: 1PX solid  @button-color-warning;
+    color:  @button-color-warning;
+  }
+  &--danger--border {
+    box-sizing: border-box;
+    background: none;
+    border: 1PX solid @button-color-danger;
+    color: @button-color-danger;
+  }
+  &--success--border {
+    box-sizing: border-box;
+    background: none;
+    border: 1PX solid @button-color-success;
+    color: @button-color-success;
+  }
+  
+  &--circle {
+    border-radius: @button-color-warning;
+  }
+  &--rect {
+    border-radius: 0px;
   }
   &--large {
-    display: inline-block;
-    min-width: @button-large-width-min;
-    max-width: @button-large-width-max;
+    height: @button-large-height;
+    font-size: @font-size-base;
+    .slc-button__wxbutton, .slc-button__text {
+      height: @button-large-height;
+      box-sizing: border-box;
+      min-width:@button-min-large-width;
+      line-height: @button-large-height;
+      font-size: @button-large-text-size;
+      padding: 0 @button-large-v-padding;
+    }
+
   }
+  &--small {
+    height: @button-height-small;
+    font-size: @font-size-base;
+    .slc-button__wxbutton, .slc-button__text {
+      height: @button-height-small;
+      box-sizing: border-box;
+      min-width:@button-min-width-small;
+      line-height: @button-height-small;
+      font-size: @button-small-text-size;
+      padding: 0  @button-small-v-padding;
+      @button-small-v-padding: 24px;
+    }
+  }
+  &--mini {
+    box-sizing: border-box;
+    min-width: @button-min-width-mini;
+    height: @button-height-mini;
+    line-height: @button-height-mini ;
+    .slc-button__wxbutton, .slc-button__text {
+      height: @button-height-mini;
+      box-sizing: border-box;
+      min-width: @button-min-width-mini;
+      line-height: @button-height-mini;
+      font-size:  @button-mini-text-size;
+      padding: 0  @button-mini-v-padding;
+    }
+  }
+
   &--fill {
     background: @primary-color;
     color: @color-text-base-inverse;
@@ -102,6 +181,5 @@
   &--full {
     width: 100%;
     max-width: 100%;
-    border-radius: 0;
   }
 }
