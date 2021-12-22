@@ -130,12 +130,32 @@ view {
   }
   &-content {
     &-tip {
-      height: 100px;
-      line-height: 100px;
+      height: 92px;
+      line-height: 92px;
       font-size: 28px;
       position: relative;
-      margin-bottom: 12px;
+      margin-top: 20px;
       color: rgba(69, 90, 100, 0.6);
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__info {
+      width: 100%;
+      background: #fff;
+      padding: 32px 36px;
+    }
+
+    &__pr {
+      margin-right: 40px;
+      align-items: center;
+    }
+
+    &__bottom {
+      align-items: center;
     }
   }
 }
@@ -148,6 +168,14 @@ view {
   padding: 0 24px;
   box-sizing: border-box;
   min-height: 100vh;
+}
+
+.px-0 {
+  padding: 0;
+}
+
+.px-24 {
+  padding: 0 24px;
 }
 
 .doc-empty {

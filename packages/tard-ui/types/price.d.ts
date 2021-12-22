@@ -18,9 +18,13 @@ export interface SlPriceProps extends SlComponent {
    */
   color?: string
   /**
+   * 价格前面的内容
+   */
+  beforeContent?: React.ReactNode,
+  /**
    * 价格后面的内容
    */
-  content?: React.ReactNode,
+  afterContent?: React.ReactNode,
   /**
    * 是否展示佣金
    */

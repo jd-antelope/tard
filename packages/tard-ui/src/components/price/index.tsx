@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cn from 'classnames'
 import { View, Text } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
@@ -47,33 +47,13 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
 
   // 价格处理
   private arrayPrice = (price) => {
+    const { 
+      type, symbolSize = 0
+    } = this.props
     if (price instanceof Array && price.length > 1) {
       const arr = price.map(v => Number(v)).sort((a, b) => a - b)
-      return `${this.filterPrice(arr[0])}-${this.filterPrice(arr[arr.length - 1])}`
-    }
-    return this.filterPrice(price)
-  }
-
-  // eslint-disable-next-line no-undef
-  public render (): JSX.Element | null {
-    const { 
-      price, className, color, commissionPrice, content,
-      originalColor, originalPrice, type, size = 0, 
-      symbolSize = 0, priceUnit, unitSize = 32
-    } = this.props
-    return (
-      <Common className={ cn('slc-price', className) }>
-        <View 
-          className={
-            cn('slc-price__text',{
-              'slc-price__text-large': type === 'large',
-              'slc-price__text-middle': type === 'largeMiddle' || type === 'smallMiddle',
-              'slc-price__text-small': type === 'small' || type === 'middle',
-            })
-          }
-          style={ (color !== '' ? `color: ${color};` : '') + (size !== 0 ? `font-size: ${pxTransform(size)}` : '') }
-        >
-         <Text style={ `font-size: ${pxTransform(unitSize)}` }>{priceUnit}</Text>
+      return (
+        <Fragment>
           <Text 
             className={
               cn('slc-price__text-content', {
@@ -86,8 +66,73 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
             }
             style={ symbolSize !== 0 ? `font-size: ${pxTransform(symbolSize)}` : '' }
           >
-            { this.arrayPrice(price) }
+            { String(this.filterPrice(arr[0])).split('.')[0] }
           </Text>
+          { String(this.filterPrice(arr[0])).split('.')[1] ? '.' + String(this.filterPrice(arr[0])).split('.')[1] : '' }
+          <Text className='slc-price__text-line'>-</Text>
+          <Text 
+            className={
+              cn('slc-price__text-content', {
+                'slc-price__content-large': type === 'large',
+                'slc-price__content-large-middle': type === 'largeMiddle',
+                'slc-price__content-middle': type === 'middle',
+                'slc-price__content-small-middle': type === 'smallMiddle',
+                'slc-price__content-small': type === 'small',
+              })
+            }
+            style={ symbolSize !== 0 ? `font-size: ${pxTransform(symbolSize)}` : '' }
+          >
+             { String(this.filterPrice(arr[arr.length - 1])).split('.')[0] }
+          </Text>
+          { String(this.filterPrice(arr[arr.length - 1])).split('.')[1] ? '.' + String(this.filterPrice(arr[arr.length - 1])).split('.')[1] : '' }
+        </Fragment>
+      )
+    }
+    return  (
+      <Fragment>
+        <Text 
+          className={
+            cn('slc-price__text-content', {
+              'slc-price__content-large': type === 'large',
+              'slc-price__content-large-middle': type === 'largeMiddle',
+              'slc-price__content-middle': type === 'middle',
+              'slc-price__content-small-middle': type === 'smallMiddle',
+              'slc-price__content-small': type === 'small',
+            })
+          }
+          style={ symbolSize !== 0 ? `font-size: ${pxTransform(symbolSize)}` : '' }
+        >
+          { String(this.filterPrice(price)).split('.')[0] }
+        </Text>
+        { String(this.filterPrice(price)).split('.')[1] ? '.' + String(this.filterPrice(price)).split('.')[1] : '' }
+      </Fragment>
+    )
+  }
+
+  // eslint-disable-next-line no-undef
+  public render (): JSX.Element | null {
+    const { 
+      price, className, color, commissionPrice, afterContent,
+      originalColor, originalPrice, type, size = 0, beforeContent,
+      priceUnit, unitSize = 0
+    } = this.props
+    return (
+      <Common className={ cn('slc-price', className) }>
+        {
+          beforeContent !== '' && beforeContent
+        }
+        <View 
+          className={
+            cn('slc-price__text',{
+              'slc-price__text-large': type === 'large',
+              'slc-price__text-middle': type === 'largeMiddle' || type === 'smallMiddle',
+              'slc-price__text-small': type === 'small' || type === 'middle',
+            })
+          }
+          style={ (color !== '' ? `color: ${color};` : '') + (size !== 0 ? `font-size: ${pxTransform(size)}` : '') }
+        >
+          <Text style={ unitSize === 0 ? '': `font-size: ${pxTransform(unitSize)}` }>{priceUnit}</Text>
+          { this.arrayPrice(price) }
           {
             originalPrice !== '' && 
             <Text 
@@ -95,15 +140,15 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
               style={ `color: ${ originalColor }` }
             >
              <Text>{priceUnit}</Text>
-             { this.filterPrice(originalColor) }
+             { this.filterPrice(originalPrice) }
             </Text>
           }
         </View>
         {
-          content !== '' && content
+          afterContent !== '' && afterContent
         }
         {
-          (commissionPrice !== '' && content === '') && 
+          (commissionPrice !== '' && afterContent === '') && 
           <View className="slc-price__commission">
             <View className="slc-price__commission--box">
               佣金 { commissionPrice }
@@ -120,7 +165,8 @@ SlPrice.defaultProps = {
   price: '',
   fixedNum: -1,
   color: '',
-  content: '',
+  afterContent: '',
+  beforeContent: '',
   commissionPrice: '',
   originalColor: '',
   originalPrice: '',
@@ -128,6 +174,6 @@ SlPrice.defaultProps = {
   size: 0,
   symbolSize: 0,
   priceUnit: '¥',
-  unitSize: 32,
+  unitSize: 0,
   thousands: false
 }
