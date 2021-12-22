@@ -35,7 +35,7 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
               navigateTo({ url: `/pages/home/index` });
               this.postIframeParentMessage()
             }}
-          ></SlIcon>
+          />
           <View className='doc-header__title'>
             {title}
           </View>
