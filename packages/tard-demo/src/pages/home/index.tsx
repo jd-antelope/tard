@@ -13,7 +13,7 @@ function Home() {
   }
 
   return (
-    <View className='container'>
+    <View className='index-container'>
       <View className='title'>
         <Image className='logo' src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
         <View className="logo-des">一套基于Taro框架开发的多端React UI组件库</View>
