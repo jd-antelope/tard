@@ -25,6 +25,25 @@ export interface SlImageProps extends ImageProps, SlComponent {
    */
   transition?: boolean
   /**
+   * 圆角大小，默认单位为px
+   * @default 0
+   */
+  radius?: number
+  /**
+   * 是否显示为圆形
+   * @default false
+   */
+  round?: false
+  /**
+   * 是否展示图片加载中提示
+   * @default true
+   */
+  showLoading?: boolean
+  /**
+   * 自定义加载内容
+   */
+  loadingContent?: string,
+  /**
    * 点击事件
    */
   onClick?: Function
