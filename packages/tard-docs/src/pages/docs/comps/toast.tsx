@@ -133,6 +133,9 @@ const Toast: FC = () => {
 |  @toast-font-size  | @font-size-base |
 |  @toast-icon-size  |  64px |
 |  @toast-color  | @color-white |
+|  @toast-slot-v-padding | 30px |
+|  @toast-slot-h-padding | 32px |
+|  @toast-icon-b-margin | 24px |
 |  @toast-bg-color | rgba(0, 0, 0, 0.8) |
 `
 
