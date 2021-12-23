@@ -41,7 +41,7 @@ const Toast: FC = () => {
         {
           label: '自定义图标',
           key: 'selfIcon',
-          params: { text: '自定义图标', icon: 'bell', duration: 1000000 }
+          params: { text: '自定义图标', icon: 'bell'}
         },
         {
           label: '自定义图片',

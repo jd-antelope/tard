@@ -104,6 +104,9 @@ export default class SlToast extends React.Component<
       'toast-body--text': !realImg && !icon,
       [`slc-toast__body--${status}`]: !!status
     })
+    const contentClass = {
+      'toast-body-content--slot': realImg || icon,
+    }
 
     const style = (objectToString(Object.assign(customStyle, {
       'top': top
@@ -120,7 +123,7 @@ export default class SlToast extends React.Component<
           style={style}
           onClick={this.handleClick}
         >
-          <View className='toast-body-content'>
+          <View className={classNames('toast-body-content', contentClass)}>
             {realImg ? (
               <Image
                 className='toast-body-content__img-item'

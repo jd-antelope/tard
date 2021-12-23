@@ -37,16 +37,18 @@
     text-align: center;
     z-index: @zindex-toast;
 
+
     &-content {
       min-width: @toast-min-width;
       max-width: @toast-max-width;
       padding:  @spacing-v-md;
+
       border-radius: @border-radius-md;
       box-sizing: border-box;
       background-color: @toast-bg-color;
 
       &__icon {
-        margin-bottom: @spacing-v-lg;
+        @toast-icon-b-margin: 24px;
         color: @toast-color;
         font-size: @toast-icon-size;
         text-align: center;
@@ -55,9 +57,11 @@
 
       &__img-item {
         line-height: 0;
+        @toast-icon-b-margin: 24px;
         text-align: center;
         width: @toast-image-size;
         height: @toast-image-size;
+
       }
       
 
@@ -68,6 +72,9 @@
         word-break: break-all;
         text-align: center;
       }
+    }
+    &-content--slot {
+      padding: @toast-slot-h-padding @toast-slot-v-padding;
     }
 
     &.@{--css-prefix}-toast__body--custom-image,

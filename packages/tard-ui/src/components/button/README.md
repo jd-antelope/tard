@@ -92,7 +92,7 @@ import { SlButton } from 'tard'
 | borderColor | 边框颜色 | string | - |
 | border | 是否显示边框 | boolean | false |
 | radius | 按钮自定义圆角 | number | - |
-| customStyle | 自定义style样式对象 | object | {} |
+| customStyle | 自定义style样式对象 | cssObject | {} |
 | disabled | 设置按钮为禁用态（不可点击） | boolean | false |
 
 ### Events

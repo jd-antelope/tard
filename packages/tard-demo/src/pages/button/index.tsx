@@ -32,12 +32,12 @@ const Button: FC = () => {
 
 				</View>
 
-		
+
 				<View className='doc-body-content-tip'>按钮形状</View>
 				<View className='button-box'>
 					<SlButton className='el' round='rect' type="primary">主要按钮</SlButton>
 					<SlButton className='el' type="info">信息按钮</SlButton>
-					<SlButton className='el'  round='circle' type="warning">警告按钮</SlButton>
+					<SlButton className='el' round='circle' type="warning">警告按钮</SlButton>
 				</View>
 
 				<View className='doc-body-content-tip'>自定义背景颜色</View>
@@ -50,7 +50,7 @@ const Button: FC = () => {
 
 				<View className='doc-body-content-tip'>自定义文字颜色</View>
 				<View className='button-box'>
-					<SlButton className='el'  color="red">红色文字</SlButton>
+					<SlButton className='el' color="red">红色文字</SlButton>
 					<SlButton className='el' color='green'>绿色文字</SlButton>
 					<SlButton className='el' color='blue' >蓝色文字</SlButton>
 				</View>
@@ -61,7 +61,7 @@ const Button: FC = () => {
 					<SlButton className='el' radius={24} type='info'>24px</SlButton>
 					<SlButton className='el' radius={36} type='warning'>36px</SlButton>
 				</View>
-				
+
 				<View className='doc-body-content-tip'>禁用状态</View>
 				<View className='button-box'>
 					<SlButton className='el' disabled border type="primary">主要按钮</SlButton>
@@ -74,10 +74,10 @@ const Button: FC = () => {
 				<View className='doc-body-content-tip'>按钮尺寸</View>
 				<View className='button-box'>
 					<SlButton className='el' full type='primary'>通栏按钮</SlButton>
-					<SlButton className='el' size='large' type='info'>大型按钮</SlButton>
-					<SlButton className='el' size='normal' type='danger'>普通按钮</SlButton>
-					<SlButton className='el' size='small' type='warning'>小型按钮</SlButton>
-					<SlButton className='el' size='mini' type='success'>迷你按钮</SlButton>
+					<SlButton className='el' size='large' type='primary'>大型按钮</SlButton>
+					<SlButton className='el' size='normal' type='primary'>普通按钮</SlButton>
+					<SlButton className='el' size='small' type='primary'>小型按钮</SlButton>
+					<SlButton className='el' size='mini' type='primary'>迷你按钮</SlButton>
 				</View>
 			</View>
 

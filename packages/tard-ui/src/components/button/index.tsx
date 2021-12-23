@@ -8,7 +8,8 @@ import { View, Button, Form } from '@tarojs/components'
 import { BaseEventOrig, CommonEvent } from '@tarojs/components/types/common'
 import { SlButtonProps, SlButtonState } from '../../../types/button'
 import Common from '../../common/common'
-import { objectToString, pxTransform } from '../../common/utils'
+import { objectToString, pxTransform,  } from '../../common/utils'
+import { isFunction } from 'src/common/is'
 
 const SIZE_CLASS = {
   large: 'large',
@@ -30,30 +31,30 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
 
   private onClick(event: CommonEvent): void {
     if (!this.props.disabled) {
-      this.props.onClick && this.props.onClick(event)
+      isFunction(this.props.onClick) && this.props.onClick(event)
     }
   }
 
   private onGetUserInfo(event: CommonEvent): void {
-    this.props.onGetUserInfo && this.props.onGetUserInfo(event)
+    isFunction(this.props.onGetUserInfo) && this.props.onGetUserInfo(event)
   }
 
   private onContact(
     event: BaseEventOrig<ButtonProps.onContactEventDetail>
   ): void {
-    this.props.onContact && this.props.onContact(event)
+    isFunction(this.props.onContact) && this.props.onContact(event)
   }
 
   private onGetPhoneNumber(event: CommonEvent): void {
-    this.props.onGetPhoneNumber && this.props.onGetPhoneNumber(event)
+    isFunction(this.props.onGetPhoneNumber) && this.props.onGetPhoneNumber(event)
   }
 
   private onError(event: CommonEvent): void {
-    this.props.onError && this.props.onError(event)
+    isFunction(this.props.onError) && this.props.onError(event)
   }
 
   private onOpenSetting(event: CommonEvent): void {
-    this.props.onOpenSetting && this.props.onOpenSetting(event)
+    isFunction(this.props.onOpenSetting) && this.props.onOpenSetting(event)
   }
 
   private onSumit(event: CommonEvent): void {
@@ -154,7 +155,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
         onOpenSetting={this.onOpenSetting.bind(this)}
         onError={this.onError.bind(this)}
         onContact={this.onContact.bind(this)}
-      ></Button>
+      />
     )
 
     return (
