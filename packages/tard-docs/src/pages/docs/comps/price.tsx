@@ -2,7 +2,7 @@ import MarkDown from '@/components/markdown'
 
 const markdown = `# Price 价格
 ### 介绍
-该组件封装了业务中常用的价格用法
+该组件封装了业务中常用的价格用法，默认保留有效小数点2位，小数点后几位0直接抹去
 ### 引入
 ~~~js
 import { SlPrice } from 'tard'
@@ -13,12 +13,14 @@ import { SlPrice } from 'tard'
 <SlPrice price="88.00" />
 ~~~
 
-### 保留有效小数点
+### 小数位位数
 修改 ~fixedNum~ 属性保留小数点几位，支持 1-100 的整数
 ~~~js
-<SlPrice price="23.00" fixedNum={ 2 } />
+<SlPrice price="88.00" fixedNum={ 0 } />
+<SlPrice price="88.80" fixedNum={ 1 } />
+<SlPrice price="88.88" fixedNum={ 2 } />
 ~~~
-### 价格传入数组
+### 价格区间
 ~price~ 价格区间
 ~~~js
 <SlPrice price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } />
@@ -27,14 +29,14 @@ import { SlPrice } from 'tard'
 ### 自定义颜色
 修改 ~color~ 属性修改颜色
 ~~~js
-<SlPrice className='doc-body-content__pr' price="88.00" color="#FF2929" />
-<SlPrice className='doc-body-content__pr' price="88.00" color="#496FF2" />
+<SlPrice price="88.00" color="#FF2929" />
+<SlPrice price="88.00" color="#496FF2" />
 ~~~
 
 ### 划线价
 添加 ~originalPrice~ 属性可以展示原价
 ~~~js
-<SlPrice price="88.00" originalPrice="188.00" fixedNum={ 2 } />
+<SlPrice price="88.00" originPrice="188.00" fixedNum={ 2 } />
 ~~~
 
 ### 自定义价格前内容
@@ -64,18 +66,18 @@ import { SlPrice } from 'tard'
 ### 单位价格大小对比
 修改 ~type~ 属性，可以修改价格类型，目前有五种类型供大家选择
 ~~~js
-<SlPrice className='doc-body-content__pr' price="88.00" type="small" />
-<SlPrice className='doc-body-content__pr' price="88.00" type="smallMiddle" />
-<SlPrice className='doc-body-content__pr' price="88.00" type="middle" />
-<SlPrice className='doc-body-content__pr' price="88.00" type="largeMiddle" />
-<SlPrice className='doc-body-content__pr' price="88.00" type="large" />
+<SlPrice price="88.00" type="small" />
+<SlPrice price="88.00" type="smallMiddle" />
+<SlPrice price="88.00" type="middle" />
+<SlPrice price="88.00" type="largeMiddle" />
+<SlPrice price="88.00" type="large" />
 ~~~
 
 ## API
 ### Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
-| price | 价格 | string或者string[] | - |
+| price | 价格 | string ｜ string[] | - |
 | originPrice | 划线价 | string | - |
 | originColor | 划线价颜色 | string | - |
 | color | 颜色 | string | - |
@@ -103,6 +105,8 @@ import { SlPrice } from 'tard'
 |  名称  | 默认值 |
 |  ---- | ---- |
 |  @price-line-horizontal-padding | 12px |
+|  @price-font-size-lg | 60px |
+|  @price-font-size-ml | 48px |
 `
 
 export default function DocsPage() {

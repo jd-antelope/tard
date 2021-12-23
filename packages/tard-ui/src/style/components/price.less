@@ -2,8 +2,6 @@
 @import "../mixins/index.less";
 
 @commission-mb: 5px;
-@price-lg: 60px;
-@price-ml: 48px;
 
 .@{--css-prefix}-price {
   .flex-direction(row);
@@ -17,6 +15,8 @@
 
     &-line {
       margin: 0 @price-line-horizontal-padding;
+      font-family: @family-base;
+      font-size: 40px;
     }
   }
 
@@ -37,11 +37,11 @@
   }
 
   &__content-large {
-    font-size: @price-lg;
+    font-size: @price-font-size-lg;
   }
 
   &__content-large-middle {
-    font-size: @price-ml;
+    font-size: @price-font-size-ml;
   }
 
   &__content-middle {

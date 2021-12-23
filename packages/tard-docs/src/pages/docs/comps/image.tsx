@@ -24,7 +24,7 @@ import { SlImage } from 'tard'
 ### 加载中提示
 添加属性~showLoading~可增加图片加载提示, 增加属性 ~loadingContent~ 自定义加载加载提示
 ~~~js
-<SlImage 
+<SlImage
   src=""
   showLoading
 />
