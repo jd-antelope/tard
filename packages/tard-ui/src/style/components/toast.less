@@ -48,7 +48,7 @@
       background-color: @toast-bg-color;
 
       &__icon {
-        @toast-icon-b-margin: 24px;
+        margin-top: @toast-icon-margin--top;
         color: @toast-color;
         font-size: @toast-icon-size;
         text-align: center;
@@ -57,7 +57,7 @@
 
       &__img-item {
         line-height: 0;
-        @toast-icon-b-margin: 24px;
+        margin-top: @toast-icon-margin--top;
         text-align: center;
         width: @toast-image-size;
         height: @toast-image-size;
@@ -74,7 +74,7 @@
       }
     }
     &-content--slot {
-      padding: @toast-slot-h-padding @toast-slot-v-padding;
+      padding: @toast-slot-horizontal-padding @toast-slot-vertical-padding;
     }
 
     &.@{--css-prefix}-toast__body--custom-image,

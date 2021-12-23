@@ -31,9 +31,8 @@
   /* elements */
 
   &__text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .flex-center();
+     
     box-sizing: border-box;
     min-width: @button-min-width;
     height: @button-height;
@@ -152,7 +151,6 @@
       line-height: @button-height-small;
       font-size: @button-small-text-size;
       padding: 0  @button-small-v-padding;
-      @button-small-v-padding: 24px;
     }
   }
   &--mini {

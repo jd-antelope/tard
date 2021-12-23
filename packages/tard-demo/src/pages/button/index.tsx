@@ -8,7 +8,6 @@ import './index.less';
 
 const Button: FC = () => {
 
-
 	return (
 		<View className="container">
 			<DocsHeader title='Button'></DocsHeader>
