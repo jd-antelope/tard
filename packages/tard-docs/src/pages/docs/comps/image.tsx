@@ -24,16 +24,14 @@ import { SlImage } from 'tard'
 ### 加载中提示
 添加属性~showLoading~可增加图片加载提示, 增加属性 ~loadingContent~ 自定义加载加载提示
 ~~~js
-<SlImage 
-  className="base-image doc-body-content__pr" 
+<SlImage
   src=""
   showLoading
 />
 <SlImage 
-  className="base-image" 
   src=""
   showLoading
-  loadingContent={ } 
+  loadingContent={ <SlIcon value='loading-2' size={20} /> } 
 />
 ~~~
 
@@ -41,7 +39,6 @@ import { SlImage } from 'tard'
 传入的图片找不到或者加载不出来就会显示默认图片, 增加属性 ~errorContent~ 自定义加载加载提示
 ~~~js
 <SlImage 
-  className="base-image" 
   src="" 
   errorContent={ <View>加载失败</View> } 
 />

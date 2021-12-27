@@ -11,11 +11,11 @@ const Price: FC = () => {
       <DocsHeader title='Price 价格'></DocsHeader>
       <View className='doc-body'>
         <View className='doc-body-content'>
-          <View className='doc-body-content-tip px-24'>基本案例</View>
+          <View className='doc-body-content-tip px-24'>基本用法</View>
           <View className='doc-body-content__info doc-body-content__row'>
             <SlPrice price="88.00" />
           </View>
-          <View className='doc-body-content-tip px-24'>保留有效小数点</View>
+          <View className='doc-body-content-tip px-24'>小数位位数</View>
           <View className='doc-body-content__info doc-body-content__row'>
             <SlPrice className='doc-body-content__pr' price="88.00" fixedNum={ 0 } />
             <SlPrice className='doc-body-content__pr' price="88.80" fixedNum={ 1 } />
@@ -32,7 +32,7 @@ const Price: FC = () => {
           </View>
           <View className='doc-body-content-tip px-24'>划线价</View>
           <View className='doc-body-content__info doc-body-content__row'>
-            <SlPrice price="88.00" originalPrice="188.00" fixedNum={ 2 } />
+            <SlPrice price="88.00" originPrice="188.00" fixedNum={ 2 } />
           </View>
           <View className='doc-body-content-tip px-24'>自定义价格前内容</View>
           <View className='doc-body-content__info doc-body-content__row'>
