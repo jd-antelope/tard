@@ -43,5 +43,5 @@ SlIcon.defaultProps = {
   prefixClass: 'slc-icon',
   value: '',
   color: '',
-  size: 24
+  size: 16
 }

@@ -73,7 +73,7 @@ export interface SlInputNumberProps extends SlComponent {
   /**
    * 输入框值失去焦点时触发的事件
    */
-  onBlur?: CommonEventFunction
+  onBlur?: Function
   /**
    * 输入框尝试输入错误数组触发的事件
    * @param {InputError} errCb

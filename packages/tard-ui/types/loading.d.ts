@@ -1,6 +1,6 @@
 import { ComponentClass } from 'react'
 import SlComponent from './base'
-import { CommonEventFunction } from '@tarojs/components/types/common'
+
 
 export interface SlLoadingProps extends SlComponent {
   /**
@@ -23,7 +23,7 @@ export interface SlLoadingProps extends SlComponent {
   /**
    * 点击事件
    */
-  onClick?: CommonEventFunction | null
+  onClick?: Function | null
 }
 
 declare const SlLoading: ComponentClass<SlLoadingProps>

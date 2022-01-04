@@ -14,6 +14,7 @@ export { default as SlGrid } from './components/grid';
 export { default as SlGridItem } from './components/grid/item';
 export { default as SlIcon } from './components/icon';
 export { default as SlCell } from './components/cell';
+export { default as SlCellGroup } from './components/cell/cell-group';
 export { default as SlPopup } from './components/popup';
 export { default as SlSkeleton } from './components/skeleton';
 export { default as SlCanvas } from './components/canvas';

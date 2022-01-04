@@ -29,7 +29,7 @@ export interface SlSortProps extends SlComponent {
   /**
    * 排序改变，回调函数
    */
-  onChange?: CommonEventFunction;
+  onChange?: Function;
 
   /**
    * 是否滚动 

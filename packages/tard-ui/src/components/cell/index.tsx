@@ -1,45 +1,85 @@
 import classNames from 'classnames'
-import { InferProps } from 'prop-types'
-import React from 'react'
+import React, { Fragment } from 'react'
 import { View, Text } from '@tarojs/components'
 import { SlCellProps } from '../../../types/cell'
 import SlIcon from '../icon/index'
-import { pxTransform } from '../../common/utils'
+import Taro from '@tarojs/taro'
+// import { pxTransform } from '../../common/utils'
 
 export default class SlCell extends React.Component<SlCellProps> {
   public static defaultProps: SlCellProps
-  public static propTypes: InferProps<SlCellProps>
 
   // 点击右侧数据
   private handleClick(): void {
     this.props.onClick && this.props.onClick(arguments as any)
+    if(this.props.to){
+      Taro[this.props.pageType || 'switchTab']({
+        url: this.props.to
+      })
+    }
   }
 
   public render(): JSX.Element {
     const {
       title,
       value,
+      label,
+      border,
       icon,
-      height = 100
+      isLink,
+      center,
+      arrowDirection,
+      rightContent,
+      leftContent
     } = this.props
-    const Cell = classNames('slc-cell')
+
+    const rootClass = classNames(
+      'slc-cell',
+      {
+        'slc-cell__border': border,
+        'slc-cell__center': center
+      }
+    )
 
     return (
-      <View className={Cell} style={{ height: `${pxTransform(height)}` }} onClick={this.handleClick.bind(this)}>
-        <View className="slc-cell-title">{title}</View>
-        <View className="slc-cell-value">
-          <Text className="slc-cell-text">{value}</Text>
-          <SlIcon value={`${String(icon)}`} className="slc-cell-icon" /></View>
+      <View className={rootClass} onClick={this.handleClick.bind(this)}>
+        {
+          (title || icon || leftContent) &&
+          <View className='slc-cell__item'>
+            {
+              leftContent ||
+              <Fragment>
+                <View className="slc-cell__item-title">
+                  {icon && <SlIcon className='slc-cell__item-icon' value={icon} />}
+                  {title}
+                </View>
+                <View className='slc-cell__item-label'>{label}</View>
+              </Fragment>
+            }
+          </View>
+        }
+
+        <View className='slc-cell__item'>
+          {
+            rightContent ||
+            <View className={isLink ? 'slc-cell__item-click' : ''}>
+              <Text>{value}</Text>
+              {isLink && <SlIcon className='slc-cell__item-link' value={`chevron-${arrowDirection}`} />}
+            </View>
+          }
+        </View>
+
       </View>
     )
   }
 }
 
 SlCell.defaultProps = {
-  title: "左侧标题",
-  value: "右侧内容",
-  icon: "chevron-right",
-  height: 100,
+  border: true,
+  isLink: false,
+  arrowDirection: 'right',
+  pageType: 'switchTab',
+  center: false
 }
 
 

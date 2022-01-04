@@ -37,3 +37,6 @@ export { default as SlEmpty } from './empty';
 export declare const SlGridItem: ComponentClass;
 
 export { default as SlUploader } from './uploader';
+
+export { default as SlCell } from './cell';
+export declare const SlCellGroup: ComponentClass;

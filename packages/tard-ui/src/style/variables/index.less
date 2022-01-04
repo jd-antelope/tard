@@ -29,9 +29,9 @@
 @color-bg: #FFF;
 
 // Text Color
-@color-text-base: #333; // 文字的基本色
+@color-text-base: #333333; // 文字的基本色
 @color-text-base-inverse: #FFF; // 反色
-@color-text-secondary: #36D57D; // 辅助色
+@color-text-secondary: #999999; // 辅助色
 @color-text-placeholder: #C9C9C9;
 @color-text-disabled: #CCC;
 @color-text-title: #2C405A; // 文章标题
@@ -45,7 +45,7 @@
 @overlay-bg-color: rgba(0,0,0,0.65);
 
 // 边框颜色
-@color-border-base: #C5D9E8;
+@color-border-base: #EFEFEF;
 @color-border-split: mix(#FFF, @color-border-base, 20%);
 @color-border-light: mix(#FFF, @color-border-base, 30%);
 @color-border-lighter: mix(#FFF, @color-border-base, 50%);
@@ -125,7 +125,7 @@ sans-serif;
 @button-min-width-mini: 120px;
 @button-height-mini: 32px;
 @button-mini-text-size: 24px;
-@button-mini-v-padding: 12px;
+@button-mini-v-padding: 6px;
 @button-min-width-small: 144px;
 @button-height-small: 56px;
 @button-small-text-size: 28px;
@@ -139,6 +139,12 @@ sans-serif;
 @button-color-info: #496FF2;
 @button-color-success: #1AD054;
 @button-color-warning: #F7B500;
+
+// Cell
+@cell-horizontal-padding: 36px;
+@cell-vertical-padding: 24px;
+@cell-group-title-padding: @cell-vertical-padding @cell-horizontal-padding;
+@cell-background-color: @color-white;
 
 // DropdownMenu
 @dropdown-menu-background-color: @color-bg;

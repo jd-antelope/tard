@@ -29,7 +29,7 @@ export interface SlRateProps extends SlComponent {
   /**
    * 输入框值改变时触发的事件，开发者需要通过 onChange 事件来更新 value 值变化，但不填写 onChange 函数时，该组件只读
    */
-  onChange?: CommonEventFunction;
+  onChange?: Function;
 
 }
 

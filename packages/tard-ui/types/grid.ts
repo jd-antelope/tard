@@ -1,5 +1,5 @@
 import { ComponentClass } from 'react'
-import { CommonEventFunction } from '@tarojs/components/types/common'
+
 import SlComponent from './base'
 
 export interface SlGridProps extends SlComponent {
@@ -74,7 +74,7 @@ export interface SlGridItemProps extends SlComponent {
   /**
   * 点击事件
   */
-  onClick?: CommonEventFunction,
+  onClick?: Function,
 }
 
 declare const SlGrid: ComponentClass<SlGridProps>

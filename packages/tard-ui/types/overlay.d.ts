@@ -1,5 +1,5 @@
 import SlComponent from './base'
-import { CommonEventFunction } from '@tarojs/components/types/common'
+
 
 export interface SlOverlayProps extends SlComponent {
     /**

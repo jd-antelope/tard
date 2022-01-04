@@ -1,6 +1,5 @@
 
 import { MouseEvent, ComponentClass } from 'react'
-import { CommonEventFunction } from '@tarojs/components/types/common'
 import { ButtonProps } from '@tarojs/components/types/Button'
 import SlComponent from './base'
 
