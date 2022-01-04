@@ -11,14 +11,8 @@ const Cell: FC = () => {
   const [toastVisible, setToastVisible] = useState(false)
   const [checked, setChecked] = useState(true)
 
-  const leftContent =
-    <View className='left-content'>
-      <View className='left-content__text'>单元格</View>
-      <SlButton type="danger" size='mini'>标签</SlButton>
-    </View>
-
   return (
-    <View className="cell-container">
+    <View className="cell-container container">
       <DocsHeader title='Cell'></DocsHeader>
       <View className='doc-body'>
         <View className='doc-body-content-tip'>基础用法</View>
@@ -58,7 +52,10 @@ const Cell: FC = () => {
         <SlCell title="单元格" center value="相关内容" label="描述信息" border={false} />
 
         <View className='doc-body-content-tip'>使用插槽</View>
-        <SlCell value="相关内容" leftContent={leftContent} />
+        <SlCell value="相关内容" leftContent={<View className='left-content'>
+          <View className='left-content__text'>单元格</View>
+          <SlButton type="danger" size='mini'>标签</SlButton>
+        </View>} />
         <SlCell title="单元格" icon="user" rightContent={<SlIcon value='search' />} />
         <SlCell title="单元格" rightContent={<View><SlSwitch checked={checked} onChange={(v) => setChecked(v)} /></View>} />
 

@@ -13,7 +13,7 @@ export default class SlCell extends React.Component<SlCellProps> {
   private handleClick(): void {
     this.props.onClick && this.props.onClick(arguments as any)
     if(this.props.to){
-      Taro[this.props.pageType || 'switchTab']({
+      Taro.navigateTo({
         url: this.props.to
       })
     }
