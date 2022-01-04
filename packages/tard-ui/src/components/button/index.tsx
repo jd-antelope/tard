@@ -2,18 +2,20 @@
 import React from 'react'
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
-import PropTypes, { InferProps } from 'prop-types'
+import { InferProps } from 'prop-types'
 import { ButtonProps } from '@tarojs/components/types/Button'
 import { View, Button, Form } from '@tarojs/components'
 import { BaseEventOrig, CommonEvent } from '@tarojs/components/types/common'
 import { SlButtonProps, SlButtonState } from '../../../types/button'
 import Common from '../../common/common'
-import { objectToString, pxTransform } from '../../common/utils'
+import { objectToString, pxTransform,  } from '../../common/utils'
+import { isFunction } from 'src/common/is'
 
 const SIZE_CLASS = {
+  large: 'large',
+  normal: 'normal',
   small: 'small',
-  middle: 'middle',
-  large: 'large'
+  mini: 'mini'
 }
 export default class SlButton extends React.Component<SlButtonProps, SlButtonState> {
   public static defaultProps: SlButtonProps
@@ -29,36 +31,34 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
 
   private onClick(event: CommonEvent): void {
     if (!this.props.disabled) {
-      this.props.onClick && this.props.onClick(event)
+      isFunction(this.props.onClick) && this.props.onClick(event)
     }
   }
 
   private onGetUserInfo(event: CommonEvent): void {
-    this.props.onGetUserInfo && this.props.onGetUserInfo(event)
+    isFunction(this.props.onGetUserInfo) && this.props.onGetUserInfo(event)
   }
 
   private onContact(
     event: BaseEventOrig<ButtonProps.onContactEventDetail>
   ): void {
-    this.props.onContact && this.props.onContact(event)
+    isFunction(this.props.onContact) && this.props.onContact(event)
   }
 
   private onGetPhoneNumber(event: CommonEvent): void {
-    this.props.onGetPhoneNumber && this.props.onGetPhoneNumber(event)
+    isFunction(this.props.onGetPhoneNumber) && this.props.onGetPhoneNumber(event)
   }
 
   private onError(event: CommonEvent): void {
-    this.props.onError && this.props.onError(event)
+    isFunction(this.props.onError) && this.props.onError(event)
   }
 
   private onOpenSetting(event: CommonEvent): void {
-    this.props.onOpenSetting && this.props.onOpenSetting(event)
+    isFunction(this.props.onOpenSetting) && this.props.onOpenSetting(event)
   }
 
   private onSumit(event: CommonEvent): void {
     if (this.state.isWEAPP || this.state.isWEB) {
-      // TODO: 3.0 this.$scope
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
       this.$scope.triggerEvent('submit', event.detail, {
         bubbles: true,
@@ -69,8 +69,6 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
 
   private onReset(event: CommonEvent): void {
     if (this.state.isWEAPP || this.state.isWEB) {
-      // TODO: 3.0 this.$scope
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
       this.$scope.triggerEvent('reset', event.detail, {
         bubbles: true,
@@ -82,6 +80,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
   // eslint-disable-next-line no-undef
   public render(): JSX.Element | null {
     const {
+      type,
       size = '',
       radius = 0,
       fill,
@@ -92,6 +91,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
       formType,
       openType,
       color,
+      border,
       borderColor,
       fillColor,
       customStyle,
@@ -104,20 +104,31 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
     } = this.props
     const { isWEAPP, isWEB } = this.state
 
-    const rootClassName = ['slc-button', 'slc-button--normal'];
+    const rootClassName = ['slc-button', `slc-button--${type}`];
     const classObject = {
       [`slc-button--${SIZE_CLASS[size]}`]: SIZE_CLASS[size],
       'slc-button--disabled': disabled,
       'slc-button--full': full,
-      'slc-button--round': round,
+     [ `slc-button--${round}`]: round,
       'slc-button--fill': fill,
-      'slc-button__no-border': (fill || fillColor) && !borderColor
+      [`slc-button--${type}--border`]: border && type,
+      // 'slc-button__no-border': (fill || fillColor) && !borderColor,
+    }
+    const selfColor: any = { color, borderColor, fillColor }
+    if (fillColor && border) {
+      selfColor.color = fillColor
+      selfColor.borderColor = fillColor
+      selfColor.fillColor = 'none'
+    }
+    if (fillColor && !border) {
+      selfColor.color = '#fff'
+      selfColor.border = 'none'
     }
     const style = (objectToString(Object.assign(customStyle, {
       'border-radius': pxTransform(radius),
-      'color': color,
-      'border-color': borderColor,
-      'background-color': fillColor,
+      'color': selfColor.color,
+      'border-color': selfColor.borderColor,
+      'background': selfColor.fillColor,
     })))
     const webButton = (
       <Button
@@ -144,7 +155,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
         onOpenSetting={this.onOpenSetting.bind(this)}
         onError={this.onError.bind(this)}
         onContact={this.onContact.bind(this)}
-      ></Button>
+      />
     )
 
     return (
@@ -161,7 +172,6 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
             {button}
           </Form>
         )}
-
         <View className='slc-button__text'>{this.props.children}</View>
       </Common>
     )
@@ -169,10 +179,13 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
 }
 
 SlButton.defaultProps = {
+  type: 'default',
   fill: false,
   lang: 'zh_CN',
   color: '',
+  round: 'normal',
   fillColor: '',
+  border: false,
   borderColor: '',
   radius: 0,
   disabled: false,
@@ -185,42 +198,4 @@ SlButton.defaultProps = {
   sendMessageImg: '',
   showMessageCard: false,
   appParameter: ''
-}
-SlButton.propTypes = {
-  fill: PropTypes.bool,
-  radius: PropTypes.number,
-  lang: PropTypes.string,
-  color: PropTypes.string,
-  borderColor: PropTypes.string,
-  fillColor: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'middle', 'large']),
-  full: PropTypes.bool,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
-  customStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  formType: PropTypes.oneOf(['submit', 'reset', '']),
-  openType: PropTypes.oneOf([
-    'contact',
-    'share',
-    'getUserInfo',
-    'getPhoneNumber',
-    'launchApp',
-    'openSetting',
-    'feedback',
-    'getRealnameAuthInfo',
-    'getAuthorize',
-    'contactShare',
-    ''
-  ]),
-  sessionFrom: PropTypes.string,
-  sendMessageTitle: PropTypes.string,
-  sendMessagePath: PropTypes.string,
-  sendMessageImg: PropTypes.string,
-  showMessageCard: PropTypes.bool,
-  appParameter: PropTypes.string,
-  onGetUserInfo: PropTypes.func,
-  onContact: PropTypes.func,
-  onGetPhoneNumber: PropTypes.func,
-  onError: PropTypes.func,
-  onOpenSetting: PropTypes.func
 }

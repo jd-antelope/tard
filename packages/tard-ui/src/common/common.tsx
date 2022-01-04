@@ -59,7 +59,7 @@ export default class Common extends React.Component<CommonProps, CommonState> {
   // eslint-disable-next-line no-undef
   public render(): JSX.Element | null {
     const { className, children, style, ...rest } = this.props
-    const { themeStyle } = this.state
+   const { themeStyle } = this.state
     return (
       <View className={className} style={themeStyle + style} {...rest}>
         {children}

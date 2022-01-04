@@ -37,26 +37,31 @@
     text-align: center;
     z-index: @zindex-toast;
 
+
     &-content {
       min-width: @toast-min-width;
       max-width: @toast-max-width;
-      padding: @spacing-v-lg @spacing-h-xl;
+      padding:  @spacing-v-md;
+
       border-radius: @border-radius-md;
       box-sizing: border-box;
       background-color: @toast-bg-color;
 
       &__icon {
-        margin-bottom: @spacing-v-lg;
+        margin-top: @toast-icon-margin--top;
         color: @toast-color;
         font-size: @toast-icon-size;
         text-align: center;
+        line-height: 0;
       }
 
       &__img-item {
         line-height: 0;
+        margin-top: @toast-icon-margin--top;
         text-align: center;
         width: @toast-image-size;
         height: @toast-image-size;
+
       }
       
 
@@ -67,6 +72,9 @@
         word-break: break-all;
         text-align: center;
       }
+    }
+    &-content--slot {
+      padding: @toast-slot-horizontal-padding @toast-slot-vertical-padding;
     }
 
     &.@{--css-prefix}-toast__body--custom-image,

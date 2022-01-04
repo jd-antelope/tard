@@ -16,7 +16,6 @@ export default {
 		'pages/grid/index',
 		'pages/input-number/index',
 		'pages/loading/index',
-		'pages/media/index',
 		'pages/modal/index',
 		'pages/nav-bar/index',
 		'pages/overlay/index',
@@ -33,7 +32,7 @@ export default {
 		'pages/tab-pane/index',
 		'pages/tag-price/index',
 		'pages/toast/index',
-		'pages/upload/index',
+		'pages/uploader/index',
 ],
   window: {
     backgroundTextStyle: 'light',

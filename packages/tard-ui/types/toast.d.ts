@@ -18,6 +18,10 @@ export interface SlToastProps extends SlComponent {
    */
   icon?: string
   /**
+   * toast自定位置距离
+   */
+  top?: string
+  /**
    * 元素展示的图片
    */
   image?: string

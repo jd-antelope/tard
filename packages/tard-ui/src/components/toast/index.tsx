@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import React from 'react'
 import { Image, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
+import { objectToString } from 'src/common/utils'
 import { SlToastProps, SlToastState } from '../../../types/toast'
 import statusImg from './img.json'
-
 export default class SlToast extends React.Component<
   SlToastProps,
   SlToastState
@@ -92,7 +92,7 @@ export default class SlToast extends React.Component<
 
   public render(): JSX.Element | null {
     const { _isOpened } = this.state
-    const { customStyle, text, icon, status, image, overlay } = this.props
+    const { customStyle = {}, text, icon, status, image, overlay, top } = this.props
 
     /* eslint-disable @typescript-eslint/no-non-null-assertion */
     const realImg = image || statusImg[status!] || null
@@ -104,7 +104,13 @@ export default class SlToast extends React.Component<
       'toast-body--text': !realImg && !icon,
       [`slc-toast__body--${status}`]: !!status
     })
+    const contentClass = {
+      'toast-body-content--slot': realImg || icon,
+    }
 
+    const style = (objectToString(Object.assign(customStyle, {
+      'top': top
+    })))
     const iconClass = classNames('slc-icon', {
       [`slc-icon-${icon}`]: icon
     })
@@ -114,16 +120,16 @@ export default class SlToast extends React.Component<
         {overlay && <View className='slc-toast__overlay' />}
         <View
           className={bodyClass}
-          style={customStyle}
+          style={style}
           onClick={this.handleClick}
         >
-          <View className='toast-body-content'>
+          <View className={classNames('toast-body-content', contentClass)}>
             {realImg ? (
-                <Image
-                  className='toast-body-content__img-item'
-                  src={realImg}
-                  mode='scaleToFill'
-                />
+              <Image
+                className='toast-body-content__img-item'
+                src={realImg}
+                mode='scaleToFill'
+              />
             ) : null}
             {isRenderIcon && (
               <View className='toast-body-content__icon'>
@@ -132,7 +138,7 @@ export default class SlToast extends React.Component<
             )}
             {text && (
               <View className='toast-body-content__info'>
-              {text}
+                {text}
               </View>
             )}
           </View>
@@ -145,5 +151,6 @@ export default class SlToast extends React.Component<
 SlToast.defaultProps = {
   duration: 3000,
   visible: false,
-  overlay: false
+  overlay: false,
+  top: '50%'
 }

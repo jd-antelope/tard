@@ -12,6 +12,11 @@ type TaroButtonProps = Pick<ButtonProps, 'formType' | 'openType' |
 
 export interface SlButtonProps extends TaroButtonProps, SlComponent {
   /**
+   *按钮类型
+   * @defalt default
+   */
+   type?: string
+  /**
    * 是否填充背景
    * @default false
    */
@@ -27,9 +32,9 @@ export interface SlButtonProps extends TaroButtonProps, SlComponent {
   size?: string
   /**
    * 是否圆角
-   * @default false
+   * @default normal
    */
-  round?: boolean
+  round?: string
   /**
    * 按钮颜色
    */
@@ -38,7 +43,11 @@ export interface SlButtonProps extends TaroButtonProps, SlComponent {
   * 按钮填充颜色
   */
   fillColor?: string
-    /**
+  /**
+  * 是否使用边框
+  */
+  border?: boolean
+  /**
   * 边框颜色
   */
    borderColor?: string
@@ -46,6 +55,10 @@ export interface SlButtonProps extends TaroButtonProps, SlComponent {
    * 按钮自定义圆角
    */
   radius?: number
+  /**
+   * 自定义样式对象
+   */
+  customStyle?: object
   /**
    * 设置按钮为禁用态（不可点击）
    */
