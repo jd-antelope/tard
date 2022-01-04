@@ -1,3 +1,30 @@
+@font-face {
+  font-family: "JDZhengHT-EN-Bold";
+  src: url('https://storage.360buyimg.com/hishop-images/hishop-demo-images/fontFamily/JDZhengHT-EN-Bold.ttf');
+}
+
+@font-face {
+  font-family: "JDZhengHT-EN-Light";
+  src: url('https://storage.360buyimg.com/hishop-images/hishop-demo-images/fontFamily/JDZhengHT-EN-Light.ttf');
+}
+
+@font-face {
+  font-family: "JDZhengHT-EN-Regular";
+  src: url('https://storage.360buyimg.com/hishop-images/hishop-demo-images/fontFamily/JDZhengHT-EN-Regular.ttf');
+}
+
+.family-regular {
+  font-family: "JDZhengHT-EN-Regular";
+}
+
+.family-bold {
+  font-family: "JDZhengHT-EN-Bold";
+}
+
+.family-light {
+  font-family: "JDZhengHT-EN-Light";
+}
+
 .markdown-body {
   flex: 1;
   -ms-text-size-adjust: 100%;
