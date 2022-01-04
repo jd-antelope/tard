@@ -1,5 +1,5 @@
 import { ComponentClass } from 'react'
-import { CommonEventFunction } from '@tarojs/components/types/common'
+
 
 import SlComponent from './base'
 
@@ -38,15 +38,15 @@ export interface SlModalProps extends SlComponent {
   /**
    * 触发关闭时的事件
    */
-  onClose?: CommonEventFunction
+  onClose?: Function
   /**
    * 点击取消按钮触发的事件
    */
-  onCancel?: CommonEventFunction
+  onCancel?: Function
   /**
    * 点击确认按钮触发的事件
    */
-  onConfirm?: CommonEventFunction
+  onConfirm?: Function
 }
 
 export interface SlModalState {

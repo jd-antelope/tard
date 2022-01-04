@@ -6,7 +6,7 @@
   .flex-justify(space-between);
   font-size: @font-size-base;
   padding: @cell-vertical-padding @cell-horizontal-padding;
-  background-color: #FFFFFF;
+  background-color: @cell-background-color;
  
   &__border{
     &::after{
@@ -15,7 +15,7 @@
       bottom: 0;
       left: @cell-horizontal-padding;
       right: @cell-horizontal-padding;
-      border-bottom: 1px solid @color-border-base;
+      border-bottom: 1PX solid @color-border-base;
       transform: scaleY(0.5);
     }
   }
@@ -27,7 +27,7 @@
   &__item{
     
     &:last-child {
-      color: #999999;
+      color: @color-text-secondary;
     }
 
     &:first-child{
@@ -60,6 +60,7 @@
   &-group{
     &-title{
       padding: @cell-group-title-padding;
+      font-size: @font-size-base;
     }
 
     &-item{

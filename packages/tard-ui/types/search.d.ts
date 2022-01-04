@@ -1,5 +1,5 @@
 import { IconProps } from "@tarojs/components/types/Icon"
-import { CommonEventFunction } from '@tarojs/components/types/common'
+
 import SlComponent from './base'
 
 export interface SlSearchProps extends SlComponent {
@@ -38,7 +38,7 @@ export interface SlSearchProps extends SlComponent {
   /**
   *  点击事件
   */
-  onClick?: CommonEventFunction
+  onClick?: Function
   /**
   *  判断是否聚焦
   */

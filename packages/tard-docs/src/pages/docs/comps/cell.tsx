@@ -18,8 +18,8 @@ import { SlCell } from 'tard'
 通过 ~SlCellGroup~ 的 ~inset~ 属性，可以将单元格转换为圆角卡片风格
 ~~~js
 <SlCellGroup inset>
-    <SlCell title="单元格" value="相关内容" />
-    <SlCell title="单元格" value="相关内容" label="描述信息" />
+  <SlCell title="单元格" value="相关内容" />
+  <SlCell title="单元格" value="相关内容" label="描述信息" />
 </SlCellGroup>
 ~~~
 
@@ -37,24 +37,28 @@ import { SlCell } from 'tard'
 ### 展示箭头
 设置 ~isLink~ 属性后会在单元格右侧显示箭头，并且可以通过 ~arrowDirection~ 属性控制箭头方向
 ~~~js
-<SlCell title="单元格" isLink />
-<SlCell title="单元格" value="相关内容" isLink />
-<SlCell title="单元格" value="相关内容" isLink arrowDirection="down" />
+const [toastVisible, setToastVisible] = useState(false)
+
+<SlCell title="单元格" isLink onClick={() => setToastVisible(true)} />
+<SlCell title="单元格" value="相关内容" isLink onClick={() => setToastVisible(true)} />
+<SlCell title="单元格" value="相关内容" isLink arrowDirection="down" onClick={() => setToastVisible(true)} />
+
+<SlToast text="触发点击事件" visible={toastVisible} onClose={() => setToastVisible(false)} />
 ~~~
 ### 页面导航
+通过 ~to~ 属性进行路由跳转，~to~ 属性设置页面类型
 ~~~js
-<SlCell title="URL 跳转" isLink />
-<SlCell title="路由跳转" isLink />
+<SlCell title="路由跳转" isLink to="/pages/home/index" pageType="navigateTo" />
 ~~~
 ### 分组
 通过 ~SlCellGroup~ 的 ~title~ 属性可以指定分组标题
 ~~~js
 <SlCellGroup title="分组一">
-    <SlCell title="单元格" value="相关内容" />
+  <SlCell title="单元格" value="相关内容" />
 </SlCellGroup>
 <SlCellGroup title="分组二">
-    <SlCell title="单元格" value="相关内容" />
-    <SlCell title="单元格" value="相关内容" />
+  <SlCell title="单元格" value="相关内容" />
+  <SlCell title="单元格" value="相关内容" />
 </SlCellGroup>
 ~~~
 ### 垂直居中
@@ -66,7 +70,14 @@ import { SlCell } from 'tard'
 ### 使用插槽
 如以上用法不能满足你的需求，可以使用插槽 ~leftContent~、~rightContent~ 来自定义内容
 ~~~js
-<SlCell value="相关内容" leftContent={<View>单元格<SlButton size='mini'>标签</SlButton></View>} />
+const leftContent =
+<View className='left-content'>
+  <View className='left-content__text'>单元格</View>
+  <SlButton type="danger" size='mini'>标签</SlButton>
+</View>
+
+<SlCell value="相关内容" leftContent={leftContent} />
+<SlCell title="单元格" icon="user" rightContent={<SlIcon value='search' />} />
 <SlCell title="单元格" rightContent={<View><SlSwitch checked={true} /></View>} />
 ~~~
         
@@ -92,6 +103,8 @@ import { SlCell } from 'tard'
 | rightContent | 自定义单元格右侧内容 | React.ReactNode | - |
 | border | 是否显示内边框 | boolean | true |
 | center | 是否使内容垂直居中 | boolean | false |
+| to | 点击后跳转的目标路由对象，同 ~Taro~ 路由的~url~ | string | - |
+| pageType | 路由类型 | 'switchTab' ｜ 'reLaunch' ｜ 'redirectTo' ｜ 'navigateTo' | ~switchTab~ |
 
 ### Cell Events
 |  事件名   | 说明  | 回调参数 |
@@ -103,7 +116,8 @@ import { SlCell } from 'tard'
 |  ---- | ---- |
 |  @cell-horizontal-padding| 36px |
 |  @cell-vertical-padding | 24px |
-|  @cell-group-title-padding  | @cell-vertical-padding @cell-horizontal-padding |`
+|  @cell-group-title-padding  | @cell-vertical-padding @cell-horizontal-padding |
+|  @cell-background-color  | @color-white |`
 
 export default function DocsPage() {
   return (

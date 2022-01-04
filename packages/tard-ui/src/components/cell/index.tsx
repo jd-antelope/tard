@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import { View, Text } from '@tarojs/components'
 import { SlCellProps } from '../../../types/cell'
 import SlIcon from '../icon/index'
+import Taro from '@tarojs/taro'
 // import { pxTransform } from '../../common/utils'
 
 export default class SlCell extends React.Component<SlCellProps> {
@@ -11,6 +12,11 @@ export default class SlCell extends React.Component<SlCellProps> {
   // 点击右侧数据
   private handleClick(): void {
     this.props.onClick && this.props.onClick(arguments as any)
+    if(this.props.to){
+      Taro[this.props.pageType || 'switchTab']({
+        url: this.props.to
+      })
+    }
   }
 
   public render(): JSX.Element {
@@ -72,6 +78,7 @@ SlCell.defaultProps = {
   border: true,
   isLink: false,
   arrowDirection: 'right',
+  pageType: 'switchTab',
   center: false
 }
 

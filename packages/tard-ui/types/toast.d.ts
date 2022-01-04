@@ -1,5 +1,5 @@
 import { MouseEvent, ComponentClass } from 'react'
-import { CommonEventFunction } from '@tarojs/components/types/common'
+
 
 import SlComponent from './base'
 
@@ -41,11 +41,11 @@ export interface SlToastProps extends SlComponent {
   /**
    * 元素被点击之后触发的事件
    */
-  onClick?: CommonEventFunction
+  onClick?: Function
   /**
    * 元素被关闭之后触发的事件
    */
-  onClose?: CommonEventFunction
+  onClose?: Function
 }
 
 export interface SlToastState {

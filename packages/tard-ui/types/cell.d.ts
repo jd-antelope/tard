@@ -1,6 +1,4 @@
 import { MouseEvent, ComponentClass } from 'react'
-import { CommonEventFunction } from '@tarojs/components/types/common'
-
 import SlComponent from './base'
 
 export interface SlCellProps extends SlComponent {
@@ -41,6 +39,15 @@ export interface SlCellProps extends SlComponent {
    */
   arrowDirection?: 'left' | 'up' | 'down' | 'right'
   /**
+   * 点击后跳转的目标路由对象，同 Taro路由 的 url
+   */
+  to?: string
+  /**
+   * 路由类型
+   * @default 'switchTab'
+   */
+  pageType?: 'switchTab' | 'reLaunch' | 'redirectTo' | 'navigateTo'
+  /**
    * 自定义单元格左侧内容
    */
   leftContent?: React.ReactNode
@@ -51,7 +58,7 @@ export interface SlCellProps extends SlComponent {
   /**
   * 点击事件
   */
-  onClick?: CommonEventFunction
+  onClick?: Function
 
 }
 

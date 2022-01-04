@@ -1,5 +1,5 @@
 import { MouseEvent, ComponentClass } from 'react'
-import { CommonEventFunction } from '@tarojs/components/types/common'
+
 
 import SlComponent, { SlIconBaseProps } from './base'
 
@@ -45,11 +45,11 @@ export interface SlNavBarProps extends SlComponent {
     /**
      * 点击左侧按钮及文字时触发
      */
-    onClickLeft?: CommonEventFunction
+    onClickLeft?: Function
     /**
      * 点击右侧按钮及文字时触发
      */
-    onClickRight?: CommonEventFunction
+    onClickRight?: Function
 }
 
 declare const SlNavBar: ComponentClass<SlNavBarProps>
