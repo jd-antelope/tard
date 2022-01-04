@@ -9,7 +9,7 @@ import { BaseEventOrig, CommonEvent } from '@tarojs/components/types/common'
 import { SlButtonProps, SlButtonState } from '../../../types/button'
 import Common from '../../common/common'
 import { objectToString, pxTransform,  } from '../../common/utils'
-import { isFunction } from 'src/common/is'
+import { isFunction } from '../../common/is'
 
 const SIZE_CLASS = {
   large: 'large',

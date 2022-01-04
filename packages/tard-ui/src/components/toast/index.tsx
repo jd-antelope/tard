@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import { Image, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
-import { objectToString } from 'src/common/utils'
+import { objectToString } from '../../common/utils'
 import { SlToastProps, SlToastState } from '../../../types/toast'
 import statusImg from './img.json'
 export default class SlToast extends React.Component<
