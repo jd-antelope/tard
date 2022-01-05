@@ -39,8 +39,8 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
       monthEndTime: this.getMonth(endValue),
       day: this.getDate(value),
       dayEndTime: this.getDate(endValue),
-      value: this.getTimeArray(value),
-      valueEndTime: endValue ? this.getTimeArray(endValue) : [9999, 0, 0],
+      value: this.getTimeArray(value, this.props.type),
+      valueEndTime: endValue ? this.getTimeArray(endValue, this.props.type) : [9999, 0, 0],
       active: 1, // 现在激活的tab
       showToast: false,
       hour: this.getHour(value),
@@ -50,9 +50,16 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
     }
   }
 
-  private getTimeArray = (input: string) => {
-    const { type } = this.props
+  // 第一次进入判断
+  private getTimeArray = (input: string, type = 'date') => {
     const date = new Date()
+    if (type === 'time') {
+      const { hours, minutes } = this.state
+      const timeArray = [this.getHour(input), this.getMinute(input)]
+      const hourIndex = hours.indexOf(+timeArray[0]) !== -1 ? hours.indexOf(+timeArray[0]) : 1
+      const minuteIndex = minutes.indexOf(+timeArray[1]) !== -1 ? minutes.indexOf(+timeArray[1]) : 1
+      return [hourIndex, minuteIndex]
+    }
     const timeArray = [this.getYear(input), this.getMonth(input), this.getDate(input), this.getHour(input), this.getMinute(input)]
     const year = +timeArray[0] < date.getFullYear() ? +timeArray[0] : date.getFullYear()
     // @ts-ignore
@@ -61,7 +68,8 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
     const monthIndex = months.indexOf(+timeArray[1]) !== -1 ? months.indexOf(+timeArray[1]) : 1
     // @ts-ignore
     const dateIndex = days.indexOf(+timeArray[2]) !== -1 ? days.indexOf(+timeArray[2]) : 1
-    if (type === 'time') {
+    if (type === 'datetime') {
+      const { hours, minutes } = this.state
       // @ts-ignore
       const hourIndex = hours.indexOf(+timeArray[3]) !== -1 ? hours.indexOf(+timeArray[3]) : 1
       // @ts-ignore
@@ -94,15 +102,31 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
   // 改变时间函数
   private onChange = (e) => {
     const { type, minDate, maxDate } = this.props
-    const { hours, years, months, days } = this.state
+    const { hours, years, months, days, minutes } = this.state
     const val = e.detail.value
+    if (type === 'time') {
+      if (this.state.active === 1) {
+        this.setState({
+          hour: hours[val[0]],
+          minute: minutes[val[1]],
+          value: val,
+        })
+      } else {
+        this.setState({
+          hourEndTime: hours[val[0]],
+          minuteEndTime: minutes[val[1]],
+          value: val,
+        })
+      }
+      return
+    }
     const selectMonths = getMonths(years[val[0]], minDate, maxDate) || []
     const selectDays = getDays(years[val[0]], months[val[1]], minDate, maxDate)
     const selectHours = getHours(years[val[0]], months[val[1]], days[val[2]], minDate, maxDate)
     const selectMinutes = getMinutes(years[val[0]], months[val[1]], days[val[2]], hours[val[3]], minDate, maxDate)
     
     if (this.state.active === 1) {
-      const obj = type === 'time' ? {
+      const obj = type === 'datetime' ? {
         hour: selectHours[val[3]],
         minute: selectMinutes[val[4]],
       } : {} as any
@@ -118,7 +142,7 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
         value: val,
       })
     } else {
-      const obj = type === 'time' ? {
+      const obj = type === 'datetime' ? {
         hourEndTime: selectHours[val[3]],
         minuteEndTime: selectMinutes[val[4]],
       } : {} as any
@@ -137,10 +161,15 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
   }
 
   public UNSAFE_componentWillReceiveProps(nextProps: SlDatetimePickerProps): void {
-    const { visible, value = '', endValue = '', minDate, maxDate } = nextProps
+    const { visible, value = '', endValue = '', minDate, maxDate, type } = nextProps
     if (visible !== this.state._isOpened) {
       this.setState({
         _isOpened: visible
+      })
+    }
+    if (type !== 'date') {
+      this.setState({
+        value: this.getTimeArray(value, type),
       })
     }
     if (value != this.props.value) {
@@ -148,7 +177,7 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
         year: this.getYear(value),
         month: this.getMonth(value),
         day: this.getDate(value),
-        value: this.getTimeArray(value),
+        value: this.getTimeArray(value, type),
         hour: this.getHour(value),
         minute: this.getMinute(value),
       })
@@ -158,7 +187,7 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
         yearEndTime: this.getYear(endValue),
         monthEndTime: this.getMonth(endValue),
         dayEndTime: this.getDate(endValue),
-        valueEndTime: endValue ? this.getTimeArray(endValue) : [9999, 0, 0],
+        valueEndTime: endValue ? this.getTimeArray(endValue, type) : [9999, 0, 0],
         hourEndTime: this.getHour(endValue),
         minuteEndTime: this.getMinute(endValue),
       })
@@ -209,12 +238,26 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
   handleConfirm = () => {
     const { type } = this.props
     const timeArr: Array<string> = []
-    let startTime = `${this.state.year}-${this.transDate(this.state.month)}-${this.transDate(this.state.day)}`
-    if (type === 'time') startTime += ` ${this.transDate(this.state.hour)}:${this.transDate(this.state.minute)}`
+    let startTime = ''
+    if (type === 'datetime') {
+      startTime += `${this.state.year}-${this.transDate(this.state.month)}-${this.transDate(this.state.day)}`
+      startTime += ` ${this.transDate(this.state.hour)}:${this.transDate(this.state.minute)}`
+    } else if (type === 'date') {
+      startTime += `${this.state.year}-${this.transDate(this.state.month)}-${this.transDate(this.state.day)}`
+    } else {
+      startTime += `${this.transDate(this.state.hour)}:${this.transDate(this.state.minute)}`
+    }
     timeArr.push(startTime)
     if (this.props.showEndDate) {
       let endTime = `${this.state.yearEndTime}-${this.transDate(this.state.monthEndTime)}-${this.transDate(this.state.dayEndTime)}`
-      if (type === 'time') endTime += ` ${this.transDate(this.state.hourEndTime)}:${this.transDate(this.state.minuteEndTime)}`
+      if (type === 'datetime') {
+        endTime = `${this.state.yearEndTime}-${this.transDate(this.state.monthEndTime)}-${this.transDate(this.state.dayEndTime)}`
+        endTime += ` ${this.transDate(this.state.hourEndTime)}:${this.transDate(this.state.minuteEndTime)}`
+      } else if (type === 'date') {
+        endTime = `${this.state.yearEndTime}-${this.transDate(this.state.monthEndTime)}-${this.transDate(this.state.dayEndTime)}`
+      } else {
+        endTime += `${this.transDate(this.state.hourEndTime)}:${this.transDate(this.state.minuteEndTime)}`
+      }
       timeArr.push(endTime)
     }
     if (typeof this.props.onOk === 'function') {
@@ -260,7 +303,7 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
 
   // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
-    const { type } = this.props
+    const { type, round } = this.props
     const { _isOpened, hours, minutes } = this.state
     const rootClassMask = classNames(
       'slc-datetime__mask',
@@ -272,7 +315,8 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
     const containerClass = classNames(
       'slc-datetime__container',
       {
-        'slc-datetime__container__active': _isOpened
+        'slc-datetime__container-active': _isOpened,
+        'slc-datetime__container-round': round
       },
     )
 
@@ -299,7 +343,10 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
     } as CSSProperties
 
     return (
-      <View className="slc-datetime" onTouchMove={this.handleTouchMove}>
+      <View 
+        className="slc-datetime" 
+        onTouchMove={this.handleTouchMove}
+      >
         <View className={rootClassMask} onClick={this.outClick} />
         <View className={containerClass}>
           <View className="time-picker-container">
@@ -307,9 +354,12 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
               <View className={tabLeftClass} onClick={ () => this.handleClickTab(1) }>
                 <View className="time-show-left-title">{this.props.title}</View>
                 <View className="time-show-left-content">
-                  {this.state.year}.{this.transDate(this.state.month)}.{this.transDate(this.state.day)} 
                   {
-                    type === 'time' && 
+                    type !== 'time' &&
+                    <Fragment>{this.state.year}.{this.transDate(this.state.month)}.{this.transDate(this.state.day)}</Fragment>
+                  }
+                  {
+                    type !== 'date' && 
                     <Fragment> {this.transDate(this.state.hour)}:{this.transDate(this.state.minute)}</Fragment>
                   }
                 </View>
@@ -317,39 +367,47 @@ export default class SlDatetimePicker extends React.Component<SlDatetimePickerPr
               <View className={tabRightClass} onClick={ () => this.setState({active: 2})}>
                 <View className="time-show-left-title">{this.props.endTitle}</View>
                 <View className="time-show-left-content">
-                  {this.state.yearEndTime}.{this.transDate(this.state.monthEndTime)}.{this.transDate(this.state.dayEndTime)}
                   {
-                    type === 'time' && 
+                    type !== 'time' &&
+                    <Fragment>{this.state.yearEndTime}.{this.transDate(this.state.monthEndTime)}.{this.transDate(this.state.dayEndTime)}</Fragment>
+                  }
+                  {
+                    type !== 'date' && 
                     <Fragment> {this.transDate(this.state.hourEndTime)}:{this.transDate(this.state.minuteEndTime)}</Fragment>
                   }
                 </View>
               </View>
             </View>
             <PickerView
-              indicatorStyle={ `'height: ${pxTransform(50)}` }
+              indicatorClass="picker-column"
               className="picker-row"
               value={ this.state.active === 1 ? this.state.value : this.state.valueEndTime }
               onChange={this.onChange}
             >
-              <PickerViewColumn
-                style={ columnStyle }
-              >
-                {this.state.years.map(item => {
-                  return <View className="slc-datetime-picker__label">{item}年</View>;
-                })}
-              </PickerViewColumn>
-              <PickerViewColumn style={ columnStyle }>
-                {this.state.months.map(item => {
-                  return <View className="slc-datetime-picker__label">{item}月</View>
-                })}
-              </PickerViewColumn>
-              <PickerViewColumn style={ columnStyle }>
-                {this.state.days.map(item => {
-                  return <View className="slc-datetime-picker__label">{item}日</View>
-                })}
-              </PickerViewColumn>
               {
-                type === 'time' &&
+                type !== 'time' &&
+                <Fragment>
+                  <PickerViewColumn
+                    style={ columnStyle }
+                  >
+                    {this.state.years.map(item => {
+                      return <View className="slc-datetime-picker__label">{item}年</View>;
+                    })}
+                  </PickerViewColumn>
+                  <PickerViewColumn style={ columnStyle }>
+                    {this.state.months.map(item => {
+                      return <View className="slc-datetime-picker__label">{item}月</View>
+                    })}
+                  </PickerViewColumn>
+                  <PickerViewColumn style={ columnStyle }>
+                    {this.state.days.map(item => {
+                      return <View className="slc-datetime-picker__label">{item}日</View>
+                    })}
+                  </PickerViewColumn>
+                </Fragment>
+              }
+              {
+                type !== 'date' && 
                 <Fragment>
                   <PickerViewColumn style={ columnStyle }>
                     {hours.map(item => {
@@ -391,5 +449,6 @@ SlDatetimePicker.defaultProps = {
   value: '',
   endValue: '',
   minDate: '1990-01-01',
-  maxDate: `${new Date().getFullYear() + 5}-01-01`
+  maxDate: `${new Date().getFullYear() + 5}-01-01`,
+  round: false
 }

@@ -50,7 +50,7 @@ export interface SlDatetimePickerProps extends SlComponent {
    * 是否展示时间
    * @default false
    */
-  type?: 'date' | 'time'
+  type?: 'date' | 'time' | 'datetime'
   /**
    * 最小时间
    * @default 1990-01-01
@@ -61,6 +61,11 @@ export interface SlDatetimePickerProps extends SlComponent {
    * @default 2025-01-01
    */
   maxDate?: string
+  /**
+   * 是否倒角
+   * @default false
+   */
+  round?: boolean
 }
 
 export interface SlDatetimePickerState {

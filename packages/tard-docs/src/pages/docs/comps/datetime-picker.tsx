@@ -10,8 +10,7 @@ const markdown = `
 import { SlDatetimePicker } from 'tard'
 ~~~
 ## 代码演示
-### 基础用法
-默认日期选择器
+### 选择日期
 ~~~js
 <SlDatetimePicker 
   visible
@@ -19,27 +18,29 @@ import { SlDatetimePicker } from 'tard'
 />
 ~~~
 
-### 默认时间
-修改属性~value~可以修改默认值
+### 选择时间
+属性 ~type=time~ 时换成时间选择器
 ~~~js
 <SlDatetimePicker 
   visible
   value='2020-09-09'
+  type='time'
   onClose={ () => {} }
 />
 ~~~
 
-### 时间选择器
-属性 ~type=time~ 时换成时间选择器
+### 选择日期时间
+属性 ~type=datetime~ 时换成日期时间选择器
 ~~~js
-<SlDatetimePicker 
-  type="time" 
+<SlDatetimePicker  
   visible
+  value='2020-09-09 10:20'
+  type='time'
   onClose={ () => {} } 
 />
 ~~~
 
-### 显示结束时间
+### 选择开始-结束时间
 属性 ~showEndDate~ 显示结束时间
 ~~~js
 <SlDatetimePicker 
@@ -49,33 +50,23 @@ import { SlDatetimePicker } from 'tard'
 />
 ~~~
 
-### 修改头部名称
-修改属性 ~title~ 时可修改开始选择器头部名称
+### 自定义内容
+修改属性 ~title、endTitle~ 时可修改开始选择器头部名称
 ~~~js
 <SlDatetimePicker 
-  title="开始" 
+  title="自定义开始"
+  endTitle="自定义结束" 
   visible
   onClose={ () => {} } 
 />
 ~~~
 
-### 点击遮罩层不关闭
-修改属性 ~closeOnclickOverlay~ 为 ~false~ 时点击遮罩层不关闭
+### 倒角用法
+添加属性 ~round~ 增加头部倒角
 ~~~js
 <SlDatetimePicker 
-  closeOnclickOverlay={ false }
+  round
   visible
-  onClose={ () => {} } 
-/>
-~~~
-
-### 设置最小值和最大值
-修改属性 ~minDate~ 时可修改选择器最小值；修改属性 ~maxDate~ 时可修改选择器最大值；
-~~~js
-<SlDatetimePicker 
-  visible
-  minDate="2000-01-01"
-  maxDate="2010-01-01"
   onClose={ () => {} } 
 />
 ~~~
@@ -93,6 +84,7 @@ import { SlDatetimePicker } from 'tard'
 | type | 是否展示时间 | 'date'｜'time' | 'date' |
 | minDate | 最小时间 | string | 1990-01-01 |
 | maxDate | 最大时间 | string | - |
+| round | 是否倒角 | boolean | false |
 
 ### Events
 |  事件名   | 说明  | 回调参数 |
