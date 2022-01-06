@@ -1,9 +1,10 @@
 import React, { memo, useState, useCallback, Fragment } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlDatetimePicker, SlButton } from 'tard'
+import { SlDatetimePicker, SlIcon } from 'tard'
 import { SlDatetimePickerProps } from 'tard/types/datetime-picker'
 import DocsHeader from '../../components/doc-header'
+import { isWeb } from '../../utils'
 import './index.less';
 
 const DatetimePicker: FC = () => {
@@ -16,71 +17,91 @@ const DatetimePicker: FC = () => {
       onClose: () => setDatetimePicker({ visible: false })
     });
   }, []);
+
+  const list = [
+    {
+      title: '基础用法',
+      children: [
+        {
+          label: '选择日期',
+          key: 'date',
+          params: {}
+        }, {
+          label: '选择时间',
+          key: 'time',
+          params: {
+            value: '2020-09-09 10:20',
+            type: "time"
+          }
+        }, {
+          label: '选择日期时间',
+          key: 'date-time',
+          params: {
+            value: '2020-09-09 10:20',
+            type: "datetime"
+          }
+        }
+      ]
+    },
+    {
+      title: '拓展用法',
+      children: [
+        {
+          label: '选择开始-结束时间',
+          key: 'date',
+          params: { showEndDate: true }
+        }
+      ]
+    },
+    {
+      title: '自定义',
+      children: [
+        {
+          label: '自定义内容',
+          key: 'date',
+          params: { 
+            showEndDate: true,
+            title: '自定义开始',
+            endTitle: '自定义结束'
+          }
+        },
+        {
+          label: '倒角用法',
+          key: 'date',
+          params: { round: true }
+        }
+      ]
+    }
+  ]
+
   return (
-    <View className="container">
-      <DocsHeader title='DatetimePicker'></DocsHeader>
+    <View className="container datetime-container">
+      <DocsHeader title='DatetimePicker 日期选择' />
       <View className='doc-body'>
         <View className='doc-body-content'>
           {
-            process.env.TARO_ENV === 'h5' ?
-            <View className="doc-empty">h5暂不支持，敬请期待</View> :
+            isWeb ? <View className="doc-empty">h5暂不支持，敬请期待</View> :
             <Fragment>
-              <View className='doc-body-content-tip'>基本案例</View>
-              <SlButton 
-                size="large"
-                onClick={ () => showSlDatetimePicker() }
-              >基础</SlButton>
-              <View className='doc-body-content-tip'>默认时间</View>
-              <SlButton 
-                size="large"
-                onClick={ () => showSlDatetimePicker({
-                  value: '2020-09-09'
-                }) }
-              >默认时间</SlButton>
-              <View className='doc-body-content-tip'>时间选择器</View>
-              <SlButton 
-                size="large"
-                onClick={ () => showSlDatetimePicker({
-                  value: '2020-09-09',
-                  type: "time"
-                }) }
-              >时间选择器</SlButton>
-              <View className='doc-body-content-tip'>显示结束时间</View>
-              <SlButton 
-                size="large"
-                onClick={ () => showSlDatetimePicker({
-                  showEndDate: true
-                }) }
-              >显示结束时间</SlButton>
-              <View className='doc-body-content-tip'>修改头部名称</View>
-              <SlButton 
-                size="large"
-                onClick={ () => showSlDatetimePicker({
-                  showEndDate: true,
-                  title: '自定义开始',
-                  endTitle: '自定义结束'
-                }) }
-              >修改头部名称</SlButton>
-              <View className='doc-body-content-tip'>点击遮罩层不关闭</View>
-              <SlButton 
-                size="large"
-                onClick={ () => showSlDatetimePicker({
-                  closeOnclickOverlay: false
-                }) }
-              >点击遮罩层不关闭</SlButton>
-              <View className='doc-body-content-tip'>设置最小值和最大值</View>
-              <SlButton 
-                size="large"
-                onClick={ () => showSlDatetimePicker({
-                  minDate: "2015-01-01",
-                  maxDate: "2022-01-01"
-                }) }
-              >设置最小值和最大值</SlButton>
+              {
+                list.map((el, i) => {
+                  return <View key={i}>
+                    <View className='doc-body-content-tip'>{el.title}</View>
+                    {
+                      el.children.map((child, k) => (
+                        <View className='comp-items' onClick={() => showSlDatetimePicker(child.params)} key={k}>
+                          <View className="comp-item-text">{child.label}</View>
+                          <SlIcon value="chevron-right" color="#333" size={16}></SlIcon>
+                        </View>
+                      ))
+                    }
+                  </View>
+                })
+              }
             </Fragment>
           }
         </View>
       </View>
-      <SlDatetimePicker { ...datetimePicker } />
+      { !isWeb && <SlDatetimePicker { ...datetimePicker } /> }
     </View>
   );
 };
