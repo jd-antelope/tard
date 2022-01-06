@@ -7,6 +7,7 @@ import MenuObj from '../../docs-route'
 import { isWeb } from '../../utils'
 function Home() {
   const [itemActive, setItemAcitve] = useState<boolean>(false)
+  const [key, setKey] = useState<string>('')
   const postIframeParentMessage = (path: string) => {
     if (isWeb) {
       window.parent.postMessage({ path }, '*');
@@ -38,6 +39,7 @@ function Home() {
                     });
                   }}
                   onTouchStart={() => {
+                    setKey(val.path)
                     setItemAcitve(true)
                   }}
                   onTouchEnd={() => {
@@ -45,7 +47,7 @@ function Home() {
                   }}
                 >
                   <View className="comp-item-text">{val.nameEn} {val.name}</View>
-                  <SlIcon value="chevron-right" color={ itemActive ? "#fff": "#999" } size={16}></SlIcon>
+                  <SlIcon value="chevron-right" color={ itemActive && key === val.path ? "#fff": "#999" } size={16}></SlIcon>
                 </View>
               ))
             }
