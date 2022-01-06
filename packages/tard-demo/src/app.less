@@ -130,12 +130,12 @@ view {
   }
   &-content {
     &-tip {
-      height: 92px;
-      line-height: 92px;
+      margin: 72px 0 32px;
       font-size: 28px;
       position: relative;
-      color: rgba(69, 90, 100, 0.6);
-      padding-left: 36px;
+      color: #333;
+      line-height: 28px;
+      font-weight: bold;
     }
 
     &__row {
@@ -166,8 +166,15 @@ view {
   font-size: 28px;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 0 24px;
+  padding: 0 36px;
   min-height: 100vh;
+}
+
+.full-container {
+  padding: 0;
+  .doc-body-content-tip {
+    padding-left: 36px;
+  }
 }
 
 .px-0 {

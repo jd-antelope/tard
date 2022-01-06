@@ -1,4 +1,5 @@
 export default {
-  navigationBarTitleText: '主页',
-  enableShareAppMessage: true
+  navigationBarTitleText: ' ',
+  enableShareAppMessage: true,
+  navigationBarBackgroundColor: '#f8f8f8'
 }

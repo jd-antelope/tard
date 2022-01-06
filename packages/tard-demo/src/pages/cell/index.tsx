@@ -12,7 +12,7 @@ const Cell: FC = () => {
   const [checked, setChecked] = useState(true)
 
   return (
-    <View className="cell-container container">
+    <View className="cell-container container full-container">
       <DocsHeader title='Cell'></DocsHeader>
       <View className='doc-body'>
         <View className='doc-body-content-tip'>基础用法</View>

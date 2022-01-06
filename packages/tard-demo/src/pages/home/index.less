@@ -1,18 +1,20 @@
+@color-base: #333;
+
 .index-container {
   width: 100%;
-  background: #f7f8fa;
+  background: #f8f8f8;
   overflow: hidden;
   padding: 0 40px;
   box-sizing: border-box;
 
   .title{
-    font-size: 22PX;
-    font-weight: 800;
+    font-size: 44px;
     margin-left: 40px;
     margin-bottom: 15px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    margin-bottom: 22px;
   }
   
   .logo{
@@ -28,15 +30,18 @@
     color: #666;
   }
   
+  .comp {
+    overflow: hidden;
+  }
+
   .comp-item{
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 20px;
+    margin: 0 0 16px;
     padding: 0 40px;
-    color: #333;
-    font-weight: 500;
+    color: @color-base;
     line-height: 88px;
     background: #fff;
     border-radius: 8px;
@@ -44,19 +49,22 @@
     transition: background 0.3s;
     cursor: pointer;
     &:active{
-      background: #102DF5;
+      background: @color-base;
       color: #fff;
     }
-    &:hover{
-      background: #102DF5;
-      color: #fff;
-    }
+    // &:hover{
+    //   background: @color-base;
+    //   color: #fff;
+    // }
   }
   
   .comp-item-parent {
+    font-size: 28px;
+    line-height: 28px;
     background: none;
-    color: #666;
-    margin: 40px 0 30px;
+    color: @color-base;
+    margin: 48px 0 24px;
+    font-weight: bold;
   }
 
   .comp-item-text{
