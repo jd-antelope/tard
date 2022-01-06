@@ -23,11 +23,12 @@ const Price: FC = () => {
           </View>
           <View className='doc-body-content-tip'>价格区间</View>
           <View className='doc-body-content__info doc-body-content__row'>
-            <SlPrice price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } />
+            <SlPrice className='doc-body-content__pr' price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } />
+            <SlPrice price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } showAfterSymbol />
           </View>
           <View className='doc-body-content-tip'>自定义颜色</View>
           <View className='doc-body-content__info doc-body-content__row'>
-            <SlPrice className='doc-body-content__pr' price="88.00" color="#FF2929" />
+            <SlPrice className='doc-body-content__pr' price="88.00" color="green" />
             <SlPrice className='doc-body-content__pr' price="88.00" color="#496FF2" />
           </View>
           <View className='doc-body-content-tip'>划线价</View>

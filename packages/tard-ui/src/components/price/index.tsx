@@ -48,7 +48,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
   // 价格处理
   private arrayPrice = (price) => {
     const { 
-      type, symbolSize = 0
+      type, symbolSize = 0, unitSize = 0, priceUnit, showAfterSymbol
     } = this.props
     if (price instanceof Array && price.length > 1) {
       const arr = price.map(v => Number(v)).sort((a, b) => a - b)
@@ -70,7 +70,10 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
           </Text>
           { String(this.filterPrice(arr[0])).split('.')[1] ? '.' + String(this.filterPrice(arr[0])).split('.')[1] : '' }
           <Text className='slc-price__text-line'>-</Text>
-          <Text 
+          {
+            showAfterSymbol && <Text style={ unitSize === 0 ? '': `font-size: ${pxTransform(unitSize)}` }>{priceUnit}</Text>
+          }
+          <Text
             className={
               cn('slc-price__text-content', {
                 'slc-price__content-large': type === 'large',
@@ -82,7 +85,7 @@ export default class SlPrice extends React.Component<SlPriceProps, SlPriceState>
             }
             style={ symbolSize !== 0 ? `font-size: ${pxTransform(symbolSize)}` : '' }
           >
-             { String(this.filterPrice(arr[arr.length - 1])).split('.')[0] }
+            { String(this.filterPrice(arr[arr.length - 1])).split('.')[0] }
           </Text>
           { String(this.filterPrice(arr[arr.length - 1])).split('.')[1] ? '.' + String(this.filterPrice(arr[arr.length - 1])).split('.')[1] : '' }
         </Fragment>
@@ -173,6 +176,7 @@ SlPrice.defaultProps = {
   type: 'middle',
   size: 0,
   symbolSize: 0,
+  showAfterSymbol: false,
   priceUnit: '¥',
   unitSize: 0,
   thousands: false

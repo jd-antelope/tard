@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'Price',
+  navigationBarTitleText: 'Price 价格',
   enableShareAppMessage: true
 }
