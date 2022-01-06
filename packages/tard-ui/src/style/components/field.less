@@ -3,19 +3,22 @@
 @import '../mixins/index.less';
 
 @field-padding-x: 20px;
-@field-title-w: 144px;
+@field-title-w: 220px;
 @field-label-h: 60px;
-@field-textarea-h: 202px;
+@field-textarea-h: 108px;
 @field-box-borderRadius: 20px;
 
 .@{--css-prefix}-field {
   position: relative;
-  padding: @field-padding-x 0;
+  width: 100vw;
+  padding: @field-padding-x 36px;
   color: @field-label-color;
+  background: rgba(255,255,255,1);
+  box-sizing: border-box;
 
   /* 修复底线隐藏问题 */
-  margin-bottom: 1PX;
-  .mixin-hairline-bottom(#f2f2f2);
+  // margin-bottom: 1PX;
+  // .mixin-hairline-bottom(#f2f2f2);
 
   &__overlay {
     position: absolute;
@@ -34,10 +37,11 @@
   &__container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__content-textarea {
-    display: block;
+    align-items: flex-start;
   }
 
   &__title {
@@ -46,10 +50,10 @@
     height: @field-label-h;
     line-height: @field-label-h;
     text-align: left;
-    color: @color-grey-2;
+    color: @color-black-1;
 
     &--required {
-      &::before {
+      label::before {
         display: inline-block;
         color: @color-error;
         font-size: @field-font-size;
@@ -57,6 +61,15 @@
         line-height: 1;
         content: "*";
       }
+    }
+
+    &--left-icon {
+      margin-right: 12px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -70,36 +83,37 @@
     vertical-align: middle;
     .placeholder(@field-placeholder-color);
   }
+  // &__box {
+  //   width: 100%;
+  //   position: relative;
+  //   margin-top: @field-padding-x;
+  //   min-height: @field-textarea-h;
+  //   background: #f9f9f9;
+  //   border-radius: @field-box-borderRadius;
+  //   overflow: hidden;
+  // }
 
-  &__box {
-    width: 100%;
-    position: relative;
-    margin-top: @field-padding-x;
-    min-height: @field-textarea-h;
-    background: #f9f9f9;
-    border-radius: @field-box-borderRadius;
-    overflow: hidden;
-    &-textarea {
-      height: @field-textarea-h;
-      padding: @spacing-h-lg;
-      .taro-textarea {
-        background: #f9f9f9;
-      }
-    }
-    &-textarea__ph {
-      color: #ccc;
-    }
-    &-number {
-      position: absolute;
-      bottom: 16px;
-      right: 24px;
-      color: #C6C6CC;
-      &__active {
-        color: #2A2B2E;
-      }
+  &__textarea {
+    flex:1;
+    .taro-textarea {
+      padding-top: 10px;
+      background: rgba(255,255,255,1);
+      resize: none;
+      font-size: @field-font-size;
+      color: @color-black-1;
     }
   }
-
+ 
+  &__word-limit {
+    position: absolute;
+    bottom: 16px;
+    right: 24px;
+    color: #C6C6CC;
+  }
+  &__word-num {
+    color: #2A2B2E;
+  }
+  
   &__box-title {
     margin-top: 0;
   }
@@ -143,36 +157,10 @@
     }
   }
 
-  &__children {
-    display: inline-flex;
-    .mixin-hairline-left();
-
-    > view,
-    div,
-    span,
-    text,
-    image,
-    .taro-img {
-      display: inline-block;
-      padding: 0 @spacing-v-md;
-      color: @primary-color;
-      font-size: @field-font-size;
-      text-align: center;
-    }
-
-    > image,
-    img,
-    .taro-img {
-      display: inline-block;
-      width: 145px;
-      height: 60px;
-      vertical-align: middle;
-    }
-  }
-
   /* modifiers */
   &--error {
     color: @color-error;
+    font-size: @font-size-sm;
   }
 
   &--disabled {
@@ -183,6 +171,11 @@
     &::after {
       border: none;
     }
+  }
+
+  .weui-input::placeholder {
+    color: @color-grey-3;
+    font-size: @font-size-base;
   }
 
   textarea::-webkit-input-placeholder{
@@ -206,3 +199,8 @@
   }
 }
 
+.@{--css-prefix}-field.@{--css-prefix}-field-card {
+  margin: auto;
+  width: calc(100% - 72px);
+  border-radius: 16px;
+}

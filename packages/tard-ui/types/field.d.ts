@@ -67,6 +67,11 @@ export interface SlFieldProps extends OmitInputProps, SlComponent {
    */
   error?: boolean
   /**
+   * 错误显示文案
+   * @default ''
+   */
+  errorMessage?: string
+  /**
    * 是否显示清除按钮，需要传入 onChange 事件来改变 value
    * @default false
    */
@@ -113,6 +118,16 @@ export interface SlFieldProps extends OmitInputProps, SlComponent {
    * @default false
    */
   autoHeight?: boolean
+  /**
+   * textarea手动设计高度
+   * @default false
+   */
+  textareaHeight?: number
+  /**
+   * 显示字数统计
+   * @default false
+   */
+  showWordLimit?: boolean
   /**
    * 如果 Textarea 是在一个 position:fixed 的区域，需要显示指定属性
    * @default false
@@ -161,6 +176,22 @@ export interface SlFieldProps extends OmitInputProps, SlComponent {
    */
   labelAlign?: 'center' | 'left' | 'right'
   /**
+   * 右侧value的对齐方式
+   */
+  valueAlign?: 'center' | 'left' | 'right'
+  /**
+   * 是否卡片样式
+   */
+   card?: boolean
+   /**
+   * 左侧图标
+   */
+   leftIcon?: string
+   /**
+   * 左侧图标
+   */
+  rightIcon?: string
+  /**
    * 输入框失去焦点时触发的事件，v2.0.3 版本可以获取 event 参数
    */
   onBlur?: InputFunction<string | number, BlurEventDetail>
@@ -195,6 +226,14 @@ export interface SlFieldProps extends OmitInputProps, SlComponent {
    * 点击右侧箭头
    */
   onLink?: () => void
+  /**
+   * 点击左侧Icon
+   */
+  onLeftIconClick?: () => void
+   /**
+   * 点击右侧Icon
+   */
+  onRightIconClick?: () => void
 }
 
 declare const SlField: ComponentClass<SlFieldProps>

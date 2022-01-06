@@ -133,12 +133,6 @@ export default class SlField extends React.Component<SlFieldProps> {
     }
   }
 
-  private handleLink = (): void => {
-    if (isFunction(this.props.onLink)) {
-      this.props.onLink()
-    }
-  }
-
   public render(): JSX.Element {
     const {
       className,
@@ -153,6 +147,7 @@ export default class SlField extends React.Component<SlFieldProps> {
       border,
       label,
       error,
+      errorMessage,
       clear,
       placeholder,
       placeholderStyle,
@@ -162,17 +157,21 @@ export default class SlField extends React.Component<SlFieldProps> {
       value,
       required,
       children,
+      disabled,
       readonly,
-      linkText,
-      isLink,
       contentColor,
-      linkSlot,
       labelClass,
       labelWidth = 144,
       labelAlign,
-      autoHeight
+      valueAlign,
+      autoHeight,
+      textareaHeight,
+      card,
+      leftIcon,
+      rightIcon,
+      showWordLimit,
     } = this.props
-    const { type, maxlength, disabled, password } = getInputProps(this.props)
+    const { type, maxlength, password } = getInputProps(this.props)
 
     const { type: textareaType, fixed } = getTextareaProps(this.props)
 
@@ -180,7 +179,8 @@ export default class SlField extends React.Component<SlFieldProps> {
       'slc-field',
       {
         'slc-field--without-border': !border,
-        'slc-field__textarea-padding': textareaType == 'textarea' && !label
+        'slc-field__textarea-padding': textareaType == 'textarea' && !label,
+        'slc-field-card': card
       },
       className
     )
@@ -191,10 +191,6 @@ export default class SlField extends React.Component<SlFieldProps> {
       'slc-field__content-textarea': textareaType == 'textarea'
     })
 
-    const overlayCls = classNames('slc-field__overlay', {
-      'slc-field__overlay--hidden': !disabled
-    })
-
     const placeholderCls = classNames('placeholder', placeholderClass)
 
     const labelCls = classNames(
@@ -202,6 +198,8 @@ export default class SlField extends React.Component<SlFieldProps> {
         'slc-field__title--required': required
       }, labelClass
     )
+
+    const leftIconCls = classNames('slc-field__title--left-icon')
 
     const labelStyle = {
       'width': pxTransform(labelWidth),
@@ -213,85 +211,62 @@ export default class SlField extends React.Component<SlFieldProps> {
     const nameProps = name ? { name } : {}
     return (
       <View className={rootCls} style={customStyle}>
-        <View className={containerCls}>
-          <View className={overlayCls} onClick={this.handleClick}></View>
-          {label && (
+        <View className={containerCls} onClick={this.handleClick}>
+          {(label || leftIcon) && (
             <Label
-              className={labelCls}
-              style={labelStyle}
-              for={name}
+            className={labelCls}
+            style={labelStyle}
+            for={name}
             >
+              {leftIcon && <SlIcon className={leftIconCls} value={leftIcon} color="#999999" size={ 16 }></SlIcon>}
               {label}
             </Label>
           )}
           {
-            children ? 
-              children : (readonly || isLink) ? 
-              <View className="slc-field__content" onClick={this.handleLink}>
-                <View className="slc-field__content-title" style={ `color: ${contentColor}` }>
-                  <Input
-                    className='slc-field__input'
-                    placeholder={placeholder}
-                    style={ `color: ${ contentColor }` }
-                    { ...id }
-                    { ...nameProps }
-                    value={value}
-                    confirmType={confirmType}
-                    disabled
-                  />
-                </View>
-                {
-                  isLink && 
-                  <View className="slc-field__content-link">
-                    {
-                      linkSlot !== '' ? linkSlot : <Text>{linkText}</Text>
-                    }
-                    
-                    <SlIcon value='chevron-right' color="#999999" size={ 16 }></SlIcon>
-                  </View>
-                }
-              </View>
-              : textareaType === 'textarea' ? 
-                <View className={ classNames('slc-field__box', { 'slc-field__box-title' : !label }) }>
-                  <Textarea 
-                    className='slc-field__box-textarea'
-                    { ...id }
-                    { ...nameProps }
-                    placeholderStyle={placeholderStyle}
-                    placeholderClass={classNames('slc-field__box-textarea__ph', placeholderCls)}
-                    placeholder={placeholder}
-                    cursorSpacing={cursorSpacing}
-                    maxlength={maxlength}
-                    autoFocus={autoFocus}
-                    autoHeight={autoHeight}
-                    fixed={fixed}
-                    focus={focus}
-                    value={value}
-                    cursor={cursor}
-                    selectionStart={selectionStart}
-                    selectionEnd={selectionEnd}
-                    adjustPosition={adjustPosition}
-                    onInput={this.handleInput}
-                    onFocus={this.handleFocus}
-                    onBlur={this.handleBlur}
-                    onConfirm={this.handleConfirm}
-                    onKeyboardHeightChange={this.handleKeyboardHeightChange}
-                  />
-                  <View className="slc-field__box-number">
-                    <Text className="slc-field__box-number__active">{(value || '').length}</Text>
+            textareaType === 'textarea' ? 
+              <Fragment>
+                <Textarea 
+                  className='slc-field__textarea'
+                  { ...id }
+                  { ...nameProps }
+                  style={ `color: ${ contentColor };${textareaHeight ? `height: ${pxTransform(textareaHeight)}`: ''}` }
+                  disabled={disabled || readonly}
+                  placeholderStyle={placeholderStyle}
+                  placeholderClass={classNames('slc-field__box-textarea__ph', placeholderCls)}
+                  placeholder={placeholder}
+                  cursorSpacing={cursorSpacing}
+                  maxlength={maxlength}
+                  autoFocus={autoFocus}
+                  autoHeight={autoHeight}
+                  fixed={fixed}
+                  focus={focus}
+                  value={value}
+                  cursor={cursor}
+                  selectionStart={selectionStart}
+                  selectionEnd={selectionEnd}
+                  adjustPosition={adjustPosition}
+                  onInput={this.handleInput}
+                  onFocus={this.handleFocus}
+                  onBlur={this.handleBlur}
+                  onConfirm={this.handleConfirm}
+                  onKeyboardHeightChange={this.handleKeyboardHeightChange}
+                />
+                { showWordLimit && 
+                  <View className="slc-field__word-limit">
+                    <Text className="slc-field__word-num">{(value || '').length}</Text>
                     /{maxlength}
                   </View>
-                </View>
-                
-              :
-              <Fragment>
+                }
+              </Fragment> 
+              : <Fragment>
                 <Input
                   className='slc-field__input'
                   { ...id }
                   { ...nameProps }
                   type={type}
                   password={password}
-                  style={ `color: ${ contentColor }` }
+                  disabled={disabled || readonly}
+                  style={ `color: ${ contentColor };text-align: ${valueAlign}` }
                   placeholderStyle={placeholderStyle}
                   placeholderClass={placeholderCls}
                   placeholder={placeholder}
@@ -314,20 +289,30 @@ export default class SlField extends React.Component<SlFieldProps> {
                   onKeyboardHeightChange={this.handleKeyboardHeightChange}
                 />
                 {clear && value && (
-                  <View className='slc-field__icon' onTouchEnd={this.handleClearValue}>
-                    <Text className='slc-icon slc-icon-close-circle slc-field__icon-close'></Text>
+                  <View className='slc-field__icon' onClick={this.handleClearValue}>
+                    {/* <Text className='slc-icon slc-icon-close-circle slc-field__icon-close'></Text> */}
+                    <SlIcon value='close-circle' color="#999999" size={ 16 }></SlIcon>
                   </View>
                 )}
+                {!clear && rightIcon &&
+                  <View className='slc-field__icon' onClick={() => this.props.onRightIconClick}>
+                    <SlIcon value={rightIcon} color="#999999" size={ 16 }></SlIcon>
+                  </View>  
+                }
                 {error && (
                   <View
-                    className='slc-field__icon'
+                    className='slc-field__error'
+                    style={`padding-left: ${pxTransform(labelWidth)};width: 100%`}
                     onTouchStart={this.handleErrorClick}
                   >
-                    <Text className='slc-icon slc-icon-alert-circle slc-field__icon-alert'></Text>
+                    <Text>{errorMessage || `${label}必填`}</Text>
                   </View>
                 )}
                 {/* <View className='slc-field__children'>{this.props.children}</View> */}
               </Fragment>
+          }
+          {
+            children && children
           }
         </View>
       </View>
@@ -350,7 +335,7 @@ SlField.defaultProps = {
   selectionStart: -1,
   selectionEnd: -1,
   adjustPosition: true,
-  maxlength: 140,
+  maxlength: -1,
   type: 'text',
   disabled: false,
   border: true,
@@ -359,6 +344,7 @@ SlField.defaultProps = {
   clear: false,
   autoFocus: false,
   autoHeight: false,
+  textareaHeight: 160,
   fixed: false,
   focus: false,
   contentColor: '#333333',
@@ -367,8 +353,9 @@ SlField.defaultProps = {
   linkText: '',
   linkSlot: '',
   labelClass: '',
-  labelWidth: 144,
+  labelWidth: 190,
   labelAlign: 'left',
+  valueAlign: 'left',
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (): void => {},
   onLink: (): void => {}
