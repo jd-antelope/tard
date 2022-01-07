@@ -46,6 +46,10 @@ export interface SlPriceProps extends SlComponent {
    */
   symbolSize?: number
   /**
+   * 价格为数组时是否展示后面单位
+   */
+  showAfterSymbol?: boolean
+  /**
    * 价格单位
    */
   priceUnit?: string

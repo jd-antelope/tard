@@ -19,15 +19,16 @@ import { SlPrice } from 'tard'
 <SlPrice price="88.88" fixedNum={ 2 } />
 ```
 ### 价格区间
-`price` 价格区间
+`price` 价格区间, 增加属性 `showAfterSymbol` 展示后面单位
 ```js
 <SlPrice price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } />
+<SlPrice price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } showAfterSymbol />
 ```
 
 ### 自定义颜色
 修改 `color` 属性修改颜色
 ```js
-<SlPrice price="88.00" color="#FF2929" />
+<SlPrice price="88.00" color="green" />
 <SlPrice price="88.00" color="#496FF2" />
 ```
 
@@ -89,6 +90,7 @@ import { SlPrice } from 'tard'
 | priceUnit | 价格单位 | string | ¥ |
 | unitSize | 价格单位大小 | number | 32 |
 | thousands | 是否按照千分号形式显示 | boolean | false |
+| showAfterSymbol | 价格为数组时是否展示后面单位 | boolean | false |
 
 ### Size 数据结构
 |  键名   | 单位和价格大小  |
