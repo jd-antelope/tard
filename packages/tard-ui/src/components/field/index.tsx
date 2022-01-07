@@ -169,6 +169,8 @@ export default class SlField extends React.Component<SlFieldProps> {
       card,
       leftIcon,
       rightIcon,
+      iconColor,
+      iconSize,
       showWordLimit,
     } = this.props
     const { type, maxlength, password } = getInputProps(this.props)
@@ -218,7 +220,7 @@ export default class SlField extends React.Component<SlFieldProps> {
             style={labelStyle}
             for={name}
             >
-              {leftIcon && <SlIcon className={leftIconCls} value={leftIcon} color="#999999" size={ 16 }></SlIcon>}
+              {leftIcon && <SlIcon className={leftIconCls} value={leftIcon} color={iconColor} size={ iconSize }></SlIcon>}
               {label}
             </Label>
           )}
@@ -296,7 +298,7 @@ export default class SlField extends React.Component<SlFieldProps> {
                 )}
                 {!clear && rightIcon &&
                   <View className='slc-field__icon' onClick={() => this.props.onRightIconClick}>
-                    <SlIcon value={rightIcon} color="#999999" size={ 16 }></SlIcon>
+                    <SlIcon value={rightIcon} color={iconColor} size={ iconSize }></SlIcon>
                   </View>  
                 }
                 {error && (
@@ -356,6 +358,8 @@ SlField.defaultProps = {
   labelWidth: 190,
   labelAlign: 'left',
   valueAlign: 'left',
+  iconColor: '#343434',
+  iconSize: 16,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange: (): void => {},
   onLink: (): void => {}

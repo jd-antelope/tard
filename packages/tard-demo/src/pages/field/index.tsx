@@ -117,6 +117,7 @@ const Field: FC = () => {
                 value={form.icon1}
                 placeholder='请输入文本' 
                 leftIcon='user'
+                iconColor='red'
                 onChange={(e) => change({ icon1: e })} 
               />
               <SlField
@@ -127,6 +128,7 @@ const Field: FC = () => {
                 placeholder='显示图标' 
                 leftIcon='user'
                 rightIcon='alert-circle'
+                iconSize={18}
                 onChange={(e) => change({ icon2: e })} 
               />
               <SlField

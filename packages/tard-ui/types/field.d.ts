@@ -191,6 +191,14 @@ export interface SlFieldProps extends OmitInputProps, SlComponent {
    * 左侧图标
    */
   rightIcon?: string
+   /**
+   * 图标颜色
+   */
+  iconColor?: string
+  /**
+  * 图标大小
+  */
+  iconSize?: number
   /**
    * 输入框失去焦点时触发的事件，v2.0.3 版本可以获取 event 参数
    */
