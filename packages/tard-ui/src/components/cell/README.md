@@ -68,15 +68,12 @@ const [toastVisible, setToastVisible] = useState(false)
 ### 使用插槽
 如以上用法不能满足你的需求，可以使用插槽 `leftContent`、`rightContent` 来自定义内容
 ```js
-const leftContent =
-<View className='left-content'>
+<SlCell value="相关内容" leftContent={<View className='left-content'>
   <View className='left-content__text'>单元格</View>
   <SlButton type="danger" size='mini'>标签</SlButton>
-</View>
-
-<SlCell value="相关内容" leftContent={leftContent} />
+</View>} />
 <SlCell title="单元格" icon="user" rightContent={<SlIcon value='search' />} />
-<SlCell title="单元格" rightContent={<View><SlSwitch checked={true} /></View>} />
+<SlCell title="单元格" rightContent={<View><SlSwitch checked={checked} onChange={(v) => setChecked(v)} /></View>} />
 ```
         
 ## API
