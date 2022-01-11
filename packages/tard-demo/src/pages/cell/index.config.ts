@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'Cell',
+  navigationBarTitleText: 'Cell 单元格',
   enableShareAppMessage: true
 }

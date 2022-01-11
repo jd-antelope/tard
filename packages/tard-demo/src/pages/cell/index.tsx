@@ -13,7 +13,7 @@ const Cell: FC = () => {
 
   return (
     <View className="cell-container container full-container">
-      <DocsHeader title='Cell'></DocsHeader>
+      <DocsHeader title='Cell 单元格'></DocsHeader>
       <View className='doc-body'>
         <View className='doc-body-content-tip'>基础用法</View>
         <SlCell title="单元格" value="相关内容" />
@@ -34,12 +34,12 @@ const Cell: FC = () => {
         <View className='doc-body-content-tip'>展示箭头</View>
         <SlCell title="单元格" isLink onClick={() => setToastVisible(true)} />
         <SlCell title="单元格" value="相关内容" isLink onClick={() => setToastVisible(true)} />
-        <SlCell title="单元格" value="相关内容" isLink arrowDirection="down" onClick={() => setToastVisible(true)} />
+        <SlCell title="单元格" value="相关内容" isLink arrowDirection="down" border={false} onClick={() => setToastVisible(true)} />
 
         <View className='doc-body-content-tip'>页面导航</View>
         <SlCell title="路由跳转" isLink to="/pages/home/index" pageType="navigateTo" />
 
-        <View className='doc-body-content-tip'>分组</View>
+        <View className='doc-body-content-tip'>分组单元格</View>
         <SlCellGroup title="分组一">
           <SlCell title="单元格" value="相关内容" />
         </SlCellGroup>
