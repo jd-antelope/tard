@@ -21,49 +21,82 @@ const Form: FC = () => {
     })
   }
   return (
-    <View className="container">
-      <DocsHeader title='Form'></DocsHeader>
+    <View className="container form-container full-container">
+      <DocsHeader title='Form' />
       <View className='doc-body'>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip'>基本案例</View>
-          <SlForm onSubmit={onSubmit}>
+          <SlForm onSubmit={onSubmit} className='input-group'>
             <SlField
-              name='shopName' 
-              label='商品名称' 
+              name='name' 
+              label='账号' 
               type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
+              placeholder='请输入账号' 
+              value={form.name} 
+              onChange={(e) => change({ name: e })} 
             />
             <SlField
-              name='imgDes' 
-              label='图片描述' 
-              type='text' 
-              placeholder='单行文本' 
-              value={form.value} 
-              required
-              onChange={(e) => change({ imgDes: e })} 
+              name='password' 
+              label='密码' 
+              type='password' 
+              placeholder='请输入密码' 
+              value={form.password} 
+              onChange={(e) => change({ password: e })} 
             />
-            <SlField
-              name='o' 
-              type='textarea'
-              value='3232'
-              placeholder="fsdfsdf"
-            />
-            <SlButton className="form-submit" formType='submit'>提交</SlButton>
+            <View className='form-submit pd-0'>
+              <SlButton 
+                className='form-submit-button' 
+                full 
+                type='danger' 
+                formType='submit'
+              >
+                提交
+              </SlButton>
+            </View>
+            
           </SlForm>
 
-          <View className='doc-body-content-tip'>border 属性</View>
-          <SlForm onSubmit={onSubmit} border>
+          <View className='doc-body-content-tip'>卡片用法</View>
+          <SlForm round onSubmit={onSubmit} className='input-group'>
             <SlField
-              name='shopName' 
-              label='商品名称' 
+              name='name' 
+              label='账号' 
               type='text' 
-              placeholder='单行文本' 
-              value={form.shopName} 
-              onChange={(e) => change({ shopName: e })} 
+              placeholder='请输入账号' 
+              value={form.name} 
+              onChange={(e) => change({ name: e })} 
             />
-            <SlButton className="form-submit" formType='submit'>提交</SlButton>
+            <SlField
+              name='password' 
+              label='密码' 
+              type='password' 
+              placeholder='请输入密码' 
+              value={form.password} 
+              onChange={(e) => change({ password: e })} 
+            />
+            <View className='form-submit'>
+              <SlButton 
+                className='form-submit-button' 
+                full 
+                type='danger' 
+                formType='submit'
+              >
+                提交
+              </SlButton>
+            </View>
+          </SlForm>
+          <View className='doc-body-content-tip'>表单项类型</View>
+          <SlForm onSubmit={onSubmit}>
+            <View className='form-submit'>
+              <SlButton 
+                className='form-submit-button' 
+                full 
+                type='danger' 
+                formType='submit'
+              >
+                提交
+              </SlButton>
+            </View>
           </SlForm>
         </View>
       </View>
