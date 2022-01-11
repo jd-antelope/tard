@@ -24,7 +24,7 @@ export default {
 		'pages/progress/index',
 		'pages/progress-circle/index',
 		'pages/rate/index',
-		'pages/search/index',
+		'pages/search-bar/index',
 		'pages/skeleton/index',
 		'pages/sort/index',
 		'pages/switch/index',

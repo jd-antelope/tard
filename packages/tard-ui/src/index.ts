@@ -9,7 +9,7 @@ export { default as SlToast } from './components/toast';
 export { default as SlBadge } from './components/badge';
 export { default as SlOverlay } from './components/overlay';
 export { default as SlNavBar } from './components/nav-bar';
-export { default as SlSearch } from './components/search';
+export { default as SlSearchBar } from './components/search-bar';
 export { default as SlGrid } from './components/grid';
 export { default as SlGridItem } from './components/grid/item';
 export { default as SlIcon } from './components/icon';

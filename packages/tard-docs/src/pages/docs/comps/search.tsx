@@ -1,11 +1,11 @@
 import MarkDown from '@/components/markdown'
 
-const markdown = `# Search 搜索
+const markdown = `# SearchBar 搜索
 ### 介绍
 带搜索按钮的输入框。
 ### 引入
 ~~~js
-import { SlSearch } from 'tard'
+import { SlSearchBar } from 'tard'
 ~~~
 ## 代码演示
 ### 基础用法

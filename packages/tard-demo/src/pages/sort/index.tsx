@@ -5,7 +5,7 @@ import { SlSort } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 
-const Search: FC = () => {
+const SearchBar: FC = () => {
   return (
     <View className="container">
       <DocsHeader title='Sort'></DocsHeader>
@@ -68,4 +68,4 @@ const Search: FC = () => {
   );
 };
 
-export default memo(Search);
+export default memo(SearchBar);
