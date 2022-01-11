@@ -11,6 +11,11 @@ export interface SlFormProps extends SlComponent {
    */
   reportSubmit?: boolean
   /**
+   * 是否是卡片模式
+   * @default false
+   */
+  round?: boolean
+  /**
    * 是否需要border
    * @default false
    */
