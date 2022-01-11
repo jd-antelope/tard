@@ -1,158 +1,182 @@
-
-import { InferProps } from 'prop-types'
-import React from 'react'
 import classNames from 'classnames'
-import { View, Input, Text, Icon } from '@tarojs/components'
-import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
-import { SlSearchBarProps, SlSearchBarState } from '../../../types/search-bar'
-import { pxTransform } from '../../common/utils'
+import React from 'react'
+import { SlSearchBarProps, SlSearchBarState } from 'types/search-bar'
+import { Input, Text, View } from '@tarojs/components'
+import { CommonEvent } from '@tarojs/components/types/common'
+import SlIcon from '../icon'
 
-export default class SlSearchBar extends React.Component<SlSearchBarProps, SlSearchBarState> {
+type ExtendEvent = {
+  target: {
+    value: string
+  }
+}
+
+export default class SlSearchBar extends React.Component<
+  SlSearchBarProps,
+  SlSearchBarState
+> {
   public static defaultProps: SlSearchBarProps
-  public static propTypes: InferProps<SlSearchBarProps>
+
   public constructor(props: SlSearchBarProps) {
     super(props)
     this.state = {
-      // 提交按钮抛出数据
-      inputVal: '',
-      // 是否显示搜索按钮 
-      isFocus: false,
+      isFocus: !!props.focus
     }
   }
 
-  // 失去焦点
-  private handleBlur = (): void => {
-    // 判断输入框内是否有内容
-    if (this.state.inputVal !== "") {
-      this.setState({
-        isFocus: true
-      })
-    } else {
-      this.setState({
-        isFocus: false
-      })
-    }
-  }
-
-  // 获取焦点
-  private handleFocus = (): void => {
+  private handleFocus = (event: CommonEvent): void => {
     this.setState({
       isFocus: true
     })
+    this.props.onFocus && this.props.onFocus(event)
   }
 
-  // 回车键确认提交
-  private handleConfirm = (): void => {
-    this.props.onConfirm(this.state.inputVal)
-  }
-
-  // 按钮确认提交
-  private Confirm = (): void => {
-    this.props.onConfirm(this.state.inputVal)
-  }
-
-  // 清除内容
-  private inputDelete = (): void => {
+  private handleBlur = (event: CommonEvent): void => {
     this.setState({
-      inputVal: '',
       isFocus: false
     })
+    this.props.onBlur && this.props.onBlur(event)
   }
 
-  //点击抛出方法 是否跳转
-  private handleClick(): void {
-    this.props.onClick && this.props.onClick(arguments as any)
+  private handleChange = (e: CommonEvent & ExtendEvent): void => {
+    this.props.onChange(e.target.value, e)
   }
 
-  // input事件
-  private handleInput = (e: CommonEvent | ITouchEvent): void => {
-    this.setState({
-      inputVal: e.detail.value
-    })
+  private handleClear = (event: CommonEvent): void => {
+    if (this.props.onClear) {
+      this.props.onClear(event)
+    } else {
+      this.props.onChange('', event)
+    }
+  }
+
+  private handleConfirm = (event: CommonEvent): void => {
+    this.props.onConfirm && this.props.onConfirm(event)
+  }
+
+  private handleCancelClick = (event: CommonEvent): void => {
+    this.props.onChange('', event)
+    this.props.onCancel && this.props.onCancel(event)
   }
 
   public render(): JSX.Element {
-
     const {
+      value,
       placeholder,
+      maxLength,
+      fixed,
       disabled,
-      fontSize,
-      width = 220,
-      height = 58,
-      borderRadius = 30,
-      backgroundColor,
+      cancelText,
+      showCancel,
+      inputType, // 处理issue#464
+      className,
+      background,
+      shape,
+      inputAlign
     } = this.props
-    const Tsearch = classNames('slc-search-Tsearch')
-    const Fsearch = classNames('slc-search-Fsearch')
-    return (
-      this.state.isFocus ? <View className={Tsearch}
-        style={{
-          width: `${pxTransform(width)}`,
-          background: `${backgroundColor}`, borderRadius: `${pxTransform(borderRadius)}`
-        }}
-        onClick={this.props.isSkip ? this.handleClick.bind(this) : ""}
-      >
-        <Icon size={`${pxTransform(parseInt(String(30)))}`}
-          type='search' className="slc-search-Tsearch-Icon"
-          onClick={this.Confirm} />
-        <Input
-          style={{ height: `${pxTransform(height)}`, fontSize: `${pxTransform(fontSize)}` }}
-          className="slc-search-Tsearch-search"
-          value={this.state.inputVal}
-          placeholder={placeholder}
-          disabled={disabled}
-          onFocus={this.handleFocus}
-          onInput={this.handleInput}
-          onBlur={this.handleBlur}
-          onConfirm={this.handleConfirm}
-        />
-        {this.state.inputVal === "" ? "" : <Text
-          onClick={this.inputDelete}
-          className="slc-search-Tsearch-inputDelete"
-          style={{
-            height: `${pxTransform(fontSize)}`,
-            width: `${pxTransform(fontSize)}`,
-            fontSize: `${pxTransform(fontSize)}`
-          }}>x
-        </Text>}
-      </View> : <View className={Fsearch} style={{ width: `${pxTransform(width)}` }}
-        onClick={this.props.isSkip ? this.handleClick.bind(this) : ""}
-      >
-        <Icon size={`${pxTransform(parseInt(String(30)))}`}
-          type='search' className="slc-search-Fsearch-Icon"
-          onClick={this.Confirm} />
-        <Input
-          style={{
-            height: `${pxTransform(height)}`,
-            background: `${backgroundColor}`,
-            borderRadius: `${pxTransform(borderRadius)}`, fontSize: `${pxTransform(fontSize)}`
-          }}
-          className="slc-search-Fsearch-search"
-          value={this.state.inputVal}
-          placeholder={placeholder}
-          disabled={disabled}
-          onFocus={this.handleFocus}
-          onInput={this.handleInput}
-          onBlur={this.handleBlur}
-          onConfirm={this.handleConfirm}
-        />
-      </View>
+    const { isFocus } = this.state
+    const fontSize = 14
+    const rootCls = classNames(
+      'sl-search-bar',
+      {
+        'sl-search-bar--fixed': fixed
+      },
+      className
+    )
+    const placeholderWrapStyle: React.CSSProperties = {}
+    const actionStyle: React.CSSProperties = {}
 
+    if (showCancel) {
+      actionStyle.opacity = 1
+      actionStyle.marginRight = `0`
+    } else {
+      actionStyle.opacity = 0
+      actionStyle.marginRight = `-${(cancelText!.length + 1) * fontSize +
+        fontSize / 2 +
+        10}px`
+    }
+
+    if (isFocus || (!isFocus && value)) {
+      if (inputAlign === 'center') placeholderWrapStyle.flexGrow = 0
+    } else if (!isFocus && !value) {
+      if (inputAlign === 'center') placeholderWrapStyle.flexGrow = 1
+    }
+
+    const clearIconStyle: React.CSSProperties = { display: 'flex' }
+    const placeholderStyle: React.CSSProperties = { visibility: 'hidden' }
+    if (!value.length) {
+      clearIconStyle.display = 'none'
+      placeholderStyle.visibility = 'visible'
+    }
+
+    return (
+      <View className={rootCls} style={{ background }}>
+        <View className={classNames(
+          'sl-search-bar__input-cnt',
+          {
+            'sl-search-bar__input-cnt__round': shape === 'round'
+          }
+        )}>
+          <View
+            className='sl-search-bar__placeholder-wrap'
+            style={placeholderWrapStyle}
+          >
+            <SlIcon value='search' />
+            <Text
+              className='sl-search-bar__placeholder'
+              style={placeholderStyle}
+            >
+              {isFocus ? '' : placeholder}
+            </Text>
+          </View>
+          <Input
+            className='sl-search-bar__input'
+            type={inputType}
+            confirmType='search'
+            value={value}
+            focus={isFocus}
+            disabled={disabled}
+            maxlength={maxLength}
+            onInput={this.handleChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
+            onConfirm={this.handleConfirm}
+          />
+          <View
+            className='sl-search-bar__clear'
+            style={clearIconStyle}
+            onClick={this.handleClear}
+          >
+            <SlIcon value='close-circle' />
+          </View>
+        </View>
+        {showCancel && <View
+          className='sl-search-bar__action'
+          style={actionStyle}
+          onClick={this.handleCancelClick}
+        >
+          {cancelText}
+        </View>
+        }
+      </View>
     )
   }
 }
 
 SlSearchBar.defaultProps = {
-  value: "",
-  height: 66,
-  placeholder: "搜索",
+  value: '',
+  placeholder: '搜索',
+  maxLength: 140,
+  fixed: false,
+  inputAlign: "right",
+  focus: false,
   disabled: false,
-  isFocus: false,
-  width: 220,
-  fontSize: 26,
-  // 是否跳转
-  isSkip: false,
-  borderRadius: 30,
-  backgroundColor: "#F3F3F3",
+  cancelText: '取消',
+  inputType: 'text',
+  shape: "round",
+  onChange: () => { },
+  onFocus: () => { },
+  onBlur: () => { },
+  onConfirm: () => { },
+  onCancel: () => { }
 }
-
