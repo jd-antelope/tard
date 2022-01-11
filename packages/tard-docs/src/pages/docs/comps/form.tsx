@@ -8,7 +8,7 @@ const markdown = `# Form 表单
 import { SlForm } from 'tard'
 ~~~
 ## 代码演示
-### 基本用法
+### 基础用法
 ~~~js
 const [form, setForm] = useState({
   shopName: ''
@@ -28,12 +28,12 @@ return (
   <View className="container">
     <SlForm onSubmit={onSubmit}>
       <SlField
-        name='shopName' 
-        label='商品名称' 
+        name='name' 
+        label='账号' 
         type='text' 
-        placeholder='单行文本' 
-        value={form.shopName} 
-        onChange={(e) => change({ shopName: e })} 
+        placeholder='请输入账号' 
+        value={form.name} 
+        onChange={(e) => change({ name: e })} 
       />
     </SlForm>
     <SlButton formType='submit'>提交</SlButton>
@@ -41,10 +41,10 @@ return (
 );
 ~~~
 
-### 边框
-增加属性 ~border~ 显示 form 外边框
+### 卡片用法
+增加属性 ~round~ 添加卡片用法
 ~~~js
-<SlForm onSubmit={onSubmit} border>
+<SlForm onSubmit={onSubmit} round>
   ...
 </SlForm>
 ~~~
@@ -55,6 +55,7 @@ return (
 |  ----  | ----  | ---- | ---- |
 | reportSubmit | 是否返回formId用于发送模板消息 | boolean | false |
 | border | 是否需要border | boolean | false |
+| round | 卡片模式 | boolean | false |
 
 ### Events
 |  事件名   | 说明  | 回调参数 |

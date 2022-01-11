@@ -2,13 +2,19 @@
 @import '../variables/index.less';
 @import '../mixins/index.less';
 
-@sl-form-bg-color: transparent;
+@form-bg-color: transparent;
 
 .@{--css-prefix}-form {
   display: block;
-  background-color: @sl-form-bg-color;
+  background-color: @form-bg-color;
 
   &.@{--css-prefix}-form-border {
     .mixin-hairline-top-bottom(#f2f2f2);
+  }
+
+  &.@{--css-prefix}-form-round {
+    border-radius: @form-round;
+    background: @form-round-bg;
+    overflow: hidden;
   }
 }
