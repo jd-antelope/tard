@@ -62,7 +62,7 @@ const Form: FC = () => {
               name='name' 
               label='账号' 
               type='text' 
-              placeholder='请输入账号' 
+              placeholder='请输入账号'
               value={form.name} 
               onChange={(e) => change({ name: e })} 
             />

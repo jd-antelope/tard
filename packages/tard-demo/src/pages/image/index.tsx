@@ -50,7 +50,7 @@ const Image: FC = () => {
             <View>
               <SlImage 
                 className="base-image" 
-                src=""
+                src="fsd"
               />
             </View>
             <View className='base-box__tip'>默认提示</View>
@@ -59,7 +59,7 @@ const Image: FC = () => {
             <View>
               <SlImage 
                 className="base-image" 
-                src="" 
+                src="fsdf" 
                 errorContent={ <View>加载失败</View> } 
               />
             </View>
