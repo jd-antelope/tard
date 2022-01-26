@@ -30,7 +30,11 @@ export default {
     {
       file: resolveFile(Package.module),
       format: 'es',
-      sourcemap: true
+      sourcemap: true,
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+      }
     }
   ],
   external: externalPackages,
