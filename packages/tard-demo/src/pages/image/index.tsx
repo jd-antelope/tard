@@ -8,11 +8,13 @@ import './index.less';
 const Image: FC = () => {
   const src = require('../../assets/images/avatar.png')
   return (
-    <View className="container bg-white image-page">
+    <View className="container full-container bg-white image-page">
       <DocsHeader title='Image 图片'></DocsHeader>
       <View className='doc-body'>
         <View className='doc-body-content-tip'>基本用法</View>
-        <SlImage className="base-image" src={ src } />
+        <View className='doc-body-content__row'>
+          <SlImage className="base-image p-36" src={ src } />
+        </View>
         <View className='doc-body-content-tip'>形状图片</View>
         <View className='doc-body-content__row'>
           <SlImage className="base-image doc-body-content__pr" src={ src } round />

@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'Media',
+  navigationBarTitleText: 'Uploader 文件上传',
   enableShareAppMessage: true
 }

@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlCanvas, SlButton } from 'tard'
+import { SlCanvas, SlIcon } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 
@@ -16,32 +16,28 @@ const Canvas: FC = () => {
       <View className='doc-body toast-page'>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip'>基本案例</View>
-          <SlButton 
-            size="large"
-            onClick={ 
-              () => {
-                setOpen(true)
-                setOpen2(false);
-              }
-            }
-          >基本案例</SlButton>
+          <View className='comp-items' onClick={() => {
+            setOpen(true)
+            setOpen2(false);
+          }}>
+            <View className="comp-item-text">基本案例</View>
+            <SlIcon value="chevron-right" color="#333" size={16} />
+          </View>
           <View className='doc-body-content-tip'>自定义宽高</View>
-          <SlButton 
-            size="large"
-            onClick={ () => {
-              setOpen1(true);
-              setOpen2(false);
-            }}
-          >
-            自定义宽高
-          </SlButton>
+          <View className='comp-items' onClick={() => {
+            setOpen1(true);
+            setOpen2(false);
+          }}>
+            <View className="comp-item-text">自定义宽高</View>
+            <SlIcon value="chevron-right" color="#333" size={16} />
+          </View>
           <View className='doc-body-content-tip'>遮罩不展示</View>
-          <SlButton 
-            size="large"
-            onClick={ () => setOpen2(!open2) }
-          >
-            遮罩不展示
-          </SlButton>
+          <View className='comp-items' onClick={() => {
+            setOpen2(!open2)
+          }}>
+            <View className="comp-item-text">遮罩不展示</View>
+            <SlIcon value="chevron-right" color="#333" size={16} />
+          </View>
           
         </View>
         <SlCanvas

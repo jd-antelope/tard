@@ -13,7 +13,7 @@ const Cell: FC = () => {
 
   return (
     <View className="container full-container">
-      <DocsHeader title='Cell 单元格'></DocsHeader>
+      <DocsHeader title='Cell 单元格' />
       <View className='doc-body'>
         <View className='doc-body-content-tip'>基础用法</View>
         <SlCell title="单元格" value="相关内容" />

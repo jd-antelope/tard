@@ -7,8 +7,8 @@ import './index.less';
 
 const Badge: FC = () => {
   return (
-    <View className="container">
-      <DocsHeader title='Badge'></DocsHeader>
+    <View className="container bg-white">
+      <DocsHeader title='Badge 徽标'></DocsHeader>
       <View className='doc-body'>
 
         <View className='doc-body-content-tip'>基本用法</View>
@@ -55,7 +55,7 @@ const Badge: FC = () => {
         <SlBadge value='NEW' color="blue">
           <SlButton>按钮</SlButton>
         </SlBadge>
-        <View style="display:inline-block; width: 20px; height:20px;"></View>
+        <View style="width: 100%; height:20px;"></View>
         <SlBadge dot color="blue">
           <SlButton>按钮</SlButton>
         </SlBadge>

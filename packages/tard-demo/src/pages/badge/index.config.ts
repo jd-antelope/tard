@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'Button',
+  navigationBarTitleText: 'Badge 徽标',
   enableShareAppMessage: true
 }

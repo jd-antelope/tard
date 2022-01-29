@@ -86,7 +86,9 @@ class SlCanvasH5 extends React.Component<SlCanvasProps, SlCanvasState> {
               </View>
             </View> :
             <View 
-              className={ cn('slc-canvas-content slc-canvas-contenth5', className) } 
+              className={ cn('slc-canvas-content slc-canvas-contenth5 slc-canvas-overlay', {
+                'slc-canvas-overlay-show': open
+              },className) } 
               canvas-id="canvas"
               style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)};` }
             >

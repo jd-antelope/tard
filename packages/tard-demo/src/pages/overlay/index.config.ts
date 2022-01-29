@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'Overlay',
+  navigationBarTitleText: 'Overlay 遮罩层',
   enableShareAppMessage: true
 }

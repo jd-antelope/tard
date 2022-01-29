@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'Form',
+  navigationBarTitleText: 'Form 表单',
   enableShareAppMessage: true
 }

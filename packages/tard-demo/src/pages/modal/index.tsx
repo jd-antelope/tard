@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View, Button, Image } from '@tarojs/components';
-import { SlModal, SlModalHeader, SlModalContent, SlButton, SlModalAction } from 'tard'
+import { SlModal, SlModalHeader, SlModalContent, SlModalAction, SlIcon } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 
@@ -15,11 +15,13 @@ const Modal: FC = () => {
 
   return (
     <View className="container">
-      <DocsHeader title='Modal'></DocsHeader>
+      <DocsHeader title='Modal 对话框'></DocsHeader>
       <View className='doc-body'>
-
         <View className='doc-body-content-tip'>基本用法</View>
-        <SlButton full onClick={() => setIsOpened(true)}>提示弹窗</SlButton>
+        <View className='comp-items' onClick={() => setIsOpened(true)}>
+          <View className="comp-item-text">提示弹窗</View>
+          <SlIcon value="chevron-right" color="#333" size={16} />
+        </View>
         <SlModal
           isOpened={isOpened}
           title='标题'
@@ -29,7 +31,10 @@ const Modal: FC = () => {
           content='弹框内容'
         />
 
-        <SlButton full onClick={() => setIsOpened1(true)}>提示弹窗（无标题）</SlButton>
+        <View className='comp-items' onClick={() => setIsOpened1(true)}>
+          <View className="comp-item-text">提示弹窗（无标题）</View>
+          <SlIcon value="chevron-right" color="#333" size={16} />
+        </View>
         <SlModal
           isOpened={isOpened1}
           confirmText='确认'
@@ -38,7 +43,10 @@ const Modal: FC = () => {
           content='弹框内容'
         />
 
-        <SlButton full onClick={() => setIsOpened2(true)}>确定弹窗</SlButton>
+        <View className='comp-items' onClick={() => setIsOpened2(true)}>
+          <View className="comp-item-text">确定弹窗</View>
+          <SlIcon value="chevron-right" color="#333" size={16} />
+        </View>
         <SlModal
           title='标题'
           isOpened={isOpened2}
@@ -51,7 +59,10 @@ const Modal: FC = () => {
         />
 
         <View className='doc-body-content-tip'>自定义内容对齐方式</View>
-        <SlButton full onClick={() => setIsOpened3(true)}>提示弹窗</SlButton>
+        <View className='comp-items' onClick={() => setIsOpened3(true)}>
+          <View className="comp-item-text">提示弹窗</View>
+          <SlIcon value="chevron-right" color="#333" size={16} />
+        </View>
         <SlModal
           isOpened={isOpened3}
           title='标题'
@@ -63,7 +74,10 @@ const Modal: FC = () => {
         />
 
         <View className='doc-body-content-tip'>自定义弹框</View>
-        <SlButton full onClick={() => setIsOpened5(true)}>自定义内容</SlButton>
+        <View className='comp-items' onClick={() => setIsOpened5(true)}>
+          <View className="comp-item-text">自定义内容</View>
+          <SlIcon value="chevron-right" color="#333" size={16} />
+        </View>
         <SlModal
           isOpened={isOpened5}
           title="标题"
@@ -77,7 +91,11 @@ const Modal: FC = () => {
           </SlModalContent>
         </SlModal>
 
-        <SlButton full onClick={() => setIsOpened4(true)}>自定义内容、标题、操作按钮</SlButton>
+        <View className='doc-body-content-tip'>自定义内容、标题、操作按钮</View>
+        <View className='comp-items' onClick={() => setIsOpened4(true)}>
+          <View className="comp-item-text">自定义内容</View>
+          <SlIcon value="chevron-right" color="#333" size={16} />
+        </View>
         <SlModal isOpened={isOpened4}>
           <SlModalHeader>标题</SlModalHeader>
           <SlModalContent>

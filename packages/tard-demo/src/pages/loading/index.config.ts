@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'Loading',
+  navigationBarTitleText: 'Loading 加载',
   enableShareAppMessage: true
 }

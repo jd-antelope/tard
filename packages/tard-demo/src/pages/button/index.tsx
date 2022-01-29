@@ -10,7 +10,7 @@ const Button: FC = () => {
 
 	return (
 		<View className="container">
-			<DocsHeader title='Button'></DocsHeader>
+			<DocsHeader title='Button 按钮' />
 			<View className='doc-body'>
 				<View className='doc-body-content-tip'>按钮类型</View>
 				<View className='button-box'>

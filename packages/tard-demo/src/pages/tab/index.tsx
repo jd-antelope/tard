@@ -31,7 +31,7 @@ const Tab: FC = () => {
   const [current3, setCurrent3] = useState<number>(2)
 
   return (
-    <View className="container">
+    <View className="container bg-white">
       <DocsHeader title='Tab'></DocsHeader>
       <View className='doc-body'>
         <View className='doc-body-content-tip'>基本用法</View>

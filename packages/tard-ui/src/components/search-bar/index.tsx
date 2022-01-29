@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import React from 'react'
-import { SlSearchBarProps, SlSearchBarState } from 'types/search-bar'
 import { Input, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
+import { SlSearchBarProps, SlSearchBarState } from '../../../types/search-bar'
 import SlIcon from '../icon'
 
 type ExtendEvent = {
