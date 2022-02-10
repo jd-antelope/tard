@@ -58,15 +58,15 @@ const Field: FC = () => {
             <View className='input-group'>
               <SlField
                 name='phone' 
-                label='手机号' 
+                label='号码文本' 
                 type='phone' 
-                placeholder='请输入手机号' 
+                placeholder='请输入号码' 
                 value={form.phone} 
                 onChange={(e) => change({ phone: e })} 
               />
               <SlField
                 name='password' 
-                label='密码' 
+                label='加密文本' 
                 type='password' 
                 placeholder='请输入文本' 
                 value={form.password} 

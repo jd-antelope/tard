@@ -7,18 +7,28 @@ import './index.less';
 
 const Skeleton: FC = () => {
   return (
-    <View className="container">
-      <DocsHeader title='Skeleton'></DocsHeader>
-      <View className='doc-body toast-page'>
+    <View className="container full-container">
+      <DocsHeader title='Skeleton 骨架屏'></DocsHeader>
+      <View className='doc-body'>
         <View className='doc-body-content'>
           <View className='doc-body-content-tip'>基本用法</View>
-          <SlSkeleton />
+          <View className='doc-body-content__info'>
+            <SlSkeleton />
+          </View>
           <View className='doc-body-content-tip'>自定义宽高</View>
-          <SlSkeleton width={ 500 } height={ 40 } />
+          <View className='doc-body-content__info'>
+            <SlSkeleton width={ 500 } height={ 40 } />
+          </View>
           <View className='doc-body-content-tip'>圆角</View>
-          <SlSkeleton width={ 50 } height={ 50 } type="rounded" />
+          <View className='doc-body-content__info'>
+            <SlSkeleton width={ 50 } height={ 50 } type="rounded" />
+          </View>
+          
           <View className='doc-body-content-tip'>直角</View>
-          <SlSkeleton width={ 500 } height={ 40 } type="squared" />
+          <View className='doc-body-content__info'>
+            <SlSkeleton width={ 500 } height={ 40 } type="squared" />
+          </View>
+          
         </View>
       </View>
     </View>

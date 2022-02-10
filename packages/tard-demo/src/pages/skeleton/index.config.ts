@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'Skeleton',
+  navigationBarTitleText: 'Skeleton 骨架屏',
   enableShareAppMessage: true
 }

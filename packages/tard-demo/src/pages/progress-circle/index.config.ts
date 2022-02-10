@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'ProgressCircle',
+  navigationBarTitleText: 'ProgressCircle 圆形进度条',
   enableShareAppMessage: true
 }

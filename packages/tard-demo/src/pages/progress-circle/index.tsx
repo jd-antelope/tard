@@ -6,21 +6,28 @@ import DocsHeader from '../../components/doc-header'
 
 const Person: FC = () => {
   return (
-    <View className="container">
-      <DocsHeader title='SlProgressCircle'></DocsHeader>
+    <View className="container full-container">
+      <DocsHeader title='SlProgressCircle 圆形进度条'></DocsHeader>
       <View className='doc-body'>
-
         <View className='doc-body-content-tip'>基本用法</View>
-        <SlProgressCircle percent={25} text="25%" />
+        <View className='doc-body-content__info'>
+          <SlProgressCircle percent={25} text="25%" />
+        </View>
 
         <View className='doc-body-content-tip'>自定义颜色</View>
-        <SlProgressCircle percent={25} color="#FF2929" text="自定义颜色" />
+        <View className='doc-body-content__info'>
+          <SlProgressCircle percent={25} color="#FF2929" text="自定义颜色" />
+        </View>
 
         <View className='doc-body-content-tip'>自定义圆环直径</View>
-        <SlProgressCircle percent={25} size={300} text="圆环直径" />
+        <View className='doc-body-content__info'>
+          <SlProgressCircle percent={25} size={300} text="圆环直径" />
+        </View>
 
         <View className='doc-body-content-tip'>自定义进度条宽度</View>
-        <SlProgressCircle percent={50} strokeWidth={10} text="进度条宽度" />
+        <View className='doc-body-content__info'>
+          <SlProgressCircle percent={50} strokeWidth={10} text="进度条宽度" />
+        </View>
 
       </View>
     </View>
