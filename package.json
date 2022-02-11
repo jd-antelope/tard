@@ -1,0 +1,22 @@
+{
+  "name": "frontend-c-comps",
+  "version": "0.0.1",
+  "description": "components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://coding.jd.com/selling-front/frontend-c-comps.git"
+  },
+  "keywords": [
+    "taro"
+  ],
+  "author": "hawleyHuo",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.5"
+  }
+}
