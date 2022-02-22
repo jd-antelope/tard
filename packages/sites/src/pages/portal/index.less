@@ -1,0 +1,223 @@
+@keyframes fadeInLeft{
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%,0,0);
+      transform: translate(-100%)
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0,0,0);
+      transform: translate(0)
+    }
+  }
+  
+  @color-base: #333;
+  
+  .container {
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+  
+  .container-footer {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .index-page {
+    margin: 0 auto;
+    width: 100%;
+  
+    &__banner {
+      height: 648px;
+      overflow: hidden;
+  
+      &-content {
+        width: 362px;
+        height: 214px;
+        margin-top: 164px;
+  
+        &__login {
+          width: 193px;
+          height: 94px;
+          margin-bottom: 20px;
+  
+          img {
+            width: 193px;
+            height: 94px;
+          }
+        }
+  
+        &__p {
+          color: #666;
+          font-size: 18px;
+        }
+  
+        &__buttons {
+          margin-top: 40px;
+        }
+  
+        &__button {
+            width: 132px;
+            height: 42px !important;
+            font-size: 18px !important;
+            border-radius: 21px !important;
+            margin-right: 20px;
+        }
+  
+        .scan-button {
+          position: relative;
+  
+          &__content {
+            width: 132px;
+            padding: 6px;
+            background: #fff;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            border-radius: 8px;
+            transition: all .3s linear 0s;
+            opacity: 0;
+            box-shadow: 0px 0px 5px #ccc;
+            &-p {
+              width: 100%;
+              line-height: 30px;
+              font-size: 14px;
+              color: #333;
+            }
+            &-img {
+              width: 120px;
+              height: 120px;
+            }
+          }
+  
+          &:hover {
+            .scan-button__content {
+              opacity: 1;
+            }
+          }        
+        }
+      }
+    }
+  
+    &__footer {
+      clear: both;
+      padding: 60px 0;
+      background: #F6F8FB;
+  
+      &-list {
+        width: 280px;
+  
+        &__logo {
+          width: 108px;
+          height: 28px;
+        }
+      }
+  
+      &-header {
+        margin-bottom: 16px;
+        font-size: 18px;
+        font-weight: 500;
+        color: @color-base;
+      }
+  
+      &-item {
+        line-height: 35px;
+        color: 333;
+        font-size: 14px;
+  
+        a {
+          color: @color-base;
+        }
+      }
+    }
+  
+    &__footer-bottom {
+      background: #F6F8FB;
+      border-top: 1px solid #EDEEF0;
+      
+      .container-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 68px;
+      }
+    }
+  
+    .comps {
+      margin-bottom: 100px;
+      &-header {
+        line-height: 53px;
+        margin-top: 120px;
+        margin-bottom: 80px;
+        font-size: 38px;
+        color: @color-base;
+      }
+      &-content {
+        overflow: hidden;
+        &-item {
+          float: left;
+          width: 600px;
+          margin-right: 20px;
+          margin-bottom: 20px;
+          height: 480px;
+          padding: 60px 30px;
+          color: @color-base;
+          background: #F9FAFF;
+          position: relative;
+  
+          &:nth-child(even) {
+            margin-right: 0;
+          }
+  
+          &__title {
+            line-height: 28px;
+            font-size: 28px;
+            font-weight: 700;
+          }
+  
+          &__content {
+            margin-top: 15px;
+            font-size: 18px;
+            line-height: 18px;
+          }
+  
+          &__des {
+            margin-top: 20px;
+            font-size: 80px;
+            line-height: 80px;
+            white-space: pre-line;
+          }
+  
+          &__desfrond {
+            font-size: 54px;
+            line-height: 58px;
+            font-weight: 700;
+          }
+  
+          &__tip {
+            background: #7284FF;
+            height: 22px;
+            display: inline-block;
+            padding: 0 8px;
+            color: #fff;
+            margin-top: 5px;
+            border-radius: 11px;
+          }
+  
+          &__bg {
+            display: block;
+            width: 238px;
+            height: 238px;
+            position: absolute;
+            right: 32px;
+            bottom: 32px;
+          }
+        }
+      }
+    }
+  }
+  
+  .index-bg {
+    background: #fff url('https://storage.360buyimg.com/hawley-common/tard-image/index-bg.png') no-repeat 0 -64px;
+  }
+  

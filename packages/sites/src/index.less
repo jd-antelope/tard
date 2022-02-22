@@ -1,0 +1,170 @@
+@import 'antd/dist/antd.less';
+@primary-color: '#102DF5';
+@primary-color-light: '#F7F8FF';
+@black-color: '#333';
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+#root{
+	min-height: 100%;
+	width: 100vw;
+}
+.pl-12{
+	padding-left: 12px;
+}
+.pt-12{
+	padding-top: 12px;
+}
+
+.pb-24 {
+	padding-bottom: 24px;
+}
+
+.layout-flex-row {
+	display: flex;
+}
+.layout-flex-col {
+	display: flex;
+	flex-direction: column;
+}
+.layout-flex-1{
+	flex: 1
+}
+.layout-w-100 {
+	width: 100%;
+}
+.layout-h-100 {
+	height: 100%;
+
+}
+.layout-h-100vh {
+	height: 100vh;
+}
+.layout-text-center{
+	text-align: center;
+}
+.layout-over-flow-y{
+	overflow-y: scroll;
+}
+.layout-border-top {
+	border-top: 1px solid #EEE;
+}
+
+.ant-layout .site-main{
+	background: #fff;
+	.site-sider {
+		padding-left: 40px;
+		background: #F7F8FF;
+	  }
+}
+
+.phone-pos{
+	width: 448px;
+	padding-top: 24px;
+}
+#docs-frame{
+	position: fixed;
+	top: 133px;
+	right: 40px;
+	width: 375px;
+	height: 720px;
+	background-color: #fff;
+	box-shadow: 0 4px 30px 0 rgba(4, 59, 85, 0.1);
+	border-radius: 32px;
+	overflow: hidden;
+    
+	.iframe-content{
+		position: absolute;
+		left: 0px;
+		height: 720px;
+		width: 375px;
+	}
+	.iphone-frame{
+		position: absolute;
+		top: 24px;
+		left: 12px;
+		width: 375px;
+		height: 758px;
+
+		background: url('../../public/images/iframe_iphonex.png') no-repeat;
+		background-size: contain;
+		pointer-events: none;
+	}
+
+}
+ .gitHub {
+    .ant-menu-title-content {
+		height: 100%;
+        display: flex;
+        align-items: center;
+    }
+ }
+  
+
+.ant-layout-header {
+	padding-left: 0;
+  background-color: transparent;
+}
+
+.ant-menu-item-group-title {
+	padding: 0;
+	height: 58px;
+	font-size: 18px;
+	color: #333;
+	box-sizing: border-box;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+}
+
+.ant-menu-inline .ant-menu-item {
+	height: 44px;
+	margin: 0;
+	overflow: initial;
+}
+
+.ant-menu-inline .ant-menu-item:not(:last-child) {
+	margin: 0;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+	background: #fff;
+	border-radius: 22px 0 0 22px;
+}
+
+.ant-menu-inline .ant-menu-item::after {
+	border: none;
+	width: 20px;
+	height: 20px;
+	top: -20px;
+  right: 0px;
+  background: #fff url('https://storage.360buyimg.com/hawley-common/tard-image/layout-menu-active.png');
+  background-size: 100%;
+}
+
+.ant-menu-inline .ant-menu-item-selected::before {
+  position: absolute;
+  content: '';
+	width: 20px;
+	height: 20px;
+	top: 44px;
+  right: 0px;
+  background: #fff url('https://storage.360buyimg.com/hawley-common/tard-image/layout-menu-active.png');
+  background-size: 100%;
+  transform: rotate(-90deg);
+}
+
+.ant-menu-inline {
+	border: none;
+}
+
+.ant-menu {
+  background: none;
+}
+
+.index-bg-layout {
+  background: #fff url('https://storage.360buyimg.com/hawley-common/tard-image/index-bg.png') no-repeat 0 0;
+}
