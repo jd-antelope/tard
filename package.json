@@ -42,7 +42,7 @@
     "figlet": "^1.5.2",
     "fs-extra": "^10.0.0",
     "husky": "^4.2.3",
-    "globby": "^11.0.4",
+    "globby": "^13.1.1",
     "gulp": "^4.0.2",
     "gulp-watch": "^5.0.1",
     "handlebars": "^4.7.7",

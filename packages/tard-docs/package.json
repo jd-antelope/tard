@@ -46,7 +46,7 @@
     "cross-env": "^7.0.2",
     "front-matter": "^4.0.2",
     "fs-extra": "^10.0.0",
-    "globby": "^11.0.4",
+    "globby": "^13.1.1",
     "handlebars": "^4.7.7",
     "highlight.js": "^9.18.1",
     "lint-staged": "^10.0.7",
