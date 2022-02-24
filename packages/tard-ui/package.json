@@ -31,7 +31,7 @@
   ],
   "types": "./types/index.d.ts",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@tarojs/components": "3.3.11",
