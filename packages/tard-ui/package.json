@@ -1,6 +1,6 @@
 {
   "name": "tard",
-  "version": "0.0.1-alpha.3.1",
+  "version": "0.0.1-alpha.4",
   "description": "",
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
