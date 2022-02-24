@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { Layout } from 'antd'
 import {  useLocation } from 'react-router-dom'
 import LayoutMenu from './layout-menu'
@@ -8,7 +8,7 @@ import './index.less'
 const { Content, Sider } = Layout
 export default function LayoutComponent ({ children }: any) {
   const location = useLocation()
-  const [path] = useState<string>(location.pathname.split('/')[3] || 'home')
+  // const [path] = useState<string>(location.pathname.split('/')[3] || 'home')
 
   const postIframeMessage = (path: string) => {
     const childFrameObj = document.getElementById('iframeDemo');
@@ -39,6 +39,7 @@ export default function LayoutComponent ({ children }: any) {
               frameBorder="0"
               id="iframeDemo"
             /> */}
+            <iframe className="iframe-content" src="/demo.html#/docs" frameBorder="0" />
           </div>
           <div className="phone-pos" />
         </Content>

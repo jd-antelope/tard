@@ -4,7 +4,9 @@
   "description": "components",
   "main": "index.js",
   "scripts": {
-    "test": "tsc"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -15,13 +17,26 @@
   ],
   "author": "hawleyHuo",
   "license": "ISC",
+  "dependencies": {
+    "@tarojs/components": "^3.4.2",
+    "@tarojs/taro": "^3.4.2",
+    "@tarojs/runtime": "^3.4.2",
+    "antd": "^4.18.7",
+    "classnames": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1"
+  },
   "devDependencies": {
     "@types/node": "^17.0.18",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^1.0.7",
     "commitlint-config-selling": "0.0.1",
     "eslint-config-selling": "0.0.1",
     "husky": "^7.0.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "less": "^4.1.2",
     "rimraf": "^3.0.2",
     "stylelint-config-selling": "0.0.1",
     "typescript": "^4.5.5",

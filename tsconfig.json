@@ -27,6 +27,7 @@
   "compileOnSave": false,
   "exclude": [
     "node_modules/*",
-    "packages/vite/*"
+    "packages/vite/*",
+    "packages/demo/*"
   ],
 }
