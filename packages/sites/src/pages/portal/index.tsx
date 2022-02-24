@@ -30,7 +30,7 @@ export default function IndexPage () {
                   type="primary"
                   ghost
                 >
-                                    扫码体验
+                  扫码体验
                   <div className="scan-button__content">
                     <p className="scan-button__content-p">微信扫码体验</p>
                     <img className="scan-button__content-img" src={ `${IMG_PREFIX}/taro-weapp.jpg` } />
@@ -93,7 +93,7 @@ export default function IndexPage () {
         </div>
         <div className="index-page__footer-bottom">
           <div className="container container-footer">
-                        源自京东零售云商羚 ｜ Copyright (c) 2021-present by jd-antelope
+            源自京东零售云商羚 ｜ Copyright (c) 2021-present by jd-antelope
           </div>
         </div>
       </div>

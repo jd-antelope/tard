@@ -1,10 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
-    alias: [{ find: '@tarojs/components', replacement: '@tarojs/components/dist-h5/react' }],
+    alias: [
+      { find: '@tarojs/components', replacement: '@tarojs/components/dist-h5/react' },
+      { find: '@demo',replacement:path.resolve(__dirname, 'packages/demo') }
+    ],
   },
   css: {
     preprocessorOptions: {
