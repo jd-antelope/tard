@@ -180,6 +180,7 @@ export default class SlButton extends React.Component<SlButtonProps, SlButtonSta
 
 SlButton.defaultProps = {
   type: 'default',
+  size: 'normal',
   fill: false,
   lang: 'zh_CN',
   color: '',

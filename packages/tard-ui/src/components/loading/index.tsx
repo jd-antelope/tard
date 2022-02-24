@@ -9,8 +9,8 @@ import { isFunction } from '../../common/is'
 
 const loadingObj = {
   'default': 'loading',
-  'ios': 'loading-2',
-  'loading': 'loading-3'
+  'ios': 'loading-ios',
+  'loading': 'loading-size'
 }
 
 export default class SlLoading extends React.Component<SlLoadingProps> {

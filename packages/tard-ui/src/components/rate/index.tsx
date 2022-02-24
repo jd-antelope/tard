@@ -69,12 +69,12 @@ export default class SlRate extends React.Component<SlRateProps, SlRateState> {
             onClick={this.handleClick.bind(this, i + 1)}
           >
             <Text
-              className='slc-icon slc-icon-star-2'
+              className='slc-icon slc-icon-star'
               style={this.isActiveRate(cls, 'on') ? Object.assign(activeIconStyle, starIconStyle) : starIconStyle}
             ></Text>
             <View className='slc-rate__left' style={this.isActiveRate(cls, 'half') ? activeIconStyle : {}}>
               <Text
-                className='slc-icon slc-icon-star-2'
+                className='slc-icon slc-icon-star'
                 style={starIconStyle}
               ></Text>
             </View>

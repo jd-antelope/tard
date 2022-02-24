@@ -8,6 +8,7 @@ import DocsHeader from '../../components/doc-header'
 import './index.less';
 
 const Toast: FC = () => {
+  const image = require('../../assets/images/avatar.png')
   const [toast, setToast] = useState<SlToastProps>({ visible: false });
   const list = [
     {
@@ -46,12 +47,12 @@ const Toast: FC = () => {
         {
           label: '自定义图片',
           key: 'selfImage',
-          params: { text: '自定义图片', image: 'http://storage.360buyimg.com/mtd/home/group-21533885306540.png' }
+          params: { text: '自定义图片', image }
         },
         {
           label: '自定义加载图标',
           key: 'selfLoading',
-          params: { text: '自定义加载图标', status: 'loading', image: 'http://storage.360buyimg.com/mtd/home/group-21533885306540.png' }
+          params: { text: '自定义加载图标', status: 'loading', image }
         },
       ]
 

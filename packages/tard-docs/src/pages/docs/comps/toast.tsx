@@ -78,7 +78,7 @@ const Toast: FC = () => {
 ~~~js
 const Toast: FC = () => {
   const [toastParams, setToastParams] = useState({ {text: '自定义图片',
-   image: 'http://storage.360buyimg.com/mtd/home/group-21533885306540.png',visible:true } });
+   image: '',visible:true } });
   return (
     <View className="container">
       <SlToast

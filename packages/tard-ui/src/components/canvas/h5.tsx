@@ -74,13 +74,11 @@ class SlCanvasH5 extends React.Component<SlCanvasProps, SlCanvasState> {
                 </View>
                 <View className="slc-canvas-save">
                   <SlButton 
+                    type="success"
                     size="large"
                     className="slc-canvas-save__button" 
                     onClick={ () => this.saveFile() }
-                    color="#ffffff"
-                  >
-                    保存
-                  </SlButton>
+                  >保存</SlButton>
                 </View>
                 
               </View>
