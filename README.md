@@ -22,7 +22,7 @@ Tard是**京东商羚前端团队**开源移动端多端组件库, 开发和服�
 ![Alt](http://storage.360buyimg.com/hawley-common/tard-image/taro-weapp.jpg)
 
 ## 快速上手
-请参考[快速上手](/docs/quickstart)章节
+请参考[快速上手](/packages/tard-docs/markdown/quickstart.md)章节
 ## 支持环境
 + Android 5.0+
 + iOS 9.2+
