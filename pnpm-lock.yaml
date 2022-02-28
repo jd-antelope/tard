@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@commitlint/cli': ^16.2.1
+  '@jd-antelope/commitlint-config-selling': ^0.0.3
   '@jd/commitlint-config-selling': ^1.1.6
   '@rollup/plugin-commonjs': ^21.0.1
   '@rollup/plugin-json': ^4.1.0
@@ -39,6 +40,7 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli': 16.2.1
+  '@jd-antelope/commitlint-config-selling': registry.npmjs.org/@jd-antelope/commitlint-config-selling/0.0.3
   '@jd/commitlint-config-selling': 1.1.6
   '@rollup/plugin-commonjs': 21.0.1_rollup@2.68.0
   '@rollup/plugin-json': 4.1.0_rollup@2.68.0
@@ -5894,4 +5896,13 @@ packages:
 
   /zwitch/1.0.5:
     resolution: {integrity: sha1-0R1zgf/tFrdC9q97PyI9XNn+mSA=, tarball: zwitch/download/zwitch-1.0.5.tgz}
+    dev: true
+
+  registry.npmjs.org/@jd-antelope/commitlint-config-selling/0.0.3:
+    resolution: {integrity: sha512-9oxJWe6IlyocqgRwF0jpdhWXpYbxdpKq+wXPYAqJsnBQ2+SxzUeNgoTUwtQ59Cllb31fQf7LgPdMq5CGjM5BxA==, registry: http://registry.m.jd.com/, tarball: https://registry.npmjs.org/@jd-antelope/commitlint-config-selling/-/commitlint-config-selling-0.0.3.tgz}
+    name: '@jd-antelope/commitlint-config-selling'
+    version: 0.0.3
+    dependencies:
+      '@commitlint/cli': 13.2.1
+      '@commitlint/config-conventional': 13.2.0
     dev: true

@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
+    "@jd-antelope/commitlint-config-selling": "^0.0.3",
     "@jd/commitlint-config-selling": "^1.1.6",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "^4.1.0",
