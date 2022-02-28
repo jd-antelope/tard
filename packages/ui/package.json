@@ -1,21 +1,33 @@
 {
-  "name": "@xx/ui",
+  "name": "haw-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/comps.react.umd.js",
+  "module": "dist/comps.react.es.js",
+  "source": "src/components/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "typeRoots": [
+    "node_modules/@types",
+    "types"
+  ],
+  "types": "./types/index.d.ts",
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@tarojs/components": "^3.4.2",
-    "@tarojs/react": "^3.4.2",
-    "@tarojs/taro": "^3.4.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "devDependencies": {
+    "@tarojs/taro": "^3.4.2",
+    "@tarojs/react": "^3.4.2",
     "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "@tarojs/components": ">=3",
+    "@tarojs/react": ">=3",
+    "react": ">=16.13.0",
+    "react-dom": ">=16.13.0"
   }
 }

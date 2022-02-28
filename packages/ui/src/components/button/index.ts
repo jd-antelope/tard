@@ -1,9 +1,3 @@
-import { ComponentClass } from 'react'
+import { Button } from './button'
 
-import { SlButtonProps, SlButtonState } from './types'
-
-export type { SlButtonProps, SlButtonState } 
-
-declare const SlButton: ComponentClass<SlButtonProps>
-
-export default SlButton
+export default Button

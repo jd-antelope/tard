@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { FC } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import DocsHeader from '@demo/src/components/doc-header/index'
-import SlButton from '../index'
+import SlButton from '../type'
 
 import './index.less'
 
