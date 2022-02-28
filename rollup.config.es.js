@@ -4,7 +4,9 @@ import RollupNodeResolve from '@rollup/plugin-node-resolve'
 import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
 import { uglify as RollupUglify } from 'rollup-plugin-uglify'
-// import RollupCopy from 'rollup-plugin-copy'
+import RollupCopy from 'rollup-plugin-copy'
+
+const resolveFile = p => path.resolve(__dirname, '.', p)
 
 const externalPackages = [
   'classnames',
@@ -21,12 +23,12 @@ export default {
   input: entries,
   output: [
     {
-      file: './packages/ui/dist/comps.react.umd.js',
+      file: 'dist/comps.react.umd.js',
       format: 'cjs',
       sourcemap: true
     },
     {
-      file: './packages/ui/dist/comps.react.es.js',
+      file: 'dist/comps.react.es.js',
       format: 'es',
       sourcemap: true,
       globals: {
@@ -55,15 +57,14 @@ export default {
     RollupTypescript({
       tsconfig: path.join(__dirname, 'tsconfig.rollup.json')
     }),
-    // RollupCopy({
-    //   verbose: true,
-    //   targets: [
-    //     {
-    //       src: resolveFile('src/style'),
-    //       dest: resolveFile('dist')
-    //     }
-    //   ]
-    // }),
-
+    RollupCopy({
+      verbose: true,
+      targets: [
+        {
+          src: resolveFile('packages/ui/src/styles'),
+          dest: resolveFile('dist')
+        }
+      ]
+    }),
   ]
 }
