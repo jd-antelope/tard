@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["@jd/commitlint-config-selling"]
+  extends: ["@jd-antelope/commitlint-config-selling"]
 }
