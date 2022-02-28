@@ -38,7 +38,7 @@ export default defineConfig({
       },
       plugins: [
         RollupNodeResolve({
-          customResolveOptions: { 
+          customResolveOptions: {
             moduleDirectory: 'node_modules'
           }
         }),
@@ -58,7 +58,7 @@ export default defineConfig({
     },
     lib: {
       entry: './packages/ui/index.ts',
-      name: 'comps.react',
+      name: 'comps.react ',
       fileName: 'comps.react',
       formats: ['es', 'umd'],
     },

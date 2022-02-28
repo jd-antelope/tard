@@ -1,3 +1,3 @@
 module.exports = {
-  "extends": "commitlint-config-selling"
+  extends: ["commitlint-config-selling"]
 }
