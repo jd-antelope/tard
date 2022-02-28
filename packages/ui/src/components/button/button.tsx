@@ -1,8 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { View } from '@tarojs/components'
 
-const Button = () => {
+export const Button: FC<any> = () => {
   return <View>按钮</View>
 }
-
-export default Button
