@@ -38,7 +38,7 @@ export default defineConfig({
       },
       plugins: [
         RollupNodeResolve({
-          customResolveOptions: {
+          customResolveOptions: { 
             moduleDirectory: 'node_modules'
           }
         }),
