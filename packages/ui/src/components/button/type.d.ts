@@ -1,5 +1,5 @@
 
-import { MouseEvent, ComponentClass } from 'react'
+import { ComponentClass } from 'react'
 import { ButtonProps } from '@tarojs/components/types/Button'
 import CompCommon from '../../common/type'
 
@@ -8,13 +8,12 @@ type TaroButtonProps = Pick<ButtonProps, 'formType' | 'openType' |
   'sendMessageImg' | 'showMessageCard' | 'appParameter' | 'onContact' |
   'onGetUserInfo' | 'onGetPhoneNumber' | 'onOpenSetting' | 'onError'>
 
-
 export interface ButtonProps extends TaroButtonProps, CompCommon {
   /**
    *按钮类型
    * @defalt default
    */
-   type?: string
+  type?: string
   /**
    * 是否填充背景
    * @default false
@@ -28,7 +27,7 @@ export interface ButtonProps extends TaroButtonProps, CompCommon {
   /**
    * 按钮尺寸大小
    */
-  size?: string
+  size?: 'large' | 'normal' | 'small' | 'mini'
   /**
    * 是否圆角
    * @default normal
@@ -49,7 +48,7 @@ export interface ButtonProps extends TaroButtonProps, CompCommon {
   /**
   * 边框颜色
   */
-   borderColor?: string
+  borderColor?: string
   /**
    * 按钮自定义圆角
    */
@@ -66,12 +65,6 @@ export interface ButtonProps extends TaroButtonProps, CompCommon {
    * 点击按钮时触发
    */
   onClick?: Function
-}
-
-
-export interface ButtonState {
-  isWEB: boolean
-  isWEAPP: boolean
 }
 
 declare const Button: ComponentClass<ButtonProps>

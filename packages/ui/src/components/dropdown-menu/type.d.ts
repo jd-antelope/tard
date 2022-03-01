@@ -1,5 +1,5 @@
 
-
+import { ComponentClass, ReactNode } from 'react'
 import CompCommon from '../../common/type'
 
 interface Option {
@@ -34,7 +34,7 @@ export interface DropdownMenuItemProps extends CompCommon {
   /**
    * 点击options展开item，不暴露
    */
-  onClick: function
+  onClick: Function
   /**
    * 菜单标题和选项的选中态颜色，不暴露
    */
@@ -66,25 +66,11 @@ export interface DropdownMenuItemProps extends CompCommon {
    * 自定义内容
    * @default true
    */
-  content?: React.ReactNode
+  content?: ReactNode
   /**
    * 点击options导致 value 变化时触发
    */
-  onChange?: function
-  /**
-   * 自定义点击事件
-   */
-  onClick?: Function
-}
-export interface DropdownMenuState {
-  /**
-   * 菜单标题和选项的选中态颜色
-   */
-  activeKey: number
-  /**
-   * DropdownMenuItem是否展开
-   */
-  isOpen: boolean
+  onChange?: Function
 }
 
 declare const DropdownMenu: ComponentClass<DropdownMenuProps>
