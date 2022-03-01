@@ -1,17 +1,43 @@
 // 定义前缀
 @--css-prefix: slc;
 
+// 基本单位
+@hd: 2;
+
 // Color
-@color-primary: var(--primaryColor);
+@primary-color: var(--primaryColor);
 @color-success: #13CE66;
 @color-error: #FF4949;
 @color-warning: #FFC82C;
 @color-info: #78A4FA;
-@color-white: #FFFFFF;
-@color-text: #333333; // 文字的基本色
-@color-text-weak: #999999; // 文字辅助色
-@color-light: #CCCCCC; // 文字placeholder、disabled色
-@color-border: #EFEFEF; // border颜色
+
+// Color Palette
+@color-black-0: #000;
+@color-black-1: #333;
+@color-black-2: #7F7F7F;
+@color-black-3: #B2B2B2;
+@color-grey-0: #333;
+@color-grey-1: #666;
+@color-grey-2: #999;
+@color-grey-3: #CCC;
+@color-grey-4: #E5E5E5;
+@color-grey-5: #F0F0F0;
+@color-grey-6: #F7F7F7;
+@color-grey-7: #EFEFEF;
+@color-grey-8: #F8F8F8;
+@color-white: #FFF;
+@color-bg: #FFF;
+@color-bg-grey: #F7F8FA;
+
+// Text Color
+@color-text-base: #333333; // 文字的基本色
+@color-text-base-inverse: #FFF; // 反色
+@color-text-secondary: #999999; // 辅助色
+@color-text-placeholder: #C9C9C9;
+@color-text-disabled: #CCC;
+@color-text-title: #2C405A; // 文章标题
+@color-text-paragraph: #3F536E; // 文章段落
+@color-text-placeholder: #CCCCCC;
 
 // Border Radius
 @border-radius-sm: 4px;
@@ -70,3 +96,15 @@
 
 // overlay
 @overlay-bg-color: rgba(0,0,0,.65);
+
+// DropdownMenu
+@dropdown-menu-background-color: @color-bg;
+@dropdown-menu-title-font-size: @font-size-base;
+@dropdown-menu-title-text-color: @color-text-base;
+@dropdown-menu-height: 80px;
+@dropdown-menu-box-shadow: 0 2px 12px #ebedf0;
+@dropdown-item-z-index: 10;
+@dropdown-item-border-radius: 16px;
+@dropdown-menu-active-background-color: #F4F6FA;
+@dropdown-overlay-bg-color: @overlay-bg-color;
+@dropdown-overlay-z-index: 99;

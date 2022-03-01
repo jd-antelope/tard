@@ -63,6 +63,10 @@ export default {
         {
           src: resolveFile('packages/ui/src/styles'),
           dest: resolveFile('packages/ui/dist')
+        },
+        {
+          src: resolveFile('packages/ui/src/components/*/*.less'),
+          dest: resolveFile('packages/ui/dist/styles/components')
         }
       ]
     }),

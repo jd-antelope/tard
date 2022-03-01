@@ -1,7 +1,7 @@
 @import "../../styles/variable.less";
 @import "../../styles/mixins/index.less";
 
-.@{--css-prefix}-dropdown-menu-container {
+.@{--css-prefix}-dropdown-menu-container{
   position: fixed;
   width: 100%;
 }
@@ -11,43 +11,38 @@
     opacity: 0;
     transform: translateY(-100%);
   }
-
   10% {
-    opacity: 1;
     transform: translateY(-100%);
+    opacity: 1;
   }
-
   100% {
     transform: translateY(0);
   }
-
 }
 
 .@{--css-prefix}-dropdown-menu {
   font-size: @dropdown-menu-title-font-size;
   color: @dropdown-menu-title-text-color;
-
   &__bar {
-    height: @dropdown-menu-height;
-    box-shadow: @dropdown-menu-box-shadow;
-    line-height: @dropdown-menu-height;
     background: @dropdown-menu-background-color;
+    box-shadow: @dropdown-menu-box-shadow;
+    height: @dropdown-menu-height;
+    line-height: @dropdown-menu-height;
     .mixin-flex-space-between();
   }
 
-  &__popup {
+  &__popup{
     position: relative;
 
-    &-item {
-      position: absolute;
+    &-item{
       z-index: @dropdown-item-z-index;
-      display: none;
+      position: absolute;
       width: 100%;
-      border-bottom-left-radius: @dropdown-item-border-radius;
-      border-bottom-right-radius: @dropdown-item-border-radius;
       background-color: @dropdown-menu-background-color;
-      transition: all .3s linear 0s;
-
+      border-bottom-right-radius: @dropdown-item-border-radius;
+      border-bottom-left-radius: @dropdown-item-border-radius;
+      display: none;
+      transition: all 0.3s linear 0s;
       &__active {
         display: block;
         animation: showPopup .3s;
@@ -55,53 +50,51 @@
     }
   }
 
-  &__overlay {
-    display: none;
+  &__overlay{
     height: 100vh !important;
-    overflow: hidden;
+    animation-duration: 0.2s;
+    transition: all 0.3s linear 0s;
     opacity: 0;
-    animation-duration: .2s;
-    transition: all .3s linear 0s;
+    display: none;
+    overflow: hidden;
     .mixin-overlay(@dropdown-overlay-bg-color);
-
     &-active {
-      z-index: @dropdown-overlay-z-index;
       display: block;
       opacity: 1;
+      z-index: @dropdown-overlay-z-index;
     }
   }
 
-  &-item {
+  &-item{
     flex: 1;
-    height: @dropdown-menu-height;
-    line-height: @dropdown-menu-height;
     text-align: center;
+    height: @dropdown-menu-height;
+    line-height:@dropdown-menu-height;
 
-    &__active {
-      color: @color-primary;
+    &__active{
+      color: @primary-color;
     }
 
-    &__title {
+    &__title{
       height: 100%;
       .flex-center();
-
-      &-text {
+      &-text{
         padding: 10px;
       }
     }
 
-    &__view {
+    &__view{
       height: @dropdown-menu-height;
-      padding: 0 20px;
       line-height: @dropdown-menu-height;
+      padding: 0 20px;
 
-      &:last-child {
-        border-bottom-left-radius: @dropdown-item-border-radius;
+      &:last-child{
         border-bottom-right-radius: @dropdown-item-border-radius;
+        border-bottom-left-radius: @dropdown-item-border-radius;
       }
 
-      &__active {
-        color: @color-primary;
+      &__active{
+        color: @primary-color;
         background-color: @dropdown-menu-active-background-color;
       }
     }
