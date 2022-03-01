@@ -1,0 +1,199 @@
+@import "../variables/index.less";
+@import "../mixins/index.less";
+
+
+.@{--css-prefix}-web-button {
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.@{--css-prefix}-button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border-radius: @border-radius-md;
+  font-size: @font-size-base;
+  color: @color-primary;
+  color: #FFFFFF;
+  background: #FFFFFF;
+  text-align: center;
+  .line();
+
+  &:active {
+    opacity: @opacity-active;
+  }
+
+  /* elements */
+
+  &__text {
+    .flex-center();
+    box-sizing: border-box;
+    min-width: @button-min-width;
+    height: @button-height;
+    padding: 0 @button-default-v-padding;
+    line-height: @button-height;
+  }
+
+  &__wxbutton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    min-width: @button-min-width;
+    height: 100%;
+    padding: 0;
+    padding: 0 @button-default-v-padding;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    opacity: 0;
+  
+    &::after {
+      display: none;
+    }
+  }
+
+  /* modifiers */
+  &--active {
+    opacity: @opacity-active;
+  }
+
+  &--disabled {
+    opacity: .6;
+
+    &:active {
+      opacity: .6;
+    }
+  }
+
+  &--default {
+    border: 1px solid #CCCCCC;
+    color: #666666;
+  }
+
+  &--primary {
+    background: @color-primary;
+  }
+
+  &--info {
+    background: @button-color-info;
+  }
+
+  &--danger {
+    background: @button-color-danger;
+  }
+
+  &--warning {
+    background: @button-color-warning;
+  }
+
+  &--success {
+    background: @button-color-success;
+  }
+
+  &--primary--border {
+    box-sizing: border-box;
+    border: 1px solid @color-primary;
+    color: @color-primary;
+    background: none;
+  }
+
+  &--info--border {
+    box-sizing: border-box;
+    border: 1px solid @button-color-info;
+    color: @button-color-info;
+    background: none;
+  }
+
+  &--warning--border {
+    box-sizing: border-box;
+    border: 1px solid  @button-color-warning;
+    color: @button-color-warning;
+    background: none;
+  }
+
+  &--danger--border {
+    box-sizing: border-box;
+    border: 1px solid @button-color-danger;
+    color: @button-color-danger;
+    background: none;
+  }
+
+  &--success--border {
+    box-sizing: border-box;
+    border: 1px solid @button-color-success;
+    color: @button-color-success;
+    background: none;
+  }
+  
+  &--circle {
+    border-radius: @button-color-warning;
+  }
+
+  &--rect {
+    border-radius: 0;
+  }
+
+  &--large {
+    height: @button-large-height;
+    font-size: @font-size-base;
+
+    .@{--css-prefix}-button__wxbutton, .@{--css-prefix}-button__text {
+      box-sizing: border-box;
+      min-width: @button-min-large-width;
+      height: @button-large-height;
+      padding: 0 @button-large-v-padding;
+      font-size: @button-large-text-size;
+      line-height: @button-large-height;
+    }
+  }
+
+  &--small {
+    height: @button-height-small;
+    font-size: @font-size-base;
+
+    .@{--css-prefix}-button__wxbutton, .@{--css-prefix}-button__text {
+      box-sizing: border-box;
+      min-width: @button-min-width-small;
+      height: @button-height-small;
+      padding: 0  @button-small-v-padding;
+      font-size: @button-small-text-size;
+      line-height: @button-height-small;
+    }
+  }
+
+  &--mini {
+    box-sizing: border-box;
+    min-width: @button-min-width-mini;
+    height: @button-height-mini;
+    line-height: @button-height-mini;
+
+    .@{--css-prefix}-button__wxbutton, .@{--css-prefix}-button__text {
+      box-sizing: border-box;
+      min-width: @button-min-width-mini;
+      height: @button-height-mini;
+      padding: 0  @button-mini-v-padding;
+      font-size: @button-mini-text-size;
+      line-height: @button-height-mini;
+    }
+  }
+
+  &--fill {
+    color: @color-text-base-inverse;
+    background: @color-primary;
+  }
+
+  &__no-border {
+    border: none;
+  }
+
+  &--full {
+    width: 100%;
+    max-width: 100%;
+  }
+}

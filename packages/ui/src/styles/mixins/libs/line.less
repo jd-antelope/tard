@@ -1,0 +1,15 @@
+
+.line(@num: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.line(@num: 1) when(@num = 1 ){
+    white-space: nowrap;
+}
+
+.line(@num: 1) when not(@num = 1 ){
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+}

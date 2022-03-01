@@ -1,0 +1,97 @@
+/**
+ * 通用的遮罩
+ */
+.flex-center () {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mixin-flex-space-between () {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-direction (@dir: row) {
+  display: flex;
+  flex-direction: @dir;
+}
+
+.flex-justify (@jus: center) {
+  display: flex;
+  justify-content: @jus;
+}
+
+.flex-items (@items: center) {
+  display: flex;
+  align-items: @items;
+}
+
+.mixin-display-flex {
+  display: flex;
+}
+
+.mixin-flex-wrap(@value: nowrap) {
+  flex-wrap: @value;
+}
+
+.mixin-align-items(@value: stretch) {
+  align-items: @value;
+  -webkit-box-align: @value;
+}
+
+.mixin-align-items(@value: stretch) when(@value = flex-start ){
+  -webkit-box-align: start;
+}
+  
+.mixin-align-items(@value: stretch) when(@value = flex-end) {
+  -webkit-box-align: end;
+} 
+  
+//   .mixin-align-items(@value: stretch) @else {
+//     -webkit-box-align: @value;
+//   }
+// }
+
+.mixin-align-content(@value: flex-start) {
+  align-content: @value;
+}
+
+.mixin-justify-content(@value: flex-start) {
+  justify-content: @value;
+  -webkit-box-pack: @value;
+}
+
+.mixin-justify-content(@value: flex-start) when(@value = flex-start) {
+  -webkit-box-pack: start;
+}  
+
+.mixin-justify-content(@value: flex-start) when( @value = flex-end) {
+  -webkit-box-pack: end;
+} 
+
+.mixin-justify-content(@value: flex-start) when( @value = space-between) {
+  -webkit-box-pack: justify;
+} 
+
+// .mixin-justify-content(@value: flex-start) when not(@value = flex-start ) and not(@value = flex-end )  and not(@value = space-between){
+   
+// }
+
+
+/* Flex Item */
+.mixin-flex(@fg: 1, @fs: null, @fb: null) {
+  flex: @fg @fs @fb;
+  -webkit-box-flex: @fg;
+}
+
+.mixin-flex-order(@n) {
+  order: @n;
+  -webkit-box-ordinal-group: @n;
+}
+
+.mixin-align-self(@value: auto) {
+  align-self: @value;
+}
+

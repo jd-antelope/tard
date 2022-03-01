@@ -1,0 +1,109 @@
+@import "../../styles/variable.less";
+@import "../../styles/mixins/index.less";
+
+.@{--css-prefix}-dropdown-menu-container {
+  position: fixed;
+  width: 100%;
+}
+
+@keyframes showPopup {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+.@{--css-prefix}-dropdown-menu {
+  font-size: @dropdown-menu-title-font-size;
+  color: @dropdown-menu-title-text-color;
+
+  &__bar {
+    height: @dropdown-menu-height;
+    box-shadow: @dropdown-menu-box-shadow;
+    line-height: @dropdown-menu-height;
+    background: @dropdown-menu-background-color;
+    .mixin-flex-space-between();
+  }
+
+  &__popup {
+    position: relative;
+
+    &-item {
+      position: absolute;
+      z-index: @dropdown-item-z-index;
+      display: none;
+      width: 100%;
+      border-bottom-left-radius: @dropdown-item-border-radius;
+      border-bottom-right-radius: @dropdown-item-border-radius;
+      background-color: @dropdown-menu-background-color;
+      transition: all .3s linear 0s;
+
+      &__active {
+        display: block;
+        animation: showPopup .3s;
+      }
+    }
+  }
+
+  &__overlay {
+    display: none;
+    height: 100vh !important;
+    overflow: hidden;
+    opacity: 0;
+    animation-duration: .2s;
+    transition: all .3s linear 0s;
+    .mixin-overlay(@dropdown-overlay-bg-color);
+
+    &-active {
+      z-index: @dropdown-overlay-z-index;
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  &-item {
+    flex: 1;
+    height: @dropdown-menu-height;
+    line-height: @dropdown-menu-height;
+    text-align: center;
+
+    &__active {
+      color: @color-primary;
+    }
+
+    &__title {
+      height: 100%;
+      .flex-center();
+
+      &-text {
+        padding: 10px;
+      }
+    }
+
+    &__view {
+      height: @dropdown-menu-height;
+      padding: 0 20px;
+      line-height: @dropdown-menu-height;
+
+      &:last-child {
+        border-bottom-left-radius: @dropdown-item-border-radius;
+        border-bottom-right-radius: @dropdown-item-border-radius;
+      }
+
+      &__active {
+        color: @color-primary;
+        background-color: @dropdown-menu-active-background-color;
+      }
+    }
+  }
+}
