@@ -23,12 +23,12 @@ export default {
   input: entries,
   output: [
     {
-      file: 'dist/comps.react.umd.js',
+      file: './packages/ui/dist/comps.react.umd.js',
       format: 'cjs',
       sourcemap: true
     },
     {
-      file: 'dist/comps.react.es.js',
+      file: './packages/ui/dist/comps.react.es.js',
       format: 'es',
       sourcemap: true,
       globals: {
@@ -62,7 +62,7 @@ export default {
       targets: [
         {
           src: resolveFile('packages/ui/src/styles'),
-          dest: resolveFile('dist')
+          dest: resolveFile('packages/ui/dist')
         }
       ]
     }),

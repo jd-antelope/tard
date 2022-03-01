@@ -1,3 +1,3 @@
-import CButton from './button'
+import DropdownMenu from './dropdown-menu'
 
-export { CButton }
+export { DropdownMenu }

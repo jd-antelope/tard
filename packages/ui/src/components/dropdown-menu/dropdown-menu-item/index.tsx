@@ -1,5 +1,5 @@
 
-import React, { FC } from 'react'
+import React from 'react'
 import cn from 'classnames'
 import { View } from '@tarojs/components'
 import { DropdownMenuItemProps } from '../type'
@@ -7,10 +7,16 @@ import Icon from '../../icon'
 import CompContainer from '../../../common/comp-container'
 import { CssPrefix } from '../../../common'
 
-const DropdownMenuItem: FC<DropdownMenuItemProps> = (props) => {
-
-  const { title, active, onClick = () => { }, options = [], value, activeColor, titleAlign = 'center', flex = 1 } = props
-  
+const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
+  value = '',
+  title = '',
+  options = [],
+  activeColor = '',
+  titleAlign = 'center',
+  flex = 1,
+  active,
+  onClick = () => {}
+}) => {
   return (
     <CompContainer
       className={ `${CssPrefix}-dropdown-menu-item` }
