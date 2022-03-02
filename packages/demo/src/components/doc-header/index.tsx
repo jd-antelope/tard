@@ -1,7 +1,6 @@
-import PropTypes, { InferProps } from 'prop-types'
-import React from 'react'
+import React, { FC } from 'react'
 import { navigateTo } from '@tarojs/taro'
-import { Icon } from 'tard'
+import Icon from '../../../../ui/src/components/icon'
 import { View } from '@tarojs/components'
 import { isWeb } from '../../utils'
 import './index.less'
@@ -10,46 +9,34 @@ export interface DocsHeaderProps {
   title?: string
 }
 
-export default class DocsHeader extends React.Component<DocsHeaderProps> {
-  public static defaultProps: DocsHeaderProps
-  public static propTypes: InferProps<DocsHeaderProps>
+const DocsHeader: FC<DocsHeaderProps> = ({ title = '标题' }) => {
 
-  postIframeParentMessage() {
+  const postIframeParentMessage = () => {
     if (isWeb) {
-      window.parent.postMessage({ path: '/' }, '*');
+      window.parent.postMessage({ path: '/' }, '*')
     }
   }
 
-  public render(): JSX.Element {
-    const { title } = this.props
-
-    return (
-      <View>
-        <View className='doc-header' style={!isWeb ? 'display:none' : ''}>
-          <Icon
-            className='doc-header__icon'
-            value='chevron-left'
-            size={26}
-            color="#333"
-            onClick={() => {
-              navigateTo({ url: `/pages/home/index` });
-              this.postIframeParentMessage()
-            }}
-          />
-          <View className='doc-header__title'>
-            {title}
-          </View>
+  return (
+    <View>
+      <View className="doc-header" style={ !isWeb ? 'display:none' : '' }>
+        <Icon
+          className="doc-header__icon"
+          value="chevron-left"
+          size={ 26 }
+          color="#333"
+          onClick={ () => {
+            navigateTo({ url: '/pages/home/index' })
+            postIframeParentMessage()
+          } }
+        />
+        <View className="doc-header__title">
+          {title}
         </View>
-        <View className="doc-header__box" style={!isWeb ? 'display:none' : ''}></View>
       </View>
-    )
-  }
+      <View className="doc-header__box" style={ !isWeb ? 'display:none' : '' } />
+    </View>
+  )
 }
 
-DocsHeader.defaultProps = {
-  title: '标题'
-}
-
-DocsHeader.propTypes = {
-  title: PropTypes.string
-}
+export default DocsHeader

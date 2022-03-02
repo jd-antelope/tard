@@ -2,7 +2,7 @@ import { Layout, Menu } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import cn from 'classnames'
-import { menuData, logoUrl } from '../../constants/layout'
+import { menuData, logoUrl } from '../../../constants/layout'
 import './index.less'
 
 const { Header, Content, } = Layout

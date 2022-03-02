@@ -25,19 +25,19 @@ export const introduceList = [{
   children: [{
     name: '介绍',
     nameEn: '',
-    path: '/docs'
+    path: '/home'
   }, {
     name: '快速上手',
     nameEn: '',
-    path: '/docs/quickstart'
+    path: '/quickstart'
   }, {
     name: '主题定制',
     nameEn: '',
-    path: '/docs/theme'
+    path: '/theme'
   }, {
     name: '设计资源',
     nameEn: '',
-    path: '/docs/design'
+    path: '/design'
   }]
 }]
 

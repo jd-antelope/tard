@@ -7,12 +7,11 @@ export default function IndexPage () {
   return (
     <div>
       <Routes>
-        <Route path="/" element={ <Portal /> } />
+        <Route path="/" element={<Portal />} />
         <Route
-          path="*" element={
-            <LayoutComponent />
-          }
+          path="*" element={<LayoutComponent />}
         />
+        
       </Routes>
     </div>
   )

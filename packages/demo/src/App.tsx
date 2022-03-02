@@ -1,23 +1,23 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 import { HashRouter, Route, Routes } from 'react-router-dom' 
 import { useState } from 'react'
 import routes from './router'
 import Home from './components/home'
 import './App.css'
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <HashRouter>
-        <Routes>
-          <Route path="/">
+    <div className="app">
+      <Routes>
+         
+        <Route 
+          path="/docs"
+          element={ <Home /> }
+        />
+        <Route path="/comps/**">
             1111
-          </Route>
-          <Route 
-            path="/docs"
-            element={<Home />}
-          />
-        </Routes>
-      </HashRouter>
+        </Route>
+      </Routes>
     </div>
   )
 }

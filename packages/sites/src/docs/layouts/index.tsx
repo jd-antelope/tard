@@ -39,7 +39,7 @@ export default function LayoutComponent ({ children }: any) {
               frameBorder="0"
               id="iframeDemo"
             /> */}
-            <iframe className="iframe-content" src="/demo.html#/docs" frameBorder="0" />
+            <iframe className="iframe-content" src="/demo.html" frameBorder="0" />
           </div>
           <div className="phone-pos" />
         </Content>

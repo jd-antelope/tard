@@ -2,9 +2,9 @@ import { Button } from 'antd'
 import cn from 'classnames'
 import { useNavigate } from 'react-router-dom'
 import LayoutHeader from '../../layouts/layout-header'
-import { IMG_PREFIX } from '../../constants'
-import { logoUrl } from '../../constants/layout'
-import { COMPS_LIST, FOOTTER_RESOURCES } from '../../constants/home-resources'
+import { IMG_PREFIX } from '../../../constants'
+import { logoUrl } from '../../../constants/layout'
+import { COMPS_LIST, FOOTTER_RESOURCES } from '../../../constants/home-resources'
 import './index.less'
 
 export default function IndexPage () {

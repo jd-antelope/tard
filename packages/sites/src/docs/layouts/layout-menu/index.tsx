@@ -2,9 +2,9 @@ import { useEffect, useState, FC } from 'react'
 import { Menu } from 'antd'
 import { useNavigate } from 'react-router-dom'
 
-import MenuObj from '../../constants/docs-route'
-import { introduceList } from '../../constants/layout'
-import { LayoutList } from '../../interface/layout'
+import MenuObj from '../../../constants/docs-route'
+import { introduceList } from '../../../constants/layout'
+import { LayoutList } from '../../../interface/layout'
 
 
 type Props = {
@@ -23,7 +23,7 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
   }
 
   const routerPush = (path: string) => {
-    if (path) return navigate(`/docs${path === '/' ? '' : '/comps'}${path === '/' ? '' : path}`)
+    if (path) return navigate(`${path === '/' ? '' : '/comps'}${path === '/' ? '' : path}`)
   }
 
   useEffect(() => {

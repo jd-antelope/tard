@@ -7,6 +7,7 @@ import CompContainer from '../../common/comp-container'
 import DropdownMenuItem from './dropdown-menu-item'
 import { isWeb } from '../../utils'
 import { CssPrefix } from '../../common'
+import './dropdown-menu.less'
 
 export const DropdownMenu: FC<DropdownMenuProps> = (props) => {
   const [activeKey, setActiveKey] = useState<number>(-1)
