@@ -1,5 +1,6 @@
 @import "../../styles/variable.less";
 @import "../../styles/mixins/index.less";
+@import "./var.less";
 
 .@{--css-prefix}-dropdown-menu-container{
   position: fixed;
@@ -21,13 +22,13 @@
 }
 
 .@{--css-prefix}-dropdown-menu {
-  font-size: @dropdown-menu-title-font-size;
-  color: @dropdown-menu-title-text-color;
+  font-size: var(--dropdown-menu-title-font-size);
+  color: var(--dropdown-menu-title-text-color);
   &__bar {
-    background: @dropdown-menu-background-color;
-    box-shadow: @dropdown-menu-box-shadow;
-    height: @dropdown-menu-height;
-    line-height: @dropdown-menu-height;
+    background: var(--dropdown-menu-background-color);
+    box-shadow: var(--dropdown-menu-box-shadow);
+    height: var(--dropdown-menu-height);
+    line-height: var(--dropdown-menu-height);
     .mixin-flex-space-between();
   }
 
@@ -35,12 +36,12 @@
     position: relative;
 
     &-item{
-      z-index: @dropdown-item-z-index;
+      z-index: var(--dropdown-item-z-index);
       position: absolute;
       width: 100%;
-      background-color: @dropdown-menu-background-color;
-      border-bottom-right-radius: @dropdown-item-border-radius;
-      border-bottom-left-radius: @dropdown-item-border-radius;
+      background-color: var(--dropdown-menu-background-color);
+      border-bottom-right-radius: var(--dropdown-item-border-radius);
+      border-bottom-left-radius: var(--dropdown-item-border-radius);
       display: none;
       transition: all 0.3s linear 0s;
       &__active {
@@ -57,22 +58,22 @@
     opacity: 0;
     display: none;
     overflow: hidden;
-    .mixin-overlay(@dropdown-overlay-bg-color);
+    .mixin-overlay(var(--dropdown-overlay-bg-color));
     &-active {
       display: block;
       opacity: 1;
-      z-index: @dropdown-overlay-z-index;
+      z-index: var(--dropdown-overlay-z-index);
     }
   }
 
   &-item{
     flex: 1;
     text-align: center;
-    height: @dropdown-menu-height;
-    line-height:@dropdown-menu-height;
+    height: var(--dropdown-menu-height);
+    line-height: var(--dropdown-menu-height);
 
     &__active{
-      color: @primary-color;
+      color: var(--color-primary);
     }
 
     &__title{
@@ -84,18 +85,18 @@
     }
 
     &__view{
-      height: @dropdown-menu-height;
-      line-height: @dropdown-menu-height;
+      height: var(--dropdown-menu-height);
+      line-height: var(--dropdown-menu-height);
       padding: 0 20px;
 
       &:last-child{
-        border-bottom-right-radius: @dropdown-item-border-radius;
-        border-bottom-left-radius: @dropdown-item-border-radius;
+        border-bottom-right-radius: var(--dropdown-item-border-radius);
+        border-bottom-left-radius: var(--dropdown-item-border-radius);
       }
 
       &__active{
-        color: @primary-color;
-        background-color: @dropdown-menu-active-background-color;
+        color: var(--color-primary);
+        background-color: var(--dropdown-menu-active-background-color);
       }
     }
   }
