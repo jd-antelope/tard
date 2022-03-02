@@ -69,7 +69,7 @@ export const DropdownMenu: FC<DropdownMenuProps> = (props) => {
     }
   })
   return (
-    <CompContainer className={ `${CssPrefix}-dropdown-menu` }>
+    <CompContainer className={ `${CssPrefix}-dropdown-menu dropdown-menu` }>
       <View className={ `${CssPrefix}-dropdown-menu__bar` }>
         {nav}
       </View>
