@@ -26,21 +26,7 @@ const ConfigProvider: FC<CommonProps> = (props) => {
 
   useEffect(() => {
     changeThemeStyle()
-    if (getEnv() === ENV_TYPE.WEAPP) {
-      const onShowEventId = (instance as any).router.onShow
-      // 监听
-      eventCenter.on(onShowEventId, this.onShow)
-    }
-
-    return () => {
-      if (getEnv() === ENV_TYPE.WEAPP) {
-        const onShowEventId = (instance as any).router.onShow
-        // 卸载
-        eventCenter.off(onShowEventId, this.onShow)
-      }
-    }
   }, [])
-
 
   const { className, children, style, ...rest } = props
   return (

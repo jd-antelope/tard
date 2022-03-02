@@ -39,3 +39,9 @@ docs(md) core @yue
 3、打包是否只发布一个包
 4、demo最终适配方案
 5、一套命令是否支持
+
+## 2022-03-02
+1、demo @霍
+2、configProvider @郑
+3、docs、md @郑
+4、types @霍
