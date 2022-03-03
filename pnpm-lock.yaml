@@ -18,9 +18,12 @@ specifiers:
   antd: ^4.18.7
   classnames: ^2.3.1
   eslint-config-selling: 0.0.3
+  fs-extra: ^10.0.1
+  globby: ^11.0.4
   husky: ^4.2.3
   less: ^4.1.2
   lint-staged: ^12.3.4
+  node-watch: ^0.7.3
   postcss-pxtorem: ^6.0.0
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -32,6 +35,7 @@ specifiers:
   rollup-plugin-copy: ^3.4.0
   rollup-plugin-typescript2: ^0.31.2
   rollup-plugin-uglify: ^6.0.4
+  rollup-plugin-watch: ^1.0.1
   stylelint-config-selling: 0.0.3
   tslib: ^2.3.1
   typescript: ^4.5.5
@@ -58,9 +62,12 @@ devDependencies:
   '@vitejs/plugin-react-refresh': 1.3.6
   classnames: 2.3.1
   eslint-config-selling: 0.0.3_typescript@4.6.2
+  fs-extra: 10.0.1
+  globby: 11.1.0
   husky: 4.3.8
   less: 4.1.2
   lint-staged: 12.3.4
+  node-watch: 0.7.3
   postcss-pxtorem: 6.0.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -71,6 +78,7 @@ devDependencies:
   rollup-plugin-copy: 3.4.0
   rollup-plugin-typescript2: 0.31.2_2e7f1e912194c2c0ae6efb5acf915767
   rollup-plugin-uglify: 6.0.4_rollup@2.68.0
+  rollup-plugin-watch: 1.0.1_rollup@2.68.0
   stylelint-config-selling: 0.0.3
   tslib: 2.3.1
   typescript: 4.6.2
@@ -4223,6 +4231,11 @@ packages:
     resolution: {integrity: sha512-XxYDdcQ6eKqp/YjI+tb2C5WM2LgjnZrfYg4vgQt49EK268b6gYCHsBLrK2qvJo4FmCtqmKezb0WZFK4fkrZNsg==}
     dev: true
 
+  /node-watch/0.7.3:
+    resolution: {integrity: sha512-3l4E8uMPY1HdMMryPRUAl+oIHtXtyiTlIiESNSVSNxcPfzAFzeTbXFQkZfAwBbo0B1qMSG8nUABx+Gd+YrbKrQ==}
+    engines: {node: '>=6'}
+    dev: true
+
   /normalize-package-data/2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
@@ -5520,6 +5533,15 @@ packages:
       rollup: 2.68.0
       serialize-javascript: 2.1.2
       uglify-js: 3.15.2
+    dev: true
+
+  /rollup-plugin-watch/1.0.1_rollup@2.68.0:
+    resolution: {integrity: sha512-wYnbXjjDM3OpgSExSBi9tY1Rr9uiY+mayYkdr55KAmRWDvwPG+b6LL//yukC0wTIe+sjuWWsjkfn6B/tgQix2Q==}
+    peerDependencies:
+      rollup: ^2.x.x
+    dependencies:
+      '@rollup/pluginutils': 4.1.2
+      rollup: 2.68.0
     dev: true
 
   /rollup/2.68.0:

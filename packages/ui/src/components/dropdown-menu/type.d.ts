@@ -1,5 +1,5 @@
 
-import { ComponentClass, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import CompCommon from '../../common/type'
 
 interface Option {
@@ -23,7 +23,8 @@ export interface DropdownMenuProps extends CompCommon {
    * 菜单标题对齐方式
    *  @default 'center'
    */
-  titleAlign: 'center' | 'right' | 'left'
+  titleAlign: 'center' | 'right' | 'left',
+  children: ReactNode
 }
 
 export interface DropdownMenuItemProps extends CompCommon {
@@ -73,6 +74,16 @@ export interface DropdownMenuItemProps extends CompCommon {
   onChange?: Function
 }
 
-declare const DropdownMenu: ComponentClass<DropdownMenuProps>
+// eslint-disable-next-line no-undef
+export declare function DropdownMenuItem(props: DropdownMenuItemProps): JSX.Element;
+
+interface DropdownMenuInterface {
+  // eslint-disable-next-line no-undef
+  (props: DropdownMenuProps): JSX.Element
+
+  Item: typeof DropdownMenuItem
+}
+
+declare const DropdownMenu: DropdownMenuInterface
 
 export default DropdownMenu

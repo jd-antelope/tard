@@ -1,4 +1,16 @@
 # 组件库
+
+## 开发
+由于taro和vite不能兼容，开发阶段需要走两个服务，一个打包，一个taro 的运行环境
+
+```shell
+pnpm run taro-dev
+pnpm run dev:watch
+```
+
+开发的时候需要link一下ui库
+
+待后期维护。。。
 ## 本项目为零售云c端组件库
 任务分配
 

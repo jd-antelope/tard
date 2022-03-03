@@ -1,1 +1,1 @@
-export { default as CButton } from './components/button/type'
+export { default as DropdownMenu } from './components/dropdown-menu'
