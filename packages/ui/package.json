@@ -1,6 +1,6 @@
 {
   "name": "haw-ui-test",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "main": "dist/comps.react.umd.js",
   "module": "dist/comps.react.es.js",

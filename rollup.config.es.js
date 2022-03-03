@@ -5,6 +5,7 @@ import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
 import { uglify as RollupUglify } from 'rollup-plugin-uglify'
 import RollupCopy from 'rollup-plugin-copy'
+import RollupPluginDemo from './scripts/watch-demo/index'
 
 const resolveFile = p => path.resolve(__dirname, '.', p)
 
@@ -75,12 +76,13 @@ export default {
         {
           src: resolveFile('packages/ui/src/components/*/*.d.ts'),
           dest: resolveFile('packages/ui/dist/types/components'),
-          rename: (_, _, fullPath) => {
+          rename: (_, __, fullPath) => {
             const reg = /components\/([\s\S]*)\//
             return `${fullPath.match(reg)[1]}.d.ts`
           }
         },
       ]
     }),
+    RollupPluginDemo(),
   ]
 }
