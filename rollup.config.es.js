@@ -67,7 +67,19 @@ export default {
         {
           src: resolveFile('packages/ui/src/components/*/*.less'),
           dest: resolveFile('packages/ui/dist/styles/components')
-        }
+        },
+        {
+          src: resolveFile('packages/ui/src/index.d.ts'),
+          dest: resolveFile('packages/ui/dist/types')
+        },
+        {
+          src: resolveFile('packages/ui/src/components/*/*.d.ts'),
+          dest: resolveFile('packages/ui/dist/types/components'),
+          rename: (_, _, fullPath) => {
+            const reg = /components\/([\s\S]*)\//
+            return `${fullPath.match(reg)[1]}.d.ts`
+          }
+        },
       ]
     }),
   ]

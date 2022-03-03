@@ -1,6 +1,6 @@
 {
   "name": "haw-ui-test",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/comps.react.umd.js",
   "module": "dist/comps.react.es.js",
@@ -16,7 +16,7 @@
     "node_modules/@types",
     "types"
   ],
-  "types": "./types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "author": "",
   "license": "ISC",
   "devDependencies": {
