@@ -1,14 +1,19 @@
+import introduce from '../docs/pages/markdown/introduce.md?raw'
+import design from '../docs/pages/markdown/design.md?raw'
+import quickstart from '../docs/pages/markdown/quickstart.md?raw'
+import theme from '../docs/pages/markdown/theme.md?raw'
+
 export const menuData = [
   {
     title: '指南',
-    path: '/docs'
+    path: '/introduce'
   }, {
     title: '组件',
-    path: '/docs'
+    path: '/comps/button'
   },
   {
     title: '示例',
-    path: '/docs'
+    path: '/demo.html'
   }, {
     title: '资源',
     path: '/docs'
@@ -25,19 +30,23 @@ export const introduceList = [{
   children: [{
     name: '介绍',
     nameEn: '',
-    path: '/home'
+    path: '/introduce',
+    component: introduce
   }, {
     name: '快速上手',
     nameEn: '',
-    path: '/quickstart'
+    path: '/quickstart',
+    component: quickstart
   }, {
     name: '主题定制',
     nameEn: '',
-    path: '/theme'
+    path: '/theme',
+    component: theme
   }, {
     name: '设计资源',
     nameEn: '',
-    path: '/design'
+    path: '/design',
+    component: design
   }]
 }]
 

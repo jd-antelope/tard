@@ -1,8 +1,7 @@
 import { useEffect, useState, FC } from 'react'
 import { Menu } from 'antd'
 import { useNavigate } from 'react-router-dom'
-
-import MenuObj from '../../../constants/docs-route'
+import routes from '../../../constants/docs-route'
 import { introduceList } from '../../../constants/layout'
 import { LayoutList } from '../../../interface/layout'
 
@@ -14,7 +13,7 @@ type Props = {
 const SideMenu: FC<Props> = ({ postIframeMessage }) => {
   const navigate = useNavigate()
     
-  const list = [...introduceList, ...MenuObj.routes] as LayoutList[]
+  const list = [...introduceList, ...routes] as LayoutList[]
   const [selectedKeys, setSelectedKeys] = useState<string>(location.pathname.split('/')[3] || '/')
 
   const iframeListener = (e: any) => {

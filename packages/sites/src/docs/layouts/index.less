@@ -1,154 +1,165 @@
-#root{
-	min-height: 100%;
-	width: 100vw;
+#root {
+  width: 100vw;
+  min-height: 100%;
 }
-.pl-12{
-	padding-left: 12px;
+
+.pl-12 {
+  padding-left: 12px;
 }
-.pt-12{
-	padding-top: 12px;
+
+.pt-12 {
+  padding-top: 12px;
 }
 
 .pb-24 {
-	padding-bottom: 24px;
+  padding-bottom: 24px;
 }
 
 .layout-flex-row {
-	display: flex;
+  display: flex;
 }
+
 .layout-flex-col {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-.layout-flex-1{
-	flex: 1
+
+.layout-flex-1 {
+  flex: 1;
 }
+
 .layout-w-100 {
-	width: 100%;
+  width: 100%;
 }
+
 .layout-h-100 {
-	height: 100%;
-
+  height: 100%;
 }
+
 .layout-h-100vh {
-	height: 100vh;
+  height: 100vh;
 }
-.layout-text-center{
-	text-align: center;
+
+.layout-text-center {
+  text-align: center;
 }
-.layout-over-flow-y{
-	overflow-y: scroll;
+
+.layout-over-flow-y {
+  overflow-y: scroll;
 }
+
 .layout-border-top {
-	border-top: 1px solid #EEE;
+  border-top: 1px solid #EEEEEE;
 }
 
-.ant-layout .site-main{
-	background: #fff;
-	.site-sider {
-		padding-left: 40px;
-		background: #F7F8FF;
-	  }
+.ant-layout .site-main {
+  background: #FFFFFF;
+
+  .site-sider {
+    padding-left: 40px;
+    background: #F7F8FF;
+  }
 }
 
-.phone-pos{
-	width: 448px;
-	padding-top: 24px;
+.phone-pos {
+  width: 448px;
+  padding-top: 24px;
 }
-#docs-frame{
-	position: fixed;
-	top: 133px;
-	right: 40px;
-	width: 375px;
-	height: 720px;
-	background-color: #fff;
-	box-shadow: 0 4px 30px 0 rgba(4, 59, 85, 0.1);
-	border-radius: 32px;
-	overflow: hidden;
+
+#docs-frame {
+  position: fixed;
+  top: 133px;
+  right: 40px;
+  width: 375px;
+  height: 720px;
+  border-radius: 32px;
+  box-shadow: 0 4px 30px 0 rgba(4, 59, 85, .1);
+  overflow: hidden;
+  background-color: #FFFFFF;
     
-	.iframe-content{
-		position: absolute;
-		left: 0px;
-		height: 720px;
-		width: 375px;
-	}
-	.iphone-frame{
-		position: absolute;
-		top: 24px;
-		left: 12px;
-		width: 375px;
-		height: 758px;
+  .iframe-content {
+    position: absolute;
+    left: 0;
+    width: 375px;
+    height: 720px;
+  }
 
-		background: url('../../public/images/iframe_iphonex.png') no-repeat;
-		background-size: contain;
-		pointer-events: none;
-	}
-
+  .iphone-frame {
+    position: absolute;
+    top: 24px;
+    left: 12px;
+    width: 375px;
+    height: 758px;
+    background: url("../../public/images/iframe_iphonex.png") no-repeat;
+    background-size: contain;
+    pointer-events: none;
+  }
 }
- .gitHub {
-    .ant-menu-title-content {
-		height: 100%;
-        display: flex;
-        align-items: center;
-    }
- }
+
+.gitHub {
+  .ant-menu-title-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
   
 
 .ant-layout-header {
-	padding-left: 0;
-    background-color: transparent;
+  padding-left: 0;
+  background-color: transparent;
 }
 
 .ant-menu-item-group-title {
-	padding: 0;
-	height: 58px;
-	font-size: 18px;
-	color: #333;
-	box-sizing: border-box;
-	font-weight: 500;
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 58px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
 }
 
 .ant-menu-inline .ant-menu-item {
-	height: 44px;
-	margin: 0;
-	overflow: initial;
+  height: 44px;
+  margin: 0;
+  overflow: initial;
 }
 
 .ant-menu-inline .ant-menu-item:not(:last-child) {
-	margin: 0;
+  margin: 0;
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-	background: #fff;
-	border-radius: 22px 0 0 22px;
+  border-radius: 22px 0 0 22px;
+  background: #FFFFFF;
 }
 
 .ant-menu-inline .ant-menu-item::after {
-	border: none;
-	width: 20px;
-	height: 20px;
-	top: -20px;
-  right: 0px;
-  background: #fff url('https://storage.360buyimg.com/hawley-common/tard-image/layout-menu-active.png');
+  top: -20px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: #FFFFFF url("https://storage.360buyimg.com/hawley-common/tard-image/layout-menu-active.png");
   background-size: 100%;
 }
 
 .ant-menu-inline .ant-menu-item-selected::before {
+  content: "";
   position: absolute;
-  content: '';
-	width: 20px;
-	height: 20px;
-	top: 44px;
-  right: 0px;
-  background: #fff url('https://storage.360buyimg.com/hawley-common/tard-image/layout-menu-active.png');
+  top: 44px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: #FFFFFF url("https://storage.360buyimg.com/hawley-common/tard-image/layout-menu-active.png");
   background-size: 100%;
   transform: rotate(-90deg);
 }
 
 .ant-menu-inline {
-	border: none;
+  border: none;
 }
 
 .ant-menu {
@@ -156,5 +167,5 @@
 }
 
 .index-bg-layout {
-  background: #fff url('https://storage.360buyimg.com/hawley-common/tard-image/index-bg.png') no-repeat 0 0;
+  background: #FFFFFF url("https://storage.360buyimg.com/hawley-common/tard-image/index-bg.png") no-repeat 0 0;
 }

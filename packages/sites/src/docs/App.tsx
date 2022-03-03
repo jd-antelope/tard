@@ -10,8 +10,8 @@ export default function IndexPage () {
         <Route path="/" element={<Portal />} />
         <Route
           path="*" element={<LayoutComponent />}
-        />
-        
+        >
+        </Route>
       </Routes>
     </div>
   )

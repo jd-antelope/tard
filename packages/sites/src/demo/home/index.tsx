@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import { View, Image } from '@tarojs/components'
 import './index.less'
-import MenuObj from '../../constants/docs-route'
+import routes from '../../constants/docs-route'
 
 function Home () {
   const [itemActive, setItemAcitve] = useState<boolean>(false)
@@ -17,7 +17,7 @@ function Home () {
         <View className="logo-des">一套基于Taro框架开发的多端React UI组件库</View>
       </View>
       <View className="comp">
-        {MenuObj.routes.map(v => (
+        {routes.map(v => (
           <Fragment key={ v.nameEn }>
             <View
               className="comp-item-parent"

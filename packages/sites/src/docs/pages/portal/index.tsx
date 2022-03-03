@@ -22,7 +22,7 @@ export default function IndexPage () {
               <div className="index-page__banner-content__buttons">
                 <Button
                   className="index-page__banner-content__button"
-                  onClick={ () => navigate('/docs') }
+                  onClick={ () => navigate('/introduce') }
                   type="primary"
                 >起步</Button>
                 <Button
