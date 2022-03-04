@@ -57,3 +57,9 @@ docs(md) core @yue
 2、configProvider @郑
 3、docs、md @郑
 4、types @霍
+
+## 2022-03-03
+1. 是否需要.d.ts文件(可以通过脚本自动生成)
+2. demo目前需要运行2个环境
+3. demo里面内容怎么定义
+4. 配置组件如何避免全局参数

@@ -10,13 +10,14 @@
   },
   "files": [
     "dist",
+    "lib",
     "types"
   ],
   "typeRoots": [
     "node_modules/@types",
     "types"
   ],
-  "types": "dist/types/index.d.ts",
+  "types": "lib/components/index.d.ts",
   "author": "",
   "license": "ISC",
   "devDependencies": {

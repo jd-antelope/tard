@@ -73,17 +73,3 @@ export interface DropdownMenuItemProps extends CompCommon {
    */
   onChange?: Function
 }
-
-// eslint-disable-next-line no-undef
-export declare function DropdownMenuItem(props: DropdownMenuItemProps): JSX.Element;
-
-interface DropdownMenuInterface {
-  // eslint-disable-next-line no-undef
-  (props: DropdownMenuProps): JSX.Element
-
-  Item: typeof DropdownMenuItem
-}
-
-declare const DropdownMenu: DropdownMenuInterface
-
-export default DropdownMenu

@@ -9,6 +9,7 @@ package-lock.json
 /bin
 /nginx
 dist
+lib
 
 # umi
 .umi

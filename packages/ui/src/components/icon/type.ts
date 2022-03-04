@@ -1,6 +1,3 @@
-import { MouseEvent, ComponentClass } from 'react'
-
-
 import CompCommon, { IconBaseProps } from '../../common/type'
 
 export interface IconProps extends IconBaseProps, CompCommon {
@@ -9,7 +6,3 @@ export interface IconProps extends IconBaseProps, CompCommon {
    */
   onClick?: Function
 }
-
-declare const Icon: ComponentClass<IconProps>
-
-export default Icon
