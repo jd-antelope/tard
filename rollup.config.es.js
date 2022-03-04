@@ -83,6 +83,6 @@ export default {
         },
       ]
     }),
-    RollupPluginDemo(),
+    RollupPluginDemo({ watch: process.env.NODE_ENV  === 'development'}),
   ]
 }

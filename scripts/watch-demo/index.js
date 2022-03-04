@@ -68,13 +68,15 @@ const start = () => {
 
 start()
 
-export default function RollupPluginDemo () {
+export default function RollupPluginDemo ({ watch }) {
 	return {
 		name: "rollup-plugin-demo", // rollup插件名称，必须符合格式
 		buildStart (source) {
-			nodeWatch(path.join(__dirname, 'packages/ui/src/components'), { recursive: true }, function (evt, name) {
-				name.includes('/demo/') && start();
-			});
+			if (watch) {
+				nodeWatch(path.join(__dirname, 'packages/ui/src/components'), { recursive: true }, function (evt, name) {
+					name.includes('/demo/') && start();
+				});
+			}
 			start();
 		},
 		load () {}
