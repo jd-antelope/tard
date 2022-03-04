@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "packages/ui/lib",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "jsx": "react",
@@ -16,12 +18,12 @@
     "module": "esnext",
     "downlevelIteration": true,
     "allowJs": false,
-    "strict": true,
+    "strict": false,
     "esModuleInterop": false,
     "removeComments": true,
-    "declaration": false,
+    "declaration": true,
     "declarationMap": false,
-    "rootDir": ".",
+    "rootDir": "./packages/ui/src",
     "types": ["node"],
     "typeRoots": [
       "node_modules/@types"
@@ -30,7 +32,9 @@
   "compileOnSave": false,
   "exclude": [
     "node_modules/*",
-    "packages/vite/*",
-    "packages/demo/*"
+    "packages/ui/src/**/demo/*"
   ],
+  "include": [
+    "packages/ui/src/**/*"
+  ]
 }

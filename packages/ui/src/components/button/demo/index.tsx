@@ -10,7 +10,7 @@ const ButtonPage: FC = () => {
 
   return (
     <View className="container">
-      <DocsHeader title="Button 按钮" />
+      <DocsHeader title="Button 按钮fsdf" />
       <View className="doc-body">
         <View className="doc-body-content-tip">按钮类型</View>
         <View className="button-box">

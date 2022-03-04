@@ -9,6 +9,8 @@
     "vite-dev": "vite",
     "build": "vite build --config vite.config.build.ts",
     "build:es": "rimraf dist && NODE_ENV=production rollup -c rollup.config.es.js",
+    "build:lib": "tsc --project tsconfig.d.json",
+    "dev:lib": "tsc --project tsconfig.d.json --watch --incremental",
     "dev:watch": "NODE_ENV=development rollup --config rollup.config.dev.js --watch",
     "preview": "vite preview"
   },

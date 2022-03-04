@@ -1,9 +1,8 @@
 
-import { ComponentClass } from 'react'
-import { ButtonProps } from '@tarojs/components/types/Button'
+import { ButtonProps as TButtonProps } from '@tarojs/components/types/Button'
 import CompCommon from '../../common/type'
 
-type TaroButtonProps = Pick<ButtonProps, 'formType' | 'openType' |
+type TaroButtonProps = Pick<TButtonProps, 'formType' | 'openType' |
   'lang' | 'sessionFrom' | 'sendMessageTitle' | 'sendMessagePath' |
   'sendMessageImg' | 'showMessageCard' | 'appParameter' | 'onContact' |
   'onGetUserInfo' | 'onGetPhoneNumber' | 'onOpenSetting' | 'onError'>
@@ -66,7 +65,3 @@ export interface ButtonProps extends TaroButtonProps, CompCommon {
    */
   onClick?: Function
 }
-
-declare const Button: ComponentClass<ButtonProps>
-
-export default Button

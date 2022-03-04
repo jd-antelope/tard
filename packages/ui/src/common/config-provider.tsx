@@ -1,6 +1,6 @@
 import React, { FC , useState, useEffect } from 'react'
 import { View } from '@tarojs/components'
-import Taro, { eventCenter, getCurrentInstance, getEnv, ENV_TYPE } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
 
 type CommonProps = {
   className?: string,
@@ -22,7 +22,7 @@ const ConfigProvider: FC<CommonProps> = (props) => {
     setThemeStyle(themeStyle)
   }
 
-  const instance = getCurrentInstance()
+  // const instance = getCurrentInstance()
 
   useEffect(() => {
     changeThemeStyle()
