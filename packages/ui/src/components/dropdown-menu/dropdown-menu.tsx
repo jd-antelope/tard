@@ -8,7 +8,7 @@ import DropdownMenuItem from './dropdown-menu-item'
 import { isWeb } from '../../utils'
 import { CssPrefix } from '../../common'
 
-export const DropdownMenu: FC<DropdownMenuProps> = (props) => {
+export const DropdownMenu: FC<DropdownMenuProps> = ({titleAlign = 'center', activeColor, children}) => {
   const [activeKey, setActiveKey] = useState<number>(-1)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -19,8 +19,6 @@ export const DropdownMenu: FC<DropdownMenuProps> = (props) => {
       }
     }
   }, [])
-
-  const { activeColor, titleAlign } = props
 
   const items: ReactElement<ComponentProps<typeof DropdownMenuItem>>[] = []
 
@@ -46,7 +44,7 @@ export const DropdownMenu: FC<DropdownMenuProps> = (props) => {
     }
   }
 
-  const nav = React.Children.map(props.children, (child, index) => {
+  const nav = React.Children.map(children, (child, index) => {
     if (React.isValidElement(child)) {
       const childProps = {
         ...child.props,

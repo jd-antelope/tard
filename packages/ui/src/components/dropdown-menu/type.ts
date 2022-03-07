@@ -23,7 +23,7 @@ export interface DropdownMenuProps extends CompCommon {
    * 菜单标题对齐方式
    *  @default 'center'
    */
-  titleAlign: 'center' | 'right' | 'left',
+  titleAlign?: 'center' | 'right' | 'left',
   children: ReactNode
 }
 
@@ -35,16 +35,16 @@ export interface DropdownMenuItemProps extends CompCommon {
   /**
    * 点击options展开item，不暴露
    */
-  onClick: Function
+  onClick?: Function
   /**
    * 菜单标题和选项的选中态颜色，不暴露
    */
-  activeColor: string
+  activeColor?: string
   /**
    * 菜单标题对齐方式，不暴露
    *  @default 'center'
    */
-  titleAlign: 'center' | 'right' | 'left'
+  titleAlign?: 'center' | 'right' | 'left'
   /**
    * 当前选中项对应的 value
    */
@@ -58,7 +58,7 @@ export interface DropdownMenuItemProps extends CompCommon {
    * 所占比例
    *   @default 1
    */
-  flex: 1
+  flex?: number | string
   /**
    * 选项数组，text字段-文字，value字段标识符
    */

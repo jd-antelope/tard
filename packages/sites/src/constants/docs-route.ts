@@ -1,4 +1,5 @@
 import Button from '@ui/button/README.zh-CN.md?raw'
+import DropdownMenu from '@ui/dropdown-menu/README.zh-CN.md?raw'
 
 const routes = [{
   nameEn: 'Basic Components',
@@ -8,7 +9,7 @@ const routes = [{
     name: '按钮',
     nameEn: 'Button',
     path: '/button',
-    component: Button
+    component: Button // () => import('@ui/button/README.zh-CN.md?raw')
   }, {
     name: '单元格',
     nameEn: 'Cell',
@@ -74,7 +75,8 @@ const routes = [{
   children: [{
     name: '下拉菜单',
     nameEn: 'DropdownMenu',
-    path: '/dropdown-menu'
+    path: '/dropdown-menu',
+    component: DropdownMenu
   }, {
     name: '加载',
     nameEn: 'Loading',

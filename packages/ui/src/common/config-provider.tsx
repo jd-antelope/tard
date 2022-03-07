@@ -15,7 +15,6 @@ const ConfigProvider: FC<CommonProps> = (props) => {
     if (!(Taro as any).Current.app || !(Taro as any).Current.app.themeParams) return
     const { themeParams } = (Taro as any).Current.app
     let themeStyle = ''
-    // eslint-disable-next-line guard-for-in
     for (const item in themeParams) {
       themeStyle += `--${item}: ${themeParams[item]};`
     }

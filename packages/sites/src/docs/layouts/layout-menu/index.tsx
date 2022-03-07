@@ -30,7 +30,7 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
   }, [])
 
   useEffect(() => {
-    const pathTitle = location.pathname.replace(/(\/docs\/comps\/|\/docs\/)/, '')
+    const pathTitle = location.pathname.replace(/\/comps/, '')
     setSelectedKeys(pathTitle)
   }, [location.pathname])
 
@@ -46,7 +46,7 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
             {
               v.children.map((val) => (
                 <Menu.Item
-                  key={ v.isDocs ? val.path.replace('/docs/', '') : val.path.substring(1) }
+                  key={ val.path }
                   onClick={ () => {
                     if (v.isDocs) {
                       if (val.path) navigate(val.path)
