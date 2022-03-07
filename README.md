@@ -63,3 +63,8 @@ docs(md) core @yue
 2. demo目前需要运行2个环境
 3. demo里面内容怎么定义
 4. 配置组件如何避免全局参数
+   
+## 2022-03-07
+1. 组件库分工（10个）：
+   button cell icon price toast form field dropdownMenu modal overlay ConfigProvider(全局)
+2. 
