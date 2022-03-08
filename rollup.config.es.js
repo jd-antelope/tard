@@ -18,7 +18,7 @@ const externalPackages = [
   '@tarojs/taro',
   '@tarojs/react'
 ]
-const entries = path.join(__dirname, './packages/ui/src/components/index.ts')
+const entries = path.join(__dirname, './packages/ui/src/index.ts')
 
 export default {
   input: entries,

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./scripts/start.sh",
-    "taro-dev": "cd packages/demo-taro && yarn dev:h5",
+    "taro-dev": "cd packages/taro-demo && pnpm run dev:h5",
     "vite-dev": "vite",
     "build": "pnpm run build:es && pnpm run build:lib",
     "build:es": "rimraf dist && NODE_ENV=production rollup -c rollup.config.es.js",

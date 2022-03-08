@@ -1,6 +1,7 @@
 import PropTypes, { InferProps } from 'prop-types'
-import Taro, { navigateTo } from '@tarojs/taro'
+import { navigateTo } from '@tarojs/taro'
 import React from 'react'
+import { ConfigProvider } from 'haw-ui-test'
 import { isWeb } from './utils'
 import './app.less'
 
@@ -8,9 +9,11 @@ class App extends React.Component {
   public static propTypes: InferProps<{}>
 
   componentDidShow () {
-    (Taro as any).Current.app.themeParams = {
-      primaryColor: '#F03511',
-    }
+    ConfigProvider.config({
+      theme: {
+        'color-primary': '#fff',
+      }
+    })
     
     if (isWeb) {
       window.addEventListener("message", this.iframeListener, false);

@@ -8,7 +8,9 @@ import DropdownMenuItem from './dropdown-menu-item'
 import { isWeb } from '../../utils'
 import { CssPrefix } from '../../common'
 
-export const DropdownMenu: FC<DropdownMenuProps> = ({titleAlign = 'center', activeColor, children}) => {
+const DropdownMenu: FC<DropdownMenuProps> = ({ 
+  titleAlign = 'center', activeColor, children
+}) => {
   const [activeKey, setActiveKey] = useState<number>(-1)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 

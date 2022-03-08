@@ -1,6 +1,5 @@
-
 export type ConfigProviderProps = {
-    className?: string,
-    style?: string,
-    [propName: string]: any
+  className?: string,
+  style?: string,
+  [propName: string]: any
 }
