@@ -10,7 +10,6 @@ const reg = /components\/([\s\S]*)\//
 // 获取demo所有文件
 const getDemoPath = () => {
 	const packagePaths = globby.sync(`${cwd}/packages/ui/src/components/*/demo/*.tsx`)
-	console.log(packagePaths)
 	return packagePaths.map((item) => item.replace('/index.tsx', ''))
 }
 

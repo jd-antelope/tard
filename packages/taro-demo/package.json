@@ -41,7 +41,7 @@
     "@tarojs/react": "3.4.1",
     "@tarojs/runtime": "3.4.1",
     "@tarojs/taro": "3.4.1",
-    "haw-ui-test": "^1.0.11",
+    "haw-ui-test": "^1.0.13",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "tard": "^0.0.1-alpha.4"

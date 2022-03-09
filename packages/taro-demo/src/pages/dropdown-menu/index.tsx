@@ -1,6 +1,6 @@
 import React, { memo, useState, FC } from 'react'
 import { View } from '@tarojs/components'
-import { DropdownMenu } from 'haw-ui-test'
+import { DropdownMenu, ConfigProvider } from 'haw-ui-test'
 import DocsHeader from '../../components/doc-header/index'
 
 const DropdownMenuDemo: FC = () => {
@@ -26,10 +26,13 @@ const DropdownMenuDemo: FC = () => {
       <View className="doc-body">
 
         <View className="doc-body-content-tip">基本用法</View>
+        <ConfigProvider style={ { 'color-primary': '#FF2929' } }>
         <DropdownMenu>
           <DropdownMenu.Item value={ value1 } options={ option1 } onChange={ (value: any) => { setValue1(value) } } />
           <DropdownMenu.Item value={ value2 } options={ option2 } onChange={ (value: any) => { setValue2(value) } } />
         </DropdownMenu>
+        </ConfigProvider>
+        
 
         <View className="doc-body-content-tip">自定义菜单标题</View>
         <DropdownMenu>

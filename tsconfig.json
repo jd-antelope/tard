@@ -19,7 +19,7 @@
     "strict": true,
     "esModuleInterop": false,
     "removeComments": true,
-    "declaration": false,
+    "declaration": true,
     "declarationMap": false,
     "rootDir": ".",
     "types": ["node"],

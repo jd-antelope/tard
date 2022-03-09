@@ -4,7 +4,6 @@ import cn from 'classnames'
 import { View } from '@tarojs/components'
 import { DropdownMenuItemProps } from '../type'
 import Icon from '../../icon'
-import CompContainer from '../../../common/comp-container'
 import { CssPrefix } from '../../../common'
 
 const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
@@ -18,7 +17,7 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
   onClick = () => {}
 }) => {
   return (
-    <CompContainer
+    <View
       className={ `${CssPrefix}-dropdown-menu-item` }
       style={ `flex: ${flex}` }
       onClick={ () => onClick() }
@@ -46,7 +45,7 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
           size={ 16 }
         />
       </View>
-    </CompContainer>
+    </View>
   )
 
 }

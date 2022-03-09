@@ -4,6 +4,8 @@ export interface CompCommon {
   className?: string
 
   customStyle?: string | CSSProperties
+
+  customizeStyle?: string
 }
 
 export interface IconBaseProps2 extends CompCommon {

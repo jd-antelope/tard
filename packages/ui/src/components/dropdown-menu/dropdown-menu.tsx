@@ -9,7 +9,7 @@ import { isWeb } from '../../utils'
 import { CssPrefix } from '../../common'
 
 const DropdownMenu: FC<DropdownMenuProps> = ({ 
-  titleAlign = 'center', activeColor, children
+  titleAlign = 'center', activeColor, children, customizeStyle
 }) => {
   const [activeKey, setActiveKey] = useState<number>(-1)
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -69,7 +69,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
     }
   })
   return (
-    <CompContainer className={ `${CssPrefix}-dropdown-menu dropdown-menu` }>
+    <CompContainer customizeStyle={ customizeStyle } className={ `${CssPrefix}-dropdown-menu dropdown-menu` } >
       <View className={ `${CssPrefix}-dropdown-menu__bar` }>
         {nav}
       </View>

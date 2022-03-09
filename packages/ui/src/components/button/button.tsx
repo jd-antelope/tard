@@ -7,8 +7,9 @@ import { View, Button, Form } from '@tarojs/components'
 import { BaseEventOrig, CommonEvent } from '@tarojs/components/types/common'
 import { ButtonProps as CButtonProps } from './type'
 import CompContainer from '../../common/comp-container'
-import { objectToString, pxTransform, } from '../../utils'
+import { objectToString, pxTransform } from '../../utils'
 import { isFunction } from '../../utils/is'
+import { CssPrefix } from '../../common'
 
 const CButton: FC<CButtonProps> = (props) => {
 
@@ -30,7 +31,7 @@ const CButton: FC<CButtonProps> = (props) => {
     border,
     borderColor,
     fillColor,
-    customStyle,
+    customStyle = '',
     sessionFrom,
     sendMessageTitle,
     sendMessagePath,
@@ -39,14 +40,14 @@ const CButton: FC<CButtonProps> = (props) => {
     appParameter
   } = props
 
-  const rootClassName = ['slc-button', `slc-button--${type}`]
+  const rootClassName = [`${CssPrefix}-button`, `${CssPrefix}-button--${type}`]
   const classObject = {
-    [`slc-button--${size}`]: size,
-    'slc-button--disabled': disabled,
-    'slc-button--full': full,
-    [`slc-button--${round}`]: round,
-    'slc-button--fill': fill,
-    [`slc-button--${type}--border`]: border && type,
+    [`${CssPrefix}-button--${size}`]: size,
+    [`${CssPrefix}-button--disabled`]: disabled,
+    [`${CssPrefix}-button--full`]: full,
+    [`${CssPrefix}-button--${round}`]: round,
+    [`${CssPrefix}-button--fill`]: fill,
+    [`${CssPrefix}-button--${type}--border`]: border && type,
     // 'slc-button__no-border': (fill || fillColor) && !borderColor,
   }
 
@@ -118,7 +119,7 @@ const CButton: FC<CButtonProps> = (props) => {
   })))
   const webButton = (
     <Button
-      className="slc-button__wxbutton"
+      className={ `${CssPrefix}-button__wxbutton` }
       lang={ lang }
       formType={ formType }
     />
@@ -127,7 +128,7 @@ const CButton: FC<CButtonProps> = (props) => {
 
   const button = (
     <Button
-      className="slc-button__wxbutton"
+      className={ `${CssPrefix}-button__wxbutton` }
       formType={ formType }
       openType={ openType }
       lang={ lang }
@@ -147,20 +148,24 @@ const CButton: FC<CButtonProps> = (props) => {
 
   return (
     <CompContainer
-      className={ classNames(rootClassName, classObject, props.className) }
-      style={ style }
-      onClick={ onClick }
+      customizeStyle={ props.customizeStyle }
     >
-      {isWEB && !disabled && webButton}
-      {isWEAPP && !disabled && (
-        <Form
-          onSubmit={ onSumit }
-          onReset={ onReset }
-        >
-          {button}
-        </Form>
-      )}
-      <View className="slc-button__text">{props.children}</View>
+      <View 
+        className={ classNames(rootClassName, classObject, props.className) }
+        onClick={ onClick } 
+        style={ style }
+      >
+        {isWEB && !disabled && webButton}
+        {isWEAPP && !disabled && (
+          <Form
+            onSubmit={ onSumit }
+            onReset={ onReset }
+          >
+            {button}
+          </Form>
+        )}
+        <View className={ `${CssPrefix}-button__text` }>{props.children}</View>
+      </View>
     </CompContainer>
   )
 }

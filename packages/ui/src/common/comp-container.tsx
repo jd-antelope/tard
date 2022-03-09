@@ -5,6 +5,7 @@ import Taro, { eventCenter, getCurrentInstance, getEnv, ENV_TYPE } from '@tarojs
 type CommonProps = {
   className?: string,
   style?: string,
+  customizeStyle?: string,
   [propName: string]: any
 }
 
@@ -13,16 +14,13 @@ type CommonState = {
 }
 
 export default class CompContainer extends React.Component<CommonProps, CommonState> {
-  // eslint-disable-next-line react/sort-comp
   $instance = getCurrentInstance()
-  // eslint-disable-next-line @typescript-eslint/member-ordering
   public static defaultProps: CommonProps
-
   private setThemeStyle () {
     if (!(Taro as any).Current.app || !(Taro as any).Current.app.themeParams) return
     const { themeParams } = (Taro as any).Current.app
     let themeStyle = ''
-    // eslint-disable-next-line guard-for-in
+
     for (const item in themeParams) {
       themeStyle += `--${item}: ${themeParams[item]};`
     }
@@ -31,7 +29,6 @@ export default class CompContainer extends React.Component<CommonProps, CommonSt
     })
   }
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
   public constructor (props: CommonProps) {
     super(props)
     this.state = {
@@ -60,12 +57,12 @@ export default class CompContainer extends React.Component<CommonProps, CommonSt
     this.setThemeStyle()
   }
 
-  // eslint-disable-next-line no-undef
   public render (): JSX.Element | null {
-    const { className, children, style, ...rest } = this.props
+    const { className, children, style, customizeStyle = '', ...rest } = this.props
     const { themeStyle } = this.state
+
     return (
-      <View className={ className } style={ themeStyle + style } { ...rest }>
+      <View className={ className } style={ customizeStyle || themeStyle  + style } { ...rest }>
         {children}
       </View>
     )
@@ -74,5 +71,6 @@ export default class CompContainer extends React.Component<CommonProps, CommonSt
 
 CompContainer.defaultProps = {
   className: '',
-  style: ''
+  style: '',
+  customizeStyle: ''
 }

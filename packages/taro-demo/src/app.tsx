@@ -11,7 +11,7 @@ class App extends React.Component {
   componentDidShow () {
     ConfigProvider.config({
       theme: {
-        'color-primary': '#fff',
+        'color-primary': '#000',
       }
     })
     

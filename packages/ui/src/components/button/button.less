@@ -1,6 +1,6 @@
-@import "../variables/index.less";
-@import "../mixins/index.less";
-
+@import "../../styles/variable.less";
+@import "../../styles/mixins/index.less";
+@import "./var.less";
 
 .@{--css-prefix}-web-button {
   padding: 0;
@@ -16,15 +16,15 @@
   box-sizing: border-box;
   margin: 0 auto;
   border-radius: @border-radius-md;
-  font-size: @font-size-base;
-  color: @color-primary;
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
   color: #FFFFFF;
   background: #FFFFFF;
   text-align: center;
   .line();
 
   &:active {
-    opacity: @opacity-active;
+    opacity: var(--opacity-active);
   }
 
   /* elements */
@@ -60,7 +60,7 @@
 
   /* modifiers */
   &--active {
-    opacity: @opacity-active;
+    opacity: var(--opacity-active);
   }
 
   &--disabled {
@@ -77,62 +77,62 @@
   }
 
   &--primary {
-    background: @color-primary;
+    background: var(--color-primary);
   }
 
   &--info {
-    background: @button-color-info;
+    background: var(--color-info);
   }
 
   &--danger {
-    background: @button-color-danger;
+    background: var(--color-error);
   }
 
   &--warning {
-    background: @button-color-warning;
+    background: var(--color-warning);
   }
 
   &--success {
-    background: @button-color-success;
+    background: var(--color-success);
   }
 
   &--primary--border {
     box-sizing: border-box;
-    border: 1px solid @color-primary;
-    color: @color-primary;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
     background: none;
   }
 
   &--info--border {
     box-sizing: border-box;
-    border: 1px solid @button-color-info;
-    color: @button-color-info;
+    border: 1px solid var(--color-info);
+    color: var(--color-info);
     background: none;
   }
 
   &--warning--border {
     box-sizing: border-box;
-    border: 1px solid  @button-color-warning;
-    color: @button-color-warning;
+    border: 1px solid  var(--color-warning);
+    color: var(--color-warning);
     background: none;
   }
 
   &--danger--border {
     box-sizing: border-box;
-    border: 1px solid @button-color-danger;
-    color: @button-color-danger;
+    border: 1px solid var(--color-error);
+    color: var(--color-error);
     background: none;
   }
 
   &--success--border {
     box-sizing: border-box;
-    border: 1px solid @button-color-success;
-    color: @button-color-success;
+    border: 1px solid var(--color-success);
+    color: var(--color-success);
     background: none;
   }
   
   &--circle {
-    border-radius: @button-color-warning;
+    border-radius: var(--color-warning);
   }
 
   &--rect {
@@ -141,7 +141,7 @@
 
   &--large {
     height: @button-large-height;
-    font-size: @font-size-base;
+    font-size: var(--font-size-base);
 
     .@{--css-prefix}-button__wxbutton, .@{--css-prefix}-button__text {
       box-sizing: border-box;
@@ -155,7 +155,7 @@
 
   &--small {
     height: @button-height-small;
-    font-size: @font-size-base;
+    font-size: var(--font-size-base);
 
     .@{--css-prefix}-button__wxbutton, .@{--css-prefix}-button__text {
       box-sizing: border-box;
@@ -184,8 +184,8 @@
   }
 
   &--fill {
-    color: @color-text-base-inverse;
-    background: @color-primary;
+    color: var(--color-text-base-inverse);
+    background: var(--color-primary);
   }
 
   &__no-border {
