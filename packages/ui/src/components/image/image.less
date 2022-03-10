@@ -1,0 +1,39 @@
+@import "../../variable.less";
+@import "../../mixins/index.less";
+
+@keyframes buffer {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.@{--css-prefix}-image-default {
+  background: var(--color-grey-3);
+  animation: buffer 0.5s;
+}
+
+.@{--css-prefix}-image-loading {
+  width: 100%;
+  height: 100%;
+}
+
+.@{--css-prefix}-image-none {
+  background: var(--color-grey-3);
+  animation: buffer 0.5s;
+}
+
+.@{--css-prefix}-image-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-grey-2);
+  background: var(--color-grey-3);
+  font-size: 24px;
+}
+  

@@ -1,0 +1,1 @@
+export const BUYIMG = 'https://storage.360buyimg.com/hawley-common/tard-image';

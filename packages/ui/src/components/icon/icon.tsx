@@ -1,47 +1,37 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { FC } from 'react'
 import { Text } from '@tarojs/components'
 import { IconProps } from './type'
 import { mergeStyle, pxTransform } from '../../utils'
+import { CssPrefix } from '../../common'
 
-export default class Icon extends React.Component<IconProps> {
-  public static defaultProps: IconProps
+const Icon: FC<IconProps> = ({
+  customStyle = '',
+  className = '',
+  prefixClass = CssPrefix + '-icon',
+  value = '',
+  color = '',
+  size = 16,
+  onClick = () => {}
+}) => {
 
-  private handleClick(): void {
-    this.props.onClick && this.props.onClick(arguments as any)
+  const handleClick = (e) => {
+    onClick(e)
   }
 
-  public render(): JSX.Element {
-    const {
-      customStyle,
-      className,
-      prefixClass,
-      value,
-      size,
-      color
-    } = this.props
-
-    const rootStyle = {
-      fontSize: `${pxTransform(parseInt(String(size)) * 2)}`,
-      color
-    }
-
-    const iconName = value ? `${prefixClass}-${value}` : ''
-    return (
-      <Text
-        className={classNames(prefixClass, iconName, className)}
-        style={mergeStyle(rootStyle, customStyle as object)}
-        onClick={this.handleClick.bind(this)}
-      ></Text>
-    )
+  const rootStyle = {
+    fontSize: `${pxTransform(parseInt(String(size)) * 2)}`,
+    color
   }
+
+  const iconName = value ? `${prefixClass}-${value}` : ''
+  return (
+    <Text
+      className={ classNames(prefixClass, iconName, className) }
+      style={ mergeStyle(rootStyle, customStyle as object) }
+      onClick={ handleClick }
+    />
+  )
 }
 
-Icon.defaultProps = {
-  customStyle: '',
-  className: '',
-  prefixClass: 'slc-icon',
-  value: '',
-  color: '',
-  size: 16
-}
+export default Icon

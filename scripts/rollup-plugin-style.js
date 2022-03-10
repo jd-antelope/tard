@@ -41,7 +41,6 @@ const writeDemoFile = (res) => {
   if (!check) fs.mkdirSync(`${cwd}/${staticLink}/${res.name}`)
   res.packagePaths.map(val => {
     const newFile = val.split('components/')[1]
-    console.log(newFile)
     fs.copyFileSync(
       val, 
       `${cwd}/${staticLink}/${newFile}`

@@ -1,0 +1,40 @@
+@keyframes MoveLoading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image-page {
+  .base-image {
+    width: 160px;
+    height: 160px;
+    color: #999999;
+    &-loading {
+      width: 160px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__tip {
+        animation: MoveLoading 2s linear infinite;
+      }
+    }
+  }
+  .base-box {
+    display: flex;
+    flex-direction: column;
+    line-height: 28px;
+    font-size: 28px;
+    &__tip {
+      width: 100%;
+      margin-top: 32px;
+      line-height: 28px;
+      font-size: 28px;
+      text-align: center;
+      color: #666666;
+    }
+  }
+}
