@@ -1,5 +1,5 @@
-@import "../../styles/variable.less";
-@import "../../styles/mixins/index.less";
+@import "../../variable.less";
+@import "../../mixins/index.less";
 @import "./var.less";
 
 .@{--css-prefix}-web-button {
@@ -15,7 +15,7 @@
   display: inline-block;
   box-sizing: border-box;
   margin: 0 auto;
-  border-radius: @border-radius-md;
+  border-radius: var(--border-radius-md);
   font-size: var(--font-size-base);
   color: var(--color-primary);
   color: #FFFFFF;
@@ -32,10 +32,10 @@
   &__text {
     .flex-center();
     box-sizing: border-box;
-    min-width: @button-min-width;
-    height: @button-height;
-    padding: 0 @button-default-v-padding;
-    line-height: @button-height;
+    min-width: var(--button-min-width);
+    height: var(--button-height);
+    padding: 0 var(--button-default-v-padding);
+    line-height: var(--button-height);
   }
 
   &__wxbutton {
@@ -44,10 +44,10 @@
     left: 0;
     z-index: 1;
     box-sizing: border-box;
-    min-width: @button-min-width;
+    min-width: var(--button-min-width);
     height: 100%;
     padding: 0;
-    padding: 0 @button-default-v-padding;
+    padding: 0 var(--button-default-v-padding);
     border: none;
     outline: none;
     background-color: transparent;
@@ -140,46 +140,46 @@
   }
 
   &--large {
-    height: @button-large-height;
+    height: var(--button-large-height);
     font-size: var(--font-size-base);
 
     .@{--css-prefix}-button__wxbutton, .@{--css-prefix}-button__text {
       box-sizing: border-box;
-      min-width: @button-min-large-width;
-      height: @button-large-height;
-      padding: 0 @button-large-v-padding;
-      font-size: @button-large-text-size;
-      line-height: @button-large-height;
+      min-width: var(--button-min-large-width);
+      height: var(--button-large-height);
+      padding: 0 var(--button-large-v-padding);
+      font-size: var(--button-large-text-size);
+      line-height: var(--button-large-height);
     }
   }
 
   &--small {
-    height: @button-height-small;
+    height: var(--button-height-small);
     font-size: var(--font-size-base);
 
     .@{--css-prefix}-button__wxbutton, .@{--css-prefix}-button__text {
       box-sizing: border-box;
-      min-width: @button-min-width-small;
-      height: @button-height-small;
-      padding: 0  @button-small-v-padding;
-      font-size: @button-small-text-size;
-      line-height: @button-height-small;
+      min-width: var(--button-min-width-small);
+      height: var(--button-height-small);
+      padding: 0  var(--button-small-v-padding);
+      font-size: var(--button-small-text-size);
+      line-height: var(--button-height-small);
     }
   }
 
   &--mini {
     box-sizing: border-box;
-    min-width: @button-min-width-mini;
-    height: @button-height-mini;
-    line-height: @button-height-mini;
+    min-width: var(--button-min-width-mini);
+    height: var(--button-height-mini);
+    line-height: var(--button-height-mini);
 
     .@{--css-prefix}-button__wxbutton, .@{--css-prefix}-button__text {
       box-sizing: border-box;
-      min-width: @button-min-width-mini;
-      height: @button-height-mini;
-      padding: 0  @button-mini-v-padding;
-      font-size: @button-mini-text-size;
-      line-height: @button-height-mini;
+      min-width: var(--button-min-width-mini);
+      height: var(--button-height-mini);
+      padding: 0  var(--button-mini-v-padding);
+      font-size: var(--button-mini-text-size);
+      line-height: var(--button-height-mini);
     }
   }
 

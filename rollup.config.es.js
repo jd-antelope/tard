@@ -6,6 +6,7 @@ import RollupTypescript from 'rollup-plugin-typescript2'
 import { uglify as RollupUglify } from 'rollup-plugin-uglify'
 import RollupCopy from 'rollup-plugin-copy'
 import RollupPluginDemo from './scripts/watch-demo/index'
+import RollupPluginStyle from './scripts/rollup-plugin-style'
 
 const resolveFile = p => path.resolve(__dirname, '.', p)
 
@@ -64,25 +65,10 @@ export default {
         {
           src: resolveFile('packages/ui/src/styles'),
           dest: resolveFile('packages/ui/dist')
-        },
-        {
-          src: resolveFile('packages/ui/src/components/*/*.less'),
-          dest: resolveFile('packages/ui/dist/styles/components')
-        },
-        {
-          src: resolveFile('packages/ui/src/index.d.ts'),
-          dest: resolveFile('packages/ui/dist/types')
-        },
-        {
-          src: resolveFile('packages/ui/src/components/*/*.d.ts'),
-          dest: resolveFile('packages/ui/dist/types/components'),
-          rename: (_, __, fullPath) => {
-            const reg = /components\/([\s\S]*)\//
-            return `${fullPath.match(reg)[1]}.d.ts`
-          }
-        },
+        }
       ]
     }),
+    RollupPluginStyle({ watch: process.env.NODE_ENV  === 'development'}),
     RollupPluginDemo({ watch: process.env.NODE_ENV  === 'development'}),
   ]
 }
