@@ -1,0 +1,90 @@
+
+@import "../../variable.less";
+@import "../../mixins/index.less";
+@import "./var.less";
+
+@keyframes slRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.@{--css-prefix}-toast {
+  /* elements */
+  &__overlay {
+    .mixin-overlay();
+    position: fixed;
+    opacity: 0;
+    z-index: var(--zindex-toast);
+  }
+
+  &__body--loading {
+    .toast-body-content__img-item {
+      animation: slRotate 1350ms linear infinite;
+      
+    }
+  }
+
+  .toast-body {
+    .mixin-absolute-center(fixed, 40%);
+
+    text-align: center;
+    z-index: var(--zindex-toast);
+
+
+    &-content {
+      min-width: var(--toast-min-width);
+      max-width: var(--toast-max-width);
+      padding:  var(--spacing-v-md);
+
+      border-radius: var(--border-radius-md);
+      box-sizing: border-box;
+      background-color: var(--toast-bg-color);
+
+      &__icon {
+        margin-top: var(--toast-icon-margin--top);
+        color: var(--toast-color);
+        font-size: var(--toast-icon-size);
+        text-align: center;
+        line-height: 0;
+      }
+
+      &__img-item {
+        line-height: 0;
+        margin-top: var(--toast-icon-margin--top);
+        text-align: center;
+        width: var(--toast-image-size);
+        height: var(--toast-image-size);
+
+      }
+      
+
+      &__info {
+        color: var(--toast-color);
+        font-size: var(--toast-font-size);
+        line-height: var(--line-height-zh);
+        word-break: break-all;
+        text-align: center;
+      }
+    }
+    &-content--slot {
+      padding: var(--toast-slot-horizontal-padding) var(--toast-slot-vertical-padding);
+    }
+
+    &.@{--css-prefix}-toast__body--custom-image,
+    &.@{--css-prefix}-toast__body--success,
+    &.@{--css-prefix}-toast__body--error,
+    &.@{--css-prefix}-toast__body--loading {
+      padding-bottom: var(--toast-custom-padding-bottom);
+      // padding-bottom: var(--spacing-v-lg) - ((var(--toast-font-size) * var(--line-height-zh) - var(--toast-font-size)));
+    }
+  }
+  .toast-body--text .toast-body-content {
+    min-width: auto;
+    max-width: var(--toast-max-width);
+  }
+}

@@ -21,7 +21,8 @@ const Price: FC<PriceProps> = ({
   showAfterSymbol = false,
   priceUnit = '¥',
   unitSize = 0,
-  thousands = false
+  thousands = false,
+  customizeStyle = ''
 }) => {
   const saveMax = (getPrice) => {
     const price = Number(getPrice);
@@ -124,7 +125,7 @@ const Price: FC<PriceProps> = ({
   }
 
   return (
-    <CompContainer className={ cn('slc-price', className) }>
+    <CompContainer customizeStyle={ customizeStyle } className={ cn('slc-price', className) }>
       {
         beforeContent !== '' && beforeContent
       }
