@@ -79,8 +79,8 @@
     &.@{--css-prefix}-toast__body--success,
     &.@{--css-prefix}-toast__body--error,
     &.@{--css-prefix}-toast__body--loading {
-      padding-bottom: var(--toast-custom-padding-bottom);
-      // padding-bottom: var(--spacing-v-lg) - ((var(--toast-font-size) * var(--line-height-zh) - var(--toast-font-size)));
+      // padding-bottom: var(--toast-custom-padding-bottom);
+      padding-bottom: calc(var(--spacing-v-lg) - ((var(--toast-font-size) * var(--line-height-zh) - var(--toast-font-size)) / 2));
     }
   }
   .toast-body--text .toast-body-content {
