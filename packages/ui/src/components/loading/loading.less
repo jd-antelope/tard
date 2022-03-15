@@ -1,0 +1,32 @@
+@import "../../variable.less";
+@import "../../mixins/index.less";
+@import "./var.less";
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.@{--css-prefix}-loading {
+  overflow: hidden;
+  &-icon {
+    width: var(--loading-sp);
+    height: var(--loading-sp);
+    animation: rotate 1s linear infinite;
+    font-size: var(--loading-sp);
+  }
+}
+
+.@{--css-prefix}-loading-flex {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: var(--zindex-loading);
+  .flex-center ()
+}

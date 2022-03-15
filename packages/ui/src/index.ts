@@ -5,5 +5,6 @@ import Icon from './components/icon'
 import Image from './components/image'
 import Price from './components/price'
 import Toast from './components/toast'
+import Loading from './components/loading'
 
-export { Button, DropdownMenu, ConfigProvider, Icon, Image, Price, Toast }
+export { Button, DropdownMenu, ConfigProvider, Icon, Image, Price, Toast, Loading }
