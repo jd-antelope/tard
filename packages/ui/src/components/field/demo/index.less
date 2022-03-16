@@ -1,0 +1,19 @@
+.container{
+  width: 100vw;
+  padding: 0;
+  .doc-body {
+    &-content-tip {
+      padding-left: 36px;
+    }
+  }
+  .input-group .slc-field:not(:last-child)::after {
+    position: absolute;
+    box-sizing: border-box;
+    content: ' ';
+    pointer-events: none;
+    right: 36px;
+    bottom: 0;
+    left: 36px;
+    border-bottom: 2px solid rgba(239,239,239,1);
+  }
+}

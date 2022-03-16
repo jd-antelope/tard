@@ -1,0 +1,19 @@
+
+@import "../../variable.less";
+@import "../../mixins/index.less";
+@import "./var.less";
+
+.@{--css-prefix}-form {
+  display: block;
+  background-color: var(--form-bg-color);
+
+  &.@{--css-prefix}-form-border {
+    .mixin-hairline-top-bottom(#f2f2f2);
+  }
+
+  &.@{--css-prefix}-form-round {
+    border-radius: var(--form-round);
+    background: var(--form-round-bg);
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,34 @@
+.form-container {
+  .form-submit {
+    padding: 34px 36px;
+    font-size: 0;
+  
+    &-button {
+      width: 100%;
+      height: 96px;
+      line-height: 96px;
+      border-radius: 8px;
+  
+      .slc-button__text {
+        height: 96px;
+        line-height: 96px;
+      }
+    }
+  }
+  
+  .input-group .slc-field:not(:last-child)::after {
+    position: absolute;
+    box-sizing: border-box;
+    content: ' ';
+    pointer-events: none;
+    right: 36px;
+    bottom: 0;
+    left: 36px;
+    border-bottom: 2px solid rgba(239,239,239,1);
+  }
+  
+  .pd-0 {
+    padding-bottom: 0;
+  }
+}
+
