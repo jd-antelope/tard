@@ -4,6 +4,7 @@ import cn from 'classnames'
 import { View, Text } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { LoadingProps } from './type'
+import CompContainer from '../../common/comp-container'
 import { pxTransform, objectToString } from '../../common/utils'
 import { isFunction } from '../../common/is'
 
@@ -18,7 +19,8 @@ const LoadingComponent: FC<LoadingProps> = ({
   color = '',
   overlay = false,
   size = 0,
-  onClick = null
+  onClick = null,
+  customizeStyle = ''
 }) => {
 
   const handler = (event: CommonEvent): void => {
@@ -38,17 +40,19 @@ const LoadingComponent: FC<LoadingProps> = ({
   )
 
   return (
-    <View 
-      className={ cn('slc-loading', { 'slc-loading-flex': overlay }) }
-      onClick={ handler }
-    >
-      <Text 
-        className={iconClass} 
-        style={ 
-          (color !== '' ? `color: ${color};` : '') + style
-        } 
-      />
-    </View>
+    <CompContainer customizeStyle={ customizeStyle }>
+      <View 
+        className={ cn('slc-loading', { 'slc-loading-flex': overlay }) }
+        onClick={ handler }
+      >
+        <Text 
+          className={iconClass} 
+          style={ 
+            (color !== '' ? `color: ${color};` : '') + style
+          } 
+        />
+      </View>
+    </CompContainer>
   )
 }
 

@@ -4,6 +4,7 @@ import React, { FC } from 'react'
 import { Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { RateProps } from './type'
+import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
 
 const Rate: FC<RateProps> = ({ 
@@ -14,6 +15,7 @@ const Rate: FC<RateProps> = ({
   max = 5,
   margin = 5,
   activeColor = '',
+  customizeStyle = '',
   onChange = () => {}
 }) => {
   const handleClick = (event: CommonEvent, index) => {
@@ -53,27 +55,29 @@ const Rate: FC<RateProps> = ({
   }
 
   return (
-    <View className={classNames(rootClassName, className)} style={customStyle}>
-      {classNameArr.map((cls, i) => (
-        <View
-          className={cls}
-          key={`slc-rate-star-${i}`}
-          style={ iconStyle }
-          onClick={(e) => handleClick(e, i + 1)}
-        >
-          <Text
-            className='slc-icon slc-icon-star'
-            style={isActiveRate(cls, 'on') ? Object.assign(activeIconStyle, starIconStyle) : starIconStyle}
-          ></Text>
-          <View className='slc-rate__left' style={isActiveRate(cls, 'half') ? activeIconStyle : {}}>
+    <CompContainer customizeStyle={customizeStyle}>
+      <View className={classNames(rootClassName, className)} style={customStyle}>
+        {classNameArr.map((cls, i) => (
+          <View
+            className={cls}
+            key={`slc-rate-star-${i}`}
+            style={ iconStyle }
+            onClick={(e) => handleClick(e, i + 1)}
+          >
             <Text
               className='slc-icon slc-icon-star'
-              style={starIconStyle}
+              style={isActiveRate(cls, 'on') ? Object.assign(activeIconStyle, starIconStyle) : starIconStyle}
             ></Text>
+            <View className='slc-rate__left' style={isActiveRate(cls, 'half') ? activeIconStyle : {}}>
+              <Text
+                className='slc-icon slc-icon-star'
+                style={starIconStyle}
+              ></Text>
+            </View>
           </View>
-        </View>
-      ))}
-    </View>
+        ))}
+      </View>
+    </CompContainer>
   )
 }
 

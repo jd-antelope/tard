@@ -5,6 +5,7 @@ import { Input, Label, Text, View, Textarea } from '@tarojs/components'
 import { BaseEventOrig, ITouchEvent } from '@tarojs/components/types/common'
 import { InputProps } from '@tarojs/components/types/Input'
 import { TextareaProps } from '@tarojs/components/types/Textarea'
+import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
 import { isFunction } from '../../common/is'
 import SlIcon from '../icon'
@@ -211,112 +212,115 @@ const FieldComponent: FC<FieldProps> = (props) => {
 
   const nameProps = name ? { name } : {}
   return (
-    <View className={rootCls} style={customStyle}>
-      <View className={containerCls} onClick={handleClick}>
-        {(label || leftIcon) && (
-          <Label
-          className={labelCls}
-          style={labelStyle}
-          for={name}
-          >
-            {leftIcon && <SlIcon className={leftIconCls} value={leftIcon} color={iconColor} size={ iconSize }></SlIcon>}
-            {label}
-          </Label>
-        )}
-        {
-          textareaType === 'textarea' ? 
-            <Fragment>
-              <Textarea 
-                className='slc-field__textarea'
-                { ...id }
-                { ...nameProps }
-                style={ `color: ${ contentColor };${textareaHeight ? `height: ${pxTransform(textareaHeight)}`: ''}` }
-                disabled={disabled || readonly}
-                placeholderStyle={placeholderStyle}
-                placeholderClass={classNames('slc-field__box-textarea__ph', placeholderCls)}
-                placeholder={placeholder}
-                cursorSpacing={cursorSpacing}
-                maxlength={maxlength}
-                autoFocus={autoFocus}
-                autoHeight={autoHeight}
-                fixed={fixed}
-                focus={focus}
-                value={value}
-                cursor={cursor}
-                selectionStart={selectionStart}
-                selectionEnd={selectionEnd}
-                adjustPosition={adjustPosition}
-                onInput={handleInput}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                onConfirm={handleConfirm}
-                onKeyboardHeightChange={handleKeyboardHeightChange}
-              />
-              { showWordLimit && 
-                <View className="slc-field__word-limit">
-                  <Text className="slc-field__word-num">{(value || '').length}</Text>
-                  /{maxlength}
-                </View>
-              }
-            </Fragment> 
-            : <Fragment>
-              <Input
-                className='slc-field__input'
-                { ...id }
-                { ...nameProps }
-                type={type}
-                password={password}
-                disabled={disabled || readonly}
-                style={ `color: ${ contentColor };text-align: ${valueAlign}` }
-                placeholderStyle={placeholderStyle}
-                placeholderClass={placeholderCls}
-                placeholder={placeholder}
-                cursorSpacing={cursorSpacing}
-                maxlength={maxlength}
-                autoFocus={autoFocus}
-                focus={focus}
-                value={value}
-                confirmType={confirmType}
-                cursor={cursor}
-                selectionStart={selectionStart}
-                selectionEnd={selectionEnd}
-                adjustPosition={adjustPosition}
-                onInput={handleInput}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                onConfirm={handleConfirm}
-                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                // @ts-ignore
-                onKeyboardHeightChange={handleKeyboardHeightChange}
-              />
-              {clear && value && (
-                <View className='slc-field__icon' onClick={handleClearValue}>
-                  {/* <Text className='slc-icon slc-icon-close-circle slc-field__icon-close'></Text> */}
-                  <SlIcon value='close-circle' color="#999999" size={ 16 }></SlIcon>
-                </View>
-              )}
-              {!clear && rightIcon &&
-                <View className='slc-field__icon' onClick={() => props.onRightIconClick}>
-                  <SlIcon value={rightIcon} color={iconColor} size={ iconSize }></SlIcon>
-                </View>  
-              }
-              {error && (
-                <View
-                  className='slc-field__error'
-                  style={`padding-left: ${pxTransform(labelWidth)};width: 100%`}
-                  onTouchStart={handleErrorClick}
-                >
-                  <Text>{errorMessage || `${label}必填`}</Text>
-                </View>
-              )}
-              {/* <View className='slc-field__children'>{props.children}</View> */}
-            </Fragment>
-        }
-        {
-          children && children
-        }
+    <CompContainer customizeStyle={ props.customizeStyle }>
+      <View className={rootCls} style={customStyle}>
+        <View className={containerCls} onClick={handleClick}>
+          {(label || leftIcon) && (
+            <Label
+            className={labelCls}
+            style={labelStyle}
+            for={name}
+            >
+              {leftIcon && <SlIcon className={leftIconCls} value={leftIcon} color={iconColor} size={ iconSize }></SlIcon>}
+              {label}
+            </Label>
+          )}
+          {
+            textareaType === 'textarea' ? 
+              <Fragment>
+                <Textarea 
+                  className='slc-field__textarea'
+                  { ...id }
+                  { ...nameProps }
+                  style={ `color: ${ contentColor };${textareaHeight ? `height: ${pxTransform(textareaHeight)}`: ''}` }
+                  disabled={disabled || readonly}
+                  placeholderStyle={placeholderStyle}
+                  placeholderClass={classNames('slc-field__box-textarea__ph', placeholderCls)}
+                  placeholder={placeholder}
+                  cursorSpacing={cursorSpacing}
+                  maxlength={maxlength}
+                  autoFocus={autoFocus}
+                  autoHeight={autoHeight}
+                  fixed={fixed}
+                  focus={focus}
+                  value={value}
+                  cursor={cursor}
+                  selectionStart={selectionStart}
+                  selectionEnd={selectionEnd}
+                  adjustPosition={adjustPosition}
+                  onInput={handleInput}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  onConfirm={handleConfirm}
+                  onKeyboardHeightChange={handleKeyboardHeightChange}
+                />
+                { showWordLimit && 
+                  <View className="slc-field__word-limit">
+                    <Text className="slc-field__word-num">{(value || '').length}</Text>
+                    /{maxlength}
+                  </View>
+                }
+              </Fragment> 
+              : <Fragment>
+                <Input
+                  className='slc-field__input'
+                  { ...id }
+                  { ...nameProps }
+                  type={type}
+                  password={password}
+                  disabled={disabled || readonly}
+                  style={ `color: ${ contentColor };text-align: ${valueAlign}` }
+                  placeholderStyle={placeholderStyle}
+                  placeholderClass={placeholderCls}
+                  placeholder={placeholder}
+                  cursorSpacing={cursorSpacing}
+                  maxlength={maxlength}
+                  autoFocus={autoFocus}
+                  focus={focus}
+                  value={value}
+                  confirmType={confirmType}
+                  cursor={cursor}
+                  selectionStart={selectionStart}
+                  selectionEnd={selectionEnd}
+                  adjustPosition={adjustPosition}
+                  onInput={handleInput}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  onConfirm={handleConfirm}
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+                  // @ts-ignore
+                  onKeyboardHeightChange={handleKeyboardHeightChange}
+                />
+                {clear && value && (
+                  <View className='slc-field__icon' onClick={handleClearValue}>
+                    {/* <Text className='slc-icon slc-icon-close-circle slc-field__icon-close'></Text> */}
+                    <SlIcon value='close-circle' color="#999999" size={ 16 }></SlIcon>
+                  </View>
+                )}
+                {!clear && rightIcon &&
+                  <View className='slc-field__icon' onClick={() => props.onRightIconClick}>
+                    <SlIcon value={rightIcon} color={iconColor} size={ iconSize }></SlIcon>
+                  </View>  
+                }
+                {error && (
+                  <View
+                    className='slc-field__error'
+                    style={`padding-left: ${pxTransform(labelWidth)};width: 100%`}
+                    onTouchStart={handleErrorClick}
+                  >
+                    <Text>{errorMessage || `${label}必填`}</Text>
+                  </View>
+                )}
+                {/* <View className='slc-field__children'>{props.children}</View> */}
+              </Fragment>
+          }
+          {
+            children && children
+          }
+        </View>
       </View>
-    </View>
+    </CompContainer>
+    
   )
 }
 

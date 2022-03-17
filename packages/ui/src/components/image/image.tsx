@@ -2,6 +2,7 @@ import React, { Fragment, FC, useState } from 'react'
 import cn from 'classnames'
 import { Image, View } from '@tarojs/components'
 import { previewImage } from '@tarojs/taro'
+import CompContainer from '../../common/comp-container'
 import { BUYIMG } from '../../common/constants'
 import { isFunction } from '../../common/is'
 import { ImageProps } from './type'
@@ -18,6 +19,7 @@ const ImageComponent: FC<ImageProps> = ({
   round = false,
   showLoading = false,
   loadingContent = '',
+  customizeStyle = '',
   onClick = () => {}
 }) => {
 
@@ -38,7 +40,7 @@ const ImageComponent: FC<ImageProps> = ({
   })
 
   return (
-    <Fragment>
+    <CompContainer customizeStyle={ customizeStyle }>
       {
         showLoading ? 
         <Fragment>
@@ -73,7 +75,7 @@ const ImageComponent: FC<ImageProps> = ({
         </Fragment>
       }
       
-    </Fragment>
+    </CompContainer>
   )
 }
 

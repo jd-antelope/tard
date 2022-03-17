@@ -1,0 +1,36 @@
+
+@import "../../variable.less";
+@import "../../mixins/index.less";
+@import "./var.less";
+
+.@{--css-prefix}-switch {
+  width: 90px;
+  height: 32px;
+  position: relative;
+
+  &__bg {
+    background: var(--switch-bg-color);
+    border-radius: 19px;
+  }
+
+  &__btn {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    left: 0;
+    top: -6px;
+    box-shadow: var(--switch-box-shadow);
+    border-radius: 50%;
+    background: var(--switch-btn-color);
+  }
+
+  &__active {
+    .@{--css-prefix}-switch__bg {
+      background: var(--color-primary);
+    }
+
+    .@{--css-prefix}-switch__btn {
+      transform: translateX(46px);
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import React, { FC } from 'react'
 import { Form } from '@tarojs/components'
+import CompContainer from '../../common/comp-container'
 import { FormProps } from './type'
 
 const FormComponent: FC<FormProps> = ({
@@ -11,7 +12,8 @@ const FormComponent: FC<FormProps> = ({
   round = false,
   onReset = () => {},
   onSubmit = () => {},
-  children
+  children,
+  customizeStyle = ''
 }) => {
 
   const onSubmitCallback = (event) => {
@@ -30,15 +32,17 @@ const FormComponent: FC<FormProps> = ({
   )
 
   return (
-    <Form
-      className={rootCls}
-      style={customStyle}
-      onSubmit={onSubmitCallback}
-      reportSubmit={reportSubmit}
-      onReset={onResetCallback}
-    >
-      {children}
-    </Form>
+    <CompContainer customizeStyle={ customizeStyle }>
+      <Form
+        className={rootCls}
+        style={customStyle}
+        onSubmit={onSubmitCallback}
+        reportSubmit={reportSubmit}
+        onReset={onResetCallback}
+      >
+        {children}
+      </Form>
+    </CompContainer>
   )
 }
 
