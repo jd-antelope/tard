@@ -8,5 +8,9 @@ import Toast from './components/toast'
 import Loading from './components/loading'
 import Form from './components/form'
 import Field from './components/field'
+import Rate from './components/rate'
 
-export { Button, DropdownMenu, ConfigProvider, Icon, Image, Price, Toast, Loading, Form, Field }
+export { 
+  Button, DropdownMenu, ConfigProvider, Icon, Image, 
+  Price, Toast, Loading, Form, Field, Rate
+}
