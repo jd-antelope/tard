@@ -10,8 +10,11 @@ import Form from './components/form'
 import Field from './components/field'
 import Rate from './components/rate'
 import Switch from './components/switch'
+import Popup from './components/popup'
+import Sort from './components/sort'
 
 export { 
   Button, DropdownMenu, ConfigProvider, Icon, Image, 
-  Price, Toast, Loading, Form, Field, Rate, Switch
+  Price, Toast, Loading, Form, Field, Rate, Switch,
+  Popup, Sort
 }
