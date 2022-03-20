@@ -1,0 +1,32 @@
+
+@import "../../variable.less";
+@import "../../mixins/index.less";
+@import "./var.less";
+
+.@{--css-prefix}-tag-price {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--tag-price-color);
+  font-size: var(--tag-price-text-size);
+
+  &__title {
+    padding: var(--tag-price-padding);
+    line-height: 1;
+    background: var(--tag-price-color);
+    color: var(--color-white);
+    border: 1px solid var(--tag-price-color);
+    border-radius: var(--tag-price-border-radius) 0 0 var(--tag-price-border-radius);
+  }
+
+  &__price {
+    padding: var(--tag-price-padding);
+    line-height: 1;
+    border: 1px solid;
+    border-radius: 0 var(--tag-price-border-radius) var(--tag-price-border-radius) 0;
+
+    .slc-price__text {
+      line-height: 1;
+    }
+  }
+}
