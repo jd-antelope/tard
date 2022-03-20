@@ -1,10 +1,10 @@
 
 import React, { FC, useState, useEffect } from 'react'
 import { View } from '@tarojs/components'
+import cn from 'classnames'
 import { SwitchProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
-import cn from 'classnames'
 import { isFunction } from '../../common/is'
 
 const Switch: FC<SwitchProps> = (props) => {

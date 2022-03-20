@@ -15,9 +15,10 @@ import Sort from './components/sort'
 import Empty from './components/empty'
 import Skeleton from './components/skeleton'
 import TagPrice from './components/tag-price'
+import Grid from './components/grid'
 
 export { 
   Button, DropdownMenu, ConfigProvider, Icon, Image, 
   Price, Toast, Loading, Form, Field, Rate, Switch,
-  Popup, Sort, Empty, Skeleton, TagPrice
+  Popup, Sort, Empty, Skeleton, TagPrice, Grid
 }
