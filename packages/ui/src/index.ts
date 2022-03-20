@@ -12,9 +12,11 @@ import Rate from './components/rate'
 import Switch from './components/switch'
 import Popup from './components/popup'
 import Sort from './components/sort'
+import Empty from './components/empty'
+import Skeleton from './components/skeleton'
 
 export { 
   Button, DropdownMenu, ConfigProvider, Icon, Image, 
   Price, Toast, Loading, Form, Field, Rate, Switch,
-  Popup, Sort
+  Popup, Sort, Empty, Skeleton
 }
