@@ -1,0 +1,110 @@
+@import "../../variable.less";
+@import "../../mixins/index.less";
+@import "./var.less";
+
+.@{--css-prefix}-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: @zindex-modal;
+  width: 100%;
+  height: 100%;
+  transition: visibility var(--modal-duration ease-in);
+  visibility: hidden;
+
+  /* elements */
+  &__overlay, &__container {
+    opacity: 0;
+    transition: opacity var(--modal-duration ease-in);
+  }
+
+  &__overlay {
+    .mixin-overlay;
+  }
+
+  // &__button{
+  //   margin: 0;
+  //   &-confirm{
+  //     color:  var(--modal-btn-confirm-color);
+  //   }
+  // }
+
+  &__container {
+    .mixin-absolute-center();
+    width: var(--modal-width);
+    border-radius: @border-radius-lg;
+    overflow: hidden;
+    background-color: var(--modal-bg-color);
+  }
+
+  &__header {
+    .mixin-hairline-bottom-relative(@color: @color-grey-4);
+    .line(1);
+    padding: @spacing-v-md @spacing-h-lg;
+    font-size: @font-size-lg;
+    color: var(--modal-header-text-color);
+    text-align: center;
+  }
+
+  &__content {
+    box-sizing: content-box;
+    width: auto;
+    max-height: 840px;
+    padding: @spacing-h-xl @spacing-h-lg;
+    font-size: @font-size-base;
+    color: var(--modal-content-text-color);
+  }
+
+  &__footer {
+    .mixin-hairline-top-relative(@color: @color-grey-4);
+
+    .@{--css-prefix}-modal__action {
+      .mixin-display-flex;
+
+      & > taro-button-core, & > button {
+        .mixin-flex(auto);
+        .line(1);
+        .active;
+        width: 100%;
+        min-width: 160px;
+        height: 88px;
+        margin-top: 0;
+        border: 0;
+        border-radius: 0;
+        outline: 0;
+        font-size: @font-size-base;
+        line-height: 86px;
+        color: var(--modal-btn-default-color);
+        background-color: transparent;
+
+        &::after {
+          width: initial;
+          height: initial;
+          border: 0;
+          border-radius: 0;
+        }
+
+        &:not(:first-child) {
+          .mixin-hairline-left-relative(@color: @color-grey-4);
+        }
+
+        &:last-child {
+          color: var(--modal-btn-confirm-color);
+        }
+      }
+    }
+
+    &--simple .@{--css-prefix}-modal__action > taro-button-core:last-child:nth-child(2), &--simple .@{--css-prefix}-modal__action > button:last-child:nth-child(2) {
+      color: var(--modal-btn-confirm-color);
+    }
+  }
+
+  /* modifiers */
+  &--active {
+    visibility: visible;
+
+    .@{--css-prefix}-modal__overlay, .@{--css-prefix}-modal__container {
+      opacity: 1;
+    }
+  }
+}

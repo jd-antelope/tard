@@ -36,7 +36,7 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
         <View
           className={ `${CssPrefix}-dropdown-menu-item__title-text` }
         >
-          {title || options?.filter(option => option.value === value)[0]?.text || options?.[0]?.text}
+          {title || options?.filter(option => option?.value === value)[0]?.text || options?.[0]?.text}
         </View>
         <Icon
           value={

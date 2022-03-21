@@ -1,0 +1,74 @@
+@import "../../variable.less";
+@import "../../mixins/index.less";
+@import "./var.less";
+
+
+.@{--css-prefix}-input-number {
+  display: inline-flex;
+  border-radius: @border-radius-md;
+  overflow: hidden;
+  font-size: var(--input-number-font-size);
+  background-color: @color-bg;
+  .border-thin(@width: 1PX);
+
+  /* elements */
+  &__btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--input-number-btn-padding);
+    overflow: hidden;
+    font-size: 0;
+    line-height: @line-height-base;
+    color: var(--input-number-btn-color);
+    text-align: center;
+    .active;
+
+    &-subtract, &-add {
+      font-size: var(--input-number-btn-size);
+      line-height: var(--input-number-btn-size);
+    }
+  }
+
+  &__input {
+    .border-thin(@width: 1PX, @directions: left right);
+  }
+
+  &__input, input {
+    display: inline-block;
+    width: var(--input-number-width-min);
+    border-radius: 0;
+    font-size: var(--input-number-font-size);
+    line-height: @line-height-zh;
+    color: var(--input-number-text-color);
+    text-align: center;
+  }
+
+  /* modifiers */
+  &--disabled {
+    color: @color-text-disabled;
+
+    &:active {
+      background-color: inherit;
+    }
+  }
+
+  &--lg {
+    @{component}__btn {
+      padding: var(--input-number-btn-padding-lg);
+      font-size: var(--input-number-font-size-lg);
+
+      &-subtract, &-add {
+        font-size: var(--input-number-btn-size-lg);
+      }
+    }
+
+    input,
+    @{component}__input {
+      width: var(--input-number-width-min-lg);
+      // padding: @spacing-v-sm;
+      font-size: var(--input-number-font-size-lg);
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../variable.less";
+@import "../../mixins/index.less";
+@import "./var.less";
+
+.@{--css-prefix}-badge {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle;
+
+  /* elements */
+  &__dot {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: var(--badge-dot-size);
+    height: var(--badge-dot-size);
+    border-radius: 50%;
+    box-shadow: var(--badge-box-shadow);
+    overflow: hidden;
+    background: var(--badge-bg);
+  }
+
+  &__num {
+    position: absolute;
+    top: -(var(--badge-border-radius));
+    right: -6px;
+    z-index: 1;
+    padding: 0 @spacing-h-sm;
+    border-radius: var(--badge-border-radius) var(--badge-border-radius) var(--badge-border-radius) 0;
+    box-shadow: var(--badge-box-shadow);
+    overflow: hidden;
+    font-size: var(--badge-font-size);
+    line-height: 1.4;
+    color: var(--badge-color);
+    background: var(--badge-bg);
+    transform: translate(50%, 0);
+  }
+}
