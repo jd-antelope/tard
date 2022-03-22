@@ -5,6 +5,7 @@ import { Input, Text, View } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
 import { InputNumberProps, InputError } from './type'
+import CompContainer from '../../common/comp-container'
 
 // TODO: Check all types
 
@@ -57,6 +58,7 @@ const InputNumber: FC<InputNumberProps> = ({
   onChange = (): void => { },
   onBlur = (): void => { },
   onErrorInput = (): void => { },
+  customizeStyle,
   customStyle
 }) => {
 
@@ -149,7 +151,7 @@ const InputNumber: FC<InputNumberProps> = ({
   })
 
   return (
-    <View className={rootCls} style={customStyle}>
+    <CompContainer className={rootCls} style={customStyle} customizeStyle={customizeStyle}>
       <View
         className={minusBtnCls}
         onClick={handleClick.bind(this, 'minus')}
@@ -171,7 +173,7 @@ const InputNumber: FC<InputNumberProps> = ({
       >
         <Text className='slc-icon slc-icon-add slc-input-number__btn-add'></Text>
       </View>
-    </View>
+    </CompContainer>
   )
 }
 

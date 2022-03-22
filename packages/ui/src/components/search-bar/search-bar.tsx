@@ -5,6 +5,7 @@ import { CommonEvent } from '@tarojs/components/types/common'
 import { SearchBarProps } from './type'
 import Icon from '../icon'
 import { CssPrefix } from '../../common'
+import CompContainer from '../../common/comp-container'
 
 type ExtendEvent = {
   target: {
@@ -31,7 +32,8 @@ const SearchBar: FC<SearchBarProps> = ({
   onClear,
   showCancel,
   background,
-  className
+  className,
+  customizeStyle
 }
 ) => {
 
@@ -103,7 +105,7 @@ const SearchBar: FC<SearchBarProps> = ({
   }
 
   return (
-    <View className={rootCls} style={{ background }}>
+    <CompContainer className={rootCls} style={{ background }} customizeStyle={customizeStyle}>
       <View className={classNames(
         [`${CssPrefix}-search-bar__input-cnt}`],
         {
@@ -151,7 +153,7 @@ const SearchBar: FC<SearchBarProps> = ({
         {cancelText}
       </View>
       }
-    </View>
+    </CompContainer>
   )
 }
 

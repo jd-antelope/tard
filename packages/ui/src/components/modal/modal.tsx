@@ -9,6 +9,7 @@ import ModalContent from './content/index'
 import ModalHeader from './header/index'
 import { isWeb } from '../../common/utils'
 import { CssPrefix } from '../../common'
+import CompContainer from '../../common/comp-container'
 
 const Modal: FC<ModalProps> = ({
   isOpened = false,
@@ -21,7 +22,8 @@ const Modal: FC<ModalProps> = ({
   className,
   onClose,
   onConfirm,
-  onCancel
+  onCancel,
+  customizeStyle
 }) => {
 
   const [_isOpened, setIsOpened] = useState<boolean>(isOpened)
@@ -99,7 +101,7 @@ const Modal: FC<ModalProps> = ({
   if (title || content) {
     const isRenderAction = cancelText || confirmText
     return (
-      <View className={rootClass}>
+      <CompContainer className={rootClass} customizeStyle={customizeStyle}>
         <View
           onClick={handleClickOverlay}
           className={`${CssPrefix}-modal__overlay`}
@@ -141,7 +143,7 @@ const Modal: FC<ModalProps> = ({
           )}
           {children.ModalAction}
         </View>
-      </View>
+      </CompContainer>
     )
   }
 

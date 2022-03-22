@@ -7,11 +7,12 @@ import { ITouchEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
 import { mergeStyle } from '../../common/utils'
 import { CssPrefix } from '../../common'
+import CompContainer from '../../common/comp-container'
 // import { initTestEnv } from '../../common/utils'
 
 // initTestEnv()
 const NavBar: FC<NavBarProps> = ({
-  customStyle = '',
+  customStyle,
   className = '',
   fixed = false,
   border = true,
@@ -23,7 +24,8 @@ const NavBar: FC<NavBarProps> = ({
   rightIconType = '',
   onClickLeft = () => { },
   onClickRight = () => { },
-  children
+  children,
+  customizeStyle
 }) => {
 
   const handleClickLeftView = (event: ITouchEvent): void => {
@@ -70,7 +72,7 @@ const NavBar: FC<NavBarProps> = ({
   )
 
   return (
-    <View
+    <CompContainer
       className={classNames(
         {
           [`${CssPrefix}-nav-bar`]: true,
@@ -80,6 +82,7 @@ const NavBar: FC<NavBarProps> = ({
         className
       )}
       style={customStyle}
+      customizeStyle={customizeStyle}
     >
       <View
         className={`${CssPrefix}-nav-bar__left-view`}
@@ -130,7 +133,7 @@ const NavBar: FC<NavBarProps> = ({
           )}
         </View>
       </View>
-    </View>
+    </CompContainer>
   )
 }
 

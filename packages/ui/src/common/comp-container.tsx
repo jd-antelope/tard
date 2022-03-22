@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {CSSProperties} from 'react'
 import { View } from '@tarojs/components'
 import Taro, { eventCenter, getCurrentInstance, getEnv, ENV_TYPE } from '@tarojs/taro'
 
 type CommonProps = {
   className?: string,
-  style?: string,
+  style?: CSSProperties | string,
   customizeStyle?: string,
   [propName: string]: any
 }

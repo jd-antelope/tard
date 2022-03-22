@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+import { ComponentClass } from 'react'
 
 import CompCommon, { IconBaseProps } from '../../common/type'
 

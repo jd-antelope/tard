@@ -6,6 +6,7 @@ import { ProgressCircleProps } from './type'
 import { pxTransform } from '../../common/utils'
 import { isWeapp } from '../../common/utils'
 import { CssPrefix } from '../../common'
+import CompContainer from '../../common/comp-container'
 
 const ProgressCircle: FC<ProgressCircleProps> = ({
   percent = 0,
@@ -13,7 +14,8 @@ const ProgressCircle: FC<ProgressCircleProps> = ({
   strokeWidth = 4,
   layerColor = '#EFEFEF',
   color = '#DC8D20',
-  text
+  text,
+  customizeStyle
 }
 ) => {
 
@@ -42,7 +44,11 @@ const ProgressCircle: FC<ProgressCircleProps> = ({
   }
 
   return (
-    <View className={`${CssPrefix}circle`} style={`width:${!isWeapp ? pxTransform(size) : pxTransformRem(size)}; height:${!isWeapp ? pxTransform(size) : pxTransformRem(size)}`}>
+    <CompContainer
+      className={`${CssPrefix}circle`}
+      customizeStyle={customizeStyle}
+      style={`width:${!isWeapp ? pxTransform(size) : pxTransformRem(size)}; height:${!isWeapp ? pxTransform(size) : pxTransformRem(size)}`}
+    >
 
       {!isWeapp
         ? <svg style={svgStyle}>
@@ -75,7 +81,7 @@ const ProgressCircle: FC<ProgressCircleProps> = ({
       }
       <Text className={`${CssPrefix}circle-text`}>{text}</Text>
 
-    </View>
+    </CompContainer>
   )
 }
 
