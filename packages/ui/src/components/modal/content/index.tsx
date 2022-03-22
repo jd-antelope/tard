@@ -6,7 +6,7 @@ import { ModalContentProps } from '../type'
 import { CssPrefix } from '../../../common'
 
 const ModalContent: FC<ModalContentProps> = ({ children, className }) => {
-  const displayName = 'ModalContent';
+  // const displayName = 'ModalContent';
 
   const rootClass = classNames(`${CssPrefix}-modal__content`, className)
   return (

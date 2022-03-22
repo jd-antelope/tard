@@ -3,7 +3,7 @@ import React, { useState, FC } from 'react'
 import { Button, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { ModalProps } from './type'
-import { handleTouchScroll } from '../../common/utils'
+// import { handleTouchScroll } from '../../common/utils'
 import ModalAction from './action/index'
 import ModalContent from './content/index'
 import ModalHeader from './header/index'
@@ -20,26 +20,26 @@ const Modal: FC<ModalProps> = ({
   cancelText,
   confirmText,
   className,
-  onClose,
+  // onClose,
   onConfirm,
   onCancel,
   customizeStyle
 }) => {
 
   const [_isOpened, setIsOpened] = useState<boolean>(isOpened)
-  const [isWEB, setIsWEB] = useState<boolean>(isWeb)
+  const [isWEB] = useState<boolean>(isWeb)
 
-  const UNSAFE_componentWillReceiveProps = (nextProps: ModalProps): void => {
-    const { isOpened } = nextProps
+  // const UNSAFE_componentWillReceiveProps = (nextProps: ModalProps): void => {
+  //   const { isOpened } = nextProps
 
-    if (isOpened !== isOpened) {
-      handleTouchScroll(isOpened)
-    }
+  //   if (isOpened !== isOpened) {
+  //     handleTouchScroll(isOpened)
+  //   }
 
-    if (isOpened !== _isOpened) {
-      setIsOpened(isOpened)
-    }
-  }
+  //   if (isOpened !== _isOpened) {
+  //     setIsOpened(isOpened)
+  //   }
+  // }
 
   const handleClickOverlay = (): void => {
     if (closeOnClickOverlay) {
@@ -53,12 +53,12 @@ const Modal: FC<ModalProps> = ({
     }
   }
 
-  const handleClose = (event?: CommonEvent): void => {
-    if (typeof onClose === 'function') {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      onClose(event!)
-    }
-  }
+  // const handleClose = (event?: CommonEvent): void => {
+  //   if (typeof onClose === 'function') {
+  //     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  //     onClose(event!)
+  //   }
+  // }
 
   const handleCancel = (event: CommonEvent): void => {
     if (typeof onCancel === 'function') {

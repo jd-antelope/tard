@@ -3,8 +3,7 @@ import classNames from 'classnames'
 import _toString from 'lodash/toString'
 import { Input, Text, View } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
-import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
-import { InputNumberProps, InputError } from './type'
+import { InputNumberProps } from './type'
 import CompContainer from '../../common/comp-container'
 
 // TODO: Check all types
@@ -38,12 +37,6 @@ function parseValue(num: string): string {
   return _toString(num)
 }
 
-type ExtendEvent = {
-  target: {
-    value: string | number
-  }
-}
-
 const InputNumber: FC<InputNumberProps> = ({
   className,
   disabled = false,
@@ -62,7 +55,7 @@ const InputNumber: FC<InputNumberProps> = ({
   customStyle
 }) => {
 
-  const handleClick = (clickType: 'minus' | 'plus', e: CommonEvent): void => {
+  const handleClick = (clickType: 'minus' | 'plus'): void => {
     const lowThanMin = clickType === 'minus' && value <= min
     const overThanMax = clickType === 'plus' && value >= max
     if (lowThanMin || overThanMax || disabled) {
@@ -113,7 +106,7 @@ const InputNumber: FC<InputNumberProps> = ({
     return resultValue
   }
 
-  const handleInput = (e: CommonEvent & ExtendEvent): string => {
+  const handleInput = (e): string => {
     const { value } = e.target
     if (disabled) return ''
 
@@ -122,10 +115,10 @@ const InputNumber: FC<InputNumberProps> = ({
     return newValue
   }
 
-  const handleBlur = (event: ITouchEvent): void =>
+  const handleBlur = (event): void =>
     onBlur && onBlur(event)
 
-  const handleError = (errorValue: InputError): void => {
+  const handleError = (errorValue): void => {
     if (!onErrorInput) {
       return
     }

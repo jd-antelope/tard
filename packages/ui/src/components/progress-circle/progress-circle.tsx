@@ -1,7 +1,7 @@
 
 import React, { FC } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { Text } from '@tarojs/components'
 import { ProgressCircleProps } from './type'
 import { pxTransform } from '../../common/utils'
 import { isWeapp } from '../../common/utils'

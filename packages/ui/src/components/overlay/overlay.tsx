@@ -1,6 +1,5 @@
 
 import React, { FC } from 'react'
-import { View } from '@tarojs/components'
 import { OverlayProps } from './type'
 import { CssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'

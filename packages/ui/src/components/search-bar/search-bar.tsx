@@ -7,12 +7,6 @@ import Icon from '../icon'
 import { CssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
 
-type ExtendEvent = {
-  target: {
-    value: string
-  }
-}
-
 const SearchBar: FC<SearchBarProps> = ({
   value = '',
   placeholder = '搜索',
@@ -49,7 +43,7 @@ const SearchBar: FC<SearchBarProps> = ({
     onBlur && onBlur(event)
   }
 
-  const handleChange = (e: CommonEvent & ExtendEvent): void => {
+  const handleChange = (e): void => {
     onChange(e.target.value, e)
   }
 

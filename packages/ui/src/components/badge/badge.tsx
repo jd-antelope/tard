@@ -12,7 +12,8 @@ const Badge: FC<BadgeProps> = ({
   className,
   color,
   content,
-  children
+  children,
+  customizeStyle
 }) => {
   const formatValue = (
     value: string | number | undefined,
@@ -34,6 +35,7 @@ const Badge: FC<BadgeProps> = ({
   return (
     <CompContainer
       className={classNames(rootClassName, className)}
+      customizeStyle={customizeStyle}
     >
       {children}
       {
