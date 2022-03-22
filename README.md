@@ -67,4 +67,11 @@ docs(md) core @yue
 ## 2022-03-07
 1. 组件库分工（10个）：
    button cell icon price toast form field dropdownMenu modal overlay ConfigProvider(全局)
-2. 
+
+
+## 2022-02-22
+1. 组件库剩余 cell uploader tab canvas footerbutton datatimepicker progress
+2. demo和docs联通
+3. 文档使用需求改一下
+4. 代码review
+
