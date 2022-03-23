@@ -86,7 +86,7 @@ const NavBar: FC<NavBarProps> = ({
     >
       <View
         className={`${CssPrefix}-nav-bar__left-view`}
-        onClick={handleClickLeftView.bind(this)}
+        onClick={handleClickLeftView}
         style={linkStyle}
       >
         {leftIcon && leftIconType && (
@@ -115,7 +115,7 @@ const NavBar: FC<NavBarProps> = ({
             [`${CssPrefix}-nav-bar__container--hide`]: !rightIconType
           })}
           style={linkStyle}
-          onClick={handleClickRightIcon.bind(this)}
+          onClick={handleClickRightIcon}
         >
           {rightIconType && (
             <Text

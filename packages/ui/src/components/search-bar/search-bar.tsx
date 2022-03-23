@@ -72,8 +72,10 @@ const SearchBar: FC<SearchBarProps> = ({
     },
     className
   )
-  const placeholderWrapStyle: React.CSSProperties = {}
-  const actionStyle: React.CSSProperties = {}
+  const placeholderWrapStyle: any = {}
+  const actionStyle: any = {
+    opacity: 0
+  }
 
   if (showCancel) {
     actionStyle.opacity = 1
@@ -91,8 +93,8 @@ const SearchBar: FC<SearchBarProps> = ({
     if (inputAlign === 'center') placeholderWrapStyle.flexGrow = 1
   }
 
-  const clearIconStyle: React.CSSProperties = { display: 'flex' }
-  const placeholderStyle: React.CSSProperties = { visibility: 'hidden' }
+  const clearIconStyle: any = { display: 'flex' }
+  const placeholderStyle: any = { visibility: 'hidden' }
   if (!value.length) {
     clearIconStyle.display = 'none'
     placeholderStyle.visibility = 'visible'

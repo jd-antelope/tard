@@ -1,11 +1,10 @@
 import React, { memo, useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlNavBar, SlToast } from 'tard'
-import DocsHeader from '../../components/doc-header'
-import './index.less';
+import { NavBar, Toast } from 'haw-ui-test'
+import DocsHeader from '../../components/doc-header/index'
 
-const NavBar: FC = () => {
+const NavBarPage: FC = () => {
   const [toast, setToast] = useState(false);
   const [toast1, setToast1] = useState(false);
 
@@ -22,23 +21,23 @@ const NavBar: FC = () => {
       <DocsHeader title='NavBar'></DocsHeader>
       <View className='doc-body'>
 
-        <SlToast
+        <Toast
           visible={toast}
           text='点击左侧事件'
           onClose={() => setToast(false)}
         />
 
-        <SlToast
+        <Toast
           visible={toast1}
           text='点击右侧事件'
           onClose={() => setToast1(false)}
         />
 
         <View className='doc-body-content-tip'>基本用法</View>
-        <SlNavBar title="标题" />
+        <NavBar title="标题" />
 
         <View className='doc-body-content-tip'>返回上级</View>
-        <SlNavBar
+        <NavBar
           title="标题"
           leftIcon
           leftText='返回'
@@ -46,7 +45,7 @@ const NavBar: FC = () => {
         />
 
         <View className='doc-body-content-tip'>自定义左侧图标</View>
-        <SlNavBar title="标题"
+        <NavBar title="标题"
           leftIcon
           leftText='返回'
           leftIconType='arrow-left'
@@ -54,7 +53,7 @@ const NavBar: FC = () => {
         />
 
         <View className='doc-body-content-tip'>自定义链接颜色</View>
-        <SlNavBar title="标题"
+        <NavBar title="标题"
           leftIcon
           leftText='返回'
           color="#1989fa"
@@ -62,7 +61,7 @@ const NavBar: FC = () => {
         />
 
         <View className='doc-body-content-tip'>自定义右侧图标</View>
-        <SlNavBar title="标题"
+        <NavBar title="标题"
           leftIcon
           leftText='返回'
           rightIconType='search'
@@ -74,4 +73,4 @@ const NavBar: FC = () => {
   );
 };
 
-export default memo(NavBar);
+export default memo(NavBarPage);

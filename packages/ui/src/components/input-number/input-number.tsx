@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import classNames from 'classnames'
-import _toString from 'lodash/toString'
 import { Input, Text, View } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
 import { InputNumberProps } from './type'
@@ -12,12 +11,12 @@ import CompContainer from '../../common/comp-container'
 function addNum(num1: number, num2: number): number {
   let sq1: number, sq2: number
   try {
-    sq1 = _toString(num1).split('.')[1].length
+    sq1 = String(num1).split('.')[1].length
   } catch (e) {
     sq1 = 0
   }
   try {
-    sq2 = _toString(num2).split('.')[1].length
+    sq2 = String(num2).split('.')[1].length
   } catch (e) {
     sq2 = 0
   }
@@ -29,12 +28,12 @@ function addNum(num1: number, num2: number): number {
 function parseValue(num: string): string {
   if (num === '') return '0'
 
-  const numStr = _toString(num)
+  const numStr = String(num)
   if (numStr.indexOf('0') === 0 && numStr.indexOf('.') === -1) {
     // 处理01变成1,并且不处理1.
-    return _toString(parseFloat(num))
+    return String(parseFloat(num))
   }
-  return _toString(num)
+  return String(num)
 }
 
 const InputNumber: FC<InputNumberProps> = ({
@@ -147,7 +146,7 @@ const InputNumber: FC<InputNumberProps> = ({
     <CompContainer className={rootCls} style={customStyle} customizeStyle={customizeStyle}>
       <View
         className={minusBtnCls}
-        onClick={handleClick.bind(this, 'minus')}
+        onClick={() => handleClick('minus')}
       >
         <Text className='slc-icon slc-icon-subtract slc-input-number__btn-subtract'></Text>
       </View>
@@ -162,7 +161,7 @@ const InputNumber: FC<InputNumberProps> = ({
       />
       <View
         className={plusBtnCls}
-        onClick={handleClick.bind(this, 'plus')}
+        onClick={() => handleClick('plus')}
       >
         <Text className='slc-icon slc-icon-add slc-input-number__btn-add'></Text>
       </View>

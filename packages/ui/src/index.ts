@@ -16,9 +16,16 @@ import Empty from './components/empty'
 import Skeleton from './components/skeleton'
 import TagPrice from './components/tag-price'
 import Grid from './components/grid'
+import Badge from './components/badge'
+import InputNumber from './components/input-number'
+import Modal from './components/modal'
+import NavBar from './components/nav-bar'
+import Overlay from './components/overlay'
+import SearchBar from './components/search-bar'
 
 export { 
   Button, DropdownMenu, ConfigProvider, Icon, Image, 
   Price, Toast, Loading, Form, Field, Rate, Switch,
-  Popup, Sort, Empty, Skeleton, TagPrice, Grid
+  Popup, Sort, Empty, Skeleton, TagPrice, Grid, Badge,
+  InputNumber, Modal, NavBar, Overlay, SearchBar
 }

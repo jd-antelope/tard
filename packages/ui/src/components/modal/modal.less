@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: @zindex-modal;
+  z-index: var(--modal-zindex);
   width: 100%;
   height: 100%;
   transition: visibility var(--modal-duration ease-in);
@@ -32,16 +32,16 @@
   &__container {
     .mixin-absolute-center();
     width: var(--modal-width);
-    border-radius: @border-radius-lg;
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
     background-color: var(--modal-bg-color);
   }
 
   &__header {
-    .mixin-hairline-bottom-relative(@color: @color-grey-4);
+    .mixin-hairline-bottom-relative(@color: var(--color-grey-3));
     .line(1);
-    padding: @spacing-v-md @spacing-h-lg;
-    font-size: @font-size-lg;
+    padding: var(--spacing-v-md) var(--spacing-h-lg);
+    font-size: var(--font-size-lg);
     color: var(--modal-header-text-color);
     text-align: center;
   }
@@ -50,13 +50,13 @@
     box-sizing: content-box;
     width: auto;
     max-height: 840px;
-    padding: @spacing-h-xl @spacing-h-lg;
-    font-size: @font-size-base;
+    padding: var(--spacing-h-xl) var(--spacing-h-lg);
+    font-size: var(--font-size-base);
     color: var(--modal-content-text-color);
   }
 
   &__footer {
-    .mixin-hairline-top-relative(@color: @color-grey-4);
+    .mixin-hairline-top-relative(@color: var(--color-grey-3));
 
     .@{--css-prefix}-modal__action {
       .mixin-display-flex;
@@ -72,7 +72,7 @@
         border: 0;
         border-radius: 0;
         outline: 0;
-        font-size: @font-size-base;
+        font-size: var(--font-size-base);
         line-height: 86px;
         color: var(--modal-btn-default-color);
         background-color: transparent;
@@ -85,7 +85,7 @@
         }
 
         &:not(:first-child) {
-          .mixin-hairline-left-relative(@color: @color-grey-4);
+          .mixin-hairline-left-relative(@color: var(--color-grey-3));
         }
 
         &:last-child {

@@ -48,10 +48,22 @@ const writeDemoFile = (res) => {
   })
 }
 
+
+function mkdirsSync(dirname) {
+  if (fs.existsSync(dirname)) {
+    return true;
+  } else {
+    if (mkdirsSync(path.dirname(dirname))) {
+      fs.mkdirSync(dirname);
+      return true;
+    }
+  }
+}
+
 const start = () => {
   const list = getDemoPath();
   const check = fs.existsSync(`${cwd}/${staticLink}`)
-  if (!check) fs.mkdirSync(`${cwd}/${staticLink}`)
+  if (!check) fs.mkdirsSync(`${cwd}/${staticLink}`)
   list.map(v => writeDemoFile(v))
 }
 
