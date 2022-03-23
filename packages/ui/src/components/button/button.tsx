@@ -111,11 +111,13 @@ const CButton: FC<CButtonProps> = (props) => {
     selfColor.color = '#fff'
     selfColor.border = 'none'
   }
+  const borderColorObj = selfColor.borderColor ? { 'border-color': selfColor.borderColor } : {}
+  const background = selfColor.fillColor ? { 'background': selfColor.fillColor } : {}
   const style = (objectToString(Object.assign(customStyle, {
     'border-radius': pxTransform(radius),
     'color': selfColor.color,
-    'border-color': selfColor.borderColor,
-    'background': selfColor.fillColor,
+    ...borderColorObj,
+    ...background,
   })))
   const webButton = (
     <Button

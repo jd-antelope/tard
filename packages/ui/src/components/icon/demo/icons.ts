@@ -3,7 +3,8 @@ export default {
       'search',
       'loading',
       'loading-ios',
-      'loading-size'
+      'loading-size',
+      'close'
     ],
     'arrow': [
       'chevron-up',

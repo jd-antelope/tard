@@ -22,10 +22,11 @@ import Modal from './components/modal'
 import NavBar from './components/nav-bar'
 import Overlay from './components/overlay'
 import SearchBar from './components/search-bar'
+import Canvas from './components/canvas'
 
 export { 
   Button, DropdownMenu, ConfigProvider, Icon, Image, 
   Price, Toast, Loading, Form, Field, Rate, Switch,
   Popup, Sort, Empty, Skeleton, TagPrice, Grid, Badge,
-  InputNumber, Modal, NavBar, Overlay, SearchBar
+  InputNumber, Modal, NavBar, Overlay, SearchBar, Canvas
 }

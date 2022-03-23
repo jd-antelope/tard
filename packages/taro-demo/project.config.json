@@ -2,7 +2,7 @@
     "miniprogramRoot": "dist/",
     "projectname": "taro-demo",
     "description": "taro-demo",
-    "appid": "wx0e62389d12ae420f",
+    "appid": "wxa5a8b9181b943192",
     "setting": {
         "urlCheck": true,
         "es6": false,
@@ -38,7 +38,8 @@
         "disableUseStrict": false,
         "showES6CompileOption": false,
         "useCompilerPlugins": false,
-        "ignoreUploadUnusedFiles": true
+        "ignoreUploadUnusedFiles": true,
+        "minifyWXML": true
     },
     "compileType": "miniprogram",
     "condition": {}
