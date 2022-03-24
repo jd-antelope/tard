@@ -1,32 +1,31 @@
-
 # Image 图片
 ### 介绍
 该标签在 Taro 的 Image 标签上面增加了错误处理、加载动画等属性
 ### 引入
 ```js
-import { SlImage } from 'tard'
+import { Image } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
 ```js
-<SlImage className="base-image" src="https://storage.360buyimg.com/hawley-common/selling-logo.png" />
+<Image className="base-image" src="https://storage.360buyimg.com/hawley-common/selling-logo.png" />
 ```
 
 ### 形状图片
 通过 `round` 属性可以设置图片变圆, 修改属性 `radius` 属性可以改变圆角大小
 ```js
-<SlImage className="base-image doc-body-content__pr" src={ src } round />
-<SlImage className="base-image doc-body-content__pr" src={ src } radius={ 16 } />
+<Image className="base-image doc-body-content__pr" src={ src } round />
+<Image className="base-image doc-body-content__pr" src={ src } radius={ 16 } />
 ```
 
 ### 加载中提示
 添加属性`showLoading`可增加图片加载提示, 增加属性 `loadingContent` 自定义加载加载提示
 ```js
-<SlImage
+<Image
   src=""
   showLoading
 />
-<SlImage 
+<Image 
   src=""
   showLoading
   loadingContent={ <Icon value='loading-2' size={20} /> } 
@@ -36,7 +35,7 @@ import { SlImage } from 'tard'
 ### 加载失败提示
 传入的图片找不到或者加载不出来就会显示默认图片, 增加属性 `errorContent` 自定义加载加载提示
 ```js
-<SlImage 
+<Image 
   src="" 
   errorContent={ <View>加载失败</View> } 
 />

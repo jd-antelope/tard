@@ -5,12 +5,12 @@
 ### 引入
 在 Taro 文件中引入组件
 ```js
-import { SlDatetimePicker } from 'tard'
+import { DatetimePicker } from 'tard'
 ```
 ## 代码演示
 ### 选择日期
 ```js
-<SlDatetimePicker 
+<DatetimePicker 
   visible
   onClose={ () => {} }
 />
@@ -19,7 +19,7 @@ import { SlDatetimePicker } from 'tard'
 ### 选择时间
 属性 `type=time` 时换成时间选择器
 ```js
-<SlDatetimePicker 
+<DatetimePicker 
   visible
   value='2020-09-09'
   type='time'
@@ -30,7 +30,7 @@ import { SlDatetimePicker } from 'tard'
 ### 选择日期时间
 属性 `type=datetime` 时换成日期时间选择器
 ```js
-<SlDatetimePicker  
+<DatetimePicker  
   visible
   value='2020-09-09 10:20'
   type='time'
@@ -41,7 +41,7 @@ import { SlDatetimePicker } from 'tard'
 ### 选择开始-结束时间
 属性 `showEndDate` 显示结束时间
 ```js
-<SlDatetimePicker 
+<DatetimePicker 
   showEndDate
   visible
   onClose={ () => {} } 
@@ -51,7 +51,7 @@ import { SlDatetimePicker } from 'tard'
 ### 自定义内容
 修改属性 `title、endTitle` 时可修改开始选择器头部名称
 ```js
-<SlDatetimePicker 
+<DatetimePicker 
   title="自定义开始"
   endTitle="自定义结束" 
   visible
@@ -62,7 +62,7 @@ import { SlDatetimePicker } from 'tard'
 ### 倒角用法
 添加属性 `round` 增加头部倒角
 ```js
-<SlDatetimePicker 
+<DatetimePicker 
   round
   visible
   onClose={ () => {} } 
@@ -89,3 +89,12 @@ import { SlDatetimePicker } from 'tard'
 |  ----  | ----  | ---- |
 | onClose | 关闭回调 | - |
 | onOk | 确认回调 | array['1990-1-1','2021-1-1'] |
+
+### 样式变量
+|  属性   | 默认值 |
+|  ----  | ---- |
+|  --datetime-picker-font-size  |  28px  |
+|  --datetime-picker-btn-font-size  |  32px  |
+|  --datetime-picker-default-font-color  |  var(--color-grey-0)  |
+|  --datetime-picker-gray-font-color  |  var(--color-grey-1)  |
+|  --datetime-picker-mask-index  |  1  |

@@ -25,6 +25,10 @@ import TagPrice from '@ui/tag-price/README.zh-CN.md?raw'
 import NavBar from '@ui/nav-bar/README.zh-CN.md?raw'
 import Tab from '@ui/tab/README.zh-CN.md?raw'
 import FooterButton from '@ui/footer-button/README.zh-CN.md?raw'
+import Icon from '@ui/icon/README.zh-CN.md?raw'
+import Image from '@ui/image/README.zh-CN.md?raw'
+import Price from '@ui/price/README.zh-CN.md?raw'
+import Toast from '@ui/toast/README.zh-CN.md?raw'
 
 const routes = [{
   nameEn: 'Basic Components',
@@ -43,19 +47,23 @@ const routes = [{
   }, {
     name: '图标',
     nameEn: 'Icon',
-    path: '/icon'
+    path: '/icon',
+    component: Icon
   }, {
     name: '图片',
     nameEn: 'Image',
-    path: '/image'
+    path: '/image',
+    component: Image
   }, {
     name: '价格',
     nameEn: 'Price',
-    path: '/price'
+    path: '/price',
+    component: Price
   }, {
     name: '轻提示',
     nameEn: 'Toast',
-    path: '/toast'
+    path: '/toast',
+    component: Toast
   }]
 }, {
   nameEn: 'Form Components',

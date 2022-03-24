@@ -45,7 +45,7 @@ export interface UploaderProps extends CompCommon {
    */
   length?: number
   /**
-   * 
+   * 一行显示最大值
    * @default 3
    */
   maxCount?: number

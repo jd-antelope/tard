@@ -10,7 +10,7 @@ export interface SwitchProps extends CompCommon {
    */
   bgColor?: string
   /**
-   * 背景颜色
+   * 背景选中颜色
    */
   activeColor?: string
   /**
@@ -29,7 +29,7 @@ export interface SwitchProps extends CompCommon {
    */
   bgWidth?: number
   /**
-   * 按钮宽度
+   * 按钮大小
    * @default 44
    */
   btnSize?: number

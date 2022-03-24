@@ -3,73 +3,73 @@
 该组件封装了业务中常用的价格用法，默认保留有效小数点2位，小数点后几位0直接抹去
 ### 引入
 ```js
-import { SlPrice } from 'tard'
+import { Price } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
 ```js
-<SlPrice price="88.00" />
+<Price price="88.00" />
 ```
 
 ### 小数位位数
 修改 `fixedNum` 属性保留小数点几位，支持 1-100 的整数
 ```js
-<SlPrice price="88.00" fixedNum={ 0 } />
-<SlPrice price="88.80" fixedNum={ 1 } />
-<SlPrice price="88.88" fixedNum={ 2 } />
+<Price price="88.00" fixedNum={ 0 } />
+<Price price="88.80" fixedNum={ 1 } />
+<Price price="88.88" fixedNum={ 2 } />
 ```
 ### 价格区间
 `price` 价格区间, 增加属性 `showAfterSymbol` 展示后面单位
 ```js
-<SlPrice price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } />
-<SlPrice price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } showAfterSymbol />
+<Price price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } />
+<Price price={ ['88.00', '99.00', '188.00'] } fixedNum={ 2 } showAfterSymbol />
 ```
 
 ### 自定义颜色
 修改 `color` 属性修改颜色
 ```js
-<SlPrice price="88.00" color="green" />
-<SlPrice price="88.00" color="#496FF2" />
+<Price price="88.00" color="green" />
+<Price price="88.00" color="#496FF2" />
 ```
 
 ### 划线价
 添加 `originalPrice` 属性可以展示原价
 ```js
-<SlPrice price="88.00" originPrice="188.00" fixedNum={ 2 } />
+<Price price="88.00" originPrice="188.00" fixedNum={ 2 } />
 ```
 
 ### 自定义价格前内容
 修改 `beforeContent` 属性，配置价格后面的内容
 ```js
-<SlPrice price="88.00" beforeContent={ <View>优惠价</View> } />
+<Price price="88.00" beforeContent={ <View>优惠价</View> } />
 ```
 
 ### 自定义价格后内容
 修改 `afterContent` 属性，配置价格后面的内容
 ```js
-<SlPrice price="88.00" afterContent={ <View>优惠价</View> } />
+<Price price="88.00" afterContent={ <View>优惠价</View> } />
 ```
 
 ### 修改单位
 修改 `priceUnit` 属性，可以修改价格的单位
 ```js
-<SlPrice price="88.00" priceUnit="$" />
+<Price price="88.00" priceUnit="$" />
 ```
 
 ### 千分号形式显示
 增加 `thousands` 属性，按照千分号形式显示
 ```js
-<SlPrice price="883888888.00" thousands />
+<Price price="883888888.00" thousands />
 ```
 
 ### 单位价格大小对比
 修改 `type` 属性，可以修改价格类型，目前有五种类型供大家选择
 ```js
-<SlPrice price="88.00" type="small" />
-<SlPrice price="88.00" type="smallMiddle" />
-<SlPrice price="88.00" type="middle" />
-<SlPrice price="88.00" type="largeMiddle" />
-<SlPrice price="88.00" type="large" />
+<Price price="88.00" type="small" />
+<Price price="88.00" type="smallMiddle" />
+<Price price="88.00" type="middle" />
+<Price price="88.00" type="largeMiddle" />
+<Price price="88.00" type="large" />
 ```
 
 ## API
@@ -104,6 +104,8 @@ import { SlPrice } from 'tard'
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @price-line-horizontal-padding | 12px |
-|  @price-font-size-lg | 60px |
-|  @price-font-size-ml | 48px |
+|  --price-height | 50px |
+|  --price-commission-height | 30px |
+|  --price-line-horizontal-padding | var(--spacing-v-sm) |
+|  --price-font-size-lg | 60px |
+|  --price-font-size-ml | 48px |

@@ -3,13 +3,13 @@
 用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。2.5 版本开始支持此组件。
 ### 引入
 ```js
-import { SlForm } from 'tard'
+import { Form } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
 ```js
 const [form, setForm] = useState({
-  shopName: ''
+  shopName |  ''
 })
 
 const onSubmit = (event) => {
@@ -24,16 +24,16 @@ const change = (res) => {
 }
 return (
   <View className="container">
-    <SlForm onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit}>
       <SlField
         name='name' 
         label='账号' 
         type='text' 
         placeholder='请输入账号' 
         value={form.name} 
-        onChange={(e) => change({ name: e })} 
+        onChange={(e) => change({ name |  e })} 
       />
-    </SlForm>
+    </Form>
     <SlButton formType='submit'>提交</SlButton>
   </View>
 );
@@ -42,9 +42,9 @@ return (
 ### 卡片用法
 增加属性 `round` 添加卡片用法
 ```js
-<SlForm onSubmit={onSubmit} round>
+<Form onSubmit={onSubmit} round>
   ...
-</SlForm>
+</Form>
 ```
 
 ## API
@@ -60,3 +60,10 @@ return (
 |  ----  | ----  | ---- |
 | onSubmit | 携带form中的数据触发submit事件，由于小程序组件化的限制，onSubmit事件获得的event中的event.detail.value始终为空对象，开发者要获取数据，可以自行在页面的state中获取 | event |
 | onReset | 表单重置时会触发reset事件 | event |
+
+### 样式变量
+|  属性   | 默认值 |
+|  ----  | ---- |
+|  --form-round |  16px |
+|  --form-round-bg |  var(--color-white) |
+|  --form-bg-color |  transparent |

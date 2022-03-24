@@ -3,66 +3,66 @@
 表单中的输入框组件。
 ### 引入
 ```js
-import { SlField } from 'tard'
+import { Field } from 'tard'
 ```
 ## 代码演示
 ### 基本用法
 ```js
-<SlField
+<Field
   name='shopName' 
   label='商品名称' 
   type='text' 
   placeholder='单行文本' 
   value={form.shopName} 
-  onChange={(e) => change({ shopName: e })} 
+  onChange={(e) => change({ shopName |  e })} 
 />
 ```
 
 ### 必填
 修改 `required` 属性显示必填标识 *
 ```js
-<SlField
+<Field
   name='shopName' 
   label='图片描述' 
   type='text' 
   placeholder='单行文本' 
   value={form.value} 
   required
-  onChange={(e) => change({ imgDes: e })} 
+  onChange={(e) => change({ imgDes |  e })} 
 />
 ```
 
 ### 边框
 属性 `border` 为 false 时就能去掉元素边框
 ```js
-<SlField
+<Field
   name='shopName' 
   label='商品名称' 
   border={ false }
   type='text' 
   placeholder='单行文本' 
   value={form.shopName} 
-  onChange={(e) => change({ shopName: e })} 
+  onChange={(e) => change({ shopName |  e })} 
 />
 ```
 
 ### 只读
 添加属性 `readonly` 不能修改元素
 ```js
-<SlField
+<Field
   name='shopName' 
   label='图片描述' 
   type='text'
   value='信息'
   readonly
-  onChange={(e) => change({ imgDes: e })} 
+  onChange={(e) => change({ imgDes |  e })} 
 />
 ```
 
 ### 内容区域文字颜色
 修改属性 `contentColor` 可以修改中间区域文字颜色
 ```js
-<SlField
+<Field
   name='shopName' 
   label='图片描述' 
   value='value2'
@@ -74,21 +74,21 @@ import { SlField } from 'tard'
 ### 自定义跳转内容
 修改属性 `linkSlot` 可以自定义右侧跳转内容
 ```js
-<SlField
+<Field
   name='shopName' 
   label='图片描述' 
   value='信息'
   isLink
   linkSlot={'自定义'}
   readonly
-  onChange={(e) => change({ imgDes: e })} 
+  onChange={(e) => change({ imgDes |  e })} 
 />
 ```
 
 ### 左侧文本额外类名
 添加 `labelClass` 属性可以自定义左侧 class 名
 ```js
-<SlField
+<Field
   name='shopName' 
   label='图片描述' 
   value='信息'
@@ -96,14 +96,14 @@ import { SlField } from 'tard'
   linkSlot={'自定义'}
   readonly
   labelClass="label-custom"
-  onChange={(e) => change({ imgDes: e })} 
+  onChange={(e) => change({ imgDes |  e })} 
 />
 ```
 
 ### 左侧文本宽度
 修改属性 `labelWidth` 可以控制左侧宽度
 ```js
-<SlField
+<Field
   name='shopName' 
   label='图' 
   value='信息'
@@ -111,14 +111,14 @@ import { SlField } from 'tard'
   linkSlot={'自定义'}
   readonly
   labelWidth={ 50 }
-  onChange={(e) => change({ imgDes: e })} 
+  onChange={(e) => change({ imgDes |  e })} 
 />
 ```
 
 ### 左侧文本对齐方式
 修改属性 `labelAlign` 可以控制左侧对齐方式
 ```js
-<SlField
+<Field
   name='shopName' 
   label='图' 
   value='信息'
@@ -126,14 +126,14 @@ import { SlField } from 'tard'
   linkSlot={'自定义'}
   readonly
   labelAlign='right'
-  onChange={(e) => change({ imgDes: e })} 
+  onChange={(e) => change({ imgDes |  e })} 
 />
 ```
 
 ### 多行输入框
 当属性 `type` 为 `textarea` 时 可以切换到多行文本框
 ```js
-<SlField
+<Field
   name='shopName' 
   type='textarea'
   label='图片' 
@@ -145,7 +145,7 @@ import { SlField } from 'tard'
 ### 无标题
 属性 `title` 不写时可以去掉左侧内容
 ```js
-<SlField
+<Field
   name='shopName' 
   type='textarea'
   value='信息'
@@ -192,3 +192,15 @@ import { SlField } from 'tard'
 | onClick | 当editable为false时，点击组件触发的事件，v2.3.3版本可以获取event参数 | event |
 | onErrorClick | 点击错误按钮触发的事件，v2.3.3版本可以获取event参数 | event |
 | onLink | 点击右侧箭头 | - |
+
+
+### 样式变量
+|  属性   | 默认值 |
+|  ----  | ---- |
+|  --field-label-color |  var(--color-text-base) |
+|  --field-text-color |  var(--color-text-base) |
+|  --field-font-size |  var(--font-size-base) |
+|  --field-placeholder-color |  var(--color-grey-2) |
+|  --field-label-h |  60px |
+|  --field-padding-x |  20px |
+|  --field-zindex |  700 |
