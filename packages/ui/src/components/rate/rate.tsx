@@ -6,6 +6,7 @@ import { CommonEvent } from '@tarojs/components/types/common'
 import { RateProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
+import { CssPrefix } from '../../common'
 
 const Rate: FC<RateProps> = ({ 
   customStyle = '',
@@ -38,7 +39,7 @@ const Rate: FC<RateProps> = ({
     color: activeColor
   }
   
-  const rootClassName = ['slc-rate']
+  const rootClassName = [`${CssPrefix}-rate`]
   
   // 生成星星颜色 className 数组，方便在jsx中直接map
   const classNameArr: string[] = []
@@ -46,11 +47,11 @@ const Rate: FC<RateProps> = ({
   const ceilValue = Math.ceil(value)
   for (let i = 0; i < max; i++) {
     if (floorValue > i) {
-      classNameArr.push('slc-rate__icon slc-rate__icon--on')
+      classNameArr.push(`${CssPrefix}-rate__icon ${CssPrefix}-rate__icon--on`)
     } else if (ceilValue - 1 === i) {
-      classNameArr.push('slc-rate__icon slc-rate__icon--half')
+      classNameArr.push(`${CssPrefix}-rate__icon ${CssPrefix}-rate__icon--half`)
     } else {
-      classNameArr.push('slc-rate__icon slc-rate__icon--off')
+      classNameArr.push(`${CssPrefix}-rate__icon ${CssPrefix}-rate__icon--off`)
     }
   }
 
@@ -60,17 +61,17 @@ const Rate: FC<RateProps> = ({
         {classNameArr.map((cls, i) => (
           <View
             className={cls}
-            key={`slc-rate-star-${i}`}
+            key={`${CssPrefix}-rate-star-${i}`}
             style={ iconStyle }
             onClick={(e) => handleClick(e, i + 1)}
           >
             <Text
-              className='slc-icon slc-icon-star'
+              className={ `${CssPrefix}-icon ${CssPrefix}-icon-star` }
               style={isActiveRate(cls, 'on') ? Object.assign(activeIconStyle, starIconStyle) : starIconStyle}
             ></Text>
-            <View className='slc-rate__left' style={isActiveRate(cls, 'half') ? activeIconStyle : {}}>
+            <View className={ `${CssPrefix}-rate__left` } style={isActiveRate(cls, 'half') ? activeIconStyle : {}}>
               <Text
-                className='slc-icon slc-icon-star'
+                className={ `${CssPrefix}-icon ${CssPrefix}-icon-star` }
                 style={starIconStyle}
               ></Text>
             </View>

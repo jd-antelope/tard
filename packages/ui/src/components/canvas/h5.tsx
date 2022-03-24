@@ -7,6 +7,7 @@ import CompContainer from '../../common/comp-container'
 import SlIcon from '../icon'
 import SlButton from '../button'
 import { CanvasProps } from './type'
+import { CssPrefix } from '../../common'
 
 const CanvasH5: FC<CanvasProps> = ({
   className = '',
@@ -37,15 +38,15 @@ const CanvasH5: FC<CanvasProps> = ({
     <CompContainer customizeStyle={ customizeStyle }>
       {
         overlay ? 
-          <View className={ cn('slc-canvas', {
-            'slc-canvas-show': open
+          <View className={ cn(`${CssPrefix}-canvas`, {
+            [`${CssPrefix}-canvas-show`] : open
           }) }>
-            <View className="slc-canvas-mask"></View>
+            <View className={`${CssPrefix}-canvas-mask`}></View>
             <View 
-              className="slc-canvas-box"
+              className={`${CssPrefix}-canvas-box`}
               style={ `width: ${pxTransform(width)};` }
             >
-              <View className="slc-canvas-icon" onClick={ () => close() }>
+              <View className={`${CssPrefix}-canvas-icon`} onClick={ () => close() }>
                 <SlIcon
                   value="close"
                   size="20"
@@ -53,17 +54,17 @@ const CanvasH5: FC<CanvasProps> = ({
                 />
               </View>
               <View 
-                className={ cn('slc-canvas-content slc-canvas-contenth5', className) } 
+                className={ cn(`${CssPrefix}-canvas-content ${CssPrefix}-canvas-contenth5`, className) } 
                 canvas-id="canvas"
                 style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)};` }
               >
                 商羚组件无敌~
               </View>
-              <View className="slc-canvas-save">
+              <View className={ `${CssPrefix}-canvas-save` }>
                 <SlButton 
                   type="success"
                   size="large"
-                  className="slc-canvas-save__button" 
+                  className={ `${CssPrefix}-canvas-save__button` }
                   onClick={ () => saveFile() }
                 >保存</SlButton>
               </View>
@@ -71,9 +72,13 @@ const CanvasH5: FC<CanvasProps> = ({
             </View>
           </View> :
           <View 
-            className={ cn('slc-canvas-content slc-canvas-contenth5 slc-canvas-overlay', {
-              'slc-canvas-overlay-show': open
-            },className) } 
+            className={ 
+              cn(
+                `${CssPrefix}-canvas-content ${CssPrefix}-canvas-contenth5 ${CssPrefix}-canvas-overlay`, 
+                {
+                  [`${CssPrefix}-canvas-overlay-show`]: open
+                }, className) 
+            } 
             canvas-id="canvas"
             style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)};` }
           >

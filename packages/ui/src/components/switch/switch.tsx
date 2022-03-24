@@ -6,6 +6,7 @@ import { SwitchProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
 import { isFunction } from '../../common/is'
+import { CssPrefix } from '../../common'
 
 const Switch: FC<SwitchProps> = (props) => {
   const { 
@@ -27,9 +28,9 @@ const Switch: FC<SwitchProps> = (props) => {
   }, [props.checked])
 
   const rootCls = cn(
-    'slc-switch',
+    `${CssPrefix}-switch`,
     {
-      'slc-switch__active': checked
+      [`${CssPrefix}-switch__active`]: checked
     },
     className
   )
@@ -57,8 +58,8 @@ const Switch: FC<SwitchProps> = (props) => {
           }
         }}
       >
-        <View className="slc-switch__bg" style={bgStyle} />
-        <View className="slc-switch__btn" style={btnStyle}></View>
+        <View className={ `${CssPrefix}-switch__bg` } style={bgStyle} />
+        <View className={ `${CssPrefix}-switch__btn` } style={btnStyle}></View>
       </View>
     </CompContainer>
   )

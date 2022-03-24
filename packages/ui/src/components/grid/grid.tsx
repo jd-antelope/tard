@@ -5,6 +5,7 @@ import GridItem from './grid-item'
 import { GridProps } from './type'
 import { objectToString } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
+import { CssPrefix } from '../../common'
 
 const Grid: FC<GridProps> = (props) => {
   const { 
@@ -15,7 +16,7 @@ const Grid: FC<GridProps> = (props) => {
     direction = 'bottom', 
     customizeStyle = ''
   } = props
-  const ImageText = classNames('slc-grid')
+  const ImageText = classNames(`${CssPrefix}-grid`)
   // 定义宫格组件数据
   const items: ReactElement<ComponentProps<typeof GridItem>>[] = []
   const itemList = React.Children.map(props.children, (child, index) => {

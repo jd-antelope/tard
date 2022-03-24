@@ -5,6 +5,7 @@ import Image from '../image'
 import Button from '../button'
 import CompContainer from '../../common/comp-container'
 import { EmptyProps } from './type'
+import { CssPrefix } from '../../common'
 
 const Empty: FC<EmptyProps> = ({ 
   src = '',
@@ -17,18 +18,19 @@ const Empty: FC<EmptyProps> = ({
   onClick = () => { }
 }) => {
   const rootClass = classNames(
-    'slc-empty',
+    `${CssPrefix}-empty`,
     className
   )
 
   const emptyImgClass = classNames(
-    'slc-empty__image',
-    { [`slc-empty__image__${rect}`]: ['angle', 'circle'].includes(rect) })
+    `${CssPrefix}-empty__image`,
+    { [`${CssPrefix}-empty__image__${rect}`]: ['angle', 'circle'].includes(rect) }
+  )
 
   return (
     <CompContainer className={rootClass} customizeStyle={ customizeStyle }>
       {src && <Image src={src} className={emptyImgClass} />}
-      {text && <Text className="slc-empty__text">{text}</Text>}
+      {text && <Text className={ `${CssPrefix}-empty__text` }>{text}</Text>}
       {children ? children :
         <Fragment>
           {btnText && <Button fill radius={12} onClick={onClick}>{btnText}</Button>}

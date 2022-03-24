@@ -8,6 +8,7 @@ import { TextareaProps } from '@tarojs/components/types/Textarea'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
 import { isFunction } from '../../common/is'
+import { CssPrefix } from '../../common'
 import Icon from '../icon'
 import {
   FieldProps,
@@ -178,30 +179,30 @@ const FieldComponent: FC<FieldProps> = (props) => {
   const { type: textareaType, fixed } = getTextareaProps(props)
 
   const rootCls = classNames(
-    'slc-field',
+    `${CssPrefix}-field`,
     {
-      'slc-field--without-border': !border,
-      'slc-field__textarea-padding': textareaType == 'textarea' && !label,
-      'slc-field-card': card
+      [`${CssPrefix}-field--without-border`]: !border,
+      [`${CssPrefix}-field__textarea-padding`]: textareaType == 'textarea' && !label,
+      [`${CssPrefix}-field-card`]: card
     },
     className
   )
 
-  const containerCls = classNames('slc-field__container', {
-    'slc-field--error': error,
-    'slc-field--disabled': disabled,
-    'slc-field__content-textarea': textareaType == 'textarea'
+  const containerCls = classNames(`${CssPrefix}-field__container`, {
+    [`${CssPrefix}-field--error`]: error,
+    [`${CssPrefix}-field--disabled`]: disabled,
+    [`${CssPrefix}-field__content-textarea`]: textareaType == 'textarea'
   })
 
   const placeholderCls = classNames('placeholder', placeholderClass)
 
   const labelCls = classNames(
-    'slc-field__title', {
-      'slc-field__title--required': required
+    `${CssPrefix}-field__title`, {
+      [`${CssPrefix}-field__title--required`]: required
     }, labelClass
   )
 
-  const leftIconCls = classNames('slc-field__title--left-icon')
+  const leftIconCls = classNames(`${CssPrefix}-field__title--left-icon`)
 
   const labelStyle = {
     'width': pxTransform(labelWidth),
@@ -229,13 +230,13 @@ const FieldComponent: FC<FieldProps> = (props) => {
             textareaType === 'textarea' ? 
               <Fragment>
                 <Textarea 
-                  className='slc-field__textarea'
+                  className={ `${CssPrefix}-field__textarea` }
                   { ...id }
                   { ...nameProps }
                   style={ `color: ${ contentColor };${textareaHeight ? `height: ${pxTransform(textareaHeight)}`: ''}` }
                   disabled={disabled || readonly}
                   placeholderStyle={placeholderStyle}
-                  placeholderClass={classNames('slc-field__box-textarea__ph', placeholderCls)}
+                  placeholderClass={classNames(`${CssPrefix}-field__box-textarea__ph`, placeholderCls)}
                   placeholder={placeholder}
                   cursorSpacing={cursorSpacing}
                   maxlength={maxlength}
@@ -255,15 +256,15 @@ const FieldComponent: FC<FieldProps> = (props) => {
                   onKeyboardHeightChange={handleKeyboardHeightChange}
                 />
                 { showWordLimit && 
-                  <View className="slc-field__word-limit">
-                    <Text className="slc-field__word-num">{(value || '').length}</Text>
+                  <View className={ `${CssPrefix}-field__word-limit` }>
+                    <Text className={ `${CssPrefix}-field__word-num` }>{(value || '').length}</Text>
                     /{maxlength}
                   </View>
                 }
               </Fragment> 
               : <Fragment>
                 <Input
-                  className='slc-field__input'
+                  className={ `${CssPrefix}-field__input` }
                   { ...id }
                   { ...nameProps }
                   type={type}
@@ -292,26 +293,26 @@ const FieldComponent: FC<FieldProps> = (props) => {
                   onKeyboardHeightChange={handleKeyboardHeightChange}
                 />
                 {clear && value && (
-                  <View className='slc-field__icon' onClick={handleClearValue}>
-                    {/* <Text className='slc-icon slc-icon-close-circle slc-field__icon-close'></Text> */}
+                  <View className={ `${CssPrefix}-field__icon` } onClick={handleClearValue}>
+                    {/* <Text className=`${CssPrefix}-icon ${CssPrefix}-icon-close-circle ${CssPrefix}-field__icon-close'></Text> */}
                     <Icon value='close-circle' color="#999999" size={ 16 }></Icon>
                   </View>
                 )}
                 {!clear && rightIcon &&
-                  <View className='slc-field__icon' onClick={() => props.onRightIconClick}>
+                  <View className={ `${CssPrefix}-field__icon` } onClick={() => props.onRightIconClick}>
                     <Icon value={rightIcon} color={iconColor} size={ iconSize }></Icon>
                   </View>  
                 }
                 {error && (
                   <View
-                    className='slc-field__error'
+                    className={ `${CssPrefix}-field__error` }
                     style={`padding-left: ${pxTransform(labelWidth)};width: 100%`}
                     onTouchStart={handleErrorClick}
                   >
                     <Text>{errorMessage || `${label}必填`}</Text>
                   </View>
                 )}
-                {/* <View className='slc-field__children'>{props.children}</View> */}
+                {/* <View className=`${CssPrefix}-field__children`>{props.children}</View> */}
               </Fragment>
           }
           {

@@ -8,6 +8,7 @@ import CompContainer from '../../common/comp-container'
 import Icon from '../icon'
 import Button from '../button'
 import { CanvasProps } from './type'
+import { CssPrefix } from '../../common'
 
 const CanvasWeapp: FC<CanvasProps> = ({
   id = 'canvas',
@@ -123,15 +124,15 @@ const CanvasWeapp: FC<CanvasProps> = ({
     <CompContainer customizeStyle={ customizeStyle }>
       {
         overlay ? 
-          <View className={ cn('slc-canvas', {
-            'slc-canvas-show': open
+          <View className={ cn(`${CssPrefix}-canvas`, {
+            [`${CssPrefix}-canvas-show`] : open
           }) }>
-            <View className="slc-canvas-mask"></View>
+            <View className={`${CssPrefix}-canvas-mask`}></View>
             <View 
-              className="slc-canvas-box"
+              className={`${CssPrefix}-canvas-box`}
               style={ `width: ${pxTransform(width)};` }
             >
-              <View className="slc-canvas-icon" onClick={ () => close() }>
+              <View className={`${CssPrefix}-canvas-icon`} onClick={ () => close() }>
                 <Icon
                   value="close"
                   size="20"
@@ -139,15 +140,15 @@ const CanvasWeapp: FC<CanvasProps> = ({
                 />
               </View>
               <Canvas 
-                className={ cn('slc-canvas-content', className) } 
+                className={ cn(`${CssPrefix}-canvas-content`, className) } 
                 canvas-id={ id }
                 style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)}` }
               />
-              <View className="slc-canvas-save">
+              <View className={ `${CssPrefix}-canvas-save` }>
                 <Button 
                   size="large"
                   type="primary"
-                  className="slc-canvas-save__button" 
+                  className={ `${CssPrefix}-canvas-save__button` }
                   onClick={ () => saveFile() }
                   color="#ffffff"
                 >
@@ -156,11 +157,11 @@ const CanvasWeapp: FC<CanvasProps> = ({
               </View>
             </View>
           </View> :
-          <View className={ cn('slc-canvas-overlay', {
-            'slc-canvas-overlay-show': open
+          <View className={ cn(`${CssPrefix}-canvas-overlay`, {
+            [`${CssPrefix}-canvas-overlay-show`]: open
           }) }>
             <Canvas 
-              className={ cn('slc-canvas-content', className) } 
+              className={ cn(`${CssPrefix}-canvas-content`, className) } 
               canvas-id={ id }
               style={ `width: ${pxTransform(width)}; height: ${pxTransform(height)}` }
             />
