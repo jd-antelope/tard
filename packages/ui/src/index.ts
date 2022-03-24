@@ -23,10 +23,15 @@ import NavBar from './components/nav-bar'
 import Overlay from './components/overlay'
 import SearchBar from './components/search-bar'
 import ProgressCircle from './components/progress-circle'
+import Canvas from './components/canvas'
+import FooterButton from './components/footer-button'
+import DatetimePicker from './components/datetime-picker'
+import Uploader from './components/uploader'
 
 export { 
   Button, DropdownMenu, ConfigProvider, Icon, Image, 
   Price, Toast, Loading, Form, Field, Rate, Switch,
   Popup, Sort, Empty, Skeleton, TagPrice, Grid, Badge,
-  InputNumber, Modal, NavBar, Overlay, SearchBar, ProgressCircle
+  InputNumber, Modal, NavBar, Overlay, SearchBar, ProgressCircle, Canvas,
+  FooterButton, DatetimePicker, Uploader
 }
