@@ -4,8 +4,8 @@ import Taro, { eventCenter, getCurrentInstance, getEnv, ENV_TYPE } from '@tarojs
 
 type CommonProps = {
   className?: string,
-  style?: CSSProperties | string,
-  customizeStyle?: string,
+  style?: CSSProperties ,
+  customizeStyle?: CSSProperties,
   [propName: string]: any
 }
 

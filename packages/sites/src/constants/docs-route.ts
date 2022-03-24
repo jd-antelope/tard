@@ -1,6 +1,7 @@
 import Button from '@ui/button/README.zh-CN.md?raw'
 import DropdownMenu from '@ui/dropdown-menu/README.zh-CN.md?raw'
 import Badge from '@ui/badge/README.zh-CN.md?raw'
+import SearchBar from '@ui/search-bar/README.zh-CN.md?raw'
 
 const routes = [{
   nameEn: 'Basic Components',
@@ -59,7 +60,8 @@ const routes = [{
   }, {
     name: '搜索框',
     nameEn: 'SearchBar',
-    path: '/search-bar'
+    path: '/search-bar',
+    component: SearchBar
   }, {
     name: '开关',
     nameEn: 'Switch',

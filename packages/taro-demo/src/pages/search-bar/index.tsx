@@ -6,7 +6,7 @@ import DocsHeader from '../../components/doc-header/index'
 
 const SearchBarPage: FC = () => {
   const [toastVisible, setToastVisible] = useState(false)
-  const [value, setValue] = useState()
+  const [value, setValue] = useState('')
 
   return (
     <View className="container full-container">
@@ -34,7 +34,6 @@ const SearchBarPage: FC = () => {
         <View className='doc-body-content-tip'>自定义背景色</View>
         <SearchBar value={value}  background="#FF2929" onChange={(e) => setValue(e)} />
         
-        <View className='doc-body-content-tip'>自定义样式</View>
       </View>
 
       <Toast text="取消" visible={toastVisible} onClose={() => setToastVisible(false)} />

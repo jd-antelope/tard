@@ -1,5 +1,5 @@
 
-import React, { cloneElement, ReactElement, ComponentProps, FC, useState , useEffect } from 'react'
+import React, { cloneElement, ReactElement, ComponentProps, FC, useState, useEffect } from 'react'
 import cn from 'classnames'
 import { View } from '@tarojs/components'
 import { DropdownMenuProps } from './type'
@@ -8,14 +8,14 @@ import DropdownMenuItem from './dropdown-menu-item'
 import { isWeb } from '../../utils'
 import { CssPrefix } from '../../common'
 
-const DropdownMenu: FC<DropdownMenuProps> = ({ 
+const DropdownMenu: FC<DropdownMenuProps> = ({
   titleAlign = 'center', activeColor, children, customizeStyle
 }) => {
   const [activeKey, setActiveKey] = useState<number>(-1)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   useEffect(() => {
-    return() => {
+    return () => {
       if (isWeb) {
         document.body.style.overflow = 'auto'
       }
@@ -41,7 +41,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
     changeActive(-1)
     setIsOpen(false)
     const { onChange } = items[activeKey].props
-    if(onChange) {
+    if (onChange) {
       onChange(optionValue)
     }
   }
@@ -69,12 +69,12 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
     }
   })
   return (
-    <CompContainer customizeStyle={ customizeStyle } className={ `${CssPrefix}-dropdown-menu dropdown-menu` } >
-      <View className={ `${CssPrefix}-dropdown-menu__bar` }>
+    <CompContainer customizeStyle={customizeStyle} className={`${CssPrefix}-dropdown-menu dropdown-menu`} >
+      <View className={`${CssPrefix}-dropdown-menu__bar`}>
         {nav}
       </View>
 
-      <View className={ `${CssPrefix}-dropdown-menu__popup` }>
+      <View className={`${CssPrefix}-dropdown-menu__popup`}>
         {
           items.map((item, index) => {
             const { value, options } = item.props
@@ -88,15 +88,15 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
                     }
                   )
                 }
-                key={ index }
-                onClick={ () => {
+                key={index}
+                onClick={() => {
                   changeActive(-1)
                   setIsOpen(false)
-                } }
+                }}
                 catchMove
               >
                 <View
-                  key={ index }
+                  key={index}
                   className={
                     cn(
                       `${CssPrefix}-dropdown-menu__popup-item`,
@@ -111,16 +111,15 @@ const DropdownMenu: FC<DropdownMenuProps> = ({
                       <View
                         className={
                           cn(
-                            `${CssPrefix}dropdown-menu-item__view`,
+                            `${CssPrefix}-dropdown-menu-item__view`,
                             {
                               [`${CssPrefix}-dropdown-menu-item__view__active`]: value === option.value
                             }
                           )
-
                         }
-                        style={ activeColor && value === option.value ? `color: ${activeColor}` : '' }
-                        key={ option.text }
-                        onClick={ () => { clickOption(option.value) } }
+                        style={activeColor && value === option.value ? `color: ${activeColor}` : ''}
+                        key={option.text}
+                        onClick={() => { clickOption(option.value) }}
                       >
                         {option.text}
                       </View>

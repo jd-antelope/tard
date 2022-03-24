@@ -3,7 +3,7 @@
 向下弹出的菜单列表。
 ### 引入
 ```js
-import { DropdownMenu, DropdownMenuItem } from 'tard'
+import { DropdownMenu } from 'tard'
 ```
 
 ## 代码演示
@@ -25,12 +25,12 @@ const option2 = [
 ]
 
 <DropdownMenu>
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     value={value1} 
     options={option1} 
     onChange={(value) => {setValue1(value)}} 
     />
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     value={value2} 
     title="商品类型" 
     options={option2} 
@@ -42,13 +42,13 @@ const option2 = [
 通过 `title` 属性可以自定义标题
 ```js
 <DropdownMenu>
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     title="订单类型" 
     value={value1} 
     options={option1} 
     onChange={(value) => { setValue1(value) }} 
     />
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     title="商品类型" 
     value={value2} 
     options={option2} 
@@ -60,12 +60,12 @@ const option2 = [
 通过 `content` 属性可以自定义菜单内容
 ```js
 <DropdownMenu>
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     value={value1} 
     options={option1} 
     onChange={(value) => { setValue1(value) }} 
     />
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     title="筛选" 
     content={(<View>自定义菜单内容</View>)} 
     />
@@ -76,12 +76,12 @@ const option2 = [
 通过 `activeColor` 属性可以自定义菜单标题和选项的选中态颜色
 ```js
 <DropdownMenu activeColor="blue">
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     value={value1} 
     options={option1} 
     onChange={(value) => { setValue1(value) }} 
     />
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     value={value2} 
     options={option2} 
     onChange={(value) => { setValue2(value) }} 
@@ -92,12 +92,12 @@ const option2 = [
 ### 自定义标题对齐方式
 ```js
 <DropdownMenu titleAlign="left">
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     value={value1} 
     options={option1} 
     onChange={(value) => { setValue1(value) }} 
     />
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     value={value2} 
     options={option2} 
     onChange={(value) => { setValue2(value) }} 
@@ -108,12 +108,12 @@ const option2 = [
 通过 `onClick` 属性可以自定义点击事件
 ```js
 <DropdownMenu>
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     value={value1} 
     options={option1} 
     onChange={(value) => { setValue1(value) }} 
     />
-  <DropdownMenuItem 
+  <DropdownMenu.Item 
     title="自定义点击事件" 
     onClick={() => { alert('自定义点击事件') }} 
     />

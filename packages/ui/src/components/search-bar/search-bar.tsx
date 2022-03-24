@@ -44,7 +44,7 @@ const SearchBar: FC<SearchBarProps> = ({
   }
 
   const handleChange = (e): void => {
-    onChange(e.target.value, e)
+    onChange(e.detail.value, e)
   }
 
   const handleClear = (event: CommonEvent): void => {
@@ -66,9 +66,9 @@ const SearchBar: FC<SearchBarProps> = ({
 
   const fontSize = 14
   const rootCls = classNames(
-    `${CssPrefix}-search-bar}`,
+    `${CssPrefix}-search-bar`,
     {
-      [`${CssPrefix}-search-bar--fixed}`]: fixed
+      [`${CssPrefix}-search-bar--fixed`]: fixed
     },
     className
   )
@@ -87,7 +87,7 @@ const SearchBar: FC<SearchBarProps> = ({
       10}px`
   }
 
-  if (isFocus || (!isFocus && value)) {
+  if (isFocus || value) {
     if (inputAlign === 'center') placeholderWrapStyle.flexGrow = 0
   } else if (!isFocus && !value) {
     if (inputAlign === 'center') placeholderWrapStyle.flexGrow = 1
@@ -101,27 +101,27 @@ const SearchBar: FC<SearchBarProps> = ({
   }
 
   return (
-    <CompContainer className={rootCls} style={{ background }} customizeStyle={customizeStyle}>
+    <CompContainer className={rootCls} style={{ backgroundColor: background }} customizeStyle={customizeStyle}>
       <View className={classNames(
-        [`${CssPrefix}-search-bar__input-cnt}`],
+        [`${CssPrefix}-search-bar__input-cnt`],
         {
-          [`${CssPrefix}-search-bar__input-cnt__round}`]: shape === 'round'
+          [`${CssPrefix}-search-bar__input-cnt__round`]: shape === 'round'
         }
       )}>
         <View
-          className={`${CssPrefix}-search-bar__placeholder-wrap}`}
+          className={`${CssPrefix}-search-bar__placeholder-wrap`}
           style={placeholderWrapStyle}
         >
           <Icon value='search' />
           <Text
-            className={`${CssPrefix}-search-bar__placeholder}`}
+            className={`${CssPrefix}-search-bar__placeholder`}
             style={placeholderStyle}
           >
-            {isFocus ? '' : placeholder}
+            {isFocus || value ? '' : placeholder}
           </Text>
         </View>
         <Input
-          className={`${CssPrefix}-search-bar__input'}`}
+          className={`${CssPrefix}-search-bar__input`}
           type={inputType}
           confirmType='search'
           value={value}
@@ -134,7 +134,7 @@ const SearchBar: FC<SearchBarProps> = ({
           onConfirm={handleConfirm}
         />
         <View
-          className={`${CssPrefix}-search-bar__clear}`}
+          className={`${CssPrefix}-search-bar__clear`}
           style={clearIconStyle}
           onClick={handleClear}
         >
@@ -142,7 +142,7 @@ const SearchBar: FC<SearchBarProps> = ({
         </View>
       </View>
       {showCancel && <View
-        className={`${CssPrefix}-search-bar__action}`}
+        className={`${CssPrefix}-search-bar__action`}
         style={actionStyle}
         onClick={handleCancelClick}
       >
@@ -152,7 +152,5 @@ const SearchBar: FC<SearchBarProps> = ({
     </CompContainer>
   )
 }
-
-
 
 export default SearchBar

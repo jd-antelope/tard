@@ -8,7 +8,7 @@
   box-sizing: border-box;
   padding: var(--search-bar-vertical-padding) var(--search-bar-horizontal-padding);
   overflow: hidden;
-  background-color: var(--color-bg);
+  background-color: var(--color-white);
   .mixin-hairline-bottom();
 
   /* elements */
@@ -73,9 +73,10 @@
     text-align: left;
     transition: width .3s;
 
-    // .weui-input {
-    //   height: 100%;
-    // }
+    /* stylelint-disable-next-line selector-nested-pattern */
+    .weui-input {
+      height: 100%;
+    }
   }
 
   &__clear {
@@ -102,9 +103,8 @@
     border-radius: 4px;
     font-size: var(--search-bar-font-size);
     line-height: var(--search-bar-input-height);
-    color: var(--search-bar-btn-color);
+    color: var(--search-bar-input-color);
     opacity: 0;
-    // background-color: var(--search-bar-btn-bg-color);
     transition: margin-right .3s, opacity .3s;
     padding-left: var(--search-bar-btn-padding-left);
   }
