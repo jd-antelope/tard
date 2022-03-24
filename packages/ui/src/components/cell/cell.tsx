@@ -5,6 +5,7 @@ import { CellProps } from './type'
 import Icon from '../icon/index'
 import Taro from '@tarojs/taro'
 import { CssPrefix } from '../../common'
+import CompContainer from '../../common/comp-container'
 
 const Cell: FC<CellProps> = (
   {
@@ -20,7 +21,8 @@ const Cell: FC<CellProps> = (
     icon,
     rightContent,
     leftContent,
-    onClick
+    onClick,
+    customizeStyle
   }
 ) => {
 
@@ -43,7 +45,7 @@ const Cell: FC<CellProps> = (
   )
 
   return (
-    <View className={rootClass} onClick={handleClick.bind(this)}>
+    <CompContainer className={rootClass} customizeStyle={customizeStyle} onClick={handleClick.bind(this)}>
       {
         (title || icon || leftContent) &&
         <View className={`${CssPrefix}-cell__item`}>
@@ -70,7 +72,7 @@ const Cell: FC<CellProps> = (
         }
       </View>
 
-    </View>
+    </CompContainer>
   )
 }
 

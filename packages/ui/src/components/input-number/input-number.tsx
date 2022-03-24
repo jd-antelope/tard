@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { Input, Text, View } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
 import { InputNumberProps } from './type'
+import { CssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
 
 // TODO: Check all types
@@ -50,8 +51,7 @@ const InputNumber: FC<InputNumberProps> = ({
   onChange = (): void => { },
   onBlur = (): void => { },
   onErrorInput = (): void => { },
-  customizeStyle,
-  customStyle
+  customizeStyle
 }) => {
 
   const handleClick = (clickType: 'minus' | 'plus'): void => {
@@ -129,29 +129,29 @@ const InputNumber: FC<InputNumberProps> = ({
   }
   const inputValue = Number(handleValue(value))
   const rootCls = classNames(
-    'slc-input-number',
+    `${CssPrefix}-input-number`,
     {
-      'slc-input-number--lg': size === 'large'
+      [`${CssPrefix}-input-number--lg`]: size === 'large'
     },
     className
   )
-  const minusBtnCls = classNames('slc-input-number__btn', {
-    'slc-input-number--disabled': inputValue <= min || disabled
+  const minusBtnCls = classNames(`${CssPrefix}-input-number__btn`, {
+    [`${CssPrefix}-input-number--disabled`]: inputValue <= min || disabled
   })
-  const plusBtnCls = classNames('slc-input-number__btn', {
-    'slc-input-number--disabled': inputValue >= max || disabled
+  const plusBtnCls = classNames(`${CssPrefix}-input-number__btn`, {
+    [`${CssPrefix}-input-number--disabled`]: inputValue >= max || disabled
   })
 
   return (
-    <CompContainer className={rootCls} style={customStyle} customizeStyle={customizeStyle}>
+    <CompContainer className={rootCls} customizeStyle={customizeStyle}>
       <View
         className={minusBtnCls}
         onClick={() => handleClick('minus')}
       >
-        <Text className='slc-icon slc-icon-subtract slc-input-number__btn-subtract'></Text>
+        <Text className={`${CssPrefix}-icon ${CssPrefix}-icon-subtract ${CssPrefix}-input-number__btn-subtract`}>-</Text>
       </View>
       <Input
-        className='slc-input-number__input'
+        className={`${CssPrefix}-input-number__input`}
         style={inputStyle}
         type={type}
         value={String(inputValue)}
@@ -163,7 +163,7 @@ const InputNumber: FC<InputNumberProps> = ({
         className={plusBtnCls}
         onClick={() => handleClick('plus')}
       >
-        <Text className='slc-icon slc-icon-add slc-input-number__btn-add'></Text>
+        <Text className={`${CssPrefix}-icon ${CssPrefix}-icon-add ${CssPrefix}-input-number__btn-add`}>+</Text>
       </View>
     </CompContainer>
   )
