@@ -2,6 +2,7 @@ import Button from '@ui/button/README.zh-CN.md?raw'
 import DropdownMenu from '@ui/dropdown-menu/README.zh-CN.md?raw'
 import Badge from '@ui/badge/README.zh-CN.md?raw'
 import SearchBar from '@ui/search-bar/README.zh-CN.md?raw'
+import ProgressCircle from '@ui/progress-circle/README.zh-CN.md?raw'
 
 const routes = [{
   nameEn: 'Basic Components',
@@ -121,7 +122,8 @@ const routes = [{
   }, {
     name: '圆形进度条',
     nameEn: 'ProgressCircle',
-    path: '/progress-circle'
+    path: '/progress-circle',
+    component: ProgressCircle
   }, {
     name: '骨架屏',
     nameEn: 'Skeleton',

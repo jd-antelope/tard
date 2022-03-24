@@ -45,7 +45,7 @@ const ProgressCircle: FC<ProgressCircleProps> = ({
 
   return (
     <CompContainer
-      className={`${CssPrefix}circle`}
+      className={`${CssPrefix}-circle`}
       customizeStyle={customizeStyle}
       style={`width:${!isWeapp ? pxTransform(size) : pxTransformRem(size)}; height:${!isWeapp ? pxTransform(size) : pxTransformRem(size)}`}
     >
@@ -79,7 +79,7 @@ const ProgressCircle: FC<ProgressCircleProps> = ({
         >
         </view>
       }
-      <Text className={`${CssPrefix}circle-text`}>{text}</Text>
+      <Text className={`${CssPrefix}-circle-text`}>{text}</Text>
 
     </CompContainer>
   )

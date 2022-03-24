@@ -7,13 +7,9 @@ import DocsHeader from '../../components/doc-header/index'
 import './index.less'
 
 const ButtonPage: FC = () => {
-  const style = {
-    color: '',
-    '--color-paramry': 'yellow'
-  }
 
   return (
-    <View className="container" style={style}>
+    <View className="container">
       <DocsHeader title="Button 按钮fsdf" />
       <View className="doc-body">
         <View className="doc-body-content-tip">按钮类型</View>
