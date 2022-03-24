@@ -1,0 +1,77 @@
+@import "../../variable.less";
+@import "../../mixins/index.less";
+@import "./var.less";
+
+.@{--css-prefix}-cell {
+  position: relative;
+  padding: var(--cell-vertical-padding) var(--cell-horizontal-padding);
+  font-size: var(--font-size-base);
+  background-color: var(--cell-background-color);
+  .flex-justify(space-between);
+ 
+  &__border {
+    &::after {
+      content: "";
+      position: absolute;
+      right: var(--cell-horizontal-padding);
+      bottom: 0;
+      left: var(--cell-horizontal-padding);
+      border-bottom: 1px solid var(--color-border-base);
+      transform: scaleY(.5);
+    }
+  }
+
+  &__center {
+    align-items: center;
+  }
+
+  &__item {
+    &:last-child {
+      color: var(--color-text-secondary);
+    }
+
+    &:first-child {
+      color: var(--color-text-base);
+    }
+
+    &-icon {
+      padding-right: 12px;
+    }
+  
+    &-title {
+      .flex-items(center);
+      font-size: var(--font-size-base);
+    }
+  
+    &-label {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
+
+    &-link {
+      padding-left: 12px;
+    }
+
+    &-click {
+      cursor: pointer;
+    }
+  }
+
+  &-group {
+    &-title {
+      padding: var(--cell-group-title-padding);
+      font-size: var(--font-size-base);
+    }
+
+    &-item {
+      background-color: #FFFFFF;
+    }
+  }
+
+  &__inset {
+    margin: 0 36px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+}
+

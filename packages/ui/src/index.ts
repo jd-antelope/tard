@@ -27,11 +27,12 @@ import Canvas from './components/canvas'
 import FooterButton from './components/footer-button'
 import DatetimePicker from './components/datetime-picker'
 import Uploader from './components/uploader'
+import Cell from './components/cell'
 
-export { 
-  Button, DropdownMenu, ConfigProvider, Icon, Image, 
+export {
+  Button, DropdownMenu, ConfigProvider, Icon, Image,
   Price, Toast, Loading, Form, Field, Rate, Switch,
   Popup, Sort, Empty, Skeleton, TagPrice, Grid, Badge,
   InputNumber, Modal, NavBar, Overlay, SearchBar, ProgressCircle, Canvas,
-  FooterButton, DatetimePicker, Uploader
+  FooterButton, DatetimePicker, Uploader, Cell
 }
