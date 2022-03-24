@@ -7,6 +7,7 @@ import { BUYIMG } from '../../common/constants'
 import { isFunction } from '../../common/is'
 import { ImageProps } from './type'
 import { objectToString, pxTransform } from '../../common/utils'
+import { CssPrefix } from '../../common'
 
 const ImageComponent: FC<ImageProps> = ({
   className = '', 
@@ -44,25 +45,25 @@ const ImageComponent: FC<ImageProps> = ({
       {
         showLoading ? 
         <Fragment>
-          <View className={ cn(className, 'slc-image-default') }>
+          <View className={ cn(className, `${CssPrefix}-image-default`) }>
             {
               loadingContent ? 
                 loadingContent :
-                <Image src={ `${BUYIMG}/image-loading.png` } className="slc-image-loading" />
+                <Image src={ `${BUYIMG}/image-loading.png` } className={ `${CssPrefix}-image-loading` } />
             }
           </View>
         </Fragment> :
         <Fragment>
         {
           (error && errorContent) ? (
-            <View style={ imageStyle } className={ cn(className, 'slc-image-error') }>{ errorContent }</View>
+            <View style={ imageStyle } className={ cn(className, `${CssPrefix}-image-error`) }>{ errorContent }</View>
           ) :
           <Image
             { ... res }
             src={ url }
             className={ cn(className, {
-              'slc-image-default': !url.includes(noImg) && transition,
-              'slc-image-none': url.includes(noImg) && transition
+              [`${CssPrefix}-image-default`]: !url.includes(noImg) && transition,
+              [`${CssPrefix}-image-none`]: url.includes(noImg) && transition
             }) }
             style={ imageStyle }
             onClick={ () => clickCallback() }

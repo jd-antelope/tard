@@ -17,7 +17,7 @@ const CButton: FC<CButtonProps> = (props) => {
   const isWEAPP = Taro.getEnv() === Taro.ENV_TYPE.WEAPP
 
   const {
-    type,
+    type = 'primary',
     size = 'normal',
     radius = 0,
     fill,

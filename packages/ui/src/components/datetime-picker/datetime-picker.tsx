@@ -10,6 +10,7 @@ import {
 } from "./dateMap"
 import { pxTransform } from '../../common/utils'
 import { DatetimePickerProps } from './type'
+import { CssPrefix } from '../../common'
 
 const DatetimePicker: FC<DatetimePickerProps> = (props) => {
   const { 
@@ -253,17 +254,17 @@ const DatetimePicker: FC<DatetimePickerProps> = (props) => {
   }
 
   const rootClassMask = classNames(
-    'slc-datetime__mask',
+    `${CssPrefix}-datetime__mask`,
     {
-      'slc-datetime__mask-active': isOpened
+      [`${CssPrefix}-datetime__mask-active`]: isOpened
     },
   )
 
   const containerClass = classNames(
-    'slc-datetime__container',
+    `${CssPrefix}-datetime__container`,
     {
-      'slc-datetime__container-active': isOpened,
-      'slc-datetime__container-round': round
+      [`${CssPrefix}-datetime__container-active`]: isOpened,
+      [`${CssPrefix}-datetime__container-round`]: round
     },
   )
 
@@ -291,7 +292,7 @@ const DatetimePicker: FC<DatetimePickerProps> = (props) => {
 
   return (
     <View 
-      className="slc-datetime" 
+      className={ `${CssPrefix}-datetime` }
       onTouchMove={handleTouchMove}
     >
       <View className={rootClassMask} onClick={outClick} />
@@ -338,17 +339,17 @@ const DatetimePicker: FC<DatetimePickerProps> = (props) => {
                   style={ columnStyle }
                 >
                   {years.map(item => {
-                    return <View className="slc-datetime-picker__label">{item}年</View>;
+                    return <View className={ `${CssPrefix}-datetime-picker__label` }>{item}年</View>;
                   })}
                 </PickerViewColumn>
                 <PickerViewColumn style={ columnStyle }>
                   {months.map(item => {
-                    return <View className="slc-datetime-picker__label">{item}月</View>
+                    return <View className={ `${CssPrefix}-datetime-picker__label` }>{item}月</View>
                   })}
                 </PickerViewColumn>
                 <PickerViewColumn style={ columnStyle }>
                   {days.map(item => {
-                    return <View className="slc-datetime-picker__label">{item}日</View>
+                    return <View className={ `${CssPrefix}-datetime-picker__label` }>{item}日</View>
                   })}
                 </PickerViewColumn>
               </Fragment>
@@ -358,12 +359,12 @@ const DatetimePicker: FC<DatetimePickerProps> = (props) => {
               <Fragment>
                 <PickerViewColumn style={ columnStyle }>
                   {hours.map(item => {
-                    return <View className="slc-datetime-picker__label">{item}时</View>
+                    return <View className={ `${CssPrefix}-datetime-picker__label` }>{item}时</View>
                   })}
                 </PickerViewColumn>
                 <PickerViewColumn style={ columnStyle }>
                   {minutes.map(item => {
-                    return <View className="slc-datetime-picker__label">{item}分</View>
+                    return <View className={ `${CssPrefix}-datetime-picker__label` }>{item}分</View>
                   })}
                 </PickerViewColumn>
               </Fragment>

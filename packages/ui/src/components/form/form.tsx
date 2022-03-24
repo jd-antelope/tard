@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import React, { FC } from 'react'
 import { Form } from '@tarojs/components'
 import CompContainer from '../../common/comp-container'
+import { CssPrefix } from '../../common'
 import { FormProps } from './type'
 
 const FormComponent: FC<FormProps> = ({
@@ -25,10 +26,10 @@ const FormComponent: FC<FormProps> = ({
   }
 
   const rootCls = classNames(
-    'slc-form', 
+    `${CssPrefix}-form`, 
     className,
-    { 'slc-form-round': round },
-    { 'slc-form-border': border }
+    { [`${CssPrefix}-form-round`]: round },
+    { [`${CssPrefix}-form-border`]: border }
   )
 
   return (

@@ -7,6 +7,7 @@ import { LoadingProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { pxTransform, objectToString } from '../../common/utils'
 import { isFunction } from '../../common/is'
+import { CssPrefix } from '../../common'
 
 const loadingObj = {
   'default': 'loading',
@@ -29,7 +30,7 @@ const LoadingComponent: FC<LoadingProps> = ({
     }
   }
 
-  const iconClass = cn('slc-loading-icon slc-icon', `slc-icon-${loadingObj[type]}`)
+  const iconClass = cn(`${CssPrefix}-loading-icon ${CssPrefix}-icon`, `${CssPrefix}-icon-${loadingObj[type]}`)
 
   const style = (
     objectToString(size !== 0 ? { 
@@ -42,7 +43,7 @@ const LoadingComponent: FC<LoadingProps> = ({
   return (
     <CompContainer customizeStyle={ customizeStyle }>
       <View 
-        className={ cn('slc-loading', { 'slc-loading-flex': overlay }) }
+        className={ cn(`${CssPrefix}-loading`, { [`${CssPrefix}-loading-flex`]: overlay }) }
         onClick={ handler }
       >
         <Text 

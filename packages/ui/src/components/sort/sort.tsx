@@ -4,6 +4,7 @@ import { View } from '@tarojs/components'
 import { SortProps, ActiveSort } from './type'
 import { isFunction } from '../../common/is'
 import { pxTransform } from '../../common/utils'
+import { CssPrefix } from '../../common'
 
 const Sort: FC<SortProps> = (props) => {
   const { 
@@ -40,7 +41,7 @@ const Sort: FC<SortProps> = (props) => {
   }
 
   return (
-    <View className="slc-sort" style={containerStyle} >
+    <View className={ `${CssPrefix}-sort` } style={containerStyle} >
       {
         list.map((item:any, index)=>{
           const textStyle = {
@@ -50,23 +51,23 @@ const Sort: FC<SortProps> = (props) => {
           }
 
           return <View key={index} 
-            className="slc-sort__item"
+            className={ `${CssPrefix}-sort__item` }
             onClick={()=>{
               const tmpSort = activeKey === item.key ? activeSort === 'asc' ? 'desc': 'asc': 'asc'
               onChange(item.key, tmpSort)
             }}
           >
-            <View className="slc-sort__item-text" style={textStyle}>
+            <View className={ `${CssPrefix}-sort__item-text` } style={textStyle}>
               {item.text}
-              <View className="slc-sort__item-icon">
+              <View className={ `${CssPrefix}-sort__item-icon` }>
                 <View 
-                  className="slc-sort__item-icon-item"
+                  className={ `${CssPrefix}-sort__item-icon-item` }
                   style={{
                     color: activeKey === item.key && activeSort === 'asc' ? activeColor : arrowColor
                   }}
                 />
                 <View  
-                  className="slc-sort__item-icon-item"
+                  className={ `${CssPrefix}-sort__item-icon-item` }
                   style={{
                     color: activeKey === item.key && activeSort === 'desc' ? activeColor : arrowColor
                   }}

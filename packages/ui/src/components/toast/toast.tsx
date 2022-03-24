@@ -4,6 +4,7 @@ import { Image, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { objectToString } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
+import { CssPrefix } from '../../common'
 import { ToastProps } from './type'
 import statusImg from './img.json'
 
@@ -78,9 +79,9 @@ const Toast: FC<ToastProps> = ({
   const isRenderIcon = !!(icon && !(image || statusImg[status!]))
 
   const bodyClass = classNames('toast-body', {
-    'slc-toast__body--custom-image': image,
+    [`${CssPrefix}-toast__body--custom-image`]: image,
     'toast-body--text': !realImg && !icon,
-    [`slc-toast__body--${status}`]: !!status
+    [`${CssPrefix}-toast__body--${status}`]: !!status
   })
   const contentClass = {
     'toast-body-content--slot': realImg || icon,
@@ -89,14 +90,14 @@ const Toast: FC<ToastProps> = ({
   const style = (objectToString(Object.assign(customStyle, {
     'top': top
   })))
-  const iconClass = classNames('slc-icon', {
-    [`slc-icon-${icon}`]: icon
+  const iconClass = classNames(`${CssPrefix}-icon`, {
+    [`${CssPrefix}-icon-${icon}`]: icon
   })
 
   return _isOpened ? (
     <CompContainer customizeStyle={ customizeStyle }>
-      <View className={classNames('slc-toast', className)}>
-        {overlay && <View className='slc-toast__overlay' />}
+      <View className={classNames(`${CssPrefix}-toast`, className)}>
+        {overlay && <View className={ `${CssPrefix}-toast__overlay` } />}
         <View
           className={bodyClass}
           style={style}

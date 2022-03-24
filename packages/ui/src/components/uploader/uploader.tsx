@@ -6,6 +6,7 @@ import { ITouchEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
 import { UploaderProps, VideoInterface, File } from './type'
 import { uuid } from '../../common/utils'
+import { CssPrefix } from '../../common'
 
 interface MatrixFile extends Partial<File> {
 	type: 'blank' | 'btn'
@@ -136,34 +137,34 @@ const Uploader: FC<UploaderProps> = ({
 	const rowLength = (mediaType === 'video' || length <= 0) ? 1 : length
 	// 行数
 	const matrix = generateMatrix(files as MatrixFile[], rowLength, showAddBtn)
-	const rootCls = classNames('slc-uploader-picker', className)
+	const rootCls = classNames(`${CssPrefix}-uploader-picker`, className)
 
 	return (
 		<View className={rootCls} style={customStyle}>
 			{matrix.map((row, i) => (
-				<View className='slc-uploader-picker__flex-box' key={i + 1}>
+				<View className={ `${CssPrefix}-uploader-picker__flex-box` } key={i + 1}>
 					{row.map((item, j) =>
 						item.url ? (
 							<View
-								className='slc-uploader-picker__flex-item'
+								className={ `${CssPrefix}-uploader-picker__flex-item` }
 								key={i * length + j}
 							>
-								<View className='slc-uploader-picker__item'>
+								<View className={ `${CssPrefix}-uploader-picker__item` }>
 									<View
-										className='slc-uploader-picker__remove-btn'
+										className={ `${CssPrefix}-uploader-picker__remove-btn` }
 										onClick={(e) => handleRemoveImg(i * length + j, e)}
 									/>
 									{
 										mediaType === 'camera' ?
 											<Image
-												className='slc-uploader-picker__preview-img'
+												className={ `${CssPrefix}-uploader-picker__preview-img` }
 												mode={mode}
 												src={item.url}
 												onClick={() => handleImageClick(i * length + j)}
 											/> :
 											<Video
 												id='video'
-												className='slc-uploader-picker__preview-video'
+												className={ `${CssPrefix}-uploader-picker__preview-video` }
 												src={playObj.file}
 												poster={playObj.url}
 												controls={true}
@@ -178,12 +179,12 @@ const Uploader: FC<UploaderProps> = ({
 							<Fragment>
 								{files.length < maxCount ?
 									<View
-										className='slc-uploader-picker__flex-item'
+										className={ `${CssPrefix}-uploader-picker__flex-item` }
 										key={'empty_' + i * length + j}
 									>
 										{item.type === 'btn' && (
 											<View
-												className='slc-uploader-picker__item slc-uploader-picker__choose-btn'
+												className={ `${CssPrefix}-uploader-picker__item ${CssPrefix}-uploader-picker__choose-btn` }
 												onClick={chooseFile}
 											>
 												{

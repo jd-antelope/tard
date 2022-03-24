@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import { isFunction } from '../../common/is'
 import { GridItemProps } from './type'
 import { objectToString, pxTransform } from '../../common/utils'
+import { CssPrefix } from '../../common'
 
 const GridItem: FC<GridItemProps> = (props) => {
 
@@ -22,19 +23,19 @@ const GridItem: FC<GridItemProps> = (props) => {
 
   const isBorderBottom = border && Math.ceil(index / columnNum) < Math.ceil(length / columnNum)
 
-  const imageText = classNames('slc-grid-item', className, { 
-    'slc-grid-item-border-right': isBorderRight,
-    'slc-grid-item-border-bottom': isBorderBottom
+  const imageText = classNames(`${CssPrefix}-grid-item`, className, { 
+    [`${CssPrefix}-grid-item-border-right`]: isBorderRight,
+    [`${CssPrefix}-grid-item-border-bottom`]: isBorderBottom
   })
 
-  const contentClass = classNames('slc-grid-item__content', {
-    'slc-grid-item__content_row': direction === 'right' || direction === 'left',
-    'slc-grid-item__content_top': direction === 'top',
-    'slc-grid-item__content_right': direction === 'right'
+  const contentClass = classNames(`${CssPrefix}-grid-item__content`, {
+    [`${CssPrefix}-grid-item__content_row`]: direction === 'right' || direction === 'left',
+    [`${CssPrefix}-grid-item__content_top`]: direction === 'top',
+    [`${CssPrefix}-grid-item__content_right`]: direction === 'right'
   })
 
-  const iconClass = classNames('slc-grid-item__content-image slc-icon', {
-    [`slc-icon-${icon}`]: icon
+  const iconClass = classNames(`${CssPrefix}-grid-item__content-image ${CssPrefix}-icon`, {
+    [`${CssPrefix}-icon-${icon}`]: icon
   })
 
   const imageStyle = (objectToString({
@@ -43,7 +44,7 @@ const GridItem: FC<GridItemProps> = (props) => {
   }))
 
   const imgView = url ? 
-    (<Image className="slc-grid-item__content-image" style={ imageStyle } src={url} />) : icon ?
+    (<Image className={ `${CssPrefix}-grid-item__content-image` } style={ imageStyle } src={url} />) : icon ?
     (<Text className={iconClass} style={ imageStyle } />): null
   
   return (
@@ -62,7 +63,7 @@ const GridItem: FC<GridItemProps> = (props) => {
                 >
                   { imgView }
                   {
-                    text && <Text className="slc-grid-item__content-text">{text}</Text>
+                    text && <Text className={ `${CssPrefix}-grid-item__content-text` }>{text}</Text>
                   }
                 </View>
               : <View
@@ -70,7 +71,7 @@ const GridItem: FC<GridItemProps> = (props) => {
                   onClick={onClick}
                 >
                   {
-                    text && <Text className="slc-grid-item__content-text">{text}</Text>
+                    text && <Text className={ `${CssPrefix}-grid-item__content-text` }>{text}</Text>
                   }
                   { imgView }
                 </View>
