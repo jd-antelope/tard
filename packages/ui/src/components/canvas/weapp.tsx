@@ -1,9 +1,10 @@
 
-import React, { Fragment, FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import cn from 'classnames'
 import { View, Canvas } from '@tarojs/components'
 import Taro, { showToast } from '@tarojs/taro'
 import { pxTransform } from '../../common/utils'
+import CompContainer from '../../common/comp-container'
 import Icon from '../icon'
 import Button from '../button'
 import { CanvasProps } from './type'
@@ -16,6 +17,7 @@ const CanvasWeapp: FC<CanvasProps> = ({
   visible = false,
   overlay = true,
   onClose = () => {},
+  customizeStyle = '',
   contentCallback = () => {}
 }) => {
 
@@ -118,7 +120,7 @@ const CanvasWeapp: FC<CanvasProps> = ({
   }
 
   return (
-    <Fragment>
+    <CompContainer customizeStyle={ customizeStyle }>
       {
         overlay ? 
           <View className={ cn('slc-canvas', {
@@ -165,7 +167,7 @@ const CanvasWeapp: FC<CanvasProps> = ({
           </View>
       }
       
-    </Fragment>
+    </CompContainer>
   )
 }
 

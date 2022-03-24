@@ -1,14 +1,16 @@
 
-import React, { Fragment, FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import cn from 'classnames'
 import { View } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
+import CompContainer from '../../common/comp-container'
 import SlIcon from '../icon'
 import SlButton from '../button'
 import { CanvasProps } from './type'
 
 const CanvasH5: FC<CanvasProps> = ({
   className = '',
+  customizeStyle = '',
   width = 600,
   height = 800,
   visible = false,
@@ -32,7 +34,7 @@ const CanvasH5: FC<CanvasProps> = ({
   }
 
   return (
-    <Fragment>
+    <CompContainer customizeStyle={ customizeStyle }>
       {
         overlay ? 
           <View className={ cn('slc-canvas', {
@@ -78,7 +80,7 @@ const CanvasH5: FC<CanvasProps> = ({
             商羚组件无敌~
           </View>
       }
-    </Fragment>
+    </CompContainer>
   )
 }
 

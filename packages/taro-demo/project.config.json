@@ -2,7 +2,7 @@
     "miniprogramRoot": "dist/",
     "projectname": "taro-demo",
     "description": "taro-demo",
-    "appid": "wxa5a8b9181b943192",
+    "appid": "wx0e62389d12ae420f",
     "setting": {
         "urlCheck": true,
         "es6": false,
