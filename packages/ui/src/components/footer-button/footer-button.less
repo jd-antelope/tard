@@ -1,5 +1,6 @@
 @import "../../variable.less";
 @import "../../mixins/index.less";
+@import "./var.less";
 
 .@{--css-prefix}-footer {
   overflow: hidden
@@ -11,27 +12,29 @@
   box-sizing: border-box;
   display: flex;
 
-  .slc-custom-outer {
+  .@{--css-prefix}-custom-outer {
     width: 100%;
     display: flex;
   }
 
-  .slc-custom-footer{
+  .@{--css-prefix}-custom-footer{
     flex: 1;
     text-align: center;
+    height: var(--footer-height);
+    .flex-center()
   }
 
-  .slc-custom-footer-btn1 {
+  .@{--css-prefix}-custom-footer-btn1 {
     color: #fff;
     background: var(--color-primary);
   }
 
-  .slc-custom-footer-btn2{
+  .@{--css-prefix}-custom-footer-btn2{
     color: #333;
     background: #f1f1f1;
   }
 }
-.slc-custom-footer-container-fixed {
+.@{--css-prefix}-custom-footer-container-fixed {
   position: fixed;
   bottom: 0;
   right: 0;

@@ -1,11 +1,12 @@
 
 import React, { FC } from 'react'
 import { View } from '@tarojs/components'
+import cn from 'classnames'
 import { TagPriceProps } from './type'
 import { pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
-import cn from 'classnames'
 import Price from '../price'
+import { CssPrefix } from '../../common'
 
 const TagPrice: FC<TagPriceProps> = ({
   className = '',
@@ -27,12 +28,12 @@ const TagPrice: FC<TagPriceProps> = ({
 
   return (
     <CompContainer customizeStyle={ customizeStyle }>
-      <View className={cn("slc-tag-price", className)} style={containerStyle}>
-        <View className="slc-tag-price__title" style={titleStyle}>{title}</View>
+      <View className={cn(`${CssPrefix}-tag-price`, className)} style={containerStyle}>
+        <View className={ `${CssPrefix}-tag-price__title` } style={titleStyle}>{title}</View>
         <Price 
           price={price} color={color} 
           symbolSize={size} unitSize={size}
-          className="slc-tag-price__price" 
+          className={ `${CssPrefix}-tag-price__price` }
         />
       </View>
     </CompContainer>

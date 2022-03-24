@@ -2,7 +2,7 @@
 @import "../../mixins/index.less";
 @import "./var.less";
 
-.slc-rate {
+.@{--css-prefix}-rate {
   font-size: 0;
   line-height: 0;
 
@@ -27,7 +27,7 @@
     line-height: 0;
     transition: all 0.2s;
 
-    .slc-icon {
+    .@{--css-prefix}-icon {
       font-size: var(--rate-icon-size);
     }
 
@@ -40,7 +40,7 @@
     }
 
     &--half {
-      .slc-rate__left {
+      .@{--css-prefix}-rate__left {
         color: var(--rate-star-color-on);
       }
     }

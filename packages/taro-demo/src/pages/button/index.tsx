@@ -18,6 +18,7 @@ const ButtonPage: FC = () => {
       <View className="doc-body">
         <View className="doc-body-content-tip">按钮类型</View>
         <View className="button-box">
+          <Button>主要按钮</Button>
           <Button className="el" type="primary">主要按钮</Button>
           <Button className="el" type="info">信息按钮</Button>
           <Button className="el" type="default">默认按钮</Button>

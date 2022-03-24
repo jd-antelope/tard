@@ -3,6 +3,7 @@ import cn from 'classnames'
 import { View, Text } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
+import { CssPrefix } from '../../common'
 import { PriceProps } from './type'
 
 const Price: FC<PriceProps> = ({ 
@@ -68,12 +69,12 @@ const Price: FC<PriceProps> = ({
         <Fragment>
           <Text 
             className={
-              cn('slc-price__text-content', {
-                'slc-price__content-large': type === 'large',
-                'slc-price__content-large-middle': type === 'largeMiddle',
-                'slc-price__content-middle': type === 'middle',
-                'slc-price__content-small-middle': type === 'smallMiddle',
-                'slc-price__content-small': type === 'small',
+              cn(`${CssPrefix}-price__text-content`, {
+                [`${CssPrefix}-price__content-large`]: type === 'large',
+                [`${CssPrefix}-price__content-large-middle`]: type === 'largeMiddle',
+                [`${CssPrefix}-price__content-middle`]: type === 'middle',
+                [`${CssPrefix}-price__content-small-middle`]: type === 'smallMiddle',
+                [`${CssPrefix}-price__content-small`]: type === 'small',
               })
             }
             style={ symbolSize !== 0 ? `font-size: ${pxTransform(symbolSize)}` : '' }
@@ -81,18 +82,18 @@ const Price: FC<PriceProps> = ({
             { String(filterPrice(arr[0])).split('.')[0] }
           </Text>
           { String(filterPrice(arr[0])).split('.')[1] ? '.' + String(filterPrice(arr[0])).split('.')[1] : '' }
-          <Text className='slc-price__text-line'>-</Text>
+          <Text className={ `${CssPrefix}-price__text-line` }>-</Text>
           {
             showAfterSymbol && <Text style={ unitSize === 0 ? '': `font-size: ${pxTransform(unitSize)}` }>{priceUnit}</Text>
           }
           <Text
             className={
-              cn('slc-price__text-content', {
-                'slc-price__content-large': type === 'large',
-                'slc-price__content-large-middle': type === 'largeMiddle',
-                'slc-price__content-middle': type === 'middle',
-                'slc-price__content-small-middle': type === 'smallMiddle',
-                'slc-price__content-small': type === 'small',
+              cn(`${CssPrefix}-price__text-content`, {
+                [`${CssPrefix}-price__content-large`]: type === 'large',
+                [`${CssPrefix}-price__content-large-middle`]: type === 'largeMiddle',
+                [`${CssPrefix}-price__content-middle`]: type === 'middle',
+                [`${CssPrefix}-price__content-small-middle`]: type === 'smallMiddle',
+                [`${CssPrefix}-price__content-small`]: type === 'small',
               })
             }
             style={ symbolSize !== 0 ? `font-size: ${pxTransform(symbolSize)}` : '' }
@@ -107,12 +108,12 @@ const Price: FC<PriceProps> = ({
       <Fragment>
         <Text 
           className={
-            cn('slc-price__text-content', {
-              'slc-price__content-large': type === 'large',
-              'slc-price__content-large-middle': type === 'largeMiddle',
-              'slc-price__content-middle': type === 'middle',
-              'slc-price__content-small-middle': type === 'smallMiddle',
-              'slc-price__content-small': type === 'small',
+            cn(`${CssPrefix}-price__text-content`, {
+              [`${CssPrefix}-price__content-large`]: type === 'large',
+              [`${CssPrefix}-price__content-large-middle`]: type === 'largeMiddle',
+              [`${CssPrefix}-price__content-middle`]: type === 'middle',
+              [`${CssPrefix}-price__content-small-middle`]: type === 'smallMiddle',
+              [`${CssPrefix}-price__content-small`]: type === 'small',
             })
           }
           style={ symbolSize !== 0 ? `font-size: ${pxTransform(symbolSize)}` : '' }
@@ -125,16 +126,16 @@ const Price: FC<PriceProps> = ({
   }
 
   return (
-    <CompContainer customizeStyle={ customizeStyle } className={ cn('slc-price', className) }>
+    <CompContainer customizeStyle={ customizeStyle } className={ cn(`${CssPrefix}-price`, className) }>
       {
         beforeContent !== '' && beforeContent
       }
       <View 
         className={
-          cn('slc-price__text',{
-            'slc-price__text-large': type === 'large',
-            'slc-price__text-middle': type === 'largeMiddle' || type === 'smallMiddle',
-            'slc-price__text-small': type === 'small' || type === 'middle',
+          cn(`${CssPrefix}-price__text`,{
+            [`${CssPrefix}-price__text-large`]: type === 'large',
+            [`${CssPrefix}-price__text-middle`]: type === 'largeMiddle' || type === 'smallMiddle',
+            [`${CssPrefix}-price__text-small`]: type === 'small' || type === 'middle',
           })
         }
         style={ (color !== '' ? `color: ${color};` : '') + (size !== 0 ? `font-size: ${pxTransform(size)}` : '') }
@@ -144,7 +145,7 @@ const Price: FC<PriceProps> = ({
         {
           originPrice !== '' && 
           <Text 
-            className="slc-price__origin-price" 
+            className={ `${CssPrefix}-price__origin-price` } 
             style={ `color: ${ originColor }` }
           >
            <Text>{priceUnit}</Text>
@@ -157,8 +158,8 @@ const Price: FC<PriceProps> = ({
       }
       {
         (commissionPrice !== '' && afterContent === '') && 
-        <View className="slc-price__commission">
-          <View className="slc-price__commission--box">
+        <View className={ `${CssPrefix}-price__commission` }>
+          <View className={ `${CssPrefix}-price__commission--box` }>
             佣金 { commissionPrice }
           </View>
         </View>

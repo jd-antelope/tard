@@ -6,6 +6,7 @@ import { CommonEvent } from '@tarojs/components/types/common'
 import { PopupProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { objectToString } from '../../common/utils'
+import { CssPrefix } from '../../common'
 
 const Popup: FC<PopupProps> = ({ 
   title = '',
@@ -42,17 +43,17 @@ const Popup: FC<PopupProps> = ({
   }
 
   const rootClass = classNames(
-    'slc-popup',
+    `${CssPrefix}-popup`,
     {
-      'slc-popup__active': _isOpened
+      [`${CssPrefix}-popup__active`]: _isOpened
     },
     className
   )
 
   const containerClass = classNames(
-    'slc-popup__container',
+    `${CssPrefix}-popup__container`,
     {
-      'slc-popup__container__active': _isOpened
+      [`${CssPrefix}-popup__container__active`]: _isOpened
     }
   )
 
@@ -63,7 +64,7 @@ const Popup: FC<PopupProps> = ({
   return (
     <CompContainer customizeStyle={ customizeStyle }>
       <View className={rootClass} onTouchMove={handleTouchMove}>
-        <View className="slc-popup__mask" onClick={outClick} />
+        <View className={ `${CssPrefix}-popup__mask` } onClick={outClick} />
         <View className={containerClass}>
           {
             title ?

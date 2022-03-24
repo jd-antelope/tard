@@ -5,6 +5,7 @@ import { FooterButtonProps } from './type'
 import { objectToString, pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
 import { isFunction } from '../../common/is'
+import { CssPrefix } from '../../common'
 
 const FooterButton: FC<FooterButtonProps> = (props) => {
   const handleClick = () => {
@@ -32,7 +33,7 @@ const FooterButton: FC<FooterButtonProps> = (props) => {
   const getStyle = () => {
     const styleObj = {
       'border-radius': pxTransform(props.radius || 0),
-      lineHeight: pxTransform(props.lineHeight || 0)
+      lineHeight: pxTransform(props.lineHeight || 1.5)
     }
     if (props.color) styleObj['color'] = props.color
     if (props.margin && props.doubleBtn) styleObj['margin-left'] = pxTransform(props.margin)
@@ -64,17 +65,30 @@ const FooterButton: FC<FooterButtonProps> = (props) => {
   return (
     <CompContainer 
       customizeStyle={ props.customizeStyle }
-      className={classNames("slc-custom-footer-container", props.className, { "slc-custom-footer-container-fixed" :  props.isFixed})}
+      className={
+        classNames(
+          `${CssPrefix}-custom-footer-container`, 
+          props.className, 
+          { [`${CssPrefix}-custom-footer-container-fixed`] :  props.isFixed}
+        )
+      }
     >
       <View style={styleContainer}>
         { props.content ?
             <Fragment>{ props.content }</Fragment>
             :
-            <View className='slc-custom-outer'>
+            <View className={ `${CssPrefix}-custom-outer` }>
               {
-                props.doubleBtn && <View className="slc-custom-footer slc-custom-footer-btn2" style={style2} onClick={handleClickSecBtn}>{props.secondName}</View>
+                props.doubleBtn && 
+                <View 
+                  className={ `${CssPrefix}-custom-footer ${CssPrefix}-custom-footer-btn2` } 
+                  style={style2} onClick={handleClickSecBtn}
+                >{props.secondName}</View>
               }
-              <View className="slc-custom-footer slc-custom-footer-btn1" style={style} onClick={handleClick}>{props.name} </View>
+              <View 
+                className={ `${CssPrefix}-custom-footer ${CssPrefix}-custom-footer-btn1` } 
+                style={style} onClick={handleClick}
+              >{props.name} </View>
             </View>
         }
       </View>
