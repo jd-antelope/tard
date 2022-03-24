@@ -2,7 +2,7 @@ import React, { memo, useState, useCallback, Fragment } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import DatetimePickerProps from 'tard/lib/components/datetime-picker'
-import { DatetimePicker, Icon } from 'haw-ui-test'
+import { DatetimePicker, Icon } from 'tard'
 import DocsHeader from '../../components/doc-header/index'
 import { isWeb } from '../../utils'
 import './index.less';

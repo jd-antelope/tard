@@ -1,5 +1,6 @@
 import Button from '@ui/button/README.zh-CN.md?raw'
 import DropdownMenu from '@ui/dropdown-menu/README.zh-CN.md?raw'
+import Badge from '@ui/badge/README.zh-CN.md?raw'
 
 const routes = [{
   nameEn: 'Basic Components',
@@ -105,7 +106,8 @@ const routes = [{
   children: [{
     name: '徽标',
     nameEn: 'Badge',
-    path: '/badge'
+    path: '/badge',
+    component: Badge
   }, {
     name: '空状态',
     nameEn: 'Empty',

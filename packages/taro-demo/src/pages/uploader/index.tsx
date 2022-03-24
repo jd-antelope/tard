@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FC } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { Uploader } from 'haw-ui-test'
+import { Uploader } from 'tard'
 import DocsHeader from '../../components/doc-header'
 
 const UploaderPage: FC = () => {

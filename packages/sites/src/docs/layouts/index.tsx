@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import { Fragment } from 'react'
 import { Layout } from 'antd'
 import { Route, Routes, useLocation } from 'react-router-dom'
@@ -12,12 +12,12 @@ import './index.less'
 const { Content, Sider } = Layout
 export default function LayoutComponent({ children }: any) {
   const location = useLocation()
-  // const [path] = useState<string>(location.pathname.split('/')[3] || 'home')
+  const [path] = useState<string>(location.pathname.split('/')[3] || 'home')
 
-  // const postIframeMessage = (path: string) => {
-  //   const childFrameObj = document.getElementById('iframeDemo');
-  //   (childFrameObj as any).contentWindow?.postMessage({ path }, '*')
-  // }
+  const postIframeMessage = (path: string) => {
+    const childFrameObj = document.getElementById('iframeDemo');
+    (childFrameObj as any).contentWindow?.postMessage({ path }, '*')
+  }
 
   if (location.pathname === '/') {
     return (
@@ -30,9 +30,9 @@ export default function LayoutComponent({ children }: any) {
     <LayoutHeader fullHeader>
       <Layout className="site-layout-background site-main">
         <Sider className="site-layout-background site-sider" width="260px">
-          <LayoutMenu postIframeMessage={(title) => { }
-            // postIframeMessage(title)
-          } />
+          <LayoutMenu postIframeMessage={(title) => {
+            postIframeMessage(title)
+          }} />
         </Sider>
         <Content className="layout-md-contianer layout-h-100 pb-24 pl-12 layout-flex-col layout-over-flow-y layout-border-top ">
           <div className="doc-document">
@@ -73,13 +73,13 @@ export default function LayoutComponent({ children }: any) {
           <div
             id="docs-frame"
           >
-            {/* <iframe
+            <iframe
               className="iframe-content"
-              src={ `${process.env.API_IFRAME_URL}/#/pages/${path}/index` }
+              src={`http://0.0.0.0:10086/#/pages/${path}/index`}
               frameBorder="0"
               id="iframeDemo"
-            /> */}
-            <iframe className="iframe-content" src="/demo.html" frameBorder="0" />
+            />
+            {/* <iframe className="iframe-content" src="/demo.html" frameBorder="0" /> */}
           </div>
         </Content>
       </Layout>
