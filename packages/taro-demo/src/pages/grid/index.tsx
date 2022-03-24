@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { FC } from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
-import { Grid } from 'haw-ui-test'
+import { Grid } from 'tard'
 import DocsHeader from '../../components/doc-header/index'
 import './index.less';
 

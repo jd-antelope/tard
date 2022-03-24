@@ -71,15 +71,15 @@ import { SlBadge } from 'tard'
 ### 自定义内容
 通过 `content` 插槽可以自定义徽标的内容，比如插入一个图标
 ```js
-<SlBadge content={<SlIcon value='bell' size={12}></SlIcon>}>
+<SlBadge content={<Icon value='bell' size={12}></Icon>}>
     <SlButton>按钮</SlButton>
 </SlBadge>
 
-<SlBadge content={<SlIcon value='check' size={12}></SlIcon>}>
+<SlBadge content={<Icon value='check' size={12}></Icon>}>
     <SlButton>按钮</SlButton>
 </SlBadge>
 
-<SlBadge content={<SlIcon value='arrow-down' size={12}></SlIcon>}>
+<SlBadge content={<Icon value='arrow-down' size={12}></Icon>}>
     <SlButton>按钮</SlButton>
 </SlBadge>
 ```
@@ -95,7 +95,7 @@ import { SlBadge } from 'tard'
 
 <SlBadge value={5} color="blue" />
 
-<SlBadge content={<SlIcon value='bell' size={12}></SlIcon>} />
+<SlBadge content={<Icon value='bell' size={12}></Icon>} />
 ```
 
 ## API

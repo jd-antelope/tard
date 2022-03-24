@@ -8,7 +8,7 @@ import { TextareaProps } from '@tarojs/components/types/Textarea'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
 import { isFunction } from '../../common/is'
-import SlIcon from '../icon'
+import Icon from '../icon'
 import {
   FieldProps,
   BlurEventDetail,
@@ -221,7 +221,7 @@ const FieldComponent: FC<FieldProps> = (props) => {
             style={labelStyle}
             for={name}
             >
-              {leftIcon && <SlIcon className={leftIconCls} value={leftIcon} color={iconColor} size={ iconSize }></SlIcon>}
+              {leftIcon && <Icon className={leftIconCls} value={leftIcon} color={iconColor} size={ iconSize }></Icon>}
               {label}
             </Label>
           )}
@@ -294,12 +294,12 @@ const FieldComponent: FC<FieldProps> = (props) => {
                 {clear && value && (
                   <View className='slc-field__icon' onClick={handleClearValue}>
                     {/* <Text className='slc-icon slc-icon-close-circle slc-field__icon-close'></Text> */}
-                    <SlIcon value='close-circle' color="#999999" size={ 16 }></SlIcon>
+                    <Icon value='close-circle' color="#999999" size={ 16 }></Icon>
                   </View>
                 )}
                 {!clear && rightIcon &&
                   <View className='slc-field__icon' onClick={() => props.onRightIconClick}>
-                    <SlIcon value={rightIcon} color={iconColor} size={ iconSize }></SlIcon>
+                    <Icon value={rightIcon} color={iconColor} size={ iconSize }></Icon>
                   </View>  
                 }
                 {error && (

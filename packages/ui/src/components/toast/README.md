@@ -57,7 +57,7 @@ const Toast: FC = () => {
 ```
 
 ### 自定义图标
-可以通过icon属性设置自定义图标,具体参考SlIcon组件的属性进行选取
+可以通过icon属性设置自定义图标,具体参考Icon组件的属性进行选取
 ```js
 const Toast: FC = () => {
   const [toastParams, setToastParams] = useState({ {text: '自定义图标', icon: 'bell',visible:true } });

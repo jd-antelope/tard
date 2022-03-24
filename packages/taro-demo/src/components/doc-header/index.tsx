@@ -1,7 +1,7 @@
 import PropTypes, { InferProps } from 'prop-types'
 import React from 'react'
 import { navigateTo } from '@tarojs/taro'
-import { SlIcon } from 'tard'
+import { Icon } from 'tard'
 import { View } from '@tarojs/components'
 import { isWeb } from '../../utils'
 import './index.less'
@@ -26,7 +26,7 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
     return (
       <View>
         <View className='doc-header' style={!isWeb ? 'display:none' : ''}>
-          <SlIcon
+          <Icon
             className='doc-header__icon'
             value='chevron-left'
             size={26}

@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SearchBar, Toast } from 'haw-ui-test'
+import { SearchBar, Toast } from 'tard'
 import DocsHeader from '../../components/doc-header/index'
 
 const SearchBarPage: FC = () => {

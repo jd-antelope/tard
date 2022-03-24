@@ -1,8 +1,8 @@
 import React, { memo, useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View, Button, Image } from '@tarojs/components';
-import { Modal, ModalHeader, ModalContent, ModalAction, Icon } from 'haw-ui-test'
-import DocsHeader from '../../components/doc-header/index'
+import { Modal, Icon } from 'tard'
+import DocsHeader from '../../components/doc-header'
 
 const ModalPage: FC = () => {
   const [isOpened, setIsOpened] = useState(false)
@@ -85,9 +85,9 @@ const ModalPage: FC = () => {
           onConfirm={() => setIsOpened5(false)}
           contentAlign='left'
         >
-          <ModalContent>
+          <Modal.Content>
             <Image style="width:100%; height:40px" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
-          </ModalContent>
+          </Modal.Content>
         </Modal>
 
         <View className='doc-body-content-tip'>自定义内容、标题、操作按钮</View>
@@ -96,14 +96,14 @@ const ModalPage: FC = () => {
           <Icon value="chevron-right" color="#333" size={16} />
         </View>
         <Modal isOpened={isOpened4}>
-          <ModalHeader>标题</ModalHeader>
-          <ModalContent>
+          <Modal.Header>标题</Modal.Header>
+          <Modal.Content>
             <Image style="width:100%; height:40px" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
-          </ModalContent>
-          <ModalAction>
+          </Modal.Content>
+          <Modal.Action>
             <Button onClick={() => { setIsOpened4(false) }}>取消</Button>
             <Button onClick={() => { setIsOpened4(false) }}>确定</Button>
-          </ModalAction>
+          </Modal.Action>
         </Modal>
 
       </View>

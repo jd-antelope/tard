@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { Popup, Icon } from 'haw-ui-test'
+import { Popup, Icon } from 'tard'
 import DocsHeader from '../../components/doc-header/index'
 import './index.less';
 

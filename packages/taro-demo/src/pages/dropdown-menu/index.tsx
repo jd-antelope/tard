@@ -1,6 +1,6 @@
 import React, { memo, useState, FC } from 'react'
 import { View } from '@tarojs/components'
-import { DropdownMenu, ConfigProvider } from 'haw-ui-test'
+import { DropdownMenu, ConfigProvider } from 'tard'
 import DocsHeader from '../../components/doc-header/index'
 
 const DropdownMenuDemo: FC = () => {

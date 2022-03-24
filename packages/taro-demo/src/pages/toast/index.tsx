@@ -1,7 +1,7 @@
 import React, { memo, useState, useCallback } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { Toast, Icon } from 'haw-ui-test'
+import { Toast, Icon } from 'tard'
 import DocsHeader from '../../components/doc-header'
 import './index.less';
 

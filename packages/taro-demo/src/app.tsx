@@ -1,7 +1,7 @@
 import PropTypes, { InferProps } from 'prop-types'
 import { navigateTo } from '@tarojs/taro'
 import React from 'react'
-import { ConfigProvider } from 'haw-ui-test'
+import { ConfigProvider } from 'tard'
 import { isWeb } from './utils'
 import './app.less'
 

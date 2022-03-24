@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import { View, Image } from '@tarojs/components'
 import { navigateTo } from '@tarojs/taro';
-import { SlIcon } from 'tard'
+import { Icon } from 'tard'
 import './index.less'
 import MenuObj from '../../docs-route'
 import { isWeb } from '../../utils'
@@ -48,7 +48,7 @@ function Home() {
                   }}
                 >
                   <View className='comp-item-text'>{val.nameEn} {val.name}</View>
-                  <SlIcon value='chevron-right' color={itemActive && key === val.path ? "#fff": "#999"} size={16}></SlIcon>
+                  <Icon value='chevron-right' color={itemActive && key === val.path ? "#fff": "#999"} size={16}></Icon>
                 </View>
               ))
             }

@@ -29,7 +29,7 @@ import { SlImage } from 'tard'
 <SlImage 
   src=""
   showLoading
-  loadingContent={ <SlIcon value='loading-2' size={20} /> } 
+  loadingContent={ <Icon value='loading-2' size={20} /> } 
 />
 ```
 

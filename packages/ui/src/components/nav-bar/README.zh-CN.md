@@ -77,11 +77,11 @@ const onClickLeft = () => {
 | border | 是否显示下划线 | boolean | true |
 | color | 链接文字跟图标颜色，不包括标题 | string | #6190E8 |
 | leftIcon | 是否显示左侧箭头 | boolean | false |
-| leftIconType | 左边图标类型，图标类型请看 SlIcon 文档 |  string | SlIconBaseProps | 'chevron-left' |
+| leftIconType | 左边图标类型，图标类型请看 Icon 文档 |  string | IconBaseProps | 'chevron-left' |
 | leftText | 左边文字 | string | - |
 | fixed | 触发返回事件 | boolean | false |
 | border | 是否显示下划线 | boolean | true |
-| rightIconType | 右边图标类型，图标类型请看 SlIcon 文档 |  string | SlIconBaseProps | - |
+| rightIconType | 右边图标类型，图标类型请看 Icon 文档 |  string | IconBaseProps | - |
 
 ### Events
 |  事件名   | 说明  | 回调参数 |

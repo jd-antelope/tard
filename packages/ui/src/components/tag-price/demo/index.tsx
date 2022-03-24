@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { TagPrice } from 'haw-ui-test'
+import { TagPrice } from 'tard'
 import DocsHeader from '../../components/doc-header'
 
 const TagPricePage: FC = () => {
