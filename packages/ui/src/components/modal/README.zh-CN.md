@@ -63,7 +63,7 @@ const [isOpened, setIsOpened] = useState(false)
 ```
 
 ### 自定义弹框
-通过 `ModalContent` 标签自定义 content；通过 `ModalHeader` 标签自定义 `title` ；通过自定义 `ModalAction` 标签自定义操作按钮
+通过 `ModalContent` 标签自定义 content；通过 `Modal.Header` 标签自定义 `title` ；通过自定义 `ModalAction` 标签自定义操作按钮
 ```js
 <Button full onClick={() => setIsOpened5(true)}>自定义内容</Button>
 <Modal
@@ -81,7 +81,7 @@ const [isOpened, setIsOpened] = useState(false)
 
 <Button full onClick={() => setIsOpened4(true)}>自定义内容、标题、操作按钮</Button>
 <Modal isOpened={isOpened4}>
-    <ModalHeader>标题</ModalHeader>
+    <Modal.Header>标题</Modal.Header>
     <ModalContent>
         <Image style="width:100%; height:40px" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
     </ModalContent>

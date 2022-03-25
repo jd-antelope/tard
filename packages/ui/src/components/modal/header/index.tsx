@@ -10,6 +10,6 @@ const ModalHeader: FC<ModalContentProps> = ({ children, className }) => {
 
 }
 
-ModalHeader.displayName = 'ModalHeader'
+ModalHeader.prototype.displayName = 'ModalHeader'
 
 export default ModalHeader

@@ -1,6 +1,6 @@
 import DropdownMenuComponent from './dropdown-menu'
 
-import DropdownMenuItem from './dropdown-menu-item'
+import DropdownMenuItem from './item'
 
 import { DropdownMenuProps } from './type'
 
