@@ -81,7 +81,7 @@ const BadgePage: FC = () => {
         <View style="display:inline-block; width: 40px; height:20px;"></View>
         <Badge value={5} color="blue" />
         <View style="display:inline-block; width: 40px; height:20px;"></View>
-        <Badge content={<Icon value='bell' size={12}></Icon>} />
+        <Badge content={<Icon value='video' size={12}></Icon>} />
 
       </View>
 

@@ -14,6 +14,6 @@ const ModalContent: FC<ModalContentProps> = ({ children, className }) => {
   )
 }
 
-ModalContent.displayName = 'ModalContent'
+ModalContent.prototype.displayName = 'ModalContent'
 
 export default ModalContent

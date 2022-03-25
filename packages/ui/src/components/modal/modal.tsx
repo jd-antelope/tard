@@ -23,7 +23,8 @@ const Modal: FC<ModalProps> = ({
   // onClose,
   onConfirm,
   onCancel,
-  customizeStyle
+  customizeStyle,
+  children
 }) => {
 
   const [_isOpened, setIsOpened] = useState<boolean>(isOpened)
@@ -77,7 +78,7 @@ const Modal: FC<ModalProps> = ({
   }
 
 
-  const children = {
+  const childrenMap = {
     ModalHeader: null,
     ModalContent: null,
     ModalAction: null
@@ -86,7 +87,8 @@ const Modal: FC<ModalProps> = ({
   React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       const displayName = (child.type as any).displayName
-      children[displayName] = child
+      console.log(children)
+      childrenMap[displayName] = child
     }
   })
 
@@ -112,7 +114,7 @@ const Modal: FC<ModalProps> = ({
               <Text>{title}</Text>
             </ModalHeader>
           )}
-          {children.ModalHeader}
+          {childrenMap.ModalHeader}
           {content && (
             <ModalContent>
               <View className='content-simple' style={`text-align: ${contentAlign}`}>
@@ -130,7 +132,7 @@ const Modal: FC<ModalProps> = ({
               </View>
             </ModalContent>
           )}
-          {children.ModalContent}
+          {childrenMap.ModalContent}
           {isRenderAction && (
             <ModalAction isSimple>
               {cancelText && (
@@ -141,7 +143,7 @@ const Modal: FC<ModalProps> = ({
               )}
             </ModalAction>
           )}
-          {children.ModalAction}
+          {childrenMap.ModalAction}
         </View>
       </CompContainer>
     )

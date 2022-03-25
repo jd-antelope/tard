@@ -20,7 +20,7 @@ const ModalAction: FC<ModalActionProps> = ({ isSimple = false, className, childr
   )
 }
 
-ModalAction.displayName = 'ModalAction'
+ModalAction.prototype.displayName = 'ModalAction'
 
 export default ModalAction
 

@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { View } from '@tarojs/components'
 import { DropdownMenuProps } from './type'
 import CompContainer from '../../common/comp-container'
-import DropdownMenuItem from './dropdown-menu-item'
+import DropdownMenuItem from './item'
 import { isWeb } from '../../utils'
 import { CssPrefix } from '../../common'
 
