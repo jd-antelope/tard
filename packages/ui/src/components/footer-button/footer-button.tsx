@@ -5,9 +5,10 @@ import { FooterButtonProps } from './type'
 import { objectToString, pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
 import { isFunction } from '../../common/is'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const FooterButton: FC<FooterButtonProps> = (props) => {
+  const CssPrefix = cssPrefix()
   const handleClick = () => {
     isFunction(props.onClick) && props.onClick()
   }

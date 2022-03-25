@@ -6,7 +6,7 @@ import { CommonEvent } from '@tarojs/components/types/common'
 import { PopupProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { objectToString } from '../../common/utils'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const Popup: FC<PopupProps> = ({ 
   title = '',
@@ -18,6 +18,7 @@ const Popup: FC<PopupProps> = ({
   customizeStyle = '',
   onClose = () => {}
 }) => {
+  const CssPrefix = cssPrefix()
   const [_isOpened, set_isOpened] = useState<boolean>(false)
 
   useEffect(() => {

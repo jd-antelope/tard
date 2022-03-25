@@ -3,18 +3,19 @@ import React, { FC } from 'react'
 import { Text } from '@tarojs/components'
 import { IconProps } from './type'
 import { mergeStyle, pxTransform } from '../../utils'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
-const Icon: FC<IconProps> = ({
-  customStyle = '',
-  className = '',
-  prefixClass = CssPrefix + '-icon',
-  value = '',
-  color = '',
-  size = 16,
-  onClick = () => {}
-}) => {
-
+const Icon: FC<IconProps> = (props) => {
+  const CssPrefix = cssPrefix()
+  const {
+    customStyle = '',
+    className = '',
+    prefixClass = CssPrefix + '-icon',
+    value = '',
+    color = '',
+    size = 16,
+    onClick = () => {}
+  } = props
   const handleClick = (e) => {
     onClick(e)
   }

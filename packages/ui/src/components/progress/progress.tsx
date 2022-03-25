@@ -4,7 +4,7 @@ import { View, Text } from '@tarojs/components'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils';
 import { ProgressProps } from './type'
-import { CssPrefix } from '../../common';
+import { cssPrefix } from '../../common';
 
 const Progress: FC<ProgressProps> = ({
   percent = 0,
@@ -18,8 +18,7 @@ const Progress: FC<ProgressProps> = ({
   className,
   customizeStyle
 }) => {
-
-
+  const CssPrefix = cssPrefix()
   const rootClass = classNames(
     `${CssPrefix}-progress`,
     {

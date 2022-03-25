@@ -25,7 +25,7 @@ const change = (res) => {
 return (
   <View className="container">
     <Form onSubmit={onSubmit}>
-      <SlField
+      <Field
         name='name' 
         label='账号' 
         type='text' 
@@ -34,7 +34,7 @@ return (
         onChange={(e) => change({ name |  e })} 
       />
     </Form>
-    <SlButton formType='submit'>提交</SlButton>
+    <Button formType='submit'>提交</Button>
   </View>
 );
 ```

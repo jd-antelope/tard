@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { Input, Text, View } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
 import { InputNumberProps } from './type'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
 
 // TODO: Check all types
@@ -53,7 +53,7 @@ const InputNumber: FC<InputNumberProps> = ({
   onErrorInput = (): void => { },
   customizeStyle
 }) => {
-
+  const CssPrefix = cssPrefix()
   const handleClick = (clickType: 'minus' | 'plus'): void => {
     const lowThanMin = clickType === 'minus' && value <= min
     const overThanMax = clickType === 'plus' && value >= max

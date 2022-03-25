@@ -6,7 +6,7 @@ import { CommonEvent } from '@tarojs/components/types/common'
 import { RateProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const Rate: FC<RateProps> = ({ 
   customStyle = '',
@@ -19,6 +19,7 @@ const Rate: FC<RateProps> = ({
   customizeStyle = '',
   onChange = () => {}
 }) => {
+  const CssPrefix = cssPrefix()
   const handleClick = (event: CommonEvent, index) => {
     onChange && onChange(event, index)
   }

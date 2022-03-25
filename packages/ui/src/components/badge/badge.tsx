@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { View } from '@tarojs/components'
 import CompContainer from '../../common/comp-container'
 import { BadgeProps } from './type'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const Badge: FC<BadgeProps> = ({
   dot = false,
@@ -15,6 +15,7 @@ const Badge: FC<BadgeProps> = ({
   children,
   customizeStyle
 }) => {
+  const CssPrefix = cssPrefix()
   const formatValue = (
     value: string | number | undefined,
     maxValue: number

@@ -7,7 +7,7 @@ import Taro from '@tarojs/taro'
 import { UploaderProps, VideoInterface, File } from './type'
 import { uuid } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 interface MatrixFile extends Partial<File> {
 	type: 'blank' | 'btn'
@@ -70,6 +70,7 @@ const Uploader: FC<UploaderProps> = ({
 	onImageClick = () => {},
 	customizeStyle = ''
 }) => {
+	const CssPrefix = cssPrefix()
 	const [playObj, setPlayObj] = useState<VideoInterface>({
 		file: '',
     url: ''

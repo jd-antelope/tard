@@ -55,7 +55,7 @@ import { Image } from 'tard'
 | showLoading | 自定义加载内容 | boolean | true      |
 | loadingContent | 是否展示动画 | React.ReactNode | -      |
 
-### GridItem Events
+### Image Events
 |  事件名   | 说明  | 回调参数 |
 |  ----  | ----  | ---- |
 | onClick | 点击图片时触发 | - |

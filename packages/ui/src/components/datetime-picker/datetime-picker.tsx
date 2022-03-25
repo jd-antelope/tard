@@ -11,7 +11,7 @@ import {
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
 import { DatetimePickerProps } from './type'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const DatetimePicker: FC<DatetimePickerProps> = (props) => {
   const { 
@@ -28,7 +28,7 @@ const DatetimePicker: FC<DatetimePickerProps> = (props) => {
     round = false,
     customizeStyle = ''
   } = props
-
+  const CssPrefix = cssPrefix()
   // 第一次进入判断
   const getTimeArray = (input: string, type = 'date') => {
     const date = new Date()

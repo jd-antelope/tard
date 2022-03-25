@@ -4,7 +4,7 @@ import { View, Text } from '@tarojs/components'
 import { CellProps } from './type'
 import Icon from '../icon/index'
 import Taro from '@tarojs/taro'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
 
 const Cell: FC<CellProps> = (
@@ -25,7 +25,7 @@ const Cell: FC<CellProps> = (
     customizeStyle
   }
 ) => {
-
+  const CssPrefix = cssPrefix()
   // 点击右侧数据
   const handleClick = () => {
     onClick && onClick()

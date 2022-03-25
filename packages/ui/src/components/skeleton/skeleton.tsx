@@ -4,12 +4,12 @@ import cn from 'classnames'
 import { View } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import { SkeletonProps } from './type'
 
 const obj = {
-  'squared': `${CssPrefix}-skeleton-squared`,
-  'rounded': `${CssPrefix}-skeleton-rounded`,
+  'squared': `${cssPrefix()}-skeleton-squared`,
+  'rounded': `${cssPrefix()}-skeleton-rounded`,
   'default': ''
 }
 
@@ -20,6 +20,7 @@ const Skeleton: FC<SkeletonProps> = ({
   type = "default",
   customizeStyle = ''
 }) => {
+  const CssPrefix = cssPrefix()
   const customStyle = {
     'width': pxTransform(width || 24),
     'minHeight': pxTransform(height || 24),

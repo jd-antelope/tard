@@ -4,7 +4,7 @@ import { Input, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { SearchBarProps } from './type'
 import Icon from '../icon'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
 
 const SearchBar: FC<SearchBarProps> = ({
@@ -28,9 +28,8 @@ const SearchBar: FC<SearchBarProps> = ({
   background,
   className,
   customizeStyle
-}
-) => {
-
+}) => {
+  const CssPrefix = cssPrefix()
   const [isFocus, setIsFocus] = useState(!!focus)
 
   const handleFocus = (event: CommonEvent): void => {

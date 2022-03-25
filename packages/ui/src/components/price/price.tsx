@@ -3,7 +3,7 @@ import cn from 'classnames'
 import { View, Text } from '@tarojs/components'
 import { pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import { PriceProps } from './type'
 
 const Price: FC<PriceProps> = ({ 
@@ -25,6 +25,7 @@ const Price: FC<PriceProps> = ({
   thousands = false,
   customizeStyle = ''
 }) => {
+  const CssPrefix = cssPrefix()
   const saveMax = (getPrice) => {
     const price = Number(getPrice);
     if (String(price).indexOf('.') === -1) {

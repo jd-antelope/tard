@@ -4,7 +4,7 @@ import { Image, Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { objectToString } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import { ToastProps } from './type'
 import statusImg from './img.json'
 
@@ -23,6 +23,7 @@ const Toast: FC<ToastProps> = ({
   customStyle = {},
   customizeStyle = ''
 }) => {
+  const CssPrefix = cssPrefix()
   let _timer: NodeJS.Timeout | null
   const [_isOpened, setIsOpened] = useState<boolean>(visible)
 
