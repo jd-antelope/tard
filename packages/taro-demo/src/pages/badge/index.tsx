@@ -28,7 +28,7 @@ const BadgePage: FC = () => {
         <Badge dot >
           <Button>按钮</Button>
         </Badge>
-        
+
         <View className='doc-body-content-tip'>最大值</View>
         <Badge value={20} maxValue={9} >
           <Button>按钮</Button>
@@ -60,15 +60,15 @@ const BadgePage: FC = () => {
         </Badge>
 
         <View className='doc-body-content-tip'>自定义内容</View>
-        <Badge content={<Icon value='bell' size={12}></Icon>}>
+        <Badge content={<Icon value='video' size={12}></Icon>}>
           <Button>按钮</Button>
         </Badge>
         <View style="display:inline-block; width: 20px; height:20px;"></View>
-        <Badge content={<Icon value='check' size={12}></Icon>}>
+        <Badge content={<Icon value='chevron-up' size={12}></Icon>}>
           <Button>按钮</Button>
         </Badge>
         <View style="display:inline-block; width: 20px; height:20px;"></View>
-        <Badge content={<Icon value='arrow-down' size={12}></Icon>}>
+        <Badge content={<Icon value='chevron-down' size={12}></Icon>}>
           <Button>按钮</Button>
         </Badge>
 

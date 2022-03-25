@@ -6,8 +6,6 @@ import { ModalContentProps } from '../type'
 import { CssPrefix } from '../../../common'
 
 const ModalContent: FC<ModalContentProps> = ({ children, className }) => {
-  // const displayName = 'ModalContent';
-
   const rootClass = classNames(`${CssPrefix}-modal__content`, className)
   return (
     <ScrollView scrollY className={rootClass}>
@@ -15,5 +13,7 @@ const ModalContent: FC<ModalContentProps> = ({ children, className }) => {
     </ScrollView>
   )
 }
+
+ModalContent.displayName = 'ModalContent'
 
 export default ModalContent

@@ -3,33 +3,33 @@
 单元格为列表中的单个展示项
 ### 引入
 ```js
-import { SlCell } from 'tard'
+import { Cell } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
-`SlCell` 可以单独使用，也可以与 `SlCellGroup` 搭配使用
+`Cell` 可以单独使用，也可以与 `Cell.Group` 搭配使用
 ```js
-<SlCell title="单元格" value="相关内容" />
-<SlCell title="单元格" value="相关内容" label="描述信息" />
+<Cell title="单元格" value="相关内容" />
+<Cell title="单元格" value="相关内容" label="描述信息" />
 ```
 ### 卡片用法
-通过 `SlCellGroup` 的 `inset` 属性，可以将单元格转换为圆角卡片风格
+通过 `Cell.Group` 的 `inset` 属性，可以将单元格转换为圆角卡片风格
 ```js
-<SlCellGroup inset>
-  <SlCell title="单元格" value="相关内容" />
-  <SlCell title="单元格" value="相关内容" label="描述信息" />
-</SlCellGroup>
+<Cell.Group inset>
+  <Cell title="单元格" value="相关内容" />
+  <Cell title="单元格" value="相关内容" label="描述信息" />
+</Cell.Group>
 ```
 
 ### 展示图标
 通过 `icon` 属性在标题左侧展示图标
 ```js
-<SlCell title="单元格" value="相关内容" icon="user" border={false} />
+<Cell title="单元格" value="相关内容" icon="user" border={false} />
 ```
 ### 只设置value
 只设置 `value` 时，内容会靠左对齐
 ```js
-<SlCell value="单元格" />
+<Cell value="单元格" />
 ```
 
 ### 展示箭头
@@ -37,54 +37,54 @@ import { SlCell } from 'tard'
 ```js
 const [toastVisible, setToastVisible] = useState(false)
 
-<SlCell title="单元格" isLink onClick={() => setToastVisible(true)} />
-<SlCell title="单元格" value="相关内容" isLink onClick={() => setToastVisible(true)} />
-<SlCell title="单元格" value="相关内容" isLink arrowDirection="down" onClick={() => setToastVisible(true)} />
+<Cell title="单元格" isLink onClick={() => setToastVisible(true)} />
+<Cell title="单元格" value="相关内容" isLink onClick={() => setToastVisible(true)} />
+<Cell title="单元格" value="相关内容" isLink arrowDirection="down" onClick={() => setToastVisible(true)} />
 
-<SlToast text="触发点击事件" visible={toastVisible} onClose={() => setToastVisible(false)} />
+<Toast text="触发点击事件" visible={toastVisible} onClose={() => setToastVisible(false)} />
 ```
 ### 页面导航
 通过 `to` 属性进行路由跳转，`to` 属性设置页面类型
 ```js
-<SlCell title="路由跳转" isLink to="/pages/home/index" pageType="navigateTo" />
+<Cell title="路由跳转" isLink to="/pages/home/index" pageType="navigateTo" />
 ```
 ### 分组
-通过 `SlCellGroup` 的 `title` 属性可以指定分组标题
+通过 `Cell.Group` 的 `title` 属性可以指定分组标题
 ```js
-<SlCellGroup title="分组一">
-  <SlCell title="单元格" value="相关内容" />
-</SlCellGroup>
-<SlCellGroup title="分组二">
-  <SlCell title="单元格" value="相关内容" />
-  <SlCell title="单元格" value="相关内容" />
-</SlCellGroup>
+<Cell.Group title="分组一">
+  <Cell title="单元格" value="相关内容" />
+</Cell.Group>
+<Cell.Group title="分组二">
+  <Cell title="单元格" value="相关内容" />
+  <Cell title="单元格" value="相关内容" />
+</Cell.Group>
 ```
 ### 垂直居中
-通过 `center` 属性可以让 `SlCell` 的左右内容都垂直居中
+通过 `center` 属性可以让 `Cell` 的左右内容都垂直居中
 ```js
-<SlCell title="单元格" center value="相关内容" label="描述信息" border={false} />
+<Cell title="单元格" center value="相关内容" label="描述信息" border={false} />
 ```
 
 ### 使用插槽
 如以上用法不能满足你的需求，可以使用插槽 `leftContent`、`rightContent` 来自定义内容
 ```js
-<SlCell value="相关内容" leftContent={<View className='left-content'>
+<Cell value="相关内容" leftContent={<View className='left-content'>
   <View className='left-content__text'>单元格</View>
-  <SlButton type="danger" size='mini'>标签</SlButton>
+  <Button type="danger" size='mini'>标签</Button>
 </View>} />
-<SlCell title="单元格" icon="user" rightContent={<SlIcon value='search' />} />
-<SlCell title="单元格" rightContent={<View><SlSwitch checked={checked} onChange={(v) => setChecked(v)} /></View>} />
+<Cell title="单元格" icon="user" rightContent={<Icon value='search' />} />
+<Cell title="单元格" rightContent={<View><Switch checked={checked} onChange={(v) => setChecked(v)} /></View>} />
 ```
         
 ## API
-### SlCellGroup Props
+### Cell.Group Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | title | 分组标题 | number｜string | - |
 | inset | 是否卡片风格 | boolean | - |
 | border | 是否显示内边框 | boolean | - |
 
-### SlCell Props
+### Cell Props
 |  属性   | 说明  | 类型 | 默认值 |
 |  ----  | ----  | ---- | ---- |
 | title | 左侧标题 | number｜string | - |

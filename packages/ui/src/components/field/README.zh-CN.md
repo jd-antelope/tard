@@ -197,8 +197,8 @@ import { Field } from 'tard'
 ### 样式变量
 |  属性   | 默认值 |
 |  ----  | ---- |
-|  --field-label-color |  var(--color-text-base) |
-|  --field-text-color |  var(--color-text-base) |
+|  --field-label-color |  var(--color-text) |
+|  --field-text-color |  var(--color-text) |
 |  --field-font-size |  var(--font-size-base) |
 |  --field-placeholder-color |  var(--color-grey-2) |
 |  --field-label-h |  60px |

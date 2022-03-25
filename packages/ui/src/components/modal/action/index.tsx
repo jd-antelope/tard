@@ -5,8 +5,6 @@ import { ModalActionProps } from '../type'
 import { CssPrefix } from '../../../common'
 
 const ModalAction: FC<ModalActionProps> = ({ isSimple = false, className, children }) => {
-  // const displayName = 'ModalAction';
-
   const rootClass = classNames(
     `${CssPrefix}-modal__footer`,
     {
@@ -22,6 +20,7 @@ const ModalAction: FC<ModalActionProps> = ({ isSimple = false, className, childr
   )
 }
 
+ModalAction.displayName = 'ModalAction'
 
 export default ModalAction
 

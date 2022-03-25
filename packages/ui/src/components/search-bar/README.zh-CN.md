@@ -92,7 +92,7 @@ const [value, setValue] = useState('')
 | --search-bar-placeholder-padding | 14px                          | -    |
 | --search-bar-input-bg-color      | #F7F8FA                       | -    |
 | --search-bar-placeholder-color   | var(--color-text-placeholder) | -    |
-| --search-bar-btn-color           | var(--color-text-base)        | -    |
+| --search-bar-btn-color           | var(--color-text)        | -    |
 | --search-bar-vertical-padding    | 24px                          | -    |
 | --search-bar-horizontal-padding  | 36px                          | -    |
 | --search-bar-input-radius        | 40px                          | -    |

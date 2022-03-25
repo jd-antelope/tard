@@ -26,6 +26,8 @@ export default class CompContainer extends React.Component<CommonProps, CommonSt
     for (const item in themeParams) {
       themeStyle += `--${item}: ${themeParams[item]};`
     }
+
+    themeStyle += 'color: var(--color-text)'
     this.setState({
       themeStyle
     })

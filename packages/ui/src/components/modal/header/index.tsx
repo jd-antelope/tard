@@ -5,9 +5,11 @@ import { ModalContentProps } from '../type'
 import { CssPrefix } from '../../../common'
 
 const ModalHeader: FC<ModalContentProps> = ({ children, className }) => {
-  // const displayName = 'ModalHeader';
   const rootClass = classNames(`${CssPrefix}-modal__header`, className)
   return <View className={rootClass}>{children}</View>
 
 }
+
+ModalHeader.displayName = 'ModalHeader'
+
 export default ModalHeader

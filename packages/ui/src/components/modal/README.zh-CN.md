@@ -3,7 +3,7 @@
 弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作
 ### 引入
 ```js
-import { SlModal } from 'tard'
+import { Modal } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
@@ -13,8 +13,8 @@ const [isOpened, setIsOpened] = useState(false)
 const [isOpened1, setIsOpened1] = useState(false)
 const [isOpened2, setIsOpened2] = useState(false)
 
-<SlButton full onClick={() => setIsOpened(true)}>提示弹窗</SlButton>
-<SlModal
+<Button full onClick={() => setIsOpened(true)}>提示弹窗</Button>
+<Modal
     isOpened={isOpened}
     title='标题'
     confirmText='确认'
@@ -23,8 +23,8 @@ const [isOpened2, setIsOpened2] = useState(false)
     content='弹框内容'
 />
 
-<SlButton full onClick={() => setIsOpened1(true)}>提示弹窗（无标题）</SlButton>
-<SlModal
+<Button full onClick={() => setIsOpened1(true)}>提示弹窗（无标题）</Button>
+<Modal
     isOpened={isOpened1}
     confirmText='确认'
     onClose={() => setIsOpened1(false)}
@@ -32,8 +32,8 @@ const [isOpened2, setIsOpened2] = useState(false)
     content='弹框内容'
 />
 
-<SlButton full onClick={() => setIsOpened2(true)}>确定弹窗</SlButton>
-<SlModal
+<Button full onClick={() => setIsOpened2(true)}>确定弹窗</Button>
+<Modal
     title='标题'
     isOpened={isOpened2}
     confirmText='确认'
@@ -50,8 +50,8 @@ const [isOpened2, setIsOpened2] = useState(false)
 ```js
 const [isOpened, setIsOpened] = useState(false)
 
-<SlButton full onClick={() => setIsOpened(true)}>提示弹窗</SlButton>
-<SlModal
+<Button full onClick={() => setIsOpened(true)}>提示弹窗</Button>
+<Modal
     isOpened={isOpened}
     title='标题'
     confirmText='确认'
@@ -63,10 +63,10 @@ const [isOpened, setIsOpened] = useState(false)
 ```
 
 ### 自定义弹框
-通过 `SlModalContent` 标签自定义 content；通过 `SlModalHeader` 标签自定义 `title` ；通过自定义 `SlModalAction` 标签自定义操作按钮
+通过 `ModalContent` 标签自定义 content；通过 `ModalHeader` 标签自定义 `title` ；通过自定义 `ModalAction` 标签自定义操作按钮
 ```js
-<SlButton full onClick={() => setIsOpened5(true)}>自定义内容</SlButton>
-<SlModal
+<Button full onClick={() => setIsOpened5(true)}>自定义内容</Button>
+<Modal
     isOpened={isOpened5}
     title="标题"
     confirmText='确认'
@@ -74,22 +74,22 @@ const [isOpened, setIsOpened] = useState(false)
     onConfirm={() => setIsOpened5(false)}
     contentAlign='left'
 >
-    <SlModalContent>
+    <ModalContent>
         <Image style="width:100%; height:40px" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
-    </SlModalContent>
-</SlModal>
+    </ModalContent>
+</Modal>
 
-<SlButton full onClick={() => setIsOpened4(true)}>自定义内容、标题、操作按钮</SlButton>
-<SlModal isOpened={isOpened4}>
-    <SlModalHeader>标题</SlModalHeader>
-    <SlModalContent>
+<Button full onClick={() => setIsOpened4(true)}>自定义内容、标题、操作按钮</Button>
+<Modal isOpened={isOpened4}>
+    <ModalHeader>标题</ModalHeader>
+    <ModalContent>
         <Image style="width:100%; height:40px" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
-    </SlModalContent>
-    <SlModalAction>
+    </ModalContent>
+    <ModalAction>
         <Button onClick={() => { setIsOpened4(false) }}>取消</Button>
         <Button onClick={() => { setIsOpened4(false) }}>确定</Button>
-    </SlModalAction>
-</SlModal>
+    </ModalAction>
+</Modal>
 ```
 ## API
 ### Props

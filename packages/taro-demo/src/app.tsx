@@ -1,4 +1,3 @@
-import PropTypes, { InferProps } from 'prop-types'
 import { navigateTo } from '@tarojs/taro'
 import React from 'react'
 import { ConfigProvider } from 'tard'
@@ -6,21 +5,21 @@ import { isWeb } from './utils'
 import './app.less'
 
 class App extends React.Component {
-  public static propTypes: InferProps<{}>
 
-  componentDidShow () {
+  componentDidShow() {
     ConfigProvider.config({
       theme: {
-        'color-primary': 'green',
+        'color-primary': 'yellow',
+        'color-text': 'red'
       }
     })
-    
+
     if (isWeb) {
       window.addEventListener("message", this.iframeListener, false);
     }
   }
 
-  iframeListener (e: any) {
+  iframeListener(e: any) {
     const activeMenu = e.data.path
     if (activeMenu) {
       navigateTo({
@@ -32,10 +31,6 @@ class App extends React.Component {
   public render(): React.ReactNode {
     return this.props.children
   }
-}
-
-App.propTypes = {
-  children: PropTypes.node
 }
 
 export default App
