@@ -1,7 +1,7 @@
 
 import React, { FC } from 'react'
 import cn from 'classnames'
-import { View, Text } from '@tarojs/components'
+import { Text } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { LoadingProps } from './type'
 import CompContainer from '../../common/comp-container'

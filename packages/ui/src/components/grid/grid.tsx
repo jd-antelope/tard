@@ -1,5 +1,4 @@
 import React, { FC, cloneElement, ReactElement, ComponentProps } from 'react'
-import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import GridItem from './grid-item'
 import { GridProps } from './type'

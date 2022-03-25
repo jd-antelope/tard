@@ -3,7 +3,7 @@ import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import { Tab } from 'tard'
 import DocsHeader from '../../components/doc-header'
-import './index.less';
+
 const orderStatus = [{
   key: 'total',
   title: '全部'
