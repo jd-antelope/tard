@@ -9,6 +9,7 @@ import {
 } from '@tarojs/components/types/common'
 // import Common from '../../common/common'
 import { TabProps } from './type'
+import CompContainer from '../../common/comp-container'
 import { isTest, uuid, mergeStyle } from '../../common/utils'
 
 const ENV = Taro.getEnv()
@@ -30,6 +31,7 @@ const Tab: FC<TabProps> = (
     activeColor = '#FF2929',
     color = '#666666',
     className,
+    customizeStyle = '',
     children
   }
 ) => {
@@ -230,7 +232,7 @@ const Tab: FC<TabProps> = (
   const scrollY = tabDirection === 'vertical'
 
   return (
-    <View className={rootCls} style={mergeStyle(heightStyle, customStyle)}>
+    <CompContainer customizeStyle={ customizeStyle } className={rootCls} style={mergeStyle(heightStyle, customStyle)}>
       {scroll ? (
         <ScrollView
           id={tabId}
@@ -260,7 +262,7 @@ const Tab: FC<TabProps> = (
         <View className='slc-tab__underline' style={underlineStyle}></View>
         {children}
       </View>
-    </View>
+    </CompContainer>
   )
 }
 

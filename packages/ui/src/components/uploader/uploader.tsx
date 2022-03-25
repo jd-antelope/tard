@@ -6,6 +6,7 @@ import { ITouchEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
 import { UploaderProps, VideoInterface, File } from './type'
 import { uuid } from '../../common/utils'
+import CompContainer from '../../common/comp-container'
 import { CssPrefix } from '../../common'
 
 interface MatrixFile extends Partial<File> {
@@ -66,7 +67,8 @@ const Uploader: FC<UploaderProps> = ({
 	children = '',
 	onFail = () => {},
 	onChange = () => {},
-	onImageClick = () => {}
+	onImageClick = () => {},
+	customizeStyle = ''
 }) => {
 	const [playObj, setPlayObj] = useState<VideoInterface>({
 		file: '',
@@ -140,7 +142,7 @@ const Uploader: FC<UploaderProps> = ({
 	const rootCls = classNames(`${CssPrefix}-uploader-picker`, className)
 
 	return (
-		<View className={rootCls} style={customStyle}>
+		<CompContainer className={rootCls} style={customStyle} customizeStyle={customizeStyle}>
 			{matrix.map((row, i) => (
 				<View className={ `${CssPrefix}-uploader-picker__flex-box` } key={i + 1}>
 					{row.map((item, j) =>
@@ -204,7 +206,7 @@ const Uploader: FC<UploaderProps> = ({
 					)}
 				</View>
 			))}
-		</View>
+		</CompContainer>
 	)
 }
 

@@ -62,22 +62,20 @@ const Popup: FC<PopupProps> = ({
   })
 
   return (
-    <CompContainer customizeStyle={ customizeStyle }>
-      <View className={rootClass} onTouchMove={handleTouchMove}>
-        <View className={ `${CssPrefix}-popup__mask` } onClick={outClick} />
-        <View className={containerClass}>
-          {
-            title ?
-              (
-                <View className="popup-header">
-                  <View className="popup-header__title" style={titleStyle}>{title}</View>
-                  <View className="popup-header-btn__close" onClick={close}></View>
-                </View>
-              ) : null
-          }
-          <View className="popup-main">
-            {children}
-          </View>
+    <CompContainer className={rootClass} onTouchMove={handleTouchMove} customizeStyle={ customizeStyle }>
+      <View className={ `${CssPrefix}-popup__mask` } onClick={outClick} />
+      <View className={containerClass}>
+        {
+          title ?
+            (
+              <View className="popup-header">
+                <View className="popup-header__title" style={titleStyle}>{title}</View>
+                <View className="popup-header-btn__close" onClick={close}></View>
+              </View>
+            ) : null
+        }
+        <View className="popup-main">
+          {children}
         </View>
       </View>
     </CompContainer>

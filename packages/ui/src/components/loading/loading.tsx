@@ -41,18 +41,17 @@ const LoadingComponent: FC<LoadingProps> = ({
   )
 
   return (
-    <CompContainer customizeStyle={ customizeStyle }>
-      <View 
-        className={ cn(`${CssPrefix}-loading`, { [`${CssPrefix}-loading-flex`]: overlay }) }
-        onClick={ handler }
-      >
-        <Text 
-          className={iconClass} 
-          style={ 
-            (color !== '' ? `color: ${color};` : '') + style
-          } 
-        />
-      </View>
+    <CompContainer 
+      className={ cn(`${CssPrefix}-loading`, { [`${CssPrefix}-loading-flex`]: overlay }) }
+      onClick={ handler }
+      customizeStyle={ customizeStyle }
+    >
+      <Text 
+        className={iconClass} 
+        style={ 
+          (color !== '' ? `color: ${color};` : '') + style
+        } 
+      />
     </CompContainer>
   )
 }

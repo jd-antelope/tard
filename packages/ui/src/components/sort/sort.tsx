@@ -4,6 +4,7 @@ import { View } from '@tarojs/components'
 import { SortProps, ActiveSort } from './type'
 import { isFunction } from '../../common/is'
 import { pxTransform } from '../../common/utils'
+import CompContainer from '../../common/comp-container'
 import { CssPrefix } from '../../common'
 
 const Sort: FC<SortProps> = (props) => {
@@ -14,6 +15,7 @@ const Sort: FC<SortProps> = (props) => {
     arrowColor = '#CCCCCC',
     activeColor = '#FF2929',
     border = false,
+    customizeStyle = ''
   } = props
 
   const [activeKey, setActiveKey] = useState<string>('')
@@ -41,7 +43,7 @@ const Sort: FC<SortProps> = (props) => {
   }
 
   return (
-    <View className={ `${CssPrefix}-sort` } style={containerStyle} >
+    <CompContainer className={ `${CssPrefix}-sort` } style={containerStyle} customizeStyle={customizeStyle}>
       {
         list.map((item:any, index)=>{
           const textStyle = {
@@ -77,7 +79,7 @@ const Sort: FC<SortProps> = (props) => {
           </View>
         })
       }
-    </View>
+    </CompContainer>
   )
 }
 

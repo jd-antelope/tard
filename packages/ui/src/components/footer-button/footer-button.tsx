@@ -97,14 +97,3 @@ const FooterButton: FC<FooterButtonProps> = (props) => {
 }
 
 export default FooterButton
-
-// SlFooterButton.defaultProps = {
-//   name: '按钮',
-//   padding: pxTransform(20),
-//   margin: 0,
-//   radius: 0,
-//   lineHeight: 80,
-//   doubleBtn: false,
-//   isFixed: true,
-//   secondName: '取消',
-// }

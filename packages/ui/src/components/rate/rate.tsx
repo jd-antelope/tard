@@ -56,28 +56,26 @@ const Rate: FC<RateProps> = ({
   }
 
   return (
-    <CompContainer customizeStyle={customizeStyle}>
-      <View className={classNames(rootClassName, className)} style={customStyle}>
-        {classNameArr.map((cls, i) => (
-          <View
-            className={cls}
-            key={`${CssPrefix}-rate-star-${i}`}
-            style={ iconStyle }
-            onClick={(e) => handleClick(e, i + 1)}
-          >
+    <CompContainer className={classNames(rootClassName, className)} style={customStyle} customizeStyle={customizeStyle}>
+      {classNameArr.map((cls, i) => (
+        <View
+          className={cls}
+          key={`${CssPrefix}-rate-star-${i}`}
+          style={ iconStyle }
+          onClick={(e) => handleClick(e, i + 1)}
+        >
+          <Text
+            className={ `${CssPrefix}-icon ${CssPrefix}-icon-star` }
+            style={isActiveRate(cls, 'on') ? Object.assign(activeIconStyle, starIconStyle) : starIconStyle}
+          ></Text>
+          <View className={ `${CssPrefix}-rate__left` } style={isActiveRate(cls, 'half') ? activeIconStyle : {}}>
             <Text
               className={ `${CssPrefix}-icon ${CssPrefix}-icon-star` }
-              style={isActiveRate(cls, 'on') ? Object.assign(activeIconStyle, starIconStyle) : starIconStyle}
+              style={starIconStyle}
             ></Text>
-            <View className={ `${CssPrefix}-rate__left` } style={isActiveRate(cls, 'half') ? activeIconStyle : {}}>
-              <Text
-                className={ `${CssPrefix}-icon ${CssPrefix}-icon-star` }
-                style={starIconStyle}
-              ></Text>
-            </View>
           </View>
-        ))}
-      </View>
+        </View>
+      ))}
     </CompContainer>
   )
 }

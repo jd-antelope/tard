@@ -49,18 +49,18 @@ const Switch: FC<SwitchProps> = (props) => {
     top: ${pxTransform(-(btnSize - bgHeight)/2)}`
 
   return (
-    <CompContainer customizeStyle={ customizeStyle }>
-      <View className={rootCls} style={rootSty} 
-        onClick={()=>{
-          const v = !checked
-          if(isFunction(props.onChange) && !disabled) {
-            props.onChange(v)
-          }
-        }}
-      >
-        <View className={ `${CssPrefix}-switch__bg` } style={bgStyle} />
-        <View className={ `${CssPrefix}-switch__btn` } style={btnStyle}></View>
-      </View>
+    <CompContainer 
+      className={rootCls} style={rootSty} 
+      customizeStyle={ customizeStyle }
+      onClick={()=>{
+        const v = !checked
+        if(isFunction(props.onChange) && !disabled) {
+          props.onChange(v)
+        }
+      }}
+    >
+      <View className={ `${CssPrefix}-switch__bg` } style={bgStyle} />
+      <View className={ `${CssPrefix}-switch__btn` } style={btnStyle}></View>
     </CompContainer>
   )
 }

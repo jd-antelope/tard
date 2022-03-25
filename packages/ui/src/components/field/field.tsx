@@ -213,112 +213,110 @@ const FieldComponent: FC<FieldProps> = (props) => {
 
   const nameProps = name ? { name } : {}
   return (
-    <CompContainer customizeStyle={ props.customizeStyle }>
-      <View className={rootCls} style={customStyle}>
-        <View className={containerCls} onClick={handleClick}>
-          {(label || leftIcon) && (
-            <Label
-            className={labelCls}
-            style={labelStyle}
-            for={name}
-            >
-              {leftIcon && <Icon className={leftIconCls} value={leftIcon} color={iconColor} size={ iconSize }></Icon>}
-              {label}
-            </Label>
-          )}
-          {
-            textareaType === 'textarea' ? 
-              <Fragment>
-                <Textarea 
-                  className={ `${CssPrefix}-field__textarea` }
-                  { ...id }
-                  { ...nameProps }
-                  style={ `color: ${ contentColor };${textareaHeight ? `height: ${pxTransform(textareaHeight)}`: ''}` }
-                  disabled={disabled || readonly}
-                  placeholderStyle={placeholderStyle}
-                  placeholderClass={classNames(`${CssPrefix}-field__box-textarea__ph`, placeholderCls)}
-                  placeholder={placeholder}
-                  cursorSpacing={cursorSpacing}
-                  maxlength={maxlength}
-                  autoFocus={autoFocus}
-                  autoHeight={autoHeight}
-                  fixed={fixed}
-                  focus={focus}
-                  value={value}
-                  cursor={cursor}
-                  selectionStart={selectionStart}
-                  selectionEnd={selectionEnd}
-                  adjustPosition={adjustPosition}
-                  onInput={handleInput}
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                  onConfirm={handleConfirm}
-                  onKeyboardHeightChange={handleKeyboardHeightChange}
-                />
-                { showWordLimit && 
-                  <View className={ `${CssPrefix}-field__word-limit` }>
-                    <Text className={ `${CssPrefix}-field__word-num` }>{(value || '').length}</Text>
-                    /{maxlength}
-                  </View>
-                }
-              </Fragment> 
-              : <Fragment>
-                <Input
-                  className={ `${CssPrefix}-field__input` }
-                  { ...id }
-                  { ...nameProps }
-                  type={type}
-                  password={password}
-                  disabled={disabled || readonly}
-                  style={ `color: ${ contentColor };text-align: ${valueAlign}` }
-                  placeholderStyle={placeholderStyle}
-                  placeholderClass={placeholderCls}
-                  placeholder={placeholder}
-                  cursorSpacing={cursorSpacing}
-                  maxlength={maxlength}
-                  autoFocus={autoFocus}
-                  focus={focus}
-                  value={value}
-                  confirmType={confirmType}
-                  cursor={cursor}
-                  selectionStart={selectionStart}
-                  selectionEnd={selectionEnd}
-                  adjustPosition={adjustPosition}
-                  onInput={handleInput}
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                  onConfirm={handleConfirm}
-                  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                  // @ts-ignore
-                  onKeyboardHeightChange={handleKeyboardHeightChange}
-                />
-                {clear && value && (
-                  <View className={ `${CssPrefix}-field__icon` } onClick={handleClearValue}>
-                    {/* <Text className=`${CssPrefix}-icon ${CssPrefix}-icon-close-circle ${CssPrefix}-field__icon-close'></Text> */}
-                    <Icon value='close-circle' color="#999999" size={ 16 }></Icon>
-                  </View>
-                )}
-                {!clear && rightIcon &&
-                  <View className={ `${CssPrefix}-field__icon` } onClick={() => props.onRightIconClick}>
-                    <Icon value={rightIcon} color={iconColor} size={ iconSize }></Icon>
-                  </View>  
-                }
-                {error && (
-                  <View
-                    className={ `${CssPrefix}-field__error` }
-                    style={`padding-left: ${pxTransform(labelWidth)};width: 100%`}
-                    onTouchStart={handleErrorClick}
-                  >
-                    <Text>{errorMessage || `${label}必填`}</Text>
-                  </View>
-                )}
-                {/* <View className=`${CssPrefix}-field__children`>{props.children}</View> */}
-              </Fragment>
-          }
-          {
-            children && children
-          }
-        </View>
+    <CompContainer className={rootCls} style={customStyle} customizeStyle={ props.customizeStyle }>
+      <View className={containerCls} onClick={handleClick}>
+        {(label || leftIcon) && (
+          <Label
+          className={labelCls}
+          style={labelStyle}
+          for={name}
+          >
+            {leftIcon && <Icon className={leftIconCls} value={leftIcon} color={iconColor} size={ iconSize }></Icon>}
+            {label}
+          </Label>
+        )}
+        {
+          textareaType === 'textarea' ? 
+            <Fragment>
+              <Textarea 
+                className={ `${CssPrefix}-field__textarea` }
+                { ...id }
+                { ...nameProps }
+                style={ `color: ${ contentColor };${textareaHeight ? `height: ${pxTransform(textareaHeight)}`: ''}` }
+                disabled={disabled || readonly}
+                placeholderStyle={placeholderStyle}
+                placeholderClass={classNames(`${CssPrefix}-field__box-textarea__ph`, placeholderCls)}
+                placeholder={placeholder}
+                cursorSpacing={cursorSpacing}
+                maxlength={maxlength}
+                autoFocus={autoFocus}
+                autoHeight={autoHeight}
+                fixed={fixed}
+                focus={focus}
+                value={value}
+                cursor={cursor}
+                selectionStart={selectionStart}
+                selectionEnd={selectionEnd}
+                adjustPosition={adjustPosition}
+                onInput={handleInput}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                onConfirm={handleConfirm}
+                onKeyboardHeightChange={handleKeyboardHeightChange}
+              />
+              { showWordLimit && 
+                <View className={ `${CssPrefix}-field__word-limit` }>
+                  <Text className={ `${CssPrefix}-field__word-num` }>{(value || '').length}</Text>
+                  /{maxlength}
+                </View>
+              }
+            </Fragment> 
+            : <Fragment>
+              <Input
+                className={ `${CssPrefix}-field__input` }
+                { ...id }
+                { ...nameProps }
+                type={type}
+                password={password}
+                disabled={disabled || readonly}
+                style={ `color: ${ contentColor };text-align: ${valueAlign}` }
+                placeholderStyle={placeholderStyle}
+                placeholderClass={placeholderCls}
+                placeholder={placeholder}
+                cursorSpacing={cursorSpacing}
+                maxlength={maxlength}
+                autoFocus={autoFocus}
+                focus={focus}
+                value={value}
+                confirmType={confirmType}
+                cursor={cursor}
+                selectionStart={selectionStart}
+                selectionEnd={selectionEnd}
+                adjustPosition={adjustPosition}
+                onInput={handleInput}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                onConfirm={handleConfirm}
+                // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+                // @ts-ignore
+                onKeyboardHeightChange={handleKeyboardHeightChange}
+              />
+              {clear && value && (
+                <View className={ `${CssPrefix}-field__icon` } onClick={handleClearValue}>
+                  {/* <Text className=`${CssPrefix}-icon ${CssPrefix}-icon-close-circle ${CssPrefix}-field__icon-close'></Text> */}
+                  <Icon value='close-circle' color="#999999" size={ 16 }></Icon>
+                </View>
+              )}
+              {!clear && rightIcon &&
+                <View className={ `${CssPrefix}-field__icon` } onClick={() => props.onRightIconClick}>
+                  <Icon value={rightIcon} color={iconColor} size={ iconSize }></Icon>
+                </View>  
+              }
+              {error && (
+                <View
+                  className={ `${CssPrefix}-field__error` }
+                  style={`padding-left: ${pxTransform(labelWidth)};width: 100%`}
+                  onTouchStart={handleErrorClick}
+                >
+                  <Text>{errorMessage || `${label}必填`}</Text>
+                </View>
+              )}
+              {/* <View className=`${CssPrefix}-field__children`>{props.children}</View> */}
+            </Fragment>
+        }
+        {
+          children && children
+        }
       </View>
     </CompContainer>
     

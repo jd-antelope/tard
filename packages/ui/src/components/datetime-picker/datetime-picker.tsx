@@ -8,6 +8,7 @@ import {
   getYears, getDays, getMonths, getHours, getMinutes, 
   getYear, getMonth, getDate, getHour, getMinute, 
 } from "./dateMap"
+import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
 import { DatetimePickerProps } from './type'
 import { CssPrefix } from '../../common'
@@ -24,7 +25,8 @@ const DatetimePicker: FC<DatetimePickerProps> = (props) => {
     endValue = '',
     minDate = '1990-01-01',
     maxDate = `${new Date().getFullYear() + 5}-01-01`,
-    round = false 
+    round = false,
+    customizeStyle = ''
   } = props
 
   // 第一次进入判断
@@ -291,9 +293,10 @@ const DatetimePicker: FC<DatetimePickerProps> = (props) => {
   } as CSSProperties
 
   return (
-    <View 
+    <CompContainer 
       className={ `${CssPrefix}-datetime` }
       onTouchMove={handleTouchMove}
+      customizeStyle={ customizeStyle }
     >
       <View className={rootClassMask} onClick={outClick} />
       <View className={containerClass}>
@@ -382,7 +385,7 @@ const DatetimePicker: FC<DatetimePickerProps> = (props) => {
         text="结束时间不能小于开始时间"
         onClose={ () => setShowToast(false)}
       />
-    </View>
+    </CompContainer>
   )
 }
 

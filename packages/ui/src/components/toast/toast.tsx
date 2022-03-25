@@ -95,33 +95,31 @@ const Toast: FC<ToastProps> = ({
   })
 
   return _isOpened ? (
-    <CompContainer customizeStyle={ customizeStyle }>
-      <View className={classNames(`${CssPrefix}-toast`, className)}>
-        {overlay && <View className={ `${CssPrefix}-toast__overlay` } />}
-        <View
-          className={bodyClass}
-          style={style}
-          onClick={handleClick}
-        >
-          <View className={classNames('toast-body-content', contentClass)}>
-            {realImg ? (
-              <Image
-                className='toast-body-content__img-item'
-                src={realImg}
-                mode='scaleToFill'
-              />
-            ) : null}
-            {isRenderIcon && (
-              <View className='toast-body-content__icon'>
-                <Text className={iconClass} />
-              </View>
-            )}
-            {text && (
-              <View className='toast-body-content__info'>
-                {text}
-              </View>
-            )}
-          </View>
+    <CompContainer className={classNames(`${CssPrefix}-toast`, className)} customizeStyle={ customizeStyle }>
+      {overlay && <View className={ `${CssPrefix}-toast__overlay` } />}
+      <View
+        className={bodyClass}
+        style={style}
+        onClick={handleClick}
+      >
+        <View className={classNames('toast-body-content', contentClass)}>
+          {realImg ? (
+            <Image
+              className='toast-body-content__img-item'
+              src={realImg}
+              mode='scaleToFill'
+            />
+          ) : null}
+          {isRenderIcon && (
+            <View className='toast-body-content__icon'>
+              <Text className={iconClass} />
+            </View>
+          )}
+          {text && (
+            <View className='toast-body-content__info'>
+              {text}
+            </View>
+          )}
         </View>
       </View>
     </CompContainer>

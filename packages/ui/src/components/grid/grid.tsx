@@ -48,11 +48,9 @@ const Grid: FC<GridProps> = (props) => {
   }))
   
   return (
-    <CompContainer customizeStyle={customizeStyle}>
-      <View className={ImageText} style={style}>
-        {/* 将组件进行解析 */}
-        {itemList}
-      </View>
+    <CompContainer className={ImageText} style={style} customizeStyle={customizeStyle}>
+      {/* 将组件进行解析 */}
+      {itemList}
     </CompContainer>
     
   )

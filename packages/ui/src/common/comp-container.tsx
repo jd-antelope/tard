@@ -1,6 +1,8 @@
 import React, {CSSProperties} from 'react'
 import { View } from '@tarojs/components'
 import Taro, { eventCenter, getCurrentInstance, getEnv, ENV_TYPE } from '@tarojs/taro'
+import { transformationString } from './utils'
+import { isObject } from './is'
 
 type CommonProps = {
   className?: string,
@@ -61,8 +63,9 @@ export default class CompContainer extends React.Component<CommonProps, CommonSt
     const { className, children, style, customizeStyle = '', ...rest } = this.props
     const { themeStyle } = this.state
 
+    const styleString = isObject(style) ? transformationString(style) : style
     return (
-      <View className={ className } style={ customizeStyle || themeStyle  + style } { ...rest }>
+      <View className={ className } style={ customizeStyle || themeStyle  + styleString } { ...rest }>
         {children}
       </View>
     )

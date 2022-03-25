@@ -27,15 +27,13 @@ const TagPrice: FC<TagPriceProps> = ({
   }
 
   return (
-    <CompContainer customizeStyle={ customizeStyle }>
-      <View className={cn(`${CssPrefix}-tag-price`, className)} style={containerStyle}>
-        <View className={ `${CssPrefix}-tag-price__title` } style={titleStyle}>{title}</View>
-        <Price 
-          price={price} color={color} 
-          symbolSize={size} unitSize={size}
-          className={ `${CssPrefix}-tag-price__price` }
-        />
-      </View>
+    <CompContainer customizeStyle={ customizeStyle } className={cn(`${CssPrefix}-tag-price`, className)} style={containerStyle}>
+      <View className={ `${CssPrefix}-tag-price__title` } style={titleStyle}>{title}</View>
+      <Price 
+        price={price} color={color} 
+        symbolSize={size} unitSize={size}
+        className={ `${CssPrefix}-tag-price__price` }
+      />
     </CompContainer>
   )
 }

@@ -149,25 +149,22 @@ const CButton: FC<CButtonProps> = (props) => {
   )
 
   return (
-    <CompContainer
+    <CompContainer 
+      className={ classNames(rootClassName, classObject, props.className) }
+      onClick={ onClick } 
       customizeStyle={ props.customizeStyle }
+      style={ style }
     >
-      <View 
-        className={ classNames(rootClassName, classObject, props.className) }
-        onClick={ onClick } 
-        style={ style }
-      >
-        {isWEB && !disabled && webButton}
-        {isWEAPP && !disabled && (
-          <Form
-            onSubmit={ onSumit }
-            onReset={ onReset }
-          >
-            {button}
-          </Form>
-        )}
-        <View className={ `${CssPrefix}-button__text` }>{props.children}</View>
-      </View>
+      {isWEB && !disabled && webButton}
+      {isWEAPP && !disabled && (
+        <Form
+          onSubmit={ onSumit }
+          onReset={ onReset }
+        >
+          {button}
+        </Form>
+      )}
+      <View className={ `${CssPrefix}-button__text` }>{props.children}</View>
     </CompContainer>
   )
 }

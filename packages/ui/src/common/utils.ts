@@ -127,6 +127,19 @@ function getDateUTC (value) {
 }
 
 
+const regex = new RegExp(/[A-Z]/g)
+const kebabCase = (str) => str.replace(regex, v => `-${v.toLowerCase()}`)
+
+function transformationString (cssProperties) {
+  const finalResult = Object.keys(cssProperties).reduce((accumulator, key) => {
+    const cssKey = kebabCase(key)
+    const cssValue = cssProperties[key].replace("'", "")
+    return `${accumulator}${cssKey}:${cssValue};`
+  }, '')
+  return finalResult
+}
+
+
 export {
   handleTouchScroll,
   mergeStyle,
@@ -136,5 +149,6 @@ export {
   objectToString,
   getDateUTC,
   isWeapp,
-  isWeb
+  isWeb,
+  transformationString
 }
