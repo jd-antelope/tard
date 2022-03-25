@@ -5,64 +5,67 @@
 该组件封装了常用底部按钮常用功能
 ### 引入
 ```js
-import { SlFooterButton } from 'tard'
+import { FooterButton } from 'tard'
 ```
 ## 使用指南
 ### 基本使用
 ```js
-<SlFooterButton name="按钮1"/>
+<FooterButton name="按钮1"/>
 ```
 ### 使用双按钮
 通过设置 doubleBtn 属性使用双按钮,使用双按钮时默认第一个按钮在右边
 ```js
-<SlFooterButton name="按钮2" secondName='按钮1' doubleBtn/>
+<FooterButton name="按钮2" secondName='按钮1' doubleBtn/>
 ```
 ### 自定义按钮样式
 通过设置 doubleBtn 属性使用双按钮,使用双按钮时默认第一个按钮在右边
 ```js
-<SlFooterButton 
-name="按钮2" 
-background='#cf6d6d' 
-secBackground='#c1b0b0' 
-secondName='按钮1' doubleBtn
-radius={20}
-padding='10'
+<FooterButton 
+  name="按钮2" 
+  background='#cf6d6d' 
+  secBackground='#c1b0b0' 
+  secondName='按钮1' doubleBtn
+  radius={20}
+  padding='10'
 />
 ```
 ### 自定义组件内边距
 通过设置 padding属性设置组件的内边距支持多个属性联写，预发同CSS预发
 ```js
-<SlFooterButton
-name="按钮2"
-secondName='按钮1'
-doubleBtn={true}
-radius={20}
-padding={'10 15 20 25'} />
+<FooterButton
+  name="按钮2"
+  secondName='按钮1'
+  doubleBtn={true}
+  radius={20}
+  padding={'10 15 20 25'} 
+/>
 	
 ```
 ### 自定义组件内双Button间距
 通过设置 margin属性设置两个Button之间的距离
 ```js
-<SlFooterButton
-className='pos-4'
-name="按钮2"
-secondName='按钮1'
-doubleBtn={true}
-radius={20}
-padding='10'
-margin={20} />
+<FooterButton
+  className='pos-4'
+  name="按钮2"
+  secondName='按钮1'
+  doubleBtn={true}
+  radius={20}
+  padding='10'
+  margin={20} 
+/>
 ```
 ### 开启底部定位模式
 通过设置 isFixed 开启底部定位
 ```js
 <View className='doc-body-content-tip'></View>
-<SlFooterButton 
-name="底部定位"
-background='#cf6d6d'
-isFixed={true}
-radius={20}
-padding='20'
-margin={20} />
+<FooterButton 
+  name="底部定位"
+  background='#cf6d6d'
+  isFixed={true}
+  radius={20}
+  padding='20'
+  margin={20} 
+/>
 ```
 
 
@@ -90,7 +93,7 @@ margin={20} />
 | onClick | 点击事件 | - |
 | secClick | 第二个按钮点击事件 | - |
 
-
-
-
-
+### 样式变量
+|  属性   | 默认值 |
+|  ----  | ---- |
+|  --footer-height |  70px |

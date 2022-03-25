@@ -37,7 +37,7 @@
         border-radius: var(--progress-height) / 2;
         overflow: hidden;
         background-color: var(--progress-bar-bg-color);
-        transition: all .3s @ease-in-out-quad;
+        transition: all .3s var(--ease-in-out-quad);
       }
     }
   }
@@ -60,7 +60,7 @@
       border-radius: var(--progress-height) / 2;
       background: var(--progress-bar-bg-color-active);
       opacity: 0;
-      animation: progress-active 2s @ease-out-quad infinite;
+      animation: progress-active 2s var(--ease-out-quad) infinite;
       .mixin-position-absolute();
     }
   }

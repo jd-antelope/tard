@@ -76,12 +76,12 @@ const [value1, setValue1] = useState(0)
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @input-number-text-color | @color-text-base |
-|  @input-number-font-size | @font-size-base |
-|  @input-number-font-size-lg  | @font-size-xl |
-|  @input-number-btn-color | @color-primary |
-|  @input-number-btn-size  | 30px |
-|  @input-number-btn-size-lg  | 36px |
-|  @input-number-width-min | 36px |
-|  @input-number-width-min-lg | 80px |
-|  @input-number-btn-size  | 120px |
+|  --input-number-text-color | var(--color-text-base) |
+|  --input-number-font-size | var(--font-size-base) |
+|  --input-number-font-size-lg  | var(--font-size-xl) |
+|  --input-number-btn-color | var(--color-primar) |
+|  --input-number-btn-size  | 30px |
+|  --input-number-btn-size-lg  | 36px |
+|  --input-number-width-min | 36px |
+|  --input-number-width-min-lg | 80px |
+|  --input-number-btn-size  | 120px |

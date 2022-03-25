@@ -3,18 +3,18 @@
 排序项组件，支持元素换行或滚动展示。
 ### 引入
 ```js
-import { SlSort } from 'tard'
+import { Sort } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
 ```js
-<SlSort 
+<Sort 
   list={ [
     {key: 'sort1', text:'排序1'},
   ] 
   }
 />
-<SlSort 
+<Sort 
   list={ [
     {key: 'sort1', text:'自定义排序1'}, 
     {key: 'sort2', text:'自定义排序2'}, 
@@ -27,7 +27,7 @@ import { SlSort } from 'tard'
 ```
 ### 一个选项时，可设置border
 ```js
- <SlSort 
+ <Sort 
   list={ [
     {key: 'sort1', text:'排序1'},
   ] 
@@ -38,7 +38,7 @@ import { SlSort } from 'tard'
 
 ### 元素不换行，滚动展示
 ```js
-<SlSort 
+<Sort 
   list={ [
     {key: 'sort1', text:'自定义排序1'}, 
     {key: 'sort2', text:'自定义排序2'}, 
@@ -53,7 +53,7 @@ import { SlSort } from 'tard'
 
 ### 多参数设置，箭头默认色、文字颜色、选中颜色、选中排序项
 ```js
-<SlSort 
+<Sort 
   list={ [
     {key: 'sort1', text:'自定义排序1'}, 
     {key: 'sort2', text:'自定义排序2'}, 
@@ -86,11 +86,3 @@ import { SlSort } from 'tard'
 |  事件名称   | 说明  | 返回参数 |
 |  ----      | ---- |   ----  |
 |  onChange  | 排序改变的回调 | value |
-
-
-### 样式变量
-|  属性   | 默认值 |
-|  ----  | ---- |
-|@slc-sort-arrow-color | @color-grey-3|
-|@slc-sort-text-default-color | @color-text-base|
-|@slc-sort-text-active-color | #FF2929|

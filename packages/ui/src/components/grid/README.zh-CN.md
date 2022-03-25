@@ -3,103 +3,103 @@
 宫格可以在水平方向上把页面分隔成等宽度的区块，用于展示内容或进行页面导航。
 ### 引入
 ```js
-import { SlGrid, SlGridItem } from 'tard'
+import { Grid, GridItem } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
 通过 `url` 属性设置格子内的图标，`text` 属性设置文字内容。
 ```js
-<SlGrid>
+<Grid>
   {
     new Array(4).fill('').map((_, i) => (
-      <SlGridItem 
+      <GridItem 
         key={ i }
         text="文字" 
         url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
       />
     ))
   }
-</SlGrid>
+</Grid>
 ```
 
 ### 自定义列数
 默认一行展示四个格子，可以通过 `columnNum` 自定义列数。
 ```js
-<SlGrid columnNum={ 3 }>
+<Grid columnNum={ 3 }>
   {
     new Array(3).fill('').map((_, i) => (
-      <SlGridItem 
+      <GridItem 
         key={ i }
         text="文字" 
         url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
       />
     ))
   }
-</SlGrid>
+</Grid>
 ```
 
 ### 边框
 通过 `border` 属性展示格子边框
 ```js
-<SlGrid border>
+<Grid border>
   {
     new Array(8).fill('').map((_, i) => (
-      <SlGridItem 
+      <GridItem 
         key={ i }
         text="文字" 
         url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
       />
     ))
   }
-</SlGrid>
+</Grid>
 ```
 
 ### 自定义图片大小
 通过 `url` 属性设置格子内的图标，`text` 属性设置文字内容。
 ```js
-<SlGrid iconSize={ 40 }>
+<Grid iconSize={ 40 }>
   {
     new Array(4).fill('').map((_, i) => (
-      <SlGridItem 
+      <GridItem 
         key={ i }
         text="文字" 
         url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
       />
     ))
   }
-</SlGrid>
+</Grid>
 ```
 
 ### 自定义内容
 通过插槽可以自定义格子展示的内容。
 ```js
-<SlGrid>
+<Grid>
   {
     new Array(4).fill('').map((_, i) => (
-      <SlGridItem 
+      <GridItem 
         key={ i }
         text="文字" 
         url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
       />
     ))
   }
-</SlGrid>
+</Grid>
 ```
 
 ### 内容横排
 修改属性 `direction`，可以让宫格的内容顺序更换
 ```js
-<SlGrid direction='left'>
+<Grid direction='left'>
   {
     new Array(4).fill('').map((_, i) => (
-      <SlGridItem 
+      <GridItem 
         key={ i }
         text="文字" 
         url="http://storage.360buyimg.com/hishop-images/bumblebee-mobile/person/pay.png" 
       />
     ))
   }
-</SlGrid>
+</Grid>
 ```
 
 ## API
@@ -129,11 +129,11 @@ import { SlGrid, SlGridItem } from 'tard'
 | onClick | 点击格子时触发 | - |
 
 ### 样式变量
-组件提供了下列 Less 变量，可用于自定义样式
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @grid-bg | #ffffff |
-|  @grid-item-padding-y | 18px |
-|  @grid-item-image-size | 60px |
-|  @grid-item-text-padding | 12px |
-|  @badge-dot-size  | 24px |
+|  --grid-bg | var(--color-white) |
+|  --grid-item-padding-y | 18px |
+|  --grid-item-image-size | 60px |
+|  --grid-item-text-padding | 12px |
+|  --badge-dot-size  | 24px |
+|  --grid-item-width  | 100% |

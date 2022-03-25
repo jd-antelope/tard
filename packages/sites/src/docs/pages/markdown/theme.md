@@ -11,113 +11,121 @@ Tard 使用了 `Less` 对样式进行预处理，并内置了一些样式变量�
 // 定义前缀
 @--css-prefix: tard;
 
-// 基本单位
-@hd: 2;
+:root, page {
+  // color base
+  // 品牌色，用于常规商品价格、功能按钮、促销活动等
+  --color-primary: #FF2929;
 
-// Color
-@color-primary: var(--primaryColor);
-@color-success: #13CE66;
-@color-error: #FF4949;
-@color-warning: #FFC82C;
-@color-info: #78A4FA;
+  // color function
+  // 功能色，用于成功/通过等正向反馈
+  --color-success: #13CE66;
+  // 功能色，用于失败/警告等负向反馈
+  --color-error: #FF4949;
+  // 功能色，用于提示/警示等需要引起用户注意的场景
+  --color-warning: #FFC82C;
+  // 功能色，用于标识其他场景
+  --color-info: #78A4FA;
+  // 非常规用色，用于页面遮罩等
+  --color-black: #000000;
+  // 主内容用色，用于常规标题内容、细文浏览、按钮文字及图标引导
+  --color-grey-0: #333333;
+  // 次要内容用色，用于次级标题内容、属性标示、非主要信息引导及常规按钮边框等
+  --color-grey-1: #999999;
+  // 特殊内容用色，用于无货标签文字、特殊不可点击按钮等
+  --color-grey-2: #CCCCCC;
+  // 辅助内容用色，用于页面分割线、分割底色、选项按钮常规底色等 #EBEBEB
+  --color-grey-3: #EFEFEF;
+  // 非常规用色，用于文字反白等
+  --color-white: #FFFFFF;
 
-// Color Palette
-@color-black-0: #000;
-@color-black-1: #333;
-@color-black-2: #7F7F7F;
-@color-black-3: #B2B2B2;
-@color-grey-0: #333;
-@color-grey-1: #666;
-@color-grey-2: #999;
-@color-grey-3: #CCC;
-@color-grey-4: #E5E5E5;
-@color-grey-5: #F0F0F0;
-@color-grey-6: #F7F7F7;
-@color-grey-7: #EFEFEF;
-@color-white: #FFF;
-@color-bg: #FFF;
+  // Text Color
+  // 文字的基本色
+  --color-text: var(--color-grey-0); 
 
-// Text Color
-@color-text-base: #333; // 文字的基本色
-@color-text-base-inverse: #FFF; // 反色
-@color-text-secondary: #36D57D; // 辅助色
-@color-text-placeholder: #C9C9C9;
-@color-text-disabled: #CCC;
-@color-text-title: #2C405A; // 文章标题
-@color-text-paragraph: #3F536E; // 文章段落
+  // 辅助色
+  --color-text-secondary: var(--color-grey-1);
+  --color-text-placeholder: #C9C9C9;
+  --color-text-disabled: var(--color-grey-2);
+  --color-text-placeholder: var(--color-grey-2);
 
-// opacity
-@opacity-active: .8;
-@opacity-disabled: .3;
+  // overlay(@overlay-bg-color)
+  --color-overlay: rgba(0, 0, 0, .65);
 
-// overlay
-@overlay-bg-color: rgba(0,0,0,0.65);
+  // 边框颜色
+  --color-border-base: var(--color-grey-3);
+  --color-border-light: mix(#FFFFFF, #EFEFEF, 30%);
 
-// 边框颜色
-@color-border-base: #C5D9E8;
-@color-border-split: mix(#FFF, @color-border-base, 20%);
-@color-border-light: mix(#FFF, @color-border-base, 30%);
-@color-border-lighter: mix(#FFF, @color-border-base, 50%);
-@color-border-lightest: mix(#FFF, @color-border-base, 80%);
-@color-border-grey: #CCC;
+  // 图标颜色
+  --color-icon-base: var(--color-grey-2);
 
-// 图标颜色
-@color-icon-base: #CCC;
+  // opacity
+  --opacity-active: .8;
+  --opacity-disabled: .3;
+  --zindex-common: 1000;
 
-// ease
-@ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-@ease-in-out-quad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+  // ease
+  --ease-out-quad: cubic-bezier(.25, .46, .45, .94);
+  --ease-in-out-quad: cubic-bezier(.455, .03, .515, .955);
 
-// Font
-@font-size-xs: 10px * @hd; // 非常用字号，用于标签
-@font-size-sm: 12px * @hd; // 用于辅助信息
-@font-size-base: 14px * @hd; // 常用字号
-@font-size-lg: 16px * @hd; // 常规标题
-@font-size-xl: 18px * @hd; // 大标题
-@font-size-xxl: 20px * @hd; // 用于大号的数字
+  // Font
+  --font-size-xs: 20px; // 非常用字号，用于标签
+  --font-size-s: 22px;
+  --font-size-sm: 24px; // 用于辅助信息
+  --font-size-base: 28px; // 常用字号
+  --font-size-lg: 32px; // 常规标题
+  --font-size-xl: 36px; // 大标题
+  --font-size-xxl: 40px; // 用于大号的数字
+  --font-size-xxxl: 48px;
+  --font-size-xxxxl: 60px;
+  --font-size-max: 72px;
 
-// z-index
-@zindex-form: 700;
-@zindex-toast: 1090;
-@zindex-modal: 1000;
-@zindex-popup__layout:1000;
-@zindex-nav: 800;
-@zindex-loading: 1090;
-@zindex-overlay: 1000;
+  // 水平间距
+  --spacing-h-sm: 6px;
+  --spacing-h-md: 16px;
+  --spacing-h-lg: 24px;
+  --spacing-h-xl: 36px;
 
-// 水平间距
-@spacing-h-sm: 3px * @hd;
-@spacing-h-md: 8px * @hd;
-@spacing-h-lg: 12px * @hd;
-@spacing-h-xl: 16px * @hd;
+  // 垂直间距
+  --spacing-v-xs: 6px;
+  --spacing-v-sm: 12px;
+  --spacing-v-md: 18px;
+  --spacing-v-lg: 24px;
+  --spacing-v-xl: 30px;
 
-// 垂直间距
-@spacing-v-xs: 3px * @hd;
-@spacing-v-sm: 6px * @hd;
-@spacing-v-md: 9px * @hd;
-@spacing-v-lg: 12px * @hd;
-@spacing-v-xl: 15px * @hd;
+  // Border Radius
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-hg: 20px;
+  --border-radius-circle: 50%;
 
-// Border Radius
-@border-radius-sm: 2px * @hd;
-@border-radius-md: 8px;
-@border-radius-lg: 12px;
-@border-radius-hg: 20px;
-@border-radius-circle: 50%;
+  // Line Height
+  --line-height-base: 1; // 单行
+  --line-height-: 1.2;
+  --line-height-en: 1.3; // 英文多行
+  --line-height-zh: 1.5; // 中文多行
+  --line-height-lg: 2;
 
-// Line Height
-@line-height-base: 1; // 单行
-@line-height-en: 1.3; // 英文多行
-@line-height-zh: 1.5; // 中文多行
+  // font family
+  // 基本字体
+  --family-base: -apple-system,
+    blinkmacsystemfont,
+    "Helvetica Neue",
+    helvetica,
+    segoe ui,
+    arial,
+    roboto,
+    "PingFang SC",
+    "miui",
+    "Hiragino Sans GB",
+    "Microsoft Yahei",
+    sans-serif;
+  // 数字字体
+  --family-integer: arial, helvetica, sans-senif, microsoft yahei;
 
-// font family
-// 基本字体
-@family-base: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
-'Microsoft Yahei', sans-serif;
-// 数字字体
-@family-integer: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
-sans-serif;
+  // overlay
+  --overlay-bg-color: rgba(0, 0, 0, .65);
+}
 ```
 
 ## 定制方法
@@ -127,10 +135,10 @@ sans-serif;
 ```js
 // app.js
 // 引入全部样式
-import 'vant/lib/index.less';
+import 'tard/dist/style/index.less';
 
 // 引入单个组件样式
-import 'vant/lib/button/style/less';
+import 'tard/dist/style/components/button.less';
 ```
 
 
@@ -145,22 +153,24 @@ import 'vant/lib/button/style/less';
 
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @input-number-text-color | @color-text-base |
-|  @input-number-font-size | @font-size-base |
-|  @input-number-font-size-lg  | @font-size-xl |
-|  @input-number-btn-color | @color-primary |
-|  @input-number-btn-size  | 30px |
-|  @input-number-btn-size-lg  | 36px |
-|  @input-number-width-min | 36px |
-|  @input-number-width-min-lg | 80px |
-|  @input-number-btn-size  | 120px |
+|  --input-number-text-color | var(--color-text-base) |
+|  --input-number-font-size | var(--font-size-base) |
+|  --input-number-font-size-lg  | var(--font-size-xl) |
+|  --input-number-btn-color | var(--color-primar) |
+|  --input-number-btn-size  | 30px |
+|  --input-number-btn-size-lg  | 36px |
+|  --input-number-width-min | 36px |
+|  --input-number-width-min-lg | 80px |
+|  --input-number-btn-size  | 120px |
 
 接下来，设置 `less` 变量的值即可
 
 ```css
 // app.css
 @import "~tard/dist/style/index.less";
-@input-number-text-color: #bbb;
-@input-number-btn-size: 100px;
+:root, page {
+  --input-number-text-color: #bbb;
+  --input-number-btn-size: 100px;
+}
 ```
 

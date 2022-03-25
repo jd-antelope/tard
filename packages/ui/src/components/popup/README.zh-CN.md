@@ -5,33 +5,29 @@
 ### 引入
 
 ```js
-import { SlPopup } from "tard";
+import { Popup } from "tard";
 ```
 ## 代码演示
 ### 基本用法
 直接引入组件后即可使用、也可以自定义标题、标题对齐方式、是否允许区域外点击
 ```js
-const Popup: FC = () => {
-  const [isVisible, setIsVisible] = useState < Boolean > false;
-  return (
-    <View className="container">
-      <SlButton
-        onClick={() => {
-          setIsVisible(true);
-        }}
-      >
-        基础用法
-      </SlButton>
-      <SlPopup
-        visible={isVisible}
-        onClose={() => setIsVisible(false)}
-        title="默认标题"
-      />
-    </View>
-  );
-};
-
-export default memo(Popup);
+const [isVisible, setIsVisible] = useState < Boolean > false;
+return (
+  <View className="container">
+    <Button
+      onClick={() => {
+        setIsVisible(true);
+      }}
+    >
+      基础用法
+    </Button>
+    <Popup
+      visible={isVisible}
+      onClose={() => setIsVisible(false)}
+      title="默认标题"
+    />
+  </View>
+);
 ```
 
 ### 自定义属性
@@ -39,29 +35,25 @@ export default memo(Popup);
 自定义标题、标题对齐方式、是否允许区域外点击
 
 ```js
-const Popup: FC = () => {
-  const [isVisibleSelf, setIsVisibleSelf] = useState < Boolean > false;
-  return (
-    <View className="container">
-      <SlButton
-        onClick={() => {
-          setIsOPendSelf(true);
-        }}
-      >
-        自定义标题、对齐方式、区域外点击关闭
-      </SlButton>
-      <SlPopup
-        visible={isVisibleSelf}
-        onClose={() => setIsVisibleSelf(false)}
-        closeOnclickOverlay
-        titleAlign="left"
-        title="自定义标题"
-      />
-    </View>
-  );
-};
-
-export default memo(Popup);
+const [isVisibleSelf, setIsVisibleSelf] = useState < Boolean > false;
+return (
+  <View className="container">
+    <Button
+      onClick={() => {
+        setIsOPendSelf(true);
+      }}
+    >
+      自定义标题、对齐方式、区域外点击关闭
+    </Button>
+    <Popup
+      visible={isVisibleSelf}
+      onClose={() => setIsVisibleSelf(false)}
+      closeOnclickOverlay
+      titleAlign="left"
+      title="自定义标题"
+    />
+  </View>
+);
 ```
 
 ### Props
@@ -84,13 +76,15 @@ export default memo(Popup);
 
 | 属性                         | 默认值        |
 | ---------------------------- | ------------- |
-| @popup-height-min            | 600px         |
-| @popup-height-max            | 950px         |
-| @popup-header-height         | 72px          |
-| @popup-height                | 72px          |
-| @popup-header-position-right | 48px          |
-| @popup-header-close-width    | 40px          |
-| @popup-header-close-height   | 40px          |
-| @popup-close-btn-width       | 36px          |
-| @popup-close-btn-color       | @color-grey-3 |
-| @zindex-popup\_\_layout      | 1000          |
+| --popup-mask-timer            | 150ms         |
+| --popup-contianer-timer       | 200ms         |
+| --popup-height-min            | 600px         |
+| --popup-height-max            | 950px         |
+| --popup-header-height         | 72px          |
+| --popup-height                | 72px          |
+| --popup-header-position-right | 48px          |
+| --popup-header-close-width    | 40px          |
+| --popup-header-close-height   | 40px          |
+| --popup-close-btn-width       | 36px          |
+| --popup-close-btn-color       | var(--color-grey-2) |
+| --popup-layout-zindex         | 1000          |

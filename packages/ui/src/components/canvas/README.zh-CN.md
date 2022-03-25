@@ -3,19 +3,19 @@
 该组件是为了给海报功能提供方便，里面有关闭和保存图片功能。目前该组件不支持h5，后续会进行优化。
 ### 引入
 ```js
-import { SlCanvas } from 'tard'
+import { Canvas } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
 通过 `contentCallback` 函数进行补充 `canvas` 内容，里面有两个参数，第一个是微信方法 `createCanvasContext` 的实例，第二个是换算单位，按750的设计去计算数据。
 ```js
 const Canvas: FC = () => {
-  const [canvasProps, setCanvasProps] = useState<SlCanvasProps>({ 
+  const [canvasProps, setCanvasProps] = useState<CanvasProps>({ 
     visible: false,
     onClose: () => setCanvasProps({ visible: false })
   });
 
-  const showSlCanvas = useCallback((toastParams) => {
+  const showCanvas = useCallback((toastParams) => {
     setCanvasProps({
       visible: true,
       ...toastParams,
@@ -28,7 +28,7 @@ const Canvas: FC = () => {
       <SlButton 
         size="large"
         onClick={ 
-          () => showSlCanvas({ 
+          () => showCanvas({ 
             contentCallback: (ctx, dpr) => {
               ctx.setFontSize(8 * dpr);
               ctx.setFillStyle('#333');
@@ -37,7 +37,7 @@ const Canvas: FC = () => {
           }) 
         }
       >基本案例</SlButton>
-      <SlCanvas { ...canvasProps } />
+      <Canvas { ...canvasProps } />
     </View>
   );
 };
@@ -46,7 +46,7 @@ const Canvas: FC = () => {
 ### 自定义宽高
 通过属性 `width height` 可以自定义 `canvas` 的宽高
 ```js
-showSlCanvas({ 
+showCanvas({ 
   width: 500,
   height: 400,
   contentCallback: (ctx, dpr) => {
@@ -60,7 +60,7 @@ showSlCanvas({
 ### 无遮照展示
 通过属性 `overlay` 可以将外面遮照去掉，只留canvas本身内容
 ```js
-<SlCanvas 
+<Canvas 
   visible
   overlay={ false }
   contentCallback={(ctx, dpr) => {

@@ -33,7 +33,7 @@ const Tab: FC<TabProps> = (
     children
   }
 ) => {
-  const [scrollLeft, setScrollLeft] = useState<number>(0), //距离左边或上层控件的位置
+  const [scrollLeft, setScrollLeft] = useState<number>(0) //距离左边或上层控件的位置
   const [scrollTop, setScrollTop] = useState<number>(0)//距离上方或上层控件的位置
   const [touchDot] = useState<number>(0)
   let timer:any = null
@@ -41,7 +41,7 @@ const Tab: FC<TabProps> = (
   let isMoving = false
   let tabHeaderRef:any = null
 
-  const [tabId, setTabId] = useState<string>(isTest() ? 'tab-AUTO2021' : uuid())
+  const [tabId] = useState<string>(isTest() ? 'tab-AUTO2021' : uuid())
   const [scrollIntoView, setScrollIntoView] = useState<string>('') //滚动的元素i
 
   const updateState = (idx: number): void => {
@@ -86,7 +86,7 @@ const Tab: FC<TabProps> = (
    * 触摸原点事件
    * 
    */
-  const handleTouchStart = (e: ITouchEvent): void => {
+  const handleTouchStart = (): void => {
     if (!swipeable || tabDirection === 'vertical') return
     //使用js计时器记录时间
     timer =
@@ -252,9 +252,9 @@ const Tab: FC<TabProps> = (
       )}
       <View
         className='slc-tab__body'
-        onTouchStart={handleTouchStart.bind(this)}
-        onTouchEnd={handleTouchEnd.bind(this)}
-        onTouchMove={handleTouchMove.bind(this)}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
         style={mergeStyle(bodyStyle, { minHeight: '1PX' })}
       >
         <View className='slc-tab__underline' style={underlineStyle}></View>

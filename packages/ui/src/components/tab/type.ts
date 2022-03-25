@@ -1,12 +1,16 @@
 
 import CompCommon from '../../common/type'
 
+export interface TabList {
+  title: string
+}
+
 export interface TabProps extends CompCommon {
   /**
    * tab 列表
    * @default []
    **/
-  tabList: []
+  tabList: TabList[]
   /**
    * 当前选中的tab
    * @default 0
@@ -20,7 +24,7 @@ export interface TabProps extends CompCommon {
   /**
    * 点击或滑动时触发事件
    **/
-  onClick?: function
+  onClick?: Function
 
   /**
    * 组件容器样式

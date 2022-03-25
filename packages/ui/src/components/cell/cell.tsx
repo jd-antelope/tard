@@ -45,7 +45,7 @@ const Cell: FC<CellProps> = (
   )
 
   return (
-    <CompContainer className={rootClass} customizeStyle={customizeStyle} onClick={handleClick.bind(this)}>
+    <CompContainer className={rootClass} customizeStyle={customizeStyle} onClick={handleClick}>
       {
         (title || icon || leftContent) &&
         <View className={`${CssPrefix}-cell__item`}>

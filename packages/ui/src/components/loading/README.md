@@ -1,36 +1,35 @@
-
 # Loading 加载
 ### 介绍
 该标签在 Taro 的 Image 标签上面增加了错误处理、加载动画等属性
 ### 引入
 ```js
-import { SlLoading } from 'tard'
+import { Loading } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
 ```js
-<SlLoading />  
+<Loading />  
 ```
 ### 颜色修改
 通过修改 `color` 属性，修改背景颜色
 ```js
-<SlLoading color="red" />
+<Loading color="red" />
 ```
 
 ### 类型 ios
 ```js
-<SlLoading type="ios" />
+<Loading type="ios" />
 ```
 
 ### 类型 loading
 ```js
-<SlLoading type="loading" />
+<Loading type="loading" />
 ```
 
 ### 大小
 修改属性 `size` 改变大小
 ```js
-<SlLoading size={ 100 } />
+<Loading size={ 100 } />
 ```
 
 ### 全局定位
@@ -40,10 +39,10 @@ const [overlay, setOverlay] = useState<boolean>(false)
 
 return (
   <View className="container">  
-    <SlButton size="large" onClick={ () => setOverlay(true) }>点击</SlButton>
+    <Button size="large" onClick={ () => setOverlay(true) }>点击</Button>
     {
       overlay && 
-      <SlLoading 
+      <Loading 
         onClick={ () => {
           setOverlay(false) 
         }} 
@@ -68,3 +67,9 @@ return (
 |  事件名   | 说明  | 回调参数 |
 |  ----  | ----  | ---- |
 | onClick | 点击格子时触发 | - |
+
+### 样式变量
+|  名称  | 默认值 |
+|  ---- | ---- |
+|  --loading-zindex | 1090 |
+|  --loading-sp | 50px |
