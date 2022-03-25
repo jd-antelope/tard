@@ -19,8 +19,7 @@ const Badge: FC<BadgeProps> = ({
     value: string | number | undefined,
     maxValue: number
   ): string | number => {
-    if (value === '' || value === null || typeof value === 'undefined')
-      return ''
+    if (!value) return ''
     const numValue = +value
     if (Number.isNaN(numValue)) {
       return value
