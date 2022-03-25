@@ -101,7 +101,7 @@ const SearchBar: FC<SearchBarProps> = ({
   }
 
   return (
-    <CompContainer className={rootCls} style={{ backgroundColor: background }} customizeStyle={customizeStyle}>
+    <CompContainer className={rootCls} style={background ? { backgroundColor: background }: {}} customizeStyle={customizeStyle}>
       <View className={classNames(
         [`${CssPrefix}-search-bar__input-cnt`],
         {
