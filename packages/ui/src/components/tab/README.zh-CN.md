@@ -4,7 +4,7 @@
 选项卡切换组件
 ### 引入
 ```js
-import { SlTab } from 'tard'
+import { Tab } from 'tard'
 ```
 ## 代码演示
 ### 基本用法
@@ -23,7 +23,7 @@ const orderStatus = [{
 
 const OrderManage: FC = () => {
   const [current, setCurrent] = useState<number>(0)
-  return <SlTab
+  return <Tab
     tabList={ orderStatus } current={ current }
     onClick={ (active) => {
       setCurrent(active)
@@ -57,7 +57,7 @@ const orderStatus = [{
 
 const OrderManage: FC = () => {
   const [current, setCurrent] = useState<number>(0)
-  return <SlTab
+  return <Tab
     tabList={ orderStatus } current={ current }
     scroll={ true }
     onClick={ (active) => {
@@ -92,7 +92,7 @@ const orderStatus = [{
 
 const OrderManage: FC = () => {
   const [current, setCurrent] = useState<number>(0)
-  return <SlTab
+  return <Tab
     tabList={ orderStatus } current={ current }
     scroll={ true } activeColor="#36D57D" color="#000000"
     onClick={ (active) => {
@@ -110,7 +110,6 @@ const OrderManage: FC = () => {
 | current | 当前选中的tab | number | - |
 | className | 组件外部自定义类名 | string | - |
 | height | tab的高度 | string | - |
-| onClick | 点击或滑动时触发事件 | function | - |
 | customStyle | 组件容器样式 | string | - |
 | tabDirection | tab的排布方式 | string | - |
 | scroll | 是否滚动 | boolean | - |
@@ -118,3 +117,21 @@ const OrderManage: FC = () => {
 | animated | 是否开启切换动画 | boolean | - |
 | activeColor | 自定义选中标签的颜色 | string | - |
 | color | 文字默认颜色 | string | - |
+
+### Tab Events
+|  事件名   | 说明  | 回调参数 |
+|  ----  | ----  | ---- |
+| onClick | 点击或滑动时触发事件 | - |
+
+### 样式变量
+|  名称  | 默认值 |
+|  ---- | ---- |
+| --tab-color | var(--color-text) |
+| --tab-color-active | var(--color-primary) |
+| --tab-font-size | var(--font-size-base) |
+| --tab-line-height | 3px;
+| --tab-underline-color | var(--color-grey-3) |
+| --tab-bg-color | var(--color-white) |
+| --tab-item-space | 60px |
+| --tab-item-underline-space | var(--spacing-v-xl) |
+| --tab-pane-min-height | 100px |

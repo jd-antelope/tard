@@ -7,14 +7,17 @@ import {
   CommonEvent,
   ITouchEvent
 } from '@tarojs/components/types/common'
-// import Common from '../../common/common'
 import { TabProps } from './type'
 import CompContainer from '../../common/comp-container'
+import { cssPrefix } from '../../common'
 import { isTest, uuid, mergeStyle } from '../../common/utils'
 
 const ENV = Taro.getEnv()
 const MIN_DISTANCE = 100
 const MAX_INTERVAL = 10
+let timer: NodeJS.Timeout | null = null
+let interval = 0
+let tabHeaderRef: any = null
 
 const Tab: FC<TabProps> = (
   {
@@ -26,7 +29,6 @@ const Tab: FC<TabProps> = (
     scroll = false,
     animated = true,
     tabList = [],
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     onClick = () => { },
     activeColor = '#FF2929',
     color = '#666666',
@@ -38,11 +40,7 @@ const Tab: FC<TabProps> = (
   const [scrollLeft, setScrollLeft] = useState<number>(0) //距离左边或上层控件的位置
   const [scrollTop, setScrollTop] = useState<number>(0)//距离上方或上层控件的位置
   const [touchDot] = useState<number>(0)
-  let timer:any = null
-  let interval = 0
-  let isMoving = false
-  let tabHeaderRef:any = null
-
+  const [isMoving, setIsMoving] = useState<boolean>(false)
   const [tabId] = useState<string>(isTest() ? 'tab-AUTO2021' : uuid())
   const [scrollIntoView, setScrollIntoView] = useState<string>('') //滚动的元素i
 
@@ -58,7 +56,7 @@ const Tab: FC<TabProps> = (
         }
         case Taro.ENV_TYPE.WEB: {
           const index = Math.max(idx - 1, 0)
-          const preTabItem = tabHeaderRef.childNodes[index]
+          const preTabItem = tabHeaderRef?.childNodes[index]
           preTabItem &&
             setScrollLeft(preTabItem.offsetLeft)
           setScrollTop(preTabItem.offsetTop)
@@ -118,12 +116,12 @@ const Tab: FC<TabProps> = (
     ) {
       // 向左滑动
       if (current + 1 < maxIndex && moveDistance <= -MIN_DISTANCE) {
-        isMoving = true
+        setIsMoving(true)
         handleClick(current + 1, e)
 
         // 向右滑动
       } else if (current - 1 >= 0 && moveDistance >= MIN_DISTANCE) {
-        isMoving = true
+        setIsMoving(true)
         handleClick(current - 1, e)
       }
     }
@@ -139,7 +137,7 @@ const Tab: FC<TabProps> = (
 
     clearInterval(timer as NodeJS.Timeout)
     interval = 0
-    isMoving = false
+    setIsMoving(false)
   }
 
   /**
@@ -179,7 +177,7 @@ const Tab: FC<TabProps> = (
     width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX',
   }
 
-  const bodyStyle: React.CSSProperties = {}
+  const bodyStyle: any = {}
   let transformStyle = `translate3d(0px, -${current * 100}%, 0)`
   if (tabDirection === 'horizontal') {
     transformStyle = `translate3d(-${current * 100}%, 0, 0)`
@@ -195,21 +193,21 @@ const Tab: FC<TabProps> = (
   const tabItems = tabList.map((item, idx) => {
     const active = current === idx
     const itemCls = cn({
-      'slc-tab__item': true,
-      'slc-tab__item--active': active
+      [`${cssPrefix()}-tab__item`]: true,
+      [`${cssPrefix()}-tab__item--active`]: active
     })
 
     return (
       <View
         className={itemCls}
-        id={`tab${tabId}${idx}`}
-        key={`slc-tab-item-${idx}`}
-        onClick={handleClick.bind(this, idx)}
+        id={ `tab${tabId}${idx}` }
+        key={ `${cssPrefix()}-tab-item-${idx}` }
+        onClick={(e) => handleClick(idx, e)}
         style={{ color: active ? activeColor : color }}
       >
-        <View className="slc-tab__item-content">
-          <View className="slc-tab__item-text">{item.title}</View>
-          <View className='slc-tab__item-underline'
+        <View className={ `${cssPrefix()}-tab__item-content` }>
+          <View className={ `${cssPrefix()}-tab__item-text` }>{item.title}</View>
+          <View className={ `${cssPrefix()}-tab__item-underline` }
             style={{
               background: active ? activeColor : ''
             }}
@@ -221,10 +219,10 @@ const Tab: FC<TabProps> = (
 
   const rootCls = cn(
     {
-      'slc-tab': true,
-      'slc-tab--scroll': scroll,
-      [`slc-tab--${tabDirection}`]: true,
-      [`slc-tab--${ENV}`]: true
+      [`${cssPrefix()}-tab`]: true,
+      [`${cssPrefix()}-tab--scroll`]: scroll,
+      [`${cssPrefix()}-tab--${tabDirection}`]: true,
+      [`${cssPrefix()}-tab--${ENV}`]: true
     },
     className
   )
@@ -236,7 +234,7 @@ const Tab: FC<TabProps> = (
       {scroll ? (
         <ScrollView
           id={tabId}
-          className='slc-tab__header'
+          className={ `${cssPrefix()}-tab__header` }
           style={heightStyle}
           scrollX={scrollX}
           scrollY={scrollY}
@@ -248,18 +246,18 @@ const Tab: FC<TabProps> = (
           {tabItems}
         </ScrollView>
       ) : (
-        <View id={tabId} className='slc-tab__header'>
+        <View id={tabId} className={ `${cssPrefix()}-tab__header` }>
           {tabItems}
         </View>
       )}
       <View
-        className='slc-tab__body'
+        className={ `${cssPrefix()}-tab__body` }
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onTouchMove={handleTouchMove}
         style={mergeStyle(bodyStyle, { minHeight: '1PX' })}
       >
-        <View className='slc-tab__underline' style={underlineStyle}></View>
+        <View className={ `${cssPrefix()}-tab__underline` } style={underlineStyle}></View>
         {children}
       </View>
     </CompContainer>
