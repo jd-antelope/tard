@@ -6,7 +6,7 @@ import { SwitchProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
 import { isFunction } from '../../common/is'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const Switch: FC<SwitchProps> = (props) => {
   const { 
@@ -21,6 +21,7 @@ const Switch: FC<SwitchProps> = (props) => {
     radius = 19,
     customizeStyle = ''
   } = props
+  const CssPrefix = cssPrefix()
   const [checked, setChecked] = useState<boolean>(false)
 
   useEffect(() => {

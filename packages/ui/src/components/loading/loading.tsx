@@ -7,7 +7,7 @@ import { LoadingProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { pxTransform, objectToString } from '../../common/utils'
 import { isFunction } from '../../common/is'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const loadingObj = {
   'default': 'loading',
@@ -23,7 +23,7 @@ const LoadingComponent: FC<LoadingProps> = ({
   onClick = null,
   customizeStyle = ''
 }) => {
-
+  const CssPrefix = cssPrefix()
   const handler = (event: CommonEvent): void => {
     if (isFunction(onClick)) {
       onClick(event)

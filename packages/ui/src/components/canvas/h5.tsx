@@ -7,7 +7,7 @@ import CompContainer from '../../common/comp-container'
 import SlIcon from '../icon'
 import SlButton from '../button'
 import { CanvasProps } from './type'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const CanvasH5: FC<CanvasProps> = ({
   className = '',
@@ -18,7 +18,7 @@ const CanvasH5: FC<CanvasProps> = ({
   overlay = true,
   onClose = () => {},
 }) => {
-
+  const CssPrefix = cssPrefix()
   const [open, setOpen] = useState<boolean>(false)
 
   useEffect(() => {

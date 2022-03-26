@@ -5,10 +5,10 @@ import classNames from 'classnames'
 import { isFunction } from '../../common/is'
 import { GridItemProps } from './type'
 import { objectToString, pxTransform } from '../../common/utils'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const GridItem: FC<GridItemProps> = (props) => {
-
+  const CssPrefix = cssPrefix()
   // 点击事件
   const onClick = (id): void => {
     if (isFunction(props.onClick)) props.onClick(id)

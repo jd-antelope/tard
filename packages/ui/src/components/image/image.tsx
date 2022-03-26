@@ -7,7 +7,7 @@ import { BUYIMG } from '../../common/constants'
 import { isFunction } from '../../common/is'
 import { ImageProps } from './type'
 import { objectToString, pxTransform } from '../../common/utils'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const ImageComponent: FC<ImageProps> = ({
   className = '', 
@@ -23,7 +23,7 @@ const ImageComponent: FC<ImageProps> = ({
   customizeStyle = '',
   onClick = () => {}
 }) => {
-
+  const CssPrefix = cssPrefix()
   const [url, setUrl] = useState<string>(src)
   const [noImg] = useState<string>(`${BUYIMG}/image-error.png`)
   const [error, setError] = useState<boolean>(false)

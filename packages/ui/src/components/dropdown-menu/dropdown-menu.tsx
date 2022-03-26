@@ -6,11 +6,12 @@ import { DropdownMenuProps } from './type'
 import CompContainer from '../../common/comp-container'
 import DropdownMenuItem from './item'
 import { isWeb } from '../../utils'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const DropdownMenu: FC<DropdownMenuProps> = ({
   titleAlign = 'center', activeColor, children, customizeStyle
 }) => {
+  const CssPrefix = cssPrefix()
   const [activeKey, setActiveKey] = useState<number>(-1)
   const [isOpen, setIsOpen] = useState<boolean>(false)
 

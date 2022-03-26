@@ -6,7 +6,7 @@ import { TagPriceProps } from './type'
 import { pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
 import Price from '../price'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const TagPrice: FC<TagPriceProps> = ({
   className = '',
@@ -16,6 +16,7 @@ const TagPrice: FC<TagPriceProps> = ({
   size = 24,
   customizeStyle = ''
 }) => {
+  const CssPrefix = cssPrefix()
   const containerStyle = {
     color: color,
     fontSize: pxTransform(size || 24)

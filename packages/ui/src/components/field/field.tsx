@@ -8,7 +8,7 @@ import { TextareaProps } from '@tarojs/components/types/Textarea'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
 import { isFunction } from '../../common/is'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import Icon from '../icon'
 import {
   FieldProps,
@@ -74,6 +74,7 @@ function getTextareaProps(props: FieldProps): GetTextareaPropsReturn {
 
 
 const FieldComponent: FC<FieldProps> = (props) => {
+  const CssPrefix = cssPrefix()
   const [inputClearing, setInputClearing] = useState<boolean>(false)
   // private inputClearing = false
 

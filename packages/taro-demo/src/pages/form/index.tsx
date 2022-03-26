@@ -47,7 +47,6 @@ const FormPage: FC = () => {
               <Button 
                 className='form-submit-button' 
                 full 
-                type='danger' 
                 formType='submit'
               >
                 提交
@@ -78,7 +77,6 @@ const FormPage: FC = () => {
               <Button 
                 className='form-submit-button' 
                 full 
-                type='danger' 
                 formType='submit'
               >
                 提交
@@ -91,7 +89,6 @@ const FormPage: FC = () => {
               <Button 
                 className='form-submit-button' 
                 full 
-                type='danger' 
                 formType='submit'
               >
                 提交

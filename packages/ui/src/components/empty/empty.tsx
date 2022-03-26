@@ -5,7 +5,7 @@ import Image from '../image'
 import Button from '../button'
 import CompContainer from '../../common/comp-container'
 import { EmptyProps } from './type'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const Empty: FC<EmptyProps> = ({ 
   src = '',
@@ -17,6 +17,7 @@ const Empty: FC<EmptyProps> = ({
   customizeStyle = '',
   onClick = () => { }
 }) => {
+  const CssPrefix = cssPrefix()
   const rootClass = classNames(
     `${CssPrefix}-empty`,
     className

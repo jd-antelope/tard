@@ -8,7 +8,7 @@ import CompContainer from '../../common/comp-container'
 import Icon from '../icon'
 import Button from '../button'
 import { CanvasProps } from './type'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const CanvasWeapp: FC<CanvasProps> = ({
   id = 'canvas',
@@ -21,7 +21,7 @@ const CanvasWeapp: FC<CanvasProps> = ({
   customizeStyle = '',
   contentCallback = () => {}
 }) => {
-
+  const CssPrefix = cssPrefix()
   const [open, setOpen] = useState<boolean>(false)
 
   useEffect(() => {

@@ -9,13 +9,14 @@ interface ConfigProviderInterface {
 }
 
 const config = ({
-  theme = {}
+  theme = {},
+  cssPrefix = 'tard'
 }) => {
-  (Taro as any).Current.app.themeParams = theme
+  (Taro as any).Current.app.themeParams = theme;
+  (Taro as any).Current.app.cssPrefix = cssPrefix;
 };
 
 const ConfigProvider = ConfigProviderComponent as ConfigProviderInterface
 ConfigProvider.config = config
 
 export default ConfigProvider as ConfigProviderInterface
- 

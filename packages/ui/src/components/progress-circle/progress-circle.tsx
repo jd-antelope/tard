@@ -5,7 +5,7 @@ import { Text } from '@tarojs/components'
 import { ProgressCircleProps } from './type'
 import { pxTransform } from '../../common/utils'
 import { isWeapp } from '../../common/utils'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
 
 const ProgressCircle: FC<ProgressCircleProps> = ({
@@ -18,7 +18,7 @@ const ProgressCircle: FC<ProgressCircleProps> = ({
   customizeStyle
 }
 ) => {
-
+  const CssPrefix = cssPrefix()
   const transColor = (color) => {
     return color.replace('#', '%23')
   }

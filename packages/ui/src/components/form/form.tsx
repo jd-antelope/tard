@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React, { FC } from 'react'
 import { Form } from '@tarojs/components'
 import CompContainer from '../../common/comp-container'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import { FormProps } from './type'
 
 const FormComponent: FC<FormProps> = ({
@@ -16,7 +16,7 @@ const FormComponent: FC<FormProps> = ({
   children,
   customizeStyle = ''
 }) => {
-
+  const CssPrefix = cssPrefix()
   const onSubmitCallback = (event) => {
     onSubmit && onSubmit(event)
   }

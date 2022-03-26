@@ -5,7 +5,7 @@ import { SortProps, ActiveSort } from './type'
 import { isFunction } from '../../common/is'
 import { pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
 const Sort: FC<SortProps> = (props) => {
   const { 
@@ -17,7 +17,7 @@ const Sort: FC<SortProps> = (props) => {
     border = false,
     customizeStyle = ''
   } = props
-
+  const CssPrefix = cssPrefix()
   const [activeKey, setActiveKey] = useState<string>('')
   const [activeSort, setActiveSort] = useState<ActiveSort>('asc')
 

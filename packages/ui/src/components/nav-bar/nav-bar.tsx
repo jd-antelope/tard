@@ -6,7 +6,7 @@ import { Text, View } from '@tarojs/components'
 import { ITouchEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
 import { mergeStyle } from '../../common/utils'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
 // import { initTestEnv } from '../../common/utils'
 
@@ -27,7 +27,7 @@ const NavBar: FC<NavBarProps> = ({
   children,
   customizeStyle
 }) => {
-
+  const CssPrefix = cssPrefix()
   const handleClickLeftView = (event: ITouchEvent): void => {
     onClickLeft && onClickLeft(event)
   }

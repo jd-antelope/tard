@@ -9,10 +9,11 @@ import { ButtonProps as CButtonProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { objectToString, pxTransform } from '../../utils'
 import { isFunction } from '../../utils/is'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 
-const CButton: FC<CButtonProps> = (props) => {
 
+const ButtonComponent: FC<CButtonProps> = (props) => {
+  const CssPrefix = cssPrefix()
   const isWEB = Taro.getEnv() === Taro.ENV_TYPE.WEB
   const isWEAPP = Taro.getEnv() === Taro.ENV_TYPE.WEAPP
 
@@ -169,5 +170,5 @@ const CButton: FC<CButtonProps> = (props) => {
   )
 }
 
-export default CButton
+export default ButtonComponent
 

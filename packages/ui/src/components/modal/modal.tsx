@@ -8,7 +8,7 @@ import ModalAction from './action/index'
 import ModalContent from './content/index'
 import ModalHeader from './header/index'
 import { isWeb } from '../../common/utils'
-import { CssPrefix } from '../../common'
+import { cssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
 
 const Modal: FC<ModalProps> = ({
@@ -26,7 +26,7 @@ const Modal: FC<ModalProps> = ({
   customizeStyle,
   children
 }) => {
-
+  const CssPrefix = cssPrefix()
   const [_isOpened, setIsOpened] = useState<boolean>(isOpened)
   const [isWEB] = useState<boolean>(isWeb)
 

@@ -55,7 +55,6 @@ const InputNumber: FC<InputNumberProps> = ({
 }) => {
 
   const handleClick = (clickType: 'minus' | 'plus', e): void => {
-    console.log(clickType)
     const lowThanMin = clickType === 'minus' && value <= min
     const overThanMax = clickType === 'plus' && value >= max
     if (lowThanMin || overThanMax || disabled) {
