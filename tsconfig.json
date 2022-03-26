@@ -19,7 +19,7 @@
     "strict": true,
     "esModuleInterop": false,
     "removeComments": true,
-    "declaration": true,
+    "declaration": false,
     "declarationMap": false,
     "rootDir": ".",
     "types": ["node"],
@@ -32,6 +32,5 @@
     "node_modules/*",
     "packages/vite/*",
     "packages/demo/*",
-    "packages/ui/src/components/*/demo/*"
   ],
 }

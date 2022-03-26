@@ -1,6 +1,8 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
+    "declaration": true,
+    "declarationMap": false,
     "baseUrl": ".",
     "outDir": "packages/ui/lib",
     "rootDir": "./packages/ui/src",
