@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { FooterButtonProps } from './type'
 import { objectToString, pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
-import { isFunction } from '../../common/is'
+import { isFunction } from '../../utils/is'
 import { cssPrefix } from '../../common'
 
 const FooterButton: FC<FooterButtonProps> = (props) => {

@@ -7,7 +7,7 @@ import { InputProps } from '@tarojs/components/types/Input'
 import { TextareaProps } from '@tarojs/components/types/Textarea'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
-import { isFunction } from '../../common/is'
+import { isFunction } from '../../utils/is'
 import { cssPrefix } from '../../common'
 import Icon from '../icon'
 import {

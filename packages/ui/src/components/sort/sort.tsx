@@ -2,7 +2,7 @@
 import React, { FC, useState, useEffect } from 'react'
 import { View } from '@tarojs/components'
 import { SortProps, ActiveSort } from './type'
-import { isFunction } from '../../common/is'
+import { isFunction } from '../../utils/is'
 import { pxTransform } from '../../common/utils'
 import CompContainer from '../../common/comp-container'
 import { cssPrefix } from '../../common'

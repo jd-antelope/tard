@@ -5,7 +5,7 @@ import cn from 'classnames'
 import { SwitchProps } from './type'
 import CompContainer from '../../common/comp-container'
 import { pxTransform } from '../../common/utils'
-import { isFunction } from '../../common/is'
+import { isFunction } from '../../utils/is'
 import { cssPrefix } from '../../common'
 
 const Switch: FC<SwitchProps> = (props) => {
