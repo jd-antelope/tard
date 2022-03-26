@@ -109,7 +109,7 @@ const [toastVisible, setToastVisible] = useState(false)
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @cell-horizontal-padding| 36px |
-|  @cell-vertical-padding | 24px |
-|  @cell-group-title-padding  | @cell-vertical-padding @cell-horizontal-padding |
-|  @cell-background-color  | @color-white |
+|  --cell-horizontal-padding| 36px |
+|  --cell-vertical-padding | 20px |
+|  --cell-group-title-padding  | var(--cell-vertical-padding) var(--cell-horizontal-padding) |
+|  --cell-background-color | var(--color-white) |

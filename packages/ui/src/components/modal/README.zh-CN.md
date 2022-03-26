@@ -7,7 +7,7 @@ import { Modal } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
-`isOpened` 属性控制是否显示模态框，`confirmText` 属性表示确定按钮文案，存在改属性时才会显示确定操作按钮，按钮默认演示为主题色，可通过样式变量`@modal-btn-confirm-color`修改， `onClose` 属性为点击遮罩层触发事件
+`isOpened` 属性控制是否显示模态框，`confirmText` 属性表示确定按钮文案，存在改属性时才会显示确定操作按钮，按钮默认演示为主题色，可通过样式变量`--modal-btn-confirm-color`修改， `onClose` 属性为点击遮罩层触发事件
 ```js
 const [isOpened, setIsOpened] = useState(false)
 const [isOpened1, setIsOpened1] = useState(false)
@@ -63,7 +63,7 @@ const [isOpened, setIsOpened] = useState(false)
 ```
 
 ### 自定义弹框
-通过 `ModalContent` 标签自定义 content；通过 `Modal.Header` 标签自定义 `title` ；通过自定义 `ModalAction` 标签自定义操作按钮
+通过 `Modal.Content` 标签自定义 content；通过 `Modal.Header` 标签自定义 `title` ；通过自定义 `Modal.Action` 标签自定义操作按钮
 ```js
 <Button full onClick={() => setIsOpened5(true)}>自定义内容</Button>
 <Modal
@@ -74,48 +74,50 @@ const [isOpened, setIsOpened] = useState(false)
     onConfirm={() => setIsOpened5(false)}
     contentAlign='left'
 >
-    <ModalContent>
+    <Modal.Content>
         <Image style="width:100%; height:40px" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
-    </ModalContent>
+    </Modal.Content>
 </Modal>
 
 <Button full onClick={() => setIsOpened4(true)}>自定义内容、标题、操作按钮</Button>
 <Modal isOpened={isOpened4}>
     <Modal.Header>标题</Modal.Header>
-    <ModalContent>
+    <Modal.Content>
         <Image style="width:100%; height:40px" src="https://storage.360buyimg.com/hawley-common/tard-image/logo.png" />
-    </ModalContent>
-    <ModalAction>
+    </Modal.Content>
+    <Modal.Action>
         <Button onClick={() => { setIsOpened4(false) }}>取消</Button>
         <Button onClick={() => { setIsOpened4(false) }}>确定</Button>
-    </ModalAction>
+    </Modal.Action>
 </Modal>
 ```
 ## API
 ### Props
-|  属性   | 说明  | 类型 | 默认值 |
-|  ----  | ----  | ---- | ---- |
-| title | 元素的标题 | string | - |
-| isOpened | 是否显示模态框 | boolean | false |
-| content | 元素的内容 | string | - |
-| contentAlign | 元素的内容对齐方式 | 'center' ｜ 'left' ｜ 'right' | 'center' |
-| closeOnClickOverlay | 点击浮层的时候时候自动关闭 | boolean | true |
-| cancelText | 取消按钮的文本 | string | - |
-| confirmText | 确认按钮的文本 | string | - |
+| 属性                | 说明                       | 类型                          | 默认值   |
+| ------------------- | -------------------------- | ----------------------------- | -------- |
+| title               | 元素的标题                 | string                        | -        |
+| isOpened            | 是否显示模态框             | boolean                       | false    |
+| content             | 元素的内容                 | string                        | -        |
+| contentAlign        | 元素的内容对齐方式         | 'center' ｜ 'left' ｜ 'right' | 'center' |
+| closeOnClickOverlay | 点击浮层的时候时候自动关闭 | boolean                       | true     |
+| cancelText          | 取消按钮的文本             | string                        | -        |
+| confirmText         | 确认按钮的文本             | string                        | -        |
 
 ### Events
-|  事件名   | 说明  | 回调参数 |
-|  ----  | ----  | ---- |
-| onClose | 触发关闭时的事件 | - | 
-| onCancel | 点击取消按钮触发的事件 | -  |
-| onConfirm | 点击确认按钮触发的事件 | - |
+| 事件名    | 说明                   | 回调参数 |
+| --------- | ---------------------- | -------- |
+| onClose   | 触发关闭时的事件       | -        |
+| onCancel  | 点击取消按钮触发的事件 | -        |
+| onConfirm | 点击确认按钮触发的事件 | -        |
 
 ### 样式变量
-|  名称  | 默认值 |
-|  ---- | ---- |
-|  @modal-width | 540px |
-|  @modal-header-text-color | @color-text-base |
-|  @modal-content-text-color  | @color-text-base |
-|  @modal-btn-default-color | @color-text-base |
-|  @modal-btn-confirm-color  | @color-primary |
-|  @modal-bg-color | @color-white |
+| 名称                       | 默认值               |
+| -------------------------- | -------------------- |
+| --modal-duration           | 200ms                |
+| --modal-width              | 540px                |
+| --modal-header-text-color  | var(--color-text)    |
+| --modal-content-text-color | var(--color-text)    |
+| --modal-btn-default-color  | var(--color-text)    |
+| --modal-btn-confirm-color  | var(--color-primary) |
+| --modal-bg-color           | var(--color-white)   |
+| --modal-zindex             | 1000                 |

@@ -121,27 +121,41 @@ const option2 = [
 ```
 ## API
 ### DropdownMenu Props
-|  参数   | 说明  | 类型 | 默认值 |
-|  ----  | ----  | ---- | ---- |
-| activeColor | 菜单标题和选项的选中态颜色 | string | 主题色 |
-| titleAlign | 菜单标题对齐方式 | 'center' ｜ 'right' ｜ 'left' | 'center' |
+| 参数        | 说明                       | 类型                          | 默认值   |
+| ----------- | -------------------------- | ----------------------------- | -------- |
+| activeColor | 菜单标题和选项的选中态颜色 | string                        | 主题色   |
+| titleAlign  | 菜单标题对齐方式           | 'center' ｜ 'right' ｜ 'left' | 'center' |
 
 ### DropdownItem Props
-|  参数   | 说明  | 类型 | 默认值 |
-|  ----  | ----  | ---- | ---- |
-| value | 当前选中项对应的 value | number｜string | 主题色 |
-| title | 菜单项标题 | 	string | 当前选中项文字 |
-| options | 选项数组 | 	Option[] | [] |
-| content | 自定义内容 | 	元素 | - |
+| 参数    | 说明                   | 类型           | 默认值         |
+| ------- | ---------------------- | -------------- | -------------- |
+| value   | 当前选中项对应的 value | number｜string | 主题色         |
+| title   | 菜单项标题             | string         | 当前选中项文字 |
+| options | 选项数组               | Option[]       | []             |
+| content | 自定义内容             | 元素           | -              |
 
 ### DropdownItem Events
-|  事件名   | 说明  | 回调参数 |
-|  ----  | ----  | ---- |
-| change | 点击选项导致 value 变化时触发 | value |
-| onClick | 自定义点击事件 | - |
+| 事件名  | 说明                          | 回调参数 |
+| ------- | ----------------------------- | -------- |
+| change  | 点击选项导致 value 变化时触发 | value    |
+| onClick | 自定义点击事件                | -        |
 
 ### Option 数据结构
-|  键名   | 说明  | 类型 |
-|  ----  | ----  | ---- |
-| text | 文字 | string | 
+| 键名  | 说明   | 类型   |
+| ----- | ------ | ------ |
+| text  | 文字   | string |
 | value | 标识符 | number | string |
+
+### 样式变量
+| 名称                                    | 默认值                  | 描述 |
+| --------------------------------------- | ----------------------- | ---- |
+| --dropdown-menu-background-color        | var(--color-white)      | -    |
+| --dropdown-menu-title-font-size         | var(--font-size-base)   | -    |
+| --dropdown-menu-title-text-color        | var(--color-text)       | -    |
+| --dropdown-menu-height                  | 80px                    | -    |
+| --dropdown-menu-box-shadow              | 0 2px 12px #EBEDF0      | -    |
+| --dropdown-item-z-index                 | 10                      | -    |
+| --dropdown-item-border-radius           | 16px                    | -    |
+| --dropdown-menu-active-background-color | #F4F6FA                 | -    |
+| --dropdown-overlay-bg-color             | var(--overlay-bg-color) | -    |
+| --dropdown-overlay-z-index              | 99                      | -    |

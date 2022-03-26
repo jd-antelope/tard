@@ -22,12 +22,13 @@
     .mixin-overlay;
   }
 
-  // &__button{
-  //   margin: 0;
-  //   &-confirm{
-  //     color:  var(--modal-btn-confirm-color);
-  //   }
-  // }
+  &__button {
+    margin: 0;
+
+    &-confirm {
+      color: var(--modal-btn-confirm-color);
+    }
+  }
 
   &__container {
     .mixin-absolute-center();
@@ -42,6 +43,7 @@
     .line(1);
     padding: var(--spacing-v-md) var(--spacing-h-lg);
     font-size: var(--font-size-lg);
+    font-weight: bold;
     color: var(--modal-header-text-color);
     text-align: center;
   }

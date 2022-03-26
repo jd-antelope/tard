@@ -4,13 +4,13 @@
 为页面提供导航功能，常用于页面顶部。
 ### 引入
 ```js
-import { SlNavBar } from 'tard'
+import { NavBar } from 'tard'
 ```
 ## 代码演示
 ### 基本用法
 通过 `title` 属性设置头部导航标题
 ```js
-<SlNavBar title="标题" />
+<NavBar title="标题" />
 ```
 
 ### 返回上一级
@@ -21,13 +21,13 @@ const onClickLeft = () => {
     console.log('back')
 }
 
-<SlNavBar title="标题" leftIcon leftText='返回' onClickLeft={onClickLeft} />
+<NavBar title="标题" leftIcon leftText='返回' onClickLeft={onClickLeft} />
 ```
 
 ### 自定义左侧图标
 设置 `leftIconType` 属性来设置左边图标
 ```js
-<SlNavBar title="标题"
+<NavBar title="标题"
     leftIcon
     leftText='返回'
     leftIconType='arrow-left'
@@ -38,7 +38,7 @@ const onClickLeft = () => {
 ### 自定义左侧图标
 设置 `leftIconType` 属性来设置左侧图标， `onClickLeft` 设置左侧点击事件
 ```js
-<SlNavBar title="标题"
+<NavBar title="标题"
     leftIcon
     leftText='返回'
     leftIconType='arrow-left'
@@ -49,7 +49,7 @@ const onClickLeft = () => {
 ### 自定义链接颜色
 设置 `color` 属性来设置链接颜色
 ```js
-<SlNavBar title="标题"
+<NavBar title="标题"
     leftIcon
     leftText='返回'
     leftIconType='arrow-left'
@@ -59,7 +59,7 @@ const onClickLeft = () => {
 ### 自定义右侧图标
 设置 `rightIconType` 属性来设置右侧图标， `onClickRight` 设置左侧点击事件
 ```js
-<SlNavBar title="标题"
+<NavBar title="标题"
     leftIcon
     leftText='返回'
     rightIconType='search'
@@ -92,10 +92,10 @@ const onClickLeft = () => {
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @nav-bar-title-color | @color-text-base |
-|  @nav-bar-link-color  | @color-text-base |
-|  @nav-bar-spacing-v | 9PX |
-|  @nav-bar-spacing-h  | 5PX |
-|  @nav-bar-font-size | 16PX|
-|  @nav-bar-back-font-size | 14PX |
-|  @nav-bar-height | 92px |
+|  --nav-bar-title-color | var(--color-text) |
+|  --nav-bar-link-color  | var(--color-text) |
+|  --nav-bar-spacing-v | 9PX |
+|  --nav-bar-spacing-h  | 5PX |
+|  --nav-bar-font-size | 16PX|
+|  --nav-bar-back-font-size | 14PX |
+|  --nav-bar-height | 92px |

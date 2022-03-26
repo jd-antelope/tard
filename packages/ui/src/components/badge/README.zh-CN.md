@@ -111,8 +111,10 @@ import { Badge } from 'tard'
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @badge-color | @color-white |
-|  @badge-bg-color | @color-error |
-|  @badge-bg  | @badge-bg-color |
-|  @badge-font-size | @font-size-xs |
-|  @badge-dot-size  | 20px |
+|  --badge-color | var(--color-white) |
+|  --badge-bg-color | var(--color-error) |
+|  --badge-bg  | var(--badge-bg-color) |
+|  --badge-font-size | var(--font-size-xs) |
+|  --badge-dot-size  | 20px |
+|  --badge-border-radius | calc(var(--badge-font-size) * .7) |
+|  --badge-box-shadow  | 0 4px 8px 0 rgba(var(--badge-bg-color), .2) |

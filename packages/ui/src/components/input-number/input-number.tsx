@@ -48,13 +48,14 @@ const InputNumber: FC<InputNumberProps> = ({
   max = 9999,
   step = 1,
   size = 'normal',
-  onChange = (): void => { },
+  onChange = () => { },
   onBlur = (): void => { },
   onErrorInput = (): void => { },
   customizeStyle
 }) => {
 
-  const handleClick = (clickType: 'minus' | 'plus'): void => {
+  const handleClick = (clickType: 'minus' | 'plus', e): void => {
+    console.log(clickType)
     const lowThanMin = clickType === 'minus' && value <= min
     const overThanMax = clickType === 'plus' && value >= max
     if (lowThanMin || overThanMax || disabled) {
@@ -73,6 +74,10 @@ const InputNumber: FC<InputNumberProps> = ({
       }
       return
     }
+    const deltaValue = clickType === 'minus' ? -step : step
+    let newValue = addNum(Number(value), deltaValue)
+    newValue = Number(handleValue(newValue))
+    onChange(newValue, e)
   }
 
   const handleValue = (value: string | number): string => {
@@ -146,7 +151,7 @@ const InputNumber: FC<InputNumberProps> = ({
     <CompContainer className={rootCls} customizeStyle={customizeStyle}>
       <View
         className={minusBtnCls}
-        onClick={() => handleClick('minus')}
+        onClick={(e) => handleClick('minus', e)}
       >
         <Text className={`${CssPrefix}-icon ${CssPrefix}-icon-subtract ${CssPrefix}-input-number__btn-subtract`}>-</Text>
       </View>
@@ -161,7 +166,7 @@ const InputNumber: FC<InputNumberProps> = ({
       />
       <View
         className={plusBtnCls}
-        onClick={() => handleClick('plus')}
+        onClick={(e) => handleClick('plus', e)}
       >
         <Text className={`${CssPrefix}-icon ${CssPrefix}-icon-add ${CssPrefix}-input-number__btn-add`}>+</Text>
       </View>

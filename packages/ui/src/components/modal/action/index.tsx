@@ -8,14 +8,14 @@ const ModalAction: FC<ModalActionProps> = ({ isSimple = false, className, childr
   const rootClass = classNames(
     `${CssPrefix}-modal__footer`,
     {
-      [`${CssPrefix}slc-modal__footer--simple`]: isSimple
+      [`${CssPrefix}-modal__footer--simple`]: isSimple
     },
     className
   )
 
   return (
     <View className={rootClass}>
-      <View className={`${CssPrefix}modal__action`}>{children}</View>
+      <View className={`${CssPrefix}-modal__action`}>{children}</View>
     </View>
   )
 }
