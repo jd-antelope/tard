@@ -1,12 +1,13 @@
 {
   "name": "tard",
-  "version": "1.0.17",
+  "version": "0.0.2-alpha.0",
   "description": "",
   "main": "dist/comps.react.umd.js",
   "module": "dist/comps.react.es.js",
   "source": "src/components/index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "files": [
     "dist",

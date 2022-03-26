@@ -32,5 +32,6 @@
     "node_modules/*",
     "packages/vite/*",
     "packages/demo/*",
+    "packages/ui/src/**/demo/*"
   ],
 }
