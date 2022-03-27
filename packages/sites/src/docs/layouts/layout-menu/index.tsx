@@ -12,7 +12,7 @@ type Props = {
 
 const SideMenu: FC<Props> = ({ postIframeMessage }) => {
   const navigate = useNavigate()
-    
+
   const list = [...introduceList, ...routes] as LayoutList[]
   const [selectedKeys, setSelectedKeys] = useState<string>(location.pathname.split('/')[3] || '/')
 
@@ -22,7 +22,7 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
   }
 
   const routerPush = (path: string) => {
-    if (path) return navigate(`${path === '/' ? '' : '/comps'}${path === '/' ? '' : path}`)
+    if (path) return navigate(`${path.indexOf('/') === -1 ? '' : '/comps'}${path}`)
   }
 
   useEffect(() => {
@@ -37,17 +37,17 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
   return (
     <Menu
       mode="inline"
-      selectedKeys={ [String(selectedKeys)] }
-      style={ { height: '100%', overflowY:'scroll', background: '#F7F8FF' } }
+      selectedKeys={[String(selectedKeys)]}
+      style={{ height: '100%', overflowY: 'scroll', background: '#F7F8FF' }}
     >
       {
         list.map((v, i) => (
-          <Menu.ItemGroup key={ i } title={ v.name }>
+          <Menu.ItemGroup key={i} title={v.name}>
             {
               v.children.map((val) => (
                 <Menu.Item
-                  key={ val.path }
-                  onClick={ () => {
+                  key={val.path}
+                  onClick={() => {
                     if (v.isDocs) {
                       if (val.path) navigate(val.path)
                       postIframeMessage('/home')
@@ -55,8 +55,8 @@ const SideMenu: FC<Props> = ({ postIframeMessage }) => {
                       if (val.path) routerPush(val.path)
                       postIframeMessage(val.path)
                     }
-                  } }
-                  style={ { paddingLeft: '20px' } }
+                  }}
+                  style={{ paddingLeft: '20px' }}
                 >
                   {val.nameEn || ''} {val.name}
                 </Menu.Item>

@@ -4,9 +4,9 @@ import { Image, View } from '@tarojs/components'
 import { previewImage } from '@tarojs/taro'
 import CompContainer from '../../common/comp-container'
 import { BUYIMG } from '../../common/constants'
-import { isFunction } from '../../common/is'
+import { isFunction } from '../../utils/is'
 import { ImageProps } from './type'
-import { objectToString, pxTransform } from '../../common/utils'
+import { objectToString, pxTransform } from '../../utils'
 import { cssPrefix } from '../../common'
 
 const ImageComponent: FC<ImageProps> = ({

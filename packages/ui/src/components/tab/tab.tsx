@@ -151,25 +151,13 @@ const Tab: FC<TabProps> = (
     }
   }
 
-  //   public UNSAFE_componentWillReceiveProps(nextProps: TabProps): void {
-  //   if(nextProps.scroll !== scroll) {
-  //   getTabHeaderRef()
-  // }
-  // if (nextProps.current !== current) {
-  //   updateState(nextProps.current)
-  // }
-  //   }
-
   useEffect(() => {
     getTabHeaderRef()
     updateState(current)
     return () => {
       tabHeaderRef = null
     }
-
   }, [])
-
-
 
   const heightStyle = { height }
   const underlineStyle = {

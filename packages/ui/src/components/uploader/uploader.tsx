@@ -5,7 +5,7 @@ import { Image, View, Video } from '@tarojs/components'
 import { ITouchEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
 import { UploaderProps, VideoInterface, File } from './type'
-import { uuid } from '../../common/utils'
+import { uuid } from '../../utils'
 import CompContainer from '../../common/comp-container'
 import { cssPrefix } from '../../common'
 

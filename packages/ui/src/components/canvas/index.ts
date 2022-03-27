@@ -1,4 +1,4 @@
-import { isWeb } from '../../common/utils'
+import { isWeb } from '../../utils'
 import CanvasWeapp from './weapp'
 import CanvasH5 from './h5'
 

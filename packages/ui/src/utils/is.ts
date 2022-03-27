@@ -30,4 +30,4 @@ export function isBooleanStringLiteral (o: unknown): o is string {
   return o === 'true' || o === 'false'
 }
 
-export const { isArray } = Array
+export const isArray = Array.isArray
