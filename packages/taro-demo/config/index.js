@@ -1,3 +1,15 @@
+const path = require('path')
+
+require('dotenv-flow').config({
+  path: path.resolve(__dirname,'../env/'),
+  node_env: process.env.APP_ENV
+})
+
+const {
+  API_STATIC
+} = process.env
+console.log(API_STATIC)
+
 const config = {
   projectName: 'taro-demo',
   date: '2022-3-3',
@@ -43,7 +55,7 @@ const config = {
     }
   },
   h5: {
-    publicPath: '/',
+    publicPath: API_STATIC,
     staticDirectory: 'static',
     postcss: {
       autoprefixer: {

@@ -75,3 +75,21 @@ docs(md) core @yue
 3. 文档使用需求改一下
 4. 代码review
 
+dist                        编译结果目录
+├── styles                      项目编译配置目录
+|   ├── components                默认配置
+|   |   ├── button   
+|   |   |   ├── button.less
+|   |   |   └── var.less
+|   |   └── ......
+|   ├── mixins                 开发环境配置(dev)
+|   |   ├── index.less
+|   |   └── libs
+|   |   |   ├── line.less
+|   |   |   └── ......
+|   ├── index.less
+|   ├── variable.less 
+|   └── prod.js                 生产环境配置(build)
+|
+├── react.es.js                         源码目录
+├── react.umd.js  

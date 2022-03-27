@@ -10,18 +10,18 @@ export default defineConfig({
       { find: '@ui',replacement:path.resolve(__dirname, 'packages/ui/src/components') }
     ],
   },
-  define: {
-    process: {
-      env: {}
-    },
-    ENABLE_INNER_HTML: true,
-    ENABLE_ADJACENT_HTML: true,
-    ENABLE_SIZE_APIS: true,
-    ENABLE_TEMPLATE_CONTENT: true,
-    ENABLE_MUTATION_OBSERVER: true,
-    ENABLE_CLONE_NODE: true,
-    ENABLE_CONTAINS: true,
-  },
+  // define: {
+  //   process: {
+  //     env: {}
+  //   },
+  //   ENABLE_INNER_HTML: true,
+  //   ENABLE_ADJACENT_HTML: true,
+  //   ENABLE_SIZE_APIS: true,
+  //   ENABLE_TEMPLATE_CONTENT: true,
+  //   ENABLE_MUTATION_OBSERVER: true,
+  //   ENABLE_CLONE_NODE: true,
+  //   ENABLE_CONTAINS: true,
+  // },
   css: {
     preprocessorOptions: {
       less: {

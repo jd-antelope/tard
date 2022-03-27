@@ -11,6 +11,7 @@ import './index.less'
 
 const { Content, Sider } = Layout
 export default function LayoutComponent({ children }: any) {
+  console.log(import.meta.env.MODE)
   const location = useLocation()
   const [path] = useState<string>(location.pathname.split('/')[3] || 'home')
 
@@ -75,7 +76,7 @@ export default function LayoutComponent({ children }: any) {
           >
             <iframe
               className="iframe-content"
-              src={`http://0.0.0.0:10086/#/pages/${path}/index`}
+              src={`${import.meta.env.MODE === 'development' ? 'http://localhost:10086' : '/h5'}/#/pages/${path}/index`}
               frameBorder="0"
               id="iframeDemo"
             />

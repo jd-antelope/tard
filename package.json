@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "./scripts/start.sh",
     "taro-dev": "cd packages/taro-demo && pnpm run dev:h5",
-    "vite-dev": "vite",
-    "build:prod": "tsc --project tsconfig.vite.json && vite build",
+    "vite-dev": "vite serve --mode development",
+    "build:prod": "vite build",
     "build": "pnpm run build:es && pnpm run build:lib",
     "build:es": "rimraf dist && NODE_ENV=production rollup -c rollup.config.es.js",
     "build:lib": "tsc --project tsconfig.d.json",
@@ -26,7 +26,8 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^4.18.7",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.1",
+    "unified": "^10.1.2"
   },
   "devDependencies": {
     "@jd-antelope/commitlint-config-selling": "^0.0.3",
