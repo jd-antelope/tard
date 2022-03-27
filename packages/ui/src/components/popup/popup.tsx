@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { PopupProps } from './type'
 import CompContainer from '../../common/comp-container'
-import { objectToString } from '../../common/utils'
+import { objectToString } from '../../utils'
 import { cssPrefix } from '../../common'
 
 const Popup: FC<PopupProps> = ({ 

@@ -1,7 +1,7 @@
 import React, { Fragment, FC } from 'react'
 import cn from 'classnames'
 import { View, Text } from '@tarojs/components'
-import { pxTransform } from '../../common/utils'
+import { pxTransform } from '../../utils'
 import CompContainer from '../../common/comp-container'
 import { cssPrefix } from '../../common'
 import { PriceProps } from './type'

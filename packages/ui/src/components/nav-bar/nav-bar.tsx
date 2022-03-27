@@ -5,10 +5,10 @@ import { NavBarProps } from './type'
 import { Text, View } from '@tarojs/components'
 import { ITouchEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
-import { mergeStyle } from '../../common/utils'
+import { mergeStyle } from '../../utils'
 import { cssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
-// import { initTestEnv } from '../../common/utils'
+// import { initTestEnv } from '../../utils'
 
 // initTestEnv()
 const NavBar: FC<NavBarProps> = ({

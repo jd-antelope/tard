@@ -1,4 +1,4 @@
-import { getDateUTC } from "../../common/utils"
+import { getDateUTC } from "../../utils"
 
 function getYears (minDate, maxDate) {
   const min = new Date(minDate.replace(/-/g, '/')).getFullYear()

@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import classNames from 'classnames'
 import { Input, Text, View } from '@tarojs/components'
-import { pxTransform } from '../../common/utils'
+import { pxTransform } from '../../utils'
 import { InputNumberProps } from './type'
 import { cssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'

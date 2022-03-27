@@ -2,7 +2,7 @@ import React, { FC, cloneElement, ReactElement, ComponentProps } from 'react'
 import classNames from 'classnames'
 import GridItem from './grid-item'
 import { GridProps } from './type'
-import { objectToString } from '../../common/utils'
+import { objectToString } from '../../utils'
 import CompContainer from '../../common/comp-container'
 import { cssPrefix } from '../../common'
 
