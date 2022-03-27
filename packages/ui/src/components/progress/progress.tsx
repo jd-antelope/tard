@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import classNames from 'classnames'
 import { View, Text } from '@tarojs/components'
 import CompContainer from '../../common/comp-container'
-import { pxTransform } from '../../common/utils';
+import { pxTransform } from '../../utils';
 import { ProgressProps } from './type'
 import { cssPrefix } from '../../common';
 

@@ -5,7 +5,7 @@ import { Text, View } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { RateProps } from './type'
 import CompContainer from '../../common/comp-container'
-import { pxTransform } from '../../common/utils'
+import { pxTransform } from '../../utils'
 import { cssPrefix } from '../../common'
 
 const Rate: FC<RateProps> = ({ 

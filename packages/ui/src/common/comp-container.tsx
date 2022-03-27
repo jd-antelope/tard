@@ -19,7 +19,7 @@ const CompContainer: FC<CommonProps> = ({
   children = '',
   ...rest
 }) => {
-  const [themeStyle, setThemeStyle] = useState<string>()
+  const [themeStyle, setThemeStyle] = useState<string>('')
 
   const setThemeStyleFn = useCallback(() => {
     if (!(Taro as any).Current.app || !(Taro as any).Current.app.themeParams) return
@@ -39,7 +39,7 @@ const CompContainer: FC<CommonProps> = ({
 
   const styleString = isObject(style) ? transformationString(style) : style
   return (
-    <View className={className} style={customizeStyle || themeStyle + styleString} {...rest}>
+    <View className={className} style={styleString + themeStyle + customizeStyle} {...rest}>
       {children}
     </View>
   )

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 import { View, Image } from '@tarojs/components'
 import { navigateTo } from '@tarojs/taro';
 import { Icon } from 'tard'

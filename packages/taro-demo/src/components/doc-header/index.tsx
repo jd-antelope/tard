@@ -16,7 +16,7 @@ export default class DocsHeader extends React.Component<DocsHeaderProps> {
 
   postIframeParentMessage() {
     if (isWeb) {
-      window.parent.postMessage({ path: '/introduce' }, '*');
+      window.parent.postMessage({ path: 'introduce' }, '*');
     }
   }
 

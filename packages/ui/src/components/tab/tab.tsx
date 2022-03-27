@@ -10,7 +10,7 @@ import {
 // import Common from '../../common/common'
 import { TabProps } from './type'
 import CompContainer from '../../common/comp-container'
-import { isTest, uuid, mergeStyle } from '../../common/utils'
+import { isTest, uuid, mergeStyle } from '../../utils'
 
 const ENV = Taro.getEnv()
 const MIN_DISTANCE = 100

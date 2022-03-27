@@ -4,7 +4,7 @@
 创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作
 ### 引入
 ```js
-import { SlOverlay } from 'tard'
+import { Overlay } from 'tard'
 ```
 ## 代码演示
 ### 基础用法
@@ -12,8 +12,8 @@ import { SlOverlay } from 'tard'
 ```js
 const [show, setShow] = useState(false)
 
-<SlButton onClick={() => setShow(true)}>显示遮罩层</SlButton>
-<SlOverlay show={show} onClick={() => setShow(false)} />
+<Button onClick={() => setShow(true)}>显示遮罩层</Button>
+<Overlay show={show} onClick={() => setShow(false)} />
 ```
 
 ### 嵌入内容
@@ -21,8 +21,8 @@ const [show, setShow] = useState(false)
 ```js
 const [show, setShow] = useState(false)
 
-<SlButton onClick={() => setShow(true)}>嵌入内容</SlButton>
-<SlOverlay show={show} onClick={() => setShow(false)}>
+<Button onClick={() => setShow(true)}>嵌入内容</Button>
+<Overlay show={show} onClick={() => setShow(false)}>
     <View style="display: flex; align-items: center; justify-content: center; height: 100%;" >
     <View style='width:200px; height:200px; background: #fff'></View>
 </View>
@@ -42,5 +42,5 @@ const [show, setShow] = useState(false)
 ### 样式变量
 |  名称  | 默认值 |
 |  ---- | ---- |
-|  @overlay-bg-color | @overlay-bg-color |
-|  @zindex-overlay  | 1000 |
+|  --overlay-bg-color | rgba(0, 0, 0, .65) |
+|  --zindex-overlay  | 1000 |

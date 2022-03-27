@@ -5,7 +5,7 @@ import { Text } from '@tarojs/components'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { LoadingProps } from './type'
 import CompContainer from '../../common/comp-container'
-import { pxTransform, objectToString } from '../../common/utils'
+import { pxTransform, objectToString } from '../../utils'
 import { isFunction } from '../../utils/is'
 import { cssPrefix } from '../../common'
 

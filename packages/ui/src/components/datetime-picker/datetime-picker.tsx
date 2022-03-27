@@ -9,7 +9,7 @@ import {
   getYear, getMonth, getDate, getHour, getMinute, 
 } from "./dateMap"
 import CompContainer from '../../common/comp-container'
-import { pxTransform } from '../../common/utils'
+import { pxTransform } from '../../utils'
 import { DatetimePickerProps } from './type'
 import { cssPrefix } from '../../common'
 

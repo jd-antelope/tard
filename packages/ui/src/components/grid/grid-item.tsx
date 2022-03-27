@@ -4,7 +4,7 @@ import { View, Text, Image } from '@tarojs/components'
 import classNames from 'classnames'
 import { isFunction } from '../../utils/is'
 import { GridItemProps } from './type'
-import { objectToString, pxTransform } from '../../common/utils'
+import { objectToString, pxTransform } from '../../utils'
 import { cssPrefix } from '../../common'
 
 const GridItem: FC<GridItemProps> = (props) => {

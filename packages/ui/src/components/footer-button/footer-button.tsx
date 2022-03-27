@@ -2,7 +2,7 @@ import React, { Fragment, FC } from 'react'
 import { View } from '@tarojs/components'
 import classNames from 'classnames';
 import { FooterButtonProps } from './type'
-import { objectToString, pxTransform } from '../../common/utils'
+import { objectToString, pxTransform } from '../../utils'
 import CompContainer from '../../common/comp-container'
 import { isFunction } from '../../utils/is'
 import { cssPrefix } from '../../common'

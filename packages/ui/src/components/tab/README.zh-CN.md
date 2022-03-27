@@ -4,7 +4,7 @@
 选项卡切换组件
 ### 引入
 ```js
-import { SlTab } from 'tard'
+import { Tab } from 'tard'
 ```
 ## 代码演示
 ### 基本用法
@@ -23,7 +23,7 @@ const orderStatus = [{
 
 const OrderManage: FC = () => {
   const [current, setCurrent] = useState<number>(0)
-  return <SlTab
+  return <Tab
     tabList={ orderStatus } current={ current }
     onClick={ (active) => {
       setCurrent(active)
@@ -57,7 +57,7 @@ const orderStatus = [{
 
 const OrderManage: FC = () => {
   const [current, setCurrent] = useState<number>(0)
-  return <SlTab
+  return <Tab
     tabList={ orderStatus } current={ current }
     scroll={ true }
     onClick={ (active) => {
@@ -92,7 +92,7 @@ const orderStatus = [{
 
 const OrderManage: FC = () => {
   const [current, setCurrent] = useState<number>(0)
-  return <SlTab
+  return <Tab
     tabList={ orderStatus } current={ current }
     scroll={ true } activeColor="#36D57D" color="#000000"
     onClick={ (active) => {

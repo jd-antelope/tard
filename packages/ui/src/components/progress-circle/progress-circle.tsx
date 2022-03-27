@@ -3,8 +3,8 @@ import React, { FC } from 'react'
 import Taro from '@tarojs/taro'
 import { Text } from '@tarojs/components'
 import { ProgressCircleProps } from './type'
-import { pxTransform } from '../../common/utils'
-import { isWeapp } from '../../common/utils'
+import { pxTransform } from '../../utils'
+import { isWeapp } from '../../utils'
 import { cssPrefix } from '../../common'
 import CompContainer from '../../common/comp-container'
 
@@ -45,7 +45,7 @@ const ProgressCircle: FC<ProgressCircleProps> = ({
 
   return (
     <CompContainer
-      className={`${CssPrefix}-circle`}
+      className={`${CssPrefix}-progress-circle`}
       customizeStyle={customizeStyle}
       style={`width:${!isWeapp ? pxTransform(size) : pxTransformRem(size)}; height:${!isWeapp ? pxTransform(size) : pxTransformRem(size)}`}
     >
@@ -79,7 +79,7 @@ const ProgressCircle: FC<ProgressCircleProps> = ({
         >
         </view>
       }
-      <Text className={`${CssPrefix}-circle-text`}>{text}</Text>
+      <Text className={`${CssPrefix}-progress-circle-text`}>{text}</Text>
 
     </CompContainer>
   )

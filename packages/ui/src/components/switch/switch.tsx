@@ -4,7 +4,7 @@ import { View } from '@tarojs/components'
 import cn from 'classnames'
 import { SwitchProps } from './type'
 import CompContainer from '../../common/comp-container'
-import { pxTransform } from '../../common/utils'
+import { pxTransform } from '../../utils'
 import { isFunction } from '../../utils/is'
 import { cssPrefix } from '../../common'
 
