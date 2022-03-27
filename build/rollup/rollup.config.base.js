@@ -5,10 +5,11 @@ import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
 import { uglify as RollupUglify } from 'rollup-plugin-uglify'
 import RollupCopy from 'rollup-plugin-copy'
-import RollupPluginDemo from './scripts/watch-demo/index'
-import RollupPluginStyle from './scripts/rollup-plugin-style'
+import RollupPluginDemo from './rollup-plugin-demo'
+import RollupPluginStyle from './rollup-plugin-style'
 
-const resolveFile = p => path.resolve(__dirname, '.', p)
+const cwd = process.cwd()
+const resolveFile = filePath => path.join(cwd, filePath)
 
 const externalPackages = [
   'classnames',
@@ -19,18 +20,18 @@ const externalPackages = [
   '@tarojs/taro',
   '@tarojs/react'
 ]
-const entries = path.join(__dirname, './packages/ui/src/index.ts')
+const entries = path.join(cwd, '/packages/ui/src/index.ts')
 
 export default {
   input: entries,
   output: [
     {
-      file: './packages/ui/dist/comps.react.umd.js',
+      file: path.join(cwd, '/packages/ui/dist/tard.umd.js'),
       format: 'cjs',
       sourcemap: true
     },
     {
-      file: './packages/ui/dist/comps.react.es.js',
+      file:  path.join(cwd, '/packages/ui/dist/tard.es.js'),
       format: 'es',
       sourcemap: true,
       globals: {
@@ -57,7 +58,7 @@ export default {
     RollupJson(),
     RollupUglify(),
     RollupTypescript({
-      tsconfig: path.join(__dirname, 'tsconfig.rollup.json')
+      tsconfig: path.join(cwd, 'tsconfig.rollup.json')
     }),
     RollupCopy({
       verbose: true,
@@ -68,7 +69,7 @@ export default {
         }
       ]
     }),
-    RollupPluginStyle({ watch: process.env.NODE_ENV  === 'development'}),
-    RollupPluginDemo({ watch: process.env.NODE_ENV  === 'development'}),
+    RollupPluginStyle({ watch: process.env.NODE_ENV === 'development' }),
+    RollupPluginDemo({ watch: process.env.NODE_ENV === 'development' }),
   ]
 }

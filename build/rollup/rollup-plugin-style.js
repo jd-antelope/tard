@@ -74,7 +74,7 @@ export default function RollupPluginDemo ({ watch }) {
 		name: "rollup-plugin-style", // rollup插件名称，必须符合格式
 		buildStart (source) {
 			if (watch) {
-				nodeWatch(path.join(__dirname, 'packages/ui/src/components'), { recursive: true }, function (evt, name) {
+				nodeWatch(path.join(cwd, '/packages/ui/src/components'), { recursive: true }, function (evt, name) {
 					name.includes('/demo/') && start();
 				});
 			}

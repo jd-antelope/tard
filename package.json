@@ -8,11 +8,11 @@
     "taro-dev": "cd packages/taro-demo && pnpm run dev:h5",
     "vite-dev": "vite serve --mode development",
     "build:prod": "vite build  --mode production",
-    "build": "pnpm run build:es && pnpm run build:lib",
-    "build:es": "rimraf dist && NODE_ENV=production rollup -c rollup.config.es.js",
-    "build:lib": "tsc --project tsconfig.d.json",
+    "build": "pnpm run build:rollup && pnpm run build:ts",
+    "build:rollup": "rimraf dist && NODE_ENV=production rollup -c build/rollup/rollup.config.base.js",
+    "build:ts": "tsc --project tsconfig.d.json",
     "dev:lib": "tsc --project tsconfig.d.json --watch --incremental",
-    "dev:watch": "NODE_ENV=development rollup --config rollup.config.dev.js --watch",
+    "dev:watch": "NODE_ENV=development rollup --config build/rollup/rollup.config.dev.js --watch",
     "preview": "vite preview"
   },
   "repository": {

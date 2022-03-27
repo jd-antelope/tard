@@ -14,7 +14,7 @@ const getDemoPath = () => {
 }
 
 const writeDemoFile = (file) => {
-  const fileName = file.match(reg)[1]
+	const fileName = file.match(reg)[1]
 	const check = fs.existsSync(`${cwd}/${staticLink}/${fileName}`)
 	if (!check) {
 		fs.mkdirSync(`${cwd}/${staticLink}/${fileName}`)
@@ -26,8 +26,8 @@ const writeDemoFile = (file) => {
 	packagePaths.map(v => {
 		const oldFile = v.replace('../../', '/')
 		const newFile = oldFile.split('demo/')[1]
-	  fs.copyFileSync(
-			oldFile, 
+		fs.copyFileSync(
+			oldFile,
 			`${cwd}/${staticLink}/${fileName}/${newFile}`
 		)
 	})
@@ -35,7 +35,7 @@ const writeDemoFile = (file) => {
 
 const writeDemoJson = (file) => {
 	const fileName = file.match(reg)[1]
-  const json = `
+	const json = `
 	export default {
 		navigationBarTitleText: '${fileName}',
 		enableShareAppMessage: true
@@ -47,9 +47,9 @@ const writeDemoJson = (file) => {
 const writeDemoConfig = (arr) => {
 	const mdPathContent = fs.readFileSync(`${cwd}/packages/taro-demo/src/app.config.ts`, 'utf-8')
 	let str = `'pages/home/index'`
-  arr.map(v => {
+	arr.map(v => {
 		const fileName = v.match(reg)[1]
-    str += `,'pages/${fileName}/index'`
+		str += `,'pages/${fileName}/index'`
 	})
 	const jsonArr = mdPathContent.split('pages: [')
 	const jsonArrEnd = jsonArr[1].split('],')
@@ -58,11 +58,11 @@ const writeDemoConfig = (arr) => {
 }
 
 const start = () => {
-  const list = getDemoPath();
+	const list = getDemoPath();
 	writeDemoConfig(list)
-  list.map(v => {
+	list.map(v => {
 		writeDemoFile(v)
-  })
+	})
 }
 
 start()
@@ -72,12 +72,12 @@ export default function RollupPluginDemo ({ watch }) {
 		name: "rollup-plugin-demo", // rollup插件名称，必须符合格式
 		buildStart (source) {
 			if (watch) {
-				nodeWatch(path.join(__dirname, 'packages/ui/src/components'), { recursive: true }, function (evt, name) {
+				nodeWatch(path.join(cwd, '/packages/ui/src/components'), { recursive: true }, function (evt, name) {
 					name.includes('/demo/') && start();
 				});
 			}
 			start();
 		},
-		load () {}
+		load () { }
 	}
 }

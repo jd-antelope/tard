@@ -2,8 +2,8 @@
   "name": "tard",
   "version": "0.0.2-alpha.0",
   "description": "",
-  "main": "dist/comps.react.umd.js",
-  "module": "dist/comps.react.es.js",
+  "main": "dist/tard.umd.js",
+  "module": "dist/tard.es.js",
   "source": "src/components/index.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",

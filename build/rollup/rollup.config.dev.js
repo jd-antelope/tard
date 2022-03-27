@@ -1,7 +1,9 @@
-import NodePath from 'path'
+import path from 'path'
 import watch from "rollup-plugin-watch";
-import baseConfig from './rollup.config.es.js'
-const resolveFile = path => NodePath.resolve(__dirname, '.', path)
+import baseConfig from './rollup.config.base.js'
+const cwd = process.cwd()
+
+const resolveFile = filePath => path.join(cwd, filePath)
 
 baseConfig.plugins.push(...[
   watch({
