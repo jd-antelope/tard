@@ -11,7 +11,6 @@ type CommonProps = {
   [propName: string]: any
 }
 
-
 const CompContainer: FC<CommonProps> = ({
   className = '',
   style = '',
@@ -38,6 +37,7 @@ const CompContainer: FC<CommonProps> = ({
   }, [])
 
   const styleString = isObject(style) ? transformationString(style) : style
+
   return (
     <View className={className} style={styleString + themeStyle + customizeStyle} {...rest}>
       {children}

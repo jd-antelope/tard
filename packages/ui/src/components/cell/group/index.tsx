@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React, { FC } from 'react'
 import { View } from '@tarojs/components'
 import { CellGroupProps } from '../type'
-import { CssPrefix } from '../../../common'
+import { cssPrefix } from '../../../common'
 
 const CellGroup: FC<CellGroupProps> = ({
   border = true,
@@ -10,7 +10,7 @@ const CellGroup: FC<CellGroupProps> = ({
   title,
   children
 }) => {
-
+  const CssPrefix = cssPrefix()
   const itemClass = classNames(
     `${CssPrefix}-cell-group-item`,
     {

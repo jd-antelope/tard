@@ -2,9 +2,10 @@ import React, { FC } from 'react'
 import classNames from 'classnames'
 import { View } from '@tarojs/components'
 import { ModalActionProps } from '../type'
-import { CssPrefix } from '../../../common'
+import { cssPrefix } from '../../../common'
 
 const ModalAction: FC<ModalActionProps> = ({ isSimple = false, className, children }) => {
+  const CssPrefix = cssPrefix()
   const rootClass = classNames(
     `${CssPrefix}-modal__footer`,
     {

@@ -1,5 +1,5 @@
 import CellComponent from './cell'
-import CellGroup from './cell-group'
+import CellGroup from './group'
 
 import { CellProps } from './type'
 

@@ -1,4 +1,7 @@
-@import '~tard/dist/styles/index.less';
+/* stylelint-disable selector-max-id */
+/* stylelint-disable selector-nested-pattern */
+@import "~tard/dist/styles/index.less";
+@--css-prefix: slc;
 
 @color-grey-0: #333;
 @color-grey-1: #666;
@@ -12,7 +15,7 @@
 @color-white: #FFF;
 
 #app {
-  background-color: #f8f8f8;
+  background-color: #F8F8F8;
 }
 
 .at-frozen {
@@ -25,13 +28,14 @@
   flex-direction: column;
   box-sizing: border-box;
   min-height: 100vh;
-  background-color: #f8f8f8;
+  background-color: #F8F8F8;
 }
 
 view {
   box-sizing: border-box;
 }
-.flex-row{
+
+.flex-row {
   display: flex;
   justify-content: space-around;
 }
@@ -39,11 +43,11 @@ view {
 
 // 实例模板
 .example {
-  padding: 10px 20px;
   margin-bottom: 10px;
+  padding: 10px 20px;
 
   &:not(:first-child) {
-    border-top: 40px solid #f5f5f5;
+    border-top: 40px solid #F5F5F5;
   }
 
   &__header {
@@ -52,13 +56,13 @@ view {
     border-bottom: 1px solid @color-grey-4;
 
     &-title {
-      color: @color-grey-2;
       font-size: 28px;
+      color: @color-grey-2;
     }
 
     &-note {
-      font-size: 24px;
       margin-left: 20px;
+      font-size: 24px;
       color: @color-grey-3;
     }
   }
@@ -82,8 +86,8 @@ view {
 
     &__desc {
       margin-bottom: 12px;
-      color: #333;
       font-size: 24px;
+      color: #333333;
     }
   }
 }
@@ -100,24 +104,24 @@ view {
     &__title {
       position: relative;
       margin-bottom: 50px;
-      padding-left: 50px;
-      color: #6a6a77;
       font-size: 32px;
       font-weight: bold;
       line-height: 1.5;
+      color: #6A6A77;
+      padding-left: 50px;
 
       &::before {
         content: "";
-        display: inline-block;
         position: absolute;
-        left: 24px;
         top: 50%;
-        margin-top: -20px;
-        width: 2PX;
+        left: 24px;
+        display: inline-block;
+        width: 2px;
         height: 40px;
-        background-color: #6190e8;
-        box-shadow: 0 7px 12px 0 rgba(97, 144, 232, 0.2);
-        border-radius: 1PX;
+        margin-top: -20px;
+        border-radius: 1px;
+        box-shadow: 0 7px 12px 0 rgba(97, 144, 232, .2);
+        background-color: #6190E8;
       }
     }
 
@@ -129,24 +133,26 @@ view {
       }
     }
   }
+
   &-header {
-    height: 150px;
-    background: @color-white;
     display: flex;
     align-items: center;
-    padding-left: 24px;
-    font-size: 36px;
-    border-radius: 12px;
+    height: 150px;
     margin-top: 12px;
+    border-radius: 12px;
+    font-size: 36px;
+    background: @color-white;
+    padding-left: 24px;
   }
+
   &-content {
     &-tip {
+      position: relative;
       margin: 72px 0 32px;
       font-size: 28px;
-      position: relative;
-      color: #333;
-      line-height: 28px;
       font-weight: bold;
+      line-height: 28px;
+      color: #333333;
     }
 
     &__row {
@@ -157,13 +163,13 @@ view {
     &__info {
       box-sizing: border-box;
       width: 100%;
-      background: @color-white;
       padding: 32px 36px;
+      background: @color-white;
     }
 
     &__pr {
-      margin-right: 40px;
       align-items: center;
+      margin-right: 40px;
     }
 
     &__bottom {
@@ -173,20 +179,22 @@ view {
 }
 
 
-.container{
-  background: #f7f8fa;
-  font-size: 28px;
-  overflow: hidden;
+.container {
   box-sizing: border-box;
-  padding: 0 36px;
   min-height: 100vh;
+  padding: 0 36px;
+  overflow: hidden;
+  font-size: 28px;
+  background: #F7F8FA;
 }
 
 .full-container {
   padding: 0;
+
   .doc-body-content-tip {
     padding-left: 36px;
   }
+
   .doc-body-content__row {
     padding-left: 36px;
   }
@@ -205,26 +213,26 @@ view {
 }
 
 .doc-empty {
-  width: 100%;
-  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 200px;
 }
 
-.comp-items{
+.comp-items {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: 0 0 20px;
   padding: 0 40px;
-  color: #333;
+  border-radius: 8px;
   font-weight: 500;
   line-height: 88px;
-  background: #fff;
-  border-radius: 8px;
-  -webkit-transition: background 0.3s;
-  transition: background 0.3s;
+  color: #333333;
+  background: #FFFFFF;
+  -webkit-transition: background .3s;
+  transition: background .3s;
   cursor: pointer;
 }

@@ -9,10 +9,10 @@
   overflow: hidden;
 
   &__text {
+    font-family: var(--family-integer);
     font-size: var(--font-size-sm);
     line-height: var(--line-height-zh);
-    color: var(--primary-color);
-    font-family: var(--family-integer);
+    color: var(--color-primary);
 
     &-line {
       margin: 0 var(--price-line-horizontal-padding);
@@ -74,13 +74,14 @@
       .flex-center();
     }
   }
+
   &__origin-price {
+    margin-left: var(--spacing-h-md);
+    font-family: var(--family-integer);
     font-size: var(--font-size-sm);
     line-height: var(--font-size-sm);
-    margin-left: var(--spacing-h-md);
     color: var(--color-grey-2);
-    opacity: 0.8;
     text-decoration: line-through;
-    font-family: var(--family-integer);
+    opacity: .8;
   }
 }

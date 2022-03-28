@@ -9,7 +9,7 @@ import { isFunction } from '../../utils/is'
 import { cssPrefix } from '../../common'
 
 const Switch: FC<SwitchProps> = (props) => {
-  const { 
+  const {
     className = '',
     activeColor = '',
     btnColor = '',
@@ -35,8 +35,7 @@ const Switch: FC<SwitchProps> = (props) => {
     },
     className
   )
-
-  const rootSty: string = `width: ${pxTransform(bgWidth)};height: ${pxTransform(bgHeight)}`
+  
   const bgStyle: string = `
     width: ${pxTransform(bgWidth)};
     height: ${pxTransform(bgHeight)}; 
@@ -46,22 +45,22 @@ const Switch: FC<SwitchProps> = (props) => {
     width: ${pxTransform(btnSize)};
     height: ${pxTransform(btnSize)}; 
     background: ${btnColor}; 
-    transform: ${checked ? `translateX(${pxTransform(bgWidth - btnSize)})`: ''}; 
-    top: ${pxTransform(-(btnSize - bgHeight)/2)}`
+    transform: ${checked ? `translateX(${pxTransform(bgWidth - btnSize)})` : ''}; 
+    top: ${pxTransform(-(btnSize - bgHeight) / 2)}`
 
   return (
-    <CompContainer 
-      className={rootCls} style={rootSty} 
-      customizeStyle={ customizeStyle }
-      onClick={()=>{
+    <CompContainer
+      className={rootCls} style={{ width: pxTransform(bgWidth), height: pxTransform(bgHeight) }}
+      customizeStyle={customizeStyle}
+      onClick={() => {
         const v = !checked
-        if(isFunction(props.onChange) && !disabled) {
+        if (isFunction(props.onChange) && !disabled) {
           props.onChange(v)
         }
       }}
     >
-      <View className={ `${CssPrefix}-switch__bg` } style={bgStyle} />
-      <View className={ `${CssPrefix}-switch__btn` } style={btnStyle}></View>
+      <View className={`${CssPrefix}-switch__bg`} style={bgStyle} />
+      <View className={`${CssPrefix}-switch__btn`} style={btnStyle}></View>
     </CompContainer>
   )
 }

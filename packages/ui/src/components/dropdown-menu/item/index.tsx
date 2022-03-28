@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { View } from '@tarojs/components'
 import { DropdownMenuItemProps } from '../type'
 import Icon from '../../icon'
-import { CssPrefix } from '../../../common'
+import { cssPrefix } from '../../../common'
 
 const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
   value = '',
@@ -16,6 +16,7 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
   active,
   onClick = () => {}
 }) => {
+  const CssPrefix = cssPrefix()
   return (
     <View
       className={ `${CssPrefix}-dropdown-menu-item` }
