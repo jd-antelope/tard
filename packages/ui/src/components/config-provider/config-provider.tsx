@@ -10,6 +10,7 @@ const ConfigProvider: FC<ConfigProviderProps> = ({ style, className, children })
     for (const item in style) {
       themeStyle += `--${item}: ${style[item]};`
     }
+    themeStyle+= 'display: inline-block;'
     setCustomStyle(themeStyle)
   }, [style])
 

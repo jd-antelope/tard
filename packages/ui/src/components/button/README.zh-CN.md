@@ -119,4 +119,4 @@ import { Button } from 'tard'
 | --button-large-height | 96px |
 | --button-large-text-size | 32px |
 | --button-large-v-padding | 48px |
-| --button-radius-size | 38px |
+| --button-radius | var(--border-radius-md) |

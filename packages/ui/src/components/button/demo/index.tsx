@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { FC } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { Button } from 'tard'
+import { Button, ConfigProvider } from 'tard'
 import DocsHeader from '../../components/doc-header/index'
 
 import './index.less'
@@ -14,7 +14,10 @@ const ButtonPage: FC = () => {
       <View className="doc-body">
         <View className="doc-body-content-tip">按钮类型</View>
         <View className="button-box">
-          <Button className="button-box__item" type="primary">主要按钮</Button>
+          <ConfigProvider style={{ 'button-radius': '20px' }}>
+            <Button className="button-box__item" type="primary">主要按钮</Button>
+          </ConfigProvider>
+
           <Button className="button-box__item" type="info">信息按钮</Button>
           <Button className="button-box__item" type="default">默认按钮</Button>
           <Button className="button-box__item" type="danger">危险按钮</Button>
@@ -57,8 +60,8 @@ const ButtonPage: FC = () => {
         <View className="doc-body-content-tip">自定义圆角</View>
         <View className="button-box">
           <Button className="button-box__item" type="primary">默认</Button>
-          <Button className="button-box__item" radius={ 24 } type="info">24px</Button>
-          <Button className="button-box__item" radius={ 36 } type="warning">36px</Button>
+          <Button className="button-box__item" radius={24} type="info">24px</Button>
+          <Button className="button-box__item" radius={36} type="warning">36px</Button>
         </View>
 
         <View className="doc-body-content-tip">禁用状态</View>

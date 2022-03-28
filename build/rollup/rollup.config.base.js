@@ -26,7 +26,7 @@ export default {
   input: entries,
   output: [
     {
-      file: path.join(cwd, '/packages/ui/dist/tard.umd.js'),
+      file: path.join(cwd, '/packages/ui/dist/tard.js'),
       format: 'cjs',
       sourcemap: true
     },
