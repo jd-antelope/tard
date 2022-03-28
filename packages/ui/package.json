@@ -2,7 +2,7 @@
   "name": "tard",
   "version": "0.0.2-alpha.0",
   "description": "",
-  "main": "dist/tard.umd.js",
+  "main": "dist/tard.js",
   "module": "dist/tard.es.js",
   "source": "src/components/index.ts",
   "publishConfig": {

@@ -14,7 +14,7 @@ const ButtonPage: FC = () => {
       <View className="doc-body">
         <View className="doc-body-content-tip">按钮类型</View>
         <View className="button-box">
-          <ConfigProvider style={{ 'button-radius': '20px' }}>
+          <ConfigProvider style={{ 'button-radius': '0px' }}>
             <Button className="button-box__item" type="primary">主要按钮</Button>
           </ConfigProvider>
 

@@ -51,9 +51,6 @@ export default {
     RollupCommonjs({
       extensions: ['.esm.js', '.mjs', '.js', '.ts'],
       include: /\/node_modules\//,
-      namedExports: {
-        'react': ['useState']
-      }
     }),
     RollupJson(),
     RollupUglify(),
