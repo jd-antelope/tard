@@ -4,16 +4,16 @@
   "description": "components",
   "main": "index.js",
   "scripts": {
-    "dev": "./scripts/start.sh",
+    "dev": "vite serve --mode development --config build/vite/vite.config.ts",
     "taro-dev": "cd packages/taro-demo && pnpm run dev:h5",
-    "vite-dev": "vite serve --mode development",
-    "build:prod": "vite build  --mode production",
+    "build:vite": "vite build --mode production --config build/vite/vite.config.ts",
+    "build:prod": "sh ./scripts/build.sh",
     "build": "pnpm run build:rollup && pnpm run build:ts",
     "build:rollup": "rimraf dist && NODE_ENV=production rollup -c build/rollup/rollup.config.base.js",
-    "build:ts": "tsc --project tsconfig.d.json",
-    "dev:lib": "tsc --project tsconfig.d.json --watch --incremental",
+    "build:ts": "tsc --project build/tsconfig/tsconfig.d.json",
+    "dev:lib": "tsc --project build/tsconfig/tsconfig.d.json --watch --incremental",
     "dev:watch": "NODE_ENV=development rollup --config build/rollup/rollup.config.dev.js --watch",
-    "preview": "vite preview"
+    "preview": "vite preview  --config build/vite/vite.config.ts"
   },
   "repository": {
     "type": "git",

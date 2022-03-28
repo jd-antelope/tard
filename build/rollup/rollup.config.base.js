@@ -58,7 +58,7 @@ export default {
     RollupJson(),
     RollupUglify(),
     RollupTypescript({
-      tsconfig: path.join(cwd, 'tsconfig.rollup.json')
+      tsconfig: path.join(cwd, 'build/tsconfig/tsconfig.rollup.json')
     }),
     RollupCopy({
       verbose: true,

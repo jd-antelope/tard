@@ -4,7 +4,7 @@
 
 echo 'start'
 
-yarn vite-dev; yarn taro-dev
+npx vite serve --mode development --config build/vite/vite.config.ts
 
 sleep 5
 nodeport=` netstat -lntp|grep "7000"|awk '{print $4}'|awk -F":" '{print $4}'`

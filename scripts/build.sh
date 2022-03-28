@@ -4,7 +4,7 @@
 
 echo 'build'
 
-yarn build:prod
+yarn build:vite
 cd packages/taro-demo
 APP_ENV=prod yarn build:h5
 cd ../../

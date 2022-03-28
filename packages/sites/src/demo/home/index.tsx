@@ -29,7 +29,6 @@ function Home () {
                   className="comp-item"
                   key={ val.nameEn }
                   onClick={ () => {
-                    console.log('postIframeParentMessage')
                     postIframeParentMessage(val.path)
                   } }
                   onTouchStart={ () => {

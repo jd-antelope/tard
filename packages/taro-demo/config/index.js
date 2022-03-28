@@ -8,7 +8,6 @@ require('dotenv-flow').config({
 const {
   API_STATIC
 } = process.env
-console.log(API_STATIC)
 
 const config = {
   projectName: 'taro-demo',

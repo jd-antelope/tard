@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig",
+  "compileOnSave": false,
+  "exclude": [
+    "../../node_modules/*",
+    "../../packages/ui/dist/*",
+    "../../packages/ui/lib/*"
+  ],
+  "include": [
+    "../../packages/ui/src/**/*"
+  ]
+}

@@ -6,8 +6,8 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: '@tarojs/components', replacement: '@tarojs/components/dist-h5/react' },
-      { find: '@demo',replacement:path.resolve(__dirname, 'packages/demo') },
-      { find: '@ui',replacement:path.resolve(__dirname, 'packages/ui/src/components') }
+      { find: '@demo',replacement:path.resolve(__dirname, '../../packages/demo') },
+      { find: '@ui',replacement:path.resolve(__dirname, '../../packages/ui/src/components') }
     ],
   },
   // define: {
