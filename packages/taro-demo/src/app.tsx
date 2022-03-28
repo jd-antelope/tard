@@ -9,11 +9,11 @@ class App extends React.Component {
 
   componentDidShow() {
     ConfigProvider.config({
-      cssPrefix: 'slc',
+      // cssPrefix: 'tard',
       theme: {
-        'color-primary': 'purple',//purple
-        // 'font-size-base': '18px'
-        'button-radius': '20px'
+        // 'color-primary': 'purple',//purple
+        // 'font-size-base': '16px',
+        // 'button-radius': '20px'
       }
     })
 
