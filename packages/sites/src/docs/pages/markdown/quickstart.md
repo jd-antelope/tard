@@ -33,7 +33,7 @@ $ npm install tard --save
 4.使用UI组件
 ```js
 // page.js
-import { SLButton } from 'tard'
+import { Button } from 'tard'
 // 除了引入所需的组件，还需要手动引入组件样式
 // app.js
 import 'tard/dist/style/index.less' // 全局引入一次即可
@@ -54,13 +54,13 @@ import 'tard/dist/style/index.less' // 全局引入一次即可
 import React, { memo, useState } from 'react';
 import { FC } from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { SlButton } from 'tard'
+import { Button } from 'tard'
 import "`tard/dist/style/components/button.less";
 
 const Button: FC = () => {
 return (
  <View className="container">
-   <SlButton>按钮基本使用</SlButton>
+   <Button>按钮基本使用</Button>
  </View>
   );
 };

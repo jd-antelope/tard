@@ -100,19 +100,21 @@ import { Badge } from 'tard'
 
 ## API
 ### Props
-| 属性     | 说明                                                          | 类型            | 默认值 |
-| -------- | ------------------------------------------------------------- | --------------- | ------ |
-| dot      | 角标红点                                                      | boolean         | false  |
-| value    | 角标内容                                                      | string          | number | - |
-| maxValue | 最大值，超过最大值会显示 {maxValue}+，仅当 value 为数字时有效 | number          | -      |
-| color    | 徽标背景颜色                                                  | string          | 主题色 |
-| content  | 自定义内容                                                    | React.ReactNode | -      |
+|  属性   | 说明  | 类型 | 默认值 |
+|  ----  | ----  | ---- | ---- |
+| dot | 角标红点 | boolean | false |
+| value | 角标内容 | string|number | - |
+| maxValue | 最大值，超过最大值会显示 {maxValue}+，仅当 value 为数字时有效 | number | - |
+| color | 徽标背景颜色 | string | 主题色 |
+| content | 自定义内容 |  React.ReactNode | - |
 
 ### 样式变量
-| 名称             | 默认值          |
-| ---------------- | --------------- |
-| @badge-color     | @color-white    |
-| @badge-bg-color  | @color-error    |
-| @badge-bg        | @badge-bg-color |
-| @badge-font-size | @font-size-xs   |
-| @badge-dot-size  | 20px            |
+|  名称  | 默认值 |
+|  ---- | ---- |
+|  --badge-color | var(--color-white) |
+|  --badge-bg-color | var(--color-error) |
+|  --badge-bg  | var(--badge-bg-color) |
+|  --badge-font-size | var(--font-size-xs) |
+|  --badge-dot-size  | 20px |
+|  --badge-border-radius | calc(var(--badge-font-size) * .7) |
+|  --badge-box-shadow  | 0 4px 8px 0 rgba(var(--badge-bg-color), .2) |

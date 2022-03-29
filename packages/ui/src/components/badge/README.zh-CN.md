@@ -10,15 +10,15 @@ import { Badge } from 'tard'
 设置 `value` 属性后， `Badge` 会在子元素的右上角显示对应的徽标
 ```js
 <Badge value={5}>
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge value={10}>
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge value='hot'>
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 ```
 
@@ -26,26 +26,26 @@ import { Badge } from 'tard'
 通过 `dot` 来显示小红点
 ```js
 <Badge dot >
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 ```
 ### 最大值
 设置 `maxValue` 属性后，当 `value` 的数值超过最大值时，会自动显示为 `{maxValue}+`
 ```js
 <Badge dot >
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge value={20} maxValue={9}>
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge value={50} maxValue={20}>
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge value={200} maxValue={99}>
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 ```
 
@@ -53,34 +53,34 @@ import { Badge } from 'tard'
 通过 `color` 属性来设置徽标的颜色
 ```js
 <Badge value={8} color="blue">
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge value={76} color="blue">
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge value='NEW' color="blue">
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge dot color="blue">
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 ```
 ### 自定义内容
 通过 `content` 插槽可以自定义徽标的内容，比如插入一个图标
 ```js
 <Badge content={<Icon value='bell' size={12}></Icon>}>
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge content={<Icon value='check' size={12}></Icon>}>
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 
 <Badge content={<Icon value='arrow-down' size={12}></Icon>}>
-    <Button>按钮</Button>
+  <Button>按钮</Button>
 </Badge>
 ```
 
