@@ -138,7 +138,7 @@ Tard 使用了 `Less` 对样式进行预处理，并内置了一些样式变量�
 import 'tard/dist/style/index.less';
 
 // 引入单个组件样式
-import 'tard/dist/style/components/button.less';
+import 'tard/dist/style/components/button/button.less';
 ```
 
 
@@ -173,4 +173,3 @@ import 'tard/dist/style/components/button.less';
   --input-number-btn-size: 100px;
 }
 ```
-
