@@ -26,6 +26,7 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^4.18.7",
+    "eventemitter3": "^4.0.7",
     "react-router-dom": "^6.2.1",
     "unified": "^10.1.2"
   },
