@@ -13,13 +13,15 @@ export const menuData = [
   },
   {
     title: '示例',
-    path: '/demo.html'
-  }, {
-    title: '资源',
-    path: '/docs'
-  }, {
+    path: '/h5'
+  },
+  // {
+  //   title: '资源',
+  //   path: '/docs'
+  // },
+  {
     title: '加入我们',
-    path: '/docs'
+    path: 'https://github.com/jd-antelope'
   }]
 
 export const introduceList = [{

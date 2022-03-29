@@ -6,7 +6,7 @@ import { menuData, logoUrl } from '../../../constants/layout'
 import './index.less'
 
 const { Header, Content, } = Layout
-export default function LayoutFull ({ children, fullHeader = false }: any) {
+export default function LayoutFull({ children, fullHeader = false }: any) {
 
   const navigate = useNavigate()
   const [current, setCurrent] = useState<string>('')
@@ -19,29 +19,29 @@ export default function LayoutFull ({ children, fullHeader = false }: any) {
   }, [fullHeader])
   return (
     <Layout className="layout-flex-col layout-h-100vh layout-w-100 index-bg-layout">
-      <Header className={ cn(['header', fullHeader ? 'fullHeader' : 'centerHeader']) }>
+      <Header className={cn(['header', fullHeader ? 'fullHeader' : 'centerHeader'])}>
         <div className="topLeft">
-          <div className="logoBox" onClick={ () => navigate('/') }>
+          <div className="logoBox" onClick={() => navigate('/')}>
             <img
               className="logo"
-              src={ logoUrl }
+              src={logoUrl}
             />
           </div>
         </div>
         <Menu
           className="layoutTopMenu"
           theme="light"
-          selectedKeys={ [current] }
+          selectedKeys={[current]}
           mode="horizontal"
-          onClick={ (e) => menuClick(e) }
+          onClick={(e) => menuClick(e)}
           selectable
         >
           {
             menuData.map((v, i) => (
-              <Menu.Item key={ i } onClick={ () => navigate(v.path) }>{v.title}</Menu.Item>
+              <Menu.Item key={i} onClick={() => { v.path.indexOf('http') !== -1 ? location.href = v.path : navigate(v.path) }}>{v.title}</Menu.Item>
             ))
           }
-          <Menu.Item key="github" className="gitHub">
+          <Menu.Item key="github" className="gitHub" onClick={() => location.href = 'https://github.com/jd-antelope/tard'}>
             <svg
               height="32" aria-hidden="true" viewBox="0 0 16 16"
               version="1.1" width="32" data-view-component="true"
