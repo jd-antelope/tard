@@ -1,6 +1,6 @@
 # ConfigProvider 全局配置
 ### 介绍
-用于配置 Tard 组件的主题样式，从 X.X 版本开始支持
+用于配置 Tard 组件的主题样式，从 `0.0.2-alpha.0` 版本开始支持
 ### 引入
 ```js
 import { ConfigProvider } from 'tard'
