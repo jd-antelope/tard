@@ -12,7 +12,8 @@
   "files": [
     "dist",
     "lib",
-    "types"
+    "types",
+    "README.md"
   ],
   "typeRoots": [
     "node_modules/@types",

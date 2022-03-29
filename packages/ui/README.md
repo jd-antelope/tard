@@ -8,7 +8,7 @@
 Tard是**京东商羚前端团队**开源移动端多端组件库, 开发和服务于移动Web界面的企业级产品
 
 ## 版本提示
-目前版本处理预发布状态，适用于taro的`React`版本，taro的版本要在3.X以上版本
+目前版本处于alpha状态，适用于taro的`React`版本，taro要在3.X以上版本
 ## 特性
 + 🏠 基于 `Taro` 开发 `UI` 组件
 + 💎 30+ 个高质量组件，覆盖移动端主流场景
@@ -28,9 +28,8 @@ Tard是**京东商羚前端团队**开源移动端多端组件库, 开发和服�
 + iOS 9.2+
 
 ## 链接
-+ 仓库地址
-+ 意见反馈
-+ 更新日志
++ [仓库地址](https://github.com/jd-antelope/tard)
++ [意见反馈](https://github.com/jd-antelope/tard/issues)
 
 ## 开源协议
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源
