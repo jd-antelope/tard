@@ -11,7 +11,7 @@ import { cssPrefix } from '../../common'
 const Rate: FC<RateProps> = ({ 
   customStyle = '',
   className = '',
-  size = 0,
+  size = 36,
   value = 0,
   max = 5,
   margin = 5,
@@ -68,12 +68,12 @@ const Rate: FC<RateProps> = ({
           <Text
             className={ `${CssPrefix}-icon ${CssPrefix}-icon-star` }
             style={isActiveRate(cls, 'on') ? Object.assign(activeIconStyle, starIconStyle) : starIconStyle}
-          ></Text>
+          />
           <View className={ `${CssPrefix}-rate__left` } style={isActiveRate(cls, 'half') ? activeIconStyle : {}}>
             <Text
               className={ `${CssPrefix}-icon ${CssPrefix}-icon-star` }
               style={starIconStyle}
-            ></Text>
+            />
           </View>
         </View>
       ))}

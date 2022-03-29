@@ -7,21 +7,21 @@
       border-radius: 8px;
   
       .tard-button__text {
-        height: 96px;
-        line-height: 96px;
+        height: 80px;
+        line-height: 80px;
       }
     }
   }
   
   .input-group .tard-field:not(:last-child)::after {
+    content: " ";
     position: absolute;
-    box-sizing: border-box;
-    content: ' ';
-    pointer-events: none;
     right: 36px;
     bottom: 0;
     left: 36px;
-    border-bottom: 2px solid rgba(239,239,239,1);
+    box-sizing: border-box;
+    border-bottom: 2px solid rgba(239, 239, 239, 1);
+    pointer-events: none;
   }
   
   .pd-0 {
