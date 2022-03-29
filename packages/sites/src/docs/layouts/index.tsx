@@ -12,7 +12,7 @@ import './index.less'
 const { Content, Sider } = Layout
 export default function LayoutComponent({ children }: any) {
   const location = useLocation()
-  const [path] = useState<string>(location.pathname.split('/')[3] || 'home')
+  const [path] = useState<string>(location.pathname.split('/')[2] || 'home')
 
   const postIframeMessage = (path: string) => {
     const childFrameObj = document.getElementById('iframeDemo');
