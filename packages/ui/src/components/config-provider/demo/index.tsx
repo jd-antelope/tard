@@ -18,10 +18,19 @@ const ButtonPage: FC = () => {
         });
     }
 
+    const changeThemeBlack = () => {
+        ConfigProvider.config({
+            theme: {
+                'color-primary': 'black',
+                "button-radius": '0px'
+            }
+        });
+    }
+
     const changeThemeInit = () => {
         ConfigProvider.config({
             theme: {
-                'color-primary': 'red',
+                'color-primary': '#FF2929',
             }
         })
     }
@@ -33,8 +42,9 @@ const ButtonPage: FC = () => {
                 <View className="doc-body-content-tip">切换主题</View>
                 <View className="button-box">
 
-                    <Button className="button-box__item" type="default" onClick={() => changeTheme()}>切换紫色圆角主题</Button>
-                    <Button className="button-box__item" type="default" onClick={() => changeThemeInit()}>切换默认主题</Button>
+                    <Button className="button-box__item" type="default" onClick={() => changeTheme()}>紫色圆角</Button>
+                    <Button className="button-box__item" type="default" onClick={() => changeThemeBlack()}>黑色直角</Button>
+                    <Button className="button-box__item" type="default" onClick={() => changeThemeInit()}>默认</Button>
                     <Button className="button-box__item" type="primary">主要按钮</Button>
                     <Button className="button-box__item" type="info">信息按钮</Button>
                     <Button className="button-box__item" type="default">默认按钮</Button>
