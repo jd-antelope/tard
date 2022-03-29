@@ -30,6 +30,9 @@ import DatetimePicker from './components/datetime-picker'
 import Uploader from './components/uploader'
 import Cell from './components/cell'
 import Tab from './components/tab'
+import { initEvent } from './utils/init-center'
+
+initEvent()
 
 export {
   Button, DropdownMenu, ConfigProvider, Icon, Image,

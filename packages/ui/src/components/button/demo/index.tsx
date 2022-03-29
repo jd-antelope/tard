@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { FC } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { Button, ConfigProvider } from 'tard'
+import { Button } from 'tard'
 import DocsHeader from '../../components/doc-header/index'
 
 import './index.less'
@@ -14,10 +14,7 @@ const ButtonPage: FC = () => {
       <View className="doc-body">
         <View className="doc-body-content-tip">按钮类型</View>
         <View className="button-box">
-          <ConfigProvider style={{ 'button-radius': '0px' }}>
-            <Button className="button-box__item" type="primary">主要按钮</Button>
-          </ConfigProvider>
-
+          <Button className="button-box__item" type="primary">主要按钮</Button>
           <Button className="button-box__item" type="info">信息按钮</Button>
           <Button className="button-box__item" type="default">默认按钮</Button>
           <Button className="button-box__item" type="danger">危险按钮</Button>

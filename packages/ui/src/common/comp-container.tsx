@@ -20,20 +20,25 @@ const CompContainer: FC<CommonProps> = ({
 }) => {
   const [themeStyle, setThemeStyle] = useState<string>('')
 
-  const setThemeStyleFn = useCallback(() => {
-    if (!(Taro as any).Current.app || !(Taro as any).Current.app.themeParams) return
-    const { themeParams } = (Taro as any).Current.app
+  const setThemeStyleFn = useCallback((data) => {
+    const themeParams = data
     let themeStyleStr = ''
 
     for (const item in themeParams) {
       themeStyleStr += `--${item}: ${themeParams[item]};`
     }
-
     setThemeStyle(themeStyleStr)
   }, [])
 
   useEffect(() => {
-    setThemeStyleFn()
+    setThemeStyleFn((Taro as any).Current.app.themeParams);
+    // setThemeStyleFn();
+    (Taro as any).Current.app.eventCenter.on('THEME_CHANGE', (data) => {
+      setThemeStyleFn(data);
+    });
+    return () => {
+      (Taro as any).Current.app.eventCenter.removeListener('THEME_CHANGE')
+    }
   }, [])
 
   const styleString = isObject(style) ? transformationString(style) : style

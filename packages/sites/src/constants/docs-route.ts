@@ -29,12 +29,18 @@ import Icon from '@ui/icon/README.zh-CN.md?raw'
 import Image from '@ui/image/README.zh-CN.md?raw'
 import Price from '@ui/price/README.zh-CN.md?raw'
 import Toast from '@ui/toast/README.zh-CN.md?raw'
+import ConfigProvider from '@ui/config-provider/README.zh-CN.md?raw'
 
 const routes = [{
   nameEn: 'Basic Components',
   name: '基础组件',
   path: null,
   children: [{
+    name: '全局配置',
+    nameEn: 'ConfigProvider',
+    path: '/config-provider',
+    component: ConfigProvider
+  }, {
     name: '按钮',
     nameEn: 'Button',
     path: '/button',

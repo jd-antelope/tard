@@ -22,8 +22,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@tarojs/taro": "^3.4.2",
     "@tarojs/react": "^3.4.2",
+    "@tarojs/taro": "^3.4.2",
     "typescript": "^4.5.5"
   },
   "peerDependencies": {
@@ -31,5 +31,8 @@
     "@tarojs/react": ">=3",
     "react": ">=16.13.0",
     "react-dom": ">=16.13.0"
+  },
+  "dependencies": {
+    "eventemitter3": "^4.0.7"
   }
 }

@@ -4,6 +4,10 @@ const routerObj = {
     name: '基础组件',
     path: null,
     children: [{
+      name: '全局配置',
+      nameEn: 'ConfigProvider',
+      path: '/config-provider'
+    }, {
       name: '按钮',
       nameEn: 'Button',
       path: '/button'

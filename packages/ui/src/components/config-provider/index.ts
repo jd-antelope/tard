@@ -12,6 +12,9 @@ const config = ({
   theme = {},
   cssPrefix = 'tard'
 }) => {
+  if ((Taro as any).Current.app.eventCenter) {
+    (Taro as any).Current.app.eventCenter.emit('THEME_CHANGE', theme)
+  }
   (Taro as any).Current.app.themeParams = theme;
   (Taro as any).Current.app.cssPrefix = cssPrefix;
 };

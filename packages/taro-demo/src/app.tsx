@@ -8,14 +8,14 @@ import './app.less'
 class App extends React.Component {
 
   componentDidShow() {
-    ConfigProvider.config({
-      // cssPrefix: 'tard',
-      theme: {
-        // 'color-primary': 'purple',//purple
-        // 'font-size-base': '16px',
-        // 'button-radius': '20px'
-      }
-    })
+    // ConfigProvider.config({
+    //   // cssPrefix: 'tard',
+    //   theme: {
+    //     'color-primary': 'purple',//purple
+    //     'font-size-base': '16px',
+    //     'button-radius': '20px'
+    //   }
+    // })
 
     if (isWeb) {
       window.addEventListener("message", this.iframeListener, false);
