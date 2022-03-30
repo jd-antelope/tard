@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite serve --mode development --config build/vite/vite.config.ts",
-    "taro-dev": "cd packages/taro-demo && pnpm run dev:h5",
+    "taro-dev": "cd packages/taro-demo && npm run dev:h5",
     "build:vite": "vite build --mode production --config build/vite/vite.config.ts",
     "build:prod": "sh ./scripts/build.sh",
-    "build": "pnpm run build:rollup && pnpm run build:ts",
+    "build": "npm run build:rollup && npm run build:ts",
     "build:rollup": "rimraf dist && NODE_ENV=production rollup -c build/rollup/rollup.config.base.js",
     "build:ts": "tsc --project build/tsconfig/tsconfig.d.json",
     "dev:lib": "tsc --project build/tsconfig/tsconfig.d.json --watch --incremental",
@@ -67,7 +67,7 @@
     "stylelint-config-selling": "0.0.3",
     "tslib": "^2.3.1",
     "typescript": "^4.5.5",
-    "vite": "^2.8.2"
+    "vite": "^2.8.6"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": [
