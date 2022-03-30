@@ -6,8 +6,6 @@ yarn.lock
 package-lock.json
 
 # Build outputs
-/bin
-/nginx
 dist
 lib
 
