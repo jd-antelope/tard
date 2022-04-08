@@ -1,8 +1,8 @@
 {
     "miniprogramRoot": "dist/",
     "projectname": "taro-demo",
-    "description": "taro-demo",
-    "appid": "wx0e62389d12ae420f",
+    "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "appid": "wx3044a91b8feca20b",
     "setting": {
         "urlCheck": true,
         "es6": false,
@@ -39,8 +39,19 @@
         "showES6CompileOption": false,
         "useCompilerPlugins": false,
         "ignoreUploadUnusedFiles": true,
-        "minifyWXML": true
+        "minifyWXML": true,
+        "useStaticServer": true
     },
     "compileType": "miniprogram",
-    "condition": {}
+    "condition": {},
+    "libVersion": "2.22.1",
+    "srcMiniprogramRoot": "dist/",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    }
 }
