@@ -3,10 +3,10 @@ name: Node CI
 on:
   push:
     branches:
-      - main
+      - feat/ci
   pull_request:
     branches:
-      - next
+      - feat/ci
 
 jobs:
   build:
@@ -24,13 +24,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    # - name: restore lerna
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: |
-    #       node_modules
-    #       */*/node_modules
-    #     key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -46,7 +39,7 @@ jobs:
     - run: yarn config set registry https://registry.yarnpkg.com
     - name: install
       run: yarn
-    - name: build
-      run: yarn run build
+    - name: publish
+      run: p:issues
       env:
         CI: true
