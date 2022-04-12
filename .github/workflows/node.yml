@@ -40,6 +40,6 @@ jobs:
     - name: install
       run: yarn
     - name: publish
-      run: p:issues
+      run: yarn p:issues
       env:
         CI: true
