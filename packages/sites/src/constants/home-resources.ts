@@ -30,9 +30,6 @@ export const FOOTTER_RESOURCES = [{
   }, {
     title: '意见反馈',
     url: 'https://github.com/jd-antelope/tard/issues'
-  }, {
-    title: '京东前端',
-    url: 'http://fe.jd.com/'
   }]
 }] as FooterResources[]
 
